@@ -1,41 +1,47 @@
 {
+  "website": "https://pendent-eight.vercel.app",
+  "deploymentId": "dpl_9ypVDHHukGCm1kXFAqy8VnkNkMNa",
+  "checkedAt": "2026-09-07T23:12:11.023Z",
   "browserInteractionQA": false,
+  "filmDurationSeconds": 44,
   "checks": [
     {
+      "url": "https://pendent-eight.vercel.app/",
       "status": 200,
-      "contentLength": "845",
       "contentType": "text/html; charset=utf-8",
-      "url": "https://pendent-eight.vercel.app/"
+      "bytes": 845
     },
     {
+      "url": "https://pendent-eight.vercel.app/product/aura.glb",
       "status": 200,
-      "contentLength": "",
       "contentType": "model/gltf-binary",
-      "url": "https://pendent-eight.vercel.app/product/aura.glb"
+      "bytes": 2108420,
+      "sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a",
+      "matchesSource": true
     },
     {
+      "url": "https://pendent-eight.vercel.app/film/aura-launch.mp4",
       "status": 200,
-      "contentLength": "13450756",
       "contentType": "video/mp4",
-      "url": "https://pendent-eight.vercel.app/film/aura-launch.mp4"
+      "bytes": 13469070,
+      "sha256": "1f208827348028c6aba7508524e1d1da0ffa45779663bf3bf75e97fb6cdfaee0",
+      "matchesSource": true
     },
     {
+      "url": "https://pendent-eight.vercel.app/film/captions.vtt",
       "status": 200,
-      "contentLength": "",
       "contentType": "text/vtt; charset=utf-8",
-      "url": "https://pendent-eight.vercel.app/film/captions.vtt"
+      "bytes": 1100,
+      "sha256": "c49d5d73a16afc5abc48b901772a7b940989aba0d53fbf8d8f2b388680959b7d",
+      "matchesSource": true
     },
     {
+      "url": "https://pendent-eight.vercel.app/film/poster.jpg",
       "status": 200,
-      "contentLength": "90893",
       "contentType": "image/jpeg",
-      "url": "https://pendent-eight.vercel.app/film/poster.jpg"
+      "bytes": 90893,
+      "sha256": "ab9dbb2a2c3cdb8a8a024087fb16f172684cfc16daff4d69e3ea988458ee5ffc",
+      "matchesSource": true
     }
-  ],
-  "deploymentId": "dpl_4jcfYRPR7ZepHzR6BXb8hK7pjYCU",
-  "website": "https://pendent-eight.vercel.app",
-  "filmMatchesSource": true,
-  "filmSha256": "3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738",
-  "filmDurationSeconds": 44,
-  "checkedAt": "2026-09-07T22:24:13.3280501Z"
+  ]
 }

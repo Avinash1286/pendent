@@ -8,11 +8,11 @@
   "lastCueEnd": 44,
   "preservedProductImagesVerified": 5,
   "glbMatchesSource": true,
-  "glbSha256": "E1D14CDB47A5563D0B55B8DAD511A1A651CCCDDF62F40B9147E9E0E0A2D0D342",
+  "glbSha256": "A0D3B7E04B07141E8DD1B356F22EAE08E609571B16788506CCFB431F409AC72A",
   "groups": {
     "shell": 1,
     "controls": 14,
-    "board": 59,
+    "board": 61,
     "battery": 5,
     "back": 8
   },

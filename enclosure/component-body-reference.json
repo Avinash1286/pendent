@@ -1,0 +1,758 @@
+{
+  "revision": "A03",
+  "scope": "Body envelope reference only; component placements are stored separately and remain subject to hardware freeze",
+  "source_sha256": "1988b3e48ee668a064305da221425da2069c76b70ca33d557478596d8ae4e9f0",
+  "source_design_sha256": "9afcd05ff501b06664656701736887073f1e4bbfc920b0b992a6314fcbab40fb",
+  "physical_qualification": false,
+  "bodies": {
+    "U1": {
+      "mpn": "MDBT50Q-1MV2",
+      "footprint": "radio",
+      "side": "top",
+      "nominal_mm": [
+        10.5,
+        15.5,
+        2.05
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "MK1": {
+      "mpn": "SPH0641LU4H-1",
+      "footprint": "mic",
+      "side": "top",
+      "nominal_mm": [
+        2.65,
+        3.5,
+        1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "MK2": {
+      "mpn": "SPH0641LU4H-1",
+      "footprint": "mic",
+      "side": "top",
+      "nominal_mm": [
+        2.65,
+        3.5,
+        1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U2": {
+      "mpn": "W25N01GVZEIG",
+      "footprint": "flash",
+      "side": "top",
+      "nominal_mm": [
+        8,
+        6,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U3": {
+      "mpn": "BQ25185DLHR",
+      "footprint": "charger",
+      "side": "top",
+      "nominal_mm": [
+        2.2,
+        2,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U4": {
+      "mpn": "TLV75530PDBVR",
+      "footprint": "ldo",
+      "side": "top",
+      "nominal_mm": [
+        2.9,
+        2.8,
+        1.2
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U5": {
+      "mpn": "MAX17048G+T10",
+      "footprint": "gauge",
+      "side": "top",
+      "nominal_mm": [
+        2,
+        2,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U6": {
+      "mpn": "DRV2605LDGSR",
+      "footprint": "haptic",
+      "side": "top",
+      "nominal_mm": [
+        4.9,
+        3,
+        1.1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U7": {
+      "mpn": "TLV75530PDBVR",
+      "footprint": "ldo",
+      "side": "top",
+      "nominal_mm": [
+        2.9,
+        2.8,
+        1.2
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U8": {
+      "mpn": "SN74LVC2G125DCUR",
+      "footprint": "buffer",
+      "side": "top",
+      "nominal_mm": [
+        3.1,
+        2,
+        0.9
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "U9": {
+      "mpn": "TLV6700DDCR",
+      "footprint": "comparator",
+      "side": "top",
+      "nominal_mm": [
+        2.9,
+        2.8,
+        1.1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "Q1": {
+      "mpn": "DMG2302UK-7",
+      "footprint": "nmos",
+      "side": "top",
+      "nominal_mm": [
+        2.9,
+        2.5,
+        1.1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "body_nominal_mm": [
+        1.3,
+        2.9,
+        1.025
+      ],
+      "maximum_body_mm": [
+        1.4,
+        3,
+        1.1
+      ],
+      "maximum_lead_span_mm": [
+        2.5,
+        3,
+        1.1
+      ],
+      "maximum_source": "https://www.diodes.com/datasheet/download/DMG2302UK.pdf",
+      "verified_dimensions": "Page6: B plastic width1.20–1.40, H body length2.80–3.00, C overall lead span2.30–2.50, K1 overall height0.903–1.10 mm. SOT-23 library local X spans leads; long plastic axis is local Y. The nominal source-catalog field is retained for traceability, but is not the plastic body."
+    },
+    "SW1": {
+      "mpn": "JS202011JCQN",
+      "footprint": "privacy",
+      "side": "top",
+      "nominal_mm": [
+        6.7,
+        4.1,
+        1.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "SW2": {
+      "mpn": "KMR211NGULCLFS",
+      "footprint": "record",
+      "side": "top",
+      "nominal_mm": [
+        4.6,
+        3.8,
+        1.9
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "D1": {
+      "mpn": "BAT54WS-7-F",
+      "footprint": "diode",
+      "side": "top",
+      "nominal_mm": [
+        2.5,
+        1.25,
+        1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "D2": {
+      "mpn": "PESD5V0S1BA,115",
+      "footprint": "diode",
+      "side": "top",
+      "nominal_mm": [
+        2.5,
+        1.25,
+        1
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "LED1": {
+      "mpn": "LTST-C190KFKT",
+      "footprint": "led",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "J1": {
+      "mpn": "AURA-DOCK-PADS",
+      "footprint": "dock",
+      "side": "bottom",
+      "nominal_mm": null,
+      "dimension_source": "Custom bare PCB contact pads; mechanical mating interface is modeled separately"
+    },
+    "J2": {
+      "mpn": "AURA-BATTERY-PADS",
+      "footprint": "battery",
+      "side": "bottom",
+      "nominal_mm": null,
+      "dimension_source": "Custom bare PCB contact pads; mechanical mating interface is modeled separately"
+    },
+    "J3": {
+      "mpn": "AURA-SWD-PADS",
+      "footprint": "debug",
+      "side": "bottom",
+      "nominal_mm": null,
+      "dimension_source": "Custom bare PCB contact pads; mechanical mating interface is modeled separately"
+    },
+    "J4": {
+      "mpn": "AURA-LRA-PADS",
+      "footprint": "motor",
+      "side": "bottom",
+      "nominal_mm": null,
+      "dimension_source": "Custom bare PCB contact pads; mechanical mating interface is modeled separately"
+    },
+    "R1": {
+      "mpn": "RC0402FR-075K62L",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R2": {
+      "mpn": "RC0402FR-0724KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R3": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R4": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R5": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R6": {
+      "mpn": "RC0402FR-074K7L",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R7": {
+      "mpn": "RC0402FR-074K7L",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R8": {
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R9": {
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R10": {
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R11": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R13": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R14": {
+      "mpn": "RC0402FR-071KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R15": {
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R16": {
+      "mpn": "RC0402FR-0733RL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R17": {
+      "mpn": "RC0402FR-0733RL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R18": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R19": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R20": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R21": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R22": {
+      "mpn": "RC0402FR-073K3L",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "R23": {
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "r0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.35
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C1": {
+      "mpn": "C0402C104K4RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    },
+    "C2": {
+      "mpn": "C0603C475K8PACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.75,
+        0.95,
+        0.9
+      ],
+      "maximum_source": "https://search.kemet.com/component-documentation/download/specsheet/C0603C475K8PAC7867",
+      "verified_dimensions": "L1.6±0.15, W0.8±0.15, T0.8±0.10 mm; solder height and placement tolerance excluded"
+    },
+    "C3": {
+      "mpn": "939113424610-T3N",
+      "footprint": "sicap",
+      "side": "top",
+      "nominal_mm": [
+        1.2,
+        0.7,
+        0.4
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C4": {
+      "mpn": "939113424610-T3N",
+      "footprint": "sicap",
+      "side": "top",
+      "nominal_mm": [
+        1.2,
+        0.7,
+        0.4
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C5": {
+      "mpn": "C0402C104K4RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    },
+    "C6": {
+      "mpn": "C0603C475K8PACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.75,
+        0.95,
+        0.9
+      ],
+      "maximum_source": "https://search.kemet.com/component-documentation/download/specsheet/C0603C475K8PAC7867",
+      "verified_dimensions": "L1.6±0.15, W0.8±0.15, T0.8±0.10 mm; solder height and placement tolerance excluded"
+    },
+    "C7": {
+      "mpn": "C0603C225K8RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.75,
+        0.95,
+        0.9
+      ],
+      "maximum_source": "https://search.kemet.com/component-documentation/download/specsheet/C0603C225K8RAC7867",
+      "verified_dimensions": "L1.6±0.15, W0.8±0.15, T0.8±0.10 mm; solder height and placement tolerance excluded"
+    },
+    "C8": {
+      "mpn": "C0603C475K8PACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.75,
+        0.95,
+        0.9
+      ],
+      "maximum_source": "https://search.kemet.com/component-documentation/download/specsheet/C0603C475K8PAC7867",
+      "verified_dimensions": "L1.6±0.15, W0.8±0.15, T0.8±0.10 mm; solder height and placement tolerance excluded"
+    },
+    "C9": {
+      "mpn": "C0805C106K8PACTU",
+      "footprint": "c0805",
+      "side": "top",
+      "nominal_mm": [
+        2,
+        1.25,
+        1.4
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C10": {
+      "mpn": "C0603C225K8RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.75,
+        0.95,
+        0.9
+      ],
+      "maximum_source": "https://search.kemet.com/component-documentation/download/specsheet/C0603C225K8RAC7867",
+      "verified_dimensions": "L1.6±0.15, W0.8±0.15, T0.8±0.10 mm; solder height and placement tolerance excluded"
+    },
+    "C11": {
+      "mpn": "C0402C104K4RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    },
+    "C12": {
+      "mpn": "C0603C105K4RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C13": {
+      "mpn": "C0603C105K4RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C14": {
+      "mpn": "C0603C105K4RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C15": {
+      "mpn": "C0603C105K4RACTU",
+      "footprint": "c0603",
+      "side": "top",
+      "nominal_mm": [
+        1.6,
+        0.8,
+        0.8
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP"
+    },
+    "C16": {
+      "mpn": "C0402C104K4RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    },
+    "C17": {
+      "mpn": "C0402C103K5RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C103K5RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    },
+    "C18": {
+      "mpn": "C0402C104K4RACTU",
+      "footprint": "c0402",
+      "side": "top",
+      "nominal_mm": [
+        1,
+        0.5,
+        0.5
+      ],
+      "dimension_source": "hardware/src/footprints.json; nominal package body proxy, not vendor STEP",
+      "maximum_body_mm": [
+        1.05,
+        0.55,
+        0.55
+      ],
+      "maximum_source": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+      "verified_dimensions": "L1.0±0.05, W0.5±0.05, T0.5±0.05 mm; solder height and placement tolerance excluded"
+    }
+  }
+}

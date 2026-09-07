@@ -2,8 +2,8 @@
   "edition": "A03-context-assembly",
   "movie": "renders/aura-launch.mp4",
   "duration": 44,
-  "bytes": 13450756,
-  "sha256": "3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738",
+  "bytes": 13469070,
+  "sha256": "1F208827348028C6ABA7508524E1D1DA0FFA45779663BF3BF75E97FB6CDFAEE0",
   "video": {
     "codec_name": "h264",
     "codec_type": "video",

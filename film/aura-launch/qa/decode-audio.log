@@ -6,15 +6,15 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'renders/aura-launch.mp4':
     hyperframes_version: 0.0.0-dev
     hyperframes_renderer: hyperframes
     encoder         : Lavf62.12.101
-  Duration: 00:00:44.00, start: 0.000000, bitrate: 2445 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2245 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+  Duration: 00:00:44.00, start: 0.000000, bitrate: 2448 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2249 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
     Metadata:
       handler_name    : VideoHandler
       encoder         : Lavc62.28.101 libx264
   Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s (default)
     Metadata:
       handler_name    : SoundHandler
-[Parsed_volumedetect_0 @ 00000165e60fd4c0] n_samples: 0
+[Parsed_volumedetect_0 @ 000002151d43e080] n_samples: 0
 Stream mapping:
   Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
   Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
@@ -35,12 +35,12 @@ Output #0, null, to 'NUL':
     Metadata:
       encoder         : Lavc62.28.101 pcm_s16le
       handler_name    : SoundHandler
-frame=  171 fps=0.0 q=-0.0 size=N/A time=00:00:05.70 bitrate=N/A speed=11.1x elapsed=0:00:00.51    frame=  297 fps=289 q=-0.0 size=N/A time=00:00:09.90 bitrate=N/A speed=9.65x elapsed=0:00:01.02    frame=  417 fps=270 q=-0.0 size=N/A time=00:00:13.90 bitrate=N/A speed=9.01x elapsed=0:00:01.54    frame=  532 fps=258 q=-0.0 size=N/A time=00:00:17.73 bitrate=N/A speed= 8.6x elapsed=0:00:02.06    frame=  650 fps=252 q=-0.0 size=N/A time=00:00:21.66 bitrate=N/A speed= 8.4x elapsed=0:00:02.57    frame=  755 fps=244 q=-0.0 size=N/A time=00:00:25.16 bitrate=N/A speed=8.14x elapsed=0:00:03.09    frame=  902 fps=250 q=-0.0 size=N/A time=00:00:30.06 bitrate=N/A speed=8.33x elapsed=0:00:03.60    frame= 1091 fps=265 q=-0.0 size=N/A time=00:00:36.36 bitrate=N/A speed=8.82x elapsed=0:00:04.12    frame= 1286 fps=277 q=-0.0 size=N/A time=00:00:42.86 bitrate=N/A speed=9.24x elapsed=0:00:04.64    [Parsed_volumedetect_0 @ 00000165e60fea00] n_samples: 4225024
-[Parsed_volumedetect_0 @ 00000165e60fea00] mean_volume: -22.2 dB
-[Parsed_volumedetect_0 @ 00000165e60fea00] max_volume: -7.9 dB
-[Parsed_volumedetect_0 @ 00000165e60fea00] histogram_7db: 11
-[Parsed_volumedetect_0 @ 00000165e60fea00] histogram_8db: 438
-[Parsed_volumedetect_0 @ 00000165e60fea00] histogram_9db: 1930
-[Parsed_volumedetect_0 @ 00000165e60fea00] histogram_10db: 5039
-[out#0/null @ 00000165e60fdb00] video:547KiB audio:8252KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
-frame= 1320 fps=280 q=-0.0 Lsize=N/A time=00:00:44.00 bitrate=N/A speed=9.32x elapsed=0:00:04.72    
+frame=  258 fps=0.0 q=-0.0 size=N/A time=00:00:08.60 bitrate=N/A speed=16.9x elapsed=0:00:00.50    frame=  503 fps=488 q=-0.0 size=N/A time=00:00:16.76 bitrate=N/A speed=16.3x elapsed=0:00:01.03    frame=  724 fps=469 q=-0.0 size=N/A time=00:00:24.13 bitrate=N/A speed=15.6x elapsed=0:00:01.54    frame=  998 fps=483 q=-0.0 size=N/A time=00:00:33.26 bitrate=N/A speed=16.1x elapsed=0:00:02.06    frame= 1309 fps=508 q=-0.0 size=N/A time=00:00:43.63 bitrate=N/A speed=16.9x elapsed=0:00:02.57    [Parsed_volumedetect_0 @ 000002151d43f180] n_samples: 4225024
+[Parsed_volumedetect_0 @ 000002151d43f180] mean_volume: -22.2 dB
+[Parsed_volumedetect_0 @ 000002151d43f180] max_volume: -7.9 dB
+[Parsed_volumedetect_0 @ 000002151d43f180] histogram_7db: 11
+[Parsed_volumedetect_0 @ 000002151d43f180] histogram_8db: 438
+[Parsed_volumedetect_0 @ 000002151d43f180] histogram_9db: 1930
+[Parsed_volumedetect_0 @ 000002151d43f180] histogram_10db: 5039
+[out#0/null @ 000002151d43ec40] video:547KiB audio:8252KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 1320 fps=508 q=-0.0 Lsize=N/A time=00:00:44.00 bitrate=N/A speed=16.9x elapsed=0:00:02.59    

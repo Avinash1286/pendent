@@ -15,7 +15,7 @@ An original 44-second product concept film built around **“Capture the context
 
 Final output metadata, strict Hyperframes checks, full decoding, audio, captions, and visual verification are recorded in `qa/VERIFICATION.md`.
 
-Verified final MP4: **44.000 seconds, 1,320 frames, 13,450,756 bytes**. SHA-256: `3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738`. Strict checks have zero findings; all frames decode successfully.
+Verified final MP4: **44.000 seconds, 1,320 frames, 13,469,070 bytes**. SHA-256: `1F208827348028C6ABA7508524E1D1DA0FFA45779663BF3BF75E97FB6CDFAEE0`. Strict checks have zero findings; all frames decode successfully.
 
 ## Reproduce locally
 
@@ -59,6 +59,10 @@ Original stereo ambient score: 48 kHz/16-bit PCM, 44 s. A locally synthesized su
 ## Inside and assembly sequence
 
 The actual A03 GLB opens into five opaque groups, holds an angled view of its board and cell, then reassembles. Group classification and local-axis separation match the website's assembly explorer. The camera and part transforms are pure functions of film time, making reverse and random seeks repeatable. The sequence illustrates design structure; internal shapes include reference component envelopes and do not prove production fit.
+
+The latest model incorporates the frozen nine-component PCB placement corrections and dimension-driven internal package proxies. Its 89 nodes preserve the same five animation groups. The case's eight print files are byte-for-byte unchanged; the enclosure package independently verifies 56 exported package transforms and 50 body dimensions. This film refresh changes only the internal model and its rendered sequence. The story, exterior photographs, score, timing and captions remain unchanged. See [mechanical package details](../../enclosure/PACKAGE-ENVELOPES.md) and [final film verification](qa/VERIFICATION.md).
+
+The prior assembly film/source checkpoint is Git commit `4d62c6b2f379fb410dc97941b622431bd6104f9b`. Current model/media handoff hashes are in [mechanical-sync-release.json](qa/mechanical-sync-release.json). No additional video archive was created for this sync.
 
 Three.js and its addons are bundled locally with esbuild. A fixed studio environment is prefiltered once and stored locally as a half-float texture. This preserves the reflections and avoids procedural environment convolution during video rendering. `npm run bake:environment` regenerates it using the bundled Chrome runtime (or a `CHROME_PATH` override); ordinary rendering uses the supplied texture. Strict checking remains enabled. No diagnostic overlays appear in the movie.
 

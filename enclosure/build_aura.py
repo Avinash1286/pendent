@@ -229,25 +229,34 @@ for x in [-10.7,10.7]:cube('Battery_Locator',(x,-3,-2.4),(.6,21,1.8),dark,.15)
 
 # Proxy bodies use hardware placement snapshot, not manufacturing STEP data.
 placements=json.loads((ROOT/'pcb-placement-reference.json').read_text())
+body_specs=json.loads((ROOT/'component-body-reference.json').read_text())['bodies']
+def body_dims(ref):
+    item=body_specs[ref]
+    return item.get('body_nominal_mm',item['nominal_mm'])
 def package(name,ref,dims,material=black):
     pos=placements[ref]
     ob=cube(name,(pos['x'],pos['y'],.65+dims[2]/2),dims,material,.08)
     ob.rotation_euler.z=math.radians(pos.get('r',0));ob['hardware_reference']=ref
-    ob['geometry_status']='package envelope proxy, not vendor STEP';return ob
+    ob['geometry_status']='package envelope proxy, not vendor STEP'
+    if ref in body_specs:
+        ob['manufacturer_part_number']=body_specs[ref]['mpn']
+        ob['dimension_reference']='component-body-reference.json'
+    return ob
 module=package('RF_Module_Envelope','U1',(10.5,15.5,2.05),silver)
 cube('Antenna_Window',(0,13.85,2.735),(10.45,3.7,.07),black,.06)
 text('Module_Mark','RAYTAC\nnRF52840',(0,6.5,2.708),1.05,labelmat)
 for ref in ['MK1','MK2']:package('MEMS_Microphone',ref,(2.65,3.5,1.0),silver)
 package('Flash_Envelope','U2',(8,6,.8))
-for ref,dims in [('U3',(2.5,2.5,.9)),('U4',(3,3,1)),('U5',(2,2,.9)),('U6',(3,3,.9)),('U7',(1.5,1.5,.6)),('U8',(2,2,.8)),('U9',(1.6,1.6,1.1)),('Q1',(3,3,1.1))]:
-    if ref in placements:package('Power_Envelope_'+ref,ref,dims)
+for ref in ['U3','U4','U5','U6','U7','U8','U9','Q1']:
+    if ref in placements:package('Power_Envelope_'+ref,ref,body_dims(ref))
 package('Privacy_DPDT_Switch','SW1',(9.1,3.6,1.4),silver)
 package('Record_Tact_Switch','SW2',(4.8,4.8,1.5),silver)
 cyl('Record_Switch_Actuator',(0,-6,2.35),1.5,.4,black)
 cyl('Haptic_Reference',(6,-12,2.075),4.05,2.75,silver)
 cyl('Haptic_Insulator',(6,-12,.675),4.15,.05,dark)
 for ref,pos in placements.items():
-    if ref.startswith(('R','C')):package('Passive_Reference_'+ref,ref,(2,1.25,1.4) if ref=='C9' else (1,.5,.5),dark)
+    if ref.startswith(('R','C')):package('Passive_Reference_'+ref,ref,body_dims(ref),dark)
+    elif ref.startswith('D'):package('Diode_Reference_'+ref,ref,body_dims(ref))
 for x in [-8.5,8.5]:
     tube('Acoustic_Gasket_Channel',[(x,8.5,-.35),(12.45 if x>0 else -12.45,8.5,-.45),(12.45 if x>0 else -12.45,8.5,3.1),(x,8.5,3.55),(x,8.5,4.5)],.28,dark)
 text('Rear_Wordmark','A U R A',(0,1,-5.022),1.6,labelmat,(math.pi,0,0))

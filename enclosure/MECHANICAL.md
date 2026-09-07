@@ -10,6 +10,10 @@ AURA is a compact note-taking pendant with a polished black recording face insid
 |---|---|
 | `build_aura.py` | Reproducible Blender geometry, manufacturing meshes, materials and renders. |
 | `pcb-placement-reference.json` | Snapshot used to position internal package proxies. |
+| `component-body-reference.json` | Source nominal package dimensions and individually verified maximum-body envelopes. |
+| `hardware-placement-sync.json`, `placement-current-audit.json` | Final nine-component placement delta and focused package/cavity clearance assessment. |
+| `print-invariance.json` | Baseline/current signatures that detect unintended changes to any of the eight print meshes. |
+| `model-sync-audit.json` | Independent GLB transform checks for all 56 package proxies and dimension checks for 50 power/passive/diode bodies. |
 | `aura-product.blend` | Editable assembled scene, with hidden FABRICATION collection. |
 | `aura-front-shell.stl` | Open frame with face retention ledge, travel stops, slider opening and bosses. |
 | `aura-rear-shell.stl` | Rear cup with bail, PCB shelves/clips, battery cavity and contact opening. |
@@ -27,6 +31,8 @@ AURA is a compact note-taking pendant with a polished black recording face insid
 | `renders/` | Blender hero, detail, near-profile, rear and exploded plates. |
 
 Earlier revisions under `archive/` are superseded. `archive/A02-working` was interrupted by the user-directed A03 revision and is not a completed design.
+
+The current A03 internal model incorporates the final charger/comparator routing moves and the Q1 body-clearance correction. All eight printable STLs remain **byte-for-byte identical** to the pre-sync checkpoint. `print-invariance.json` records both file and triangle-geometry signatures. The ten-package focused audit reports no envelope overlaps, contacts or case/moving-face intersections; manufacturer maxima are used for the individually verified parts described in `PACKAGE-ENVELOPES.md`. These digital checks do not change the prototype's qualification status.
 
 ## Mechanical contract
 

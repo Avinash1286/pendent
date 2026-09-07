@@ -1,5 +1,7 @@
 # AURA A03 development package
 
+Historical record for the original `a03-dev` release. See the [context and assembly edition](release-a03-context.md) for current artifacts and verification.
+
 **This is a development prerelease, not a fabrication or consumer product release.**
 
 The design is a 48 × 28 × 10 mm satin-framed capsule with a full black recording face, physical microphone cutoff and necklace bail. The complete repository includes the tscircuit design, Blender sources, eight printable parts, firmware, local transcription companion, Next.js/Convex portal, Three.js showcase and Hyperframes launch composition.

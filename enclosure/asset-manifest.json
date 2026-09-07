@@ -1,6 +1,6 @@
 {
   "revision": "A03",
-  "generated_utc": "2026-09-07T20:53:29.644278+00:00",
+  "generated_utc": "2026-09-07T23:08:24.045095+00:00",
   "units": {
     "blender_glb": "metres",
     "stl": "millimetres"
@@ -62,9 +62,14 @@
       "sha256": "8c4c51d03f8891c69b03d0cfff1413543b9d369f41c65f127b0c55b87cadf3a9"
     },
     {
+      "path": "audit_placement_sync.py",
+      "bytes": 7250,
+      "sha256": "4b800e20043b31e89ca63c9a0f6be940920a029d809401c8ea4ee955f99c8ff4"
+    },
+    {
       "path": "aura-a03-print-kit.zip",
-      "bytes": 290914,
-      "sha256": "33975b8fbc8943f3366d872e4499498702843de0f7ac690a6ef12acd8bd74d54"
+      "bytes": 302156,
+      "sha256": "a4e94ba82d977a4583598ae09e93e58945f75c4d81f70a7e52d134aae9eb58da"
     },
     {
       "path": "aura-contact-carrier.stl",
@@ -73,8 +78,8 @@
     },
     {
       "path": "aura-device.glb",
-      "bytes": 2073600,
-      "sha256": "e1d14cdb47a5563d0b55b8dad511a1a651cccddf62f40b9147e9e0e0a2d0d342"
+      "bytes": 2108420,
+      "sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a"
     },
     {
       "path": "aura-dock-alignment-jig.stl",
@@ -83,8 +88,8 @@
     },
     {
       "path": "aura-exploded.glb",
-      "bytes": 1941680,
-      "sha256": "737327a6213cd19ead24ac39382d8356dc95ee16245064c58c1c9b1c34f8effb"
+      "bytes": 1976500,
+      "sha256": "4b2fe53470fabf70384097e84d25a2c54ffd7a70d793f47bbdf67d85522d21c7"
     },
     {
       "path": "aura-fit-coupon.stl",
@@ -103,8 +108,8 @@
     },
     {
       "path": "aura-pendant.glb",
-      "bytes": 2698884,
-      "sha256": "2cf0390a61ab920e4bd2582b8ca4f57854506f4e439ab0767e42b2e9041e250e"
+      "bytes": 2733672,
+      "sha256": "634a9facee379874444c120e4978ec42811c330679d971c849f478a806180e80"
     },
     {
       "path": "aura-privacy-slider.stl",
@@ -113,8 +118,8 @@
     },
     {
       "path": "aura-product.blend",
-      "bytes": 1250754,
-      "sha256": "71227c763ac3a8c2f0aba8761d1346295f6f82a757dd4efda667e34e051d570d"
+      "bytes": 1262444,
+      "sha256": "25780cc538bb25db6df25e3af51778f81035e04bca98b08444ad4ae4418f9733"
     },
     {
       "path": "aura-rear-shell.stl",
@@ -133,8 +138,13 @@
     },
     {
       "path": "build_aura.py",
-      "bytes": 27765,
-      "sha256": "48975d9d6d6c02d8cdca5b0ff617223d69e79e5f03500cf3c58f759633ef8776"
+      "bytes": 28064,
+      "sha256": "a8a9f25fc9068531c1b4ba5891c7f304961ef9b5b7803ca43289a46b3034dd00"
+    },
+    {
+      "path": "component-body-reference.json",
+      "bytes": 20600,
+      "sha256": "a4ee25c7ef1339e8a340300e96a9e56f43d09b75a4942f2892f791230e18e837"
     },
     {
       "path": "design-contract.json",
@@ -147,14 +157,24 @@
       "sha256": "bc2f7166fed1a4ef083aaf73244113ef6673d9e11e2d6ca69371d3e5a5aa703d"
     },
     {
+      "path": "exploded-render-provenance.json",
+      "bytes": 512,
+      "sha256": "cfaaeb0022e5e63ff5d8a97483c27e5d13450901bb52fa542183ed075b6a7694"
+    },
+    {
       "path": "finalize_package.py",
-      "bytes": 3246,
-      "sha256": "95832a246bf417b8434da3930b97bd9873760cc1e828eb69f97a5edf89f455f7"
+      "bytes": 4699,
+      "sha256": "ba45e0e8053f1b1f4ec2bfb0afb0dedec216ce7cc7a87932369531eab77c5b33"
+    },
+    {
+      "path": "hardware-placement-sync.json",
+      "bytes": 2412,
+      "sha256": "23e653fc75d788561d96c1185b45411c04ab4f3eb7eeda89cb31031782aa6733"
     },
     {
       "path": "MECHANICAL.md",
-      "bytes": 8913,
-      "sha256": "c6feaafb63bd0348a7ed88cfd3d61f9926c54a90376aca2717ad527462683f86"
+      "bytes": 10026,
+      "sha256": "52c18d47dff888e91e6adbe566889911fbd5150cb0c0cd9b611b8b7f050d6850"
     },
     {
       "path": "mesh-audit.json",
@@ -162,9 +182,39 @@
       "sha256": "d7d0db38cb62e0ed31fb8636886d41ad00e8eff551b6d8477fcbc77c6317b2bc"
     },
     {
+      "path": "model-sync-audit.json",
+      "bytes": 18040,
+      "sha256": "9449eca5db38c7530e425a286888b2bb76a52fe73d542feb05ee0e466a8baf22"
+    },
+    {
+      "path": "PACKAGE-ENVELOPES.md",
+      "bytes": 4156,
+      "sha256": "2453c5ca447f0ae19fffbe437f3f6c17657d37b418a98c8192c1f8e972096ad9"
+    },
+    {
       "path": "pcb-placement-reference.json",
       "bytes": 3520,
-      "sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5"
+      "sha256": "0aa17dc6c745526d3f983649c308f8d99b724b4ccba9fc0be781cabb60f00f22"
+    },
+    {
+      "path": "placement-current-audit.json",
+      "bytes": 10671,
+      "sha256": "ff27c213d5b7250b26c8bf0a45ca1230a05e6de42c89c3822b6793f6b93da379"
+    },
+    {
+      "path": "placement-sync-audit.json",
+      "bytes": 25224,
+      "sha256": "7ca45ef3fcd3cf86eb4d0cfdbe6c09d18b269c4706b3bf263f6e64d496f2b67e"
+    },
+    {
+      "path": "placement-sync-proposals.json",
+      "bytes": 7211,
+      "sha256": "b310fa7b7f7e45a1185019cde5e73c0e57dd7b012d5b54362f3890b74ca98efa"
+    },
+    {
+      "path": "print-invariance.json",
+      "bytes": 4719,
+      "sha256": "bd2266fd8bbc6af051aceee5fbc48e8f952c1296c9e2ba57d5fb09e1b0d3f31e"
     },
     {
       "path": "PRINTING.md",
@@ -177,14 +227,39 @@
       "sha256": "2328582c5e2a20a6bbf1db8f98db5e2060d612ecddf5b9a067109a823ab0ff3d"
     },
     {
+      "path": "render_synced_exploded.py",
+      "bytes": 2593,
+      "sha256": "6578f128b01e6a0cfe49b16abe3b88ed03c1635b30274330511138d306ee41a5"
+    },
+    {
+      "path": "snapshot_component_bodies.mjs",
+      "bytes": 3125,
+      "sha256": "f9a379d86a736764a54b09b25c6fdd78c356790be728fdbf6a0199606de91936"
+    },
+    {
       "path": "surface_normals.py",
       "bytes": 1522,
       "sha256": "b019b75025ddaf5894c9c0b668c4f846b332b7c1b4b4b112cdf641ad74a43797"
     },
     {
+      "path": "sync_hardware_reference.mjs",
+      "bytes": 2094,
+      "sha256": "f8ded5b0c7449177343e90e9aa750eddd04d9aea09feed44d923594cbc7a2b41"
+    },
+    {
       "path": "verify_geometry.py",
       "bytes": 4502,
       "sha256": "e1893304d29a0d478daeae434687ff7f5c5da3e15770cd3275cdd231dbd5e335"
+    },
+    {
+      "path": "verify_model_sync.mjs",
+      "bytes": 2816,
+      "sha256": "03c7b576f3f9fd83940e75ed4438969a31bdc10935e7f6b76e5f4af4d629fdec"
+    },
+    {
+      "path": "verify_print_invariance.mjs",
+      "bytes": 2447,
+      "sha256": "fc78d1d9df593e7c83b9aaa689e2361759d64b993f7d8ab3711c8153eaba78c8"
     },
     {
       "path": "renders/hero-transparent.png",
@@ -213,8 +288,8 @@
     },
     {
       "path": "renders/exploded.png",
-      "bytes": 2122547,
-      "sha256": "94c20bd480f26aa1be39ec7b96e103f912a2f9f504630f2912c18f4ca520f1ee"
+      "bytes": 2124563,
+      "sha256": "ca00e146ddc8ddadada28333bd61aa7eb06994685b6fef3a8d0532ca3f94597f"
     }
   ]
 }

@@ -6,8 +6,8 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'renders/aura-launch.mp4':
     hyperframes_version: 0.0.0-dev
     hyperframes_renderer: hyperframes
     encoder         : Lavf62.12.101
-  Duration: 00:00:44.00, start: 0.000000, bitrate: 2445 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2245 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+  Duration: 00:00:44.00, start: 0.000000, bitrate: 2448 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2249 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
     Metadata:
       handler_name    : VideoHandler
       encoder         : Lavc62.28.101 libx264
@@ -31,5 +31,5 @@ Output #0, image2, to 'renders/contact-sheet.jpg':
       handler_name    : VideoHandler
     Side data:
       CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
-[out#0/image2 @ 000001e49cac3540] video:128KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
-frame=    1 fps=0.2 q=2.0 Lsize=N/A time=00:00:00.30 bitrate=N/A dup=9 drop=0 speed=0.0678x elapsed=0:00:04.42    
+[out#0/image2 @ 0000019599a80500] video:128KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.2 q=2.0 Lsize=N/A time=00:00:00.30 bitrate=N/A dup=9 drop=0 speed=0.0632x elapsed=0:00:04.74    

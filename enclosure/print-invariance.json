@@ -1,0 +1,108 @@
+{
+  "scope": "A03 internal component sync; no print geometry changes authorized or intended",
+  "canonical_method": "Sort triangles and vertices; XYZ rounded to 0.00001mm; normals/order/header ignored",
+  "baseline": {
+    "aura-contact-carrier.stl": {
+      "bytes": 60884,
+      "triangles": 1216,
+      "sha256": "d74f0be90a8620c6818d3e56bbb878e8fe47989c32a478f4a28dd8bf8a906f45",
+      "canonical_geometry_sha256": "81788146037ad7697f57a3a2e65f81b362c6ed29b44f1eca9bd402db902ea567"
+    },
+    "aura-dock-alignment-jig.stl": {
+      "bytes": 91184,
+      "triangles": 1822,
+      "sha256": "a1e51fa91bf95fec34e217e86f7b89e66f9eddc85e2bf423ce666a7039bd578f",
+      "canonical_geometry_sha256": "b919dee69ef7305c71e564e80ff906050b9c5bb4b3e6057017be39930c9c9107"
+    },
+    "aura-fit-coupon.stl": {
+      "bytes": 99384,
+      "triangles": 1986,
+      "sha256": "f19eeaaf2a537a1a453117f763e992e2f5a2edf81ea5c920d3de74beb926dc2b",
+      "canonical_geometry_sha256": "086bc1b527c47d5fcf909511bc927e66efa5f8796af4586842550d13cd38715f"
+    },
+    "aura-front-shell.stl": {
+      "bytes": 209084,
+      "triangles": 4180,
+      "sha256": "55177dc122dd0448ebc9d847492db96a40ae1c786f237c8e6605f3d8a3feda07",
+      "canonical_geometry_sha256": "c2b7ad9226fe5a5b21d62e4db89002cccb1b3d88d7d43f1759dccf2a13119966"
+    },
+    "aura-privacy-slider.stl": {
+      "bytes": 21484,
+      "triangles": 428,
+      "sha256": "1aaf8a2d4c340e625cf799330d65cb9670cca5d9e217a651bf7b7841bf2f26c7",
+      "canonical_geometry_sha256": "9c014628b81df35faa21fc65d4337887259cdcd064978b305ee270f70764c201"
+    },
+    "aura-rear-shell.stl": {
+      "bytes": 418384,
+      "triangles": 8366,
+      "sha256": "d7ad26bbd7873273678c35eada233d985c7b958bfe16684d1b68aff3dc3b6b99",
+      "canonical_geometry_sha256": "ee4886504f9af9d8e07fc73d8a603f43567e8d68f089e43be0063fadbd57876a"
+    },
+    "aura-record-face.stl": {
+      "bytes": 165284,
+      "triangles": 3304,
+      "sha256": "9e5e098a534eedfc7c15e75a5e4e86852bb93edc0092c80703a42ac501f020a8",
+      "canonical_geometry_sha256": "eef580e9aec871dd4391d47b63522c53ad4014fb9d047764cc4fd542528274ec"
+    },
+    "aura-top-retainer.stl": {
+      "bytes": 58084,
+      "triangles": 1160,
+      "sha256": "22a2a84de6a19b12f789729945bb54a0eb88288aa2c3b48d03d58d13341329f5",
+      "canonical_geometry_sha256": "050a30ddb0273ec3ecbce26030df5327593a7b294416c16d4dad741592c91eba"
+    }
+  },
+  "physical_qualification": false,
+  "current": {
+    "aura-contact-carrier.stl": {
+      "bytes": 60884,
+      "triangles": 1216,
+      "sha256": "d74f0be90a8620c6818d3e56bbb878e8fe47989c32a478f4a28dd8bf8a906f45",
+      "canonical_geometry_sha256": "81788146037ad7697f57a3a2e65f81b362c6ed29b44f1eca9bd402db902ea567"
+    },
+    "aura-dock-alignment-jig.stl": {
+      "bytes": 91184,
+      "triangles": 1822,
+      "sha256": "a1e51fa91bf95fec34e217e86f7b89e66f9eddc85e2bf423ce666a7039bd578f",
+      "canonical_geometry_sha256": "b919dee69ef7305c71e564e80ff906050b9c5bb4b3e6057017be39930c9c9107"
+    },
+    "aura-fit-coupon.stl": {
+      "bytes": 99384,
+      "triangles": 1986,
+      "sha256": "f19eeaaf2a537a1a453117f763e992e2f5a2edf81ea5c920d3de74beb926dc2b",
+      "canonical_geometry_sha256": "086bc1b527c47d5fcf909511bc927e66efa5f8796af4586842550d13cd38715f"
+    },
+    "aura-front-shell.stl": {
+      "bytes": 209084,
+      "triangles": 4180,
+      "sha256": "55177dc122dd0448ebc9d847492db96a40ae1c786f237c8e6605f3d8a3feda07",
+      "canonical_geometry_sha256": "c2b7ad9226fe5a5b21d62e4db89002cccb1b3d88d7d43f1759dccf2a13119966"
+    },
+    "aura-privacy-slider.stl": {
+      "bytes": 21484,
+      "triangles": 428,
+      "sha256": "1aaf8a2d4c340e625cf799330d65cb9670cca5d9e217a651bf7b7841bf2f26c7",
+      "canonical_geometry_sha256": "9c014628b81df35faa21fc65d4337887259cdcd064978b305ee270f70764c201"
+    },
+    "aura-rear-shell.stl": {
+      "bytes": 418384,
+      "triangles": 8366,
+      "sha256": "d7ad26bbd7873273678c35eada233d985c7b958bfe16684d1b68aff3dc3b6b99",
+      "canonical_geometry_sha256": "ee4886504f9af9d8e07fc73d8a603f43567e8d68f089e43be0063fadbd57876a"
+    },
+    "aura-record-face.stl": {
+      "bytes": 165284,
+      "triangles": 3304,
+      "sha256": "9e5e098a534eedfc7c15e75a5e4e86852bb93edc0092c80703a42ac501f020a8",
+      "canonical_geometry_sha256": "eef580e9aec871dd4391d47b63522c53ad4014fb9d047764cc4fd542528274ec"
+    },
+    "aura-top-retainer.stl": {
+      "bytes": 58084,
+      "triangles": 1160,
+      "sha256": "22a2a84de6a19b12f789729945bb54a0eb88288aa2c3b48d03d58d13341329f5",
+      "canonical_geometry_sha256": "050a30ddb0273ec3ecbce26030df5327593a7b294416c16d4dad741592c91eba"
+    }
+  },
+  "byte_identical": true,
+  "geometry_identical": true,
+  "actual_print_mesh_changes": []
+}

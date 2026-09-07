@@ -1,0 +1,19 @@
+{
+  "revision": "A03",
+  "scope": "Internal package position/dimension sync; no source geometry changed by this renderer",
+  "scene_sha256": "25780cc538bb25db6df25e3af51778f81035e04bca98b08444ad4ae4418f9733",
+  "output": "renders/exploded.png",
+  "output_sha256": "ca00e146ddc8ddadada28333bd61aa7eb06994685b6fef3a8d0532ca3f94597f",
+  "camera_mm": [
+    80,
+    -58,
+    115
+  ],
+  "ortho_scale_mm": 103,
+  "size": [
+    2200,
+    1800
+  ],
+  "samples": 32,
+  "physical_qualification": false
+}

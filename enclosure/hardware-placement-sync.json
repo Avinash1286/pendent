@@ -1,0 +1,120 @@
+{
+  "scope": "A03 internal routing and maximum-body-clearance corrections; fixed exterior interfaces unchanged",
+  "hardware_owner_freeze_confirmed_by_caller": true,
+  "physical_qualification": false,
+  "source": "hardware/src/design.ts resolved parts and placement-overrides.json",
+  "source_sha256": "468394907181c9b1799fc953e34684fe66d9091e76b2119da603879ac6e84260",
+  "before_sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5",
+  "changes": {
+    "D1": {
+      "before": {
+        "x": 0.2,
+        "y": -9.05,
+        "r": 360
+      },
+      "after": {
+        "x": 0.8,
+        "y": -9.05,
+        "r": 360
+      }
+    },
+    "R7": {
+      "before": {
+        "x": -3.55,
+        "y": -2.05,
+        "r": 540
+      },
+      "after": {
+        "x": -3.55,
+        "y": -1.4,
+        "r": 540
+      }
+    },
+    "R22": {
+      "before": {
+        "x": -7.3,
+        "y": -9.8,
+        "r": 90
+      },
+      "after": {
+        "x": -8.5,
+        "y": -13.4,
+        "r": 90
+      }
+    },
+    "R23": {
+      "before": {
+        "x": -7.3,
+        "y": -7.8,
+        "r": 270
+      },
+      "after": {
+        "x": -8.5,
+        "y": -11.5,
+        "r": 270
+      }
+    },
+    "C7": {
+      "before": {
+        "x": -1.8,
+        "y": -9.3,
+        "r": 270
+      },
+      "after": {
+        "x": -1.3,
+        "y": -9.85,
+        "r": 270
+      }
+    },
+    "C8": {
+      "before": {
+        "x": -6.3,
+        "y": -9.05,
+        "r": 90
+      },
+      "after": {
+        "x": -8,
+        "y": -9.05,
+        "r": 90
+      }
+    },
+    "C10": {
+      "before": {
+        "x": 0.2,
+        "y": -10.55,
+        "r": 180
+      },
+      "after": {
+        "x": 0.9,
+        "y": -10.55,
+        "r": 180
+      }
+    },
+    "C17": {
+      "before": {
+        "x": -5.55,
+        "y": -2.05,
+        "r": 360
+      },
+      "after": {
+        "x": -5.55,
+        "y": -1.8,
+        "r": 360
+      }
+    },
+    "C18": {
+      "before": {
+        "x": -2.05,
+        "y": -12.3,
+        "r": 90
+      },
+      "after": {
+        "x": -2.05,
+        "y": -13.3,
+        "r": 90
+      }
+    }
+  },
+  "after_sha256": "0aa17dc6c745526d3f983649c308f8d99b724b4ccba9fc0be781cabb60f00f22",
+  "native_freeze_evidence": "../hardware/output/aura-a03-final-placement-changes.json"
+}

@@ -1,0 +1,86 @@
+{
+  "edition": "A03 final internal-placement sync",
+  "paths_relative_to": "repository root",
+  "previous_film_commit": "4d62c6b2f379fb410dc97941b622431bd6104f9b",
+  "cli_version": "0.8.31",
+  "duration_seconds": 44,
+  "frames": 1320,
+  "strict_check_zero_findings": true,
+  "full_decode_exit_code": 0,
+  "encoded_visual_review_confirmed_by_caller": true,
+  "actual_print_mesh_changes": [],
+  "all_eight_stls_byte_identical": true,
+  "physical_qualification": false,
+  "artifacts": [
+    {
+      "path": "enclosure/aura-product.blend",
+      "bytes": 1262444,
+      "sha256": "25780CC538BB25DB6DF25E3AF51778F81035E04BCA98B08444AD4AE4418F9733"
+    },
+    {
+      "path": "enclosure/aura-device.glb",
+      "bytes": 2108420,
+      "sha256": "A0D3B7E04B07141E8DD1B356F22EAE08E609571B16788506CCFB431F409AC72A"
+    },
+    {
+      "path": "enclosure/aura-pendant.glb",
+      "bytes": 2733672,
+      "sha256": "634A9FACEE379874444C120E4978EC42811C330679D971C849F478A806180E80"
+    },
+    {
+      "path": "enclosure/aura-exploded.glb",
+      "bytes": 1976500,
+      "sha256": "4B2FE53470FABF70384097E84D25A2C54FFD7A70D793F47BBDF67D85522D21C7"
+    },
+    {
+      "path": "enclosure/aura-a03-print-kit.zip",
+      "bytes": 302156,
+      "sha256": "A4E94BA82D977A4583598AE09E93E58945F75C4D81F70A7E52D134AAE9EB58DA"
+    },
+    {
+      "path": "enclosure/renders/exploded.png",
+      "bytes": 2124563,
+      "sha256": "CA00E146DDC8DDADADA28333BD61AA7EB06994685B6FEF3A8D0532CA3F94597F"
+    },
+    {
+      "path": "enclosure/asset-manifest.json",
+      "bytes": 8929,
+      "sha256": "92D0B94F4F8A1619EEE5890E209808656AEDEB58E417CF7C138B4C293EC28387"
+    },
+    {
+      "path": "film/aura-launch/assets/aura-device.glb",
+      "bytes": 2108420,
+      "sha256": "A0D3B7E04B07141E8DD1B356F22EAE08E609571B16788506CCFB431F409AC72A"
+    },
+    {
+      "path": "film/aura-launch/renders/aura-launch.mp4",
+      "bytes": 13469070,
+      "sha256": "1F208827348028C6ABA7508524E1D1DA0FFA45779663BF3BF75E97FB6CDFAEE0"
+    },
+    {
+      "path": "film/aura-launch/renders/poster.jpg",
+      "bytes": 90893,
+      "sha256": "AB9DBB2A2C3CDB8A8A024087FB16F172684CFC16DAFF4D69E3EA988458EE5FFC"
+    },
+    {
+      "path": "film/aura-launch/captions.vtt",
+      "bytes": 1100,
+      "sha256": "C49D5D73A16AFC5ABC48B901772A7B940989ABA0D53FBF8D8F2B388680959B7D"
+    },
+    {
+      "path": "film/aura-launch/renders/contact-sheet.jpg",
+      "bytes": 131033,
+      "sha256": "EB22F0A8D88E0F63D201BF88338214D40F8EADA87D5A322B7B1E0F7D1EFC35C8"
+    },
+    {
+      "path": "film/aura-launch/qa/assembly-encoded.jpg",
+      "bytes": 79777,
+      "sha256": "38C38DD772B9A9D099A13BF56B8F1C21B9B2DB3F6F2B97FFB2FF89995E516AA1"
+    },
+    {
+      "path": "film/aura-launch/qa/check-final.json",
+      "bytes": 1909,
+      "sha256": "34DE4505A45F24A9C0464C1AB33D5B659174530F0AD4A7ADED88711CDFC07338"
+    }
+  ]
+}

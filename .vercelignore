@@ -1,0 +1,15 @@
+hardware/
+enclosure/
+film/
+docs/
+.tools/
+.scratch/
+**/node_modules/
+**/.env*
+**/.openai/
+**/.agents/
+**/.claude/
+**/.codex/
+**/.cache/
+**/*.log
+**/audit-report.json

@@ -334,10 +334,10 @@ export default function AuraExperience() {
             </div>
             <div>
               <span className="step-index">03</span>
-              <h3>Come back to it.</h3>
+              <h3>Take the thought further.</h3>
               <p>
-                Find an idea by its meaning. Keep the original audio close to
-                the note.
+                Find a note, add your context, and bring a personal brief to
+                ChatGPT, Claude, Gemini or Grok.
               </p>
             </div>
           </div>
@@ -385,8 +385,8 @@ export default function AuraExperience() {
                   <h3>Small by working together.</h3>
                 </div>
                 <p>
-                  Bluetooth connects the pendant to your phone. Your phone
-                  handles the heavier AI work.
+                  Bluetooth moves recordings to a companion. Local
+                  transcription gives the thought its words.
                 </p>
               </article>
               <article className="feature">
@@ -443,8 +443,9 @@ export default function AuraExperience() {
               moment becomes a recording.
             </p>
             <p style={{ marginTop: 20 }}>
-              Record with the knowledge of the people around you. The intended
-              companion app asks before audio is sent for AI processing.
+              Record with the knowledge of the people around you. The local
+              companion keeps audio on your computer. You choose which notes
+              enter your personal AI context.
             </p>
           </div>
         </section>
@@ -561,7 +562,8 @@ export default function AuraExperience() {
           <p>
             © 2026 AURA project. Product development concept. Dimensions and
             features are design targets, subject to prototype validation. AI
-            screens use sample content; companion software is not connected. No
+            screens use sample content. Firmware, a local companion and the
+            notes portal are available in the open repository. No
             orders or payments are accepted.
           </p>
           <a
@@ -627,7 +629,7 @@ export default function AuraExperience() {
           <p className="small-note" aria-live="polite">
             {saved
               ? 'Your configuration download is ready. You can keep exploring or follow the public project for updates.'
-              : 'Hardware testing, companion software and production planning come before a launch date.'}
+              : 'Hardware testing, mobile software and production planning come before a launch date.'}
           </p>
           <a
             className="text-button"

@@ -3,3 +3,4 @@
 {"id":"image_002","type":"image","path":"assets/hero-close.png","source":"existing","description":"hero close","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}
 {"id":"image_003","type":"image","path":"assets/hero-macro.png","source":"existing","description":"hero macro","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}
 {"id":"image_004","type":"image","path":"assets/hero-transparent.png","source":"existing","description":"hero transparent","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_005","type":"image","path":"assets/profile.png","source":"existing","description":"profile","width":2200,"height":1800,"provenance":{"provider":"local","adopted":true}}

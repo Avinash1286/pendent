@@ -1,0 +1,62 @@
+◇  onion-skin screenshot saved F:\circuit\film\aura-launch\qa\hero-motion.png
+   17 elements · open it to verify the motion matches your target, then read the keyframes below.
+
+{
+  "project": "aura-launch",
+  "runtime": "all",
+  "compositions": [
+    {
+      "composition": "index.html",
+      "source": "index.html",
+      "tweens": [
+        {
+          "id": "#meet-art-fromTo-4000",
+          "target": "#meet-art",
+          "method": "fromTo",
+          "start": 4,
+          "duration": 6,
+          "end": 10,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 4,
+              "properties": {
+                "scale": 1.1,
+                "x": 52,
+                "y": 30
+              }
+            },
+            {
+              "pct": 100,
+              "time": 10,
+              "properties": {
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 52,
+              "y": 30
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "traces": [],
+      "cssKeyframes": [],
+      "anime": []
+    }
+  ],
+  "_meta": {
+    "version": "0.8.31",
+    "latestVersion": "0.8.31",
+    "updateAvailable": false
+  }
+}

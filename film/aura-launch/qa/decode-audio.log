@@ -1,0 +1,59 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'renders/aura-launch.mp4':
+  Metadata:
+    minor_version   : 512
+    major_brand     : isom
+    compatible_brands: isomiso2avc1mp41
+    hyperframes_version: 0.0.0-dev
+    hyperframes_renderer: hyperframes
+    encoder         : Lavf62.12.101
+  Duration: 00:00:36.00, start: 0.000000, bitrate: 2126 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 1926 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc62.28.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+[Parsed_volumedetect_0 @ 000001bfa29a9080] n_samples: 0
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    minor_version   : 512
+    major_brand     : isom
+    compatible_brands: isomiso2avc1mp41
+    hyperframes_version: 0.0.0-dev
+    hyperframes_renderer: hyperframes
+    encoder         : Lavf62.12.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.101 wrapped_avframe
+      handler_name    : VideoHandler
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+    Metadata:
+      encoder         : Lavc62.28.101 pcm_s16le
+      handler_name    : SoundHandler
+frame=   95 fps=0.0 q=-0.0 size=N/A time=00:00:03.16 bitrate=N/A speed=5.93x elapsed=0:00:00.53    
+frame=  184 fps=172 q=-0.0 size=N/A time=00:00:06.13 bitrate=N/A speed=5.74x elapsed=0:00:01.06    
+frame=  255 fps=159 q=-0.0 size=N/A time=00:00:08.50 bitrate=N/A speed=5.31x elapsed=0:00:01.60    
+frame=  330 fps=155 q=-0.0 size=N/A time=00:00:11.00 bitrate=N/A speed=5.15x elapsed=0:00:02.13    
+frame=  414 fps=155 q=-0.0 size=N/A time=00:00:13.80 bitrate=N/A speed=5.15x elapsed=0:00:02.67    
+frame=  493 fps=154 q=-0.0 size=N/A time=00:00:16.43 bitrate=N/A speed=5.14x elapsed=0:00:03.19    
+frame=  558 fps=150 q=-0.0 size=N/A time=00:00:18.60 bitrate=N/A speed=4.99x elapsed=0:00:03.72    
+frame=  626 fps=147 q=-0.0 size=N/A time=00:00:20.86 bitrate=N/A speed= 4.9x elapsed=0:00:04.25    
+frame=  718 fps=150 q=-0.0 size=N/A time=00:00:23.93 bitrate=N/A speed=5.01x elapsed=0:00:04.77    
+frame=  820 fps=155 q=-0.0 size=N/A time=00:00:27.33 bitrate=N/A speed=5.16x elapsed=0:00:05.30    
+frame=  874 fps=150 q=-0.0 size=N/A time=00:00:29.13 bitrate=N/A speed=4.98x elapsed=0:00:05.84    
+frame=  964 fps=151 q=-0.0 size=N/A time=00:00:32.13 bitrate=N/A speed=5.02x elapsed=0:00:06.39    
+frame= 1058 fps=152 q=-0.0 size=N/A time=00:00:35.26 bitrate=N/A speed=5.07x elapsed=0:00:06.95    
+[Parsed_volumedetect_0 @ 000001bfa29aa800] n_samples: 3457024
+[Parsed_volumedetect_0 @ 000001bfa29aa800] mean_volume: -22.4 dB
+[Parsed_volumedetect_0 @ 000001bfa29aa800] max_volume: -7.9 dB
+[Parsed_volumedetect_0 @ 000001bfa29aa800] histogram_7db: 11
+[Parsed_volumedetect_0 @ 000001bfa29aa800] histogram_8db: 348
+[Parsed_volumedetect_0 @ 000001bfa29aa800] histogram_9db: 1235
+[Parsed_volumedetect_0 @ 000001bfa29aa800] histogram_10db: 3583
+[out#0/null @ 000001bfa29a9a00] video:447KiB audio:6752KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 1080 fps=152 q=-0.0 Lsize=N/A time=00:00:36.00 bitrate=N/A speed=5.06x elapsed=0:00:07.10    

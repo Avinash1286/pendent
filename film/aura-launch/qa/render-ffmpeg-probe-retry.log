@@ -1,0 +1,18 @@
+
+> render
+> hyperframes render --quality high --fps 30 --workers 1 --output renders/aura-launch.mp4
+
+
+◆  Rendering aura-launch → F:\circuit\film\aura-launch\renders\aura-launch.mp4
+   30fps · high · 1 workers
+   GPU: browser GPU (auto-detect)
+
+[?25l|
+o  Browser: cache
+
+✗  FFmpeg cannot start
+
+   Failed to run "C:\Users\avina\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe" -version.
+   Install a working 64-bit FFmpeg build with all required runtime DLLs.
+
+[?25h

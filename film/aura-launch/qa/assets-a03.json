@@ -1,0 +1,36 @@
+{
+  "edition": "A03",
+  "generated": "2026-09-08T02:21:34.7170650+05:45",
+  "assets": [
+    {
+      "path": "assets/hero-transparent.png",
+      "bytes": 1918979,
+      "sha256": "F0B029092FDB5C641A799239A1C01297ABBA1D68F00BB4B4DCEDD7E79C128A2C"
+    },
+    {
+      "path": "assets/hero-macro.png",
+      "bytes": 1918979,
+      "sha256": "F0B029092FDB5C641A799239A1C01297ABBA1D68F00BB4B4DCEDD7E79C128A2C"
+    },
+    {
+      "path": "assets/hero-close.png",
+      "bytes": 1918979,
+      "sha256": "F0B029092FDB5C641A799239A1C01297ABBA1D68F00BB4B4DCEDD7E79C128A2C"
+    },
+    {
+      "path": "assets/detail.png",
+      "bytes": 2260553,
+      "sha256": "3681380C3E9F66768CCAFE319701E99FF933D1D13C215B992AEC6D640E6C9402"
+    },
+    {
+      "path": "assets/profile.png",
+      "bytes": 1529298,
+      "sha256": "B9F5470DD0EFABA358EEF68D53229A34D6B004E9CBAE033C9007B1505F11A55A"
+    },
+    {
+      "path": "assets/aura-score.wav",
+      "bytes": 6912044,
+      "sha256": "3262396C4C1C616EC0D4A69F38B286CA17EE866C4F5B52FAD2AF1D22D3F6206E"
+    }
+  ]
+}

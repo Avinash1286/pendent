@@ -1,0 +1,28 @@
+{
+  "ok": false,
+  "errorCount": 1,
+  "warningCount": 1,
+  "infoCount": 0,
+  "findings": [
+    {
+      "code": "duplicate_media_discovery_risk",
+      "severity": "warning",
+      "message": "Detected 3 matching img entries with the same source/start/duration.",
+      "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation.",
+      "snippet": "img src=assets/hero-transparent.png data-start= data-duration=",
+      "file": "F:\\circuit\\film\\aura-launch\\index.html"
+    },
+    {
+      "code": "missing_local_asset",
+      "severity": "error",
+      "message": "<img> element references local file(s) not found in the project: assets/hero-transparent.png, assets/detail.png. The renderer will silently skip these and produce a video with missing visuals.",
+      "fixHint": "Add the missing files to the project directory, or update the src attributes to point to existing files. Captured asset filenames are unreliable — verify against capture/contact-sheets/ and capture/extracted/asset-descriptions.md."
+    }
+  ],
+  "filesScanned": 1,
+  "_meta": {
+    "version": "0.8.31",
+    "latestVersion": "0.8.31",
+    "updateAvailable": false
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="en" data-resolution="landscape">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=1920, height=1080">
-<title>AURA — Be here. Keep the thought.</title>
+<title>AURA — Be here. Keep the thought. — A03</title>
 <script src="assets/vendor/gsap.min.js"></script>
 <style>
 @font-face{font-family:Manrope;src:url('assets/fonts/Manrope.ttf') format('truetype');font-weight:200 800;font-display:block}
@@ -11,133 +11,122 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#101112;color:#F
 :root{--bg:#101112;--fg:#F4F1EB;--muted:#B7B4AF;--brand:#EEB891}
 #aura{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
 .clip{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden}
-.scene-content{position:absolute;inset:0;background:var(--bg)}
-.kicker{font-size:25px;font-weight:500;letter-spacing:.2em;line-height:1.4;text-transform:uppercase;color:var(--muted)}
-.statement{font-size:112px;font-weight:500;line-height:1.12;letter-spacing:-.055em}
-.statement span,.support span{display:block}.muted{color:var(--muted)}
-.support{font-size:34px;font-weight:400;line-height:1.5;color:var(--muted)}
-.safe-footer{position:absolute;left:120px;bottom:72px;font-size:24px;line-height:1.5;letter-spacing:.055em;color:var(--muted)}
-.line{height:2px;background:var(--brand);transform-origin:left center}
-.product{display:block;width:100%;height:100%;object-fit:contain}
-.photograph{position:absolute;display:block}
-.wave{display:flex;align-items:center;gap:12px;height:84px}
-.wave i{display:block;width:5px;height:64px;border-radius:4px;background:var(--brand);transform-origin:center}
-.point{width:18px;height:18px;background:var(--brand);border-radius:50%;flex:none}
-.hf-tracking-in{--hf-tracking-value:.13em;letter-spacing:var(--hf-tracking-value)}
-#hook-kicker,#hook-first,#hook-second,#hook-wave,#meet-content,#meet-kicker,#meet-wordmark,#meet-copy,#capture-kicker,#capture-title span,#capture-support,#capture-status,#privacy-kicker,#privacy-title span,#privacy-support,#privacy-control,#privacy-state,#notes-content,#notes-kicker,#notes-title span,#notes-support,#notes-panel,#note-title,#note-summary,#note-action,#close-content,#close-wordmark,#close-tagline span,#close-label{opacity:0}
-#hook .scene-content{padding:196px 120px}#hook-kicker{margin-bottom:72px}
-#hook-title{font-size:140px;font-weight:500;line-height:1.12;letter-spacing:-.06em;width:1660px}#hook-title span{display:block}
-#hook-wave{position:absolute;left:125px;bottom:181px;width:540px}
-#hook-rule{position:absolute;left:120px;bottom:128px;width:1680px;background:#393A3B}
-#meet-wordmark{position:absolute;left:112px;top:306px;font-size:178px;font-weight:500;line-height:1.1;width:670px}
-#meet-kicker{position:absolute;left:120px;top:245px}
-#meet-copy{position:absolute;left:120px;top:558px;width:715px;font-size:44px;line-height:1.4;letter-spacing:-.02em}
-#meet-art{left:730px;top:-62px;width:1210px;height:1130px}
-#meet-line{position:absolute;left:120px;top:683px;width:86px}
-#capture .photo-window{position:absolute;left:886px;top:0;width:1034px;height:1080px;overflow:hidden}
-#capture-art{left:-330px;top:-380px;width:1620px;height:1620px;object-fit:contain}
-#capture-copy{position:absolute;left:120px;top:273px;width:790px}
-#capture-title{font-size:109px}#capture-kicker{margin-bottom:36px}
-#capture-support{margin-top:56px;width:675px}
-#capture-status{position:absolute;left:123px;top:767px;display:flex;align-items:center;gap:26px}
-#capture-wave{width:320px;gap:10px}#capture-wave i{height:40px;width:4px}
-#capture-state-label{font-size:24px;letter-spacing:.1em;color:var(--brand)}
-#privacy-art{left:865px;top:40px;width:1110px;height:1000px}
-#privacy-copy{position:absolute;left:120px;top:258px;width:920px}
-#privacy-title{font-size:105px}#privacy-kicker{margin-bottom:40px}
-#privacy-support{margin-top:52px;width:760px}
-#privacy-control{position:absolute;left:124px;top:759px;display:flex;align-items:center;gap:30px}
-#privacy-switch{position:relative;width:114px;height:62px;border-radius:40px;border:2px solid #8F8D88;background:#323335}
-#privacy-thumb{position:absolute;left:11px;top:10px;width:38px;height:38px;background:var(--fg);border-radius:50%}
-#privacy-state{font-size:25px;letter-spacing:.14em;color:var(--muted)}
-#notes-copy{position:absolute;left:120px;top:276px;width:900px}
-#notes-kicker{margin-bottom:42px}#notes-title{font-size:99px}
-#notes-support{margin-top:51px;width:720px}
-#notes-panel{position:absolute;left:1110px;top:144px;width:674px;height:804px;padding:54px 49px;border:1px solid #D6D0C5;border-radius:34px;background:#F4F1EB;color:#1D1E20;box-shadow:0 28px 120px #080909}
-.note-topline{display:flex;justify-content:space-between;align-items:center;line-height:1.5;font-size:24px;color:#5D5B57;letter-spacing:.05em}
-.note-symbol{width:36px;height:36px;border:2px solid #77746E;border-radius:50%;font-size:24px;line-height:30px;text-align:center}
-#note-time{font-size:22px;margin-top:44px;line-height:1.5;color:#65615B;letter-spacing:.14em}
-#note-title{font-size:52px;font-weight:500;line-height:1.18;letter-spacing:-.055em;margin-top:19px;width:565px}
-.note-rule{height:1px;background:#C6C0B6;margin-top:34px;margin-bottom:34px}
-.note-label{font-size:23px;font-weight:600;line-height:1.4;letter-spacing:.07em;color:#625C55}
-.note-body{font-size:29px;font-weight:400;line-height:1.45;margin-top:16px;width:575px}
-#note-action{margin-top:31px}
-#note-task{font-size:28px;line-height:1.4;margin-top:16px;padding-left:32px;position:relative;width:560px}
-#note-task:before{content:'';position:absolute;left:0;top:11px;width:15px;height:15px;border:2px solid #827769;border-radius:50%}
-#note-footer{position:absolute;left:49px;bottom:45px;font-size:22px;line-height:1.4;letter-spacing:.04em;color:#625C55}
-#close-art{left:48px;top:-28px;width:1130px;height:1070px}
-#close-art .product{mask-image:linear-gradient(to right,#000 0%,#000 83%,transparent 100%)}
-#privacy-art .product{mask-image:linear-gradient(to right,transparent 0%,#000 16%,#000 100%)}
-#capture .photo-window{mask-image:linear-gradient(to right,transparent 0%,#000 15%,#000 100%)}
-#notes-content>.safe-footer,#close-content>.safe-footer{opacity:0}
-#close-copy{position:absolute;left:1055px;top:232px;width:790px}
-#close-wordmark{font-size:100px;line-height:1.15;letter-spacing:.2em;font-weight:500;width:760px}
-#close-tagline{font-size:77px;font-weight:500;line-height:1.22;letter-spacing:-.055em;margin-top:66px;width:790px}#close-tagline span{display:block}
-#close-line{width:70px;margin-top:45px}
-#close-label{font-size:29px;line-height:1.5;margin-top:39px;color:var(--muted);width:780px}
+.scene{position:absolute;inset:0;background:var(--bg)}
+.plate{position:absolute;display:block}.plate img{display:block;width:100%;height:100%;object-fit:contain}
+.copy{position:absolute;left:128px}.line{height:2px;width:70px;background:var(--brand);transform-origin:left center}
+.kicker{font-size:23px;font-weight:500;letter-spacing:.17em;line-height:1.5;text-transform:uppercase;color:var(--muted)}
+.headline{font-size:103px;font-weight:500;line-height:1.13;letter-spacing:-.055em}.headline span{display:block}.soft{color:var(--muted)}
+.small{font-size:29px;line-height:1.5;font-weight:400;color:var(--muted)}
+.footer{position:absolute;left:128px;bottom:68px;font-size:23px;line-height:1.5;color:var(--muted);letter-spacing:.025em}
+.scene:not(#reveal-scene),#reveal-caption,#reveal-art,#hero-kicker,#hero-wordmark,#hero-tagline,#hero-footer,#touch-title span,#touch-status,#touch-footer,#privacy-title span,#privacy-label,#privacy-footer,#notes-title span,#notes-support,#notes-panel,#note-title,#note-idea,#note-action,#close-wordmark,#close-tagline span,#close-label,#close-footer{opacity:0}
+#reveal-art{left:-80px;top:-130px;width:2080px;height:1230px}
+#reveal-art img{mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 91%,transparent 100%)}
+#reveal-caption{left:128px;top:760px;font-size:91px;font-weight:500;line-height:1.15;letter-spacing:-.055em}
+#hero-art{left:662px;top:-68px;width:1290px;height:1190px}
+#hero-kicker{left:128px;top:280px}
+#hero-wordmark{--aura-tracking:.065em;left:118px;top:339px;font-size:158px;font-weight:500;line-height:1.1;letter-spacing:var(--aura-tracking);width:730px}
+#hero-tagline{left:128px;top:552px;font-size:43px;line-height:1.4;letter-spacing:-.025em}
+#touch-window{position:absolute;left:835px;top:0;width:1085px;height:1080px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 100%)}
+#touch-art{left:-285px;top:-345px;width:1600px;height:1600px}
+#touch-title{left:128px;top:327px;width:800px;font-size:105px}
+#touch-status{left:132px;top:680px;display:flex;align-items:center;gap:20px;color:var(--brand);font-size:23px;letter-spacing:.12em;line-height:1.5}
+#touch-dot{width:14px;height:14px;border-radius:50%;background:var(--brand)}
+#touch-wave{display:flex;align-items:center;gap:8px;height:56px;margin-left:4px;width:186px}
+#touch-wave i{display:block;width:3px;background:var(--brand);border-radius:4px;transform-origin:center}
+#privacy-art{left:787px;top:4px;width:1180px;height:1060px}
+#privacy-art img{mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 100%)}
+#privacy-title{left:128px;top:321px;width:850px;font-size:103px}
+#privacy-label{left:132px;top:625px;font-size:30px;line-height:1.5;color:var(--muted)}
+#notes-title{left:128px;top:332px;width:950px;font-size:99px}
+#notes-support{left:132px;top:640px;width:810px;font-size:29px;line-height:1.5;color:var(--muted)}
+#notes-support span{display:block}
+#notes-panel{position:absolute;left:1170px;top:176px;width:594px;height:734px;border:1px solid #D6D0C5;border-radius:30px;padding:43px;background:#F4F1EB;color:#1D1E20;box-shadow:0 24px 90px #080909}
+.note-eyebrow{font-size:22px;line-height:1.5;color:#625C55;letter-spacing:.095em;font-weight:500}
+#note-type{font-size:20px;line-height:1.5;letter-spacing:.12em;color:#625C55;margin-top:33px}
+#note-title{font-size:48px;font-weight:500;line-height:1.16;letter-spacing:-.05em;margin-top:17px;width:505px}
+.note-rule{height:1px;background:#CBC4B9;margin:27px 0}
+.note-label{font-size:21px;line-height:1.5;letter-spacing:.08em;font-weight:600;color:#625C55}
+.note-body{font-size:28px;line-height:1.43;margin-top:12px;width:500px}
+#note-action{margin-top:25px}
+#note-footer{position:absolute;left:43px;bottom:39px;font-size:21px;line-height:1.4;color:#625C55;letter-spacing:.02em}
+#close-art{left:10px;top:-20px;width:1140px;height:1080px}
+#close-art img{mask-image:linear-gradient(to right,#000 0%,#000 72%,transparent 88%)}
+#close-copy{position:absolute;left:1050px;top:247px;width:780px}
+#close-wordmark{font-size:91px;font-weight:500;line-height:1.15;letter-spacing:.2em;width:750px}
+#close-tagline{font-size:77px;font-weight:500;line-height:1.23;letter-spacing:-.055em;margin-top:66px;width:790px}
+#close-tagline span{display:block}#close-line{margin-top:40px}#close-label{margin-top:38px;font-size:28px;line-height:1.5;color:var(--muted)}
 </style>
 </head><body>
-<div data-hf-id="hf-olau" id="aura" data-composition-id="aura" data-start="0" data-duration="36" data-width="1920" data-height="1080" data-fps="30">
-<section data-hf-id="hf-mv7w" id="hook" class="clip" data-start="0" data-duration="4.6" data-track-index="1"><div data-hf-id="hf-tedb" id="hook-content" class="scene-content">
-<p data-hf-id="hf-tjnm" id="hook-kicker" class="kicker">Introducing a quieter kind of technology</p>
-<h1 data-hf-id="hf-4qbz" id="hook-title"><span data-hf-id="hf-cpce" id="hook-first">A thought.</span><span data-hf-id="hf-8hy5" id="hook-second" class="muted">Worth keeping.</span></h1>
-<div data-hf-id="hf-265t" id="hook-wave" class="wave" aria-hidden="true"><b data-hf-id="hf-mcuh" class="point"></b></div><div data-hf-id="hf-rplf" id="hook-rule" class="line" aria-hidden="true"></div>
+<div id="aura" data-composition-id="aura" data-start="0" data-duration="36" data-width="1920" data-height="1080" data-fps="30">
+<!-- 01: The object appears before its name. The A03 edge photograph supplies the actual capsule geometry. -->
+<section id="reveal" class="clip" data-start="0" data-duration="5.8" data-track-index="1"><div id="reveal-scene" class="scene">
+<div id="reveal-art" class="plate"><img src="assets/profile.png" alt="AURA A03 capsule profile and satin silver frame, rendered from the actual Blender model"></div>
+<p id="reveal-caption" class="copy">Be here.</p>
 </div></section>
-<section data-hf-id="hf-oq65" id="meet" class="clip" data-start="4" data-duration="6" data-track-index="2"><div data-hf-id="hf-j283" id="meet-content" class="scene-content">
-<div data-hf-id="hf-h6mz" id="meet-art" class="photograph"><img data-hf-id="hf-jdvs" class="product" src="assets/hero-transparent.png" alt="AURA satin pendant Blender design render"></div>
-<p data-hf-id="hf-dbi4" id="meet-kicker" class="kicker">Meet</p><h2 data-hf-id="hf-0wh5" id="meet-wordmark" class="hf-tracking-in">AURA</h2><p data-hf-id="hf-1v9r" id="meet-copy">A place for your ideas.</p><div data-hf-id="hf-347b" id="meet-line" class="line" aria-hidden="true"></div><p data-hf-id="hf-7c7j" class="safe-footer">Wearable note-taking. Development concept.</p>
+<!-- 02: Unhurried identity. Product reflections and silhouette carry the frame. -->
+<section id="hero" class="clip" data-start="5.2" data-duration="6" data-track-index="2"><div id="hero-scene" class="scene">
+<div id="hero-art" class="plate"><img src="assets/hero-transparent.png" alt="AURA A03 glossy black recording face, satin silver frame, and fine necklace chain"></div>
+<p id="hero-kicker" class="copy kicker">Introducing</p><h1 id="hero-wordmark" class="copy">AURA</h1><p id="hero-tagline" class="copy">Keep the thought.</p><p id="hero-footer" class="footer">Wearable note-taking. Development concept.</p>
 </div></section>
-<section data-hf-id="hf-it7i" id="capture" class="clip" data-start="10" data-duration="6" data-track-index="3"><div data-hf-id="hf-cioo" id="capture-content" class="scene-content">
-<div data-hf-id="hf-udj5" class="photo-window"><img data-hf-id="hf-0o5i" id="capture-art" class="photograph" src="assets/hero-macro.png" data-layout-allow-overflow="" alt="Close view of AURA recording controls"></div>
-<div data-hf-id="hf-tl2h" id="capture-copy"><p data-hf-id="hf-bvj8" id="capture-kicker" class="kicker">A single gesture</p><h2 data-hf-id="hf-qo63" id="capture-title" class="statement"><span data-hf-id="hf-y02l">Press once.</span><span data-hf-id="hf-mjs6" class="muted">Stay present.</span></h2><p data-hf-id="hf-cql2" id="capture-support" class="support"><span data-hf-id="hf-iqwk">Visible recording.</span><span data-hf-id="hf-te70">Tactile feedback.</span></p></div>
-<div data-hf-id="hf-8fm8" id="capture-status"><span data-hf-id="hf-0325" class="point"></span><p data-hf-id="hf-camc" id="capture-state-label">CAPTURING</p><div data-hf-id="hf-k7x4" id="capture-wave" class="wave" aria-hidden="true"></div></div><p data-hf-id="hf-qvrj" class="safe-footer">Intended interaction</p>
+<!-- 03: One obvious gesture, with feedback shown briefly and quietly. -->
+<section id="touch" class="clip" data-start="10.6" data-duration="5.8" data-track-index="3"><div id="touch-scene" class="scene">
+<div id="touch-window"><div id="touch-art" class="plate" data-layout-allow-overflow=""><img src="assets/hero-macro.png" alt="Close view of the A03 full black face that acts as the recording paddle"></div></div>
+<h2 id="touch-title" class="copy headline"><span>One press.</span><span class="soft">Stay present.</span></h2>
+<div id="touch-status" class="copy"><span id="touch-dot"></span><p>CAPTURING</p><div id="touch-wave" aria-hidden="true"></div></div>
+<p id="touch-footer" class="footer">Intended interaction · Visible recording · Tactile feedback</p>
 </div></section>
-<section data-hf-id="hf-ymh3" id="privacy" class="clip" data-start="16" data-duration="6.6" data-track-index="4"><div data-hf-id="hf-keha" id="privacy-content" class="scene-content">
-<div data-hf-id="hf-5pw6" id="privacy-art" class="photograph"><img data-hf-id="hf-ruvs" class="product" src="assets/detail.png" alt="AURA pendant physical microphone disconnect design"></div>
-<div data-hf-id="hf-e14z" id="privacy-copy"><p data-hf-id="hf-qbfk" id="privacy-kicker" class="kicker">Deliberately yours</p><h2 data-hf-id="hf-7k65" id="privacy-title" class="statement"><span data-hf-id="hf-i11m">Your attention.</span><span data-hf-id="hf-i3ve" class="muted">Your control.</span></h2><p data-hf-id="hf-vi5k" id="privacy-support" class="support"><span data-hf-id="hf-u0bu">A physical mic disconnect.</span><span data-hf-id="hf-cl0v">You decide when to capture.</span></p></div>
-<div data-hf-id="hf-8ojv" id="privacy-control"><div data-hf-id="hf-qsc5" id="privacy-switch" aria-label="Illustrative mic disconnect off"><span data-hf-id="hf-1bnt" id="privacy-thumb"></span></div><p data-hf-id="hf-9v12" id="privacy-state">MIC OFF</p></div><p data-hf-id="hf-562h" class="safe-footer">Hardware privacy, by design.</p>
+<!-- 04: Hardware privacy is shown in the actual object; no decorative fake switch UI. -->
+<section id="privacy" class="clip" data-start="15.8" data-duration="5.8" data-track-index="4"><div id="privacy-scene" class="scene">
+<div id="privacy-art" class="plate"><img src="assets/detail.png" alt="Macro render of the AURA A03 physical microphone disconnect on its silver side frame"></div>
+<h2 id="privacy-title" class="copy headline"><span>Yours to</span><span class="soft">control.</span></h2><p id="privacy-label" class="copy">Physical mic disconnect.</p><p id="privacy-footer" class="footer">You decide when to capture.</p>
 </div></section>
-<section data-hf-id="hf-vidf" id="notes" class="clip" data-start="22" data-duration="7.6" data-track-index="5"><div data-hf-id="hf-lexx" id="notes-content" class="scene-content">
-<div data-hf-id="hf-ogqm" id="notes-copy"><p data-hf-id="hf-uu98" id="notes-kicker" class="kicker">From idea to next step</p><h2 data-hf-id="hf-k0my" id="notes-title" class="statement"><span data-hf-id="hf-8w4h">Keep the moment.</span><span data-hf-id="hf-gbvd" class="muted">Find the meaning.</span></h2><p data-hf-id="hf-sobb" id="notes-support" class="support"><span data-hf-id="hf-pufs">Capture offline.</span><span data-hf-id="hf-lwi7">Organize with your phone.</span></p></div>
-<div data-hf-id="hf-hgjd" id="notes-panel"><div data-hf-id="hf-b4q0" class="note-topline"><span data-hf-id="hf-b9wz">AURA NOTES</span><span data-hf-id="hf-2rrr" class="note-symbol">↗</span></div><p data-hf-id="hf-25tw" id="note-time">ILLUSTRATIVE NOTE</p><h3 data-hf-id="hf-oeek" id="note-title">A quieter morning</h3><div data-hf-id="hf-jcgs" class="note-rule" aria-hidden="true"></div><div data-hf-id="hf-v2ou" id="note-summary"><p data-hf-id="hf-h5yw" class="note-label">THE IDEA</p><p data-hf-id="hf-q6yt" class="note-body">Make space for a walk before the day begins.</p></div><div data-hf-id="hf-3arg" id="note-action"><p data-hf-id="hf-zu2n" class="note-label">NEXT STEP</p><p data-hf-id="hf-m6p0" id="note-task">Set aside twenty minutes.</p></div><p data-hf-id="hf-ei3j" id="note-footer">Phone-assisted AI · Interface concept</p></div>
-<p data-hf-id="hf-3e6a" class="safe-footer">Intended capture → sync → notes workflow</p>
+<!-- 05: One short, explicitly illustrative phone-assisted notes moment. -->
+<section id="notes" class="clip" data-start="21" data-duration="6.4" data-track-index="5"><div id="notes-scene" class="scene">
+<h2 id="notes-title" class="copy headline"><span>From thought</span><span class="soft">to next step.</span></h2><p id="notes-support" class="copy"><span>Capture offline.</span><span>Organize with your phone.</span></p>
+<div id="notes-panel"><p class="note-eyebrow">AURA NOTES</p><p id="note-type">ILLUSTRATIVE NOTE</p><h3 id="note-title">A quieter morning</h3><div class="note-rule" aria-hidden="true"></div><div id="note-idea"><p class="note-label">THE IDEA</p><p class="note-body">Make space for a walk before the day begins.</p></div><div id="note-action"><p class="note-label">NEXT STEP</p><p class="note-body">Set aside twenty minutes.</p></div><p id="note-footer">Phone + cloud · Interface concept</p></div>
 </div></section>
-<section data-hf-id="hf-ze6u" id="close" class="clip" data-start="29" data-duration="7" data-track-index="6"><div data-hf-id="hf-u2ru" id="close-content" class="scene-content">
-<div data-hf-id="hf-hkhm" id="close-art" class="photograph"><img data-hf-id="hf-nj5r" class="product" src="assets/hero-close.png" alt="Final AURA pendant design"></div>
-<div data-hf-id="hf-fnk7" id="close-copy"><h2 data-hf-id="hf-211p" id="close-wordmark">AURA</h2><p data-hf-id="hf-17gh" id="close-tagline"><span data-hf-id="hf-fszw">Be here.</span><span data-hf-id="hf-4lws">Keep the thought.</span></p><div data-hf-id="hf-5zg6" id="close-line" class="line" aria-hidden="true"></div><p data-hf-id="hf-92g2" id="close-label">A wearable note-taking concept.</p></div><p data-hf-id="hf-rxue" class="safe-footer">Development concept · Features subject to engineering validation</p>
+<!-- 06: The object, thought, and score resolve. The final frame is held, never black. -->
+<section id="close" class="clip" data-start="26.8" data-duration="9.2" data-track-index="6"><div id="close-scene" class="scene">
+<div id="close-art" class="plate"><img src="assets/hero-close.png" alt="Final AURA A03 capsule pendant beauty view"></div>
+<div id="close-copy"><h2 id="close-wordmark">AURA</h2><p id="close-tagline"><span>Be here.</span><span>Keep the thought.</span></p><div id="close-line" class="line" aria-hidden="true"></div><p id="close-label">A wearable note-taking concept.</p></div>
+<p id="close-footer" class="footer">Development concept · Features subject to engineering validation</p>
 </div></section>
-<audio data-hf-id="hf-618y" id="aura-score" src="assets/aura-score.wav" data-start="0" data-duration="36" data-track-index="10" data-volume="1"></audio>
+<audio id="aura-score" src="assets/aura-score.wav" data-start="0" data-duration="36" data-track-index="10" data-volume="1"></audio>
 </div>
 <script>
-// Pure deterministic setup. All waveform bars are authored geometry.
-const hookWave=document.getElementById('hook-wave'),captureWave=document.getElementById('capture-wave');
-for(let i=0;i<29;i++){const el=document.createElement('i');el.style.height=`${15+48*(.5+.5*Math.sin(i*1.14))}px`;hookWave.appendChild(el)}
-for(let i=0;i<18;i++){const el=document.createElement('i');el.style.height=`${12+33*(.5+.5*Math.sin(i*.9+1.7))}px`;captureWave.appendChild(el)}
+// Synchronous, deterministic setup; all motion is owned by one paused Hyperframes timeline.
+const wave=document.getElementById('touch-wave');
+for(let i=0;i<15;i++){const bar=document.createElement('i');bar.style.height=`${9+26*(.5+.5*Math.sin(i*.91+1.7))}px`;wave.appendChild(bar)}
 const tl=gsap.timeline({paused:true});
-const enter=(selector,at,duration=.9,y=30)=>tl.fromTo(selector,{opacity:0,y},{opacity:1,y:0,duration,ease:'power3.out',immediateRender:false},at);
-const scene=(name,at,duration=.6)=>tl.fromTo(`#${name}-content`,{opacity:0},{opacity:1,duration,ease:'power2.inOut',immediateRender:false},at);
-tl.addLabel('The thought',0);enter('#hook-kicker',.1,.8,10);enter('#hook-first',.3,1.1,44);enter('#hook-second',1.15,1.1,42);
-tl.fromTo('#hook-rule',{scaleX:0},{scaleX:1,duration:1.6,ease:'power2.out'},.5);enter('#hook-wave',2.1,.8,0);
-tl.fromTo('#hook-wave i',{scaleY:.2},{scaleY:1,duration:.55,ease:'sine.inOut',stagger:.022,yoyo:true,repeat:2},2.25);tl.to('#hook-content',{opacity:0,duration:.6,ease:'power2.inOut'},4);
-tl.addLabel('Meet AURA',4);scene('meet',4,.75);
-tl.fromTo('#meet-art',{scale:1.1,x:52,y:30},{scale:1,x:0,y:0,duration:6,ease:'none',immediateRender:false},4);enter('#meet-kicker',4.5,.7,12);
-tl.fromTo('#meet-wordmark',{'--hf-tracking-value':'.2em',opacity:0,y:10},{'--hf-tracking-value':'.045em',opacity:1,y:0,duration:1.2,ease:'power3.out',immediateRender:false},4.8);enter('#meet-copy',6.1,1.1,16);
-tl.fromTo('#meet-line',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out',immediateRender:false},6.7);
-tl.addLabel('One gesture',10);tl.fromTo('#capture-art',{scale:1,x:0},{scale:1.09,x:-20,duration:6,ease:'none',immediateRender:false},10);
-enter('#capture-kicker',10.15,.7,10);enter('#capture-title span',10.45,.95,25);enter('#capture-support',11.9,.9,18);enter('#capture-status',12.3,.6,0);
-tl.fromTo('#capture-wave i',{scaleY:.2},{scaleY:1,duration:.6,ease:'sine.inOut',stagger:.023,repeat:3,yoyo:true,immediateRender:false},12.6);
-tl.addLabel('Your control',16);tl.fromTo('#privacy-art',{scale:1.08,x:25},{scale:1,x:0,duration:6,ease:'none',immediateRender:false},16);
-enter('#privacy-kicker',16.15,.7,12);enter('#privacy-title span',16.5,1,25);enter('#privacy-support',17.8,.85,16);enter('#privacy-control',18.2,.65,0);
-tl.fromTo('#privacy-thumb',{x:50},{x:0,duration:.7,ease:'power3.inOut',immediateRender:false},19);tl.fromTo('#privacy-state',{opacity:0},{opacity:1,duration:.45,ease:'power2.out',immediateRender:false},19.5);
-tl.to(['#privacy-copy','#privacy-control','#privacy-content>.safe-footer'],{opacity:0,duration:.35,ease:'power2.inOut'},21.55);
-tl.addLabel('Useful notes',22);scene('notes',22,.55);enter('#notes-kicker',22.15,.7,12);enter('#notes-title span',22.5,.95,25);enter('#notes-support',24.6,.9,16);
-tl.fromTo('#notes-panel',{opacity:0,x:64,rotation:2},{opacity:1,x:0,rotation:0,duration:1.1,ease:'power3.out',immediateRender:false},22.75);enter('#note-title',23.5,.7,12);enter('#note-summary',24.4,.7,14);enter('#note-action',25.45,.7,14);tl.to('#notes-content',{opacity:0,duration:.6,ease:'power2.inOut'},29);
-enter('#notes-content>.safe-footer',22.65,.4,0);tl.to('#notes-content>.safe-footer',{opacity:0,duration:.3,ease:'power2.in'},28.65);
-tl.addLabel('Be here',29);scene('close',29,.8);tl.fromTo('#close-art',{scale:1.05,x:-18},{scale:1,x:0,duration:3,ease:'power2.out',immediateRender:false},29);
-// Adapted titlecard-lockup: one restrained wordmark settle, line draw, final still hold.
-tl.fromTo('#close-wordmark',{opacity:0,scale:.96},{opacity:1,scale:1,duration:.85,ease:'power3.out',immediateRender:false},29.55);enter('#close-tagline span',30.5,1,18);
-tl.fromTo('#close-line',{scaleX:0},{scaleX:1,duration:.55,ease:'power2.out',immediateRender:false},31.1);enter('#close-label',31.6,.7,8);
-enter('#close-content>.safe-footer',29.9,.45,0);
+const enter=(target,at,duration=.9,y=12)=>tl.fromTo(target,{opacity:0,y},{opacity:1,y:0,duration,ease:'power3.out',immediateRender:false},at);
+const scene=(name,at,duration=.65)=>tl.fromTo(`#${name}-scene`,{opacity:0},{opacity:1,duration,ease:'power2.inOut',immediateRender:false},at);
+const clear=(targets,at)=>tl.to(targets,{opacity:0,duration:.35,ease:'power2.inOut'},at);
+tl.addLabel('The object',0);
+tl.fromTo('#reveal-art',{opacity:0,scale:1.025,x:16},{opacity:1,scale:1,x:-10,duration:4.9,ease:'sine.inOut'},.1);
+enter('#reveal-caption',2.1,1.2,8);clear('#reveal-caption',4.85);
+tl.addLabel('Introducing AURA',5.2);scene('hero',5.2,.8);
+tl.fromTo('#hero-art',{scale:1.055,x:22,y:10},{scale:1,x:0,y:0,duration:6,ease:'none',immediateRender:false},5.2);
+enter('#hero-kicker',5.85,.8,0);
+tl.fromTo('#hero-wordmark',{opacity:0,'--aura-tracking':'.115em',y:8},{opacity:1,'--aura-tracking':'.065em',y:0,duration:1.2,ease:'power3.out',immediateRender:false},6.1);
+enter('#hero-tagline',7.5,1,10);enter('#hero-footer',7.7,.8,0);clear(['#hero-kicker','#hero-wordmark','#hero-tagline','#hero-footer'],10.15);
+tl.addLabel('One gesture',10.6);scene('touch',10.6,.3);
+tl.fromTo('#touch-art',{scale:1,x:0},{scale:1.045,x:-16,duration:5.8,ease:'none',immediateRender:false},10.6);
+enter('#touch-title span:first-child',11,.85,12);enter('#touch-title span:last-child',11.5,.85,12);enter('#touch-status',12.75,.6,0);enter('#touch-footer',13,.75,0);
+tl.fromTo('#touch-wave i',{scaleY:.3},{scaleY:1,duration:.65,ease:'sine.inOut',stagger:.022,repeat:2,yoyo:true,immediateRender:false},12.9);
+clear(['#touch-title','#touch-status','#touch-footer'],15.4);
+tl.addLabel('Physical control',15.8);scene('privacy',15.8,.3);
+tl.fromTo('#privacy-art',{scale:1.035,x:18},{scale:1,x:-5,duration:5.8,ease:'none',immediateRender:false},15.8);
+enter('#privacy-title span:first-child',16.2,.9,12);enter('#privacy-title span:last-child',16.7,.9,12);enter('#privacy-label',17.9,.85,8);enter('#privacy-footer',18.15,.8,0);clear(['#privacy-title','#privacy-label','#privacy-footer'],20.55);
+tl.addLabel('Useful notes',21);scene('notes',21,.65);
+enter('#notes-title span:first-child',21.45,.9,12);enter('#notes-title span:last-child',21.9,.9,12);
+tl.fromTo('#notes-panel',{opacity:0,x:34},{opacity:1,x:0,duration:1.1,ease:'power3.out',immediateRender:false},21.75);
+enter('#note-title',22.6,.75,8);enter('#note-idea',23.1,.75,8);enter('#note-action',23.85,.75,8);enter('#notes-support',24.1,.85,8);
+clear(['#notes-title','#notes-support'],26.35);
+tl.addLabel('Be here',26.8);scene('close',26.8,.9);
+tl.fromTo('#close-art',{scale:1.035,x:-16},{scale:1,x:0,duration:3.6,ease:'power2.out',immediateRender:false},26.8);
+tl.fromTo('#close-wordmark',{opacity:0,scale:.98},{opacity:1,scale:1,duration:1,ease:'power3.out',immediateRender:false},27.8);
+enter('#close-tagline span:first-child',28.55,1,10);enter('#close-tagline span:last-child',29.05,1,10);
+tl.fromTo('#close-line',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out',immediateRender:false},29.8);enter('#close-label',30.3,.85,8);enter('#close-footer',30.55,.8,0);
 window.__timelines=window.__timelines||{};window.__timelines.aura=tl;
 </script>
 </body></html>

@@ -1,0 +1,16 @@
+{
+  "name": "aura-launch",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "hyperframes preview --background",
+    "check": "hyperframes check --samples 15 --snapshots",
+    "render": "hyperframes render --quality high --fps 30 --workers 1 --output renders/aura-launch.mp4",
+    "publish": "npx --yes hyperframes@0.8.31 publish",
+    "score": "node scripts/score.mjs"
+  },
+  "devDependencies": {
+    "gsap": "3.14.2",
+    "hyperframes": "0.8.31"
+  }
+}

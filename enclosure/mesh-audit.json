@@ -1,35 +1,101 @@
 {
   "Housing_Front": {
-    "vertices": 6000,
-    "faces": 5321,
+    "vertices": 2084,
+    "faces": 1500,
     "non_manifold_edges": 0,
-    "signed_volume_mm3": 1941.51,
+    "signed_volume_mm3": 835.12,
     "dimensions_mm": [
-      30.0,
-      40.0,
-      5.82
+      28.0,
+      48.0,
+      4.945
     ]
   },
   "Housing_Back": {
-    "vertices": 4801,
-    "faces": 3739,
+    "vertices": 4173,
+    "faces": 3273,
     "non_manifold_edges": 0,
-    "signed_volume_mm3": 2238.58,
+    "signed_volume_mm3": 1830.31,
     "dimensions_mm": [
-      30.0,
-      45.5,
-      8.4
+      28.0,
+      54.0,
+      6.1
     ]
   },
   "Record_Button": {
-    "vertices": 512,
-    "faces": 450,
+    "vertices": 1519,
+    "faces": 1203,
     "non_manifold_edges": 0,
-    "signed_volume_mm3": 28.7,
+    "signed_volume_mm3": 801.22,
     "dimensions_mm": [
-      7.92,
-      7.92,
-      0.59
+      24.65,
+      43.2,
+      1.8
+    ]
+  },
+  "Fabrication_Button": {
+    "vertices": 1648,
+    "faces": 1269,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 803.84,
+    "dimensions_mm": [
+      24.65,
+      43.2,
+      2.38
+    ]
+  },
+  "Fabrication_Top_Retainer": {
+    "vertices": 582,
+    "faces": 508,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 7.49,
+    "dimensions_mm": [
+      1.72,
+      1.72,
+      7.12
+    ]
+  },
+  "Fabrication_Contact_Carrier": {
+    "vertices": 604,
+    "faces": 420,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 17.66,
+    "dimensions_mm": [
+      9.8,
+      2.9,
+      0.7
+    ]
+  },
+  "Fabrication_Privacy_Slider": {
+    "vertices": 216,
+    "faces": 218,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 2.57,
+    "dimensions_mm": [
+      4.6,
+      1.4,
+      0.44
+    ]
+  },
+  "Fabrication_Fit_Coupon": {
+    "vertices": 979,
+    "faces": 585,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 1831.12,
+    "dimensions_mm": [
+      40.0,
+      24.0,
+      2.0
+    ]
+  },
+  "Fabrication_Dock_Alignment_Jig": {
+    "vertices": 907,
+    "faces": 521,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 6403.75,
+    "dimensions_mm": [
+      38.0,
+      58.0,
+      5.5
     ]
   }
 }

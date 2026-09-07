@@ -1,0 +1,35 @@
+{
+  "Housing_Front": {
+    "vertices": 5096,
+    "faces": 4538,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 1481.88,
+    "dimensions_mm": [
+      30.0,
+      40.0,
+      4.7
+    ]
+  },
+  "Housing_Back": {
+    "vertices": 4563,
+    "faces": 3443,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 1754.43,
+    "dimensions_mm": [
+      30.0,
+      42.8,
+      5.85
+    ]
+  },
+  "Record_Button": {
+    "vertices": 512,
+    "faces": 450,
+    "non_manifold_edges": 0,
+    "signed_volume_mm3": 17.17,
+    "dimensions_mm": [
+      7.0,
+      7.0,
+      0.45
+    ]
+  }
+}

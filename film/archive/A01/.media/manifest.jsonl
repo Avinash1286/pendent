@@ -1,0 +1,5 @@
+{"id":"bgm_001","type":"bgm","path":"assets/aura-score.wav","source":"existing","description":"aura score","duration":36,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_001","type":"image","path":"assets/detail.png","source":"existing","description":"detail","width":2000,"height":1600,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_002","type":"image","path":"assets/hero-close.png","source":"existing","description":"hero close","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_003","type":"image","path":"assets/hero-macro.png","source":"existing","description":"hero macro","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_004","type":"image","path":"assets/hero-transparent.png","source":"existing","description":"hero transparent","width":2000,"height":2000,"provenance":{"provider":"local","adopted":true}}

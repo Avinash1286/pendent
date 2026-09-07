@@ -1,0 +1,65 @@
+{
+  "revision": "A03",
+  "status": "prototype CAD; no physical qualification",
+  "body_mm": {
+    "width": 28,
+    "height": 48,
+    "depth": 10
+  },
+  "overall_case_height_mm": 54,
+  "pcb_mm": {
+    "width": 24,
+    "height": 42,
+    "corner_radius": 10,
+    "thickness": 0.8,
+    "top_z": 0.65,
+    "underside_z": -0.15
+  },
+  "cell_target": {
+    "capacity_mah": 150,
+    "envelope_width_mm": 20.5,
+    "envelope_height_mm": 28,
+    "envelope_depth_mm": 3.3,
+    "center_y_mm": -3,
+    "top_z_mm": -0.45,
+    "bottom_z_mm": -3.75,
+    "qualified": false
+  },
+  "face_paddle": {
+    "width_mm": 23.2,
+    "height_mm": 43.2,
+    "skin_mm": 0.9,
+    "travel_mm": 0.35,
+    "underside_z_rest_mm": 4.05,
+    "underside_z_pressed_mm": 3.7,
+    "radial_gap_mm": 0.2,
+    "plunger_rest_gap_mm": 0.02,
+    "switch": "KMR211NGULCLFS"
+  },
+  "rear_inner_floor_z_mm": -4,
+  "seam_gap_mm": 0.11,
+  "bail_hole_diameter_mm": 3.4,
+  "charging_contacts_xy_mm": [
+    [
+      -3,
+      -19
+    ],
+    [
+      0,
+      -19
+    ],
+    [
+      3,
+      -19
+    ]
+  ],
+  "charging_contact_diameter_mm": 1.7,
+  "antenna_exclusion_y_min_mm": 11.95,
+  "top_retainer_material": "nonconductive polymer",
+  "haptic_max_envelope_mm": [
+    8.1,
+    8.1,
+    2.75
+  ],
+  "haptic_insulator_mm": 0.05
+}

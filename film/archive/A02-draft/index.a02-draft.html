@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=1920, height=1080">
+<title>AURA — Be here. Keep the thought. — A02</title>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:Manrope;src:url('assets/fonts/Manrope.ttf') format('truetype');font-weight:200 800;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#101112;color:#F4F1EB;font-family:Manrope,sans-serif}
+:root{--bg:#101112;--fg:#F4F1EB;--muted:#B7B4AF;--brand:#EEB891}
+#aura{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+.clip{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden}
+.scene{position:absolute;inset:0;background:var(--bg)}
+.plate{position:absolute;display:block}.plate img{display:block;width:100%;height:100%;object-fit:contain}
+.copy{position:absolute;left:128px}.line{height:2px;width:70px;background:var(--brand);transform-origin:left center}
+.kicker{font-size:23px;font-weight:500;letter-spacing:.17em;line-height:1.5;text-transform:uppercase;color:var(--muted)}
+.headline{font-size:103px;font-weight:500;line-height:1.13;letter-spacing:-.055em}.headline span{display:block}.soft{color:var(--muted)}
+.small{font-size:29px;line-height:1.5;font-weight:400;color:var(--muted)}
+.footer{position:absolute;left:128px;bottom:68px;font-size:23px;line-height:1.5;color:var(--muted);letter-spacing:.025em}
+.scene:not(#reveal-scene),#reveal-caption,#reveal-art,#reveal-footer,#hero-kicker,#hero-wordmark,#hero-tagline,#hero-footer,#touch-title span,#touch-status,#touch-footer,#privacy-title span,#privacy-label,#privacy-footer,#notes-title span,#notes-support,#notes-panel,#note-title,#note-idea,#note-action,#notes-footer,#close-wordmark,#close-tagline span,#close-label,#close-footer{opacity:0}
+#reveal-art{left:-80px;top:-130px;width:2080px;height:1230px}
+#reveal-art img{mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 91%,transparent 100%)}
+#reveal-caption{left:128px;top:760px;font-size:91px;font-weight:500;line-height:1.15;letter-spacing:-.055em}
+#hero-art{left:662px;top:-68px;width:1290px;height:1190px}
+#hero-kicker{left:128px;top:280px}
+#hero-wordmark{--aura-tracking:.065em;left:118px;top:339px;font-size:158px;font-weight:500;line-height:1.1;letter-spacing:var(--aura-tracking);width:730px}
+#hero-tagline{left:128px;top:552px;font-size:43px;line-height:1.4;letter-spacing:-.025em}
+#touch-window{position:absolute;left:835px;top:0;width:1085px;height:1080px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 100%)}
+#touch-art{left:-285px;top:-345px;width:1600px;height:1600px}
+#touch-title{left:128px;top:327px;width:800px;font-size:105px}
+#touch-status{left:132px;top:680px;display:flex;align-items:center;gap:20px;color:var(--brand);font-size:23px;letter-spacing:.12em;line-height:1.5}
+#touch-dot{width:14px;height:14px;border-radius:50%;background:var(--brand)}
+#touch-wave{display:flex;align-items:center;gap:8px;height:56px;margin-left:4px;width:186px}
+#touch-wave i{display:block;width:3px;background:var(--brand);border-radius:4px;transform-origin:center}
+#privacy-art{left:787px;top:4px;width:1180px;height:1060px}
+#privacy-art img{mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 100%)}
+#privacy-title{left:128px;top:321px;width:850px;font-size:103px}
+#privacy-label{left:132px;top:625px;font-size:30px;line-height:1.5;color:var(--muted)}
+#notes-title{left:128px;top:332px;width:950px;font-size:99px}
+#notes-support{left:132px;top:640px;width:810px;font-size:29px;line-height:1.5;color:var(--muted)}
+#notes-support span{display:block}
+#notes-panel{position:absolute;left:1170px;top:176px;width:594px;height:734px;border:1px solid #D6D0C5;border-radius:30px;padding:43px;background:#F4F1EB;color:#1D1E20;box-shadow:0 24px 90px #080909}
+.note-eyebrow{font-size:22px;line-height:1.5;color:#625C55;letter-spacing:.095em;font-weight:500}
+#note-type{font-size:20px;line-height:1.5;letter-spacing:.12em;color:#625C55;margin-top:33px}
+#note-title{font-size:48px;font-weight:500;line-height:1.16;letter-spacing:-.05em;margin-top:17px;width:505px}
+.note-rule{height:1px;background:#CBC4B9;margin:27px 0}
+.note-label{font-size:21px;line-height:1.5;letter-spacing:.08em;font-weight:600;color:#625C55}
+.note-body{font-size:28px;line-height:1.43;margin-top:12px;width:500px}
+#note-action{margin-top:25px}
+#note-footer{position:absolute;left:43px;bottom:39px;font-size:21px;line-height:1.4;color:#625C55;letter-spacing:.02em}
+#close-art{left:10px;top:-20px;width:1140px;height:1080px}
+#close-art img{mask-image:linear-gradient(to right,#000 0%,#000 83%,transparent 100%)}
+#close-copy{position:absolute;left:1050px;top:247px;width:780px}
+#close-wordmark{font-size:91px;font-weight:500;line-height:1.15;letter-spacing:.2em;width:750px}
+#close-tagline{font-size:77px;font-weight:500;line-height:1.23;letter-spacing:-.055em;margin-top:66px;width:790px}
+#close-tagline span{display:block}#close-line{margin-top:40px}#close-label{margin-top:38px;font-size:28px;line-height:1.5;color:var(--muted)}
+</style>
+</head><body>
+<div id="aura" data-composition-id="aura" data-start="0" data-duration="36" data-width="1920" data-height="1080" data-fps="30">
+<!-- 01: The object appears before its name. The A02 edge photograph supplies actual thin geometry. -->
+<section id="reveal" class="clip" data-start="0" data-duration="5.8" data-track-index="1"><div id="reveal-scene" class="scene">
+<div id="reveal-art" class="plate"><img src="assets/profile.png" alt="AURA A02 thin profile and fine enclosure seam, rendered from the actual Blender model"></div>
+<p id="reveal-caption" class="copy">Be here.</p><p id="reveal-footer" class="footer">A wearable note-taking concept.</p>
+</div></section>
+<!-- 02: Unhurried identity. Product reflections and silhouette carry the frame. -->
+<section id="hero" class="clip" data-start="5.2" data-duration="6" data-track-index="2"><div id="hero-scene" class="scene">
+<div id="hero-art" class="plate"><img src="assets/hero-transparent.png" alt="AURA A02 satin pendant with flush recording button and refined necklace attachment"></div>
+<p id="hero-kicker" class="copy kicker">Introducing</p><h1 id="hero-wordmark" class="copy">AURA</h1><p id="hero-tagline" class="copy">Keep the thought.</p><p id="hero-footer" class="footer">Wearable note-taking. Development concept.</p>
+</div></section>
+<!-- 03: One obvious gesture, with feedback shown briefly and quietly. -->
+<section id="touch" class="clip" data-start="10.6" data-duration="5.8" data-track-index="3"><div id="touch-scene" class="scene">
+<div id="touch-window"><div id="touch-art" class="plate" data-layout-allow-overflow=""><img src="assets/hero-macro.png" alt="Close view of the A02 flush circular recording control"></div></div>
+<h2 id="touch-title" class="copy headline"><span>One press.</span><span class="soft">Stay present.</span></h2>
+<div id="touch-status" class="copy"><span id="touch-dot"></span><p>CAPTURING</p><div id="touch-wave" aria-hidden="true"></div></div>
+<p id="touch-footer" class="footer">Intended interaction · Visible recording · Tactile feedback</p>
+</div></section>
+<!-- 04: Hardware privacy is shown in the actual object; no decorative fake switch UI. -->
+<section id="privacy" class="clip" data-start="15.8" data-duration="5.8" data-track-index="4"><div id="privacy-scene" class="scene">
+<div id="privacy-art" class="plate"><img src="assets/detail.png" alt="Macro photograph of the AURA A02 physical microphone disconnect design"></div>
+<h2 id="privacy-title" class="copy headline"><span>Yours to</span><span class="soft">control.</span></h2><p id="privacy-label" class="copy">Physical mic disconnect.</p><p id="privacy-footer" class="footer">You decide when to capture.</p>
+</div></section>
+<!-- 05: One short, explicitly illustrative phone-assisted notes moment. -->
+<section id="notes" class="clip" data-start="21" data-duration="6.4" data-track-index="5"><div id="notes-scene" class="scene">
+<h2 id="notes-title" class="copy headline"><span>From thought</span><span class="soft">to next step.</span></h2><p id="notes-support" class="copy"><span>Capture offline.</span><span>Organize with your phone.</span></p>
+<div id="notes-panel"><p class="note-eyebrow">AURA NOTES</p><p id="note-type">ILLUSTRATIVE NOTE</p><h3 id="note-title">A quieter morning</h3><div class="note-rule" aria-hidden="true"></div><div id="note-idea"><p class="note-label">THE IDEA</p><p class="note-body">Make space for a walk before the day begins.</p></div><div id="note-action"><p class="note-label">NEXT STEP</p><p class="note-body">Set aside twenty minutes.</p></div><p id="note-footer">Phone-assisted AI · Interface concept</p></div>
+<p id="notes-footer" class="footer">Intended capture → sync → notes workflow</p>
+</div></section>
+<!-- 06: The object, thought, and score resolve. The final frame is held, never black. -->
+<section id="close" class="clip" data-start="26.8" data-duration="9.2" data-track-index="6"><div id="close-scene" class="scene">
+<div id="close-art" class="plate"><img src="assets/hero-close.png" alt="Final AURA A02 pendant beauty view"></div>
+<div id="close-copy"><h2 id="close-wordmark">AURA</h2><p id="close-tagline"><span>Be here.</span><span>Keep the thought.</span></p><div id="close-line" class="line" aria-hidden="true"></div><p id="close-label">A wearable note-taking concept.</p></div>
+<p id="close-footer" class="footer">Development concept · Features subject to engineering validation</p>
+</div></section>
+<audio id="aura-score" src="assets/aura-score.wav" data-start="0" data-duration="36" data-track-index="10" data-volume="1"></audio>
+</div>
+<script>
+// Synchronous, deterministic setup; all motion is owned by one paused Hyperframes timeline.
+const wave=document.getElementById('touch-wave');
+for(let i=0;i<15;i++){const bar=document.createElement('i');bar.style.height=`${9+26*(.5+.5*Math.sin(i*.91+1.7))}px`;wave.appendChild(bar)}
+const tl=gsap.timeline({paused:true});
+const enter=(target,at,duration=.9,y=12)=>tl.fromTo(target,{opacity:0,y},{opacity:1,y:0,duration,ease:'power3.out',immediateRender:false},at);
+const scene=(name,at,duration=.65)=>tl.fromTo(`#${name}-scene`,{opacity:0},{opacity:1,duration,ease:'power2.inOut',immediateRender:false},at);
+const clear=(targets,at)=>tl.to(targets,{opacity:0,duration:.35,ease:'power2.inOut'},at);
+tl.addLabel('The object',0);
+tl.fromTo('#reveal-art',{opacity:0,scale:1.025,x:16},{opacity:1,scale:1,x:-10,duration:4.9,ease:'sine.inOut'},.1);
+enter('#reveal-caption',2.1,1.2,8);enter('#reveal-footer',3,.9,0);clear(['#reveal-caption','#reveal-footer'],4.85);
+tl.addLabel('Introducing AURA',5.2);scene('hero',5.2,.8);
+tl.fromTo('#hero-art',{scale:1.055,x:22,y:10},{scale:1,x:0,y:0,duration:6,ease:'none',immediateRender:false},5.2);
+enter('#hero-kicker',5.85,.8,0);
+tl.fromTo('#hero-wordmark',{opacity:0,'--aura-tracking':'.115em',y:8},{opacity:1,'--aura-tracking':'.065em',y:0,duration:1.2,ease:'power3.out',immediateRender:false},6.1);
+enter('#hero-tagline',7.5,1,10);enter('#hero-footer',7.7,.8,0);clear(['#hero-kicker','#hero-wordmark','#hero-tagline','#hero-footer'],10.15);
+tl.addLabel('One gesture',10.6);scene('touch',10.6,.3);
+tl.fromTo('#touch-art',{scale:1,x:0},{scale:1.045,x:-16,duration:5.8,ease:'none',immediateRender:false},10.6);
+enter('#touch-title span:first-child',11,.85,12);enter('#touch-title span:last-child',11.5,.85,12);enter('#touch-status',12.75,.6,0);enter('#touch-footer',13,.75,0);
+tl.fromTo('#touch-wave i',{scaleY:.3},{scaleY:1,duration:.65,ease:'sine.inOut',stagger:.022,repeat:2,yoyo:true,immediateRender:false},12.9);
+clear(['#touch-title','#touch-status','#touch-footer'],15.4);
+tl.addLabel('Physical control',15.8);scene('privacy',15.8,.3);
+tl.fromTo('#privacy-art',{scale:1.035,x:18},{scale:1,x:-5,duration:5.8,ease:'none',immediateRender:false},15.8);
+enter('#privacy-title span:first-child',16.2,.9,12);enter('#privacy-title span:last-child',16.7,.9,12);enter('#privacy-label',17.9,.85,8);enter('#privacy-footer',18.15,.8,0);clear(['#privacy-title','#privacy-label','#privacy-footer'],20.55);
+tl.addLabel('Useful notes',21);scene('notes',21,.65);
+enter('#notes-title span:first-child',21.45,.9,12);enter('#notes-title span:last-child',21.9,.9,12);
+tl.fromTo('#notes-panel',{opacity:0,x:34},{opacity:1,x:0,duration:1.1,ease:'power3.out',immediateRender:false},21.75);
+enter('#note-title',22.6,.75,8);enter('#note-idea',23.1,.75,8);enter('#note-action',23.85,.75,8);enter('#notes-support',24.1,.85,8);enter('#notes-footer',24.2,.75,0);
+clear(['#notes-title','#notes-support','#notes-footer'],26.35);
+tl.addLabel('Be here',26.8);scene('close',26.8,.9);
+tl.fromTo('#close-art',{scale:1.035,x:-16},{scale:1,x:0,duration:3.6,ease:'power2.out',immediateRender:false},26.8);
+tl.fromTo('#close-wordmark',{opacity:0,scale:.98},{opacity:1,scale:1,duration:1,ease:'power3.out',immediateRender:false},27.8);
+enter('#close-tagline span:first-child',28.55,1,10);enter('#close-tagline span:last-child',29.05,1,10);
+tl.fromTo('#close-line',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out',immediateRender:false},29.8);enter('#close-label',30.3,.85,8);enter('#close-footer',30.55,.8,0);
+window.__timelines=window.__timelines||{};window.__timelines.aura=tl;
+</script>
+</body></html>

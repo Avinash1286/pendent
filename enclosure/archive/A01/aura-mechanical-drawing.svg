@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#20312f}.title{font-size:46px;font-weight:600;letter-spacing:4px}.sub{font-size:22px;fill:#5b6b67}.label{font-size:21px}.small{font-size:17px;fill:#5b6b67}.dim{font-size:20px;font-weight:600}.line{stroke:#20312f;stroke-width:2;fill:none}.fine{stroke:#9daaa6;stroke-width:1.5;fill:none}.dimension{stroke:#5b6b67;stroke-width:1.5;fill:none;marker-start:url(#arrow);marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7 0 0 3.5 7 7" fill="none" stroke="#5b6b67" stroke-width="1"/></marker></defs>
+<rect width="1800" height="1200" fill="#fafbf8"/>
+<text x="85" y="85" class="title">AURA / A01</text><text x="85" y="123" class="sub">Industrial design · enclosure &amp; packaging contract</text>
+<text x="1715" y="87" text-anchor="end" class="small">DESIGN PROTOTYPE · REV A</text><text x="1715" y="118" text-anchor="end" class="small">Nominal dimensions in millimetres · not to scale</text><path d="M85 160H1715" class="fine"/>
+<!-- Front view, ten drawing units per mm -->
+<g transform="translate(285,455)">
+<rect x="-150" y="-200" width="300" height="400" rx="80" fill="#e5e3d9" stroke="#20312f" stroke-width="2"/>
+<rect x="-133" y="-183" width="266" height="366" rx="72" fill="#f0eee5" stroke="#b7bdb4"/>
+<path d="M-40-200v-25q0-30 30-30h20q30 0 30 30v25M-21-206v-18q0-12 12-12h18q12 0 12 12v18" class="line"/>
+<circle cx="-85" cy="-85" r="4.6" fill="#20312f"/><circle cx="85" cy="-85" r="4.6" fill="#20312f"/>
+<text x="0" y="-32" text-anchor="middle" style="font-size:24px;letter-spacing:5px;fill:#6c7065">aura</text>
+<circle cx="0" cy="10" r="4.2" fill="#add1b1" stroke="#5b6b67"/>
+<circle cx="0" cy="60" r="43" fill="#34423d"/><circle cx="0" cy="60" r="39.6" fill="#e5e3d9"/><circle cx="0" cy="60" r="4.3" fill="#6c7065"/>
+<rect x="150" y="-25" width="5" height="50" rx="2" fill="#6c7065"/>
+<path d="M-150 220v65M150 220v65M-150 270H150" class="fine"/><path d="M-150 270H150" class="dimension"/><text x="0" y="262" text-anchor="middle" class="dim">30.0</text>
+<path d="M-175-200h-70M-175 200h-70" class="fine"/><path d="M-230-200V200" class="dimension"/><text x="-240" y="0" transform="rotate(-90 -240 0)" text-anchor="middle" class="dim">40.0 body</text>
+<path d="M170-255h65M170 200h65" class="fine"/><path d="M220-255V200" class="dimension"/><text x="245" y="-25" transform="rotate(-90 245 -25)" text-anchor="middle" class="dim">45.5 with eyelet</text>
+</g>
+<text x="285" y="790" text-anchor="middle" class="label">01 / FACE</text>
+<text x="285" y="823" text-anchor="middle" class="small">Two Ø0.92 ports · Ø8.60 record aperture</text>
+<!-- Rear view -->
+<g transform="translate(835,455)">
+<rect x="-150" y="-200" width="300" height="400" rx="80" fill="#e3e5dd" stroke="#20312f" stroke-width="2"/>
+<rect x="-120" y="-170" width="240" height="340" rx="40" fill="none" stroke="#5b786e" stroke-width="2" stroke-dasharray="7 6"/>
+<rect x="-100" y="-85" width="200" height="250" rx="6" fill="#c4d3c4" fill-opacity=".65" stroke="#5b786e" stroke-dasharray="5 5"/>
+<rect x="-42" y="-255" width="84" height="88" rx="30" fill="#e3e5dd" stroke="#20312f" stroke-width="2"/><rect x="-22" y="-241" width="44" height="48" rx="15" fill="#fafbf8" stroke="#20312f"/>
+<circle cx="0" cy="-184" r="10.2" fill="#fafbf8" stroke="#20312f"/><circle cx="0" cy="184" r="10.2" fill="#fafbf8" stroke="#20312f"/>
+<rect x="-49" y="135.5" width="98" height="29" rx="11.5" fill="#20312f"/>
+<g fill="#c3a65d"><circle cx="-30" cy="150" r="8.5"/><circle cx="0" cy="150" r="8.5"/><circle cx="30" cy="150" r="8.5"/></g>
+<text x="0" y="-15" text-anchor="middle" class="dim">24 × 34 PCB</text><text x="0" y="13" text-anchor="middle" class="small">R4 corners · 0.8 thick</text>
+<text x="0" y="75" text-anchor="middle" class="small">20 × 25 × 5 cell</text>
+<path d="M-120-119.5H120" stroke="#5b786e" stroke-dasharray="3 5"/><text x="0" y="-137" text-anchor="middle" style="font-size:14px;fill:#5b786e">ANTENNA: NO BATTERY / METAL</text>
+</g>
+<text x="835" y="790" text-anchor="middle" class="label">02 / PACKAGING</text><text x="835" y="823" text-anchor="middle" class="small">Dashed envelopes are internal references</text>
+<!-- Side section, scaled 20xmm width and10xheight -->
+<g transform="translate(1390,455)">
+<rect x="-120" y="-200" width="240" height="400" rx="40" fill="#e5e3d9" stroke="#20312f" stroke-width="2"/>
+<rect x="-96" y="-176" width="190" height="352" rx="22" fill="#fafbf8" stroke="#b7bdb4"/>
+<rect x="-88" y="-85" width="100" height="250" rx="6" fill="#c4d3c4" stroke="#5b786e"/>
+<rect x="23" y="-170" width="16" height="340" rx="3" fill="#31594a"/>
+<rect x="39" y="-155" width="42" height="155" rx="3" fill="#9caaa7" stroke="#20312f"/>
+<rect x="39" y="36" width="30" height="48" rx="3" fill="#9caaa7" stroke="#20312f"/>
+<rect x="97" y="17" width="23" height="86" rx="8" fill="#34423d"/><rect x="108" y="20" width="12" height="80" rx="5" fill="#e5e3d9"/>
+<path d="M0-200V200" stroke="#5b6b67" stroke-width="2" stroke-dasharray="4 6"/>
+<text x="-142" y="0" transform="rotate(-90 -142 0)" text-anchor="middle" class="small">REAR</text><text x="148" y="0" transform="rotate(-90 148 0)" text-anchor="middle" class="small">FRONT</text>
+<path d="M-120 220v65M120 220v65" class="fine"/><path d="M-120 270H120" class="dimension"/><text x="0" y="262" text-anchor="middle" class="dim">12.0 overall depth</text>
+<path d="M41-125h143M81-80h103M-38 80h-131" class="fine"/><text x="192" y="-119" class="small">0.8 PCB</text><text x="192" y="-74" class="small">2.1 parts</text><text x="-176" y="86" text-anchor="end" class="small">5.0 cell</text>
+</g>
+<text x="1390" y="790" text-anchor="middle" class="label">03 / STACK SECTION</text><text x="1390" y="823" text-anchor="middle" class="small">1.2 side walls · 1.3 front face nominal</text>
+<path d="M85 900H1715" class="fine"/>
+<text x="85" y="950" class="label">MATERIAL &amp; ASSEMBLY</text><text x="85" y="988" class="small">RF-transparent polymer, satin ceramic-effect finish. Two screw bosses and four PCB retaining clips.</text><text x="85" y="1020" class="small">3 × Ø1.70 charge pads: X−3 / 0 / +3, Y−15. Passive flex/leads must route around the cell to PCB J1.</text>
+<text x="85" y="1081" class="label">VALIDATION STATUS</text><text x="85" y="1118" class="small">Closed-shell topology audited. Physical fit, battery swelling allowance, acoustic seals, RF, drop, thermal and wear tests remain required.</text><text x="1715" y="1160" text-anchor="end" class="small">Generated design package / enclosure/build_aura.py / 2026-09</text>
+</svg>
+

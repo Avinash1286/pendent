@@ -1,92 +1,220 @@
-[
-  {
-    "path": "assembly-audit.json",
-    "bytes": 1509,
-    "sha256": "4015372d10ec61f6aeb1f9724bd7a4cbccb3ac15398814b13136a92e1eb7d427"
+{
+  "revision": "A03",
+  "generated_utc": "2026-09-07T20:53:29.644278+00:00",
+  "units": {
+    "blender_glb": "metres",
+    "stl": "millimetres"
   },
-  {
-    "path": "aura-device.glb",
-    "bytes": 2212668,
-    "sha256": "5eb6d58897dd5a2a7f643c1832996501222da5c405d662b4799e7826ca33dd26"
+  "body_mm": {
+    "width": 28,
+    "height": 48,
+    "depth": 10
   },
-  {
-    "path": "aura-exploded.glb",
-    "bytes": 2082272,
-    "sha256": "db339871c4707eb23c401839c27c390b8bfacac8537afc0909240c4279672c96"
-  },
-  {
-    "path": "aura-front-shell.stl",
-    "bytes": 600884,
-    "sha256": "6bd767cc82637a0ff4cdd62dac148b3f3beea9036d1528f6945e825d2e374e8d"
-  },
-  {
-    "path": "aura-mechanical-drawing.svg",
-    "bytes": 6772,
-    "sha256": "632d5bd197551321809b0e216dbe3ffc56570d6d8a623a72e3ffbc2d72433575"
-  },
-  {
-    "path": "aura-pendant.glb",
-    "bytes": 2324032,
-    "sha256": "bd4cf93af28dbf75b4829ee57e4d4f2320a714b3190d4ee89529964581c03a48"
-  },
-  {
-    "path": "aura-product.blend",
-    "bytes": 948702,
-    "sha256": "9d0fa9fcf1937238338a30303ee7bf9649bb813d5135cf9973cbf9ae9cd7de2d"
-  },
-  {
-    "path": "aura-rear-shell.stl",
-    "bytes": 480984,
-    "sha256": "09c8b3811226e1cab9266168890147482d7bb8d453609f4e7de7bc1e432ebe55"
-  },
-  {
-    "path": "aura-record-button.stl",
-    "bytes": 51084,
-    "sha256": "2987321984d560a1a0004ab952239a3d35b7f7c97bb4685ccb00cf6129011991"
-  },
-  {
-    "path": "build_aura.py",
-    "bytes": 21856,
-    "sha256": "9613eea856cac5a9e87c8fe7eaf8a326389cd2c43d3b81d3719e666330a461e7"
-  },
-  {
-    "path": "MECHANICAL.md",
-    "bytes": 12630,
-    "sha256": "eaee14251f90b4ccfe385146e1f354989c3f5fa791f63fd149a0849a0330977d"
-  },
-  {
-    "path": "mesh-audit.json",
-    "bytes": 611,
-    "sha256": "5bf50801bc23365e77f96dcf7aba7d364170e358087d02179e223dd965b4dc55"
-  },
-  {
-    "path": "verify_geometry.py",
-    "bytes": 2427,
-    "sha256": "1e89d211274fa77de3d993d99131820acc83cdfa860b334284362b6f95388eca"
-  },
-  {
-    "path": "renders/detail.png",
-    "bytes": 2652770,
-    "sha256": "f336870680208f663755dac7ced9cc5f23c47d7f063279c48d1d5f817e2b639c"
-  },
-  {
-    "path": "renders/exploded.png",
-    "bytes": 2257137,
-    "sha256": "2a2af949b0ba1e5a6a76aa82c98a809f99d0a0fcb123c3379f56af339cd95bf0"
-  },
-  {
-    "path": "renders/hero-transparent.png",
-    "bytes": 1891126,
-    "sha256": "612b1ceb236c2cc0a70252369d30e88cccaefaceb13f4dc3b70df3b21ba66255"
-  },
-  {
-    "path": "renders/hero.png",
-    "bytes": 3762763,
-    "sha256": "116e80b364b9387945b6b60a5cdc951aa1ea225db220401e2a8be68b0690e7a0"
-  },
-  {
-    "path": "renders/rear.png",
-    "bytes": 2184597,
-    "sha256": "2072789d02540c624bb13cd36ed830af6928b65afdb41e1cc2d51c50991ed63e"
-  }
-]
+  "overall_case_height_mm": 54,
+  "physical_qualification": false,
+  "render_visual_qa": "Caller must inspect final images after the render batch; not validated by this script",
+  "print_parts": [
+    "aura-front-shell.stl",
+    "aura-rear-shell.stl",
+    "aura-record-face.stl",
+    "aura-privacy-slider.stl",
+    "aura-top-retainer.stl",
+    "aura-contact-carrier.stl",
+    "aura-fit-coupon.stl",
+    "aura-dock-alignment-jig.stl"
+  ],
+  "renders": [
+    {
+      "path": "renders/hero-transparent.png",
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "path": "renders/detail.png",
+      "width": 2000,
+      "height": 1600
+    },
+    {
+      "path": "renders/profile.png",
+      "width": 2200,
+      "height": 1800
+    },
+    {
+      "path": "renders/hero.png",
+      "width": 2400,
+      "height": 1800
+    },
+    {
+      "path": "renders/rear.png",
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "path": "renders/exploded.png",
+      "width": 2200,
+      "height": 1800
+    }
+  ],
+  "files": [
+    {
+      "path": "assembly-audit.json",
+      "bytes": 4119,
+      "sha256": "8c4c51d03f8891c69b03d0cfff1413543b9d369f41c65f127b0c55b87cadf3a9"
+    },
+    {
+      "path": "aura-a03-print-kit.zip",
+      "bytes": 290914,
+      "sha256": "33975b8fbc8943f3366d872e4499498702843de0f7ac690a6ef12acd8bd74d54"
+    },
+    {
+      "path": "aura-contact-carrier.stl",
+      "bytes": 60884,
+      "sha256": "d74f0be90a8620c6818d3e56bbb878e8fe47989c32a478f4a28dd8bf8a906f45"
+    },
+    {
+      "path": "aura-device.glb",
+      "bytes": 2073600,
+      "sha256": "e1d14cdb47a5563d0b55b8dad511a1a651cccddf62f40b9147e9e0e0a2d0d342"
+    },
+    {
+      "path": "aura-dock-alignment-jig.stl",
+      "bytes": 91184,
+      "sha256": "a1e51fa91bf95fec34e217e86f7b89e66f9eddc85e2bf423ce666a7039bd578f"
+    },
+    {
+      "path": "aura-exploded.glb",
+      "bytes": 1941680,
+      "sha256": "737327a6213cd19ead24ac39382d8356dc95ee16245064c58c1c9b1c34f8effb"
+    },
+    {
+      "path": "aura-fit-coupon.stl",
+      "bytes": 99384,
+      "sha256": "f19eeaaf2a537a1a453117f763e992e2f5a2edf81ea5c920d3de74beb926dc2b"
+    },
+    {
+      "path": "aura-front-shell.stl",
+      "bytes": 209084,
+      "sha256": "55177dc122dd0448ebc9d847492db96a40ae1c786f237c8e6605f3d8a3feda07"
+    },
+    {
+      "path": "aura-mechanical-drawing.svg",
+      "bytes": 8735,
+      "sha256": "77eaba77068ac24cc8c3f0a438be3a0316e59c89fcbc5fc2b9d505d6701413b6"
+    },
+    {
+      "path": "aura-pendant.glb",
+      "bytes": 2698884,
+      "sha256": "2cf0390a61ab920e4bd2582b8ca4f57854506f4e439ab0767e42b2e9041e250e"
+    },
+    {
+      "path": "aura-privacy-slider.stl",
+      "bytes": 21484,
+      "sha256": "1aaf8a2d4c340e625cf799330d65cb9670cca5d9e217a651bf7b7841bf2f26c7"
+    },
+    {
+      "path": "aura-product.blend",
+      "bytes": 1250754,
+      "sha256": "71227c763ac3a8c2f0aba8761d1346295f6f82a757dd4efda667e34e051d570d"
+    },
+    {
+      "path": "aura-rear-shell.stl",
+      "bytes": 418384,
+      "sha256": "d7ad26bbd7873273678c35eada233d985c7b958bfe16684d1b68aff3dc3b6b99"
+    },
+    {
+      "path": "aura-record-face.stl",
+      "bytes": 165284,
+      "sha256": "9e5e098a534eedfc7c15e75a5e4e86852bb93edc0092c80703a42ac501f020a8"
+    },
+    {
+      "path": "aura-top-retainer.stl",
+      "bytes": 58084,
+      "sha256": "22a2a84de6a19b12f789729945bb54a0eb88288aa2c3b48d03d58d13341329f5"
+    },
+    {
+      "path": "build_aura.py",
+      "bytes": 27765,
+      "sha256": "48975d9d6d6c02d8cdca5b0ff617223d69e79e5f03500cf3c58f759633ef8776"
+    },
+    {
+      "path": "design-contract.json",
+      "bytes": 1337,
+      "sha256": "1f89f4295317af1fecc1e43a1da7e51af64fd75ad92ba6a0bb251c6d1458149d"
+    },
+    {
+      "path": "drawing_a03.py",
+      "bytes": 5851,
+      "sha256": "bc2f7166fed1a4ef083aaf73244113ef6673d9e11e2d6ca69371d3e5a5aa703d"
+    },
+    {
+      "path": "finalize_package.py",
+      "bytes": 3246,
+      "sha256": "95832a246bf417b8434da3930b97bd9873760cc1e828eb69f97a5edf89f455f7"
+    },
+    {
+      "path": "MECHANICAL.md",
+      "bytes": 8913,
+      "sha256": "c6feaafb63bd0348a7ed88cfd3d61f9926c54a90376aca2717ad527462683f86"
+    },
+    {
+      "path": "mesh-audit.json",
+      "bytes": 1889,
+      "sha256": "d7d0db38cb62e0ed31fb8636886d41ad00e8eff551b6d8477fcbc77c6317b2bc"
+    },
+    {
+      "path": "pcb-placement-reference.json",
+      "bytes": 3520,
+      "sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5"
+    },
+    {
+      "path": "PRINTING.md",
+      "bytes": 5795,
+      "sha256": "f99921266748ac251173d487227fb5072d7f5b206a3364fbd4a76e0b7ebba1cf"
+    },
+    {
+      "path": "render_studio.py",
+      "bytes": 893,
+      "sha256": "2328582c5e2a20a6bbf1db8f98db5e2060d612ecddf5b9a067109a823ab0ff3d"
+    },
+    {
+      "path": "surface_normals.py",
+      "bytes": 1522,
+      "sha256": "b019b75025ddaf5894c9c0b668c4f846b332b7c1b4b4b112cdf641ad74a43797"
+    },
+    {
+      "path": "verify_geometry.py",
+      "bytes": 4502,
+      "sha256": "e1893304d29a0d478daeae434687ff7f5c5da3e15770cd3275cdd231dbd5e335"
+    },
+    {
+      "path": "renders/hero-transparent.png",
+      "bytes": 1918979,
+      "sha256": "f0b029092fdb5c641a799239a1c01297abba1d68f00bb4b4dcedd7e79c128a2c"
+    },
+    {
+      "path": "renders/detail.png",
+      "bytes": 2260553,
+      "sha256": "3681380c3e9f66768ccafe319701e99ff933d1d13c215b992aec6d640e6c9402"
+    },
+    {
+      "path": "renders/profile.png",
+      "bytes": 1529298,
+      "sha256": "b9f5470dd0efaba358eef68d53229a34d6b004e9cbae033c9007b1505f11a55a"
+    },
+    {
+      "path": "renders/hero.png",
+      "bytes": 4381658,
+      "sha256": "ad5939f063509ba79d58e799984d2bd31d9b42942a19bbcfde15e0277a0d5525"
+    },
+    {
+      "path": "renders/rear.png",
+      "bytes": 1924189,
+      "sha256": "4235d5b33293ee6e7b61c0b40f77bb24dd08e1fe06d95c70be8d6a5a27143218"
+    },
+    {
+      "path": "renders/exploded.png",
+      "bytes": 2122547,
+      "sha256": "94c20bd480f26aa1be39ec7b96e103f912a2f9f504630f2912c18f4ca520f1ee"
+    }
+  ]
+}

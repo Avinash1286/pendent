@@ -1,0 +1,99 @@
+{
+  "ok": true,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 36,
+    "samples": [
+      1.2,
+      3.6,
+      6,
+      8.4,
+      10.8,
+      13.2,
+      15.6,
+      18,
+      20.4,
+      22.8,
+      25.2,
+      27.6,
+      30,
+      32.4,
+      34.8
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "specPath": "F:\\circuit\\film\\aura-launch\\index.motion.json",
+    "samples": 300
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.2,
+      8.4,
+      18,
+      25.2,
+      34.8
+    ],
+    "checked": 31,
+    "passed": 31
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      "snapshots\\frame-00-at-1.2s.png",
+      "snapshots\\frame-01-at-8.4s.png",
+      "snapshots\\frame-02-at-18.0s.png",
+      "snapshots\\frame-03-at-25.2s.png",
+      "snapshots\\frame-04-at-34.8s.png"
+    ],
+    "times": [
+      1.2,
+      8.4,
+      18,
+      25.2,
+      34.8
+    ],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.31",
+    "latestVersion": "0.8.31",
+    "updateAvailable": false
+  }
+}

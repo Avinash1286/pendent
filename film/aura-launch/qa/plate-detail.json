@@ -1,0 +1,26 @@
+{
+  "edition": "A03",
+  "view": "detail",
+  "renderer": "5.2.1 LTS",
+  "source_scene": "F:\\circuit\\enclosure\\aura-product.blend",
+  "source_scene_sha256": "cd75667b45134149fb798954fe6d87084443b61e6502ae5b53b99a274f15dec8",
+  "camera_mm": [
+    105,
+    -15,
+    70
+  ],
+  "target_mm": [
+    3,
+    0,
+    1.2
+  ],
+  "ortho_scale_mm": 42,
+  "size": [
+    2000,
+    1600
+  ],
+  "samples": 32,
+  "geometry_rebuilt": false,
+  "output": "F:\\circuit\\film\\aura-launch\\assets\\detail.png",
+  "sha256": "3681380c3e9f66768ccafe319701e99ff933d1d13c215b992aec6d640e6c9402"
+}

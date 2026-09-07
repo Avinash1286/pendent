@@ -1,85 +1,20 @@
----
-format: 1920x1080
-duration: 36s
-message: "Be here. Keep the thought."
-arc: "A thought → an object → a gesture → trust → useful notes → a promise"
-audience: "People who want to capture ideas without living behind a screen"
-mode: autonomous
-music: "Original minimal ambient electronic score, warm felt-like bells and soft sustained harmonics"
----
+# AURA A03 — cinematic product film
 
-## Video direction
+36 seconds · 1920 × 1080 · 30 fps · original stereo score · no narration
 
-Create a quiet product film with short, confident statements. Actual Blender assets connect every physical feature to the designed object. The phone interface is a clearly labeled concept; the closing card identifies the development stage. Slow continuous photographic reframing is supported by restrained typography and purposeful hard cuts. Product visuals carry most of the frame.
+The object leads. A low-angle profile introduces the capsule before its name. The film then moves through the glossy full-face recording paddle, the physical microphone disconnect, one illustrative phone-and-cloud notes moment, and a long final beauty hold. Short statements and slow photographic reframes keep the emphasis on presence and material detail.
 
-## Frame 1 — The thought
+| Time | Picture and movement | Message |
+| --- | --- | --- |
+| 0–5.8 | The actual A03 profile emerges gradually with a 2.5% optical reframe. The first two seconds belong to the object. | “Be here.” at 2.1 s. |
+| 5.2–11.2 | Dissolve to the complete capsule and chain. A 5.5% constant-speed withdrawal gives the object breathing room. | “Introducing AURA.” Then “Keep the thought.” A small development-concept label establishes the stage. |
+| 10.6–16.4 | A precise cut reveals the full glossy recording face, followed by a 4.5% push. A short finite waveform illustrates the intended feedback. | “One press. Stay present.” |
+| 15.8–21.6 | Actual microphone-disconnect macro. A small lateral move describes the satin frame and physical control. | “Yours to control.” “Physical mic disconnect.” |
+| 21–27.4 | One ivory notes surface. The title, idea, and next step appear progressively. The visual is explicitly labeled as an interface concept. | “From thought to next step.” “Capture offline. Organize with your phone.” |
+| 26.8–36 | Dissolve to the complete object and brand. The product settles by 30.4 s; all copy resolves by 31.35 s. The finished picture holds to the last frame. | “AURA. Be here. Keep the thought.” The engineering-validation qualifier remains visible. |
 
-- scene: Two lines of enormous typography resolve above a single apricot recording point.
-- duration: 4s
-- poster: 2.5s
-- transition_in: cut
-- status: animated
-- src: index.html
-- asset_candidates: original typography and original waveform
+The six shots use the final A03 Blender hero, profile, and detail images. Hero aliases have identical source pixels; separate filenames keep Hyperframes media discovery unambiguous. Movement is deterministic photographic reframing of real 3D renders, driven by one paused GSAP timeline. There is no invented animation of mechanical movement.
 
-0.0–1.3s: “A thought.” arrives with the tracking-in primitive. 1.1–2.3s: “Worth keeping.” settles beneath. 2.2–4.0s: the point opens into a quiet waveform. The type holds long enough to read.
+The original ambient score uses locally synthesized harmonics, sparse bells, and controlled delay. Picture and music resolve together, without narration or licensed stock footage. The film makes no numerical thickness, capacity, battery-life, reliability, stock, or shipping claims.
 
-## Frame 2 — Meet AURA
-
-- scene: The real satin product floats in a broad dark studio with a restrained introduction.
-- duration: 6s
-- poster: 7s
-- transition_in: crossfade
-- status: animated
-- src: index.html
-- asset_candidates: assets/hero-transparent.png
-
-4.0–5.2s: hero reveals from a slightly close pose; large AURA wordmark resolves at left. 5.2–8.5s: the product drifts inward by 48 px as a warm rim reflection describes its curved body. 8.0–10.0s: “A place for your ideas.” and “Wearable note-taking. Development concept.” establish purpose and stage.
-
-## Frame 3 — One small gesture
-
-- scene: Hardware macro paired with one-tap capture language and a recording waveform.
-- duration: 6s
-- poster: 13s
-- transition_in: cut
-- status: animated
-- src: index.html
-- asset_candidates: assets/hero-macro.png
-
-10.0–12.0s: “Press once. Stay present.” enters in two sequential lines. 12.0–14.0s: an apricot recording point and finite waveform illustrate the intended interaction. 14.0–16.0s: “Visible recording. Tactile feedback.” stays readable as the photographic macro pushes gently inward. A small “Intended interaction” label qualifies the simulated feedback.
-
-## Frame 4 — A choice you can feel
-
-- scene: A physical control is supported by a simple off/on concept state, then rests on off.
-- duration: 6s
-- poster: 19s
-- transition_in: cut
-- status: animated
-- src: index.html
-- asset_candidates: assets/detail.png
-
-16.0–17.2s: “Your attention. Your control.” appears. 17.2–19.2s: the physical microphone disconnect concept moves to off. 19.2–22.0s: “A physical mic disconnect.” and “You decide when to capture.” hold. No claim of encryption or certification is made.
-
-## Frame 5 — Thoughts made useful
-
-- scene: The intent of phone-assisted notes is expressed by a single clean interface concept.
-- duration: 7s
-- poster: 25.5s
-- transition_in: crossfade
-- status: animated
-- src: index.html
-- asset_candidates: authored and explicitly labeled notes interface concept
-
-22.0–23.3s: “Keep the moment. Find the meaning.” resolves at left. 23.0–26.0s: an illustrative capture becomes a title, summary, and action item on one notes surface. 26.0–29.0s: “Capture offline. Organize with your phone.” establishes the intended system architecture. “Phone interface concept” remains visible.
-
-## Frame 6 — The promise
-
-- scene: Product hero and final AURA identity settle into a quiet long hold.
-- duration: 7s
-- poster: 33s
-- transition_in: crossfade
-- status: animated
-- src: index.html
-- asset_candidates: assets/hero-close.png
-
-29.0–30.5s: the product and AURA wordmark take final positions. 30.5–32.0s: “Be here. Keep the thought.” settles in two lines. 32.0–36.0s: the closing lockup holds; a fine apricot rule anchors “A wearable note-taking concept.” Development concept labeling remains readable to the final frame. Score resolves and fades naturally; picture never falls to black.
+The complete original A01 film is preserved in `../archive/A01`. The unreleased A02 source draft is preserved in `../archive/A02-draft`; no A02 video was rendered.

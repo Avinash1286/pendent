@@ -5,23 +5,53 @@
     "Housing_Front": {
       "connected_components": 1,
       "non_manifold_edges": 0,
-      "volume_mm3": 1941.51294
+      "volume_mm3": 835.1214
     },
     "Housing_Back": {
       "connected_components": 1,
       "non_manifold_edges": 0,
-      "volume_mm3": 2238.57675
+      "volume_mm3": 1830.30985
     },
     "Record_Button": {
       "connected_components": 1,
       "non_manifold_edges": 0,
-      "volume_mm3": 28.70459
+      "volume_mm3": 801.22393
+    },
+    "Fabrication_Button": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 803.83508
+    },
+    "Fabrication_Top_Retainer": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 7.49229
+    },
+    "Fabrication_Contact_Carrier": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 17.65656
+    },
+    "Fabrication_Privacy_Slider": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 2.56564
+    },
+    "Fabrication_Fit_Coupon": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 1831.12184
+    },
+    "Fabrication_Dock_Alignment_Jig": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 6403.75293
     }
   },
   "nominal_envelope_intersections": {
     "Housing_Front vs Housing_Back": {
       "intersection_mm3": 0.0,
-      "faces": 0
+      "faces": 5
     },
     "PCB_Reference vs Housing_Back": {
       "intersection_mm3": 0.0,
@@ -54,6 +84,72 @@
     "Haptic_Reference vs PCB_Reference": {
       "intersection_mm3": 0.0,
       "faces": 0
+    },
+    "Record_Button vs RF_Module_Envelope": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Record_Button vs Haptic_Reference": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Charging_Contact_Bed vs Battery_Envelope": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Paddle_Fully_Pressed vs Housing_Front": {
+      "intersection_mm3": 0.0,
+      "faces": 6
+    },
+    "Paddle_Fully_Pressed vs Haptic_Reference": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Paddle_Fully_Pressed vs RF_Module_Envelope": {
+      "intersection_mm3": 0.0,
+      "faces": 0
     }
-  }
+  },
+  "charging_interface": {
+    "contact_count": 3,
+    "centers_mm": [
+      [
+        -3.0,
+        -19.0,
+        -4.96
+      ],
+      [
+        0.0,
+        -19.0,
+        -4.96
+      ],
+      [
+        3.0,
+        -19.0,
+        -4.96
+      ]
+    ],
+    "diameters_mm": [
+      1.7,
+      1.7,
+      1.7
+    ],
+    "required_interposer": "qualified short contact tails or passive interposer below cell atY-19; contact termination remains unresolved"
+  },
+  "revision": "A03",
+  "nominal_clearances_mm": {
+    "pcb_capsule_minimum_xy": 0.5639,
+    "pcb_to_cell": 0.3,
+    "film_thickness": 0.05,
+    "cell_to_rear": 0.25,
+    "cell_to_antenna_y": 0.95,
+    "cell_to_contact_carrier_y": 0.55,
+    "paddle_travel": 0.35,
+    "paddle_to_haptic_at_full_press": 0.25,
+    "switch_plunger_rest_gap": 0.02,
+    "body_front_skin": 0.9,
+    "body_rear_floor": 1.0,
+    "straight_side_wall": 1.2
+  },
+  "physical_validation": "Not performed. Nominal topology/envelope checks do not prove printer accuracy, material strength, motion, sealing, RF, thermal, skin-contact or cell-swelling safety."
 }

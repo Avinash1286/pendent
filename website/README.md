@@ -15,6 +15,7 @@ npm run dev
 npm run lint
 npx tsc --noEmit
 node scripts/verify-model.mjs
+node scripts/verify-framing.mjs
 node scripts/verify-assets.mjs
 npm run build
 ```
@@ -47,6 +48,8 @@ The root `.vercelignore` excludes hardware/render workspaces while retaining web
 ## Asset provenance
 
 Product models/renders originate in `../enclosure`. Video and captions originate in `../film/aura-launch`. The Manrope variable font is redistributed under its SIL Open Font License in `public/fonts/OFL.txt`. The release README provides the final site URL.
+
+After completing the Blender renders, `node scripts/sync-product-assets.mjs` refreshes the website GLB and optimized WebP images using Sharp. Copy the verified MP4, poster and captions from the film's `renders/` directory and composition root into `public/film/`. The framing check projects actual model vertices across 60 combinations of viewport, assembly progress and camera angle; it is a geometry check, not a browser screenshot test.
 
 ## Commerce boundary
 

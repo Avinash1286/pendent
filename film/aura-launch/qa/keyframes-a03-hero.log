@@ -1,0 +1,10 @@
+◇  onion-skin screenshot saved F:\circuit\film\aura-launch\qa\a03-hero-motion.png
+   11 elements · open it to verify the motion matches your target, then read the keyframes below.
+
+◇  aura-launch — 1 item
+
+index.html  (index.html)
+  #hero-art  fromTo/flat  @5.2s→11.2s (6s)
+    0% {scale:1.055 x:22 y:10}  100% {scale:1 x:0 y:0}
+
+Tip: edit the keyframes in source, then `hyperframes keyframes --shot out.png` to see the rendered motion.

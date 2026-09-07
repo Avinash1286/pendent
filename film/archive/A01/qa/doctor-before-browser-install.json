@@ -1,0 +1,98 @@
+{
+  "ok": false,
+  "platform": "win32",
+  "arch": "x64",
+  "checks": [
+    {
+      "name": "Version",
+      "ok": true,
+      "detail": "0.8.31 (latest)"
+    },
+    {
+      "name": "Node.js",
+      "ok": true,
+      "detail": "v24.15.0 (win32 x64)"
+    },
+    {
+      "name": "CPU",
+      "ok": true,
+      "detail": "8 cores · Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz @ 2112MHz"
+    },
+    {
+      "name": "Memory",
+      "ok": true,
+      "detail": "11.8 GB total · 2.5 GB available"
+    },
+    {
+      "name": "Disk",
+      "ok": true,
+      "detail": "46.2 GB free"
+    },
+    {
+      "name": "Frames cache",
+      "ok": true,
+      "detail": "$HOME\\AppData\\Local\\Temp\\hyperframes-extract-cache-u · 22.4 GB free at $HOME\\AppData\\Local\\Temp · default"
+    },
+    {
+      "name": "Archive extractor",
+      "ok": true,
+      "detail": "Built into Windows"
+    },
+    {
+      "name": "Environment",
+      "ok": true,
+      "detail": "non-TTY"
+    },
+    {
+      "name": "whisper-cpp",
+      "ok": false,
+      "detail": "Not found (optional — needed for transcription)",
+      "hint": "Build with cmake: https://github.com/ggml-org/whisper.cpp#building"
+    },
+    {
+      "name": "TTS (Kokoro)",
+      "ok": false,
+      "detail": "Not installed (optional — local voice fallback)",
+      "hint": "pip install kokoro-onnx soundfile"
+    },
+    {
+      "name": "BGM (MusicGen)",
+      "ok": false,
+      "detail": "Not installed (optional — local music fallback)",
+      "hint": "pip install transformers torch soundfile numpy"
+    },
+    {
+      "name": "FFmpeg",
+      "ok": true,
+      "detail": "ffmpeg 8.1.1-full_build-www.gyan.dev at $HOME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    },
+    {
+      "name": "FFprobe",
+      "ok": true,
+      "detail": "ffprobe 8.1.1-full_build-www.gyan.dev at $HOME\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffprobe.exe"
+    },
+    {
+      "name": "Chrome",
+      "ok": false,
+      "detail": "Chrome Headless Shell is required for local rendering.",
+      "hint": "Run: npx hyperframes browser ensure"
+    },
+    {
+      "name": "Docker",
+      "ok": false,
+      "detail": "Not found",
+      "hint": "https://docs.docker.com/get-docker/"
+    },
+    {
+      "name": "Docker running",
+      "ok": false,
+      "detail": "Not running",
+      "hint": "Start Docker Desktop or run: sudo systemctl start docker"
+    }
+  ],
+  "_meta": {
+    "version": "0.8.31",
+    "latestVersion": "0.8.31",
+    "updateAvailable": false
+  }
+}

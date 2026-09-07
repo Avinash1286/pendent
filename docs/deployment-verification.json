@@ -1,38 +1,41 @@
 {
-  "checkedAt": "2026-09-07T20:59:58.7006905Z",
-  "deploymentId": "dpl_6NP2aW6Qu5o2CC63s6YPvybgRa1c",
-  "website": "https://pendent-eight.vercel.app",
+  "browserInteractionQA": false,
   "checks": [
     {
-      "Url": "https://pendent-eight.vercel.app/",
-      "Status": 200,
-      "ContentType": [
-        "text/html; charset=utf-8"
-      ]
+      "status": 200,
+      "contentLength": "845",
+      "contentType": "text/html; charset=utf-8",
+      "url": "https://pendent-eight.vercel.app/"
     },
     {
-      "Url": "https://pendent-eight.vercel.app/product/aura.glb",
-      "Status": 200,
-      "ContentType": [
-        "model/gltf-binary"
-      ]
+      "status": 200,
+      "contentLength": "",
+      "contentType": "model/gltf-binary",
+      "url": "https://pendent-eight.vercel.app/product/aura.glb"
     },
     {
-      "Url": "https://pendent-eight.vercel.app/film/aura-launch.mp4",
-      "Status": 200,
-      "ContentType": [
-        "video/mp4"
-      ]
+      "status": 200,
+      "contentLength": "13450756",
+      "contentType": "video/mp4",
+      "url": "https://pendent-eight.vercel.app/film/aura-launch.mp4"
     },
     {
-      "Url": "https://pendent-eight.vercel.app/film/captions.vtt",
-      "Status": 200,
-      "ContentType": [
-        "text/vtt; charset=utf-8"
-      ]
+      "status": 200,
+      "contentLength": "",
+      "contentType": "text/vtt; charset=utf-8",
+      "url": "https://pendent-eight.vercel.app/film/captions.vtt"
+    },
+    {
+      "status": 200,
+      "contentLength": "90893",
+      "contentType": "image/jpeg",
+      "url": "https://pendent-eight.vercel.app/film/poster.jpg"
     }
   ],
-  "filmSha256": "5ACDFFF5B26622E3BD28C9F58957FF276FCA7F10C337D3C5F22CF79F88016295",
+  "deploymentId": "dpl_4jcfYRPR7ZepHzR6BXb8hK7pjYCU",
+  "website": "https://pendent-eight.vercel.app",
   "filmMatchesSource": true,
-  "browserInteractionQA": false
+  "filmSha256": "3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738",
+  "filmDurationSeconds": 44,
+  "checkedAt": "2026-09-07T22:24:13.3280501Z"
 }

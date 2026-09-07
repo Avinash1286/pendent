@@ -13,6 +13,8 @@
 **/*.blend1
 **/*.blend2
 **/*.log
+**/*.tsbuildinfo
+**/audit-report.json
 **/tmp/
 .tools/
 .scratch/

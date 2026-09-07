@@ -1252,3 +1252,5 @@ h1 .soft {
   }
 }
 @media(min-width:721px){.hero-stage{height:88%;top:10%}}
+.capture-panel{background:#191b1e}.capture-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101113ee 0%,#10111333 40%,transparent 65%);pointer-events:none}
+.film-section>img{width:80%;left:auto;right:0;mask-image:linear-gradient(90deg,transparent,black 25%)}@media(max-width:720px){.film-section>img{width:100%;mask-image:none}}

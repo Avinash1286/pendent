@@ -1743,6 +1743,7 @@ h1 .soft {
 }
 .minimal-footer {
   display: flex;
+  background: #15181a;
   justify-content: space-between;
   align-items: center;
   gap: 24px;

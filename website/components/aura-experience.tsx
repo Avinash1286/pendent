@@ -307,8 +307,8 @@ export default function AuraExperience() {
         <DialogContent className="film-dialog">
           <DialogTitle>AURA — Capture the context of your life.</DialogTitle>
           <DialogDescription className="sr-only">
-            A 36-second product concept film with original music and English
-            title captions.
+            A 44-second product concept film with an animated inside view,
+            original music and English title captions.
           </DialogDescription>
           {filmOpen && (
             <video

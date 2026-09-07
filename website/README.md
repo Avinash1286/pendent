@@ -31,7 +31,7 @@ The site has three chapters: the product hero with finish selection, the interac
 - Continuous assembly slider, play/pause, see-through shell, front/profile/three-quarter camera presets and reset.
 - Direct model part selection and five layer explanations, with keyboard-accessible alternative controls.
 - Guided sample recording, transfer and AI-note flow. No live microphone or AI requests.
-- Modal 36-second launch film with English title captions and download.
+- Modal 44-second launch film with the actual model opening into layers and reassembling, English title captions and download.
 - Downloadable JSON product configuration. No reservation, order or payment is created.
 - Responsive styling, reduced-motion support, keyboard focus and image fallback if WebGL fails.
 

@@ -106,7 +106,7 @@ export default function AssemblyExplorer() {
           ))}
         </div>
         <div className="assembly-measure">
-          <span>9.5</span>
+          <span>10</span>
           <span>
             mm
             <br />
@@ -129,12 +129,15 @@ export default function AssemblyExplorer() {
             {playing ? <Pause size={17} /> : <Play size={17} />}
           </button>
           <div className="assembly-scrub">
+            <span className="sr-only" id="assembly-progress-label">
+              Separate the product layers
+            </span>
             <div>
               <span>Assembled</span>
               <span>Inside out</span>
             </div>
             <Slider
-              aria-label="Separate the product layers"
+              aria-labelledby="assembly-progress-label"
               min={0}
               max={100}
               step={1}

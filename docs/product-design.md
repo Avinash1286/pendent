@@ -8,11 +8,11 @@ The primary product promise is **Be here. Keep the thought.** AI is useful only 
 
 ## Physical design
 
-Revision A02 targets a 40mm tall ×30mm wide ×9.5mm deep body. A low-profile integrated bail extends the case height to 42.8mm. The PCB envelope is 24mm ×34mm ×0.8mm with R4 corners. The industrial design uses an RF-transparent polymer body with a satin ceramic / titanium-color finish; it is not a solid titanium shell. Lunar, Graphite and Dune are proposed colorways. A01 is preserved in the enclosure and film archives.
+Revision A03 targets a 48mm tall ×28mm wide ×10mm deep capsule body, approximately 54mm tall including the integrated bail. The PCB envelope is 24mm ×42mm ×0.8mm with R10 corners. A glossy black recording face sits within a soft satin surround. The frame uses RF-transparent polymer with a nonconductive silver-color finish; it is not a solid metal shell. Lunar, Graphite and Dune are proposed frame finishes. Earlier revisions are preserved in the enclosure and film archives.
 
-The case separates into front and rear shells. A flush button with integral plunger, separate board retainer, threaded fasteners, acoustic passages and a physical switch opening are represented in the Blender design. Separate printable meshes and a fit coupon support assembly trials. Tough resin printing is the intended prototype process; mesh manifoldness alone does not establish tolerances, fastening strength or acoustic performance. See the mechanical guide for actual clearances, orientations and support placement.
+The case separates into frame, moving black face and rear shell. The whole face acts as a short-travel record paddle over the PCB tactile switch; it has mechanical travel stops and an underside plunger. A separate board retainer, threaded fasteners, acoustic passages and side privacy-slider opening support assembly. Separate printable meshes and a fit coupon support trials. Tough resin printing is the intended prototype process; mesh manifoldness alone does not establish tolerances, fastening strength or acoustic performance. The 10mm depth allows a printable face and 0.20mm actuation travel. See the mechanical guide for actual clearances, orientations and support placement.
 
-An adjustable cord should have a tested breakaway clasp. Do not infer tensile or release-force certification from the visualization. The magnetic charging dock is an accessory concept; electrical charging contacts are included in the board and case work, but a complete dock production design is not supplied.
+A fine chain or alternative cord should use a tested breakaway clasp. Do not infer tensile or release-force certification from the visualization. A conductive chain also needs antenna tests in its actual wearing position. The magnetic charging dock is an accessory concept; electrical charging contacts are included in the board and case work, but a complete dock production design is not supplied.
 
 ## Interaction contract for future firmware
 

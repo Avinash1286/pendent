@@ -14,9 +14,9 @@ const gltf = await new GLTFLoader().parseAsync(data, '');
 gltf.scene.rotation.x = Math.PI / 2;
 const bbox = new THREE.Box3().setFromObject(gltf.scene);
 const size = bbox.getSize(new THREE.Vector3());
-assert.ok(size.x > 0.029 && size.x < 0.033, `Width ${size.x}`);
-assert.ok(size.y > 0.04 && size.y < 0.049, `Height with loop ${size.y}`);
-assert.ok(size.z > 0.009 && size.z < 0.0105, `A02 depth ${size.z}`);
+assert.ok(size.x > 0.027 && size.x < 0.03, `Width ${size.x}`);
+assert.ok(size.y > 0.052 && size.y < 0.057, `Height with loop ${size.y}`);
+assert.ok(size.z > 0.0095 && size.z < 0.011, `A03 depth ${size.z}`);
 const names = [];
 let meshCount = 0;
 gltf.scene.traverse((object) => {

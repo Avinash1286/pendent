@@ -185,11 +185,11 @@ export default function AuraExperience() {
       finish: finishes[finish].name,
       targetPriceUSD: 179,
       status: 'Development concept — not an order',
-      revision: 'A02',
-      bodyMM: { height: 40, width: 30, depth: 9.5 },
+      revision: 'A03',
+      bodyMM: { height: 48, width: 28, depth: 10 },
       intendedBundle: [
         'AURA pendant',
-        'Adjustable breakaway cord',
+        'Chain with breakaway clasp',
         'Magnetic charging dock',
       ],
       project: 'https://github.com/Avinash1286/pendent',
@@ -259,7 +259,7 @@ export default function AuraExperience() {
             <span className="viewer-hint">
               <Rotate3D /> Drag to discover
             </span>
-            <span className="hero-edition">DESIGN EDITION / 02</span>
+            <span className="hero-edition">DESIGN EDITION / 03</span>
           </div>
         </section>
         <div className="ribbon" aria-label="Intended product features">
@@ -297,7 +297,7 @@ export default function AuraExperience() {
               <img
                 className="detail-image"
                 src="/product/detail.webp"
-                alt="Close-up of AURA’s tactile record button and softly rounded satin body"
+                alt="Close-up of AURA’s glossy black recording face and softly rounded satin surround"
                 loading="lazy"
               />
               <div className="capture-copy">
@@ -320,8 +320,8 @@ export default function AuraExperience() {
               <span className="step-index">01</span>
               <h3>Catch the thought.</h3>
               <p>
-                A tactile button and a gentle pulse let you start without
-                looking down.
+                A tactile recording face and a gentle pulse let you start
+                without looking down.
               </p>
             </div>
             <div>
@@ -403,11 +403,11 @@ export default function AuraExperience() {
           </div>
           <div className="spec-line reveal">
             <div>
-              <strong>40 × 30 mm</strong>
+              <strong>48 × 28 mm</strong>
               <span>Compact body design</span>
             </div>
             <div>
-              <strong>9.5 mm</strong>
+              <strong>10 mm</strong>
               <span>Body depth target</span>
             </div>
             <div>
@@ -415,7 +415,7 @@ export default function AuraExperience() {
               <span>Digital speech capture</span>
             </div>
             <div>
-              <strong>One button</strong>
+              <strong>One gesture</strong>
               <span>Record. Stop. Bookmark.</span>
             </div>
           </div>
@@ -530,7 +530,7 @@ export default function AuraExperience() {
                 <Check /> AURA pendant
               </div>
               <div>
-                <Check /> Adjustable breakaway cord
+                <Check /> Chain with breakaway clasp
               </div>
               <div>
                 <Check /> Magnetic charging dock

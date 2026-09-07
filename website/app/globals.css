@@ -1285,7 +1285,57 @@ h1 .soft {
   }
 }
 
-/* A02: a quiet studio around a product that the visitor can take apart. */
+/* A03: a quiet studio around a product that the visitor can take apart. */
+.hero {
+  color: #171a1d;
+  background: radial-gradient(
+    ellipse at 73% 43%,
+    #e0e3e4,
+    #f3f4f2 55%,
+    #fafaf7
+  );
+}
+.hero .eyebrow {
+  color: #676c72;
+}
+.hero .eyebrow .dot {
+  background: #7a858f;
+}
+.hero h1 .soft {
+  color: #7d8287;
+}
+.hero-description {
+  color: #696f75;
+}
+.hero .pill.light {
+  background: #202428;
+  color: #f7f8f7;
+}
+.hero-bottom {
+  color: #727980;
+}
+.nav {
+  border-color: #20242812;
+  color: #22262a;
+}
+.nav-links {
+  color: #555c63;
+}
+.nav-links a:hover {
+  color: #161a1e;
+}
+.nav .nav-cta {
+  background: #24292d;
+  color: #f8f8f5 !important;
+}
+.ribbon {
+  background: #f3f4f1;
+  color: #4a5056;
+  border-color: #22262a12;
+}
+.ribbon svg {
+  color: #727b83;
+}
 .assembly-explorer {
   border: 1px solid #ffffff14;
   border-radius: 30px;

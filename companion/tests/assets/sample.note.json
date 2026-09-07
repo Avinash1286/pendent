@@ -1,0 +1,22 @@
+{
+  "audio_file": "sample.wav",
+  "language": "en",
+  "duration_seconds": 7.5529375,
+  "transcript": "Remember to send the design files to Maya on Friday. The new pendant should feel comfortable and simple to use.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.0,
+      "text": "Remember to send the design files to Maya on Friday. The new pendant should feel comfortable and simple to use."
+    }
+  ],
+  "title": "Remember to send the design files to Maya on",
+  "summary": [
+    "Remember to send the design files to Maya on Friday.",
+    "The new pendant should feel comfortable and simple to use."
+  ],
+  "suggested_actions": [
+    "Remember to send the design files to Maya on Friday."
+  ],
+  "summary_method": "extractive — original sentences, not an LLM summary"
+}

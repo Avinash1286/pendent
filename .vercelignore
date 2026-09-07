@@ -1,4 +1,7 @@
 hardware/
+firmware/
+companion/
+portal/
 enclosure/
 film/
 docs/

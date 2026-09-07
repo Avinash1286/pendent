@@ -5,6 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import {
   partForName,
+  assemblyCameraDistance,
   separation,
   type Part,
   type ViewPreset,
@@ -249,7 +250,9 @@ export default function DeviceViewer({
                 /shell|housing|ceramic|satin|body|titanium|lunar/i.test(
                   material.name + ' ' + object.name,
                 ) &&
-                !/battery|pcb|cord|gasket|button|black/i.test(object.name)
+                !/battery|pcb|cord|chain|gasket|button|black|obsidian|lens|paddle|face/i.test(
+                  object.name,
+                )
               ) {
                 material.color.set(options.current.finish);
                 material.metalness = 0.32;
@@ -328,7 +331,7 @@ export default function DeviceViewer({
             targetY,
             reducedMotion.matches ? 1 : 0.075,
           );
-          const targetDistance = 4.2 + p * (camera.aspect < 0.85 ? 3.2 : 1.8);
+          const targetDistance = assemblyCameraDistance(camera.aspect, p);
           camera.position.setLength(
             THREE.MathUtils.lerp(
               camera.position.length(),
@@ -384,7 +387,7 @@ export default function DeviceViewer({
       <img
         className={`device-fallback ${ready ? 'loaded' : ''}`}
         src="/product/transparent.webp"
-        alt="AURA pendant with a soft satin shell, record button and woven necklace cord"
+        alt="AURA capsule pendant with a glossy black face, satin frame and necklace bail"
         loading={mode === 'hero' ? 'eager' : 'lazy'}
       />
       <div ref={container} className="device-canvas" />

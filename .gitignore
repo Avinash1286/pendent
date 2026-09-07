@@ -10,6 +10,9 @@
 **/dist/
 **/.next/
 **/__pycache__/
+**/.venv/
+**/.convex/
+**/recordings/
 **/*.blend1
 **/*.blend2
 **/*.log

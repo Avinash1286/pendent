@@ -1,69 +1,959 @@
-'use client';
-import { useState, useMemo, useDeferredValue, useRef } from 'react';
-import { useQuery, useMutation, useAction, useConvexAuth, useConvexConnectionState } from 'convex/react';
-import { useAuthActions } from '@convex-dev/auth/react';
-import { Dialog } from '@base-ui/react/dialog';
-import { Search, Plus, ArrowUpRight, Copy, Download, Check, X, AudioLines, Layers, UserRound, KeyRound, Archive, LogOut, FileText, Upload, Sparkles, CircleHelp } from 'lucide-react';
-import { api } from '../convex/_generated/api';
-import type { Doc, Id } from '../convex/_generated/dataModel';
-import { buildContext } from '../lib/context';
+"use client";
+import { useState, useMemo, useDeferredValue, useRef } from "react";
+import {
+  useQuery,
+  useMutation,
+  useAction,
+  useConvexAuth,
+  useConvexConnectionState,
+} from "convex/react";
+import { useAuthActions } from "@convex-dev/auth/react";
+import { Dialog } from "@base-ui/react/dialog";
+import {
+  Search,
+  Plus,
+  ArrowUpRight,
+  Copy,
+  Download,
+  Check,
+  X,
+  AudioLines,
+  Layers,
+  UserRound,
+  KeyRound,
+  Archive,
+  LogOut,
+  FileText,
+  Upload,
+  Sparkles,
+  CircleHelp,
+} from "lucide-react";
+import { api } from "../convex/_generated/api";
+import type { Doc, Id } from "../convex/_generated/dataModel";
+import { buildContext } from "../lib/context";
+import { parseImportedNote } from "../lib/import-note";
 
-type Tab = 'notes' | 'context' | 'profile' | 'connections' | 'archive';
-const emptyNote = { title: '', transcript: '', summary: [] as string[], actions: [] as string[], tags: [] as string[], recordedAt: Date.now(), contextEnabled: false };
-function download(name: string, text: string, type = 'text/markdown') {
+type Tab = "notes" | "context" | "profile" | "connections" | "archive";
+const emptyNote = {
+  title: "",
+  transcript: "",
+  summary: [] as string[],
+  actions: [] as string[],
+  tags: [] as string[],
+  recordedAt: Date.now(),
+  contextEnabled: false,
+};
+function download(name: string, text: string, type = "text/markdown") {
   const url = URL.createObjectURL(new Blob([text], { type }));
-  const anchor = document.createElement('a'); anchor.href = url; anchor.download = name; anchor.click();
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = name;
+  anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function message(error: unknown) { return error instanceof Error ? error.message.replace(/\[CONVEX[^\]]*\]\s*/g, '').slice(0, 250) : 'Please try again.'; }
+function message(error: unknown) {
+  return error instanceof Error
+    ? error.message.replace(/\[CONVEX[^\]]*\]\s*/g, "").slice(0, 250)
+    : "Please try again.";
+}
 
 function SignIn() {
   const { signIn } = useAuthActions();
-  const [flow, setFlow] = useState<'signIn' | 'signUp'>('signIn');
-  const [busy, setBusy] = useState(false); const [error, setError] = useState('');
-  return <main className="auth-page"><div className="auth-story"><a className="brand" href="https://github.com/Avinash1286/pendent">AURA</a><div><p className="eyebrow">A PLACE FOR YOUR THOUGHTS</p><h1>Keep the thought.<br /><span>Find what’s next.</span></h1><p>Your recordings, notes and context.<br />Together, when you need them.</p></div><span className="auth-foot">Part of the open AURA project ↗</span></div><div className="auth-card"><p className="eyebrow">AURA NOTES</p><h2>{flow === 'signIn' ? 'Welcome back.' : 'Make room for a thought.'}</h2><p>{flow === 'signIn' ? 'Sign in to your personal notes space.' : 'Create your private notes space.'}</p><form onSubmit={async event => { event.preventDefault(); setError(''); setBusy(true); const data = new FormData(event.currentTarget); data.set('flow', flow); try { await signIn('password', data); } catch { setError('Could not sign in. Check your details or choose the correct account option.'); } finally { setBusy(false); } }}><label>Email<input type="email" name="email" required autoComplete="email" /></label><label>Password<input type="password" name="password" required minLength={12} maxLength={200} autoComplete={flow === 'signIn' ? 'current-password' : 'new-password'} /></label><button className="primary" disabled={busy}>{busy ? 'Connecting…' : flow === 'signIn' ? 'Sign in' : 'Create account'}<ArrowUpRight size={17} /></button>{error && <p className="error" role="alert">{error}</p>}</form><button className="link-button" onClick={() => { setFlow(flow === 'signIn' ? 'signUp' : 'signIn'); setError(''); }}>{flow === 'signIn' ? 'New here? Create an account' : 'Already have an account? Sign in'}</button><p className="fine">Development release. Use at least 12 password characters. Email verification and password recovery are not enabled yet.</p></div></main>;
+  const [flow, setFlow] = useState<"signIn" | "signUp">("signIn");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  return (
+    <main className="auth-page">
+      <div className="auth-story">
+        <a className="brand" href="https://github.com/Avinash1286/pendent">
+          AURA
+        </a>
+        <div>
+          <p className="eyebrow">A PLACE FOR YOUR THOUGHTS</p>
+          <h1>
+            Keep the thought.
+            <br />
+            <span>Find what’s next.</span>
+          </h1>
+          <p>
+            Your recordings, notes and context.
+            <br />
+            Together, when you need them.
+          </p>
+        </div>
+        <span className="auth-foot">Part of the open AURA project ↗</span>
+      </div>
+      <div className="auth-card">
+        <p className="eyebrow">AURA NOTES</p>
+        <h2>{flow === "signIn" ? "Welcome back." : "Make room for a thought."}</h2>
+        <p>
+          {flow === "signIn"
+            ? "Sign in to your personal notes space."
+            : "Create your private notes space."}
+        </p>
+        <form
+          onSubmit={async (event) => {
+            event.preventDefault();
+            setError("");
+            setBusy(true);
+            const data = new FormData(event.currentTarget);
+            data.set("flow", flow);
+            try {
+              await signIn("password", data);
+            } catch {
+              setError(
+                "Could not sign in. Check your details or choose the correct account option.",
+              );
+            } finally {
+              setBusy(false);
+            }
+          }}
+        >
+          <label>
+            Email
+            <input type="email" name="email" required autoComplete="email" />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              name="password"
+              required
+              minLength={12}
+              maxLength={200}
+              autoComplete={flow === "signIn" ? "current-password" : "new-password"}
+            />
+          </label>
+          <button className="primary" disabled={busy}>
+            {busy ? "Connecting…" : flow === "signIn" ? "Sign in" : "Create account"}
+            <ArrowUpRight size={17} />
+          </button>
+          {error && (
+            <p className="error" role="alert">
+              {error}
+            </p>
+          )}
+        </form>
+        <button
+          className="link-button"
+          onClick={() => {
+            setFlow(flow === "signIn" ? "signUp" : "signIn");
+            setError("");
+          }}
+        >
+          {flow === "signIn" ? "New here? Create an account" : "Already have an account? Sign in"}
+        </button>
+        <p className="fine">
+          Development release. Use at least 12 password characters. Email verification and password
+          recovery are not enabled yet.
+        </p>
+      </div>
+    </main>
+  );
 }
 
 export default function NotesPortal() {
   const { isAuthenticated, isLoading } = useConvexAuth();
-  if (isLoading) return <main className="loading"><span className="brand">AURA</span><p>Opening your space…</p></main>;
+  if (isLoading)
+    return (
+      <main className="loading">
+        <span className="brand">AURA</span>
+        <p>Opening your space…</p>
+      </main>
+    );
   return isAuthenticated ? <Workspace /> : <SignIn />;
 }
 
 function Workspace() {
   const { signOut } = useAuthActions();
   const connection = useConvexConnectionState();
-  const [tab, setTab] = useState<Tab>('notes'); const [search, setSearch] = useState('');
+  const [tab, setTab] = useState<Tab>("notes");
+  const [search, setSearch] = useState("");
   const deferredSearch = useDeferredValue(search);
-  const notes = useQuery(api.notes.list, { search: deferredSearch, archived: tab === 'archive' });
+  const notes = useQuery(api.notes.list, { search: deferredSearch, archived: tab === "archive" });
   const allNotes = useQuery(api.notes.list, {});
   const profile = useQuery(api.profiles.get, {});
   const tokens = useQuery(api.tokens.list, {});
-  const saveNote = useMutation(api.notes.save); const archiveNote = useMutation(api.notes.archive); 
-  const saveProfile = useMutation(api.profiles.save); const createToken = useAction(api.tokenActions.create); const revokeToken = useMutation(api.tokens.revoke);
-  const [selected, setSelected] = useState<Id<'notes'>[]>([]); const [purpose, setPurpose] = useState('Help me find the next useful step in these thoughts.');
-  const [includeProfile, setIncludeProfile] = useState(true); const [toast, setToast] = useState(''); const [error, setError] = useState('');
-  const [editing, setEditing] = useState<Partial<Doc<'notes'>> | null>(null); const [busy, setBusy] = useState(false);
-  const [secret, setSecret] = useState(''); const importInput = useRef<HTMLInputElement>(null);
-  const selectedNotes = useMemo(() => (allNotes ?? []).filter(note => selected.includes(note._id)), [allNotes, selected]);
-  const context = useMemo(() => buildContext(includeProfile ? profile ?? null : null, selectedNotes, purpose), [profile, selectedNotes, purpose, includeProfile]);
-  function notify(text: string) { setToast(text); setTimeout(() => setToast(''), 3500); }
-  async function copy(text: string) { try { await navigator.clipboard.writeText(text); notify('Copied. Paste it into your conversation.'); } catch { setError('Clipboard access is unavailable. Use the download button instead.'); } }
-  async function run(action: () => Promise<unknown>, success?: string) { setError(''); try { await action(); if (success) notify(success); } catch (e) { setError(message(e)); } }
-  const nav = [{ id: 'notes' as const, label: 'All thoughts', icon: AudioLines }, { id: 'context' as const, label: 'Context Pack', icon: Layers }, { id: 'profile' as const, label: 'About you', icon: UserRound }, { id: 'connections' as const, label: 'Connections', icon: KeyRound }, { id: 'archive' as const, label: 'Archive', icon: Archive }];
-  return <div className="workspace"><aside className="sidebar"><a className="brand" href="#" onClick={e => { e.preventDefault(); setTab('notes'); }}>AURA<span>NOTES</span></a><div className="space-label">YOUR SPACE</div><nav aria-label="Workspace navigation">{nav.map(item => <button key={item.id} className={tab === item.id ? 'active' : ''} onClick={() => { setTab(item.id); setSearch(''); }}><item.icon size={18} />{item.label}{item.id === 'context' && selected.length > 0 && <span className="nav-count">{selected.length}</span>}</button>)}<button className="mobile-signout" onClick={() => run(() => signOut())}><LogOut size={16} />Sign out</button></nav><div className="sidebar-bottom"><p>A little less to hold.<br />A little more to explore.</p><a href="https://github.com/Avinash1286/pendent" target="_blank" rel="noreferrer"><CircleHelp size={16} />Project & guides<ArrowUpRight size={14} /></a><button onClick={() => run(() => signOut())}><LogOut size={16} />Sign out</button></div></aside><main className="main"><header className="topbar"><span>YOUR MIND, COLLECTED.</span><span className="connection-status"><i style={{ background: connection.isWebSocketConnected ? undefined : '#ad8c55' }} />{connection.isWebSocketConnected ? 'Connected to your notes' : 'Reconnecting…'}</span></header>{error && <div className="error-banner" role="alert">{error}<button aria-label="Dismiss error" onClick={() => setError('')}><X size={16} /></button></div>}
+  const saveNote = useMutation(api.notes.save);
+  const archiveNote = useMutation(api.notes.archive);
+  const saveProfile = useMutation(api.profiles.save);
+  const createToken = useAction(api.tokenActions.create);
+  const revokeToken = useMutation(api.tokens.revoke);
+  const [selected, setSelected] = useState<Id<"notes">[]>([]);
+  const [purpose, setPurpose] = useState("Help me find the next useful step in these thoughts.");
+  const [includeProfile, setIncludeProfile] = useState(true);
+  const [toast, setToast] = useState("");
+  const [error, setError] = useState("");
+  const [editing, setEditing] = useState<Partial<Doc<"notes">> | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [secret, setSecret] = useState("");
+  const importInput = useRef<HTMLInputElement>(null);
+  const selectedNotes = useMemo(
+    () => (allNotes ?? []).filter((note) => selected.includes(note._id)),
+    [allNotes, selected],
+  );
+  const context = useMemo(
+    () => buildContext(includeProfile ? (profile ?? null) : null, selectedNotes, purpose),
+    [profile, selectedNotes, purpose, includeProfile],
+  );
+  function notify(text: string) {
+    setToast(text);
+    setTimeout(() => setToast(""), 3500);
+  }
+  async function copy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      notify("Copied. Paste it into your conversation.");
+    } catch {
+      setError("Clipboard access is unavailable. Use the download button instead.");
+    }
+  }
+  async function run(action: () => Promise<unknown>, success?: string) {
+    setError("");
+    try {
+      await action();
+      if (success) notify(success);
+    } catch (e) {
+      setError(message(e));
+    }
+  }
+  const nav = [
+    { id: "notes" as const, label: "All thoughts", icon: AudioLines },
+    { id: "context" as const, label: "Context Pack", icon: Layers },
+    { id: "profile" as const, label: "About you", icon: UserRound },
+    { id: "connections" as const, label: "Connections", icon: KeyRound },
+    { id: "archive" as const, label: "Archive", icon: Archive },
+  ];
+  return (
+    <div className="workspace">
+      <aside className="sidebar">
+        <a
+          className="brand"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setTab("notes");
+          }}
+        >
+          AURA<span>NOTES</span>
+        </a>
+        <div className="space-label">YOUR SPACE</div>
+        <nav aria-label="Workspace navigation">
+          {nav.map((item) => (
+            <button
+              key={item.id}
+              className={tab === item.id ? "active" : ""}
+              onClick={() => {
+                setTab(item.id);
+                setSearch("");
+              }}
+            >
+              <item.icon size={18} />
+              {item.label}
+              {item.id === "context" && selected.length > 0 && (
+                <span className="nav-count">{selected.length}</span>
+              )}
+            </button>
+          ))}
+          <button className="mobile-signout" onClick={() => run(() => signOut())}>
+            <LogOut size={16} />
+            Sign out
+          </button>
+        </nav>
+        <div className="sidebar-bottom">
+          <p>
+            A little less to hold.
+            <br />A little more to explore.
+          </p>
+          <a href="https://github.com/Avinash1286/pendent" target="_blank" rel="noreferrer">
+            <CircleHelp size={16} />
+            Project & guides
+            <ArrowUpRight size={14} />
+          </a>
+          <button onClick={() => run(() => signOut())}>
+            <LogOut size={16} />
+            Sign out
+          </button>
+        </div>
+      </aside>
+      <main className="main">
+        <header className="topbar">
+          <span>YOUR MIND, COLLECTED.</span>
+          <span className="connection-status">
+            <i style={{ background: connection.isWebSocketConnected ? undefined : "#ad8c55" }} />
+            {connection.isWebSocketConnected ? "Connected to your notes" : "Reconnecting…"}
+          </span>
+        </header>
+        {error && (
+          <div className="error-banner" role="alert">
+            {error}
+            <button aria-label="Dismiss error" onClick={() => setError("")}>
+              <X size={16} />
+            </button>
+          </div>
+        )}
 
-    {(tab === 'notes' || tab === 'archive') && <><div className="page-heading"><div><p className="eyebrow">{tab === 'archive' ? 'KEPT OUT OF THE WAY' : 'A PLACE TO COME BACK TO'}</p><h1>{tab === 'archive' ? 'Your archive.' : 'Good thoughts, kept.'}</h1><p>{tab === 'archive' ? 'Restore a note whenever you need it.' : 'Capture an idea. Give it some clarity. Take it somewhere new.'}</p></div><button className="primary" onClick={() => setEditing({ ...emptyNote, recordedAt: Date.now() })}><Plus size={18} />New thought</button></div><div className="notes-toolbar"><label className="search"><Search size={18} /><input aria-label="Search notes" value={search} onChange={e => setSearch(e.target.value)} placeholder="Find a thought…" /></label><span className="count">{notes?.length ?? '…'} notes</span><button className="secondary" onClick={() => importInput.current?.click()}><Upload size={16} />Import note</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={async event => { const file = event.target.files?.[0]; event.target.value = ''; if (!file) return; if (file.size > 262144) { setError('Choose a note JSON file smaller than 256 KB.'); return; } await run(async () => { const data = JSON.parse(await file.text()); const draft = { ...emptyNote, title: typeof data.title === 'string' ? data.title.slice(0, 160) : 'Imported thought', transcript: typeof data.transcript === 'string' ? data.transcript.slice(0, 60000) : '', summary: Array.isArray(data.summary) ? data.summary.filter((x: unknown) => typeof x === 'string').slice(0, 20) : [], actions: Array.isArray(data.suggested_actions) ? data.suggested_actions.filter((x: unknown) => typeof x === 'string').slice(0, 30) : [], recordedAt: Date.now() }; setEditing(draft); }); }} /></div>
-    {notes === undefined ? <div className="empty">Loading your thoughts…</div> : notes.length === 0 ? <div className="empty"><div className="empty-icon"><AudioLines size={30} /></div><h2>{search ? 'No thought found yet.' : tab === 'archive' ? 'Nothing tucked away.' : 'Your next thought belongs here.'}</h2><p>{search ? 'Try a shorter search, or a word from the transcript.' : 'Write a note, import a companion transcript, or connect your AURA sync client.'}</p>{!search && <button className="secondary" onClick={() => setTab('connections')}>Connect your workflow<ArrowUpRight size={16} /></button>}</div> : <div className="notes-grid">{notes.map(note => <article className={`note-card ${selected.includes(note._id) ? 'selected' : ''}`} key={note._id}><div className="note-card-top"><span><AudioLines size={14} />{note.source === 'pendant' ? 'AURA capture' : 'Personal thought'}</span><label className="select-note"><input type="checkbox" aria-label={`Add ${note.title} to Context Pack`} checked={selected.includes(note._id)} onChange={e => setSelected(e.target.checked ? [...selected, note._id] : selected.filter(id => id !== note._id))} /><span>{selected.includes(note._id) && <Check size={12} />}</span></label></div><button className="note-open" onClick={() => setEditing(note)}><h2>{note.title}</h2><p>{note.summary[0] || note.transcript.slice(0, 180) || 'Open to add more to this thought.'}</p></button><div className="note-tags">{note.tags.map(tag => <span key={tag}>{tag}</span>)}{note.contextEnabled && <span className="live-tag"><Sparkles size={11} />Live context</span>}</div><footer><time dateTime={new Date(note.recordedAt).toISOString()}>{new Date(note.recordedAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</time><button aria-label={note.archived ? `Restore ${note.title}` : `Archive ${note.title}`} onClick={() => run(() => archiveNote({ id: note._id, archived: !note.archived }), note.archived ? 'Note restored.' : 'Note archived. You can restore it from Archive.')}><Archive size={15} /></button></footer></article>)}</div>}{selected.length > 0 && <div className="selection-bar"><span>{selected.length} thoughts selected</span><button onClick={() => setSelected([])}>Clear</button><button className="primary" onClick={() => setTab('context')}>Build Context Pack<ArrowUpRight size={16} /></button></div>}</>}
+        {(tab === "notes" || tab === "archive") && (
+          <>
+            <div className="page-heading">
+              <div>
+                <p className="eyebrow">
+                  {tab === "archive" ? "KEPT OUT OF THE WAY" : "A PLACE TO COME BACK TO"}
+                </p>
+                <h1>{tab === "archive" ? "Your archive." : "Good thoughts, kept."}</h1>
+                <p>
+                  {tab === "archive"
+                    ? "Restore a note whenever you need it."
+                    : "Capture an idea. Give it some clarity. Take it somewhere new."}
+                </p>
+              </div>
+              <button
+                className="primary"
+                onClick={() => setEditing({ ...emptyNote, recordedAt: Date.now() })}
+              >
+                <Plus size={18} />
+                New thought
+              </button>
+            </div>
+            <div className="notes-toolbar">
+              <label className="search">
+                <Search size={18} />
+                <input
+                  aria-label="Search notes"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Find a thought…"
+                />
+              </label>
+              <span className="count">{notes?.length ?? "…"} notes</span>
+              <button className="secondary" onClick={() => importInput.current?.click()}>
+                <Upload size={16} />
+                Import note
+              </button>
+              <input
+                ref={importInput}
+                type="file"
+                accept="application/json,.json"
+                hidden
+                onChange={async (event) => {
+                  const file = event.target.files?.[0];
+                  event.target.value = "";
+                  if (!file) return;
+                  if (file.size > 262144) {
+                    setError("Choose a note JSON file smaller than 256 KB.");
+                    return;
+                  }
+                  await run(async () => {
+                    setEditing(
+                      parseImportedNote(
+                        JSON.parse(await file.text()),
+                        file.lastModified || Date.now(),
+                      ),
+                    );
+                  });
+                }}
+              />
+            </div>
+            {notes === undefined ? (
+              <div className="empty">Loading your thoughts…</div>
+            ) : notes.length === 0 ? (
+              <div className="empty">
+                <div className="empty-icon">
+                  <AudioLines size={30} />
+                </div>
+                <h2>
+                  {search
+                    ? "No thought found yet."
+                    : tab === "archive"
+                      ? "Nothing tucked away."
+                      : "Your next thought belongs here."}
+                </h2>
+                <p>
+                  {search
+                    ? "Try a shorter search, or a word from the transcript."
+                    : "Write a note, import a companion transcript, or connect your AURA sync client."}
+                </p>
+                {!search && (
+                  <button className="secondary" onClick={() => setTab("connections")}>
+                    Connect your workflow
+                    <ArrowUpRight size={16} />
+                  </button>
+                )}
+              </div>
+            ) : (
+              <div className="notes-grid">
+                {notes.map((note) => (
+                  <article
+                    className={`note-card ${selected.includes(note._id) ? "selected" : ""}`}
+                    key={note._id}
+                  >
+                    <div className="note-card-top">
+                      <span>
+                        <AudioLines size={14} />
+                        {note.source === "pendant" ? "AURA capture" : "Personal thought"}
+                      </span>
+                      <label className="select-note">
+                        <input
+                          type="checkbox"
+                          aria-label={`Add ${note.title} to Context Pack`}
+                          checked={selected.includes(note._id)}
+                          onChange={(e) =>
+                            setSelected(
+                              e.target.checked
+                                ? [...selected, note._id]
+                                : selected.filter((id) => id !== note._id),
+                            )
+                          }
+                        />
+                        <span>{selected.includes(note._id) && <Check size={12} />}</span>
+                      </label>
+                    </div>
+                    <button className="note-open" onClick={() => setEditing(note)}>
+                      <h2>{note.title}</h2>
+                      <p>
+                        {note.summary[0] ||
+                          note.transcript.slice(0, 180) ||
+                          "Open to add more to this thought."}
+                      </p>
+                    </button>
+                    <div className="note-tags">
+                      {note.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                      {note.contextEnabled && (
+                        <span className="live-tag">
+                          <Sparkles size={11} />
+                          Live context
+                        </span>
+                      )}
+                    </div>
+                    <footer>
+                      <time dateTime={new Date(note.recordedAt).toISOString()}>
+                        {new Date(note.recordedAt).toLocaleDateString(undefined, {
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </time>
+                      <button
+                        aria-label={
+                          note.archived ? `Restore ${note.title}` : `Archive ${note.title}`
+                        }
+                        onClick={() =>
+                          run(
+                            () => archiveNote({ id: note._id, archived: !note.archived }),
+                            note.archived
+                              ? "Note restored."
+                              : "Note archived. You can restore it from Archive.",
+                          )
+                        }
+                      >
+                        <Archive size={15} />
+                      </button>
+                    </footer>
+                  </article>
+                ))}
+              </div>
+            )}
+            {selected.length > 0 && (
+              <div className="selection-bar">
+                <span>{selected.length} thoughts selected</span>
+                <button onClick={() => setSelected([])}>Clear</button>
+                <button className="primary" onClick={() => setTab("context")}>
+                  Build Context Pack
+                  <ArrowUpRight size={16} />
+                </button>
+              </div>
+            )}
+          </>
+        )}
 
-    {tab === 'context' && <><div className="page-heading"><div><p className="eyebrow">YOUR THOUGHTS. ANY CONVERSATION.</p><h1>A little context<br />goes a long way.</h1><p>Bring the right parts of your world to the AI you already use.</p></div><div className="heading-icon"><Layers size={34} /></div></div><div className="context-grid"><section className="surface"><h2>Shape your brief.</h2><label>What do you want help with?<textarea rows={3} maxLength={2000} value={purpose} onChange={e => setPurpose(e.target.value)} /></label><label className="check-line"><input type="checkbox" checked={includeProfile} onChange={e => setIncludeProfile(e.target.checked)} />Include my profile and current goals</label><div className="section-label">SELECTED THOUGHTS <span>{selectedNotes.length}</span></div><div className="context-source-list">{(allNotes ?? []).map(note => <label key={note._id}><input type="checkbox" checked={selected.includes(note._id)} onChange={e => setSelected(e.target.checked ? [...selected, note._id] : selected.filter(id => id !== note._id))} /><span>{note.title}<small>{new Date(note.recordedAt).toLocaleDateString()}</small></span></label>)}{!allNotes?.length && <p className="muted">Add your first thought to build a source-rich brief.</p>}</div></section><section className="surface context-preview"><div className="preview-title"><span>EXACTLY WHAT YOU’LL SHARE</span><span>{context.length.toLocaleString()} characters</span></div><textarea aria-label="Context Pack preview" value={context} readOnly /><div className="context-actions"><button className="primary" onClick={() => copy(context)}><Copy size={16} />Copy context</button><button className="secondary" onClick={() => download('aura-context.md', context)}><Download size={16} />Markdown</button></div></section></div><div className="ai-destinations"><div><h2>Your AI. Your choice.</h2><p>Copy the pack, then paste it into a conversation or attach the Markdown file.</p></div><div>{[{ name: 'ChatGPT', url: 'https://chatgpt.com/' }, { name: 'Claude', url: 'https://claude.ai/' }, { name: 'Gemini', url: 'https://gemini.google.com/' }, { name: 'Grok', url: 'https://grok.com/' }].map(ai => <a key={ai.name} href={ai.url} target="_blank" rel="noreferrer">{ai.name}<ArrowUpRight size={15} /></a>)}</div></div><p className="fine">Opening a provider does not send anything. Review your pack before copying; each provider controls data you choose to submit there.</p></>}
+        {tab === "context" && (
+          <>
+            <div className="page-heading">
+              <div>
+                <p className="eyebrow">YOUR THOUGHTS. ANY CONVERSATION.</p>
+                <h1>
+                  A little context
+                  <br />
+                  goes a long way.
+                </h1>
+                <p>Bring the right parts of your world to the AI you already use.</p>
+              </div>
+              <div className="heading-icon">
+                <Layers size={34} />
+              </div>
+            </div>
+            <div className="context-grid">
+              <section className="surface">
+                <h2>Shape your brief.</h2>
+                <label>
+                  What do you want help with?
+                  <textarea
+                    rows={3}
+                    maxLength={2000}
+                    value={purpose}
+                    onChange={(e) => setPurpose(e.target.value)}
+                  />
+                </label>
+                <label className="check-line">
+                  <input
+                    type="checkbox"
+                    checked={includeProfile}
+                    onChange={(e) => setIncludeProfile(e.target.checked)}
+                  />
+                  Include my profile and current goals
+                </label>
+                <div className="section-label">
+                  SELECTED THOUGHTS <span>{selectedNotes.length}</span>
+                </div>
+                <div className="context-source-list">
+                  {(allNotes ?? []).map((note) => (
+                    <label key={note._id}>
+                      <input
+                        type="checkbox"
+                        checked={selected.includes(note._id)}
+                        onChange={(e) =>
+                          setSelected(
+                            e.target.checked
+                              ? [...selected, note._id]
+                              : selected.filter((id) => id !== note._id),
+                          )
+                        }
+                      />
+                      <span>
+                        {note.title}
+                        <small>{new Date(note.recordedAt).toLocaleDateString()}</small>
+                      </span>
+                    </label>
+                  ))}
+                  {!allNotes?.length && (
+                    <p className="muted">Add your first thought to build a source-rich brief.</p>
+                  )}
+                </div>
+              </section>
+              <section className="surface context-preview">
+                <div className="preview-title">
+                  <span>EXACTLY WHAT YOU’LL SHARE</span>
+                  <span>{context.length.toLocaleString()} characters</span>
+                </div>
+                <textarea aria-label="Context Pack preview" value={context} readOnly />
+                <div className="context-actions">
+                  <button className="primary" onClick={() => copy(context)}>
+                    <Copy size={16} />
+                    Copy context
+                  </button>
+                  <button
+                    className="secondary"
+                    onClick={() => download("aura-context.md", context)}
+                  >
+                    <Download size={16} />
+                    Markdown
+                  </button>
+                </div>
+              </section>
+            </div>
+            <div className="ai-destinations">
+              <div>
+                <h2>Your AI. Your choice.</h2>
+                <p>Copy the pack, then paste it into a conversation or attach the Markdown file.</p>
+              </div>
+              <div>
+                {[
+                  { name: "ChatGPT", url: "https://chatgpt.com/" },
+                  { name: "Claude", url: "https://claude.ai/" },
+                  { name: "Gemini", url: "https://gemini.google.com/" },
+                  { name: "Grok", url: "https://grok.com/" },
+                ].map((ai) => (
+                  <a key={ai.name} href={ai.url} target="_blank" rel="noreferrer">
+                    {ai.name}
+                    <ArrowUpRight size={15} />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <p className="fine">
+              Opening a provider does not send anything. Review your pack before copying; each
+              provider controls data you choose to submit there.
+            </p>
+          </>
+        )}
 
-    {tab === 'profile' && <><div className="page-heading"><div><p className="eyebrow">THE CONTEXT ONLY YOU KNOW</p><h1>Start with you.</h1><p>A short introduction makes a useful starting point for any AI conversation.</p></div></div><form key={profile?._id ?? 'new-profile'} className="surface profile-form" onSubmit={async event => { event.preventDefault(); const form = new FormData(event.currentTarget); setBusy(true); await run(() => saveProfile({ name: String(form.get('name')), about: String(form.get('about')), goals: String(form.get('goals')), preferences: String(form.get('preferences')) }), 'Your context is saved.'); setBusy(false); }}><label>Your name<input name="name" maxLength={100} defaultValue={profile?.name ?? ''} placeholder="How you like to be addressed" /></label><label>A little about you<textarea name="about" rows={4} maxLength={6000} defaultValue={profile?.about ?? ''} placeholder="Your work, interests, or the background that helps explain your notes." /></label><label>What matters right now<textarea name="goals" rows={4} maxLength={6000} defaultValue={profile?.goals ?? ''} placeholder="Current projects, goals, constraints and decisions." /></label><label>How you like to be helped<textarea name="preferences" rows={3} maxLength={6000} defaultValue={profile?.preferences ?? ''} placeholder="For example: concise answers, clear trade-offs, and questions when information is missing." /></label><p className="fine">You choose whether this profile is included in an exported pack. A live context token can read this profile and only the notes you enable.</p><button className="primary" disabled={busy}>{busy ? 'Saving…' : 'Save my context'}<Check size={16} /></button></form></>}
+        {tab === "profile" && (
+          <>
+            <div className="page-heading">
+              <div>
+                <p className="eyebrow">THE CONTEXT ONLY YOU KNOW</p>
+                <h1>Start with you.</h1>
+                <p>A short introduction makes a useful starting point for any AI conversation.</p>
+              </div>
+            </div>
+            <form
+              key={profile?._id ?? "new-profile"}
+              className="surface profile-form"
+              onSubmit={async (event) => {
+                event.preventDefault();
+                const form = new FormData(event.currentTarget);
+                setBusy(true);
+                await run(
+                  () =>
+                    saveProfile({
+                      name: String(form.get("name")),
+                      about: String(form.get("about")),
+                      goals: String(form.get("goals")),
+                      preferences: String(form.get("preferences")),
+                    }),
+                  "Your context is saved.",
+                );
+                setBusy(false);
+              }}
+            >
+              <label>
+                Your name
+                <input
+                  name="name"
+                  maxLength={100}
+                  defaultValue={profile?.name ?? ""}
+                  placeholder="How you like to be addressed"
+                />
+              </label>
+              <label>
+                A little about you
+                <textarea
+                  name="about"
+                  rows={4}
+                  maxLength={6000}
+                  defaultValue={profile?.about ?? ""}
+                  placeholder="Your work, interests, or the background that helps explain your notes."
+                />
+              </label>
+              <label>
+                What matters right now
+                <textarea
+                  name="goals"
+                  rows={4}
+                  maxLength={6000}
+                  defaultValue={profile?.goals ?? ""}
+                  placeholder="Current projects, goals, constraints and decisions."
+                />
+              </label>
+              <label>
+                How you like to be helped
+                <textarea
+                  name="preferences"
+                  rows={3}
+                  maxLength={6000}
+                  defaultValue={profile?.preferences ?? ""}
+                  placeholder="For example: concise answers, clear trade-offs, and questions when information is missing."
+                />
+              </label>
+              <p className="fine">
+                You choose whether this profile is included in an exported pack. A live context
+                token can read this profile and only the notes you enable.
+              </p>
+              <button className="primary" disabled={busy}>
+                {busy ? "Saving…" : "Save my context"}
+                <Check size={16} />
+              </button>
+            </form>
+          </>
+        )}
 
-    {tab === 'connections' && <><div className="page-heading"><div><p className="eyebrow">FROM CAPTURE TO CONVERSATION</p><h1>Keep it connected.</h1><p>Bring in new thoughts. Let a connected AI read the context you approve.</p></div></div><div className="connection-cards"><section className="surface"><AudioLines size={28} /><h2>Device sync</h2><p>Create an ingestion token for the companion. It can add notes to your account and cannot read your library.</p><form onSubmit={async e => { e.preventDefault(); const data = new FormData(e.currentTarget); setBusy(true); await run(async () => { const result = await createToken({ name: String(data.get('name')), scope: 'ingest', autoContext: data.get('autoContext') === 'on' }); setSecret(result.secret); }); setBusy(false); }}><label>Connection name<input name="name" required maxLength={80} placeholder="My AURA companion" /></label><label className="check-line"><input type="checkbox" name="autoContext" />Include future synced notes in live context</label><button className="primary" disabled={busy}>Create device token<Plus size={16} /></button></form></section><section className="surface"><Layers size={28} /><h2>Live AI context</h2><p>A separate read-only token exposes your profile and notes marked “Live context.” Use it with an MCP client that supports bearer headers.</p><button className="secondary" disabled={busy} onClick={async () => { setBusy(true); await run(async () => { const result = await createToken({ name: 'My AI context', scope: 'context', autoContext: false }); setSecret(result.secret); }); setBusy(false); }}>Create context token<Plus size={16} /></button><div className="endpoint"><span>MCP ENDPOINT</span><code>{process.env.NEXT_PUBLIC_CONVEX_SITE_URL}/mcp</code></div><p className="fine">No OAuth connection is provided in this release. Browser chat apps that cannot configure a bearer token can use Context Pack copy/export.</p></section></div>{secret && <section className="secret-panel"><div><KeyRound size={20} /><h2>Keep this token somewhere safe.</h2></div><p>This is the only time the full token is shown. It expires after 90 days and can be revoked below.</p><code>{secret}</code><button className="secondary" onClick={() => copy(secret)}><Copy size={16} />Copy token</button><button className="link-button" onClick={() => setSecret('')}>I’ve saved it</button></section>}<section className="surface token-list"><h2>Your connections</h2>{tokens?.length ? tokens.map(token => <div key={token._id}><span><strong>{token.name}</strong><small>{token.scope === 'ingest' ? 'Add notes only' : 'Read approved context'} · {token.revoked ? 'Revoked' : `Expires ${new Date(token.expiresAt).toLocaleDateString()}`}</small></span>{!token.revoked && <button className="secondary" onClick={() => run(() => revokeToken({ id: token._id }), 'Connection revoked.')}>Revoke</button>}</div>) : <p className="muted">No connections yet. Creating a token does not pair the physical device by itself.</p>}</section><div className="guide-link"><FileText size={19} /><span>Install and configure the companion using the project guide.</span><a href="https://github.com/Avinash1286/pendent/tree/main/companion" target="_blank" rel="noreferrer">Open guide<ArrowUpRight size={16} /></a></div></>}
-  </main>{toast && <div className="toast" role="status"><Check size={16} />{toast}</div>}
+        {tab === "connections" && (
+          <>
+            <div className="page-heading">
+              <div>
+                <p className="eyebrow">FROM CAPTURE TO CONVERSATION</p>
+                <h1>Keep it connected.</h1>
+                <p>Bring in new thoughts. Let a connected AI read the context you approve.</p>
+              </div>
+            </div>
+            <div className="connection-cards">
+              <section className="surface">
+                <AudioLines size={28} />
+                <h2>Device sync</h2>
+                <p>
+                  Create an ingestion token for the companion. It can add notes to your account and
+                  cannot read your library.
+                </p>
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    const data = new FormData(e.currentTarget);
+                    setBusy(true);
+                    await run(async () => {
+                      const result = await createToken({
+                        name: String(data.get("name")),
+                        scope: "ingest",
+                        autoContext: data.get("autoContext") === "on",
+                      });
+                      setSecret(result.secret);
+                    });
+                    setBusy(false);
+                  }}
+                >
+                  <label>
+                    Connection name
+                    <input name="name" required maxLength={80} placeholder="My AURA companion" />
+                  </label>
+                  <label className="check-line">
+                    <input type="checkbox" name="autoContext" />
+                    Include future synced notes in live context
+                  </label>
+                  <button className="primary" disabled={busy}>
+                    Create device token
+                    <Plus size={16} />
+                  </button>
+                </form>
+              </section>
+              <section className="surface">
+                <Layers size={28} />
+                <h2>Live AI context</h2>
+                <p>
+                  A separate read-only token exposes your profile and notes marked “Live context.”
+                  Use it with an MCP client that supports bearer headers.
+                </p>
+                <button
+                  className="secondary"
+                  disabled={busy}
+                  onClick={async () => {
+                    setBusy(true);
+                    await run(async () => {
+                      const result = await createToken({
+                        name: "My AI context",
+                        scope: "context",
+                        autoContext: false,
+                      });
+                      setSecret(result.secret);
+                    });
+                    setBusy(false);
+                  }}
+                >
+                  Create context token
+                  <Plus size={16} />
+                </button>
+                <div className="endpoint">
+                  <span>MCP ENDPOINT</span>
+                  <code>{process.env.NEXT_PUBLIC_CONVEX_SITE_URL}/mcp</code>
+                </div>
+                <p className="fine">
+                  No OAuth connection is provided in this release. Browser chat apps that cannot
+                  configure a bearer token can use Context Pack copy/export.
+                </p>
+              </section>
+            </div>
+            {secret && (
+              <section className="secret-panel">
+                <div>
+                  <KeyRound size={20} />
+                  <h2>Keep this token somewhere safe.</h2>
+                </div>
+                <p>
+                  This is the only time the full token is shown. It expires after 90 days and can be
+                  revoked below.
+                </p>
+                <code>{secret}</code>
+                <button className="secondary" onClick={() => copy(secret)}>
+                  <Copy size={16} />
+                  Copy token
+                </button>
+                <button className="link-button" onClick={() => setSecret("")}>
+                  I’ve saved it
+                </button>
+              </section>
+            )}
+            <section className="surface token-list">
+              <h2>Your connections</h2>
+              {tokens?.length ? (
+                tokens.map((token) => (
+                  <div key={token._id}>
+                    <span>
+                      <strong>{token.name}</strong>
+                      <small>
+                        {token.scope === "ingest" ? "Add notes only" : "Read approved context"} ·{" "}
+                        {token.revoked
+                          ? "Revoked"
+                          : `Expires ${new Date(token.expiresAt).toLocaleDateString()}`}
+                      </small>
+                    </span>
+                    {!token.revoked && (
+                      <button
+                        className="secondary"
+                        onClick={() =>
+                          run(() => revokeToken({ id: token._id }), "Connection revoked.")
+                        }
+                      >
+                        Revoke
+                      </button>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <p className="muted">
+                  No connections yet. Creating a token does not pair the physical device by itself.
+                </p>
+              )}
+            </section>
+            <div className="guide-link">
+              <FileText size={19} />
+              <span>Install and configure the companion using the project guide.</span>
+              <a
+                href="https://github.com/Avinash1286/pendent/tree/main/companion"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open guide
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </>
+        )}
+      </main>
+      {toast && (
+        <div className="toast" role="status">
+          <Check size={16} />
+          {toast}
+        </div>
+      )}
 
-  <Dialog.Root open={editing !== null} onOpenChange={open => { if (!open) setEditing(null); }}><Dialog.Portal><Dialog.Backdrop className="dialog-backdrop" /><Dialog.Popup className="note-dialog"><Dialog.Close className="dialog-close" aria-label="Close note"><X size={20} /></Dialog.Close><Dialog.Title>{editing?._id ? 'A thought, in detail.' : 'Give a thought a place.'}</Dialog.Title><Dialog.Description>Edit the original thought, its summary and the context you choose to share.</Dialog.Description>{editing && <form onSubmit={async event => { event.preventDefault(); const data = new FormData(event.currentTarget); setBusy(true); setError(''); try { await saveNote({ id: editing._id, title: String(data.get('title')), transcript: String(data.get('transcript')), summary: String(data.get('summary')).split('\n').map(s => s.trim()).filter(Boolean), actions: String(data.get('actions')).split('\n').map(s => s.trim()).filter(Boolean), tags: String(data.get('tags')).split(',').map(s => s.trim()).filter(Boolean), recordedAt: editing.recordedAt ?? Date.now(), contextEnabled: data.get('context') === 'on' }); setEditing(null); notify('Thought saved.'); } catch (e) { setError(message(e)); } finally { setBusy(false); } }}><label>Title<input name="title" required maxLength={160} defaultValue={editing.title ?? ''} /></label><label>Original thought<textarea name="transcript" rows={6} maxLength={60000} defaultValue={editing.transcript ?? ''} /></label><div className="form-columns"><label>Summary<textarea name="summary" rows={4} defaultValue={editing.summary?.join('\n') ?? ''} placeholder="One point per line" /></label><label>Suggested next steps<textarea name="actions" rows={4} defaultValue={editing.actions?.join('\n') ?? ''} placeholder="Editable suggestions, one per line" /></label></div><label>Tags<input name="tags" defaultValue={editing.tags?.join(', ') ?? ''} placeholder="Work, ideas, personal" /></label><label className="check-line"><input name="context" type="checkbox" defaultChecked={editing.contextEnabled ?? false} />Allow this note in live AI context</label><div className="dialog-actions"><button className="secondary" type="button" onClick={() => download('aura-note.md', buildContext(null, [{ title: editing.title ?? 'Thought', recordedAt: editing.recordedAt ?? Date.now(), transcript: editing.transcript ?? '', summary: editing.summary ?? [] }]))}><Download size={16} />Export saved note</button><button className="primary" disabled={busy}>{busy ? 'Saving…' : 'Save thought'}<Check size={16} /></button></div>{error && <p className="error" role="alert">{error}</p>}</form>}</Dialog.Popup></Dialog.Portal></Dialog.Root>
-  </div>;
+      <Dialog.Root
+        open={editing !== null}
+        onOpenChange={(open) => {
+          if (!open) setEditing(null);
+        }}
+      >
+        <Dialog.Portal>
+          <Dialog.Backdrop className="dialog-backdrop" />
+          <Dialog.Popup className="note-dialog">
+            <Dialog.Close className="dialog-close" aria-label="Close note">
+              <X size={20} />
+            </Dialog.Close>
+            <Dialog.Title>
+              {editing?._id ? "A thought, in detail." : "Give a thought a place."}
+            </Dialog.Title>
+            <Dialog.Description>
+              Edit the original thought, its summary and the context you choose to share.
+            </Dialog.Description>
+            {editing && (
+              <form
+                onSubmit={async (event) => {
+                  event.preventDefault();
+                  const data = new FormData(event.currentTarget);
+                  setBusy(true);
+                  setError("");
+                  try {
+                    await saveNote({
+                      id: editing._id,
+                      title: String(data.get("title")),
+                      transcript: String(data.get("transcript")),
+                      summary: String(data.get("summary"))
+                        .split("\n")
+                        .map((s) => s.trim())
+                        .filter(Boolean),
+                      actions: String(data.get("actions"))
+                        .split("\n")
+                        .map((s) => s.trim())
+                        .filter(Boolean),
+                      tags: String(data.get("tags"))
+                        .split(",")
+                        .map((s) => s.trim())
+                        .filter(Boolean),
+                      recordedAt: editing.recordedAt ?? Date.now(),
+                      contextEnabled: data.get("context") === "on",
+                    });
+                    setEditing(null);
+                    notify("Thought saved.");
+                  } catch (e) {
+                    setError(message(e));
+                  } finally {
+                    setBusy(false);
+                  }
+                }}
+              >
+                <label>
+                  Title
+                  <input name="title" required maxLength={160} defaultValue={editing.title ?? ""} />
+                </label>
+                <label>
+                  Original thought
+                  <textarea
+                    name="transcript"
+                    rows={6}
+                    maxLength={60000}
+                    defaultValue={editing.transcript ?? ""}
+                  />
+                </label>
+                <div className="form-columns">
+                  <label>
+                    Summary
+                    <textarea
+                      name="summary"
+                      rows={4}
+                      defaultValue={editing.summary?.join("\n") ?? ""}
+                      placeholder="One point per line"
+                    />
+                  </label>
+                  <label>
+                    Suggested next steps
+                    <textarea
+                      name="actions"
+                      rows={4}
+                      defaultValue={editing.actions?.join("\n") ?? ""}
+                      placeholder="Editable suggestions, one per line"
+                    />
+                  </label>
+                </div>
+                <label>
+                  Tags
+                  <input
+                    name="tags"
+                    defaultValue={editing.tags?.join(", ") ?? ""}
+                    placeholder="Work, ideas, personal"
+                  />
+                </label>
+                <label className="check-line">
+                  <input
+                    name="context"
+                    type="checkbox"
+                    defaultChecked={editing.contextEnabled ?? false}
+                  />
+                  Allow this note in live AI context
+                </label>
+                <div className="dialog-actions">
+                  <button
+                    className="secondary"
+                    type="button"
+                    onClick={() =>
+                      download(
+                        "aura-note.md",
+                        buildContext(null, [
+                          {
+                            title: editing.title ?? "Thought",
+                            recordedAt: editing.recordedAt ?? Date.now(),
+                            transcript: editing.transcript ?? "",
+                            summary: editing.summary ?? [],
+                          },
+                        ]),
+                      )
+                    }
+                  >
+                    <Download size={16} />
+                    Export saved note
+                  </button>
+                  <button className="primary" disabled={busy}>
+                    {busy ? "Saving…" : "Save thought"}
+                    <Check size={16} />
+                  </button>
+                </div>
+                {error && (
+                  <p className="error" role="alert">
+                    {error}
+                  </p>
+                )}
+              </form>
+            )}
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </div>
+  );
 }
-

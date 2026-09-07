@@ -1,12 +1,14 @@
 {
   "name": "aura-pendant-hardware",
   "version": "0.1.0",
-  "description": "AURA EVT-A necklace note-taker PCB engineering prototype",
+  "description": "AURA EVT-A03 necklace note-taker electrical design and PCB routing work",
   "main": "index.js",
   "scripts": {
     "build": "bun scripts/build.tsx",
     "route": "bun scripts/build.tsx --route",
     "export": "node scripts/export.mjs",
+    "verify-export": "node scripts/verify-export.mjs",
+    "assembly-package": "node scripts/assembly-package.mjs",
     "verify": "node scripts/verify.mjs && bun test firmware/capture-controller.test.ts",
     "prepare-library": "node scripts/prepare-library.mjs",
     "place": "node scripts/place.mjs",

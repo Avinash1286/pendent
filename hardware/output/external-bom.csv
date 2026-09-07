@@ -1,0 +1,6 @@
+"Item","Qty","Candidate","Status"
+"Protected 150mAh pack","1","FPBattery/DNK302025-150","Preliminary pack drawing; voltage tolerance, maximum dimensions, swelling and supplier approval unresolved"
+"Pack temperature sensor","1","Semitec103AT-2","Thermal attachment, assembled R/T acceptance and lead routing unqualified"
+"LRA motor","1","Precision MicrodrivesC08-00A","Prototype datasheet; source availability and calibrated drive unqualified"
+"Rear contact assembly","1","Custom 3-contact carrier/tails","Exact contacts/material/retention/current/wear not selected"
+"Magnetic dock","1","Custom keyed 5V100mA dock","Electrical/mechanical design and qualification incomplete"

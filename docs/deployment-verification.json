@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-07T20:59:58.7006905Z",
+  "deploymentId": "dpl_6NP2aW6Qu5o2CC63s6YPvybgRa1c",
+  "website": "https://pendent-eight.vercel.app",
+  "checks": [
+    {
+      "Url": "https://pendent-eight.vercel.app/",
+      "Status": 200,
+      "ContentType": [
+        "text/html; charset=utf-8"
+      ]
+    },
+    {
+      "Url": "https://pendent-eight.vercel.app/product/aura.glb",
+      "Status": 200,
+      "ContentType": [
+        "model/gltf-binary"
+      ]
+    },
+    {
+      "Url": "https://pendent-eight.vercel.app/film/aura-launch.mp4",
+      "Status": 200,
+      "ContentType": [
+        "video/mp4"
+      ]
+    },
+    {
+      "Url": "https://pendent-eight.vercel.app/film/captions.vtt",
+      "Status": 200,
+      "ContentType": [
+        "text/vtt; charset=utf-8"
+      ]
+    }
+  ],
+  "filmSha256": "5ACDFFF5B26622E3BD28C9F58957FF276FCA7F10C337D3C5F22CF79F88016295",
+  "filmMatchesSource": true,
+  "browserInteractionQA": false
+}

@@ -1,8 +1,10 @@
 import fs from 'node:fs';
-const {parts}=JSON.parse(fs.readFileSync('output/design-manifest.json','utf8'));
+const {parts,boardSpec}=JSON.parse(fs.readFileSync('output/design-manifest.json','utf8'));
 const f=JSON.parse(fs.readFileSync('src/footprints.json','utf8'));
 const fixed=new Set(['U1','MK1','MK2','SW1','SW2','SW3','LED1']);
 Object.assign(parts.find(p=>p.ref==='LED1'),{x:0,y:-1,r:90});
+// Keep dock power and its local reservoirs in the added lower A03 board area.
+Object.assign(parts.find(p=>p.ref==='U3'),{x:-5,y:-14,r:0});
 const placed=[],result={};
 function dims(p,r){
  const fp=f[p.fp]; if(!fp)return [p.fp==='debug'?8.4:p.fp==='dock'?7.7:p.fp==='motor'?2.5:4, p.fp==='dock'?1.7:1];
@@ -12,16 +14,17 @@ function dims(p,r){
  return r%180===90?[h,w]:[w,h];
 }
 function inboard(x,y,w,h){
- for(const sx of [-1,1])for(const sy of [-1,1]){const px=x+sx*w/2,py=y+sy*h/2;if(Math.abs(px)>11.7||Math.abs(py)>16.7)return false;const dx=Math.max(Math.abs(px)-8,0),dy=Math.max(Math.abs(py)-13,0);if(dx*dx+dy*dy>3.7*3.7)return false;}
- return y+h/2<11.7;
+ const hw=boardSpec.width/2,hh=boardSpec.height/2,rad=boardSpec.radius,edge=.3;
+ for(const sx of [-1,1])for(const sy of [-1,1]){const px=x+sx*w/2,py=y+sy*h/2;if(Math.abs(px)>hw-edge||Math.abs(py)>hh-edge)return false;const dx=Math.max(Math.abs(px)-(hw-rad),0),dy=Math.max(Math.abs(py)-(hh-rad),0);if(dx*dx+dy*dy>(rad-edge)**2)return false;}
+ return y+h/2<boardSpec.antennaKeepout.minY-.25;
 }
 function free(x,y,w,h,side,gap=.16){return !placed.some(q=>q.side===side && Math.abs(x-q.x)<(w+q.w)/2+gap && Math.abs(y-q.y)<(h+q.h)/2+gap);}
 function put(p,x,y,r){const[w,h]=dims(p,r);placed.push({ref:p.ref,x,y,r,w,h,side:p.layer||'top',pins:p.pins});result[p.ref]={x,y,r};}
 for(const p of parts.filter(p=>fixed.has(p.ref)))put(p,p.x,p.y,p.r||0);
 // Front-side8mm LRA envelope, with0.25mm radial assembly allowance.
 placed.push({ref:'LRA_CASE_KEEP_OUT',x:6,y:-12,w:8.5,h:8.5,r:0,side:'top',pins:{}});
-const clusterOrder=['U2','C5','C6','U3','C7','C8','C9','U4','C10','U5','C11','U6','C12','C13','U7','C14','C15','U8','C16','C1','C2','C3','C4'];
-const capParent={C1:'U1',C2:'U1',C3:'MK1',C4:'MK2',C5:'U2',C6:'U2',C7:'U3',C8:'U3',C9:'U3',C10:'U4',C11:'U5',C12:'U6',C13:'U6',C14:'U7',C15:'U7',C16:'U8'};
+const clusterOrder=['U2','C5','C6','U3','C7','C8','C9','U9','C18','Q1','U4','C10','U5','C11','U6','C12','C13','U7','C14','C15','U8','C16','C1','C2','C3','C4'];
+const capParent={C1:'U1',C2:'U1',C3:'MK1',C4:'MK2',C5:'U2',C6:'U2',C7:'U3',C8:'U3',C9:'U3',C10:'U4',C11:'U5',C12:'U6',C13:'U6',C14:'U7',C15:'U7',C16:'U8',C18:'U9'};
 const movable=parts.filter(p=>!fixed.has(p.ref)).sort((a,b)=>{
  const ai=clusterOrder.indexOf(a.ref),bi=clusterOrder.indexOf(b.ref);
  if(ai>=0||bi>=0)return (ai<0?100:ai)-(bi<0?100:bi);
@@ -38,7 +41,7 @@ for(const p of movable){
  }
  for(const r of [p.r||0,(p.r||0)+90]){
   const[w,h]=dims(p,r);
-  for(let y=-15.8;y<=11.8;y+=.25)for(let x=-10.8;x<=10.8;x+=.25){
+  for(let y=-boardSpec.height/2+1.2;y<=boardSpec.antennaKeepout.minY-.15;y+=.25)for(let x=-boardSpec.width/2+1.2;x<=boardSpec.width/2-1.2;x+=.25){
    if(!inboard(x,y,w,h)||!free(x,y,w,h,'top'))continue;
    let cost=((x-target.x)**2+(y-target.y)**2)*(capParent[p.ref]?4:1);
    for(const q of placed){const shared=Object.values(p.pins).filter(n=>!['GND','V3','VSYS','VBAT','MIC_VDD'].includes(n)&&Object.values(q.pins).includes(n));if(shared.length)cost+=.25*((x-q.x)**2+(y-q.y)**2);}

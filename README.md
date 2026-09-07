@@ -2,6 +2,8 @@
 
 **Be here. Keep the thought.**
 
+[Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Run the notes portal](portal/README.md)
+
 An open product-development project for a compact necklace AI note-taking device. Electronics, printable industrial design, chip firmware, local transcription, a Next.js / Convex notes portal, an interactive Three.js showcase and a Hyperframes launch film live together here.
 
 ## Project status

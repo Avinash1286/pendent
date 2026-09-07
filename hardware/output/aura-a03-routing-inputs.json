@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-09-07T20:15:01.651Z",
+  "revision": "EVT-A03",
+  "router": "Freerouting2.4.1",
+  "passes": 12,
+  "clearance_mm": 0.12,
+  "traceWidth_mm": 0.15,
+  "via_mm": 0.45,
+  "drill_mm": 0.2,
+  "inputs": [
+    {
+      "path": "output/aura-placement.kicad_pcb",
+      "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7"
+    },
+    {
+      "path": "output/aura-a03.dsn",
+      "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2"
+    },
+    {
+      "path": "output/design-manifest.json",
+      "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147"
+    }
+  ],
+  "status": "Standalone routing attempt. A session must be imported through the permitted workflow and independently checked before any fabrication release."
+}

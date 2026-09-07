@@ -1,0 +1,10 @@
+# Third-party runtimes and per-run local settings are reproducible dependencies.
+tools/*.jar
+output/freerouting*-runtime/
+output/*.kicad_prl
+
+# Preserve the exact current routing evidence despite the root log exclusion.
+!output/aura-a03-freerouting.log
+!output/aura-a03-route-drc.log
+!output/aura-a03-refine.log
+!output/aura-a03-refine-drc.log

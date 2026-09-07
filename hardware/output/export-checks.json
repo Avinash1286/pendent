@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-09-07T20:26:16.174Z",
+  "revision": "EVT-A03",
+  "filename": "output/aura-placement.kicad_pcb",
+  "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7",
+  "footprints": 61,
+  "checkedLogicalPins": 208,
+  "sourceToExportNetAssignment": "passed",
+  "tracks": 0,
+  "vias": 0,
+  "capacitorCenterDistances_mm": {
+    "C7-U3": 2.264,
+    "C8-U3": 2.305,
+    "C9-U3": 2.85,
+    "C11-U5": 2.016,
+    "C18-U9": 2.5
+  },
+  "warnings": [],
+  "limitations": "Verifies exported pad/net identity and selected geometry only. Zero placement tracks does not establish routed connectivity. Capacitor center distance does not prove a short routed power loop. Does not replace ERC, DRC, stencil review or bench qualification."
+}

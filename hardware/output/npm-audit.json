@@ -1,0 +1,278 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@tscircuit/core": {
+      "name": "@tscircuit/core",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@tscircuit/create-fdm-enclosure"
+      ],
+      "effects": [
+        "@tscircuit/runframe"
+      ],
+      "range": ">=0.0.1476",
+      "nodes": [
+        "node_modules/@tscircuit/core",
+        "node_modules/@tscircuit/runframe/node_modules/@tscircuit/core"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "@tscircuit/create-fdm-enclosure": {
+      "name": "@tscircuit/create-fdm-enclosure",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "graphics-debug"
+      ],
+      "effects": [
+        "@tscircuit/core",
+        "tscircuit"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@tscircuit/create-fdm-enclosure"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "@tscircuit/fanout-solver": {
+      "name": "@tscircuit/fanout-solver",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "graphics-debug"
+      ],
+      "effects": [
+        "tscircuit"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@tscircuit/fanout-solver"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "@tscircuit/runframe": {
+      "name": "@tscircuit/runframe",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@tscircuit/core"
+      ],
+      "effects": [
+        "tscircuit"
+      ],
+      "range": ">=0.0.2495",
+      "nodes": [
+        "node_modules/@tscircuit/runframe"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "graphics-debug": {
+      "name": "graphics-debug",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "looks-same",
+        "react-router-dom"
+      ],
+      "effects": [
+        "@tscircuit/create-fdm-enclosure",
+        "@tscircuit/fanout-solver",
+        "tscircuit"
+      ],
+      "range": ">=0.0.2",
+      "nodes": [
+        "node_modules/@tscircuit/create-fdm-enclosure/node_modules/graphics-debug",
+        "node_modules/@tscircuit/fanout-solver/node_modules/graphics-debug",
+        "node_modules/graphics-debug"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "looks-same": {
+      "name": "looks-same",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "sharp"
+      ],
+      "effects": [
+        "graphics-debug"
+      ],
+      "range": "8.1.0 - 10.0.0-rc.0",
+      "nodes": [
+        "node_modules/looks-same"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "react-router": {
+      "name": "react-router",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1124268,
+          "name": "react-router",
+          "dependency": "react-router",
+          "title": "React Router: Open redirect via backslash in <Link> and useNavigate (CVE-2025-68470 bypass)",
+          "url": "https://github.com/advisories/GHSA-wrjc-x8rr-h8h6",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-601"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=6.0.0 <7.18.0"
+        },
+        {
+          "source": 1124272,
+          "name": "react-router",
+          "dependency": "react-router",
+          "title": "React Router: Arbitrary Constructor Injection via deserializeErrors() in React Router SSR Hydration",
+          "url": "https://github.com/advisories/GHSA-337j-9hxr-rhxg",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-470"
+          ],
+          "cvss": {
+            "score": 6.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": ">=6.4.0 <7.18.0"
+        }
+      ],
+      "effects": [
+        "react-router-dom"
+      ],
+      "range": "6.0.0 - 7.17.0",
+      "nodes": [
+        "node_modules/react-router"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "react-router-dom": {
+      "name": "react-router-dom",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "react-router"
+      ],
+      "effects": [
+        "graphics-debug"
+      ],
+      "range": "6.0.0-alpha.0 - 7.17.0",
+      "nodes": [
+        "node_modules/react-router-dom"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "sharp": {
+      "name": "sharp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1124066,
+          "name": "sharp",
+          "dependency": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "severity": "high",
+          "cwe": [
+            "CWE-1395"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.35.0"
+        }
+      ],
+      "effects": [
+        "looks-same"
+      ],
+      "range": "<0.35.0",
+      "nodes": [
+        "node_modules/sharp"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    },
+    "tscircuit": {
+      "name": "tscircuit",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "@tscircuit/core",
+        "@tscircuit/create-fdm-enclosure",
+        "@tscircuit/fanout-solver",
+        "@tscircuit/runframe",
+        "graphics-debug"
+      ],
+      "effects": [],
+      "range": ">=0.0.515",
+      "nodes": [
+        "node_modules/tscircuit"
+      ],
+      "fixAvailable": {
+        "name": "tscircuit",
+        "version": "0.0.514",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 7,
+      "high": 3,
+      "critical": 0,
+      "total": 10
+    },
+    "dependencies": {
+      "prod": 1,
+      "dev": 376,
+      "optional": 88,
+      "peer": 71,
+      "peerOptional": 0,
+      "total": 376
+    }
+  }
+}

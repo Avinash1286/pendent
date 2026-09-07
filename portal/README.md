@@ -62,9 +62,10 @@ npm test
 npm run typecheck
 npm run build
 node scripts/verify-local.mjs
+node scripts/verify-auth-proxy.mjs
 ```
 
-Unit tests exercise cross-account access, sharing consent, token permissions, revocation, expiration, HTTP validation and context truncation. The integration script refuses non-loopback backends, creates two synthetic password accounts on real local Convex, tests storage/HTTP/MCP, revokes tokens, archives test notes and signs out. It saves no credentials in its evidence file.
+Eleven unit tests exercise cross-account access, sharing consent, token permissions, revocation, expiration, HTTP validation, context truncation and lossless JSON import. The integration script refuses non-loopback backends, creates two synthetic password accounts on real local Convex, tests storage/HTTP/MCP, revokes tokens, archives test notes and signs out. The auth-proxy script needs `npm run dev` on port 3000 and checks Next.js origin/action restrictions, HttpOnly refresh cookies, renewal and logout. Neither evidence file contains credentials.
 
 ## Vercel + Convex production
 

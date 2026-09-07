@@ -1,0 +1,12 @@
+import {describe,it,expect} from 'bun:test';
+import {CaptureController} from './capture-controller';
+function setup({full=false,fail=false}={}){const power:boolean[]=[],events:string[]=[];const c=new CaptureController({setMicrophonePower:n=>power.push(n),haptic:p=>events.push(p)},{canStart:()=>!full,begin:()=>events.push('begin'),bookmark:()=>events.push('mark'),commit:async()=>{events.push('commit');if(fail)throw Error('storage failure');}});return {c,power,events};}
+describe('capture policy',()=>{
+ it('privacy OFF cannot start microphones',async()=>{const{c,power}=setup();await c.setPrivacy(true);await c.pressRecord();expect(power.includes(true)).toBe(false);expect(c.state).toBe('muted');});
+ it('a note survives phone-independent start bookmark stop',async()=>{const{c,power,events}=setup();await c.pressRecord();c.bookmark();await c.pressRecord();expect(c.state).toBe('idle');expect(power).toEqual([false,true,false]);expect(events).toEqual(['begin','start','mark','bookmark','commit','stop']);});
+ it('full storage never energizes microphones',async()=>{const{c,power}=setup({full:true});await c.pressRecord();expect(power).toEqual([false]);});
+ it('privacy transition stops and commits an active recording',async()=>{const{c,power,events}=setup();await c.pressRecord();await c.setPrivacy(true);expect(power.at(-1)).toBe(false);expect(c.state).toBe('muted');expect(events.includes('commit')).toBe(true);});
+ it('commit failure is visible with microphones off',async()=>{const{c,power,events}=setup({fail:true});await c.pressRecord();await c.pressRecord();expect(c.state).toBe('error');expect(power.at(-1)).toBe(false);expect(events.at(-1)).toBe('error');});
+ it('critical battery finishes a note and blocks the next start',async()=>{const{c,power}=setup();await c.pressRecord();await c.batteryCritical();await c.pressRecord();expect(c.state).toBe('idle');expect(power.filter(Boolean).length).toBe(1);});
+ it('privacy toggles cannot bypass an in-flight storage commit',async()=>{let finish!:()=>void,starts=0;const c=new CaptureController({setMicrophonePower:()=>{},haptic:()=>{}},{canStart:()=>true,begin:()=>{starts++;},bookmark:()=>{},commit:()=>new Promise<void>(r=>{finish=r;})});await c.pressRecord();const saving=c.pressRecord();await c.setPrivacy(true);await c.setPrivacy(false);await c.pressRecord();expect(starts).toBe(1);expect(c.state).toBe('saving');finish();await saving;expect(c.state).toBe('idle');});
+});

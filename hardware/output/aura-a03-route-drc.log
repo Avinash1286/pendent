@@ -1,0 +1,7 @@
+2026-09-08 02:25:02.702 INFO   Freerouting v2.4.1 (build-date: 2026-09-03)
+2026-09-08 02:25:05.234 INFO   Loading DSN file for DRC: output/aura-a03.dsn
+2026-09-08 02:25:05.297 INFO   [AC0542\6EF4F7] Loading board file 'aura-a03.dsn'...
+2026-09-08 02:25:07.783 INFO   Loading SES file for DRC: output/aura-a03-route-attempt.ses
+2026-09-08 02:25:09.624 INFO   SES file import complete: 542 wires, 109 vias imported
+2026-09-08 02:25:09.626 INFO   SES file loaded for DRC: 542 wires, 109 vias imported
+2026-09-08 02:25:15.414 INFO   DRC report written to: aura-a03-route-freerouting-drc.json

@@ -1,0 +1,24 @@
+{
+  "revision": "EVT-A03",
+  "router": "Freerouting 2.4.1",
+  "sourceDsn": "output/aura-a03.dsn",
+  "sourceDsnSha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2",
+  "sourceSession": "output/aura-a03-route-attempt.ses",
+  "sourceSessionSha256": "b85576f9b4dc55e21f9d54fab465fa6d105e55c0198733033aab45f30be84cd6",
+  "outputSession": "output/aura-a03-route-refine.ses",
+  "arguments": [
+    "--gui.enabled=false",
+    "--router.optimizer.enabled=false",
+    "--router.fanout.enabled=false",
+    "--router.strict_drc=true",
+    "--router.job_timeout=00:08:00",
+    "-da",
+    "-de", "output/aura-a03.dsn+output/aura-a03-route-attempt.ses",
+    "-do", "output/aura-a03-route-refine.ses",
+    "-mp", "6",
+    "-mt", "1"
+  ],
+  "java": "25.0.3",
+  "heapLimit": "768m",
+  "result": "Completed after six passes in 7 minutes 24 seconds. In-memory final: 10 unconnected / 4 violations. Fresh reload DRC: eight disconnected net groups / one dangling-via warning. Not a native routed KiCad board or manufacturing release."
+}

@@ -12,13 +12,16 @@ const specs = {
   ldo:['Package_TO_SOT_SMD','SOT-23-5',2.9,2.8,1.2],
   gauge:['Package_DFN_QFN','TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm',2,2,0.8],
   haptic:['Package_SO','MSOP-10_3x3mm_P0.5mm',4.9,3,1.1],
-  flash:['Package_SON','WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm',6,5,0.8],
+  flash:['Package_SON','WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm',8,6,0.8],
   buffer:['Package_SO','VSSOP-8_2.3x2mm_P0.5mm',3.1,2,0.9],
+  comparator:['Package_TO_SOT_SMD','SOT-23-6',2.9,2.8,1.1],
+  nmos:['Package_TO_SOT_SMD','SOT-23',2.9,2.5,1.1],
   privacy:['Button_Switch_SMD','SW_DPDT_CK_JS202011JCQN',6.7,4.1,1.5],
   record:['Button_Switch_SMD','SW_Push_1P1T_NO_CK_KMR2',4.6,3.8,1.9],
   r0402:['Resistor_SMD','R_0402_1005Metric',1,0.5,0.35],
   c0402:['Capacitor_SMD','C_0402_1005Metric',1,0.5,0.5],
   c0603:['Capacitor_SMD','C_0603_1608Metric',1.6,0.8,0.8],
+  c0805:['Capacitor_SMD','C_0805_2012Metric',2.0,1.25,1.4],
   led:['LED_SMD','LED_0603_1608Metric',1.6,0.8,0.8],
   diode:['Diode_SMD','D_SOD-323',2.5,1.25,1.0],
 };
@@ -28,6 +31,10 @@ for(const [key,[lib,name,w,h,z]] of Object.entries(specs)){
   fs.writeFileSync(`library/${name}.kicad_mod`,raw);
   const k=parseKicadModToKicadJson(raw);
   out[key]={key,library:`${lib}:${name}`,width:w,height:h,z,pads:k.pads,holes:k.holes||[],lines:k.fp_lines.filter(x=>x.layer==='F.SilkS'),source: k.descr};
+}
+{
+ const name='AURA_SiCap_1.2x0.7mm_P0.7mm',raw=fs.readFileSync(`library/${name}.kicad_mod`,'utf8'),k=parseKicadModToKicadJson(raw);
+ out.sicap={key:'sicap',library:`AURA:${name}`,width:1.2,height:.7,z:.4,pads:k.pads,holes:[],lines:[],source:k.descr};
 }
 fs.writeFileSync('src/footprints.json',JSON.stringify(out,null,2));
 console.log(`Copied ${Object.keys(out).length} original KiCad land patterns.`);

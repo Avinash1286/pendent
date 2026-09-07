@@ -1,0 +1,1177 @@
+{
+  "boardSpec": {
+    "width": 24,
+    "height": 42,
+    "radius": 10,
+    "thickness": 0.8,
+    "layers": 4,
+    "antennaKeepout": {
+      "minY": 11.95
+    },
+    "revision": "EVT-A03",
+    "status": "Logical design and PCB routing draft. Do not fabricate before the validation gates in hardware.md."
+  },
+  "parts": [
+    {
+      "ref": "U1",
+      "mpn": "MDBT50Q-1MV2",
+      "value": "nRF52840 BLE module",
+      "fp": "radio",
+      "x": 0,
+      "y": 8,
+      "pins": {
+        "1": "GND",
+        "2": "GND",
+        "15": "GND",
+        "16": "I2C_SCL",
+        "19": "I2C_SDA",
+        "20": "PDM_CLK_MCU",
+        "21": "PDM_DATA_MCU",
+        "22": "RECORD_EN",
+        "24": "RECORD_N",
+        "25": "PRIVACY_N",
+        "28": "V3",
+        "30": "V3",
+        "32": "GND",
+        "33": "GND",
+        "36": "SPI_MOSI",
+        "37": "SPI_MISO",
+        "38": "SPI_SCK_MCU",
+        "39": "SPI_CS_N",
+        "40": "RESET_N",
+        "41": "HAPTIC_EN",
+        "42": "GAUGE_ALERT_N",
+        "43": "CHG_STAT1",
+        "44": "CHG_STAT2",
+        "45": "CHG_ALLOW",
+        "51": "SWDIO",
+        "53": "SWDCLK",
+        "55": "GND"
+      },
+      "block": "radio",
+      "nc": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "17",
+        "18",
+        "23",
+        "26",
+        "27",
+        "29",
+        "31",
+        "34",
+        "35",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "52",
+        "54",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61"
+      ],
+      "labels": {
+        "16": "P027_SCL",
+        "19": "P026_SDA",
+        "20": "P004_PDM_CLK",
+        "21": "P005_PDM_DATA",
+        "22": "P006_REC_EN",
+        "24": "P008_RECORD",
+        "25": "P108_PRIVACY",
+        "28": "VDD",
+        "30": "VDDH",
+        "32": "VBUS",
+        "36": "P014_MOSI",
+        "37": "P013_MISO",
+        "38": "P016_SCK",
+        "39": "P015_CS",
+        "40": "P018_RESET",
+        "41": "P017_HAPTIC",
+        "42": "P019_GAUGE",
+        "43": "P021_STAT1",
+        "44": "P020_STAT2",
+        "45": "P023_CHG_ALLOW",
+        "51": "SWDIO",
+        "53": "SWDCLK"
+      },
+      "note": "Normal-voltage mode: VDD and VDDH tied3.0V; DCCH open; unused VBUS grounded; internal LFRC initial firmware. Antenna keepout Y>11.95 per Raytac Version L.",
+      "r": 0
+    },
+    {
+      "ref": "MK1",
+      "mpn": "SPH0641LU4H-1",
+      "value": "Left PDM microphone",
+      "fp": "mic",
+      "x": -8.5,
+      "y": 9.27,
+      "pins": {
+        "1": "PDM_DATA_MIC",
+        "2": "GND",
+        "3": "GND",
+        "4": "PDM_CLK_MIC",
+        "5": "MIC_VDD"
+      },
+      "block": "audio",
+      "labels": {
+        "1": "DATA",
+        "2": "SELECT",
+        "3": "GND",
+        "4": "CLOCK",
+        "5": "VDD"
+      },
+      "r": 0
+    },
+    {
+      "ref": "MK2",
+      "mpn": "SPH0641LU4H-1",
+      "value": "Right PDM microphone",
+      "fp": "mic",
+      "x": 8.5,
+      "y": 9.27,
+      "pins": {
+        "1": "PDM_DATA_MIC",
+        "2": "MIC_VDD",
+        "3": "GND",
+        "4": "PDM_CLK_MIC",
+        "5": "MIC_VDD"
+      },
+      "block": "audio",
+      "labels": {
+        "1": "DATA",
+        "2": "SELECT",
+        "3": "GND",
+        "4": "CLOCK",
+        "5": "VDD"
+      },
+      "r": 0
+    },
+    {
+      "ref": "U2",
+      "mpn": "W25N01GVZEIG",
+      "value": "1Gbit SPI NAND /128MiB",
+      "fp": "flash",
+      "x": -8.55,
+      "y": 3.2,
+      "pins": {
+        "1": "SPI_CS_N",
+        "2": "SPI_MISO",
+        "3": "FLASH_WP_N",
+        "4": "GND",
+        "5": "SPI_MOSI",
+        "6": "SPI_SCK",
+        "7": "FLASH_HOLD_N",
+        "8": "V3",
+        "9": "GND"
+      },
+      "block": "storage",
+      "note": "Corrected ZE package8×6mm, EP3.4×4.3mm. RevR permits EP floating or GND; GND chosen. No exposed vias under EP. Internal ECC/bad-block handling required.",
+      "labels": {
+        "1": "N_CS",
+        "2": "DO_IO1",
+        "3": "N_WP",
+        "4": "GND",
+        "5": "DI_IO0",
+        "6": "CLK",
+        "7": "N_HOLD",
+        "8": "VCC",
+        "9": "EP_GND"
+      },
+      "r": 90
+    },
+    {
+      "ref": "U3",
+      "mpn": "BQ25185DLHR",
+      "value": "53mA Li-ion powerpath charger",
+      "fp": "charger",
+      "x": -4.05,
+      "y": -9.55,
+      "pins": {
+        "1": "VSYS",
+        "2": "VBAT",
+        "3": "CHG_STAT2",
+        "4": "CHG_DISABLE",
+        "5": "GND",
+        "6": "TS_MON",
+        "7": "CHG_VSET",
+        "8": "CHG_ISET",
+        "9": "CHG_STAT1",
+        "10": "DOCK_IN",
+        "11": "GND"
+      },
+      "block": "power",
+      "note": "R_ISET5.62k gives53.38mA nominal. R22 seriesNTC and U9 hardwarehot cutoff; Q1 requires firmwarepermission, defaultoff. Thermal calculation is conditional on selected NTC and pack qualification.",
+      "labels": {
+        "1": "SYS",
+        "2": "BAT",
+        "3": "STAT2",
+        "4": "N_CE",
+        "5": "GND",
+        "6": "TS_MR",
+        "7": "ILIM_VSET",
+        "8": "ISET",
+        "9": "STAT1",
+        "10": "IN",
+        "11": "EP_GND"
+      },
+      "r": 0
+    },
+    {
+      "ref": "U4",
+      "mpn": "TLV75530PDBVR",
+      "value": "3.0V system regulator",
+      "fp": "ldo",
+      "x": -0.05,
+      "y": -13.05,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND",
+        "3": "VSYS",
+        "5": "V3"
+      },
+      "block": "power",
+      "nc": [
+        "4"
+      ],
+      "labels": {
+        "1": "IN",
+        "2": "GND",
+        "3": "EN",
+        "4": "NC",
+        "5": "OUT"
+      },
+      "r": 90
+    },
+    {
+      "ref": "U5",
+      "mpn": "MAX17048G+T10",
+      "value": "ModelGauge fuel gauge",
+      "fp": "gauge",
+      "x": 1.7,
+      "y": -1.3,
+      "pins": {
+        "1": "GND",
+        "2": "VBAT",
+        "3": "VBAT",
+        "4": "GND",
+        "5": "GAUGE_ALERT_N",
+        "6": "GND",
+        "7": "I2C_SCL",
+        "8": "I2C_SDA",
+        "9": "GND"
+      },
+      "block": "power",
+      "labels": {
+        "1": "CTG",
+        "2": "CELL",
+        "3": "VDD",
+        "4": "GND",
+        "5": "N_ALRT",
+        "6": "QSTRT",
+        "7": "SCL",
+        "8": "SDA",
+        "9": "EP_GND"
+      },
+      "r": 90
+    },
+    {
+      "ref": "U6",
+      "mpn": "DRV2605LDGSR",
+      "value": "LRA closed-loop haptics",
+      "fp": "haptic",
+      "x": 4.45,
+      "y": -2.8,
+      "pins": {
+        "1": "HAPTIC_REG",
+        "2": "I2C_SCL",
+        "3": "I2C_SDA",
+        "4": "GND",
+        "5": "HAPTIC_EN",
+        "6": "VSYS",
+        "7": "LRA_P",
+        "8": "GND",
+        "9": "LRA_N",
+        "10": "VSYS"
+      },
+      "block": "ux",
+      "labels": {
+        "1": "REG",
+        "2": "SCL",
+        "3": "SDA",
+        "4": "TRIG",
+        "5": "EN",
+        "6": "VDD2",
+        "7": "OUT_P",
+        "8": "GND",
+        "9": "OUT_N",
+        "10": "VDD"
+      },
+      "r": 90
+    },
+    {
+      "ref": "U7",
+      "mpn": "TLV75530PDBVR",
+      "value": "Recording-only3V microphone regulator",
+      "fp": "ldo",
+      "x": 7.45,
+      "y": 5.95,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND",
+        "3": "RECORD_EN",
+        "5": "MIC_SUPPLY"
+      },
+      "block": "privacy",
+      "nc": [
+        "4"
+      ],
+      "labels": {
+        "1": "IN",
+        "2": "GND",
+        "3": "EN",
+        "4": "NC",
+        "5": "OUT"
+      },
+      "r": 180
+    },
+    {
+      "ref": "U8",
+      "mpn": "SN74LVC2G125DCUR",
+      "value": "Ioff protected PDM isolation",
+      "fp": "buffer",
+      "x": 8.2,
+      "y": -6.05,
+      "pins": {
+        "1": "GND",
+        "2": "PDM_CLK_MCU",
+        "3": "PDM_DATA_MCU",
+        "4": "GND",
+        "5": "PDM_DATA_MIC",
+        "6": "PDM_CLK_BUF",
+        "7": "GND",
+        "8": "MIC_VDD"
+      },
+      "block": "privacy",
+      "labels": {
+        "1": "N_OE1",
+        "2": "A1_CLK",
+        "3": "Y2_DATA",
+        "4": "GND",
+        "5": "A2_DATA",
+        "6": "Y1_CLK",
+        "7": "N_OE2",
+        "8": "VCC"
+      },
+      "r": 0
+    },
+    {
+      "ref": "U9",
+      "mpn": "TLV6700DDCR",
+      "value": "Independent charge hot cutoff",
+      "fp": "comparator",
+      "x": -4.55,
+      "y": -12.3,
+      "pins": {
+        "2": "GND",
+        "3": "GND",
+        "4": "TS_MON",
+        "5": "VSYS",
+        "6": "TEMP_ALLOW_SINK"
+      },
+      "block": "power",
+      "nc": [
+        "1"
+      ],
+      "note": "INB- above400mV sinks OUTB; falling below~394.5mV opens chargepermission. Require1ms stableVSYS before CHG_ALLOW. C18 bypass nearVDD.",
+      "labels": {
+        "1": "OUTA_NC",
+        "2": "GND",
+        "3": "INA_GND",
+        "4": "INB_TS",
+        "5": "VDD",
+        "6": "OUTB_ALLOW"
+      },
+      "r": 0
+    },
+    {
+      "ref": "Q1",
+      "mpn": "DMG2302UK-7",
+      "value": "Default-off charge permission",
+      "fp": "nmos",
+      "x": -4.55,
+      "y": -3.8,
+      "pins": {
+        "1": "CHG_ALLOW",
+        "2": "TEMP_ALLOW_SINK",
+        "3": "CHG_DISABLE"
+      },
+      "block": "power",
+      "note": "Gate1 drivenMCUwithR3pulldown; source2 comparatorOUTB; drain3 active-lowchargerCE. Bodydiode source-to-drain prevents OFF drain pullinglow.",
+      "labels": {
+        "1": "GATE",
+        "2": "SOURCE",
+        "3": "DRAIN"
+      },
+      "r": 180
+    },
+    {
+      "ref": "SW1",
+      "mpn": "JS202011JCQN",
+      "value": "Mechanical DPDT microphone OFF",
+      "fp": "privacy",
+      "x": 9.5,
+      "y": -0.2,
+      "pins": {
+        "1": "MIC_SUPPLY",
+        "2": "MIC_VDD",
+        "3": "GND",
+        "4": "GND",
+        "5": "PRIVACY_N",
+        "6": "V3"
+      },
+      "block": "privacy",
+      "r": 90,
+      "note": "Center commons2,5. OFF connects2-3 and5-6. Break-before-make; verify actuator orientation on first article."
+    },
+    {
+      "ref": "SW2",
+      "mpn": "KMR211NGULCLFS",
+      "value": "Flush face record / stop",
+      "fp": "record",
+      "x": 0,
+      "y": -6,
+      "pins": {
+        "1": "RECORD_N",
+        "2": "GND"
+      },
+      "block": "ux",
+      "note": "C&K KMR211 NG ULC: no groundtab, lowcurrent contacts,1.2N,0.20±0.10mm electricaltravel,1.9mm actuatorheight. A03 face0.35mm travel/.02mm restgap; returngasket/overtravel needqualification. Singlepressrecord/stop,doublepressbookmark.",
+      "r": 0
+    },
+    {
+      "ref": "D1",
+      "mpn": "BAT54WS-7-F",
+      "value": "Reverse-dock Schottky",
+      "fp": "diode",
+      "x": 0.2,
+      "y": -9.05,
+      "pins": {
+        "1": "DOCK_IN",
+        "2": "DOCK_5V"
+      },
+      "block": "power",
+      "r": 360
+    },
+    {
+      "ref": "D2",
+      "mpn": "PESD5V0S1BA,115",
+      "value": "Dock transient suppression",
+      "fp": "diode",
+      "x": -0.55,
+      "y": -15.8,
+      "pins": {
+        "1": "DOCK_5V",
+        "2": "GND"
+      },
+      "block": "power",
+      "r": 180
+    },
+    {
+      "ref": "LED1",
+      "mpn": "LTST-C190KFKT",
+      "value": "Amber hard recording indicator",
+      "fp": "led",
+      "x": 0,
+      "y": -1,
+      "pins": {
+        "1": "GND",
+        "2": "LED_RECORD_A"
+      },
+      "block": "privacy",
+      "note": "Indicator receives microphone rail power, has no independent firmware-off command.",
+      "r": 90
+    },
+    {
+      "ref": "J1",
+      "mpn": "AURA-DOCK-PADS",
+      "value": "3 ENIG rear pogo contacts",
+      "fp": "dock",
+      "x": 0,
+      "y": -19,
+      "pins": {
+        "1": "GND",
+        "2": "DOCK_5V",
+        "3": "GND"
+      },
+      "block": "power",
+      "layer": "bottom",
+      "note": "Three1.7mm pads atX-3/0/+3,Y-19 belowcell. Rear contactcarrier/tails needqualification. Matingdockkeyed,current-limited5V100mA; magnetsincaseonly."
+    },
+    {
+      "ref": "J2",
+      "mpn": "AURA-BATTERY-PADS",
+      "value": "Protected LiPo and pack10kNTC",
+      "fp": "battery",
+      "x": -6,
+      "y": -12,
+      "pins": {
+        "1": "VBAT",
+        "2": "GND",
+        "3": "BAT_NTC"
+      },
+      "block": "power",
+      "layer": "bottom",
+      "note": "Candidate FPBattery DNK302025-150mAh actual27±1×20×3mm inclPCM; caseallowance20.5×28×3.3mm,4.2V chemistry. AddSemitec103AT-2 satisfyingreviewedR/Tacceptanceband. Packmaxthickness/swelling/4.221V tolerance andattachedNTCnotqualified.",
+      "r": 0
+    },
+    {
+      "ref": "J3",
+      "mpn": "AURA-SWD-PADS",
+      "value": "6 pogo programming pads",
+      "fp": "debug",
+      "x": 1,
+      "y": 0,
+      "pins": {
+        "1": "V3",
+        "2": "SWDIO",
+        "3": "SWDCLK",
+        "4": "RESET_N",
+        "5": "GND",
+        "6": "GND"
+      },
+      "block": "radio",
+      "layer": "bottom",
+      "r": 0
+    },
+    {
+      "ref": "J4",
+      "mpn": "AURA-LRA-PADS",
+      "value": "C08-00A LRA wire pads",
+      "fp": "motor",
+      "x": 8,
+      "y": -13,
+      "pins": {
+        "1": "LRA_P",
+        "2": "LRA_N"
+      },
+      "block": "ux",
+      "layer": "bottom",
+      "note": "PrecisionMicrodrives C08-00A candidate8±0.1mm×2.6±0.15mm,1.2Vrmsrated/1.25max,240Hz. Start0.84Vrmsengineeringtarget; driverregisters/autoresonancecalibrationandavailabilityunqualified.",
+      "r": 0
+    },
+    {
+      "ref": "R1",
+      "mpn": "RC0402FR-075K62L",
+      "value": "5.62k",
+      "fp": "r0402",
+      "x": -3.55,
+      "y": -6.05,
+      "pins": {
+        "1": "CHG_ISET",
+        "2": "GND"
+      },
+      "block": "power",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R2",
+      "mpn": "RC0402FR-0724KL",
+      "value": "24k",
+      "fp": "r0402",
+      "x": -6.05,
+      "y": -6.05,
+      "pins": {
+        "1": "CHG_VSET",
+        "2": "GND"
+      },
+      "block": "power",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R3",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -5.05,
+      "y": -0.8,
+      "pins": {
+        "1": "CHG_ALLOW",
+        "2": "GND"
+      },
+      "block": "power",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R4",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -6.8,
+      "y": -2.8,
+      "pins": {
+        "1": "CHG_STAT1",
+        "2": "V3"
+      },
+      "block": "power",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R5",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -7.8,
+      "y": -2.05,
+      "pins": {
+        "1": "CHG_STAT2",
+        "2": "V3"
+      },
+      "block": "power",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R6",
+      "mpn": "RC0402FR-074K7L",
+      "value": "4.7k",
+      "fp": "r0402",
+      "x": -5.8,
+      "y": 8.45,
+      "pins": {
+        "1": "I2C_SCL",
+        "2": "V3"
+      },
+      "block": "radio",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R7",
+      "mpn": "RC0402FR-074K7L",
+      "value": "4.7k",
+      "fp": "r0402",
+      "x": -3.55,
+      "y": -2.05,
+      "pins": {
+        "1": "I2C_SDA",
+        "2": "V3"
+      },
+      "block": "radio",
+      "r": 540,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R8",
+      "mpn": "RC0402FR-07100KL",
+      "value": "100k",
+      "fp": "r0402",
+      "x": -3.55,
+      "y": -0.3,
+      "pins": {
+        "1": "GAUGE_ALERT_N",
+        "2": "V3"
+      },
+      "block": "power",
+      "r": 540,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R9",
+      "mpn": "RC0402FR-07100KL",
+      "value": "100k",
+      "fp": "r0402",
+      "x": 6.2,
+      "y": 7.95,
+      "pins": {
+        "1": "RECORD_EN",
+        "2": "GND"
+      },
+      "block": "privacy",
+      "r": 180,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R10",
+      "mpn": "RC0402FR-07100KL",
+      "value": "100k",
+      "fp": "r0402",
+      "x": 6.2,
+      "y": 10.95,
+      "pins": {
+        "1": "HAPTIC_EN",
+        "2": "GND"
+      },
+      "block": "ux",
+      "r": 180,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R11",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -7.8,
+      "y": -3.8,
+      "pins": {
+        "1": "RECORD_N",
+        "2": "V3"
+      },
+      "block": "ux",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R13",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": 10.45,
+      "y": 8.2,
+      "pins": {
+        "1": "PRIVACY_N",
+        "2": "V3"
+      },
+      "block": "privacy",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R14",
+      "mpn": "RC0402FR-071KL",
+      "value": "1k",
+      "fp": "r0402",
+      "x": -7.05,
+      "y": -5.55,
+      "pins": {
+        "1": "MIC_VDD",
+        "2": "LED_RECORD_A"
+      },
+      "block": "privacy",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R15",
+      "mpn": "RC0402FR-07100KL",
+      "value": "100k",
+      "fp": "r0402",
+      "x": 10.45,
+      "y": 9.95,
+      "pins": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "block": "privacy",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R16",
+      "mpn": "RC0402FR-0733RL",
+      "value": "33",
+      "fp": "r0402",
+      "x": -1.8,
+      "y": -3.05,
+      "pins": {
+        "1": "PDM_CLK_BUF",
+        "2": "PDM_CLK_MIC"
+      },
+      "block": "audio",
+      "r": 360,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R17",
+      "mpn": "RC0402FR-0733RL",
+      "value": "33",
+      "fp": "r0402",
+      "x": -9.3,
+      "y": -1.55,
+      "pins": {
+        "1": "SPI_SCK_MCU",
+        "2": "SPI_SCK"
+      },
+      "block": "storage",
+      "r": 180,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R18",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -9.3,
+      "y": -2.55,
+      "pins": {
+        "1": "SPI_CS_N",
+        "2": "V3"
+      },
+      "block": "storage",
+      "r": 180,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R19",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -10.8,
+      "y": -2.3,
+      "pins": {
+        "1": "FLASH_WP_N",
+        "2": "V3"
+      },
+      "block": "storage",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R20",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -9.3,
+      "y": -3.55,
+      "pins": {
+        "1": "FLASH_HOLD_N",
+        "2": "V3"
+      },
+      "block": "storage",
+      "r": 180,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R21",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -8.05,
+      "y": -5.55,
+      "pins": {
+        "1": "RESET_N",
+        "2": "V3"
+      },
+      "block": "radio",
+      "r": 450,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R22",
+      "mpn": "RC0402FR-073K3L",
+      "value": "3.3k",
+      "fp": "r0402",
+      "x": -7.3,
+      "y": -9.8,
+      "pins": {
+        "1": "TS_MON",
+        "2": "BAT_NTC"
+      },
+      "block": "power",
+      "r": 90,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "R23",
+      "mpn": "RC0402FR-0710KL",
+      "value": "10k",
+      "fp": "r0402",
+      "x": -7.3,
+      "y": -7.8,
+      "pins": {
+        "1": "CHG_DISABLE",
+        "2": "VSYS"
+      },
+      "block": "power",
+      "r": 270,
+      "note": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+    },
+    {
+      "ref": "C1",
+      "mpn": "C0402C104K4RACTU",
+      "value": "100nF",
+      "fp": "c0402",
+      "x": -1.05,
+      "y": -0.8,
+      "pins": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "block": "radio",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C2",
+      "mpn": "C0603C475K8PACTU",
+      "value": "4.7uF",
+      "fp": "c0603",
+      "x": -2.05,
+      "y": -1.3,
+      "pins": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "block": "radio",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C3",
+      "mpn": "939113424610-T3N",
+      "value": "100nF silicon",
+      "fp": "sicap",
+      "x": -6.55,
+      "y": 10.45,
+      "pins": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "block": "audio",
+      "note": "Murata BBSC silicon,100nF±15%,3.8V rated,1.2×0.7×0.4mm. Replaces ClassII ceramic at mic. Rev3.00 pads/MPN and assemblyRev1.42 checked; mask/paste registration, assembly leakage and acousticperformance needqualification.",
+      "r": 90
+    },
+    {
+      "ref": "C4",
+      "mpn": "939113424610-T3N",
+      "value": "100nF silicon",
+      "fp": "sicap",
+      "x": 6.45,
+      "y": 9.7,
+      "pins": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "block": "audio",
+      "note": "Murata BBSC silicon,100nF±15%,3.8V rated,1.2×0.7×0.4mm. Replaces ClassII ceramic at mic. Rev3.00 pads/MPN and assemblyRev1.42 checked; mask/paste registration, assembly leakage and acousticperformance needqualification.",
+      "r": 90
+    },
+    {
+      "ref": "C5",
+      "mpn": "C0402C104K4RACTU",
+      "value": "100nF",
+      "fp": "c0402",
+      "x": -10.8,
+      "y": 7.95,
+      "pins": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "block": "storage",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 0
+    },
+    {
+      "ref": "C6",
+      "mpn": "C0603C475K8PACTU",
+      "value": "4.7uF",
+      "fp": "c0603",
+      "x": -10.55,
+      "y": 9.7,
+      "pins": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "block": "storage",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C7",
+      "mpn": "C0603C225K8RACTU",
+      "value": "2.2uF",
+      "fp": "c0603",
+      "x": -1.8,
+      "y": -9.3,
+      "pins": {
+        "1": "DOCK_IN",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 270
+    },
+    {
+      "ref": "C8",
+      "mpn": "C0603C475K8PACTU",
+      "value": "4.7uF",
+      "fp": "c0603",
+      "x": -6.3,
+      "y": -9.05,
+      "pins": {
+        "1": "VBAT",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C9",
+      "mpn": "C0805C106K8PACTU",
+      "value": "10uF",
+      "fp": "c0805",
+      "x": -4.8,
+      "y": -6.8,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C10",
+      "mpn": "C0603C225K8RACTU",
+      "value": "2.2uF",
+      "fp": "c0603",
+      "x": 0.2,
+      "y": -10.55,
+      "pins": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 180
+    },
+    {
+      "ref": "C11",
+      "mpn": "C0402C104K4RACTU",
+      "value": "100nF",
+      "fp": "c0402",
+      "x": 1.45,
+      "y": -3.3,
+      "pins": {
+        "1": "VBAT",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 180
+    },
+    {
+      "ref": "C12",
+      "mpn": "C0603C105K4RACTU",
+      "value": "1uF",
+      "fp": "c0603",
+      "x": 6.7,
+      "y": -0.8,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "block": "ux",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C13",
+      "mpn": "C0603C105K4RACTU",
+      "value": "1uF",
+      "fp": "c0603",
+      "x": 3.95,
+      "y": -6.3,
+      "pins": {
+        "1": "HAPTIC_REG",
+        "2": "GND"
+      },
+      "block": "ux",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 0
+    },
+    {
+      "ref": "C14",
+      "mpn": "C0603C105K4RACTU",
+      "value": "1uF",
+      "fp": "c0603",
+      "x": 9.95,
+      "y": 5.95,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "block": "privacy",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 270
+    },
+    {
+      "ref": "C15",
+      "mpn": "C0603C105K4RACTU",
+      "value": "1uF",
+      "fp": "c0603",
+      "x": 6.45,
+      "y": 2.95,
+      "pins": {
+        "1": "MIC_SUPPLY",
+        "2": "GND"
+      },
+      "block": "privacy",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C16",
+      "mpn": "C0402C104K4RACTU",
+      "value": "100nF",
+      "fp": "c0402",
+      "x": 10.7,
+      "y": -5.8,
+      "pins": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "block": "privacy",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    },
+    {
+      "ref": "C17",
+      "mpn": "C0402C103K5RACTU",
+      "value": "10nF",
+      "fp": "c0402",
+      "x": -5.55,
+      "y": -2.05,
+      "pins": {
+        "1": "RECORD_N",
+        "2": "GND"
+      },
+      "block": "ux",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 360
+    },
+    {
+      "ref": "C18",
+      "mpn": "C0402C104K4RACTU",
+      "value": "100nF",
+      "fp": "c0402",
+      "x": -2.05,
+      "y": -12.3,
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "block": "power",
+      "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
+      "r": 90
+    }
+  ]
+}

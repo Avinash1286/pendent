@@ -1,0 +1,28 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {nodes} from './restore-mic-land.mjs';
+const file=process.argv[2]||'output/aura-a02-routing-draft.kicad_pcb';
+let board=fs.readFileSync(file,'utf8');
+const directory=path.dirname(file),library=path.join(directory,'AURA_Generated.pretty');
+fs.mkdirSync(library,{recursive:true});
+for(const fp of nodes(board,'footprint').reverse()){
+ const ref=fp.text.match(/\(property "Reference" "([^"]+)"/)?.[1];
+ if(!ref)throw Error('Footprint reference missing');
+ // Close-packed component body outlines belong on the assembly drawing.
+ // Keep PCB silkscreen for product/revision marks and retain all pad geometry.
+ let edited=fp.text.replace(/^\(footprint\s+"[^"]+"/,`(footprint "AURA_Generated:${ref}"`).replace(/\(layer\s+"?F.SilkS"?\)/g,'(layer F.Fab)');
+ let lib=edited.replace(/^\(footprint\s+"[^"]+"/,`(footprint "${ref}"`);
+ const firstAt=nodes(lib,'at')[0];
+ lib=lib.slice(0,firstAt.start)+lib.slice(firstAt.end);
+ lib=lib.replace(/\s*\(uuid\s+"?[^\s)]+"?\)/g,'').replace(/\s*\(net\s+\d+\s+"[^"]*"\)/g,'');
+ fs.writeFileSync(path.join(library,`${ref}.kicad_mod`),lib);
+ board=board.slice(0,fp.start)+edited+board.slice(fp.end);
+}
+for(const text of nodes(board,'gr_text').reverse()){
+ if(!/\(layer\s+"?F.SilkS"?\)/.test(text.text))continue;
+ const edited=text.text.replace(/\(size\s+[-\d.]+\s+[-\d.]+\)/,'(size 0.8 0.8)').replace(/\(thickness\s+[-\d.]+\)/,'(thickness 0.1)');
+ board=board.slice(0,text.start)+edited+board.slice(text.end);
+}
+fs.writeFileSync(file,board);
+fs.writeFileSync(path.join(directory,'fp-lib-table'),'(fp_lib_table\n  (version 7)\n  (lib (name "AURA_Generated")(type "KiCad")(uri "${KIPRJMOD}/AURA_Generated.pretty")(options "")(descr "Generated AURA reference footprints; see hardware/library/NOTICE.md"))\n)\n');
+console.log(`Registered ${nodes(board,'footprint').length} reference footprints; copper preserved.`);

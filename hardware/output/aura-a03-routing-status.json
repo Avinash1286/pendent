@@ -1,0 +1,59 @@
+{
+  "revision": "EVT-A03",
+  "generatedAt": "2026-09-07T20:52:37.702Z",
+  "sessionPath": "output/aura-a03-route-refine.ses",
+  "sessionSha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00",
+  "wirePaths": 545,
+  "vias": 109,
+  "layerWirePaths": {
+    "F.Cu": 461,
+    "In1.Cu": 34,
+    "In2.Cu": 30,
+    "B.Cu": 20
+  },
+  "standaloneDrc": {
+    "path": "output/aura-a03-refine-freerouting-drc.json",
+    "violations": 1,
+    "violationTypes": [
+      "via_dangling"
+    ],
+    "disconnectedNetGroups": 8,
+    "disconnectedNets": [
+      "GND",
+      "SPI_CS_N",
+      "CHG_STAT1",
+      "CHG_STAT2",
+      "I2C_SDA",
+      "CHG_DISABLE",
+      "CHG_VSET",
+      "CHG_ISET"
+    ],
+    "countingNote": "Freerouting DRC groups all members of each disconnected net; this length is not the router airwire count."
+  },
+  "inputMatches": [
+    {
+      "path": "output/aura-placement.kicad_pcb",
+      "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7",
+      "unchanged": true
+    },
+    {
+      "path": "output/aura-a03.dsn",
+      "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2",
+      "unchanged": true
+    },
+    {
+      "path": "output/design-manifest.json",
+      "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147",
+      "unchanged": true
+    }
+  ],
+  "importedIntoKiCad": false,
+  "fabricationReady": false,
+  "limitation": "Standalone session inspection only. Connector import was previously cancelled without reason. No imported-board DRC, return planes, manufacturing release or hardware qualification is established.",
+  "inMemoryRouterFinal": {
+    "path": "output/aura-a03-refine.log",
+    "unroutedConnections": 10,
+    "violations": 4,
+    "reconciliation": "Serialized-session reload has different counts. Preserve both; no independent imported-KiCad check has been performed."
+  }
+}

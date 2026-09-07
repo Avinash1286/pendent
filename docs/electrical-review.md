@@ -2,6 +2,8 @@
 
 Reviewed 2026-09-08 against `hardware/src/design.ts`, `AuraPendant.tsx`, `placement-overrides.json`, exported logical netlist/BOM and the firmware contract. Hardware routing was being revised concurrently. This is a bounded design review, not ERC, DRC, bench validation or fabrication approval. No hardware source was changed by this review.
 
+Later A03 update: the target is now 150 mAh with a 20.5 × 28 × 3.3 mm reserved pack volume. The hardware author reports moving the charger/gauge bypass capacitors close to their ICs and correcting the NAND ZE package from a subsequently retrieved Rev.R sheet. Their final routes still require verification. The current conditional temperature-cutoff proposal, pack sourcing evidence and exact LRA candidate are in [thermal-review.md](thermal-review.md); that report supersedes the earlier capacity and direct-NTC assumptions below.
+
 ## Findings requiring disposition
 
 1. **Radio antenna keepout: corrected in source during review.** The original full-width keepout started at Y=12.7 mm. U1 is centered at Y=8 mm and its antenna edge is at Y=15.75 mm, leaving only 3.05 mm of depth. Raytac specifies 3.8 mm. The revised TSX now uses a 5.05 mm-high, four-layer keepout centered at Y=14.475 mm, placing its boundary at **Y=11.95 mm**. Confirm the final exported rule area and copper against this boundary. [Raytac manufacturer approval sheet, Version L, p.11; copy hosted by Espruino](https://www.espruino.com/datasheets/MDBT50Q-1M.pdf).

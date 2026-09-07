@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const project={
  board:{design_settings:{defaults:{},diff_pair_dimensions:[],drc_exclusions:[],rules:{
   min_clearance:0.12,min_track_width:0.12,min_via_diameter:0.45,
-  min_through_hole_diameter:0.2,min_hole_to_hole:0.25,copper_edge_clearance:0.3,
+  min_through_hole_diameter:0.2,min_hole_to_hole:0.25,min_copper_edge_clearance:0.3,
   min_silk_line_width:0.1,min_text_height:0.7
  },track_widths:[0,0.15,0.3],via_dimensions:[{diameter:0.45,drill:0.2}]}},
  boards:[],libraries:{pinned_footprint_libs:[],pinned_symbol_libs:[]},

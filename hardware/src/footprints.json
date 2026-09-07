@@ -2488,9 +2488,9 @@
   },
   "flash": {
     "key": "flash",
-    "library": "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm",
-    "width": 6,
-    "height": 5,
+    "library": "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm",
+    "width": 8,
+    "height": 6,
     "z": 0.8,
     "pads": [
       {
@@ -2498,11 +2498,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          -2.6625,
+          -3.75,
           -1.905
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2517,11 +2517,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          -2.6625,
+          -3.75,
           -0.635
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2536,11 +2536,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          -2.6625,
+          -3.75,
           0.635
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2555,11 +2555,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          -2.6625,
+          -3.75,
           1.905
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2574,11 +2574,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          2.6625,
+          3.75,
           1.905
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2593,11 +2593,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          2.6625,
+          3.75,
           0.635
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2612,11 +2612,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          2.6625,
+          3.75,
           -0.635
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2631,11 +2631,11 @@
         "pad_type": "smd",
         "pad_shape": "roundrect",
         "at": [
-          2.6625,
+          3.75,
           -1.905
         ],
         "size": [
-          0.775,
+          0.65,
           0.5
         ],
         "layers": [
@@ -2655,7 +2655,7 @@
         ],
         "size": [
           3.4,
-          4
+          4.3
         ],
         "layers": [
           "F.Cu",
@@ -2667,12 +2667,12 @@
     "lines": [
       {
         "start": [
-          -3.11,
-          -2.61
+          -4.11,
+          -3.11
         ],
         "end": [
-          3.11,
-          -2.61
+          4.11,
+          -3.11
         ],
         "stroke": {
           "width": 0.12,
@@ -2682,12 +2682,12 @@
       },
       {
         "start": [
-          -3.11,
+          -4.11,
           -2.415
         ],
         "end": [
-          -3.11,
-          -2.61
+          -4.11,
+          -3.11
         ],
         "stroke": {
           "width": 0.12,
@@ -2697,11 +2697,11 @@
       },
       {
         "start": [
-          -3.11,
-          2.61
+          -4.11,
+          3.11
         ],
         "end": [
-          -3.11,
+          -4.11,
           2.415
         ],
         "stroke": {
@@ -2712,11 +2712,11 @@
       },
       {
         "start": [
-          3.11,
-          -2.61
+          4.11,
+          -3.11
         ],
         "end": [
-          3.11,
+          4.11,
           -2.415
         ],
         "stroke": {
@@ -2727,12 +2727,12 @@
       },
       {
         "start": [
-          3.11,
+          4.11,
           2.415
         ],
         "end": [
-          3.11,
-          2.61
+          4.11,
+          3.11
         ],
         "stroke": {
           "width": 0.12,
@@ -2742,12 +2742,12 @@
       },
       {
         "start": [
-          3.11,
-          2.61
+          4.11,
+          3.11
         ],
         "end": [
-          -3.11,
-          2.61
+          -4.11,
+          3.11
         ],
         "stroke": {
           "width": 0.12,
@@ -2943,6 +2943,398 @@
         "end": [
           -1.26,
           1.185
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      }
+    ],
+    "source": ""
+  },
+  "comparator": {
+    "key": "comparator",
+    "library": "Package_TO_SOT_SMD:SOT-23-6",
+    "width": 2.9,
+    "height": 2.8,
+    "z": 1.1,
+    "pads": [
+      {
+        "name": "1",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -1.1375,
+          -0.95
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "2",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -1.1375,
+          0
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "3",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -1.1375,
+          0.95
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "4",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          1.1375,
+          0.95
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "5",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          1.1375,
+          0
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "6",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          1.1375,
+          -0.95
+        ],
+        "size": [
+          1.325,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      }
+    ],
+    "holes": [],
+    "lines": [
+      {
+        "start": [
+          -0.91,
+          -1.56
+        ],
+        "end": [
+          0.91,
+          -1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.91,
+          -1.51
+        ],
+        "end": [
+          -0.91,
+          -1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.91,
+          1.56
+        ],
+        "end": [
+          -0.91,
+          1.51
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.91,
+          -1.56
+        ],
+        "end": [
+          0.91,
+          -1.51
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.91,
+          1.51
+        ],
+        "end": [
+          0.91,
+          1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.91,
+          1.56
+        ],
+        "end": [
+          -0.91,
+          1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      }
+    ],
+    "source": ""
+  },
+  "nmos": {
+    "key": "nmos",
+    "library": "Package_TO_SOT_SMD:SOT-23",
+    "width": 2.9,
+    "height": 2.5,
+    "z": 1.1,
+    "pads": [
+      {
+        "name": "1",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -0.9375,
+          -0.95
+        ],
+        "size": [
+          1.475,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "2",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -0.9375,
+          0.95
+        ],
+        "size": [
+          1.475,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "3",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          0.9375,
+          0
+        ],
+        "size": [
+          1.475,
+          0.6
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      }
+    ],
+    "holes": [],
+    "lines": [
+      {
+        "start": [
+          -0.76,
+          -1.56
+        ],
+        "end": [
+          0.76,
+          -1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.76,
+          -1.51
+        ],
+        "end": [
+          -0.76,
+          -1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.76,
+          0.39
+        ],
+        "end": [
+          -0.76,
+          -0.39
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.76,
+          1.56
+        ],
+        "end": [
+          -0.76,
+          1.51
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.76,
+          -1.56
+        ],
+        "end": [
+          0.76,
+          -0.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.76,
+          0.56
+        ],
+        "end": [
+          0.76,
+          1.56
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          0.76,
+          1.56
+        ],
+        "end": [
+          -0.76,
+          1.56
         ],
         "stroke": {
           "width": 0.12,
@@ -3636,6 +4028,87 @@
     ],
     "source": ""
   },
+  "c0805": {
+    "key": "c0805",
+    "library": "Capacitor_SMD:C_0805_2012Metric",
+    "width": 2,
+    "height": 1.25,
+    "z": 1.4,
+    "pads": [
+      {
+        "name": "1",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          -0.95,
+          0
+        ],
+        "size": [
+          1,
+          1.45
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      },
+      {
+        "name": "2",
+        "pad_type": "smd",
+        "pad_shape": "roundrect",
+        "at": [
+          0.95,
+          0
+        ],
+        "size": [
+          1,
+          1.45
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "roundrect_rratio": 0.25
+      }
+    ],
+    "holes": [],
+    "lines": [
+      {
+        "start": [
+          -0.261252,
+          -0.735
+        ],
+        "end": [
+          0.261252,
+          -0.735
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      },
+      {
+        "start": [
+          -0.261252,
+          0.735
+        ],
+        "end": [
+          0.261252,
+          0.735
+        ],
+        "stroke": {
+          "width": 0.12,
+          "type": "solid"
+        },
+        "layer": "F.SilkS"
+      }
+    ],
+    "source": ""
+  },
   "led": {
     "key": "led",
     "library": "LED_SMD:LED_0603_1608Metric",
@@ -3831,6 +4304,54 @@
         "uuid": "58527a67-6c09-4075-bc2b-ca92033302e2"
       }
     ],
+    "source": ""
+  },
+  "sicap": {
+    "key": "sicap",
+    "library": "AURA:AURA_SiCap_1.2x0.7mm_P0.7mm",
+    "width": 1.2,
+    "height": 0.7,
+    "z": 0.4,
+    "pads": [
+      {
+        "name": "1",
+        "pad_type": "smd",
+        "pad_shape": "rect",
+        "at": [
+          -0.35,
+          0
+        ],
+        "size": [
+          0.5,
+          0.7
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ]
+      },
+      {
+        "name": "2",
+        "pad_type": "smd",
+        "pad_shape": "rect",
+        "at": [
+          0.35,
+          0
+        ],
+        "size": [
+          0.5,
+          0.7
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ]
+      }
+    ],
+    "holes": [],
+    "lines": [],
     "source": ""
   }
 }

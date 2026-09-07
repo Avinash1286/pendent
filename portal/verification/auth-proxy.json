@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-09-07T20:54:39.414Z",
+  "origin": "http://127.0.0.1:3000",
+  "status": "PASS",
+  "checks": [
+    "The Next.js authentication proxy rejects GET, unrelated actions and cross-origin requests",
+    "Password signup through Next.js returns an access token and keeps the real refresh token in HttpOnly SameSite cookies",
+    "The Next.js proxy renews an authenticated session using its refresh cookie",
+    "Sign-out clears the authentication cookies and a subsequent refresh has no authenticated session"
+  ],
+  "limitations": "HTTP integration against local Next.js and Convex; no browser interaction or production-domain cookie verification."
+}

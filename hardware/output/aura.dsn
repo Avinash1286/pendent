@@ -1,0 +1,918 @@
+(pcb ./converted_dsn.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer In1.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (layer In2.Cu
+      (type signal)
+      (property
+        (index 2)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 3)
+      )
+    )
+    (boundary
+      (path pcb 0  -12000 -21000 12000 -21000 12000 21000 -12000 21000 -12000 -21000)
+    )
+    (via "Via[0-3]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 150)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "simple_chip:10.0000x11.4000_mm"
+      (place U1_source_component_0 0 6249.999999999999 front 0)
+    )
+    (component "simple_chip:2.4000x2.5850_mm"
+      (place MK1_source_component_1 -8500 9542.5 front 0)
+      (place MK2_source_component_2 8500 9542.5 front 0)
+    )
+    (component "simple_chip:4.3100x8.1500_mm"
+      (place U2_source_component_3 -8550 3200 front 0)
+    )
+    (component "simple_chip:2.9500x1.8000_mm"
+      (place U3_source_component_4 -4050 -9550 front 0)
+    )
+    (component "simple_chip:2.5000x3.6000_mm"
+      (place U4_source_component_5 -49.999999999999936 -13050 front 0)
+    )
+    (component "simple_chip:1.7500x2.7500_mm"
+      (place U5_source_component_6 1700 -1300 front 0)
+    )
+    (component "simple_chip:2.3500x5.7000_mm"
+      (place U6_source_component_7 4450 -2800 front 0)
+    )
+    (component "simple_chip:3.6000x2.5000_mm"
+      (place U7_source_component_8 7450 5950 front 0)
+      (place U9_source_component_10 -4550 -12300 front 0)
+    )
+    (component "simple_chip:4.0500x1.8500_mm"
+      (place U8_source_component_9 8200 -6050 front 0)
+    )
+    (component "simple_chip:3.3500x2.5000_mm"
+      (place Q1_source_component_11 -4550 -3800 front 0)
+    )
+    (component "simple_chip:4.0000x6.0000_mm"
+      (place SW1_source_component_12 9500 -200.00000000000017 front 0)
+    )
+    (component "simple_chip:5.0000x2.6000_mm"
+      (place SW2_source_component_13 0 -6000 front 0)
+    )
+    (component "simple_chip:2.7000x0.4500_mm"
+      (place D1_source_component_14 199.99999999999994 -9050 front 0)
+      (place D2_source_component_15 -550 -15800 front 0)
+    )
+    (component "simple_chip:0.9500x2.4500_mm"
+      (place LED1_source_component_16 0 -1000 front 0)
+      (place C2_source_component_44 -2050 -1300.0000000000002 front 0)
+      (place C6_source_component_48 -10550 9700 front 0)
+      (place C7_source_component_49 -1800 -9300 front 0)
+      (place C8_source_component_50 -6300 -9050 front 0)
+      (place C12_source_component_54 6700 -800.0000000000001 front 0)
+      (place C14_source_component_56 9950 5950 front 0)
+      (place C15_source_component_57 6450 2950 front 0)
+    )
+    (component "simple_chip:7.7000x1.7000_mm"
+      (place J1_source_component_17 0 -19000 front 0)
+    )
+    (component "simple_chip:4.0000x1.0000_mm"
+      (place J2_source_component_18 -6000 -12000 front 0)
+    )
+    (component "simple_chip:8.4000x0.9000_mm"
+      (place J3_source_component_19 1000 0 front 0)
+    )
+    (component "simple_chip:2.5000x1.0000_mm"
+      (place J4_source_component_20 8000 -13000 front 0)
+    )
+    (component "simple_chip:0.6400x1.5600_mm"
+      (place R1_source_component_21 -3550 -6050 front 0)
+      (place R2_source_component_22 -6050 -6050 front 0)
+      (place R3_source_component_23 -5050 -800 front 0)
+      (place R4_source_component_24 -6800 -2800 front 0)
+      (place R5_source_component_25 -7799.999999999999 -2050 front 0)
+      (place R6_source_component_26 -5800 8450 front 0)
+      (place R11_source_component_31 -7799.999999999999 -3800 front 0)
+      (place R13_source_component_32 10450 8200 front 0)
+      (place R14_source_component_33 -7050 -5550 front 0)
+      (place R15_source_component_34 10450 9950 front 0)
+      (place R19_source_component_38 -10800 -2300 front 0)
+      (place R21_source_component_40 -8050.000000000001 -5550 front 0)
+      (place R22_source_component_41 -7300 -9800 front 0)
+      (place R23_source_component_42 -7300 -7800 front 0)
+    )
+    (component "simple_chip:1.5600x0.6400_mm"
+      (place R7_source_component_27 -3550 -2050 front 0)
+      (place R8_source_component_28 -3550 -300.00000000000006 front 0)
+      (place R9_source_component_29 6200 7949.999999999999 front 0)
+      (place R10_source_component_30 6200 10950 front 0)
+      (place R16_source_component_35 -1800 -3050 front 0)
+      (place R17_source_component_36 -9300 -1550 front 0)
+      (place R18_source_component_37 -9300 -2550 front 0)
+      (place R20_source_component_39 -9300 -3550 front 0)
+    )
+    (component "simple_chip:0.6200x1.5200_mm"
+      (place C1_source_component_43 -1050 -800 front 0)
+      (place C16_source_component_58 10700 -5800 front 0)
+      (place C18_source_component_60 -2050 -12300 front 0)
+    )
+    (component "simple_chip:0.7000x1.2000_mm"
+      (place C3_source_component_45 -6550 10450 front 0)
+      (place C4_source_component_46 6450 9700 front 0)
+    )
+    (component "simple_chip:1.5200x0.6200_mm"
+      (place C5_source_component_47 -10800 7950 front 0)
+      (place C11_source_component_53 1450 -3300 front 0)
+      (place C17_source_component_59 -5550 -2050 front 0)
+    )
+    (component "simple_chip:1.4500x2.9000_mm"
+      (place C9_source_component_51 -4800 -6800 front 0)
+    )
+    (component "simple_chip:2.4500x0.9500_mm"
+      (place C10_source_component_52 200.00000000000017 -10550 front 0)
+      (place C13_source_component_55 3950 -6300 front 0)
+    )
+  )
+  (library
+    (image "simple_chip:10.0000x11.4000_mm"
+      (pin RoundRect[T]Pad_600x400_um 1 -4650 5500.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 2 -4650 4400.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 3 -4650 3600.0000000000005)
+      (pin RoundRect[T]Pad_600x400_um 4 -4650 2000.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 5 -3750 1600.0000000000005)
+      (pin RoundRect[T]Pad_600x400_um 6 -4650 1200.0000000000011)
+      (pin RoundRect[T]Pad_600x400_um 7 -3750 800.0000000000007)
+      (pin RoundRect[T]Pad_600x400_um 8 -4650 400.00000000000125)
+      (pin RoundRect[T]Pad_600x400_um 9 -3750 8.881784197001252e-13)
+      (pin RoundRect[T]Pad_600x400_um 10 -4650 -399.9999999999995)
+      (pin RoundRect[T]Pad_600x400_um 11 -3750 -799.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 12 -4650 -1199.9999999999993)
+      (pin RoundRect[T]Pad_600x400_um 13 -3750 -1599.9999999999989)
+      (pin RoundRect[T]Pad_600x400_um 14 -4650 -1999.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 15 -4800 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 16 -4000 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 17 -3200 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 18 -2400 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 19 -2000 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 20 -1600 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 21 -1200 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 22 -800 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 23 -400 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 24 0 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 25 400 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 26 800 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 27 1200 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 28 1600 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 29 2000 -4499.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 30 2400 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 31 3200 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 32 4000 -5399.999999999999)
+      (pin RoundRect[T]Pad_400x600_um 33 4800 -5399.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 34 4650 -4399.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 35 4650 -3599.9999999999986)
+      (pin RoundRect[T]Pad_600x400_um 36 3750 -3199.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 37 4650 -2799.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 38 3750 -2399.9999999999995)
+      (pin RoundRect[T]Pad_600x400_um 39 4650 -1999.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 40 3750 -1599.9999999999989)
+      (pin RoundRect[T]Pad_600x400_um 41 4650 -1199.9999999999993)
+      (pin RoundRect[T]Pad_600x400_um 42 3750 -799.999999999999)
+      (pin RoundRect[T]Pad_600x400_um 43 3750 8.881784197001252e-13)
+      (pin RoundRect[T]Pad_600x400_um 44 4650 400.00000000000125)
+      (pin RoundRect[T]Pad_600x400_um 45 3750 800.0000000000007)
+      (pin RoundRect[T]Pad_600x400_um 46 4650 1200.0000000000011)
+      (pin RoundRect[T]Pad_600x400_um 47 3750 1600.0000000000005)
+      (pin RoundRect[T]Pad_600x400_um 48 4650 2000.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 49 3750 2400.0000000000014)
+      (pin RoundRect[T]Pad_600x400_um 50 3750 3200)
+      (pin RoundRect[T]Pad_600x400_um 51 4650 3600.0000000000005)
+      (pin RoundRect[T]Pad_600x400_um 52 3750 4000.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 53 4650 4400.000000000001)
+      (pin RoundRect[T]Pad_600x400_um 54 3750 4800.000000000002)
+      (pin RoundRect[T]Pad_600x400_um 55 4650 5500.000000000001)
+      (pin RoundRect[T]Pad_400x600_um 56 -2000 1200.0000000000011)
+      (pin RoundRect[T]Pad_400x600_um 57 -1200 1200.0000000000011)
+      (pin RoundRect[T]Pad_400x600_um 58 -400 1200.0000000000011)
+      (pin RoundRect[T]Pad_400x600_um 59 400 1200.0000000000011)
+      (pin RoundRect[T]Pad_400x600_um 60 1200 1200.0000000000011)
+      (pin RoundRect[T]Pad_400x600_um 61 2000 1200.0000000000011)
+    )
+    (image "simple_chip:2.4000x2.5850_mm"
+      (pin RoundRect[T]Pad_725x522_um 1 -837.5000000000003 1031.4999999999993)
+      (pin RoundRect[T]Pad_725x522_um 2 -837.5000000000003 209.49999999999847)
+      (pin Cust[T]Pad_309.848x158.511_145.153_-65.728_129.541_92.783_-164.695_34.256_-154.847_-65.728_145.153_-65.728_um 3 667.3471162869564 -976.7720459907761)
+      (pin Cust[T]Pad_323.4x210.946_155.187_-36.147_108.951_116.272_-168.213_1.467_-139.049_-94.674_155.187_-36.147_um 3 641.7013408606493 -847.8420263837254)
+      (pin Cust[T]Pad_324.524x255.276_159.257_-5.177_84.174_135.293_-165.267_-31.378_-117.907_-119.982_159.257_-5.177_um 3 591.395342774323 -726.3926035363912)
+      (pin Cust[T]Pad_313.177x289.795_157.207_25.992_56.162_149.115_-155.97_-63.017_-92.234_-140.679_157.207_25.992_um 3 518.3623533258874 -617.0910106626515)
+      (pin Cust[T]Pad_289.795x313.177_149.115_56.162_25.992_157.207_-140.679_-92.234_-63.017_-155.97_149.115_56.162_um 3 425.4089893382815 -524.1376466748733)
+      (pin Cust[T]Pad_255.276x324.524_135.293_84.174_-5.177_159.257_-119.982_-117.907_-31.378_-165.267_135.293_84.174_um 3 316.1073964624208 -451.1046572245636)
+      (pin Cust[T]Pad_210.946x323.4_116.272_108.951_-36.147_155.187_-94.674_-139.049_1.467_-168.213_116.272_108.951_um 3 194.65797361648816 -400.7986591397472)
+      (pin Cust[T]Pad_158.511x309.848_92.783_129.541_-65.728_145.153_-65.728_-154.847_34.256_-164.695_92.783_129.541_um 3 65.7279540095903 -375.15288371337977)
+      (pin Cust[T]Pad_158.511x309.848_65.728_145.153_-92.783_129.541_-34.256_-164.695_65.728_-154.847_65.728_145.153_um 3 -65.72795400928477 -375.1528837133495)
+      (pin Cust[T]Pad_210.946x323.4_36.147_155.187_-116.272_108.951_-1.467_-168.213_94.674_-139.049_36.147_155.187_um 3 -194.65797361676886 -400.79865913923385)
+      (pin Cust[T]Pad_255.276x324.524_5.177_159.257_-135.293_84.174_31.378_-165.267_119.982_-117.907_5.177_159.257_um 3 -316.10739646256116 -451.10465722503966)
+      (pin Cust[T]Pad_289.795x313.177_-25.992_157.207_-149.115_56.162_63.017_-155.97_140.679_-92.234_-25.992_157.207_um 3 -425.4089893373791 -524.1376466754559)
+      (pin Cust[T]Pad_313.177x289.795_-56.162_149.115_-157.207_25.992_92.234_-140.679_155.97_-63.017_-56.162_149.115_um 3 -518.3623533245445 -617.0910106626213)
+      (pin Cust[T]Pad_324.524x255.276_-84.174_135.293_-159.257_-5.177_117.907_-119.982_165.267_-31.378_-84.174_135.293_um 3 -591.3953427749767 -726.3926035374074)
+      (pin Cust[T]Pad_323.4x210.946_-108.951_116.272_-155.187_-36.147_139.049_-94.674_168.213_1.467_-108.951_116.272_um 3 -641.7013408608127 -847.8420263832156)
+      (pin Cust[T]Pad_309.848x158.511_-129.541_92.783_-145.153_-65.728_154.847_-65.728_164.695_34.256_-129.541_92.783_um 3 -667.3471162866207 -976.7720459907157)
+      (pin Cust[T]Pad_309.848x158.511_-145.153_65.728_-129.541_-92.783_164.695_-34.256_154.847_65.728_-145.153_65.728_um 3 -667.3471162865904 -1108.227954009621)
+      (pin Cust[T]Pad_323.4x210.946_-155.187_36.147_-108.951_-116.272_168.213_-1.467_139.049_94.674_-155.187_36.147_um 3 -641.7013408602533 -1237.1579736165509)
+      (pin Cust[T]Pad_324.524x255.276_-159.257_5.177_-84.174_-135.293_165.267_31.378_117.907_119.982_-159.257_5.177_um 3 -591.3953427754972 -1358.6073964624213)
+      (pin Cust[T]Pad_313.177x289.795_-157.207_-25.992_-56.162_-149.115_155.97_63.017_92.234_140.679_-157.207_-25.992_um 3 -518.3623533251272 -1467.908989338282)
+      (pin Cust[T]Pad_289.795x313.177_-149.115_-56.162_-25.992_-157.207_140.679_92.234_63.017_155.97_-149.115_-56.162_um 3 -425.4089893379156 -1560.8623533254029)
+      (pin Cust[T]Pad_255.276x324.524_-135.293_-84.174_5.177_-159.257_119.982_117.907_31.378_165.267_-135.293_-84.174_um 3 -316.10739646306206 -1633.8953427747952)
+      (pin Cust[T]Pad_210.946x323.4_-116.272_-108.951_36.147_-155.187_94.674_139.049_-1.467_168.213_-116.272_-108.951_um 3 -194.657973616275 -1684.2013408606197)
+      (pin Cust[T]Pad_158.511x309.848_-92.783_-129.541_65.728_-145.153_65.728_154.847_-34.256_164.695_-92.783_-129.541_um 3 -65.72795400925457 -1709.8471162869569)
+      (pin Cust[T]Pad_158.511x309.848_-65.728_-145.153_92.783_-129.541_34.256_164.695_-65.728_154.847_-65.728_-145.153_um 3 65.7279540095903 -1709.8471162869569)
+      (pin Cust[T]Pad_210.946x323.4_-36.147_-155.187_116.272_-108.951_1.467_168.213_-94.674_139.049_-36.147_-155.187_um 3 194.65797361579362 -1684.2013408599098)
+      (pin Cust[T]Pad_255.276x324.524_-5.177_-159.257_135.293_-84.174_-31.378_165.267_-119.982_117.907_-5.177_-159.257_um 3 316.107396463174 -1633.8953427755491)
+      (pin Cust[T]Pad_289.795x313.177_25.992_-157.207_149.115_-56.162_-63.017_155.97_-140.679_92.234_25.992_-157.207_um 3 425.40898933773263 -1560.8623533249552)
+      (pin Cust[T]Pad_313.177x289.795_56.162_-149.115_157.207_-25.992_-92.234_140.679_-155.97_63.017_56.162_-149.115_um 3 518.3623533251902 -1467.9089893379996)
+      (pin Cust[T]Pad_324.524x255.276_84.174_-135.293_159.257_5.177_-117.907_119.982_-165.267_31.378_84.174_-135.293_um 3 591.3953427753045 -1358.6073964629293)
+      (pin Cust[T]Pad_323.4x210.946_108.951_-116.272_155.187_36.147_-139.049_94.674_-168.213_-1.467_108.951_-116.272_um 3 641.7013408598793 -1237.1579736157942)
+      (pin Cust[T]Pad_309.848x158.511_129.541_-92.783_145.153_65.728_-154.847_65.728_-164.695_-34.256_129.541_-92.783_um 3 667.3471162869413 -1108.2279540095908)
+      (pin RoundRect[T]Pad_725x522_um 4 837.5000000000003 209.49999999999847)
+      (pin RoundRect[T]Pad_725x522_um 5 837.5000000000003 1031.4999999999993)
+    )
+    (image "simple_chip:4.3100x8.1500_mm"
+      (pin RoundRect[T]Pad_500x650_um 1 -1905.0000000000011 -3750)
+      (pin RoundRect[T]Pad_500x650_um 2 -634.9999999999998 -3750)
+      (pin RoundRect[T]Pad_500x650_um 3 634.9999999999998 -3750)
+      (pin RoundRect[T]Pad_500x650_um 4 1904.9999999999993 -3750)
+      (pin RoundRect[T]Pad_500x650_um 5 1905.0000000000002 3750)
+      (pin RoundRect[T]Pad_500x650_um 6 634.9999999999998 3750)
+      (pin RoundRect[T]Pad_500x650_um 7 -634.9999999999998 3750)
+      (pin RoundRect[T]Pad_500x650_um 8 -1904.9999999999993 3750)
+      (pin RoundRect[T]Pad_4300x3400_um 9 0 0)
+    )
+    (image "simple_chip:2.9500x1.8000_mm"
+      (pin RoundRect[T]Pad_750x200_um 1 -1100.0000000000005 800.0000000000007)
+      (pin RoundRect[T]Pad_750x200_um 2 -1100.0000000000005 400.00000000000034)
+      (pin RoundRect[T]Pad_750x200_um 3 -1100.0000000000005 0)
+      (pin RoundRect[T]Pad_750x200_um 4 -1100.0000000000005 -400.00000000000034)
+      (pin RoundRect[T]Pad_750x200_um 5 -1100.0000000000005 -800.0000000000007)
+      (pin RoundRect[T]Pad_750x200_um 6 1100 -800.0000000000007)
+      (pin RoundRect[T]Pad_750x200_um 7 1100 -400.00000000000034)
+      (pin RoundRect[T]Pad_750x200_um 8 1100 0)
+      (pin RoundRect[T]Pad_750x200_um 9 1100 400.00000000000034)
+      (pin RoundRect[T]Pad_750x200_um 10 1100 800.0000000000007)
+      (pin RoundRect[T]Pad_900x1500_um 11 0 0)
+    )
+    (image "simple_chip:2.5000x3.6000_mm"
+      (pin RoundRect[T]Pad_600x1325_um 1 -950.0000000000001 -1137.4999999999993)
+      (pin RoundRect[T]Pad_600x1325_um 2 -1.3877787807814457e-13 -1137.4999999999993)
+      (pin RoundRect[T]Pad_600x1325_um 3 949.9999999999998 -1137.4999999999993)
+      (pin RoundRect[T]Pad_600x1325_um 4 950 1137.4999999999993)
+      (pin RoundRect[T]Pad_600x1325_um 5 -950 1137.4999999999993)
+    )
+    (image "simple_chip:1.7500x2.7500_mm"
+      (pin RoundRect[T]Pad_250x775_um 1 -750.0000000000001 -987.5)
+      (pin RoundRect[T]Pad_250x775_um 2 -250 -987.5)
+      (pin RoundRect[T]Pad_250x775_um 3 250 -987.5)
+      (pin RoundRect[T]Pad_250x775_um 4 749.9999999999998 -987.5)
+      (pin RoundRect[T]Pad_250x775_um 5 750.0000000000002 987.5)
+      (pin RoundRect[T]Pad_250x775_um 6 250 987.5)
+      (pin RoundRect[T]Pad_250x775_um 7 -250 987.5)
+      (pin RoundRect[T]Pad_250x775_um 8 -749.9999999999999 987.5)
+      (pin RoundRect[T]Pad_1200x800_um 9 0 0)
+    )
+    (image "simple_chip:2.3500x5.7000_mm"
+      (pin RoundRect[T]Pad_350x1500_um 1 -1000 -2100.0000000000005)
+      (pin RoundRect[T]Pad_350x1500_um 2 -500 -2100.0000000000005)
+      (pin RoundRect[T]Pad_350x1500_um 3 0 -2100.0000000000005)
+      (pin RoundRect[T]Pad_350x1500_um 4 500 -2100.0000000000005)
+      (pin RoundRect[T]Pad_350x1500_um 5 1000 -2100.0000000000005)
+      (pin RoundRect[T]Pad_350x1500_um 6 1000 2100)
+      (pin RoundRect[T]Pad_350x1500_um 7 500 2100)
+      (pin RoundRect[T]Pad_350x1500_um 8 0 2100)
+      (pin RoundRect[T]Pad_350x1500_um 9 -500 2100)
+      (pin RoundRect[T]Pad_350x1500_um 10 -1000 2100)
+    )
+    (image "simple_chip:3.6000x2.5000_mm"
+      (pin RoundRect[T]Pad_1325x600_um 1 1137.5000000000002 -950.0000000000002)
+      (pin RoundRect[T]Pad_1325x600_um 2 1137.5000000000002 0)
+      (pin RoundRect[T]Pad_1325x600_um 3 1137.5000000000002 950.0000000000002)
+      (pin RoundRect[T]Pad_1325x600_um 4 -1137.5000000000002 950.0000000000002)
+      (pin RoundRect[T]Pad_1325x600_um 5 -1137.5000000000002 -950.0000000000002)
+    )
+    (image "simple_chip:4.0500x1.8500_mm"
+      (pin RoundRect[T]Pad_1250x350_um 1 -1400.0000000000005 750)
+      (pin RoundRect[T]Pad_1250x350_um 2 -1400.0000000000005 250)
+      (pin RoundRect[T]Pad_1250x350_um 3 -1400.0000000000005 -250)
+      (pin RoundRect[T]Pad_1250x350_um 4 -1400.0000000000005 -750)
+      (pin RoundRect[T]Pad_1250x350_um 5 1400.0000000000005 -750)
+      (pin RoundRect[T]Pad_1250x350_um 6 1400.0000000000005 -250)
+      (pin RoundRect[T]Pad_1250x350_um 7 1400.0000000000005 250)
+      (pin RoundRect[T]Pad_1250x350_um 8 1400.0000000000005 750)
+    )
+    (image "simple_chip:3.3500x2.5000_mm"
+      (pin RoundRect[T]Pad_1475x600_um 1 937.5 -950.0000000000002)
+      (pin RoundRect[T]Pad_1475x600_um 2 937.5 949.9999999999998)
+      (pin RoundRect[T]Pad_1475x600_um 3 -937.5 0)
+    )
+    (image "simple_chip:4.0000x6.0000_mm"
+      (pin RoundRect[T]Pad_1600x1000_um 1 -1199.9999999999993 -2500)
+      (pin RoundRect[T]Pad_1600x1000_um 2 -1199.9999999999993 2.498001805406602e-13)
+      (pin RoundRect[T]Pad_1600x1000_um 3 -1199.9999999999993 2500)
+      (pin RoundRect[T]Pad_1600x1000_um 4 1199.9999999999993 -2500)
+      (pin RoundRect[T]Pad_1600x1000_um 5 1199.9999999999993 8.326672684688674e-14)
+      (pin RoundRect[T]Pad_1600x1000_um 6 1199.9999999999993 2500)
+    )
+    (image "simple_chip:5.0000x2.6000_mm"
+      (pin RoundRect[T]Pad_900x1000_um 1 -2050 799.9999999999998)
+      (pin RoundRect[T]Pad_900x1000_um 1 2050 799.9999999999998)
+      (pin RoundRect[T]Pad_900x1000_um 2 -2050 -799.9999999999998)
+      (pin RoundRect[T]Pad_900x1000_um 2 2050 -799.9999999999998)
+    )
+    (image "simple_chip:2.7000x0.4500_mm"
+      (pin RoundRect[T]Pad_600x450_um 1 -1050 0)
+      (pin RoundRect[T]Pad_600x450_um 2 1050 0)
+    )
+    (image "simple_chip:0.9500x2.4500_mm"
+      (pin RoundRect[T]Pad_950x875_um 1 -4.8220467716427034e-14 -787.5000000000001)
+      (pin RoundRect[T]Pad_950x875_um 2 4.8220467716427034e-14 787.5)
+    )
+    (image "simple_chip:7.7000x1.7000_mm"
+      (pin Round[B]Pad_1700_1700_um 1 3000 0)
+      (pin Round[B]Pad_1700_1700_um 2 0 0)
+      (pin Round[B]Pad_1700_1700_um 3 -3000 0)
+    )
+    (image "simple_chip:4.0000x1.0000_mm"
+      (pin Round[B]Pad_1000_1000_um 1 1500 0)
+      (pin Round[B]Pad_1000_1000_um 2 0 0)
+      (pin Round[B]Pad_1000_1000_um 3 -1500 0)
+    )
+    (image "simple_chip:8.4000x0.9000_mm"
+      (pin Round[B]Pad_900_900_um 1 3750 0)
+      (pin Round[B]Pad_900_900_um 2 2250 0)
+      (pin Round[B]Pad_900_900_um 3 750 0)
+      (pin Round[B]Pad_900_900_um 4 -750 0)
+      (pin Round[B]Pad_900_900_um 5 -2250 0)
+      (pin Round[B]Pad_900_900_um 6 -3750 0)
+    )
+    (image "simple_chip:2.5000x1.0000_mm"
+      (pin Round[B]Pad_1000_1000_um 1 750 0)
+      (pin Round[B]Pad_1000_1000_um 2 -750 0)
+    )
+    (image "simple_chip:0.6400x1.5600_mm"
+      (pin RoundRect[T]Pad_640x540_um 1 0 -509.9999999999998)
+      (pin RoundRect[T]Pad_640x540_um 2 0 509.9999999999998)
+    )
+    (image "simple_chip:1.5600x0.6400_mm"
+      (pin RoundRect[T]Pad_540x640_um 1 509.9999999999998 0)
+      (pin RoundRect[T]Pad_540x640_um 2 -509.9999999999998 0)
+    )
+    (image "simple_chip:0.6200x1.5200_mm"
+      (pin RoundRect[T]Pad_620x560_um 1 0 -480)
+      (pin RoundRect[T]Pad_620x560_um 2 0 480)
+    )
+    (image "simple_chip:0.7000x1.2000_mm"
+      (pin RoundRect[T]Pad_700x500_um 1 0 -349.99999999999966)
+      (pin RoundRect[T]Pad_700x500_um 2 0 349.99999999999966)
+    )
+    (image "simple_chip:1.5200x0.6200_mm"
+      (pin RoundRect[T]Pad_560x620_um 1 -480.00000000000045 0)
+      (pin RoundRect[T]Pad_560x620_um 2 480.00000000000045 0)
+    )
+    (image "simple_chip:1.4500x2.9000_mm"
+      (pin RoundRect[T]Pad_1450x1000_um 1 0 -950.0000000000002)
+      (pin RoundRect[T]Pad_1450x1000_um 2 0 950.0000000000002)
+    )
+    (image "simple_chip:2.4500x0.9500_mm"
+      (pin RoundRect[T]Pad_900x950_um 1 774.9999999999999 0)
+      (pin RoundRect[T]Pad_900x950_um 2 -775.0000000000001 0)
+    )
+    (padstack "Via[0-3]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle In1.Cu 600))
+      (shape (circle In2.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_600x400_um"
+      (shape (polygon F.Cu 0 -300 200 300 200 300 -200 -300 -200 -300 200))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_400x600_um"
+      (shape (polygon F.Cu 0 -200 300 200 300 200 -300 -200 -300 -200 300))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_725x522_um"
+      (shape (polygon F.Cu 0 -362.5 261 362.5 261 362.5 -261 -362.5 -261 -362.5 261))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_309.848x158.511_145.153_-65.728_129.541_92.783_-164.695_34.256_-154.847_-65.728_145.153_-65.728_um"
+      (shape (polygon F.Cu 0 145.153 -65.728 129.541 92.783 -164.695 34.256 -154.847 -65.728 145.153 -65.728))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_323.4x210.946_155.187_-36.147_108.951_116.272_-168.213_1.467_-139.049_-94.674_155.187_-36.147_um"
+      (shape (polygon F.Cu 0 155.187 -36.147 108.951 116.272 -168.213 1.467 -139.049 -94.674 155.187 -36.147))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_324.524x255.276_159.257_-5.177_84.174_135.293_-165.267_-31.378_-117.907_-119.982_159.257_-5.177_um"
+      (shape (polygon F.Cu 0 159.257 -5.177 84.174 135.293 -165.267 -31.378 -117.907 -119.982 159.257 -5.177))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_313.177x289.795_157.207_25.992_56.162_149.115_-155.97_-63.017_-92.234_-140.679_157.207_25.992_um"
+      (shape (polygon F.Cu 0 157.207 25.992 56.162 149.115 -155.97 -63.017 -92.234 -140.679 157.207 25.992))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_289.795x313.177_149.115_56.162_25.992_157.207_-140.679_-92.234_-63.017_-155.97_149.115_56.162_um"
+      (shape (polygon F.Cu 0 149.115 56.162 25.992 157.207 -140.679 -92.234 -63.017 -155.97 149.115 56.162))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_255.276x324.524_135.293_84.174_-5.177_159.257_-119.982_-117.907_-31.378_-165.267_135.293_84.174_um"
+      (shape (polygon F.Cu 0 135.293 84.174 -5.177 159.257 -119.982 -117.907 -31.378 -165.267 135.293 84.174))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_210.946x323.4_116.272_108.951_-36.147_155.187_-94.674_-139.049_1.467_-168.213_116.272_108.951_um"
+      (shape (polygon F.Cu 0 116.272 108.951 -36.147 155.187 -94.674 -139.049 1.467 -168.213 116.272 108.951))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_158.511x309.848_92.783_129.541_-65.728_145.153_-65.728_-154.847_34.256_-164.695_92.783_129.541_um"
+      (shape (polygon F.Cu 0 92.783 129.541 -65.728 145.153 -65.728 -154.847 34.256 -164.695 92.783 129.541))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_158.511x309.848_65.728_145.153_-92.783_129.541_-34.256_-164.695_65.728_-154.847_65.728_145.153_um"
+      (shape (polygon F.Cu 0 65.728 145.153 -92.783 129.541 -34.256 -164.695 65.728 -154.847 65.728 145.153))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_210.946x323.4_36.147_155.187_-116.272_108.951_-1.467_-168.213_94.674_-139.049_36.147_155.187_um"
+      (shape (polygon F.Cu 0 36.147 155.187 -116.272 108.951 -1.467 -168.213 94.674 -139.049 36.147 155.187))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_255.276x324.524_5.177_159.257_-135.293_84.174_31.378_-165.267_119.982_-117.907_5.177_159.257_um"
+      (shape (polygon F.Cu 0 5.177 159.257 -135.293 84.174 31.378 -165.267 119.982 -117.907 5.177 159.257))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_289.795x313.177_-25.992_157.207_-149.115_56.162_63.017_-155.97_140.679_-92.234_-25.992_157.207_um"
+      (shape (polygon F.Cu 0 -25.992 157.207 -149.115 56.162 63.017 -155.97 140.679 -92.234 -25.992 157.207))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_313.177x289.795_-56.162_149.115_-157.207_25.992_92.234_-140.679_155.97_-63.017_-56.162_149.115_um"
+      (shape (polygon F.Cu 0 -56.162 149.115 -157.207 25.992 92.234 -140.679 155.97 -63.017 -56.162 149.115))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_324.524x255.276_-84.174_135.293_-159.257_-5.177_117.907_-119.982_165.267_-31.378_-84.174_135.293_um"
+      (shape (polygon F.Cu 0 -84.174 135.293 -159.257 -5.177 117.907 -119.982 165.267 -31.378 -84.174 135.293))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_323.4x210.946_-108.951_116.272_-155.187_-36.147_139.049_-94.674_168.213_1.467_-108.951_116.272_um"
+      (shape (polygon F.Cu 0 -108.951 116.272 -155.187 -36.147 139.049 -94.674 168.213 1.467 -108.951 116.272))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_309.848x158.511_-129.541_92.783_-145.153_-65.728_154.847_-65.728_164.695_34.256_-129.541_92.783_um"
+      (shape (polygon F.Cu 0 -129.541 92.783 -145.153 -65.728 154.847 -65.728 164.695 34.256 -129.541 92.783))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_309.848x158.511_-145.153_65.728_-129.541_-92.783_164.695_-34.256_154.847_65.728_-145.153_65.728_um"
+      (shape (polygon F.Cu 0 -145.153 65.728 -129.541 -92.783 164.695 -34.256 154.847 65.728 -145.153 65.728))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_323.4x210.946_-155.187_36.147_-108.951_-116.272_168.213_-1.467_139.049_94.674_-155.187_36.147_um"
+      (shape (polygon F.Cu 0 -155.187 36.147 -108.951 -116.272 168.213 -1.467 139.049 94.674 -155.187 36.147))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_324.524x255.276_-159.257_5.177_-84.174_-135.293_165.267_31.378_117.907_119.982_-159.257_5.177_um"
+      (shape (polygon F.Cu 0 -159.257 5.177 -84.174 -135.293 165.267 31.378 117.907 119.982 -159.257 5.177))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_313.177x289.795_-157.207_-25.992_-56.162_-149.115_155.97_63.017_92.234_140.679_-157.207_-25.992_um"
+      (shape (polygon F.Cu 0 -157.207 -25.992 -56.162 -149.115 155.97 63.017 92.234 140.679 -157.207 -25.992))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_289.795x313.177_-149.115_-56.162_-25.992_-157.207_140.679_92.234_63.017_155.97_-149.115_-56.162_um"
+      (shape (polygon F.Cu 0 -149.115 -56.162 -25.992 -157.207 140.679 92.234 63.017 155.97 -149.115 -56.162))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_255.276x324.524_-135.293_-84.174_5.177_-159.257_119.982_117.907_31.378_165.267_-135.293_-84.174_um"
+      (shape (polygon F.Cu 0 -135.293 -84.174 5.177 -159.257 119.982 117.907 31.378 165.267 -135.293 -84.174))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_210.946x323.4_-116.272_-108.951_36.147_-155.187_94.674_139.049_-1.467_168.213_-116.272_-108.951_um"
+      (shape (polygon F.Cu 0 -116.272 -108.951 36.147 -155.187 94.674 139.049 -1.467 168.213 -116.272 -108.951))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_158.511x309.848_-92.783_-129.541_65.728_-145.153_65.728_154.847_-34.256_164.695_-92.783_-129.541_um"
+      (shape (polygon F.Cu 0 -92.783 -129.541 65.728 -145.153 65.728 154.847 -34.256 164.695 -92.783 -129.541))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_158.511x309.848_-65.728_-145.153_92.783_-129.541_34.256_164.695_-65.728_154.847_-65.728_-145.153_um"
+      (shape (polygon F.Cu 0 -65.728 -145.153 92.783 -129.541 34.256 164.695 -65.728 154.847 -65.728 -145.153))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_210.946x323.4_-36.147_-155.187_116.272_-108.951_1.467_168.213_-94.674_139.049_-36.147_-155.187_um"
+      (shape (polygon F.Cu 0 -36.147 -155.187 116.272 -108.951 1.467 168.213 -94.674 139.049 -36.147 -155.187))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_255.276x324.524_-5.177_-159.257_135.293_-84.174_-31.378_165.267_-119.982_117.907_-5.177_-159.257_um"
+      (shape (polygon F.Cu 0 -5.177 -159.257 135.293 -84.174 -31.378 165.267 -119.982 117.907 -5.177 -159.257))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_289.795x313.177_25.992_-157.207_149.115_-56.162_-63.017_155.97_-140.679_92.234_25.992_-157.207_um"
+      (shape (polygon F.Cu 0 25.992 -157.207 149.115 -56.162 -63.017 155.97 -140.679 92.234 25.992 -157.207))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_313.177x289.795_56.162_-149.115_157.207_-25.992_-92.234_140.679_-155.97_63.017_56.162_-149.115_um"
+      (shape (polygon F.Cu 0 56.162 -149.115 157.207 -25.992 -92.234 140.679 -155.97 63.017 56.162 -149.115))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_324.524x255.276_84.174_-135.293_159.257_5.177_-117.907_119.982_-165.267_31.378_84.174_-135.293_um"
+      (shape (polygon F.Cu 0 84.174 -135.293 159.257 5.177 -117.907 119.982 -165.267 31.378 84.174 -135.293))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_323.4x210.946_108.951_-116.272_155.187_36.147_-139.049_94.674_-168.213_-1.467_108.951_-116.272_um"
+      (shape (polygon F.Cu 0 108.951 -116.272 155.187 36.147 -139.049 94.674 -168.213 -1.467 108.951 -116.272))
+      (attach off)
+    )
+    (padstack "Cust[T]Pad_309.848x158.511_129.541_-92.783_145.153_65.728_-154.847_65.728_-164.695_-34.256_129.541_-92.783_um"
+      (shape (polygon F.Cu 0 129.541 -92.783 145.153 65.728 -154.847 65.728 -164.695 -34.256 129.541 -92.783))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_500x650_um"
+      (shape (polygon F.Cu 0 -250 325 250 325 250 -325 -250 -325 -250 325))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_4300x3400_um"
+      (shape (polygon F.Cu 0 -2150 1700 2150 1700 2150 -1700 -2150 -1700 -2150 1700))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_750x200_um"
+      (shape (polygon F.Cu 0 -375 100 375 100 375 -100 -375 -100 -375 100))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_900x1500_um"
+      (shape (polygon F.Cu 0 -450 750 450 750 450 -750 -450 -750 -450 750))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_600x1325_um"
+      (shape (polygon F.Cu 0 -300 662.5 300 662.5 300 -662.5 -300 -662.5 -300 662.5))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_250x775_um"
+      (shape (polygon F.Cu 0 -125 387.5 125 387.5 125 -387.5 -125 -387.5 -125 387.5))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1200x800_um"
+      (shape (polygon F.Cu 0 -600 400 600 400 600 -400 -600 -400 -600 400))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_350x1500_um"
+      (shape (polygon F.Cu 0 -175 750 175 750 175 -750 -175 -750 -175 750))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1325x600_um"
+      (shape (polygon F.Cu 0 -662.5 300 662.5 300 662.5 -300 -662.5 -300 -662.5 300))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1250x350_um"
+      (shape (polygon F.Cu 0 -625 175 625 175 625 -175 -625 -175 -625 175))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1475x600_um"
+      (shape (polygon F.Cu 0 -737.5 300 737.5 300 737.5 -300 -737.5 -300 -737.5 300))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1600x1000_um"
+      (shape (polygon F.Cu 0 -800 500 800 500 800 -500 -800 -500 -800 500))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_900x1000_um"
+      (shape (polygon F.Cu 0 -450 500 450 500 450 -500 -450 -500 -450 500))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_600x450_um"
+      (shape (polygon F.Cu 0 -300 225 300 225 300 -225 -300 -225 -300 225))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_950x875_um"
+      (shape (polygon F.Cu 0 -475 437.5 475 437.5 475 -437.5 -475 -437.5 -475 437.5))
+      (attach off)
+    )
+    (padstack "Round[B]Pad_1700_1700_um"
+      (shape (circle F.Cu 1700))
+      (shape (circle B.Cu 1700))
+      (attach off)
+    )
+    (padstack "Round[B]Pad_1000_1000_um"
+      (shape (circle F.Cu 1000))
+      (shape (circle B.Cu 1000))
+      (attach off)
+    )
+    (padstack "Round[B]Pad_900_900_um"
+      (shape (circle F.Cu 900))
+      (shape (circle B.Cu 900))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_640x540_um"
+      (shape (polygon F.Cu 0 -320 270 320 270 320 -270 -320 -270 -320 270))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_540x640_um"
+      (shape (polygon F.Cu 0 -270 320 270 320 270 -320 -270 -320 -270 320))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_620x560_um"
+      (shape (polygon F.Cu 0 -310 280 310 280 310 -280 -310 -280 -310 280))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_700x500_um"
+      (shape (polygon F.Cu 0 -350 250 350 250 350 -250 -350 -250 -350 250))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_560x620_um"
+      (shape (polygon F.Cu 0 -280 310 280 310 280 -310 -280 -310 -280 310))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_1450x1000_um"
+      (shape (polygon F.Cu 0 -725 500 725 500 725 -500 -725 -500 -725 500))
+      (attach off)
+    )
+    (padstack "RoundRect[T]Pad_900x950_um"
+      (shape (polygon F.Cu 0 -450 475 450 475 450 -475 -450 -475 -450 475))
+      (attach off)
+    )
+  )
+  (network
+    (net "BAT_NTC_source_net_42"
+      (pins J2_source_component_18-3 R22_source_component_41-2)
+    )
+    (net "CHG_ALLOW_source_net_18"
+      (pins U1_source_component_0-45 Q1_source_component_11-1 R3_source_component_23-1)
+    )
+    (net "CHG_DISABLE_source_net_29"
+      (pins U3_source_component_4-4 Q1_source_component_11-3 R23_source_component_42-1)
+    )
+    (net "CHG_ISET_source_net_32"
+      (pins U3_source_component_4-8 R1_source_component_21-1)
+    )
+    (net "CHG_STAT1_source_net_16"
+      (pins U1_source_component_0-43 U3_source_component_4-9 R4_source_component_24-1)
+    )
+    (net "CHG_STAT2_source_net_17"
+      (pins U1_source_component_0-44 U3_source_component_4-3 R5_source_component_25-1)
+    )
+    (net "CHG_VSET_source_net_31"
+      (pins U3_source_component_4-7 R2_source_component_22-1)
+    )
+    (net "DOCK_5V_source_net_40"
+      (pins D1_source_component_14-2 D2_source_component_15-1 J1_source_component_17-2)
+    )
+    (net "DOCK_IN_source_net_33"
+      (pins U3_source_component_4-10 D1_source_component_14-1 C7_source_component_49-1)
+    )
+    (net "FLASH_HOLD_N_source_net_26"
+      (pins U2_source_component_3-7 R20_source_component_39-1)
+    )
+    (net "FLASH_WP_N_source_net_24"
+      (pins U2_source_component_3-3 R19_source_component_38-1)
+    )
+    (net "GAUGE_ALERT_N_source_net_15"
+      (pins U1_source_component_0-42 U5_source_component_6-5 R8_source_component_28-1)
+    )
+    (net "GND_source_net_0"
+      (pins U1_source_component_0-1 U1_source_component_0-2 U1_source_component_0-15 U1_source_component_0-32 U1_source_component_0-33 U1_source_component_0-55 MK1_source_component_1-2 MK1_source_component_1-3 MK2_source_component_2-3 U2_source_component_3-4 U2_source_component_3-9 U3_source_component_4-5 U3_source_component_4-11 U4_source_component_5-2 U5_source_component_6-1 U5_source_component_6-4 U5_source_component_6-6 U5_source_component_6-9 U6_source_component_7-4 U6_source_component_7-8 U7_source_component_8-2 U8_source_component_9-1 U8_source_component_9-4 U8_source_component_9-7 U9_source_component_10-2 U9_source_component_10-3 SW1_source_component_12-3 SW1_source_component_12-4 SW2_source_component_13-2 D2_source_component_15-2 LED1_source_component_16-1 J1_source_component_17-1 J1_source_component_17-3 J2_source_component_18-2 J3_source_component_19-5 J3_source_component_19-6 R1_source_component_21-2 R2_source_component_22-2 R3_source_component_23-2 R9_source_component_29-2 R10_source_component_30-2 R15_source_component_34-2 C1_source_component_43-2 C2_source_component_44-2 C3_source_component_45-2 C4_source_component_46-2 C5_source_component_47-2 C6_source_component_48-2 C7_source_component_49-2 C8_source_component_50-2 C9_source_component_51-2 C10_source_component_52-2 C11_source_component_53-2 C12_source_component_54-2 C13_source_component_55-2 C14_source_component_56-2 C15_source_component_57-2 C16_source_component_58-2 C17_source_component_59-2 C18_source_component_60-2)
+    )
+    (net "HAPTIC_EN_source_net_14"
+      (pins U1_source_component_0-41 U6_source_component_7-5 R10_source_component_30-1)
+    )
+    (net "HAPTIC_REG_source_net_34"
+      (pins U6_source_component_7-1 C13_source_component_55-1)
+    )
+    (net "I2C_SCL_source_net_1"
+      (pins U1_source_component_0-16 U5_source_component_6-7 U6_source_component_7-2 R6_source_component_26-1)
+    )
+    (net "I2C_SDA_source_net_2"
+      (pins U1_source_component_0-19 U5_source_component_6-8 U6_source_component_7-3 R7_source_component_27-1)
+    )
+    (net "LED_RECORD_A_source_net_41"
+      (pins LED1_source_component_16-2 R14_source_component_33-2)
+    )
+    (net "LRA_N_source_net_36"
+      (pins U6_source_component_7-9 J4_source_component_20-2)
+    )
+    (net "LRA_P_source_net_35"
+      (pins U6_source_component_7-7 J4_source_component_20-1)
+    )
+    (net "MIC_SUPPLY_source_net_37"
+      (pins U7_source_component_8-5 SW1_source_component_12-1 C15_source_component_57-1)
+    )
+    (net "MIC_VDD_source_net_23"
+      (pins MK1_source_component_1-5 MK2_source_component_2-2 MK2_source_component_2-5 U8_source_component_9-8 SW1_source_component_12-2 R14_source_component_33-1 R15_source_component_34-1 C3_source_component_45-1 C4_source_component_46-1 C16_source_component_58-1)
+    )
+    (net "PDM_CLK_BUF_source_net_38"
+      (pins U8_source_component_9-6 R16_source_component_35-1)
+    )
+    (net "PDM_CLK_MCU_source_net_3"
+      (pins U1_source_component_0-20 U8_source_component_9-2)
+    )
+    (net "PDM_CLK_MIC_source_net_22"
+      (pins MK1_source_component_1-4 MK2_source_component_2-4 R16_source_component_35-2)
+    )
+    (net "PDM_DATA_MCU_source_net_4"
+      (pins U1_source_component_0-21 U8_source_component_9-3)
+    )
+    (net "PDM_DATA_MIC_source_net_21"
+      (pins MK1_source_component_1-1 MK2_source_component_2-1 U8_source_component_9-5)
+    )
+    (net "PRIVACY_N_source_net_7"
+      (pins U1_source_component_0-25 SW1_source_component_12-5 R13_source_component_32-1)
+    )
+    (net "RECORD_EN_source_net_5"
+      (pins U1_source_component_0-22 U7_source_component_8-3 R9_source_component_29-1)
+    )
+    (net "RECORD_N_source_net_6"
+      (pins U1_source_component_0-24 SW2_source_component_13-1 R11_source_component_31-1 C17_source_component_59-1)
+    )
+    (net "RESET_N_source_net_13"
+      (pins U1_source_component_0-40 J3_source_component_19-4 R21_source_component_40-1)
+    )
+    (net "SPI_CS_N_source_net_12"
+      (pins U1_source_component_0-39 U2_source_component_3-1 R18_source_component_37-1)
+    )
+    (net "SPI_MISO_source_net_10"
+      (pins U1_source_component_0-37 U2_source_component_3-2)
+    )
+    (net "SPI_MOSI_source_net_9"
+      (pins U1_source_component_0-36 U2_source_component_3-5)
+    )
+    (net "SPI_SCK_MCU_source_net_11"
+      (pins U1_source_component_0-38 R17_source_component_36-1)
+    )
+    (net "SPI_SCK_source_net_25"
+      (pins U2_source_component_3-6 R17_source_component_36-2)
+    )
+    (net "SWDCLK_source_net_20"
+      (pins U1_source_component_0-53 J3_source_component_19-3)
+    )
+    (net "SWDIO_source_net_19"
+      (pins U1_source_component_0-51 J3_source_component_19-2)
+    )
+    (net "TEMP_ALLOW_SINK_source_net_39"
+      (pins U9_source_component_10-6 Q1_source_component_11-2)
+    )
+    (net "TS_MON_source_net_30"
+      (pins U3_source_component_4-6 U9_source_component_10-4 R22_source_component_41-1)
+    )
+    (net "unconnected-(SW2_source_component_13-Pad1)"
+      (pins SW2_source_component_13-1)
+    )
+    (net "unconnected-(SW2_source_component_13-Pad2)"
+      (pins SW2_source_component_13-2)
+    )
+    (net "unconnected-(U1_source_component_0-Pad10)"
+      (pins U1_source_component_0-10)
+    )
+    (net "unconnected-(U1_source_component_0-Pad11)"
+      (pins U1_source_component_0-11)
+    )
+    (net "unconnected-(U1_source_component_0-Pad12)"
+      (pins U1_source_component_0-12)
+    )
+    (net "unconnected-(U1_source_component_0-Pad13)"
+      (pins U1_source_component_0-13)
+    )
+    (net "unconnected-(U1_source_component_0-Pad14)"
+      (pins U1_source_component_0-14)
+    )
+    (net "unconnected-(U1_source_component_0-Pad17)"
+      (pins U1_source_component_0-17)
+    )
+    (net "unconnected-(U1_source_component_0-Pad18)"
+      (pins U1_source_component_0-18)
+    )
+    (net "unconnected-(U1_source_component_0-Pad23)"
+      (pins U1_source_component_0-23)
+    )
+    (net "unconnected-(U1_source_component_0-Pad26)"
+      (pins U1_source_component_0-26)
+    )
+    (net "unconnected-(U1_source_component_0-Pad27)"
+      (pins U1_source_component_0-27)
+    )
+    (net "unconnected-(U1_source_component_0-Pad29)"
+      (pins U1_source_component_0-29)
+    )
+    (net "unconnected-(U1_source_component_0-Pad3)"
+      (pins U1_source_component_0-3)
+    )
+    (net "unconnected-(U1_source_component_0-Pad31)"
+      (pins U1_source_component_0-31)
+    )
+    (net "unconnected-(U1_source_component_0-Pad34)"
+      (pins U1_source_component_0-34)
+    )
+    (net "unconnected-(U1_source_component_0-Pad35)"
+      (pins U1_source_component_0-35)
+    )
+    (net "unconnected-(U1_source_component_0-Pad4)"
+      (pins U1_source_component_0-4)
+    )
+    (net "unconnected-(U1_source_component_0-Pad46)"
+      (pins U1_source_component_0-46)
+    )
+    (net "unconnected-(U1_source_component_0-Pad47)"
+      (pins U1_source_component_0-47)
+    )
+    (net "unconnected-(U1_source_component_0-Pad48)"
+      (pins U1_source_component_0-48)
+    )
+    (net "unconnected-(U1_source_component_0-Pad49)"
+      (pins U1_source_component_0-49)
+    )
+    (net "unconnected-(U1_source_component_0-Pad5)"
+      (pins U1_source_component_0-5)
+    )
+    (net "unconnected-(U1_source_component_0-Pad50)"
+      (pins U1_source_component_0-50)
+    )
+    (net "unconnected-(U1_source_component_0-Pad52)"
+      (pins U1_source_component_0-52)
+    )
+    (net "unconnected-(U1_source_component_0-Pad54)"
+      (pins U1_source_component_0-54)
+    )
+    (net "unconnected-(U1_source_component_0-Pad56)"
+      (pins U1_source_component_0-56)
+    )
+    (net "unconnected-(U1_source_component_0-Pad57)"
+      (pins U1_source_component_0-57)
+    )
+    (net "unconnected-(U1_source_component_0-Pad58)"
+      (pins U1_source_component_0-58)
+    )
+    (net "unconnected-(U1_source_component_0-Pad59)"
+      (pins U1_source_component_0-59)
+    )
+    (net "unconnected-(U1_source_component_0-Pad6)"
+      (pins U1_source_component_0-6)
+    )
+    (net "unconnected-(U1_source_component_0-Pad60)"
+      (pins U1_source_component_0-60)
+    )
+    (net "unconnected-(U1_source_component_0-Pad61)"
+      (pins U1_source_component_0-61)
+    )
+    (net "unconnected-(U1_source_component_0-Pad7)"
+      (pins U1_source_component_0-7)
+    )
+    (net "unconnected-(U1_source_component_0-Pad8)"
+      (pins U1_source_component_0-8)
+    )
+    (net "unconnected-(U1_source_component_0-Pad9)"
+      (pins U1_source_component_0-9)
+    )
+    (net "unconnected-(U4_source_component_5-Pad4)"
+      (pins U4_source_component_5-4)
+    )
+    (net "unconnected-(U7_source_component_8-Pad4)"
+      (pins U7_source_component_8-4)
+    )
+    (net "unconnected-(U9_source_component_10-Pad1)"
+      (pins U9_source_component_10-1)
+    )
+    (net "V3_source_net_8"
+      (pins U1_source_component_0-28 U1_source_component_0-30 U2_source_component_3-8 U4_source_component_5-5 SW1_source_component_12-6 J3_source_component_19-1 R4_source_component_24-2 R5_source_component_25-2 R6_source_component_26-2 R7_source_component_27-2 R8_source_component_28-2 R11_source_component_31-2 R13_source_component_32-2 R18_source_component_37-2 R19_source_component_38-2 R20_source_component_39-2 R21_source_component_40-2 C1_source_component_43-1 C2_source_component_44-1 C5_source_component_47-1 C6_source_component_48-1 C10_source_component_52-1)
+    )
+    (net "VBAT_source_net_28"
+      (pins U3_source_component_4-2 U5_source_component_6-2 U5_source_component_6-3 J2_source_component_18-1 C8_source_component_50-1 C11_source_component_53-1)
+    )
+    (net "VSYS_source_net_27"
+      (pins U3_source_component_4-1 U4_source_component_5-1 U4_source_component_5-3 U6_source_component_7-6 U6_source_component_7-10 U7_source_component_8-1 U9_source_component_10-5 R23_source_component_42-2 C9_source_component_51-1 C12_source_component_54-1 C14_source_component_56-1 C18_source_component_60-1)
+    )
+    (class "kicad_default" "" "BAT_NTC_source_net_42" "CHG_ALLOW_source_net_18" "CHG_DISABLE_source_net_29" "CHG_ISET_source_net_32" "CHG_STAT1_source_net_16" "CHG_STAT2_source_net_17" "CHG_VSET_source_net_31" "DOCK_5V_source_net_40" "DOCK_IN_source_net_33" "FLASH_HOLD_N_source_net_26" "FLASH_WP_N_source_net_24" "GAUGE_ALERT_N_source_net_15" "GND_source_net_0" "HAPTIC_EN_source_net_14" "HAPTIC_REG_source_net_34" "I2C_SCL_source_net_1" "I2C_SDA_source_net_2" "LED_RECORD_A_source_net_41" "LRA_N_source_net_36" "LRA_P_source_net_35" "MIC_SUPPLY_source_net_37" "MIC_VDD_source_net_23" "PDM_CLK_BUF_source_net_38" "PDM_CLK_MCU_source_net_3" "PDM_CLK_MIC_source_net_22" "PDM_DATA_MCU_source_net_4" "PDM_DATA_MIC_source_net_21" "PRIVACY_N_source_net_7" "RECORD_EN_source_net_5" "RECORD_N_source_net_6" "RESET_N_source_net_13" "SPI_CS_N_source_net_12" "SPI_MISO_source_net_10" "SPI_MOSI_source_net_9" "SPI_SCK_MCU_source_net_11" "SPI_SCK_source_net_25" "SWDCLK_source_net_20" "SWDIO_source_net_19" "TEMP_ALLOW_SINK_source_net_39" "TS_MON_source_net_30" "unconnected-(SW2_source_component_13-Pad1)" "unconnected-(SW2_source_component_13-Pad2)" "unconnected-(U1_source_component_0-Pad10)" "unconnected-(U1_source_component_0-Pad11)" "unconnected-(U1_source_component_0-Pad12)" "unconnected-(U1_source_component_0-Pad13)" "unconnected-(U1_source_component_0-Pad14)" "unconnected-(U1_source_component_0-Pad17)" "unconnected-(U1_source_component_0-Pad18)" "unconnected-(U1_source_component_0-Pad23)" "unconnected-(U1_source_component_0-Pad26)" "unconnected-(U1_source_component_0-Pad27)" "unconnected-(U1_source_component_0-Pad29)" "unconnected-(U1_source_component_0-Pad3)" "unconnected-(U1_source_component_0-Pad31)" "unconnected-(U1_source_component_0-Pad34)" "unconnected-(U1_source_component_0-Pad35)" "unconnected-(U1_source_component_0-Pad4)" "unconnected-(U1_source_component_0-Pad46)" "unconnected-(U1_source_component_0-Pad47)" "unconnected-(U1_source_component_0-Pad48)" "unconnected-(U1_source_component_0-Pad49)" "unconnected-(U1_source_component_0-Pad5)" "unconnected-(U1_source_component_0-Pad50)" "unconnected-(U1_source_component_0-Pad52)" "unconnected-(U1_source_component_0-Pad54)" "unconnected-(U1_source_component_0-Pad56)" "unconnected-(U1_source_component_0-Pad57)" "unconnected-(U1_source_component_0-Pad58)" "unconnected-(U1_source_component_0-Pad59)" "unconnected-(U1_source_component_0-Pad6)" "unconnected-(U1_source_component_0-Pad60)" "unconnected-(U1_source_component_0-Pad61)" "unconnected-(U1_source_component_0-Pad7)" "unconnected-(U1_source_component_0-Pad8)" "unconnected-(U1_source_component_0-Pad9)" "unconnected-(U4_source_component_5-Pad4)" "unconnected-(U7_source_component_8-Pad4)" "unconnected-(U9_source_component_10-Pad1)" "V3_source_net_8" "VBAT_source_net_28" "VSYS_source_net_27"
+      (circuit
+        (use_via "Via[0-3]_600:300_um")
+      )
+      (rule
+        (width 150)
+        (clearance 150)
+      )
+    )
+  )
+  (wiring
+  )
+)

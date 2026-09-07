@@ -1,0 +1,278 @@
+{
+  "revision": "EVT-A03",
+  "createdAt": "2026-09-07T20:54:23.221Z",
+  "status": "ENGINEERING_REVIEW_ONLY",
+  "fabricationReady": false,
+  "board": {
+    "widthMm": 24,
+    "heightMm": 42,
+    "radiusMm": 10,
+    "thicknessMm": 0.8,
+    "copperLayers": 4
+  },
+  "logical": {
+    "references": 61,
+    "nets": 43,
+    "connectedPinsVerifiedInPlacement": 208
+  },
+  "assembly": {
+    "candidateSmtReferences": 57,
+    "customPcbFeatures": 4
+  },
+  "routing": {
+    "revision": "EVT-A03",
+    "generatedAt": "2026-09-07T20:52:37.702Z",
+    "sessionPath": "output/aura-a03-route-refine.ses",
+    "sessionSha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00",
+    "wirePaths": 545,
+    "vias": 109,
+    "layerWirePaths": {
+      "F.Cu": 461,
+      "In1.Cu": 34,
+      "In2.Cu": 30,
+      "B.Cu": 20
+    },
+    "standaloneDrc": {
+      "path": "output/aura-a03-refine-freerouting-drc.json",
+      "violations": 1,
+      "violationTypes": [
+        "via_dangling"
+      ],
+      "disconnectedNetGroups": 8,
+      "disconnectedNets": [
+        "GND",
+        "SPI_CS_N",
+        "CHG_STAT1",
+        "CHG_STAT2",
+        "I2C_SDA",
+        "CHG_DISABLE",
+        "CHG_VSET",
+        "CHG_ISET"
+      ],
+      "countingNote": "Freerouting DRC groups all members of each disconnected net; this length is not the router airwire count."
+    },
+    "inputMatches": [
+      {
+        "path": "output/aura-placement.kicad_pcb",
+        "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7",
+        "unchanged": true
+      },
+      {
+        "path": "output/aura-a03.dsn",
+        "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2",
+        "unchanged": true
+      },
+      {
+        "path": "output/design-manifest.json",
+        "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147",
+        "unchanged": true
+      }
+    ],
+    "importedIntoKiCad": false,
+    "fabricationReady": false,
+    "limitation": "Standalone session inspection only. Connector import was previously cancelled without reason. No imported-board DRC, return planes, manufacturing release or hardware qualification is established.",
+    "inMemoryRouterFinal": {
+      "path": "output/aura-a03-refine.log",
+      "unroutedConnections": 10,
+      "violations": 4,
+      "reconciliation": "Serialized-session reload has different counts. Preserve both; no independent imported-KiCad check has been performed."
+    }
+  },
+  "schematicErc": {
+    "findings": 968,
+    "types": {
+      "pin_not_connected": 220,
+      "endpoint_off_grid": 494,
+      "lib_symbol_issues": 132,
+      "unconnected_wire_endpoint": 122
+    }
+  },
+  "manufacturingOutputsReleased": false,
+  "files": [
+    {
+      "path": "src/design.ts",
+      "bytes": 11062,
+      "sha256": "9afcd05ff501b06664656701736887073f1e4bbfc920b0b992a6314fcbab40fb"
+    },
+    {
+      "path": "src/AuraPendant.tsx",
+      "bytes": 4382,
+      "sha256": "70c8a23c27600145bb78e698909038bf37fea638d89d73be575e441ff855a869"
+    },
+    {
+      "path": "src/footprints.json",
+      "bytes": 78144,
+      "sha256": "1988b3e48ee668a064305da221425da2069c76b70ca33d557478596d8ae4e9f0"
+    },
+    {
+      "path": "src/placement-overrides.json",
+      "bytes": 3520,
+      "sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5"
+    },
+    {
+      "path": "output/design-manifest.json",
+      "bytes": 29869,
+      "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147"
+    },
+    {
+      "path": "output/logical-netlist.json",
+      "bytes": 3467,
+      "sha256": "6762a6991074d30911bb6300366aa94157f5d84bb689d831e658c0f861aaaacf"
+    },
+    {
+      "path": "output/logical-checks.json",
+      "bytes": 242,
+      "sha256": "e3900640a1cbf3d380ceb5d858e7744df43b534f0437c5da00ed1b9d7dead6ff"
+    },
+    {
+      "path": "output/aura-placement.circuit.json",
+      "bytes": 1197011,
+      "sha256": "b2d5fda3c8886472b98aefb6a5c3918e4bd3129c9774237976e9b2470b9b1a16"
+    },
+    {
+      "path": "output/aura-placement.kicad_pcb",
+      "bytes": 242515,
+      "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7"
+    },
+    {
+      "path": "output/aura.kicad_sch",
+      "bytes": 684740,
+      "sha256": "c98134ec51b7e9aae73f9755a918abe406b67c16658deb30b8104a6fd5b8aac0"
+    },
+    {
+      "path": "output/aura-placement.kicad_pro",
+      "bytes": 1381,
+      "sha256": "0dcfec32457765490663c894c34871ae98f1ad18752b20bae9002205f7a8482c"
+    },
+    {
+      "path": "output/aura-placement.pcb.svg",
+      "bytes": 184382,
+      "sha256": "a1a64d4fa3574110b71a8e96ec4ef627d22a130ce311f51a27709fe595f3955b"
+    },
+    {
+      "path": "output/aura-placement.schematic.svg",
+      "bytes": 621802,
+      "sha256": "939468e63f09e38b09d17e57b8c2b9c59d1bf79b68d99e7684dbcacb33ac8569"
+    },
+    {
+      "path": "output/aura-a03.dsn",
+      "bytes": 43292,
+      "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2"
+    },
+    {
+      "path": "output/aura-a03-routing-inputs.json",
+      "bytes": 800,
+      "sha256": "e34340224d29a62e78bd059b6240144050b91e500c2c14a474d98e9d45997a99"
+    },
+    {
+      "path": "output/aura-a03-refinement-inputs.json",
+      "bytes": 1036,
+      "sha256": "2e3902af8bf3ebf6cc50675d96c545fb94e3980fe1dcb9b9ceec8cd32f6cff5c"
+    },
+    {
+      "path": "output/aura-a03-route-attempt.ses",
+      "bytes": 88251,
+      "sha256": "b85576f9b4dc55e21f9d54fab465fa6d105e55c0198733033aab45f30be84cd6"
+    },
+    {
+      "path": "output/aura-a03-route-refine.ses",
+      "bytes": 104936,
+      "sha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00"
+    },
+    {
+      "path": "output/aura-a03-route-freerouting-drc.json",
+      "bytes": 62383,
+      "sha256": "8fa411345b77a74cb4ad3ac6684b2e5d701f4d9adff13812220245f0587962f2"
+    },
+    {
+      "path": "output/aura-a03-refine-freerouting-drc.json",
+      "bytes": 50153,
+      "sha256": "c9b8cf0d44c5d482fb3415ee295b8b7a093426d2530563d9b9f85893a6c6b95b"
+    },
+    {
+      "path": "output/aura-a03-routing-status.json",
+      "bytes": 1897,
+      "sha256": "8b9e4e2ad96a6fba2be3d0bed9f47130b9e0cffc5d0206522bc13afcb74ed91e"
+    },
+    {
+      "path": "output/kicad-a03-final-placement-drc.json",
+      "bytes": 170587,
+      "sha256": "44b077bcc115c501591b6050876c04fce8170f0914c20e3905cc758fdd13dd06"
+    },
+    {
+      "path": "output/kicad-a03-schematic-erc.json",
+      "bytes": 621773,
+      "sha256": "06e42ddc81d48164fae0d3f68f873bd2111111937ab1e14df83ca1e697faade5"
+    },
+    {
+      "path": "output/export-checks.json",
+      "bytes": 754,
+      "sha256": "78057bfaecde6349ee57f47805aa9ca8815385534cb685b0ae296eb77ab104f5"
+    },
+    {
+      "path": "output/placement-validation.json",
+      "bytes": 1754,
+      "sha256": "06c5485f8c5b68e8fe2658b92b7c26e4a8d7ff08f34e9f5245944849200c4a90"
+    },
+    {
+      "path": "output/assembly-bom.csv",
+      "bytes": 6861,
+      "sha256": "30f9ddb4f2dc1e2a54ca872a06a515272600655a64e8f35dc687c5cd75064043"
+    },
+    {
+      "path": "output/cpl-top.csv",
+      "bytes": 8975,
+      "sha256": "b37e547cc3750413c55d8b41885b144cf3e9e59c518734aa81356060b26ac7ff"
+    },
+    {
+      "path": "output/external-bom.csv",
+      "bytes": 673,
+      "sha256": "3210a5ada13e8c2c24e826d43c8d7b538e1a8b6f4069e0c48b9669fec0f43e9e"
+    },
+    {
+      "path": "output/fabrication-review-notes.md",
+      "bytes": 4466,
+      "sha256": "9d2c8477af4e396a729e3a816574dde986d59cd0cbed87e9ab3bf6ef3040be9e"
+    },
+    {
+      "path": "output/assembly-plan.svg",
+      "bytes": 16709,
+      "sha256": "06707c18476ffa579dc570962ddb07c8a6f77d6b14e29b61c4f4510af400ded7"
+    },
+    {
+      "path": "output/assembly-plan.png",
+      "bytes": 120058,
+      "sha256": "be62486c9a92eebdf12200ead5d0bf58265aa2121227ff6a4e3e1ad242053c42"
+    },
+    {
+      "path": "output/aura-a03-route-study.svg",
+      "bytes": 204287,
+      "sha256": "2a15257c8dadedd90c885dc71f555389195886a0c68efe66ac066768aae9fd12"
+    },
+    {
+      "path": "output/aura-a03-route-study.png",
+      "bytes": 192755,
+      "sha256": "20086dc9ba82cd4d39a6edfd458cfa1798d0627d2b8f0f49470befe5a230b016"
+    },
+    {
+      "path": "output/aura-a03-freerouting.log",
+      "bytes": 10982,
+      "sha256": "00567d9cb410a4b24fd970acf13e0c17c9709f2078f0bc7343ef9c10d460e1ae"
+    },
+    {
+      "path": "output/aura-a03-refine.log",
+      "bytes": 2988,
+      "sha256": "3b532e0e2d94a8313564584cf9181c87604a706819975ac5a6cdc5cb19800fd9"
+    },
+    {
+      "path": "output/aura-a03-route-drc.log",
+      "bytes": 595,
+      "sha256": "881cf4f6bf0309c143dde0dd1bed087ebc7c4d33dcedd72e445524df03775b7a"
+    },
+    {
+      "path": "output/aura-a03-refine-drc.log",
+      "bytes": 595,
+      "sha256": "ac48f92c4f676f8a25e7808c47fb8bef0216a005c23b188e2f7cc01db842c8f3"
+    }
+  ]
+}

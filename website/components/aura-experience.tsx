@@ -25,6 +25,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import DeviceViewer from './device-viewer';
+import AssemblyExplorer from './assembly-explorer';
 
 const finishes = [
   { name: 'Lunar', color: '#d6d5cf', description: 'A quiet, satin silver.' },
@@ -184,7 +185,8 @@ export default function AuraExperience() {
       finish: finishes[finish].name,
       targetPriceUSD: 179,
       status: 'Development concept — not an order',
-      bodyMM: { height: 40, width: 30, depth: 12 },
+      revision: 'A02',
+      bodyMM: { height: 40, width: 30, depth: 9.5 },
       intendedBundle: [
         'AURA pendant',
         'Adjustable breakaway cord',
@@ -257,7 +259,7 @@ export default function AuraExperience() {
             <span className="viewer-hint">
               <Rotate3D /> Drag to discover
             </span>
-            <span className="hero-edition">DESIGN EDITION / 01</span>
+            <span className="hero-edition">DESIGN EDITION / 02</span>
           </div>
         </section>
         <div className="ribbon" aria-label="Intended product features">
@@ -345,25 +347,17 @@ export default function AuraExperience() {
           <div className="design-head reveal">
             <p className="eyebrow">02 / THOUGHTFULLY SMALL</p>
             <h2>
-              A lot of thought.
-              <br />A little AURA.
+              A beautiful thought.
+              <br />
+              Inside and out.
             </h2>
             <p>
-              Soft edges. A quiet finish. Every millimetre considered, from the
-              recording button to the battery inside.
+              A slimmer silhouette. A softer presence. Open it up and discover
+              how every detail finds its place.
             </p>
           </div>
-          <div className="engineering-grid">
-            <div className="engineering-visual reveal">
-              <img
-                src="/product/exploded.webp"
-                loading="lazy"
-                alt="Exploded engineering view of the AURA enclosure, circuit board and rechargeable battery"
-              />
-              <span className="engineering-caption">
-                AURA / ANATOMY OF A THOUGHT
-              </span>
-            </div>
+          <AssemblyExplorer />
+          <div className="engineering-grid engineering-features">
             <div className="features reveal">
               <article className="feature">
                 <div className="feature-icon">
@@ -413,7 +407,7 @@ export default function AuraExperience() {
               <span>Compact body design</span>
             </div>
             <div>
-              <strong>12 mm</strong>
+              <strong>9.5 mm</strong>
               <span>Body depth target</span>
             </div>
             <div>
@@ -590,7 +584,7 @@ export default function AuraExperience() {
           {filmOpen && (
             <video
               src="/film/aura-launch.mp4"
-              poster="/product/hero.webp"
+              poster="/film/poster.jpg"
               controls
               autoPlay
               playsInline

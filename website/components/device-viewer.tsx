@@ -3,18 +3,34 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+import {
+  partForName,
+  separation,
+  type Part,
+  type ViewPreset,
+} from './assembly-model';
 
 type Props = {
-  mode: 'hero' | 'configure';
+  mode: 'hero' | 'configure' | 'explore';
   finish: string;
   exploded?: boolean;
   resetKey?: number;
+  assembly?: number;
+  activePart?: Part | null;
+  xray?: boolean;
+  preset?: ViewPreset;
+  onPartPick?: (part: Part) => void;
 };
 export default function DeviceViewer({
   mode,
   finish,
   exploded = false,
   resetKey = 0,
+  assembly,
+  activePart = null,
+  xray = false,
+  preset = 'perspective',
+  onPartPick,
 }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const state = useRef<{
@@ -24,11 +40,31 @@ export default function DeviceViewer({
     paint: THREE.MeshStandardMaterial[];
     bases: Map<THREE.Object3D, THREE.Vector3>;
     size: number;
+    materials: {
+      material: THREE.MeshStandardMaterial;
+      part: Part;
+      opacity: number;
+    }[];
   } | null>(null);
-  const options = useRef({ finish, exploded });
+  const progress = assembly ?? (exploded ? 1 : 0);
+  const options = useRef({
+    finish,
+    progress,
+    activePart,
+    xray,
+    preset,
+    onPartPick,
+  });
   useEffect(() => {
-    options.current = { finish, exploded };
-  }, [finish, exploded]);
+    options.current = {
+      finish,
+      progress,
+      activePart,
+      xray,
+      preset,
+      onPartPick,
+    };
+  }, [finish, progress, activePart, xray, preset, onPartPick]);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -67,8 +103,8 @@ export default function DeviceViewer({
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.07;
-    controls.autoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)')
-      .matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    controls.autoRotate = mode === 'hero' && !reducedMotion.matches;
     controls.autoRotateSpeed = 0.35;
     controls.minPolarAngle = Math.PI * 0.2;
     controls.maxPolarAngle = Math.PI * 0.8;
@@ -111,6 +147,47 @@ export default function DeviceViewer({
       controls.autoRotate = false;
     };
     controls.addEventListener('start', stopAuto);
+    let pointerStart = { x: 0, y: 0 };
+    const raycaster = new THREE.Raycaster();
+    const onPointerDown = (event: PointerEvent) => {
+      pointerStart = { x: event.clientX, y: event.clientY };
+    };
+    const onPointerUp = (event: PointerEvent) => {
+      const live = state.current;
+      if (
+        !live ||
+        !options.current.onPartPick ||
+        Math.hypot(
+          event.clientX - pointerStart.x,
+          event.clientY - pointerStart.y,
+        ) > 6
+      )
+        return;
+      const rect = renderer.domElement.getBoundingClientRect();
+      raycaster.setFromCamera(
+        new THREE.Vector2(
+          ((event.clientX - rect.left) / rect.width) * 2 - 1,
+          (-(event.clientY - rect.top) / rect.height) * 2 + 1,
+        ),
+        camera,
+      );
+      const hit = raycaster
+        .intersectObject(live.model, true)
+        .find(({ object }) => {
+          if (!(object instanceof THREE.Mesh)) return false;
+          const materials = Array.isArray(object.material)
+            ? object.material
+            : [object.material];
+          return materials.some((material) => material.opacity > 0.3);
+        });
+      if (hit) {
+        let object = hit.object;
+        while (object.parent && !live.bases.has(object)) object = object.parent;
+        options.current.onPartPick(partForName(object.name));
+      }
+    };
+    renderer.domElement.addEventListener('pointerdown', onPointerDown);
+    renderer.domElement.addEventListener('pointerup', onPointerUp);
     new GLTFLoader().load(
       '/product/aura.glb',
       (gltf) => {
@@ -143,13 +220,30 @@ export default function DeviceViewer({
           mode === 'hero' ? -0.15 : 0.04,
         );
         const paint: THREE.MeshStandardMaterial[] = [];
+        const allMaterials: {
+          material: THREE.MeshStandardMaterial;
+          part: Part;
+          opacity: number;
+        }[] = [];
         const bases = new Map<THREE.Object3D, THREE.Vector3>();
         model.traverse((object) => {
           if (object instanceof THREE.Mesh) {
+            object.material = Array.isArray(object.material)
+              ? object.material.map((m) => m.clone())
+              : object.material.clone();
             const materials = Array.isArray(object.material)
               ? object.material
               : [object.material];
             materials.forEach((material: THREE.Material) => {
+              if (material instanceof THREE.MeshStandardMaterial) {
+                let root: THREE.Object3D = object;
+                while (root.parent && root.parent !== model) root = root.parent;
+                allMaterials.push({
+                  material,
+                  part: partForName(root.name),
+                  opacity: material.opacity,
+                });
+              }
               if (
                 material instanceof THREE.MeshStandardMaterial &&
                 /shell|housing|ceramic|satin|body|titanium|lunar/i.test(
@@ -175,6 +269,7 @@ export default function DeviceViewer({
           paint,
           bases,
           size: Math.max(size.x, size.y, size.z),
+          materials: allMaterials,
         };
         setReady(true);
       },
@@ -192,20 +287,56 @@ export default function DeviceViewer({
       if (live) {
         live.bases.forEach((base, object) => {
           const n = object.name.toLowerCase();
-          let distance = 0;
-          if (options.current.exploded) {
-            if (/front|button|led|acoustic|record_plunger/.test(n))
-              distance = live.size * 0.35;
-            else if (/rear|back|pogo|charging|case_screw/.test(n))
-              distance = -live.size * 0.35;
-            else if (/battery/.test(n)) distance = -live.size * 0.16;
-          }
+          const distance = separation(
+            partForName(n),
+            options.current.progress,
+            live.size,
+          );
           object.position.y = THREE.MathUtils.lerp(
             object.position.y,
             base.y + distance,
-            0.065,
+            reducedMotion.matches ? 1 : 0.11,
           );
         });
+        live.materials.forEach(({ material, part, opacity }) => {
+          const selected = options.current.activePart;
+          const shell = part === 'shell' || part === 'back';
+          const target =
+            options.current.xray && shell
+              ? 0.12
+              : selected && selected !== part
+                ? 0.2
+                : opacity;
+          material.opacity = THREE.MathUtils.lerp(
+            material.opacity,
+            target,
+            reducedMotion.matches ? 1 : 0.13,
+          );
+          material.transparent = material.opacity < 0.995;
+          material.depthWrite = !material.transparent;
+        });
+        if (mode !== 'hero') {
+          const p = options.current.progress;
+          const targetY =
+            options.current.preset === 'front'
+              ? 0
+              : options.current.preset === 'profile'
+                ? -Math.PI / 2
+                : -0.27 - p * 0.7;
+          live.model.rotation.y = THREE.MathUtils.lerp(
+            live.model.rotation.y,
+            targetY,
+            reducedMotion.matches ? 1 : 0.075,
+          );
+          const targetDistance = 4.2 + p * (camera.aspect < 0.85 ? 3.2 : 1.8);
+          camera.position.setLength(
+            THREE.MathUtils.lerp(
+              camera.position.length(),
+              targetDistance,
+              reducedMotion.matches ? 1 : 0.075,
+            ),
+          );
+        }
       }
       controls.update();
       renderer.render(scene, camera);
@@ -237,15 +368,6 @@ export default function DeviceViewer({
   }, [finish]);
   useEffect(() => {
     const live = state.current;
-    if (live && mode === 'configure') {
-      live.model.rotation.y = exploded ? -0.85 : -0.18;
-      live.camera.position.set(0.15, 0.12, exploded ? 5.0 : 4.2);
-      live.controls.autoRotate = false;
-      live.controls.update();
-    }
-  }, [exploded, mode]);
-  useEffect(() => {
-    const live = state.current;
     if (live) {
       live.camera.position.set(0.15, 0.12, 4.2);
       live.model.rotation.set(
@@ -270,7 +392,14 @@ export default function DeviceViewer({
         className="device-keyboard"
         onClick={() => {
           const live = state.current;
-          if (live) live.model.rotation.y += Math.PI / 4;
+          if (live) {
+            live.controls.autoRotate = false;
+            live.camera.position.applyAxisAngle(
+              new THREE.Vector3(0, 1, 0),
+              Math.PI / 4,
+            );
+            live.controls.update();
+          }
         }}
       >
         Rotate the AURA model

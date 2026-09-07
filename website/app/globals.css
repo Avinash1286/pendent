@@ -1284,3 +1284,305 @@ h1 .soft {
     mask-image: none;
   }
 }
+
+/* A02: a quiet studio around a product that the visitor can take apart. */
+.assembly-explorer {
+  border: 1px solid #ffffff14;
+  border-radius: 30px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 48% 25%, #36373788, #17191b 62%);
+  margin-top: 65px;
+}
+.assembly-topline {
+  padding: 28px 32px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: #a4a5a7;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+.assembly-topline span:last-child {
+  letter-spacing: 0;
+}
+.assembly-viewport {
+  height: 620px;
+  position: relative;
+}
+.view-presets {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  z-index: 3;
+  display: flex;
+  gap: 6px;
+}
+.view-presets button {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background: #12141670;
+  color: #a5a6a8;
+  padding: 9px 14px;
+  font-size: 13px;
+  backdrop-filter: blur(12px);
+}
+.view-presets button[aria-pressed='true'] {
+  border-color: #ffffff35;
+  color: #f2f2ee;
+}
+.assembly-measure {
+  position: absolute;
+  bottom: 34px;
+  left: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  color: #8e9093;
+}
+.assembly-measure > span:first-child {
+  font-size: 62px;
+  font-weight: 350;
+  letter-spacing: -0.07em;
+}
+.assembly-measure > span:last-child {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.assembly-controls {
+  padding: 0 36px 34px;
+}
+.assembly-transport {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 700px;
+  margin: 0 auto 34px;
+}
+.round-control {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff22;
+  border-radius: 50%;
+  background: #ffffff08;
+  color: #d4d5d5;
+  transition: background 0.2s;
+}
+.round-control:hover,
+.round-control.active {
+  background: #efeee9;
+  color: #191b1d;
+}
+.assembly-scrub {
+  flex: 1;
+  min-width: 0;
+  padding: 0 6px;
+}
+.assembly-scrub > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  color: #a9aaac;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.assembly-scrub [data-slot='slider-track'] {
+  background: #ffffff25;
+  height: 3px;
+}
+.assembly-scrub [data-slot='slider-range'] {
+  background: #e9bba0;
+}
+.assembly-scrub [data-slot='slider-thumb'] {
+  height: 14px;
+  width: 14px;
+  border: 0;
+  box-shadow: 0 0 0 5px #ffffff10;
+}
+.part-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 27px 0;
+  border-top: 1px solid #ffffff13;
+}
+.part-selector button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #aaacae;
+  border-radius: 24px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.part-selector button span {
+  font-size: 11px;
+  color: #717477;
+}
+.part-selector button[aria-pressed='true'] {
+  background: #ffffff0e;
+  border-color: #ffffff2a;
+  color: #f5f4ef;
+}
+.part-selector button[aria-pressed='true'] span {
+  color: #e9bba0;
+}
+.part-story {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 65px;
+  min-height: 158px;
+  padding: 18px 8px 0;
+}
+.part-story h3 {
+  font-weight: 450;
+  font-size: clamp(26px, 3vw, 39px);
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+  margin: 0;
+  max-width: 380px;
+}
+.part-story p {
+  color: #aaaeb1;
+  line-height: 1.65;
+  font-size: 15px;
+  margin: 0 0 16px;
+  max-width: 490px;
+}
+.part-story div > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2b79f;
+  font-size: 12px;
+}
+.engineering-features {
+  display: block;
+  margin-top: 65px;
+}
+.engineering-features .features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.engineering-features .feature {
+  border: 0;
+  padding: 0;
+}
+.engineering-features .feature-icon {
+  align-items: flex-start;
+}
+.engineering-features .feature h3 {
+  font-size: 18px;
+}
+.engineering-features .feature p {
+  font-size: 14px;
+}
+.design-head {
+  max-width: 750px;
+}
+.design-head > p:last-child {
+  max-width: 430px;
+}
+@media (min-width: 1100px) {
+  .hero {
+    padding-left: 7%;
+  }
+  .hero-stage {
+    right: -1%;
+    width: 60%;
+  }
+  .hero-description {
+    max-width: 325px;
+  }
+  .design-section {
+    padding-top: 145px;
+  }
+}
+@media (max-width: 900px) {
+  .assembly-viewport {
+    height: 540px;
+  }
+  .part-story {
+    gap: 30px;
+  }
+  .engineering-features .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .assembly-explorer {
+    margin: 40px -4% 0;
+    border-radius: 20px;
+  }
+  .assembly-topline {
+    padding: 23px 20px 0;
+    font-size: 11px;
+  }
+  .assembly-topline span:last-child {
+    display: none;
+  }
+  .assembly-viewport {
+    height: 470px;
+  }
+  .view-presets {
+    left: 20px;
+    top: 22px;
+    gap: 2px;
+  }
+  .view-presets button {
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+  .assembly-measure {
+    bottom: 15px;
+    left: 24px;
+  }
+  .assembly-measure > span:first-child {
+    font-size: 42px;
+  }
+  .assembly-controls {
+    padding: 0 20px 30px;
+  }
+  .assembly-transport {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .round-control {
+    height: 38px;
+    width: 38px;
+  }
+  .assembly-scrub > div:first-child {
+    font-size: 11px;
+  }
+  .part-selector {
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 20px 0;
+  }
+  .part-selector button {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+  .part-story {
+    grid-template-columns: 1fr;
+    min-height: 245px;
+    gap: 18px;
+    padding: 8px 0 0;
+  }
+  .part-story h3 {
+    font-size: 30px;
+    max-width: 300px;
+  }
+  .part-story p {
+    font-size: 14px;
+  }
+  .engineering-features .features {
+    gap: 30px 20px;
+  }
+}

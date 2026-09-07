@@ -1,6 +1,6 @@
 # AURA product experience
 
-React 19, TypeScript, Vite 8, Three.js and the Base UI dialog primitive. This is a static product presentation, with no secrets or server runtime in the browser bundle.
+React 19, TypeScript, Vite 8, Three.js and Base UI primitives. This is a static product presentation, with no secrets or server runtime in the browser bundle.
 
 ## Run locally
 
@@ -15,16 +15,18 @@ npm run dev
 npm run lint
 npx tsc --noEmit
 node scripts/verify-model.mjs
+node scripts/verify-assets.mjs
 npm run build
 ```
 
-The lint configuration checks authored application code. Unmodified generated UI catalog files have upstream lint incompatibilities and are excluded from that lint pass; TypeScript still checks the full project. The site uses only the catalog's dialog and button primitives.
+The lint configuration checks authored application code. Unmodified generated UI catalog files have upstream lint incompatibilities and are excluded from that lint pass; TypeScript still checks the full project. The application uses the dialog and slider primitives.
 
 ## Features
 
 - Blender-generated GLB with studio lighting, drag rotation and keyboard rotation.
 - Three finish choices, persisted locally where storage is available.
-- Animated exploded/assembled view and camera reset.
+- Continuous assembly slider, play/pause, see-through shell, front/profile/three-quarter camera presets and reset.
+- Direct model part selection and five layer explanations, with keyboard-accessible alternative controls.
 - Guided sample recording, transfer and AI-note flow. No live microphone or AI requests.
 - Modal 36-second launch film with English title captions and download.
 - Downloadable JSON product configuration. No reservation, order or payment is created.

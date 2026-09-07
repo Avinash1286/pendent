@@ -16,7 +16,7 @@ const bbox = new THREE.Box3().setFromObject(gltf.scene);
 const size = bbox.getSize(new THREE.Vector3());
 assert.ok(size.x > 0.029 && size.x < 0.033, `Width ${size.x}`);
 assert.ok(size.y > 0.04 && size.y < 0.049, `Height with loop ${size.y}`);
-assert.ok(size.z > 0.011 && size.z < 0.015, `Depth ${size.z}`);
+assert.ok(size.z > 0.009 && size.z < 0.0105, `A02 depth ${size.z}`);
 const names = [];
 let meshCount = 0;
 gltf.scene.traverse((object) => {

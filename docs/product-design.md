@@ -8,9 +8,9 @@ The primary product promise is **Be here. Keep the thought.** AI is useful only 
 
 ## Physical design
 
-The main body envelope is 40mm tall ×30mm wide ×12mm deep. The reinforced necklace eyelet extends the total case height to 45.5mm. The PCB envelope is 24mm ×34mm ×0.8mm with R4 corners. The industrial design uses an RF-transparent polymer body with a satin ceramic / titanium-color finish; it is not a solid titanium shell. Lunar, Graphite and Dune are proposed colorways.
+Revision A02 targets a 40mm tall ×30mm wide ×9.5mm deep body. A low-profile integrated bail extends the case height to 42.8mm. The PCB envelope is 24mm ×34mm ×0.8mm with R4 corners. The industrial design uses an RF-transparent polymer body with a satin ceramic / titanium-color finish; it is not a solid titanium shell. Lunar, Graphite and Dune are proposed colorways. A01 is preserved in the enclosure and film archives.
 
-The case separates into front and rear shells. A replaceable threaded fastener solution, protected cell, PCB retention, acoustic passages and a physical switch opening are represented in the Blender design. Printable STL geometry is for fit prototyping; mesh manifoldness alone does not establish tolerances, fastening strength or acoustic performance.
+The case separates into front and rear shells. A flush button with integral plunger, separate board retainer, threaded fasteners, acoustic passages and a physical switch opening are represented in the Blender design. Separate printable meshes and a fit coupon support assembly trials. Tough resin printing is the intended prototype process; mesh manifoldness alone does not establish tolerances, fastening strength or acoustic performance. See the mechanical guide for actual clearances, orientations and support placement.
 
 An adjustable cord should have a tested breakaway clasp. Do not infer tensile or release-force certification from the visualization. The magnetic charging dock is an accessory concept; electrical charging contacts are included in the board and case work, but a complete dock production design is not supplied.
 
@@ -48,7 +48,7 @@ Use a protected, traceable cell that physically fits the validated pouch envelop
 
 ## Website and launch film
 
-The website uses the actual Blender GLB, local product renders and a local Manrope font. Visitors can rotate the model, change finish, separate the visible layers, walk through a sample recording-to-note sequence, play the 36second film and download a design configuration. The AI example is fixed sample content; it never requests microphone access. A saved configuration is not an order or a reservation.
+The website uses the actual Blender GLB, local product renders and a local Manrope font. Visitors can rotate the model, select physical parts, change the camera angle, see through the shell and continuously scrub or play the assembly. A separate finish configurator, sample recording-to-note sequence, 36second film and downloadable design configuration complete the presentation. The AI example is fixed sample content; it never requests microphone access. A saved configuration is not an order or a reservation.
 
 The proposed 179USD price is a design target, not a validated landed cost or sales offer. No merchant credentials, inventory, payment endpoint or shipping promises are present. Sale should open only after engineering validation, manufacturing quotes, business details and an authorized payment account are established.
 

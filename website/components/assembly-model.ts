@@ -10,7 +10,7 @@ export const parts: {
 }[] = [
   {
     id: 'shell',
-    label: 'The surface',
+    label: 'Surface',
     title: 'Quiet on the outside.',
     description:
       'Soft radii, a fine seam and a satin finish. A radio-transparent polymer shell keeps the Bluetooth antenna clear.',
@@ -18,23 +18,23 @@ export const parts: {
   },
   {
     id: 'controls',
-    label: 'The gesture',
+    label: 'Controls',
     title: 'One press. A place for a thought.',
     description:
-      'The black front is a short-travel recording paddle, with a discreet light and two microphone openings. The side switch physically disconnects microphone power.',
+      'Press the black face to record. The side privacy switch physically disconnects microphone power.',
     detail: 'Tactile control · visible feedback',
   },
   {
     id: 'board',
-    label: 'The intelligence',
+    label: 'Board',
     title: 'Every millimetre has a purpose.',
     description:
-      'A compact four-layer board brings together Bluetooth, digital speech capture, local flash and haptic feedback. Your phone handles the AI.',
+      'Bluetooth, two digital microphones and local recording storage, arranged on a compact four-layer board.',
     detail: '24 × 42 mm circuit board',
   },
   {
     id: 'battery',
-    label: 'The energy',
+    label: 'Battery',
     title: 'Room for the everyday.',
     description:
       'A thin rechargeable cell sits behind the board. The design includes charge management and battery monitoring; runtime awaits prototype testing.',
@@ -42,7 +42,7 @@ export const parts: {
   },
   {
     id: 'back',
-    label: 'The last detail',
+    label: 'Back',
     title: 'A considered finish, all around.',
     description:
       'A removable rear shell gives access for assembly. Three recessed contacts provide a connection to the proposed charging dock.',

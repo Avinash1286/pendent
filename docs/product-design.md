@@ -4,7 +4,7 @@
 
 A necklace voice recorder that lets someone capture a thought without retrieving a phone. The repository now includes compiled Zephyr firmware, a Python Bluetooth/local-transcription companion, and a Next.js/Convex notes portal alongside the product design. Firmware has not run on an assembled AURA; a mobile app and production cloud deployment remain outstanding.
 
-The primary product promise is **Be here. Keep the thought.** AI is useful only after reliable, legible recording. The pendant has no display, camera, speaker or always-listening wake word. These choices reduce interaction, battery and privacy costs.
+The primary product promise is **Capture the context of your life.** Supporting copy connects the moments someone chooses to record with reflection and future possibilities: **Life moves. Keep what matters.** AI is useful only after reliable, legible recording. The pendant has no display, camera, speaker or always-listening wake word. These choices reduce interaction, battery and privacy costs.
 
 ## Physical design
 
@@ -48,7 +48,7 @@ Use a protected, traceable cell that physically fits the validated pouch envelop
 
 ## Website and launch film
 
-The website uses the actual Blender GLB, local product renders and a local Manrope font. Visitors can rotate the model, select physical parts, change the camera angle, see through the shell and continuously scrub or play the assembly. A separate finish configurator, sample recording-to-note sequence, 36second film and downloadable design configuration complete the presentation. The AI example is fixed sample content; it never requests microphone access. A saved configuration is not an order or a reservation.
+The website has three focused chapters: a hero with the actual Blender GLB and finish controls, an interactive assembly explorer, and a compact recording-to-note demo. Visitors can rotate the model, select physical parts, change the camera angle, see through the shell and scrub or play the assembly. The film opens from the hero, and a design-configuration download sits beside finish selection. Component details appear when selected. The AI example uses fixed sample content and never requests microphone access. A saved configuration is not an order or a reservation.
 
 The proposed 179USD price is a design target, not a validated landed cost or sales offer. No merchant credentials, inventory, payment endpoint or shipping promises are present. Sale should open only after engineering validation, manufacturing quotes, business details and an authorized payment account are established.
 

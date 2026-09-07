@@ -11,7 +11,11 @@ import { Slider } from '@/components/ui/slider';
 import DeviceViewer from './device-viewer';
 import { parts, type Part, type ViewPreset } from './assembly-model';
 
-export default function AssemblyExplorer() {
+export default function AssemblyExplorer({
+  finish = '#d6d5cf',
+}: {
+  finish?: string;
+}) {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [selected, setSelected] = useState<Part | null>(null);
@@ -72,14 +76,10 @@ export default function AssemblyExplorer() {
 
   return (
     <div className="assembly-explorer reveal" ref={host}>
-      <div className="assembly-topline">
-        <span>THE ANATOMY OF AURA</span>
-        <span>Drag to turn. Select to discover.</span>
-      </div>
       <div className="assembly-viewport">
         <DeviceViewer
           mode="explore"
-          finish="#d6d5cf"
+          finish={finish}
           assembly={progress}
           activePart={selected}
           xray={xray}
@@ -104,14 +104,6 @@ export default function AssemblyExplorer() {
                   : 'Side'}
             </button>
           ))}
-        </div>
-        <div className="assembly-measure">
-          <span>10</span>
-          <span>
-            mm
-            <br />
-            body target
-          </span>
         </div>
       </div>
       <div className="assembly-controls">
@@ -176,34 +168,34 @@ export default function AssemblyExplorer() {
         </div>
         <div className="part-selector" aria-label="Explore a product layer">
           <button aria-pressed={!selected} onClick={() => selectPart(null)}>
-            <Layers3 size={15} /> The whole story
+            <Layers3 size={15} /> All
           </button>
-          {parts.map((item, i) => (
+          {parts.map((item) => (
             <button
               key={item.id}
               aria-pressed={selected === item.id}
               onClick={() => selectPart(item.id)}
             >
-              <span>0{i + 1}</span>
               {item.label}
             </button>
           ))}
         </div>
         <div className="part-story" aria-live="polite">
-          <h3>
-            {part?.title ?? 'Beautifully simple. Thoughtfully assembled.'}
-          </h3>
-          <div>
-            <p>
-              {part?.description ??
-                'Move the slider to open AURA layer by layer. Select a part in the model, look through the shell, or play the complete assembly.'}
+          {part ? (
+            <>
+              <h3>{part.title}</h3>
+              <div>
+                <p>{part.description}</p>
+                <span>
+                  {part.detail} <ArrowUpRight size={14} />
+                </span>
+              </div>
+            </>
+          ) : (
+            <p className="assembly-instruction">
+              Slide to open. Select a part to discover.
             </p>
-            <span>
-              {part?.detail ??
-                'Interactive model from the actual Blender design'}{' '}
-              <ArrowUpRight size={14} />
-            </span>
-          </div>
+          )}
         </div>
       </div>
     </div>

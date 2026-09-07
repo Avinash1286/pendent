@@ -1,6 +1,6 @@
 # AURA / pendent
 
-**Be here. Keep the thought.**
+**Capture the context of your life.**
 
 [Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Run the notes portal](portal/README.md)
 

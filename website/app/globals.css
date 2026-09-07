@@ -172,7 +172,7 @@ a:focus-visible,
   background: var(--peach);
 }
 h1 {
-  font-size: clamp(65px, 7.4vw, 122px);
+  font-size: clamp(60px, 6.8vw, 112px);
   line-height: 0.99;
   letter-spacing: -0.074em;
   font-weight: 450;
@@ -1053,7 +1053,7 @@ h1 .soft {
     margin-bottom: 24px;
   }
   h1 {
-    font-size: clamp(61px, 11vw, 83px);
+    font-size: clamp(52px, 10vw, 76px);
     max-width: 520px;
     margin-bottom: 24px;
     line-height: 1;
@@ -1634,5 +1634,201 @@ h1 .soft {
   }
   .engineering-features .features {
     gap: 30px 20px;
+  }
+}
+
+/* Three focused chapters; product controls replace repeated feature sections. */
+.minimal-hero {
+  min-height: 760px;
+  max-height: 1050px;
+}
+.minimal-hero .hero-description {
+  max-width: 340px;
+}
+.finish-dock {
+  position: absolute;
+  z-index: 4;
+  left: 70%;
+  bottom: 64px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 16px;
+  border: 1px solid #25292e12;
+  border-radius: 40px;
+  background: #ffffff85;
+  backdrop-filter: blur(18px);
+  scroll-margin-top: 100px;
+}
+.finish-dock .finishes {
+  margin: 0;
+  gap: 10px;
+}
+.finish-dock .finish {
+  width: 28px;
+  height: 28px;
+}
+.finish-name {
+  min-width: 62px;
+  font-size: 14px;
+  color: #555e66;
+}
+.save-finish {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #333b43;
+  background: transparent;
+}
+.save-finish:hover {
+  background: #2024280d;
+}
+.hero-drag-hint {
+  position: absolute;
+  left: 70%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7c848c;
+  font-size: 12px;
+}
+.minimal-design {
+  padding-top: 88px;
+  padding-bottom: 80px;
+}
+.minimal-design > h2 {
+  margin: 0;
+  text-align: center;
+}
+.minimal-design .assembly-explorer {
+  margin-top: 36px;
+}
+.minimal-design .assembly-controls {
+  padding-bottom: 24px;
+}
+.minimal-design .part-story {
+  min-height: 130px;
+  align-items: center;
+  gap: 30px;
+}
+.part-story .assembly-instruction {
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+  font-size: 14px;
+  color: #949da5;
+  margin: 0;
+}
+.minimal-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  align-items: center;
+}
+.notes-intro > p {
+  color: #747b80;
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 360px;
+  margin: 24px 0 0;
+}
+.minimal-notes .note-panel {
+  min-height: 470px;
+}
+.minimal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid #ffffff14;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.minimal-footer p {
+  margin: 0;
+  color: #8c949b;
+  font-size: 12px;
+}
+.minimal-footer a {
+  color: #d8dde0;
+  font-size: 14px;
+  white-space: nowrap;
+}
+@media (max-width: 1050px) {
+  .minimal-notes {
+    gap: 6%;
+  }
+  .notes-intro h2 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 720px) {
+  .minimal-hero {
+    min-height: 0;
+    max-height: none;
+    padding: 116px 7% 36px;
+  }
+  .minimal-hero .hero-stage {
+    position: relative;
+    width: calc(100% + 40px);
+    height: 440px;
+    top: auto;
+    right: auto;
+    left: -20px;
+    margin-top: 12px;
+  }
+  .finish-dock {
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .hero-drag-hint {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 14px;
+  }
+  .minimal-design {
+    padding-top: 60px;
+    padding-bottom: 55px;
+  }
+  .minimal-design .assembly-explorer {
+    margin-top: 28px;
+  }
+  .minimal-design .part-story {
+    min-height: 190px;
+    align-content: center;
+    gap: 12px;
+  }
+  .minimal-notes {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+  .notes-intro > p {
+    font-size: 16px;
+    max-width: 330px;
+  }
+  .minimal-notes .note-panel {
+    min-height: 420px;
+  }
+  .minimal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }

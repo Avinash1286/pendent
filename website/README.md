@@ -24,8 +24,10 @@ The lint configuration checks authored application code. Unmodified generated UI
 
 ## Features
 
+The site has three chapters: the product hero with finish selection, the interactive assembly explorer, and a compact notes demo. The film opens from the hero. Component details appear when selected in the explorer; configuration downloads sit beside the finish controls.
+
 - Blender-generated GLB with studio lighting, drag rotation and keyboard rotation.
-- Three finish choices, persisted locally where storage is available.
+- Three finish choices shared by the hero and assembly models, persisted locally where storage is available.
 - Continuous assembly slider, play/pause, see-through shell, front/profile/three-quarter camera presets and reset.
 - Direct model part selection and five layer explanations, with keyboard-accessible alternative controls.
 - Guided sample recording, transfer and AI-note flow. No live microphone or AI requests.
@@ -53,4 +55,4 @@ After completing the Blender renders, `node scripts/sync-product-assets.mjs` ref
 
 ## Commerce boundary
 
-179 USD is a proposed target price. The concept is not offered for sale; the configuration download is intentionally clear about that status. A live storefront requires validated hardware, actual inventory/fulfillment terms and an authorized merchant integration.
+The concept is not offered for sale; the configuration download records a finish preference. A live storefront requires validated hardware, actual inventory/fulfillment terms and an authorized merchant integration.

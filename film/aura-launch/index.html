@@ -2,7 +2,7 @@
 <html lang="en" data-resolution="landscape">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=1920, height=1080">
-<title>AURA — Be here. Keep the thought. — A03</title>
+<title>AURA — Capture the context of your life.</title>
 <script src="assets/vendor/gsap.min.js"></script>
 <style>
 @font-face{font-family:Manrope;src:url('assets/fonts/Manrope.ttf') format('truetype');font-weight:200 800;font-display:block}
@@ -55,53 +55,64 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#101112;color:#F
 #close-wordmark{font-size:91px;font-weight:500;line-height:1.15;letter-spacing:.2em;width:750px}
 #close-tagline{font-size:77px;font-weight:500;line-height:1.23;letter-spacing:-.055em;margin-top:66px;width:790px}
 #close-tagline span{display:block}#close-line{margin-top:40px}#close-label{margin-top:38px;font-size:28px;line-height:1.5;color:var(--muted)}
+#assembly-title{left:128px;top:103px;font-size:64px;line-height:1.2;letter-spacing:-.045em;font-weight:500;opacity:0}
+#assembly-canvas{position:absolute;left:0;top:145px;display:block;width:1920px;height:860px}
+#assembly-footer{opacity:0}
 </style>
 </head><body>
-<div id="aura" data-composition-id="aura" data-start="0" data-duration="36" data-width="1920" data-height="1080" data-fps="30">
+<div id="aura" data-composition-id="aura" data-start="0" data-duration="44" data-width="1920" data-height="1080" data-fps="30">
 <!-- 01: The object appears before its name. The A03 edge photograph supplies the actual capsule geometry. -->
 <section id="reveal" class="clip" data-start="0" data-duration="5.8" data-track-index="1"><div id="reveal-scene" class="scene">
 <div id="reveal-art" class="plate"><img src="assets/profile.png" alt="AURA A03 capsule profile and satin silver frame, rendered from the actual Blender model"></div>
-<p id="reveal-caption" class="copy">Be here.</p>
+<p id="reveal-caption" class="copy">Life moves.</p>
 </div></section>
 <!-- 02: Unhurried identity. Product reflections and silhouette carry the frame. -->
 <section id="hero" class="clip" data-start="5.2" data-duration="6" data-track-index="2"><div id="hero-scene" class="scene">
 <div id="hero-art" class="plate"><img src="assets/hero-transparent.png" alt="AURA A03 glossy black recording face, satin silver frame, and fine necklace chain"></div>
-<p id="hero-kicker" class="copy kicker">Introducing</p><h1 id="hero-wordmark" class="copy">AURA</h1><p id="hero-tagline" class="copy">Keep the thought.</p><p id="hero-footer" class="footer">Wearable note-taking. Development concept.</p>
+<p id="hero-kicker" class="copy kicker">Introducing</p><h1 id="hero-wordmark" class="copy">AURA</h1><p id="hero-tagline" class="copy">Keep what matters.</p><p id="hero-footer" class="footer">Wearable note-taking. Development concept.</p>
 </div></section>
 <!-- 03: One obvious gesture, with feedback shown briefly and quietly. -->
 <section id="touch" class="clip" data-start="10.6" data-duration="5.8" data-track-index="3"><div id="touch-scene" class="scene">
 <div id="touch-window"><div id="touch-art" class="plate" data-layout-allow-overflow=""><img src="assets/hero-macro.png" alt="Close view of the A03 full black face that acts as the recording paddle"></div></div>
-<h2 id="touch-title" class="copy headline"><span>One press.</span><span class="soft">Stay present.</span></h2>
+<h2 id="touch-title" class="copy headline"><span>The thought.</span> <span class="soft">The moment.</span></h2>
 <div id="touch-status" class="copy"><span id="touch-dot"></span><p>CAPTURING</p><div id="touch-wave" aria-hidden="true"></div></div>
-<p id="touch-footer" class="footer">Intended interaction · Visible recording · Tactile feedback</p>
+<p id="touch-footer" class="footer">Press to capture · Intended interaction</p>
 </div></section>
 <!-- 04: Hardware privacy is shown in the actual object; no decorative fake switch UI. -->
 <section id="privacy" class="clip" data-start="15.8" data-duration="5.8" data-track-index="4"><div id="privacy-scene" class="scene">
 <div id="privacy-art" class="plate"><img src="assets/detail.png" alt="Macro render of the AURA A03 physical microphone disconnect on its silver side frame"></div>
-<h2 id="privacy-title" class="copy headline"><span>Yours to</span><span class="soft">control.</span></h2><p id="privacy-label" class="copy">Physical mic disconnect.</p><p id="privacy-footer" class="footer">You decide when to capture.</p>
+<h2 id="privacy-title" class="copy headline"><span>On your</span> <span class="soft">terms.</span></h2><p id="privacy-label" class="copy">Physical mic disconnect.</p><p id="privacy-footer" class="footer">You decide when to capture.</p>
 </div></section>
-<!-- 05: One short, explicitly illustrative phone-assisted notes moment. -->
-<section id="notes" class="clip" data-start="21" data-duration="6.4" data-track-index="5"><div id="notes-scene" class="scene">
-<h2 id="notes-title" class="copy headline"><span>From thought</span><span class="soft">to next step.</span></h2><p id="notes-support" class="copy"><span>Capture offline.</span><span>Organize with your phone.</span></p>
-<div id="notes-panel"><p class="note-eyebrow">AURA NOTES</p><p id="note-type">ILLUSTRATIVE NOTE</p><h3 id="note-title">A quieter morning</h3><div class="note-rule" aria-hidden="true"></div><div id="note-idea"><p class="note-label">THE IDEA</p><p class="note-body">Make space for a walk before the day begins.</p></div><div id="note-action"><p class="note-label">NEXT STEP</p><p class="note-body">Set aside twenty minutes.</p></div><p id="note-footer">Phone + cloud · Interface concept</p></div>
+<!-- 05: Actual A03 geometry opens into an angled layer stack, holds, and reassembles. -->
+<section id="assembly" class="clip" data-start="21" data-duration="8.6" data-track-index="5"><div id="assembly-scene" class="scene">
+<canvas id="assembly-canvas" aria-label="Animated AURA design model opening to reveal the circuit board and battery, then reassembling"></canvas>
+<h2 id="assembly-title" class="copy">Considered. Inside and out.</h2>
+<p id="assembly-footer" class="footer">Exploded design study · Reference components shown</p>
 </div></section>
-<!-- 06: The object, thought, and score resolve. The final frame is held, never black. -->
-<section id="close" class="clip" data-start="26.8" data-duration="9.2" data-track-index="6"><div id="close-scene" class="scene">
+<!-- 06: One short, explicitly illustrative phone-assisted notes moment. -->
+<section id="notes" class="clip" data-start="29" data-duration="6.4" data-track-index="6"><div id="notes-scene" class="scene">
+<h2 id="notes-title" class="copy headline"><span>More context.</span> <span class="soft">New possibilities.</span></h2><p id="notes-support" class="copy"><span>Capture offline.</span><span>Organize with your phone.</span></p>
+<div id="notes-panel"><p class="note-eyebrow">AURA NOTES</p><p id="note-type">ILLUSTRATIVE NOTE</p><h3 id="note-title">A quieter morning</h3><div class="note-rule" aria-hidden="true"></div><div id="note-idea"><p class="note-label">THE MOMENT</p><p class="note-body">A morning walk made room for a new idea.</p></div><div id="note-action"><p class="note-label">NEXT STEP</p><p class="note-body">Make space for it tomorrow.</p></div><p id="note-footer">Phone + cloud · Interface concept</p></div>
+</div></section>
+<!-- 07: The object, thought, and score resolve. The final frame is held, never black. -->
+<section id="close" class="clip" data-start="34.8" data-duration="9.2" data-track-index="7"><div id="close-scene" class="scene">
 <div id="close-art" class="plate"><img src="assets/hero-close.png" alt="Final AURA A03 capsule pendant beauty view"></div>
-<div id="close-copy"><h2 id="close-wordmark">AURA</h2><p id="close-tagline"><span>Be here.</span><span>Keep the thought.</span></p><div id="close-line" class="line" aria-hidden="true"></div><p id="close-label">A wearable note-taking concept.</p></div>
+<div id="close-copy"><h2 id="close-wordmark">AURA</h2><p id="close-tagline" aria-label="Capture the context of your life."><span>Capture the context</span> <span>of your life.</span></p><div id="close-line" class="line" aria-hidden="true"></div><p id="close-label">Capture starts with you.</p></div>
 <p id="close-footer" class="footer">Development concept · Features subject to engineering validation</p>
 </div></section>
-<audio id="aura-score" src="assets/aura-score.wav" data-start="0" data-duration="36" data-track-index="10" data-volume="1"></audio>
+<audio id="aura-score" src="assets/aura-score.wav" data-start="0" data-duration="44" data-track-index="10" data-volume="1"></audio>
 </div>
+<script src="assets/vendor/assembly.js"></script>
 <script>
 // Synchronous, deterministic setup; all motion is owned by one paused Hyperframes timeline.
+window.__auraAssemblyInit();
 const wave=document.getElementById('touch-wave');
 for(let i=0;i<15;i++){const bar=document.createElement('i');bar.style.height=`${9+26*(.5+.5*Math.sin(i*.91+1.7))}px`;wave.appendChild(bar)}
 const tl=gsap.timeline({paused:true});
 const enter=(target,at,duration=.9,y=12)=>tl.fromTo(target,{opacity:0,y},{opacity:1,y:0,duration,ease:'power3.out',immediateRender:false},at);
 const scene=(name,at,duration=.65)=>tl.fromTo(`#${name}-scene`,{opacity:0},{opacity:1,duration,ease:'power2.inOut',immediateRender:false},at);
 const clear=(targets,at)=>tl.to(targets,{opacity:0,duration:.35,ease:'power2.inOut'},at);
-tl.addLabel('The object',0);
+tl.addLabel('Life moves',0);
 tl.fromTo('#reveal-art',{opacity:0,scale:1.025,x:16},{opacity:1,scale:1,x:-10,duration:4.9,ease:'sine.inOut'},.1);
 enter('#reveal-caption',2.1,1.2,8);clear('#reveal-caption',4.85);
 tl.addLabel('Introducing AURA',5.2);scene('hero',5.2,.8);
@@ -109,24 +120,29 @@ tl.fromTo('#hero-art',{scale:1.055,x:22,y:10},{scale:1,x:0,y:0,duration:6,ease:'
 enter('#hero-kicker',5.85,.8,0);
 tl.fromTo('#hero-wordmark',{opacity:0,'--aura-tracking':'.115em',y:8},{opacity:1,'--aura-tracking':'.065em',y:0,duration:1.2,ease:'power3.out',immediateRender:false},6.1);
 enter('#hero-tagline',7.5,1,10);enter('#hero-footer',7.7,.8,0);clear(['#hero-kicker','#hero-wordmark','#hero-tagline','#hero-footer'],10.15);
-tl.addLabel('One gesture',10.6);scene('touch',10.6,.3);
+tl.addLabel('The thought. The moment.',10.6);scene('touch',10.6,.3);
 tl.fromTo('#touch-art',{scale:1,x:0},{scale:1.045,x:-16,duration:5.8,ease:'none',immediateRender:false},10.6);
 enter('#touch-title span:first-child',11,.85,12);enter('#touch-title span:last-child',11.5,.85,12);enter('#touch-status',12.75,.6,0);enter('#touch-footer',13,.75,0);
 tl.fromTo('#touch-wave i',{scaleY:.3},{scaleY:1,duration:.65,ease:'sine.inOut',stagger:.022,repeat:2,yoyo:true,immediateRender:false},12.9);
 clear(['#touch-title','#touch-status','#touch-footer'],15.4);
-tl.addLabel('Physical control',15.8);scene('privacy',15.8,.3);
+tl.addLabel('On your terms',15.8);scene('privacy',15.8,.3);
 tl.fromTo('#privacy-art',{scale:1.035,x:18},{scale:1,x:-5,duration:5.8,ease:'none',immediateRender:false},15.8);
 enter('#privacy-title span:first-child',16.2,.9,12);enter('#privacy-title span:last-child',16.7,.9,12);enter('#privacy-label',17.9,.85,8);enter('#privacy-footer',18.15,.8,0);clear(['#privacy-title','#privacy-label','#privacy-footer'],20.55);
-tl.addLabel('Useful notes',21);scene('notes',21,.65);
-enter('#notes-title span:first-child',21.45,.9,12);enter('#notes-title span:last-child',21.9,.9,12);
-tl.fromTo('#notes-panel',{opacity:0,x:34},{opacity:1,x:0,duration:1.1,ease:'power3.out',immediateRender:false},21.75);
-enter('#note-title',22.6,.75,8);enter('#note-idea',23.1,.75,8);enter('#note-action',23.85,.75,8);enter('#notes-support',24.1,.85,8);
-clear(['#notes-title','#notes-support'],26.35);
-tl.addLabel('Be here',26.8);scene('close',26.8,.9);
-tl.fromTo('#close-art',{scale:1.035,x:-16},{scale:1,x:0,duration:3.6,ease:'power2.out',immediateRender:false},26.8);
-tl.fromTo('#close-wordmark',{opacity:0,scale:.98},{opacity:1,scale:1,duration:1,ease:'power3.out',immediateRender:false},27.8);
-enter('#close-tagline span:first-child',28.55,1,10);enter('#close-tagline span:last-child',29.05,1,10);
-tl.fromTo('#close-line',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out',immediateRender:false},29.8);enter('#close-label',30.3,.85,8);enter('#close-footer',30.55,.8,0);
-window.__timelines=window.__timelines||{};window.__timelines.aura=tl;
+tl.addLabel('Considered inside and out',21);scene('assembly',21,.65);
+enter('#assembly-title',21.5,.9,8);enter('#assembly-footer',22.1,.8,0);
+clear(['#assembly-title','#assembly-footer'],28.55);
+tl.addLabel('New possibilities',29);scene('notes',29,.65);
+enter('#notes-title span:first-child',29.45,.9,12);enter('#notes-title span:last-child',29.9,.9,12);
+tl.fromTo('#notes-panel',{opacity:0,x:34},{opacity:1,x:0,duration:1.1,ease:'power3.out',immediateRender:false},29.75);
+enter('#note-title',30.6,.75,8);enter('#note-idea',31.1,.75,8);enter('#note-action',31.85,.75,8);enter('#notes-support',32.1,.85,8);
+clear(['#notes-title','#notes-support'],34.35);
+tl.addLabel('Capture the context of your life',34.8);scene('close',34.8,.9);
+tl.fromTo('#close-art',{scale:1.035,x:-16},{scale:1,x:0,duration:3.6,ease:'power2.out',immediateRender:false},34.8);
+tl.fromTo('#close-wordmark',{opacity:0,scale:.98},{opacity:1,scale:1,duration:1,ease:'power3.out',immediateRender:false},35.8);
+enter('#close-tagline span:first-child',36.55,1,10);enter('#close-tagline span:last-child',37.05,1,10);
+tl.fromTo('#close-line',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out',immediateRender:false},37.8);enter('#close-label',38.3,.85,8);enter('#close-footer',38.55,.8,0);
+// Hyperframes seeks the master timeline and dispatches hf-seek for canvas adapters.
+tl.eventCallback('onUpdate',()=>window.__auraAssemblyRender(tl.time()));
+window.__timelines.aura=tl;
 </script>
 </body></html>

@@ -4,13 +4,17 @@
   "type": "module",
   "scripts": {
     "dev": "hyperframes preview --background",
-    "check": "hyperframes check --samples 15 --snapshots --timeout 30000 --strict",
-    "render": "hyperframes render --quality high --fps 30 --workers 1 --output renders/aura-launch.mp4",
+    "check": "hyperframes check --samples 18 --snapshots --timeout 30000 --strict --browser-gpu",
+    "render": "hyperframes render --quality high --fps 30 --workers 1 --browser-gpu --output renders/aura-launch.mp4",
     "publish": "npx --yes hyperframes@0.8.31 publish",
-    "score": "node scripts/score.mjs"
+    "score": "node scripts/score.mjs",
+    "build:assembly": "esbuild scripts/assembly-scene.mjs --bundle --format=iife --minify --outfile=assets/vendor/assembly.js",
+    "bake:environment": "node scripts/bake-environment.mjs"
   },
   "devDependencies": {
+    "esbuild": "0.27.3",
     "gsap": "3.14.2",
-    "hyperframes": "0.8.31"
+    "hyperframes": "0.8.31",
+    "three": "0.182.0"
   }
 }

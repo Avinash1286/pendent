@@ -1,6 +1,6 @@
 {
-  "edition": "A03",
+  "edition": "A03-context-assembly",
   "valid": true,
-  "cues": 12,
-  "lastCueEnd": 36
+  "cues": 15,
+  "lastCueEnd": 44
 }

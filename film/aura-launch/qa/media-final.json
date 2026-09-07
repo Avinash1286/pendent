@@ -1,0 +1,47 @@
+{
+  "edition": "A03-context-assembly",
+  "movie": "renders/aura-launch.mp4",
+  "duration": 44,
+  "bytes": 13450756,
+  "sha256": "3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738",
+  "video": {
+    "codec_name": "h264",
+    "codec_type": "video",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "30/1",
+    "nb_frames": "1320"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "codec_type": "audio",
+    "sample_rate": "48000",
+    "channels": 2,
+    "r_frame_rate": "0/0",
+    "nb_frames": "2064"
+  },
+  "decodeExitCode": 0,
+  "audioMeanDbfs": -22.2,
+  "audioPeakDbfs": -7.9,
+  "posterSeconds": 41.8,
+  "contactSeconds": [
+    2.8,
+    8.8,
+    14.5,
+    19.5,
+    21.7,
+    24.8,
+    28.4,
+    33.8,
+    41.8
+  ],
+  "assemblySeconds": [
+    21.7,
+    22.6,
+    24.2,
+    25.6,
+    27.4,
+    28.4
+  ],
+  "finalFrame": 1319
+}

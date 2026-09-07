@@ -1,53 +1,59 @@
-# A03 final film verification
+# A03 context and assembly film — final verification
 
 Completed 8 September 2026 (Asia/Katmandu).
 
 ## Final artifact
 
 - File: `../renders/aura-launch.mp4`
-- Renderer: Hyperframes 0.8.31, high quality, one worker.
-- Duration: **36.000000 seconds**.
-- Picture: **1920×1080, 30 fps, 1,080 H.264 frames**; YUV420p, BT.709.
+- Primary line, exactly: **Capture the context of your life.**
+- Renderer: **Hyperframes 0.8.31**, high quality, one worker, hardware browser capture.
+- Duration: **44.000000 seconds**.
+- Picture: **1920×1080, 30 fps, 1,320 H.264 frames**.
 - Audio: **AAC, 48 kHz, stereo**.
-- Size: **9,568,971 bytes** (9.1 MiB).
-- SHA-256: `5ACDFFF5B26622E3BD28C9F58957FF276FCA7F10C337D3C5F22CF79F88016295`.
-- Successful render time: **2 minutes 5.3 seconds**.
+- Size: **13,450,756 bytes** (12.8 MiB).
+- SHA-256: `3933E311B8F7E5342DBD217942B4D1433572CB25C36942A5BD9960E7CBF81738`.
+- Successful render time: **2 minutes 54.5 seconds**.
 
-## Composition checks
+Machine metadata: `media-final.json`, `ffprobe-final.json`, and `render.log`.
 
-`hyperframes check --samples 15 --snapshots --timeout 30000 --strict --json`
+## Strict composition checks
 
-Passed with **zero errors, warnings, or informational findings** across lint, runtime, layout, motion, and contrast. This final audit used the corrected A03 plates and covered 15 layout samples, 300 motion samples, and 24 contrast checks at five sampled frames; all 24 passed. Machine output: `check-final.json`.
+`hyperframes check --samples 18 --snapshots --timeout 30000 --strict --browser-gpu --json`
 
-The focused keyframe diagnostic records the hero's continuous photographic reframe in `keyframes-a03-hero.log`. Full-frame snapshots verify the visible result; the diagnostic's colored bounds are inspection overlays and are not part of the film.
+**Passed with zero errors, warnings, or informational findings** across lint, runtime, layout, motion, and contrast. The final audit covered 18 layout samples, 300 motion samples, and 14 contrast checks at five sampled frames; all 14 passed. Evidence: `check-final.json`.
 
-## Encoded media checks
+The mandatory unpinned latest-CLI probe confirmed **0.8.31** is current and no upgrade is available: `upgrade-context-check.json`. Hyperframes, GSAP, Three.js, and esbuild are pinned in the package and lockfile.
 
-FFmpeg decoded the complete MP4 through all **1,080 frames**, with exit code zero. Audio measured **−22.4 dBFS mean** and **−7.9 dBFS peak**: present and unclipped. Logs: `decode-audio.log`, `ffprobe-final.json`, and `render.log`.
+## Actual inside and assembly animation
 
-The encoded six-scene overview (`../renders/contact-sheet.jpg`), ten transition samples (`transitions-final.jpg`), and the final frame at 35.966 seconds (`final-frame.png`) were visually inspected. Images and text are present, scene handoffs remain clean, and the chain stays clear of the closing tagline. The completed brand card holds to the last frame. The poster (`../renders/poster.jpg`) comes from the final MP4 at 8.8 seconds.
+The eight-second sequence uses the actual A03 GLB, with the same part-name rules and local Y separation as the website's assembly explorer. The complete device opens into five opaque groups, holds an angled view of the board and cell, and returns to its exact assembled positions. No photographic stand-in or transparent duplicate shell is used for that motion.
 
-The English WebVTT file has **12 ordered, non-overlapping cues** ending at exactly **36 seconds**. Evidence: `captions-check.json`.
+- GLB SHA-256: `E1D14CDB47A5563D0B55B8DAD511A1A651CCCDDF62F40B9147E9E0E0A2D0D342`.
+- Staged model was verified byte-for-byte against `../../../enclosure/aura-device.glb`.
+- Assembled pose: **21.7 s**. Interior hold: **24.2 s**. Reassembled pose: **28.4 s**.
+- Source model contains 87 nodes classified into five nonempty groups.
+- Reverse and repeated seek calculations return identical transforms; assembled endpoints have exactly zero separation. Evidence: `context-validation.json`.
+- Final full-frame pose snapshots: `assembly-snapshots-final/`.
+- Six frames extracted from the completed MP4: `assembly-encoded.jpg` at 21.7, 22.6, 24.2, 25.6, 27.4, and 28.4 s.
 
-## Product image provenance
+Source and encoded beginning, intermediate, inside-hold, and ending poses were visually inspected. The board and cell remain distinct, surfaces stay opaque, and the same geometry visibly closes. The parent independently reviewed both the initial pose sheet and final encoded contact sheet. The keyframes ghost diagnostic was also run; its static analyzer does not enumerate the analytic canvas callback, so full-frame seek images and encoded frames provide the visual evidence.
 
-The film depicts the A03 capsule selected from the user's reference: glossy black full-face recording paddle, satin silver frame, fine chain, and physical side microphone disconnect. There is no A01 or A02 product imagery in the final film.
+The fixed studio environment is prefiltered once and supplied as a local half-float texture, preserving reflections while avoiding environment convolution during rendering. The initial Intel Direct3D compiler warning is retained in `check-before-environment-bake.json` and `environment-bake.json`; it is absent from the final strict check. No warnings were filtered or hidden. A slow software-renderer check was stopped; its status is recorded in `check-software-incomplete.json`.
 
-The hero plate is the approved enclosure render. Its macro and closing aliases have identical SHA-256 hashes, verified in `assets-a03.json`. The detail and profile plates were rendered from the saved, corrected Blender scene using `../scripts/render_a03_still.py`, without rebuilding or saving geometry. Camera positions exactly match the enclosure renderer.
+## Encoded media and accessibility
 
-- Blender: **5.2.1 LTS**, Cycles CPU, 32 samples, denoising.
-- Source-scene SHA-256: `cd75667b45134149fb798954fe6d87084443b61e6502ae5b53b99a274f15dec8`.
-- Detail: **2000×1600 RGBA**, rendered and visually inspected; false shading dents around the privacy slider are absent.
-- Profile: **2200×1800 RGBA**, rendered and visually inspected; chain visibility matches the enclosure profile camera setup.
-- Per-view metadata and hashes: `plate-detail.json`, `plate-profile.json`.
-- Renderer logs: `blender-detail.log`, `blender-profile.log`.
+FFmpeg decoded all **1,320 frames** with exit code zero. Audio measured **−22.2 dBFS mean** and **−7.9 dBFS peak**: present and unclipped. Evidence: `decode-audio.log`.
 
-Each still used a separate Blender process and exited successfully. The original enclosure batch had stopped after the hero; the render-only recovery preserved the approved geometry.
+The nine-frame scene overview (`../renders/contact-sheet.jpg`), six assembly frames (`assembly-encoded.jpg`), six transition samples (`transitions-final.jpg`), and exact final frame 1,319 (`final-frame.png`) were visually inspected. Text and imagery remain clear, dissolves are clean, and the final brand card holds to the last frame. The poster (`../renders/poster.jpg`) is extracted from the final MP4 at **41.8 seconds** and carries the exact primary line.
 
-## Reproducibility and scope
+The English WebVTT has **15 ordered, non-overlapping cues** ending at **44 seconds**, including descriptions of the opening layers, internal board/cell, and reassembly. Evidence: `captions-check.json`. `scripts/export-review.mjs` reproduces decoding, metadata assertions, poster, contact sheets, and final frame.
 
-Hyperframes and GSAP are pinned with a lockfile. All product images, the Manrope font, GSAP, and the original score are local. The 36-second score is reproducible with `npm run score`; no stock music, voices, or external samples are used. The source motion is one paused, deterministic GSAP timeline. The original A01 edition remains preserved in `../../archive/A01`, and the unrendered A02 draft in `../../archive/A02-draft`.
+## Provenance and scope
 
-One initial five-second FFmpeg startup probe timed out. The installed FFmpeg binary was verified directly and the same render completed successfully on retry; the earlier probe log is retained as `render-ffmpeg-probe-retry.log`.
+All five photographs retain their approved A03 hashes. Profile and detail were previously rendered from the corrected Blender scene using `../scripts/render_a03_still.py`, without geometry edits. Hero aliases have identical source pixels. Image provenance: `plate-detail.json`, `plate-profile.json`; final asset hashes: `assets-final.json`. No A01 or A02 imagery appears in this film.
 
-No hosted video rendering, credentialed media generation, external publishing, or feedback submission was used. The user's standing instruction to make all decisions authorized local final rendering. The notes surface remains explicitly illustrative, and the final card identifies the development stage and engineering validation. The film does not claim production readiness, measured battery life, certification, availability, or a shipping date.
+The original ambient score was extended to 44 seconds with an additional harmonic passage. It remains locally synthesized, without stock music, voices, or external samples. `npm run score` reproduces it.
+
+The preceding A03 movie and source remain in Git commit `1569645a292b8bd147bb208ccc96d9fe8081adc5`; this revision creates no additional media archive. All source and assets are local. No hosted rendering, external publishing, or feedback submission was performed by the film task.
+
+Manual capture, physical microphone disconnect, illustrative notes, reference internal components, and the development qualifier remain explicit. Context refers to moments a person chooses to capture. The film does not imply always-on recording, perfect memory, manufacturing validation, production readiness, measured battery life, stock, or a shipping date.

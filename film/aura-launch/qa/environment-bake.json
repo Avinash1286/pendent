@@ -1,0 +1,12 @@
+{
+  "width": 768,
+  "height": 1024,
+  "halfFloat": true,
+  "bytes": 6291456,
+  "sha256": "557F10F439BA8B6C6A78917B23E271CD4DAE2FDEE0082B4A56CE69BBA0CBFEB1",
+  "three": "0.182.0",
+  "source": "RoomEnvironment, PMREM sigma 0.03",
+  "bakeWarnings": [
+    "THREE.WebGLProgram: Program Info Log: (221,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(220,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(221,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(220,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(221,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(207,10-67): warning X4008: floating point division by zero\n(207,10-67): warning X4008: floating point division by zero\n(207,10-67): warning X4008: floating point division by zero\n\n\n\u0000"
+  ]
+}

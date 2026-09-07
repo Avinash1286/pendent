@@ -5,5 +5,8 @@
 - Manrope: https://github.com/google/fonts/tree/main/ofl/manrope — SIL Open Font License 1.1, included with the font.
 - GSAP 3.14.2: npm distribution, standard no-charge license: https://gsap.com/standard-license. The source header and package metadata retain this attribution.
 - Hyperframes 0.8.31: https://github.com/heygen-com/hyperframes — Apache 2.0. The installed `tracking-in` and `titlecard-lockup` primitives informed the specified title choreography.
+- Three.js 0.182.0: https://threejs.org — MIT. Bundled locally with GLTFLoader and RoomEnvironment; the package license is included as `assets/vendor/THREE-LICENSE.txt`.
+- Assembly model: exact A03 `enclosure/aura-device.glb` exported by this project. Internal elements include engineering reference envelopes, identified on screen. No third-party 3D model.
+- The installed Hyperframes `three-orbiting-cards` primitive informed the deterministic canvas adapter pattern. Its demo geometry and remote import are not used by the film.
 
 The launch film presents an original development concept. Apple is referenced only as the user's desired presentation quality; no Apple marks, footage, product geometry, audio, or advertising copy are used.

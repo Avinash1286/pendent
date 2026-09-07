@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-const sampleRate = 48000, duration = 36, frames = sampleRate * duration;
+const sampleRate = 48000, duration = 44, frames = sampleRate * duration;
 const left = new Float64Array(frames), right = new Float64Array(frames);
 const TAU = Math.PI * 2;
 const midi = n => 440 * 2 ** ((n - 69) / 12);
@@ -16,13 +16,13 @@ function tone(start, length, note, gain, pan=0, bell=false) {
     left[first+i]+=v*Math.sqrt((1-pan)/2); right[first+i]+=v*Math.sqrt((1+pan)/2);
   }
 }
-const chords=[[50,57,64,66],[47,54,61,66],[43,50,57,62],[45,52,59,64],[50,57,62,66]];
-const starts=[0,7,14,21,28];
+const chords=[[50,57,64,66],[47,54,61,66],[43,50,57,62],[45,52,59,64],[47,54,61,66],[50,57,62,66]];
+const starts=[0,7,14,21,28,36];
 chords.forEach((chord,j)=>chord.forEach((note,i)=>tone(starts[j],8,note,.021,(i-1.5)*.2)));
-const bells=[[.8,74],[2.4,81],[4,78],[6.8,76],[9.7,74],[11.6,78],[14,81],[17.1,79],[19.3,78],[22,76],[24.1,74],[26.4,73],[29,74],[31.1,81],[32.7,78]];
+const bells=[[.8,74],[2.4,81],[4,78],[6.8,76],[9.7,74],[11.6,78],[14,81],[17.1,79],[19.3,78],[22,76],[24.1,74],[26.4,73],[30,76],[32.1,74],[34.4,73],[37,74],[39.1,81],[40.7,78]];
 bells.forEach(([start,note],i)=>tone(start,3.2,note,.043,Math.sin(i*2.4)*.42,true));
 // Two gentle, source-original transition swells, deterministic harmonic synthesis.
-for(const start of [9.5,21.3,28.4]) tone(start,1.3,86,.009,0,false);
+for(const start of [9.5,21.3,29.3,36.4]) tone(start,1.3,86,.009,0,false);
 for(let i=0;i<frames;i++) {
   const t=i/sampleRate, fade=Math.min(1,t/1.2,(duration-t)/2.4);
   // Bounded feedback-free echo widens the bells; all audio is rendered offline.

@@ -1,0 +1,70 @@
+{
+  "edition": "A03-context-assembly",
+  "primaryLine": "Capture the context of your life.",
+  "exactPrimaryLine": true,
+  "duration": 44,
+  "captionsValid": true,
+  "cues": 15,
+  "lastCueEnd": 44,
+  "preservedProductImagesVerified": 5,
+  "glbMatchesSource": true,
+  "glbSha256": "E1D14CDB47A5563D0B55B8DAD511A1A651CCCDDF62F40B9147E9E0E0A2D0D342",
+  "groups": {
+    "shell": 1,
+    "controls": 14,
+    "board": 59,
+    "battery": 5,
+    "back": 8
+  },
+  "seekPoses": [
+    {
+      "time": 28.4,
+      "progress": 0,
+      "yaw": -0.15000000000000002,
+      "pitch": -0.07,
+      "roll": -0.055,
+      "distance": 4.25
+    },
+    {
+      "time": 22.5,
+      "progress": 0.23772144919545582,
+      "yaw": -0.4413385452914692,
+      "pitch": -0.07950885796781824,
+      "roll": -0.03479367681838626,
+      "distance": 4.570923956413865
+    },
+    {
+      "time": 24.2,
+      "progress": 1,
+      "yaw": -0.929067055393586,
+      "pitch": -0.11000000000000001,
+      "roll": 0.030000000000000006,
+      "distance": 5.6
+    },
+    {
+      "time": 21.7,
+      "progress": 0,
+      "yaw": -0.27992418719930023,
+      "pitch": -0.07,
+      "roll": -0.055,
+      "distance": 4.25
+    },
+    {
+      "time": 26.2,
+      "progress": 0.9999325679799053,
+      "yaw": -0.8502657810298966,
+      "pitch": -0.10999730271919622,
+      "roll": 0.029994268278291956,
+      "distance": 5.5999089667728725
+    },
+    {
+      "time": 24.2,
+      "progress": 1,
+      "yaw": -0.929067055393586,
+      "pitch": -0.11000000000000001,
+      "roll": 0.030000000000000006,
+      "distance": 5.6
+    }
+  ],
+  "cliVersion": "0.8.31"
+}

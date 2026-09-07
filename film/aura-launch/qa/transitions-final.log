@@ -6,8 +6,8 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'renders/aura-launch.mp4':
     hyperframes_version: 0.0.0-dev
     hyperframes_renderer: hyperframes
     encoder         : Lavf62.12.101
-  Duration: 00:00:36.00, start: 0.000000, bitrate: 2126 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 1926 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+  Duration: 00:00:44.00, start: 0.000000, bitrate: 2445 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2245 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
     Metadata:
       handler_name    : VideoHandler
       encoder         : Lavc62.28.101 libx264
@@ -25,11 +25,11 @@ Output #0, image2, to 'qa/transitions-final.jpg':
     hyperframes_version: 0.0.0-dev
     hyperframes_renderer: hyperframes
     encoder         : Lavf62.12.101
-  Stream #0:0(und): Video: mjpeg, yuv420p(pc, bt709, progressive), 1920x432 [SAR 1:1 DAR 40:9], q=2-31, 200 kb/s, 3 fps, 3 tbn (default)
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, bt709, progressive), 1920x720 [SAR 1:1 DAR 8:3], q=2-31, 200 kb/s, 5 fps, 5 tbn (default)
     Metadata:
       encoder         : Lavc62.28.101 mjpeg
       handler_name    : VideoHandler
     Side data:
       CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
-[out#0/image2 @ 000001f6c87a74c0] video:27KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
-frame=    1 fps=0.1 q=6.0 Lsize=N/A time=00:00:00.33 bitrate=N/A dup=15 drop=0 speed=0.0342x elapsed=0:00:09.74    
+[out#0/image2 @ 000001158e594500] video:53KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.3 q=2.0 Lsize=N/A time=00:00:00.20 bitrate=N/A dup=104 drop=0 speed=0.0527x elapsed=0:00:03.79    

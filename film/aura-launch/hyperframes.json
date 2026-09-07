@@ -20,6 +20,11 @@
       "name": "titlecard-lockup",
       "type": "hyperframes:component",
       "target": "compositions/components/titlecard-lockup.html"
+    },
+    {
+      "name": "three-orbiting-cards",
+      "type": "hyperframes:component",
+      "target": "compositions/components/three-orbiting-cards.html"
     }
   ]
 }

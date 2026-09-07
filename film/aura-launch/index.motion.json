@@ -1,5 +1,5 @@
 {
-  "duration": 36,
+  "duration": 44,
   "assertions": [
     { "kind": "appearsBy", "selector": "#reveal-caption", "bySec": 3.4 },
     { "kind": "before", "a": "#hero-wordmark", "b": "#touch-title" },

@@ -1,0 +1,6 @@
+{
+  "status": "stopped-before-completion",
+  "command": "hyperframes check --samples 18 --snapshots --timeout 30000 --strict --no-browser-gpu --json",
+  "reason": "The software WebGL process accumulated approximately 1800 CPU seconds without completing. Only this check's process tree was terminated. No passing result is claimed.",
+  "resolution": "The fixed studio environment was baked once and loaded as a local texture. Final hardware rendering then passed the complete strict check with zero findings; see check-final.json."
+}

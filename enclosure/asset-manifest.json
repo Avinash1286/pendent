@@ -1,0 +1,92 @@
+[
+  {
+    "path": "assembly-audit.json",
+    "bytes": 1509,
+    "sha256": "4015372d10ec61f6aeb1f9724bd7a4cbccb3ac15398814b13136a92e1eb7d427"
+  },
+  {
+    "path": "aura-device.glb",
+    "bytes": 2212668,
+    "sha256": "5eb6d58897dd5a2a7f643c1832996501222da5c405d662b4799e7826ca33dd26"
+  },
+  {
+    "path": "aura-exploded.glb",
+    "bytes": 2082272,
+    "sha256": "db339871c4707eb23c401839c27c390b8bfacac8537afc0909240c4279672c96"
+  },
+  {
+    "path": "aura-front-shell.stl",
+    "bytes": 600884,
+    "sha256": "6bd767cc82637a0ff4cdd62dac148b3f3beea9036d1528f6945e825d2e374e8d"
+  },
+  {
+    "path": "aura-mechanical-drawing.svg",
+    "bytes": 6772,
+    "sha256": "632d5bd197551321809b0e216dbe3ffc56570d6d8a623a72e3ffbc2d72433575"
+  },
+  {
+    "path": "aura-pendant.glb",
+    "bytes": 2324032,
+    "sha256": "bd4cf93af28dbf75b4829ee57e4d4f2320a714b3190d4ee89529964581c03a48"
+  },
+  {
+    "path": "aura-product.blend",
+    "bytes": 948702,
+    "sha256": "9d0fa9fcf1937238338a30303ee7bf9649bb813d5135cf9973cbf9ae9cd7de2d"
+  },
+  {
+    "path": "aura-rear-shell.stl",
+    "bytes": 480984,
+    "sha256": "09c8b3811226e1cab9266168890147482d7bb8d453609f4e7de7bc1e432ebe55"
+  },
+  {
+    "path": "aura-record-button.stl",
+    "bytes": 51084,
+    "sha256": "2987321984d560a1a0004ab952239a3d35b7f7c97bb4685ccb00cf6129011991"
+  },
+  {
+    "path": "build_aura.py",
+    "bytes": 21856,
+    "sha256": "9613eea856cac5a9e87c8fe7eaf8a326389cd2c43d3b81d3719e666330a461e7"
+  },
+  {
+    "path": "MECHANICAL.md",
+    "bytes": 12630,
+    "sha256": "eaee14251f90b4ccfe385146e1f354989c3f5fa791f63fd149a0849a0330977d"
+  },
+  {
+    "path": "mesh-audit.json",
+    "bytes": 611,
+    "sha256": "5bf50801bc23365e77f96dcf7aba7d364170e358087d02179e223dd965b4dc55"
+  },
+  {
+    "path": "verify_geometry.py",
+    "bytes": 2427,
+    "sha256": "1e89d211274fa77de3d993d99131820acc83cdfa860b334284362b6f95388eca"
+  },
+  {
+    "path": "renders/detail.png",
+    "bytes": 2652770,
+    "sha256": "f336870680208f663755dac7ced9cc5f23c47d7f063279c48d1d5f817e2b639c"
+  },
+  {
+    "path": "renders/exploded.png",
+    "bytes": 2257137,
+    "sha256": "2a2af949b0ba1e5a6a76aa82c98a809f99d0a0fcb123c3379f56af339cd95bf0"
+  },
+  {
+    "path": "renders/hero-transparent.png",
+    "bytes": 1891126,
+    "sha256": "612b1ceb236c2cc0a70252369d30e88cccaefaceb13f4dc3b70df3b21ba66255"
+  },
+  {
+    "path": "renders/hero.png",
+    "bytes": 3762763,
+    "sha256": "116e80b364b9387945b6b60a5cdc951aa1ea225db220401e2a8be68b0690e7a0"
+  },
+  {
+    "path": "renders/rear.png",
+    "bytes": 2184597,
+    "sha256": "2072789d02540c624bb13cd36ed830af6928b65afdb41e1cc2d51c50991ed63e"
+  }
+]

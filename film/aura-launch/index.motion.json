@@ -1,0 +1,9 @@
+{
+  "duration": 36,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#hook-first", "bySec": 1.1 },
+    { "kind": "before", "a": "#hook-first", "b": "#hook-second" },
+    { "kind": "staysInFrame", "selector": "#close-copy" },
+    { "kind": "staysInFrame", "selector": "#notes-panel" }
+  ]
+}

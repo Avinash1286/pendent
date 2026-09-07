@@ -1,0 +1,325 @@
+{
+  "ok": true,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 4,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 22.25,
+        "selector": "#privacy-content > p:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 120,
+          "top": 973,
+          "right": 467.64,
+          "bottom": 1006,
+          "width": 347.64,
+          "height": 33
+        },
+        "containerSelector": "#notes-content > p:nth-of-type(1)",
+        "text": "Hardware privacy, by design.",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 120,
+          "y": 973,
+          "width": 347.64,
+          "height": 33
+        },
+        "firstSeen": 22.25,
+        "lastSeen": 22.5,
+        "occurrences": 3,
+        "heldMs": 250
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 22.375,
+        "selector": "#privacy-kicker",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 120,
+          "top": 258,
+          "right": 460.41,
+          "bottom": 293,
+          "width": 340.41,
+          "height": 35
+        },
+        "containerSelector": "#notes-kicker",
+        "text": "DELIBERATELY YOURS",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 120,
+          "y": 258,
+          "width": 340.41,
+          "height": 35
+        },
+        "firstSeen": 22.375,
+        "lastSeen": 22.5,
+        "occurrences": 2,
+        "heldMs": 125
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 10.8,
+        "selector": "#capture-art",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 543.61,
+          "top": -389.72,
+          "right": 2183.05,
+          "bottom": 1249.72,
+          "width": 1639.44,
+          "height": 1639.44
+        },
+        "containerSelector": "div.photo-window",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 886,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1034,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 342.39,
+          "right": 263.05,
+          "top": 389.72,
+          "bottom": 169.72
+        },
+        "dataAttributes": {
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 543.61,
+          "y": -389.72,
+          "width": 1639.44,
+          "height": 1639.44
+        },
+        "firstSeen": 10.8,
+        "lastSeen": 10.8,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 13.2,
+        "selector": "#capture-art",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 506.45,
+          "top": -418.88,
+          "right": 2204.21,
+          "bottom": 1278.88,
+          "width": 1697.76,
+          "height": 1697.76
+        },
+        "containerSelector": "div.photo-window",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 886,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1034,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 379.55,
+          "right": 284.21,
+          "top": 418.88,
+          "bottom": 198.88
+        },
+        "dataAttributes": {
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 506.45,
+          "y": -418.88,
+          "width": 1697.76,
+          "height": 1697.76
+        },
+        "firstSeen": 13.2,
+        "lastSeen": 13.2,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 15.6,
+        "selector": "#capture-art",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 469.29,
+          "top": -448.04,
+          "right": 2225.37,
+          "bottom": 1308.04,
+          "width": 1756.08,
+          "height": 1756.08
+        },
+        "containerSelector": "div.photo-window",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 886,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1034,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 416.71,
+          "right": 305.37,
+          "top": 448.04,
+          "bottom": 228.04
+        },
+        "dataAttributes": {
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 469.29,
+          "y": -448.04,
+          "width": 1756.08,
+          "height": 1756.08
+        },
+        "firstSeen": 15.6,
+        "lastSeen": 15.6,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 29.375,
+        "selector": "#notes-content > p:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 120,
+          "top": 973,
+          "right": 651.69,
+          "bottom": 1006,
+          "width": 531.69,
+          "height": 33
+        },
+        "containerSelector": "#close-content > p:nth-of-type(1)",
+        "text": "Intended capture → sync → notes workflow",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 120,
+          "y": 973,
+          "width": 531.69,
+          "height": 33
+        },
+        "firstSeen": 29.375,
+        "lastSeen": 29.375,
+        "occurrences": 1,
+        "heldMs": 0
+      }
+    ],
+    "duration": 36,
+    "samples": [
+      1.2,
+      3.6,
+      6,
+      8.4,
+      10.8,
+      13.2,
+      15.6,
+      18,
+      20.4,
+      22.8,
+      25.2,
+      27.6,
+      30,
+      32.4,
+      34.8
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 6,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "specPath": "F:\\circuit\\film\\aura-launch\\index.motion.json",
+    "samples": 300
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.2,
+      8.4,
+      18,
+      25.2,
+      34.8
+    ],
+    "checked": 31,
+    "passed": 31
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      "snapshots\\frame-00-at-1.2s.png",
+      "snapshots\\frame-01-at-8.4s.png",
+      "snapshots\\frame-02-at-18.0s.png",
+      "snapshots\\frame-03-at-25.2s.png",
+      "snapshots\\frame-04-at-34.8s.png"
+    ],
+    "times": [
+      1.2,
+      8.4,
+      18,
+      25.2,
+      34.8
+    ],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.31",
+    "latestVersion": "0.8.31",
+    "updateAvailable": false
+  }
+}

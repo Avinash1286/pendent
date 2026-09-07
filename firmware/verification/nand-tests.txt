@@ -1,0 +1,4 @@
+PASS exact NAND JEDEC, WREN features and both manufacturer markers
+PASS NAND program command ordering, readback and overwrite refusal
+PASS ECC and hardware program-failure propagation
+PASS erase refuses bad blocks and verifies full main area

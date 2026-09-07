@@ -19,6 +19,8 @@
 **/*.tsbuildinfo
 **/audit-report.json
 hardware/sources/*.pdf
+hardware/sources/*.png
+hardware/sources/*.jpg
 **/tmp/
 .tools/
 .scratch/

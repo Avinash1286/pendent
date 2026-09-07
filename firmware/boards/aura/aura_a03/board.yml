@@ -1,0 +1,6 @@
+board:
+  name: aura_a03
+  full_name: AURA A03 Raytac MDBT50Q-1MV2
+  vendor: aura
+  socs:
+    - name: nrf52840

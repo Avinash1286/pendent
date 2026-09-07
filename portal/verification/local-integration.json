@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-09-07T20:40:37.918Z",
+  "target": "Real local Convex backend",
+  "checks": [
+    "Two real password accounts authenticate with signed Convex tokens",
+    "Real database persistence and account isolation",
+    "HTTP ingestion is idempotent and ingest credentials cannot read context",
+    "Only explicitly approved notes enter the real HTTP Context Pack",
+    "MCP initialize, tool discovery, and live context retrieval over HTTP",
+    "Revoked connections immediately lose access; synthetic notes archived and sessions signed out"
+  ],
+  "limitations": [
+    "Synthetic data only",
+    "No physical BLE device",
+    "No cloud production deployment",
+    "No third-party AI chat OAuth connection"
+  ]
+}

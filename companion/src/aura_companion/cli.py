@@ -7,6 +7,7 @@ import sys
 
 from .device import connect, discover
 from .notes import transcribe, refine_with_ollama, write_note
+from .upload import upload_note
 
 
 async def bluetooth(args):
@@ -21,6 +22,9 @@ async def bluetooth(args):
         if args.command == "status":
             print(json.dumps(await device.status(), indent=2))
         elif args.command == "sync":
+            status = await device.status()
+            if status["state"] in (1, 2):
+                raise ValueError("Stop the current recording and wait for it to save before syncing")
             await device.set_time()
             count = 0
             async for recording in device.recordings():
@@ -32,6 +36,9 @@ async def bluetooth(args):
                     if args.ollama:
                         note = await asyncio.to_thread(refine_with_ollama, note, args.ollama)
                     write_note(note, path)
+                    if args.upload:
+                        saved = await asyncio.to_thread(upload_note, path.with_suffix(".note.json"))
+                        print(f"Stored in portal: {saved['id']}")
             print(f"Synced {count} recordings. No recordings were deleted from the pendant.")
         elif args.command == "delete":
             if not args.confirm:
@@ -52,6 +59,12 @@ async def bluetooth(args):
                 raise ValueError("Saved WAV checksum mismatch; device deletion refused")
             await device.request(4, struct.pack("<III", metadata["id"], metadata["pcm_bytes"], metadata["pcm_crc32"]))
             print("Matching recording deleted from pendant; verified local WAV retained.")
+        elif args.command == "format":
+            if not args.confirm:
+                raise ValueError("Maintenance requires --confirm after exporting and deleting every device note")
+            print("Checking empty device journal. Maintenance can take up to ten minutes; keep power connected.")
+            await device.format_storage(confirmed=True)
+            print("Storage erased, verified and ready for new recordings. Local notes and Bluetooth bonds retained.")
 
 
 def main():
@@ -70,12 +83,20 @@ def main():
         command.add_argument("--model", default="base", help="faster-whisper model or local model directory")
         command.add_argument("--language", default=None, help="Optional language code; default auto-detect")
         command.add_argument("--ollama", default=None, help="Optional installed localhost Ollama model for refined notes")
+        command.add_argument("--upload", action="store_true", help="Explicitly upload the generated note to the configured portal")
     delete = sub.add_parser("delete", help="Explicitly delete one already verified device recording")
     delete.add_argument("--device", required=True)
     delete.add_argument("--metadata", type=Path, required=True)
     delete.add_argument("--confirm", action="store_true")
+    maintenance = sub.add_parser("format", help="Erase reusable storage only after every device note was exported and deleted")
+    maintenance.add_argument("--device", required=True)
+    maintenance.add_argument("--confirm", action="store_true", help="Confirm maintenance; firmware also requires a recent ten-second physical hold")
+    upload = sub.add_parser("upload", help="Explicitly upload an existing .note.json to the notes portal")
+    upload.add_argument("file", type=Path)
     args = parser.parse_args()
     try:
+        if args.command == "sync" and args.upload and not args.transcribe:
+            raise ValueError("sync --upload also requires --transcribe; raw audio is never uploaded")
         if args.command == "transcribe":
             if not args.file.is_file():
                 raise ValueError("Audio file does not exist")
@@ -84,6 +105,10 @@ def main():
                 note = refine_with_ollama(note, args.ollama)
             for path in write_note(note, args.file):
                 print(path)
+            if args.upload:
+                print(json.dumps(upload_note(args.file.with_suffix(".note.json")), indent=2))
+        elif args.command == "upload":
+            print(json.dumps(upload_note(args.file), indent=2))
         else:
             asyncio.run(bluetooth(args))
     except (Exception, KeyboardInterrupt) as error:

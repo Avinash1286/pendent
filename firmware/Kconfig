@@ -1,0 +1,12 @@
+mainmenu "AURA A03"
+source "Kconfig.zephyr"
+config AURA_CHARGE_QUALIFIED
+ bool "Enable reviewed charging hardware after pack and thermal qualification"
+ default n
+ help
+   Keep disabled until the assembled pack, NTC and cutoff circuit are qualified.
+config AURA_HAPTIC_QUALIFIED
+ bool "Enable experimentally qualified C08-00A haptic settings"
+ default n
+ help
+   Enable only after measuring motor RMS/peak voltage and auto-calibration.

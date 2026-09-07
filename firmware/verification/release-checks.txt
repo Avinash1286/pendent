@@ -1,0 +1,5 @@
+PASS release hashes and source identity
+PASS ARM Cortex-M image and ELF/HEX/BIN consistency
+PASS application ends before persistent MCU NVS
+PASS Secure Connections, physical pairing callback, LFRC and MTU configuration
+PASS distributed charging and haptic qualification gates disabled

@@ -17,25 +17,27 @@ class Device:
         self.transaction = 0
         self.lock = asyncio.Lock()
 
-    async def request(self, opcode: int, payload=b"", *, allow_end=False):
+    async def request(self, opcode: int, payload=b"", *, allow_end=False, timeout=30):
         async with self.lock:
             self.transaction = (self.transaction + 1) & 65535
             tx = self.transaction
             await self.client.write_gatt_char(COMMAND, HEADER.pack(1, opcode, tx) + payload, response=True)
-            deadline = time.monotonic() + 30
+            deadline = time.monotonic() + timeout
             while time.monotonic() < deadline:
                 reply = bytes(await self.client.read_gatt_char(RESPONSE))
                 if len(reply) < HEADER.size:
                     raise ProtocolError("Truncated response")
                 status, actual_opcode, actual_tx = HEADER.unpack_from(reply)
                 if actual_tx != tx or actual_opcode != opcode or status == 1:
-                    await asyncio.sleep(.05)
+                    await asyncio.sleep(.5 if opcode == 6 else .01)
                     continue
                 if status == 6 and allow_end:
                     return None
                 if status:
                     raise ProtocolError(ERRORS.get(status, f"Unknown status {status}"))
                 return reply[HEADER.size:]
+            if opcode == 6:
+                raise TimeoutError("Maintenance timed out. Do not resend automatically. Keep the pendant powered and reconnect to check recovery.")
             raise TimeoutError("Device command timed out; reconnect and resume sync")
 
     async def status(self):
@@ -55,6 +57,15 @@ class Device:
 
     async def set_time(self):
         await self.request(5, struct.pack("<Q", int(time.time())))
+
+    async def format_storage(self, *, confirmed=False):
+        if not confirmed:
+            raise ValueError("Maintenance requires explicit confirmation")
+        status = await self.status()
+        if status["recording_count"] != 0 or status["state"] in (1, 2):
+            raise ProtocolError("Stop recording, export, and explicitly delete every device note before maintenance")
+        # The firmware independently requires committed tombstones and a recent physical hold.
+        await self.request(6, struct.pack("<I", 0x53415245), timeout=600)
 
     async def download(self, record: Recording, output: Path):
         output.mkdir(parents=True, exist_ok=True)

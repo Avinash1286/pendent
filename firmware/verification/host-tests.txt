@@ -1,0 +1,15 @@
+PASS CRC IEEE known vector and incremental chaining
+PASS record, bookmark, commit, mount and cross-page read
+PASS EOF and explicit size/CRC matching tombstone
+PASS power loss without end preserves pages and unique next ID
+PASS torn page is skipped and prior committed PCM recovered
+PASS uncorrectable ECC cannot silently repair recording CRC
+PASS factory bad block skipped across recording and replay
+PASS full storage reserves END page and never overwrites audio
+PASS button bounce, delayed single press and no duplicate event
+PASS three second hold does not become record press on release
+PASS double press emits one bookmark gesture
+PASS dual-microphone mono mix preserves signed range without overflow
+PASS maintenance refuses live audio and no erase before durable intent
+PASS interrupted erase resumes before mount and restores recording capacity
+14 tests passed

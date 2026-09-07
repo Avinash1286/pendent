@@ -1,0 +1,33 @@
+{
+  "revision": "A03",
+  "status": "ARM-built engineering firmware; not bench validated",
+  "zephyr": "v4.2.0",
+  "zephyr_commit": "413b789deb391d3a37d06b463288a5fe765ee57e",
+  "sdk": "0.17.2",
+  "target": "aura_a03/nrf52840",
+  "charging_enabled": false,
+  "haptics_enabled": false,
+  "source_sha256": "f44413b52d016c7da7478ea33288dd66d249a48c7aa6e394ef470873895e77ce",
+  "files": {
+    "aura-a03.bin": {
+      "bytes": 219108,
+      "sha256": "cf3b32c688537ce48575260b3c993c980eae5410aef9a080df693749f4b707cf"
+    },
+    "aura-a03.elf": {
+      "bytes": 3993676,
+      "sha256": "3d52c3f219cad8a8c8bcc179b4cc4e736866a49ea54467e29ac3f7cf49ab409b"
+    },
+    "aura-a03.hex": {
+      "bytes": 616429,
+      "sha256": "94a72d7d68decde347c0619d4564a80548defff8fb68da6ce57a53e4a12192f8"
+    },
+    "aura-a03.map": {
+      "bytes": 1214117,
+      "sha256": "956d46fced1feb34baf7d464e4b6af534965a1dfbc33fe34b28f3677d9263a41"
+    },
+    "build.config": {
+      "bytes": 55180,
+      "sha256": "e093f31f9de70fe385ecf37da48d861c5d7372dafe32f45cb3fb3778b3bb6eba"
+    }
+  }
+}

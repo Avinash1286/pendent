@@ -15,6 +15,7 @@
 **/*.log
 **/*.tsbuildinfo
 **/audit-report.json
+hardware/sources/*.pdf
 **/tmp/
 .tools/
 .scratch/

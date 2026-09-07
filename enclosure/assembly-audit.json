@@ -1,0 +1,59 @@
+{
+  "units": "mm / cubic mm",
+  "method": "Manifold boolean kernel with millimetre-scaled, normal-recalculated mesh copies; nominal geometry only",
+  "topology": {
+    "Housing_Front": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 1941.51294
+    },
+    "Housing_Back": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 2238.57675
+    },
+    "Record_Button": {
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "volume_mm3": 28.70459
+    }
+  },
+  "nominal_envelope_intersections": {
+    "Housing_Front vs Housing_Back": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "PCB_Reference vs Housing_Back": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "PCB_Reference vs Housing_Front": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Battery_Envelope vs Housing_Back": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Battery_Envelope vs PCB_Reference": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "RF_Module_Envelope vs Housing_Front": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Record_Button vs Housing_Front": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Haptic_Reference vs Housing_Front": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    },
+    "Haptic_Reference vs PCB_Reference": {
+      "intersection_mm3": 0.0,
+      "faces": 0
+    }
+  }
+}

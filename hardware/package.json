@@ -1,0 +1,26 @@
+{
+  "name": "aura-pendant-hardware",
+  "version": "0.1.0",
+  "description": "AURA EVT-A necklace note-taker PCB engineering prototype",
+  "main": "index.js",
+  "scripts": {
+    "build": "bun scripts/build.tsx",
+    "route": "bun scripts/build.tsx --route",
+    "export": "node scripts/export.mjs",
+    "verify": "node scripts/verify.mjs && bun test firmware/capture-controller.test.ts",
+    "prepare-library": "node scripts/prepare-library.mjs",
+    "place": "node scripts/place.mjs",
+    "dev": "tsci dev src/AuraPendant.tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "bun": "^1.4.2",
+    "tscircuit": "^0.0.2465",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}

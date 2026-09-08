@@ -1,0 +1,129 @@
+(footprint "Nidec_CUS22TB_Candidate"
+  (version 20241229)
+  (generator "kicad-mcp")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (descr "UNASSIGNED A04 candidate. Nidec CUS-22TB catalog p3 manufacturer land dimensions; component-side inferred view, X right Y down. MP1-MP4 are authored ground-tab identifiers, continuity and symbol/net mapping unqualified. NPTH finished diameter 0.90 +0.05/-0.00 must be specified at fabrication. See docs/a04/cus22-candidate-review.md before assignment.")
+  (tags "Nidec CUS-22TB DPDT privacy candidate unqualified")
+
+  (property "Reference" "REF**" (at 0 -4.6 0)
+    (layer "F.SilkS")
+    (uuid "2cd27ae7-c1b6-43d7-91a1-dc16320dc5ce")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "Nidec_CUS22TB_Candidate" (at 0 4.6 0)
+    (layer "F.Fab")
+    (uuid "58b5b340-ee5d-440a-86da-7b946e167467")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" "" (at 0 0 0)
+    (layer "F.Fab")
+    (uuid "8f58cd4f-4893-48f9-819b-53b92e5e2dea")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_rect
+    (start -4.45 -3.6)
+    (end 4.45 3.6)
+    (stroke (width 0.05) (type default))
+    (fill none)
+    (layer "F.CrtYd")
+    (uuid "0c69fa76-d60e-4e88-83d7-9b0452740b8d")
+  )
+
+  (fp_rect
+    (start -3.35 -2.05)
+    (end 3.35 2.05)
+    (stroke (width 0.1) (type default))
+    (fill none)
+    (layer "F.Fab")
+    (uuid "f38a0914-bd76-4572-8276-319c682f8331")
+  )
+
+  (pad "1" smd rect
+    (at -2.25 -2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "4a29ad4a-f4a3-49a9-8b7c-32c118c5f0ce")
+  )
+
+  (pad "2" smd rect
+    (at 0.75 -2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "adde6563-ff8f-4f5e-8c51-ccac705e0f36")
+  )
+
+  (pad "3" smd rect
+    (at 2.25 -2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "90587233-fe3b-4fb3-91f7-e4ffa1d306d1")
+  )
+
+  (pad "4" smd rect
+    (at -2.25 2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "e6612206-b2dd-4690-a6c7-9d19638d44a5")
+  )
+
+  (pad "5" smd rect
+    (at 0.75 2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "23005272-a309-40fb-a24f-651793655f96")
+  )
+
+  (pad "6" smd rect
+    (at 2.25 2.55)
+    (size 0.7 1.5)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "856a7f7a-c5cf-4a99-b84e-0cc911185c0e")
+  )
+
+  (pad "MP1" smd rect
+    (at -3.65 -1.8)
+    (size 1 0.8)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "bce78823-7094-41bf-ad47-d8c153e42037")
+  )
+
+  (pad "MP2" smd rect
+    (at 3.65 -1.8)
+    (size 1 0.8)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "e3301770-161b-41c6-aa62-7428d0ee0241")
+  )
+
+  (pad "MP3" smd rect
+    (at -3.65 1.8)
+    (size 1 0.8)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "c4257193-f1ab-4abe-b2cd-29404d974092")
+  )
+
+  (pad "MP4" smd rect
+    (at 3.65 1.8)
+    (size 1 0.8)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+    (uuid "eb255865-d2a0-4e10-9073-ec7def079904")
+  )
+
+  (pad "" np_thru_hole circle
+    (at -1.5 0)
+    (size 0.9 0.9)
+    (drill 0.9)
+    (layers "*.Cu" "*.Mask")
+    (uuid "0c8f73fb-b890-4763-adc2-ce73a5afa743")
+  )
+
+  (pad "" np_thru_hole circle
+    (at 1.5 0)
+    (size 0.9 0.9)
+    (drill 0.9)
+    (layers "*.Cu" "*.Mask")
+    (uuid "becc5843-94ba-4bdc-827e-60b785ebcc95")
+  )
+
+)

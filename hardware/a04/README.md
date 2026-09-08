@@ -14,6 +14,8 @@ The [full A04 objective](../../docs/a04/requirements.md) includes the circular p
 - `review/schematic/` contains an MCP export of a work-in-progress schematic, not an approved drawing.
 - [The seven-page candidate PDF](review/a04-schematic-candidate.pdf) is the current complete-sheet export; `review/a04-candidate-2.net` is the current MCP XML netlist. Earlier small SVG exports are retained as development snapshots.
 
+The separately authored [CUS-22TB candidate footprint](AuraA04.pretty/Nidec_CUS22TB_Candidate.kicad_mod) is **unassigned**. Its ten numbered lands and two locating holes were created through MCP and inspected with KiCad's native parser. [The review and M1 errata](../../docs/a04/cus22-candidate-review.md) document the proposed underside orientation, actuator offset, ground-tab uncertainty and an old mounting-notch collision. Native SW1 remains JS202011JCQN; candidate creation does not establish substitution, placement or fabrication readiness.
+
 ## Checks and unresolved tooling
 
 KiCad declined `set_design_rules` twice with `cancelled: true`, `action: decline` and no reason. The second request only tightened clearance and courtyard checking. Neither request was executed; no alias, file patch or approval-setting change was used to bypass the decline. Routing is not authorized by a presumed rule set. The available MCP metadata exposes no board-thickness or dielectric-stackup setter.

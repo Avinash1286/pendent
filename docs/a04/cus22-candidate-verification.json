@@ -1,0 +1,306 @@
+{
+  "status": "unassigned candidate; not fabrication or placement approval",
+  "source": "https://www.nidec-components.com/e/catalog/switch/cus.pdf",
+  "sourceView": "component-side interpretation inferred from drawing geometry",
+  "authoredThrough": "mcp__kicad__create_footprint",
+  "parser": "KiCad 10.0.4",
+  "hashes": {
+    "hardware\\a04\\AuraA04.pretty\\Nidec_CUS22TB_Candidate.kicad_mod": "1f520dd04824c2c87f2f30832416852b3f320ccc36a985277333360f2a8175a4",
+    "hardware\\a04\\aura-a04.kicad_pcb": "62a1492e8e55bd9f732c8d3df92cbfb227e73a31c822b8ee552886ca1debbaa5"
+  },
+  "auditScriptSha256": "edf40f1435204431e9f60569d402122961931d39ac1072d5894f0e51d82dcca1",
+  "landPatternCheckPass": true,
+  "errors": [],
+  "landPatternCheckScope": "numbered pads, NPTHs and fab/courtyard rectangles only; excludes adoption gates below",
+  "footprintAttributeBits": 0,
+  "classifiedAsSmd": false,
+  "silkscreenGraphicsCount": 0,
+  "cadSourcesUnchangedByAudit": true,
+  "nativeBoardFootprints": 0,
+  "nativeBoardThicknessMm": 1.6,
+  "nativePlacementVerified": false,
+  "schematicAssignmentCheckedByThisAudit": false,
+  "groundTabContinuityQualified": false,
+  "fabricationReady": false,
+  "padCount": 12,
+  "locatorsMm": [
+    [
+      -1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.0
+    ]
+  ],
+  "proposedUndersideTransform": "CAD X=13.5+sourceY; CAD Y=-sourceX; native X=100+CAD X; native Y=100-CAD Y",
+  "proposedPadGeometry": [
+    {
+      "pad": "1",
+      "sourceCentreMm": [
+        -2.25,
+        -2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        10.95,
+        2.25
+      ],
+      "proposedNativeCentreMm": [
+        110.95,
+        97.75
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 5.614592,
+      "oldM1UpperRightNotchMarginMm": 3.134658
+    },
+    {
+      "pad": "2",
+      "sourceCentreMm": [
+        0.75,
+        -2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        10.95,
+        -0.75
+      ],
+      "proposedNativeCentreMm": [
+        110.95,
+        100.75
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 5.848404,
+      "oldM1UpperRightNotchMarginMm": 5.355355
+    },
+    {
+      "pad": "3",
+      "sourceCentreMm": [
+        2.25,
+        -2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        10.95,
+        -2.25
+      ],
+      "proposedNativeCentreMm": [
+        110.95,
+        102.25
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 5.614592,
+      "oldM1UpperRightNotchMarginMm": 6.624709
+    },
+    {
+      "pad": "4",
+      "sourceCentreMm": [
+        -2.25,
+        2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        16.05,
+        2.25
+      ],
+      "proposedNativeCentreMm": [
+        116.05,
+        97.75
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 0.6,
+      "oldM1UpperRightNotchMarginMm": 0.85
+    },
+    {
+      "pad": "5",
+      "sourceCentreMm": [
+        0.75,
+        2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        16.05,
+        -0.75
+      ],
+      "proposedNativeCentreMm": [
+        116.05,
+        100.75
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 0.764027,
+      "oldM1UpperRightNotchMarginMm": 3.85
+    },
+    {
+      "pad": "6",
+      "sourceCentreMm": [
+        2.25,
+        2.55
+      ],
+      "sourceSizeMm": [
+        0.7,
+        1.5
+      ],
+      "proposedCadCentreMm": [
+        16.05,
+        -2.25
+      ],
+      "proposedNativeCentreMm": [
+        116.05,
+        102.25
+      ],
+      "proposedNativeSizeMm": [
+        1.5,
+        0.7
+      ],
+      "unnotchedCircleCopperMarginMm": 0.6,
+      "oldM1UpperRightNotchMarginMm": 5.35
+    },
+    {
+      "pad": "MP1",
+      "sourceCentreMm": [
+        -3.65,
+        -1.8
+      ],
+      "sourceSizeMm": [
+        1.0,
+        0.8
+      ],
+      "proposedCadCentreMm": [
+        11.7,
+        3.65
+      ],
+      "proposedNativeCentreMm": [
+        111.7,
+        96.35
+      ],
+      "proposedNativeSizeMm": [
+        0.8,
+        1.0
+      ],
+      "unnotchedCircleCopperMarginMm": 4.808108,
+      "oldM1UpperRightNotchMarginMm": 1.938236
+    },
+    {
+      "pad": "MP2",
+      "sourceCentreMm": [
+        3.65,
+        -1.8
+      ],
+      "sourceSizeMm": [
+        1.0,
+        0.8
+      ],
+      "proposedCadCentreMm": [
+        11.7,
+        -3.65
+      ],
+      "proposedNativeCentreMm": [
+        111.7,
+        103.65
+      ],
+      "proposedNativeSizeMm": [
+        0.8,
+        1.0
+      ],
+      "unnotchedCircleCopperMarginMm": 4.808108,
+      "oldM1UpperRightNotchMarginMm": 7.555777
+    },
+    {
+      "pad": "MP3",
+      "sourceCentreMm": [
+        -3.65,
+        1.8
+      ],
+      "sourceSizeMm": [
+        1.0,
+        0.8
+      ],
+      "proposedCadCentreMm": [
+        15.3,
+        3.65
+      ],
+      "proposedNativeCentreMm": [
+        115.3,
+        96.35
+      ],
+      "proposedNativeSizeMm": [
+        0.8,
+        1.0
+      ],
+      "unnotchedCircleCopperMarginMm": 1.360773,
+      "oldM1UpperRightNotchMarginMm": -0.567562
+    },
+    {
+      "pad": "MP4",
+      "sourceCentreMm": [
+        3.65,
+        1.8
+      ],
+      "sourceSizeMm": [
+        1.0,
+        0.8
+      ],
+      "proposedCadCentreMm": [
+        15.3,
+        -3.65
+      ],
+      "proposedNativeCentreMm": [
+        115.3,
+        103.65
+      ],
+      "proposedNativeSizeMm": [
+        0.8,
+        1.0
+      ],
+      "unnotchedCircleCopperMarginMm": 1.360773,
+      "oldM1UpperRightNotchMarginMm": 6.633104
+    }
+  ],
+  "minimumUnnotchedCopperMarginMm": 0.6,
+  "minimumOldM1NotchMarginMm": -0.567562,
+  "proposedCourtyardCircleMarginMm": -0.069536,
+  "nominalActuatorCadXMm": 14.85,
+  "derivedActuatorTransverseEnvelopeMm": [
+    14.1,
+    15.6
+  ],
+  "actuatorEnvelopeExcludes": "locator, part-placement and assembly play",
+  "exclusions": [
+    "Footprint-level SMD classification, pin1/actuator orientation marking and assembly-export inclusion",
+    "Stencil/reflow suitability, actual terminal and solder envelopes, actuation forces and safe overtravel",
+    "Actual native bottom flip and placement; the table is an algebraic prediction",
+    "Final M2 outline, all populated parts, tolerance stack and reflow qualification",
+    "MP1-MP4 symbol/net mapping and supplier tab-continuity confirmation",
+    "NPTH finished-hole tolerance and supplier process approval"
+  ]
+}

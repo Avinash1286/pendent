@@ -4,7 +4,33 @@
 
 [Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Download the release](https://github.com/Avinash1286/pendent/releases/tag/a03-context-dev) · [Run the notes portal](portal/README.md)
 
+[![AURA pendant with a glossy black recording face, satin surround and necklace chain](enclosure/renders/hero.png)](https://pendent-eight.vercel.app)
+
 An open product-development project for a compact necklace AI note-taking device. Electronics, printable industrial design, chip firmware, local transcription, a Next.js / Convex notes portal, an interactive Three.js showcase and a Hyperframes launch film live together here.
+
+## Launch film
+
+[![Play the AURA launch film — Capture the context of your life](film/aura-launch/renders/poster.jpg)](https://pendent-eight.vercel.app/film/aura-launch.mp4)
+
+**[▶ Watch the 44-second film](https://pendent-eight.vercel.app/film/aura-launch.mp4)** · [Download the 1080p MP4](https://github.com/Avinash1286/pendent/releases/download/a03-context-dev/aura-launch.mp4) · [Hyperframes source](film/aura-launch/README.md)
+
+See the pendant from the outside in, including its interior and assembly animation. Click the poster to play.
+
+## 3D-printable parts
+
+[![The eight printable AURA parts: front shell, rear shell, recording face, privacy slider, top retainer, contact carrier, fit coupon and dock alignment jig](docs/assets/printable-parts.png)](enclosure/PRINTING.md)
+
+Rendered from the actual STL files; individual views are not to scale. The kit includes six device parts and two fit/alignment tools. STL units are millimetres; print orientation and material guidance are in the assembly guide.
+
+[Download all eight STL files](enclosure/aura-a03-print-kit.zip) · [Print and assembly guide](enclosure/PRINTING.md) · [Editable Blender scene](enclosure/aura-product.blend)
+
+## PCB
+
+[![AURA A03 PCB front and mirrored back copper layouts, exported from the released KiCad board](docs/assets/pcb-layout.png)](hardware/native/README.md)
+
+The **24 × 42 × 0.8 mm, four-layer board**, shown directly from its native KiCad copper layers with illustrative colours. These are prototype files; the 78 courtyard findings still require assembly review.
+
+[Editable KiCad project](hardware/native/aura-a03.kicad_pro) · [Prototype fabrication ZIP](hardware/output/aura-a03-prototype-fabrication.zip) · [Schematic and review files](hardware/native/review/)
 
 ## Project status
 

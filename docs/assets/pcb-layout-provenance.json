@@ -1,0 +1,8 @@
+{
+  "input": "hardware/native/aura-a03.kicad_pcb",
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "boardUnchanged": true,
+  "method": "Native front/back copper and Edge.Cuts SVG plots; back mirrored; illustrative colours and substrate fill.",
+  "output": "docs/assets/pcb-layout.png",
+  "sha256": "feff11ccf87d2d7e41b90e9c5596b85d0c8a5595c2e088f431ad88dd997e9184"
+}

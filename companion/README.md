@@ -16,7 +16,11 @@ uv run aura sync --device DEVICE_ADDRESS --output recordings --transcribe
 
 Hold the idle pendant's recording face for three seconds to open its pairing window. The operating system may ask to pair. Replace DEVICE_ADDRESS with the value returned by scan; on macOS this may be an OS-assigned UUID. A03 firmware implements the [shared protocol](../docs/ble-protocol.md). Real Bluetooth/board operation requires the hardware bring-up checks; tests here use a simulated GATT peer.
 
-`sync` saves `.wav` and verified metadata `.json`. Stop recording and wait for saving to finish before syncing; A03 rejects audio reads during an active capture. It keeps partial PCM for resuming interrupted transfers and never deletes device recordings. Rerunning sync may download the same saved recording again; filenames include the device ID and audio CRC. It rejects corrupted packets and never publishes a WAV when the complete checksum fails. CRC detects accidental corruption; it is not a cryptographic authenticity guarantee.
+`sync` saves `.wav` and verified metadata `.json`. Stop recording and wait for saving to finish before syncing; A03 rejects audio reads during an active capture. It keeps partial PCM for resuming interrupted transfers and never deletes device recordings. Rerunning sync checks an existing WAV's complete PCM checksum, length, format and matching recording metadata, then reuses it without transferring its audio again. A missing WAV is downloaded even if a receipt exists. Corrupt or conflicting files are preserved and rejected; inspect them or choose a separate output directory before retrying.
+
+Filenames contain the **recording ID** and audio CRC, not a unique hardware identity. Use a separate output directory for each pendant and one sync process per directory. AURA v1 does not provide an authenticated device identifier. CRC detects accidental corruption; it is not a cryptographic authenticity guarantee.
+
+If a previous run stopped after writing the WAV but before publishing its receipt, sync verifies the WAV against the device's current recording metadata and repairs the missing receipt. Files are flushed before atomic publication. The device copy remains available until you explicitly delete it; file-level replacement does not guarantee an atomic transaction across all files or survival of every filesystem/power fault.
 
 ## Local transcription and notes
 
@@ -28,6 +32,12 @@ uv run aura transcribe recordings/your-recording.wav --model tiny.en --language 
 The default multilingual `base` Whisper model runs on the CPU with8-bit inference. The first transcription downloads model files from the upstream model host; after the cache is populated, audio processing is local. No audio is uploaded by these commands. `--model` can point to a local CTranslate2 Whisper model directory for an offline installation. Adding the explicit `--upload` flag uploads the resulting text note, as described below; the original audio stays local.
 
 Each transcription creates `.note.json` and Markdown with timestamps. The default summary is an explicitly labeled extractive baseline that selects original sentences; it does not pretend to be an LLM. Suggested actions match explicit phrases in the speaker's words and remain drafts.
+
+During `sync --transcribe`, the companion first transfers the recordings, closes the Bluetooth session, then processes verified WAVs locally. Slow transcription or an upload failure cannot keep the radio session open or prevent already downloaded later notes from being processed. Failures still produce a nonzero result with recovery guidance. Rerunning `sync --transcribe` reuses verified audio but currently processes the notes again; it is not an automatic work-queue service. To retry just an upload, run `aura upload PATH.note.json`.
+
+A `.sync.json` receipt records the last processing stage and its started/completed/failed status with a bounded error code. It contains no transcript, credential or raw exception. “Completed” refers to the named stage, not necessarily the whole pipeline; a run interrupted after transcription may still need note generation. The receipt does not schedule uploads or retries.
+
+Each note file is written through a flushed temporary file and atomic replacement. The `.note.json` file is authoritative, while Markdown is a regenerable presentation of it; the pair is not a multi-file filesystem transaction.
 
 For a more flexible local summary, install [Ollama](https://ollama.com/) and a suitable model separately, then pass its installed name:
 
@@ -87,6 +97,6 @@ uv run python -m unittest discover -s tests -v
 uv run aura transcribe tests/assets/sample.wav --model tiny.en --language en
 ```
 
-Twelve tests cover corrupt packets, metadata validation, interrupted-transfer resume, WAV formatting, complete CRC verification, no automatic device deletion, extractive-note provenance, explicit maintenance confirmation/magic/timeout, stable upload identity, URL validation and an actual loopback HTTP upload with redirect refusal. The synthetic speech fixture was generated locally through Windows speech synthesis solely for the transcription smoke test. These checks do not establish acoustic quality, the physical BLE link or a deployed production Convex backend.
+Tests cover corrupt packets, metadata validation, interrupted-transfer resume, verified download reuse, incomplete-publication recovery, WAV formatting, complete CRC verification, atomic-file failure handling, no automatic device deletion, processing after disconnect, extractive-note provenance, explicit maintenance confirmation/magic/timeout, stable upload identity, URL validation and an actual loopback HTTP upload with redirect refusal. See [verification results](VERIFICATION.md) for the latest executed count. The synthetic speech fixture was generated locally through Windows speech synthesis solely for the transcription smoke test. These checks do not establish acoustic quality, the physical BLE link or a deployed production Convex backend.
 
 Upstream: [Bleak](https://bleak.readthedocs.io/en/latest/) and [faster-whisper](https://github.com/SYSTRAN/faster-whisper). Installed versions are pinned by `uv.lock`.

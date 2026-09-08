@@ -1,0 +1,190 @@
+{
+  "reviewDate": "2026-09-09",
+  "repository": "https://github.com/BasedHardware/omi",
+  "commit": "f42089f53c8010dd971b3702ece05a231c9c0c66",
+  "commitDate": "2026-09-08T18:27:51Z",
+  "auraBaseline": "03b8d748607dce20222dfb8217982880d191f380",
+  "scope": "Pinned source files explicitly cited in the three review documents. Static inspection; not an exhaustive audit or upstream runtime test. Git blob IDs identify original bytes independent of checkout line endings.",
+  "sourceFiles": [
+    {
+      "path": ".impeccable.md",
+      "gitBlobSha1": "1d4295cdcc65d95bf5d912e4e540d2c13cc75721",
+      "bytes": 1053
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha1": "beb9b3553922522ad2466040709a4a76c05d81ca",
+      "bytes": 1084
+    },
+    {
+      "path": "PRODUCT.md",
+      "gitBlobSha1": "b3c1e59c45196dae85eec3278019eb63341250ca",
+      "bytes": 3514
+    },
+    {
+      "path": "app/lib/backend/schema/memory.dart",
+      "gitBlobSha1": "cd970e917a2b8976b1602773b71163fffbd7bfdf",
+      "bytes": 8981
+    },
+    {
+      "path": "app/lib/models/sync_state.dart",
+      "gitBlobSha1": "975c8e2fa095ad7ebc9d8b19654cba9f00bc05cd",
+      "bytes": 4134
+    },
+    {
+      "path": "app/lib/pages/conversations/widgets/capture_gap_list_item.dart",
+      "gitBlobSha1": "ab585e53a913f13027b6cad23dcb49c7ac5295f0",
+      "bytes": 3055
+    },
+    {
+      "path": "app/lib/providers/device_provider.dart",
+      "gitBlobSha1": "aa06371bfca1a473424a99caebf1ec236640fca4",
+      "bytes": 41302
+    },
+    {
+      "path": "app/lib/providers/local_recordings_provider.dart",
+      "gitBlobSha1": "3474e0b1550252177a75404c55155d39fe05dbac",
+      "bytes": 23200
+    },
+    {
+      "path": "app/lib/services/capture/local_segment_store.dart",
+      "gitBlobSha1": "bc4b7a52ef432e142c042ac6a91c0c392ad910cf",
+      "bytes": 4772
+    },
+    {
+      "path": "app/lib/services/devices.dart",
+      "gitBlobSha1": "8e9c1a0ce45f3e61790a0254b6fe6111ca8f2a37",
+      "bytes": 10336
+    },
+    {
+      "path": "app/lib/services/devices/bluetooth_readiness.dart",
+      "gitBlobSha1": "99e8f832b9dac3ffc3ab667f8ae75436793b4256",
+      "bytes": 6872
+    },
+    {
+      "path": "app/lib/services/wals/recording_transfer_coordinator.dart",
+      "gitBlobSha1": "4612da80e8db301e2bcf9b5e4ab3b4eef0c7e576",
+      "bytes": 10371
+    },
+    {
+      "path": "app/lib/services/wals/sync_reconciler.dart",
+      "gitBlobSha1": "b38ab8576134e3106fe474203b84d57b60fdd706",
+      "bytes": 4353
+    },
+    {
+      "path": "backend/models/memory_search_gateway.py",
+      "gitBlobSha1": "d34e62e08d9fda3d7347a490a7f117fa2d366f09",
+      "bytes": 12846
+    },
+    {
+      "path": "docs/doc/assembly/Build_the_device.mdx",
+      "gitBlobSha1": "ce8ee4ec25644d4d77a98ed59bd2c9aa9a1262cf",
+      "bytes": 4662
+    },
+    {
+      "path": "docs/doc/assembly/Buying_Guide.mdx",
+      "gitBlobSha1": "7ad4d757fdcb6c0cad37f04d6a2cc49ea4a6684c",
+      "bytes": 3759
+    },
+    {
+      "path": "docs/doc/developer/firmware/Compile_firmware.mdx",
+      "gitBlobSha1": "0135255a205f8750cfcaf98df2d6af8a2b1b65a4",
+      "bytes": 2672
+    },
+    {
+      "path": "docs/doc/hardware/DevKit2.mdx",
+      "gitBlobSha1": "7002683e5e2cdba860a82f9f6585ad58dfd54465",
+      "bytes": 3423
+    },
+    {
+      "path": "docs/doc/hardware/consumer/electronics.mdx",
+      "gitBlobSha1": "457426324124cef4dd5046248b5ab7504d309150",
+      "bytes": 7114
+    },
+    {
+      "path": "mcp/src/mcp_server_omi/server.py",
+      "gitBlobSha1": "2afa4121f0984ae303edd00c2703f70d1ca9315d",
+      "bytes": 15478
+    },
+    {
+      "path": "omi/firmware/devkit/src/codec.c",
+      "gitBlobSha1": "aa3c07fefaebd5e14e8abc3a11f36d15e6734d9b",
+      "bytes": 3938
+    },
+    {
+      "path": "omi/firmware/devkit/src/config.h",
+      "gitBlobSha1": "dddfc7683b6a64c912c6b3b03d7297691472de93",
+      "bytes": 1267
+    },
+    {
+      "path": "omi/firmware/omi/README.md",
+      "gitBlobSha1": "f5ec31e1cba2de471b7baefde307f33a00af903f",
+      "bytes": 2891
+    },
+    {
+      "path": "omi/firmware/omi/src/lib/core/config.h",
+      "gitBlobSha1": "612743a7b5f6ef92039f740fdf1182c108f7949c",
+      "bytes": 1235
+    },
+    {
+      "path": "omi/firmware/omi/src/lib/core/storage.c",
+      "gitBlobSha1": "226274734158f7e8b4460953d1eb72ad5f2b19c3",
+      "bytes": 26391
+    },
+    {
+      "path": "omi/firmware/omi/src/lib/core/transport.c",
+      "gitBlobSha1": "3196ce065ec5ac7495a5bd8673877fb13a85f0d5",
+      "bytes": 51628
+    },
+    {
+      "path": "omi/firmware/omi/src/sd_card.c",
+      "gitBlobSha1": "70d437052093ce67b77ed6529e634c2711f9cc51",
+      "bytes": 48011
+    },
+    {
+      "path": "omi/hardware/consumer/README.md",
+      "gitBlobSha1": "1aee6e251ae206a15bd6ae57f4fbee25b2b57c33",
+      "bytes": 9724
+    },
+    {
+      "path": "omi/hardware/consumer/bom/omi-bom.csv",
+      "gitBlobSha1": "2f34fe3430cee7c35f836f2148146c4ae5b6f680",
+      "bytes": 6724
+    },
+    {
+      "path": "omi/hardware/triangle v2 w memory/README.md",
+      "gitBlobSha1": "fff2335f05e259e1c7d23ffd53c402e328ec2d46",
+      "bytes": 14839
+    },
+    {
+      "path": "product/invariants/README.md",
+      "gitBlobSha1": "3cd6e572def7e2510ee4d3e1cea851d8648de18b",
+      "bytes": 6155
+    },
+    {
+      "path": "product/invariants/data-plane-continuity.md",
+      "gitBlobSha1": "64e200c0a3e60b31566366809275a6fc445ee525",
+      "bytes": 6309
+    },
+    {
+      "path": "product/invariants/memory-promotion-authority.md",
+      "gitBlobSha1": "3375b69f2b755f01a169823b40d6fcad2a9bc61a",
+      "bytes": 6706
+    },
+    {
+      "path": "product/invariants/task-capture-suggestion-only.md",
+      "gitBlobSha1": "cb47cd25ae58cf0aade023289e16cee127740c21",
+      "bytes": 5132
+    },
+    {
+      "path": "sdks/python/omi/decoder.py",
+      "gitBlobSha1": "b0f824fd3a3639831e3d133f8bd074f022d612bd",
+      "bytes": 1115
+    },
+    {
+      "path": "sdks/python/pyproject.toml",
+      "gitBlobSha1": "f45670138096058b3334b1f337b853a96c3a0ed0",
+      "bytes": 2804
+    }
+  ]
+}

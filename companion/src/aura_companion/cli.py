@@ -6,8 +6,100 @@ import struct
 import sys
 
 from .device import connect, discover
+from .files import atomic_write_text
 from .notes import transcribe, refine_with_ollama, write_note
 from .upload import upload_note
+
+
+def _sync_receipt(path: Path, stage: str, status: str):
+    """A recovery hint only: no source text, credentials, or automatic retry policy."""
+    receipt = {"version": 1, "wav": path.name, "stage": stage,
+               "status": status, "success": status == "completed"}
+    if status == "failed":
+        receipt["error_code"] = "upload_not_confirmed" if stage == "upload" else "stage_failed"
+    atomic_write_text(path.with_suffix(".sync.json"), json.dumps(receipt, indent=2))
+
+
+async def _process_saved_recording(path: Path, args):
+    stage = "transcription"
+    try:
+        _sync_receipt(path, stage, "started")
+        note = await asyncio.to_thread(transcribe, path, args.model, args.language)
+        _sync_receipt(path, stage, "completed")
+        if args.ollama:
+            stage = "refinement"
+            _sync_receipt(path, stage, "started")
+            note = await asyncio.to_thread(refine_with_ollama, note, args.ollama)
+            _sync_receipt(path, stage, "completed")
+        stage = "notes"
+        _sync_receipt(path, stage, "started")
+        for saved_path in await asyncio.to_thread(write_note, note, path):
+            print(f"Saved note: {saved_path}")
+        _sync_receipt(path, stage, "completed")
+        if args.upload:
+            stage = "upload"
+            _sync_receipt(path, stage, "started")
+            await asyncio.to_thread(upload_note, path.with_suffix(".note.json"))
+            _sync_receipt(path, stage, "completed")
+            print(f"Portal confirmed storage: {path.with_suffix('.note.json')}")
+    except Exception:
+        # External model/server failures may echo private source text or tokens.
+        # Keep both the receipt and aggregate CLI error limited to known stages.
+        receipt_warning = ""
+        try:
+            _sync_receipt(path, stage, "failed")
+        except Exception:
+            receipt_warning = " The status receipt could not be saved; check local storage."
+        outcome = "was not confirmed" if stage == "upload" else "did not complete"
+        return f"{path}: {stage} {outcome}; local files retained.{receipt_warning}"
+    return None
+
+
+async def _sync(args):
+    if args.upload and not args.transcribe:
+        raise ValueError("sync --upload also requires --transcribe; raw audio is never uploaded")
+    paths = []
+    failures = []
+    session_closed = False
+    try:
+        async with connect(args.device) as device:
+            try:
+                status = await device.status()
+                if status["state"] in (1, 2):
+                    failures.append("Stop the current recording and wait for it to save before syncing.")
+                else:
+                    await device.set_time()
+                    async for recording in device.recordings():
+                        try:
+                            path = await device.download(recording, args.output)
+                        except Exception:
+                            failures.append(f"Recording {recording.id:08x}: download not verified; partial files retained in {args.output}.")
+                            continue
+                        paths.append(path)
+                        print(f"Verified and saved: {path}")
+            except Exception:
+                failures.append("Bluetooth transfer did not complete; reconnect and resume sync. Partial files are retained.")
+        session_closed = True
+    except Exception:
+        failures.append("Bluetooth session could not be opened or closed cleanly; local processing was not started.")
+
+    # Do not retain the BLE session through model loading, inference or HTTP.
+    # If disconnect itself failed, preserve the files and require an explicit retry.
+    if session_closed and args.transcribe:
+        for path in paths:
+            failure = await _process_saved_recording(path, args)
+            if failure:
+                failures.append(failure)
+    print(f"Synced {len(paths)} recordings. No recordings were deleted from the pendant.")
+    if failures:
+        retained = "\n".join(f"  {path}" for path in paths) or "  No WAVs verified during this run."
+        raise RuntimeError(
+            f"Sync finished with {len(failures)} failure(s):\n"
+            + "\n".join(f"- {failure}" for failure in failures)
+            + f"\nVerified WAVs retained:\n{retained}\n"
+            + "Retry transfer with sync, local processing with 'aura transcribe <WAV>', "
+            + "or upload with 'aura upload <note.json>'. No retries were scheduled."
+        )
 
 
 async def bluetooth(args):
@@ -18,28 +110,11 @@ async def bluetooth(args):
         if not devices:
             print("No AURA found. Hold the idle pendant face for three seconds to open pairing.")
         return
+    if args.command == "sync":
+        return await _sync(args)
     async with connect(args.device) as device:
         if args.command == "status":
             print(json.dumps(await device.status(), indent=2))
-        elif args.command == "sync":
-            status = await device.status()
-            if status["state"] in (1, 2):
-                raise ValueError("Stop the current recording and wait for it to save before syncing")
-            await device.set_time()
-            count = 0
-            async for recording in device.recordings():
-                path = await device.download(recording, args.output)
-                print(f"Verified and saved: {path}")
-                count += 1
-                if args.transcribe:
-                    note = await asyncio.to_thread(transcribe, path, args.model, args.language)
-                    if args.ollama:
-                        note = await asyncio.to_thread(refine_with_ollama, note, args.ollama)
-                    write_note(note, path)
-                    if args.upload:
-                        saved = await asyncio.to_thread(upload_note, path.with_suffix(".note.json"))
-                        print(f"Stored in portal: {saved['id']}")
-            print(f"Synced {count} recordings. No recordings were deleted from the pendant.")
         elif args.command == "delete":
             if not args.confirm:
                 raise ValueError("Deletion requires --confirm and a verified local recording metadata file")

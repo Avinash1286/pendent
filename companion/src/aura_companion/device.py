@@ -8,7 +8,41 @@ import time
 import wave
 import zlib
 
+from .files import atomic_write_text
 from .protocol import COMMAND, RESPONSE, SERVICE, HEADER, STATUS, ERRORS, Recording, ProtocolError, parse_chunk
+
+
+def verify_saved_wav(path: Path, record: Recording):
+    """Re-read local PCM: a metadata flag alone never proves a complete download."""
+    try:
+        with wave.open(str(path), "rb") as wav:
+            if (wav.getnchannels(), wav.getsampwidth(), wav.getframerate(), wav.getnframes()) != (
+                record.channels, record.sample_bits // 8, record.sample_rate,
+                record.pcm_bytes // (record.channels * (record.sample_bits // 8)),
+            ):
+                raise ProtocolError("Saved WAV format or length mismatch")
+            size, crc = 0, 0
+            for block in iter(lambda: wav.readframes(32768), b""):
+                size += len(block)
+                crc = zlib.crc32(block, crc)
+            if size != record.pcm_bytes or crc != record.pcm_crc32:
+                raise ProtocolError("Saved WAV checksum mismatch")
+    except (wave.Error, EOFError) as error:
+        raise ProtocolError("Saved WAV is incomplete or invalid") from error
+
+
+def _check_saved_metadata(path: Path, record: Recording, wav_name: str):
+    try:
+        if path.stat().st_size > 100_000:
+            raise ValueError("metadata exceeds size limit")
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(saved, dict) or saved.get("verified") is not True or saved.get("wav") != wav_name:
+            raise ValueError("invalid verification receipt")
+        if any(type(saved.get(key)) is not int or saved[key] != value
+               for key, value in record.to_dict().items()):
+            raise ValueError("recording identity or format differs")
+    except (ValueError, UnicodeError) as error:
+        raise ProtocolError(f"Saved metadata does not match this recording: {path}. Use a separate output directory or inspect the files before retrying.") from error
 
 
 class Device:
@@ -73,6 +107,17 @@ class Device:
         partial = output / f"{stem}.pcm.part"
         wav_path = output / f"{stem}.wav"
         meta_path = output / f"{stem}.json"
+        if meta_path.exists():
+            _check_saved_metadata(meta_path, record, wav_path.name)
+        metadata = json.dumps({**record.to_dict(), "verified": True, "wav": wav_path.name}, indent=2)
+        if wav_path.exists():
+            # Repeated sync costs a local checksum, not another complete BLE transfer.
+            # A crash after WAV publication can leave no receipt; rebuild it only
+            # after the current device listing and the full local PCM agree.
+            verify_saved_wav(wav_path, record)
+            if not meta_path.exists():
+                atomic_write_text(meta_path, metadata)
+            return wav_path
         # Resume only an existing prefix; the complete CRC is checked before WAV publication.
         offset = partial.stat().st_size if partial.exists() else 0
         if offset > record.pcm_bytes or offset % 2:
@@ -103,10 +148,10 @@ class Device:
             wav.setframerate(record.sample_rate)
             for block in iter(lambda: stream.read(65536), b""):
                 wav.writeframesraw(block)
+        with temporary.open("rb+") as stream:
+            os.fsync(stream.fileno())
         temporary.replace(wav_path)
-        meta_temp = output / f"{stem}.json.tmp"
-        meta_temp.write_text(json.dumps({**record.to_dict(), "verified": True, "wav": wav_path.name}, indent=2), encoding="utf-8")
-        meta_temp.replace(meta_path)
+        atomic_write_text(meta_path, metadata)
         partial.unlink()
         return wav_path
 

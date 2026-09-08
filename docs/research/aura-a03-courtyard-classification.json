@@ -1,0 +1,2868 @@
+{
+  "mode": "READ_ONLY",
+  "board": "hardware/native/aura-a03.kicad_pcb",
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "drcSha256": "b512ea20202e4734e6bd2a9306cafee5359a523bebb04810c13149c481d6c3d3",
+  "courtyardCount": 78,
+  "classificationCounts": {
+    "standard chip passive": 15,
+    "discrete diode/LED": 3,
+    "SOT IC/transistor": 14,
+    "mechanical switch": 8,
+    "fine-pitch gull-wing IC": 3,
+    "exposed-pad leadless IC": 10,
+    "radio module": 13,
+    "acoustic LGA": 11,
+    "silicon capacitor": 1
+  },
+  "nominalFabEnvelopeIntersections": 0,
+  "minimumFabEnvelopeGapMm": 0.02,
+  "maximumBodyCheck": {
+    "references": [
+      "MK2",
+      "U7"
+    ],
+    "alignedBodyCentresMm": [
+      [
+        108.5,
+        90.73
+      ],
+      [
+        107.45,
+        94.05
+      ]
+    ],
+    "nativeMicFootprintOriginMm": [
+      108.5,
+      90.4575
+    ],
+    "micOriginCorrectionYmm": 0.2725,
+    "bodyCentreSeparationYmm": 3.32,
+    "nominalBodyLengthsMm": [
+      3.5,
+      2.9
+    ],
+    "maximumBodyLengthsMm": [
+      3.6,
+      3.05
+    ],
+    "maximumBodyGapYmm": -0.005,
+    "interpretation": "Allowed maximum body envelopes overlap in X and by 0.005 mm in Y even with perfect nominal centre placement; this is a worst-case tolerance-envelope conflict, not evidence every sample collides. Placement error and TI mold-flash allowance are not included. Requires A04 clearance redesign or controlled measured engineering deviation before assembly acceptance.",
+    "sources": [
+      "https://www.mouser.com/datasheet/2/218/sph0641lu4h_1_revb-3313002.pdf#page=9",
+      "https://www.ti.com/lit/ds/symlink/tlv755p.pdf#page=41"
+    ]
+  },
+  "method": "Each of 78 actual DRC footprint pairs is confirmed by native filled F.CrtYd polygon collision. Fab gap is Euclidean separation of axis-aligned bounding boxes of all restored native F.Fab PCB_SHAPE geometry, including stroke width. It is a conservative drawing-envelope lower bound, not a substitute for maximum supplier package/lead tolerances or pick-and-place access. Different-net pad gaps are exact effective native-pad results from the hash-bound existing audit. No acceptance is inferred from a positive Fab gap.",
+  "noBoardOrRuleChanges": true,
+  "rows": [
+    {
+      "references": [
+        "C10",
+        "U4"
+      ],
+      "drcItemUuids": [
+        "004d3060-160e-42df-2bcf-555e419067dd",
+        "68f4a398-55ae-7e08-1451-9fa82d0b3eb8"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0603",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          100.05,
+          110.1,
+          101.75,
+          111.0
+        ],
+        [
+          98.45,
+          112.2,
+          101.45,
+          113.9
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.2,
+      "differentNetPadMinimumMm": 0.226384,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C14",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "620b7500-4c4a-6281-3689-500220c83d83",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0603",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          109.5,
+          93.2,
+          110.4,
+          94.9
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.2,
+      "differentNetPadMinimumMm": 0.225,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C15",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "716f1180-5bad-ff01-45ec-ec82302bda03",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0603",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          106.0,
+          96.2,
+          106.9,
+          97.9
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.65,
+      "differentNetPadMinimumMm": 0.525,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C17",
+        "Q1"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "4b46c0e0-6107-d35f-76c8-e5de737607a3"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0402",
+        "nmos"
+      ],
+      "fabBoundsMm": [
+        [
+          93.9,
+          101.5,
+          95.0,
+          102.1
+        ],
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.2,
+      "differentNetPadMinimumMm": 0.622253,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C18",
+        "U4"
+      ],
+      "drcItemUuids": [
+        "4378fa38-7b2a-2768-39cd-4908078f9558",
+        "68f4a398-55ae-7e08-1451-9fa82d0b3eb8"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0402",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          97.65,
+          112.75,
+          98.25,
+          113.85
+        ],
+        [
+          98.45,
+          112.2,
+          101.45,
+          113.9
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.2,
+      "differentNetPadMinimumMm": 0.44,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C18",
+        "U9"
+      ],
+      "drcItemUuids": [
+        "4378fa38-7b2a-2768-39cd-4908078f9558",
+        "6b134760-29b6-6900-17a6-7560590353c0"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0402",
+        "comparator"
+      ],
+      "fabBoundsMm": [
+        [
+          97.65,
+          112.75,
+          98.25,
+          113.85
+        ],
+        [
+          94.6,
+          110.8,
+          96.3,
+          113.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.35,
+      "differentNetPadMinimumMm": 0.39,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C2",
+        "Q1"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0603",
+        "nmos"
+      ],
+      "fabBoundsMm": [
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ],
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.358308,
+      "differentNetPadMinimumMm": 0.350891,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C7",
+        "U4"
+      ],
+      "drcItemUuids": [
+        "2f88c2c0-252a-ed1f-1acd-177e106f41dd",
+        "68f4a398-55ae-7e08-1451-9fa82d0b3eb8"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0603",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          98.25,
+          109.0,
+          99.15,
+          110.7
+        ],
+        [
+          98.45,
+          112.2,
+          101.45,
+          113.9
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.5,
+      "differentNetPadMinimumMm": 0.175,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C9",
+        "Q1"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "32155040-3c73-25e1-46d0-fb82512ed123"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "c0805",
+        "nmos"
+      ],
+      "fabBoundsMm": [
+        [
+          94.525,
+          105.75,
+          95.875,
+          107.85
+        ],
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.45,
+      "differentNetPadMinimumMm": 0.3,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "D2",
+        "U4"
+      ],
+      "drcItemUuids": [
+        "4f7056ce-6f32-cad2-2dd5-ec721386f1ee",
+        "68f4a398-55ae-7e08-1451-9fa82d0b3eb8"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "discrete diode/LED",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "diode",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          98.5,
+          115.05,
+          100.4,
+          116.55
+        ],
+        [
+          98.45,
+          112.2,
+          101.45,
+          113.9
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.15,
+      "differentNetPadMinimumMm": 0.725,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "Q1",
+        "R1"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "18c26b80-2e83-7dff-4444-907e5a05a2fd"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "SOT IC/transistor",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "nmos",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ],
+        [
+          96.13,
+          105.475,
+          96.77,
+          106.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.175,
+      "differentNetPadMinimumMm": 0.22,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "Q1",
+        "R16"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "710e3706-4d94-ea9a-0c38-0c3a3524d226"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "SOT IC/transistor",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "nmos",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ],
+        [
+          97.625,
+          102.73,
+          98.775,
+          103.37
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.475,
+      "differentNetPadMinimumMm": 0.295,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "Q1",
+        "R4"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "4b269c40-40c8-c69f-366a-f0fe2c0d1b5d"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "SOT IC/transistor",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "nmos",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ],
+        [
+          92.88,
+          102.225,
+          93.52,
+          103.375
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.23,
+      "differentNetPadMinimumMm": 0.255,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R9",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "0a5c6f86-3700-6eda-785d-4d3a4645d466",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "SOT IC/transistor",
+      "packageFamilies": [
+        "standard chip passive",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "r0402",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          105.625,
+          91.73,
+          106.775,
+          92.37
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.18,
+      "differentNetPadMinimumMm": 0.43,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C14",
+        "MK2"
+      ],
+      "drcItemUuids": [
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23",
+        "620b7500-4c4a-6281-3689-500220c83d83"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "standard chip passive",
+        "acoustic LGA"
+      ],
+      "footprints": [
+        "c0603",
+        "mic"
+      ],
+      "fabBoundsMm": [
+        [
+          109.5,
+          93.2,
+          110.4,
+          94.9
+        ],
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.67,
+      "differentNetPadMinimumMm": 0.832568,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C3",
+        "MK1"
+      ],
+      "drcItemUuids": [
+        "4775e742-772d-3a5e-35d0-5bfe0b8c8262",
+        "7a01c4d4-38a4-e674-08b7-f7ec4a14d64c"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "silicon capacitor",
+        "acoustic LGA"
+      ],
+      "footprints": [
+        "sicap",
+        "mic"
+      ],
+      "fabBoundsMm": [
+        [
+          93.05,
+          88.9,
+          93.85,
+          90.2
+        ],
+        [
+          90.125,
+          88.93,
+          92.875,
+          92.53
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.175,
+      "differentNetPadMinimumMm": 0.4,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C4",
+        "MK2"
+      ],
+      "drcItemUuids": [
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23",
+        "7be789b6-42bb-97ea-015e-b98a3ffe24d6"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "silicon capacitor",
+        "acoustic LGA"
+      ],
+      "footprints": [
+        "sicap",
+        "mic"
+      ],
+      "fabBoundsMm": [
+        [
+          106.05,
+          89.65,
+          106.85,
+          90.95
+        ],
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.275,
+      "differentNetPadMinimumMm": 0.5,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C5",
+        "MK1"
+      ],
+      "drcItemUuids": [
+        "0fbc0de0-1a19-e381-2477-b9222ed58ec3",
+        "4775e742-772d-3a5e-35d0-5bfe0b8c8262"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "standard chip passive",
+        "acoustic LGA"
+      ],
+      "footprints": [
+        "c0402",
+        "mic"
+      ],
+      "fabBoundsMm": [
+        [
+          88.65,
+          91.75,
+          89.75,
+          92.35
+        ],
+        [
+          90.125,
+          88.93,
+          92.875,
+          92.53
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.375,
+      "differentNetPadMinimumMm": 1.698993,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C6",
+        "MK1"
+      ],
+      "drcItemUuids": [
+        "2914ca20-3372-9fc1-3dd0-7562482e4b03",
+        "4775e742-772d-3a5e-35d0-5bfe0b8c8262"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "standard chip passive",
+        "acoustic LGA"
+      ],
+      "footprints": [
+        "c0603",
+        "mic"
+      ],
+      "fabBoundsMm": [
+        [
+          89.0,
+          89.45,
+          89.9,
+          91.15
+        ],
+        [
+          90.125,
+          88.93,
+          92.875,
+          92.53
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.225,
+      "differentNetPadMinimumMm": 0.375,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK1",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "4775e742-772d-3a5e-35d0-5bfe0b8c8262"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "mic",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          90.125,
+          88.93,
+          92.875,
+          92.53
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.22,
+      "differentNetPadMinimumMm": 0.457481,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK2",
+        "R10"
+      ],
+      "drcItemUuids": [
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23",
+        "59f4569e-64ae-cb02-2351-eca21e0af1be"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "mic",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ],
+        [
+          105.625,
+          88.73,
+          106.775,
+          89.37
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.35,
+      "differentNetPadMinimumMm": 0.32,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK2",
+        "R13"
+      ],
+      "drcItemUuids": [
+        "196b17c2-27f1-c69e-694e-a4fe55547ca2",
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "mic",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ],
+        [
+          110.13,
+          91.225,
+          110.77,
+          92.375
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.255,
+      "differentNetPadMinimumMm": 0.667848,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK2",
+        "R15"
+      ],
+      "drcItemUuids": [
+        "1bd77460-0616-61e1-0faa-b09e256bc31d",
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "mic",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ],
+        [
+          110.13,
+          89.475,
+          110.77,
+          90.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.255,
+      "differentNetPadMinimumMm": 0.43,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK2",
+        "R9"
+      ],
+      "drcItemUuids": [
+        "0a5c6f86-3700-6eda-785d-4d3a4645d466",
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "mic",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ],
+        [
+          105.625,
+          91.73,
+          106.775,
+          92.37
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.35,
+      "differentNetPadMinimumMm": 0.724802,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "MK2",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "56ac61a0-40eb-4f21-2b2a-3ca215692a23",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "acoustic LGA",
+      "packageFamilies": [
+        "acoustic LGA",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "mic",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          107.125,
+          88.93,
+          109.875,
+          92.53
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.02,
+      "differentNetPadMinimumMm": 0.4875,
+      "disposition": "MUST FIX: manufacturer maximum body dimensions produce negative clearance before placement tolerance"
+    },
+    {
+      "references": [
+        "C1",
+        "LED1"
+      ],
+      "drcItemUuids": [
+        "0be7f0e2-0080-90fe-0ce9-12de195194be",
+        "2db78ad8-13a5-5388-5502-31e869a0efb8"
+      ],
+      "classification": "discrete diode/LED",
+      "packageFamilies": [
+        "standard chip passive",
+        "discrete diode/LED"
+      ],
+      "footprints": [
+        "c0402",
+        "led"
+      ],
+      "fabBoundsMm": [
+        [
+          98.65,
+          100.25,
+          99.25,
+          101.35
+        ],
+        [
+          99.55,
+          100.15,
+          100.45,
+          101.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.3,
+      "differentNetPadMinimumMm": 0.265,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C10",
+        "D1"
+      ],
+      "drcItemUuids": [
+        "004d3060-160e-42df-2bcf-555e419067dd",
+        "6427d940-4e66-c6c1-38a5-b44222e4a1c3"
+      ],
+      "classification": "discrete diode/LED",
+      "packageFamilies": [
+        "standard chip passive",
+        "discrete diode/LED"
+      ],
+      "footprints": [
+        "c0603",
+        "diode"
+      ],
+      "fabBoundsMm": [
+        [
+          100.05,
+          110.1,
+          101.75,
+          111.0
+        ],
+        [
+          99.85,
+          108.3,
+          101.75,
+          109.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.3,
+      "differentNetPadMinimumMm": 0.8,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C7",
+        "D1"
+      ],
+      "drcItemUuids": [
+        "2f88c2c0-252a-ed1f-1acd-177e106f41dd",
+        "6427d940-4e66-c6c1-38a5-b44222e4a1c3"
+      ],
+      "classification": "discrete diode/LED",
+      "packageFamilies": [
+        "standard chip passive",
+        "discrete diode/LED"
+      ],
+      "footprints": [
+        "c0603",
+        "diode"
+      ],
+      "fabBoundsMm": [
+        [
+          98.25,
+          109.0,
+          99.15,
+          110.7
+        ],
+        [
+          99.85,
+          108.3,
+          101.75,
+          109.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.7,
+      "differentNetPadMinimumMm": 0.941076,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C11",
+        "U5"
+      ],
+      "drcItemUuids": [
+        "06e346e0-1141-1c81-1b9e-f22225fcc7c3",
+        "0fec71e0-25ad-845f-3b6e-96de512fa95d"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "c0402",
+        "gauge"
+      ],
+      "fabBoundsMm": [
+        [
+          100.9,
+          103.0,
+          102.0,
+          103.6
+        ],
+        [
+          100.65,
+          100.25,
+          102.75,
+          102.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.65,
+      "differentNetPadMinimumMm": 0.323805,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C5",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "0fbc0de0-1a19-e381-2477-b9222ed58ec3"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "c0402",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          88.65,
+          91.75,
+          89.75,
+          92.35
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.4,
+      "differentNetPadMinimumMm": 0.365,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C9",
+        "U3"
+      ],
+      "drcItemUuids": [
+        "3043ed0a-1118-f156-5275-cfb66c2d51ea",
+        "32155040-3c73-25e1-46d0-fb82512ed123"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "c0805",
+        "charger"
+      ],
+      "fabBoundsMm": [
+        [
+          94.525,
+          105.75,
+          95.875,
+          107.85
+        ],
+        [
+          94.8,
+          108.5,
+          97.1,
+          110.6
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.65,
+      "differentNetPadMinimumMm": 0.55,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "LED1",
+        "U5"
+      ],
+      "drcItemUuids": [
+        "06e346e0-1141-1c81-1b9e-f22225fcc7c3",
+        "0be7f0e2-0080-90fe-0ce9-12de195194be"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "discrete diode/LED",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "led",
+        "gauge"
+      ],
+      "fabBoundsMm": [
+        [
+          99.55,
+          100.15,
+          100.45,
+          101.85
+        ],
+        [
+          100.65,
+          100.25,
+          102.75,
+          102.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.2,
+      "differentNetPadMinimumMm": 0.35,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R17",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "641aa444-5a88-7d5c-192b-9efc28313f64"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "r0402",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          90.125,
+          101.23,
+          91.275,
+          101.87
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.38,
+      "differentNetPadMinimumMm": 0.355,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R3",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "55fa76e4-149d-9884-2cbf-45dc6e1c243c"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "r0402",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          94.63,
+          100.225,
+          95.27,
+          101.375
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.13,
+      "differentNetPadMinimumMm": 1.025,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R5",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "635d498a-2200-6b2a-1f5c-733660b95196"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "r0402",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          91.88,
+          101.475,
+          92.52,
+          102.625
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.625,
+      "differentNetPadMinimumMm": 0.395,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R6",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "6e2b3740-63cd-619f-596f-8bfe4f11b65d"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "r0402",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          93.88,
+          90.975,
+          94.52,
+          92.125
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.625,
+      "differentNetPadMinimumMm": 0.4813,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U3",
+        "U9"
+      ],
+      "drcItemUuids": [
+        "3043ed0a-1118-f156-5275-cfb66c2d51ea",
+        "6b134760-29b6-6900-17a6-7560590353c0"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "exposed-pad leadless IC",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "charger",
+        "comparator"
+      ],
+      "fabBoundsMm": [
+        [
+          94.8,
+          108.5,
+          97.1,
+          110.6
+        ],
+        [
+          94.6,
+          110.8,
+          96.3,
+          113.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.2,
+      "differentNetPadMinimumMm": 0.6,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U5",
+        "U6"
+      ],
+      "drcItemUuids": [
+        "06e346e0-1141-1c81-1b9e-f22225fcc7c3",
+        "795bc776-37fe-e916-095d-f54a4abad3aa"
+      ],
+      "classification": "exposed-pad leadless IC",
+      "packageFamilies": [
+        "exposed-pad leadless IC",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "gauge",
+        "haptic"
+      ],
+      "fabBoundsMm": [
+        [
+          100.65,
+          100.25,
+          102.75,
+          102.35
+        ],
+        [
+          102.9,
+          101.25,
+          106.0,
+          104.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.15,
+      "differentNetPadMinimumMm": 0.7,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C12",
+        "U6"
+      ],
+      "drcItemUuids": [
+        "266448be-67c1-271e-56e1-fa8215851c22",
+        "795bc776-37fe-e916-095d-f54a4abad3aa"
+      ],
+      "classification": "fine-pitch gull-wing IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "c0603",
+        "haptic"
+      ],
+      "fabBoundsMm": [
+        [
+          106.25,
+          99.95,
+          107.15,
+          101.65
+        ],
+        [
+          102.9,
+          101.25,
+          106.0,
+          104.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.25,
+      "differentNetPadMinimumMm": 0.6,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C13",
+        "U6"
+      ],
+      "drcItemUuids": [
+        "3ebbc8a0-547c-db1f-6a3d-ed9e7fff001d",
+        "795bc776-37fe-e916-095d-f54a4abad3aa"
+      ],
+      "classification": "fine-pitch gull-wing IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "c0603",
+        "haptic"
+      ],
+      "fabBoundsMm": [
+        [
+          103.1,
+          105.85,
+          104.8,
+          106.75
+        ],
+        [
+          102.9,
+          101.25,
+          106.0,
+          104.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.5,
+      "differentNetPadMinimumMm": 0.175,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C16",
+        "U8"
+      ],
+      "drcItemUuids": [
+        "01997872-3fc3-65ee-7edf-bbb23d82dd52",
+        "5491c586-1334-e726-2e27-f73a6f84d59a"
+      ],
+      "classification": "fine-pitch gull-wing IC",
+      "packageFamilies": [
+        "standard chip passive",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "c0402",
+        "buffer"
+      ],
+      "fabBoundsMm": [
+        [
+          110.4,
+          105.25,
+          111.0,
+          106.35
+        ],
+        [
+          107.0,
+          105.0,
+          109.4,
+          107.1
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.0,
+      "differentNetPadMinimumMm": 0.165,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C12",
+        "SW1"
+      ],
+      "drcItemUuids": [
+        "01322884-428f-06e4-7c14-1abc3ab73c5c",
+        "266448be-67c1-271e-56e1-fa8215851c22"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "standard chip passive",
+        "mechanical switch"
+      ],
+      "footprints": [
+        "c0603",
+        "privacy"
+      ],
+      "fabBoundsMm": [
+        [
+          106.25,
+          99.95,
+          107.15,
+          101.65
+        ],
+        [
+          107.65,
+          95.65,
+          111.35,
+          104.75
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.5,
+      "differentNetPadMinimumMm": 0.325,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C13",
+        "SW2"
+      ],
+      "drcItemUuids": [
+        "3ebbc8a0-547c-db1f-6a3d-ed9e7fff001d",
+        "763dcb5e-69d5-497e-5d6c-c79e510445be"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "standard chip passive",
+        "mechanical switch"
+      ],
+      "footprints": [
+        "c0603",
+        "record"
+      ],
+      "fabBoundsMm": [
+        [
+          103.1,
+          105.85,
+          104.8,
+          106.75
+        ],
+        [
+          97.85,
+          104.55,
+          102.15,
+          107.45
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.95,
+      "differentNetPadMinimumMm": 0.225,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C14",
+        "SW1"
+      ],
+      "drcItemUuids": [
+        "01322884-428f-06e4-7c14-1abc3ab73c5c",
+        "620b7500-4c4a-6281-3689-500220c83d83"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "standard chip passive",
+        "mechanical switch"
+      ],
+      "footprints": [
+        "c0603",
+        "privacy"
+      ],
+      "fabBoundsMm": [
+        [
+          109.5,
+          93.2,
+          110.4,
+          94.9
+        ],
+        [
+          107.65,
+          95.65,
+          111.35,
+          104.75
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.75,
+      "differentNetPadMinimumMm": 1.925,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C16",
+        "SW1"
+      ],
+      "drcItemUuids": [
+        "01322884-428f-06e4-7c14-1abc3ab73c5c",
+        "5491c586-1334-e726-2e27-f73a6f84d59a"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "standard chip passive",
+        "mechanical switch"
+      ],
+      "footprints": [
+        "c0402",
+        "privacy"
+      ],
+      "fabBoundsMm": [
+        [
+          110.4,
+          105.25,
+          111.0,
+          106.35
+        ],
+        [
+          107.65,
+          95.65,
+          111.35,
+          104.75
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.5,
+      "differentNetPadMinimumMm": 2.247153,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "Q1",
+        "SW2"
+      ],
+      "drcItemUuids": [
+        "0f60c530-31fc-1930-7358-f7904b4a2a10",
+        "763dcb5e-69d5-497e-5d6c-c79e510445be"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "SOT IC/transistor",
+        "mechanical switch"
+      ],
+      "footprints": [
+        "nmos",
+        "record"
+      ],
+      "fabBoundsMm": [
+        [
+          94.75,
+          102.3,
+          96.15,
+          105.3
+        ],
+        [
+          97.85,
+          104.55,
+          102.15,
+          107.45
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.7,
+      "differentNetPadMinimumMm": 0.375,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "SW1",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "01322884-428f-06e4-7c14-1abc3ab73c5c",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "mechanical switch",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "privacy",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          107.65,
+          95.65,
+          111.35,
+          104.75
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.1,
+      "differentNetPadMinimumMm": 1.9,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "SW1",
+        "U8"
+      ],
+      "drcItemUuids": [
+        "01322884-428f-06e4-7c14-1abc3ab73c5c",
+        "01997872-3fc3-65ee-7edf-bbb23d82dd52"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "mechanical switch",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "privacy",
+        "buffer"
+      ],
+      "fabBoundsMm": [
+        [
+          107.65,
+          95.65,
+          111.35,
+          104.75
+        ],
+        [
+          107.0,
+          105.0,
+          109.4,
+          107.1
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.25,
+      "differentNetPadMinimumMm": 1.925,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "SW2",
+        "U6"
+      ],
+      "drcItemUuids": [
+        "763dcb5e-69d5-497e-5d6c-c79e510445be",
+        "795bc776-37fe-e916-095d-f54a4abad3aa"
+      ],
+      "classification": "mechanical switch",
+      "packageFamilies": [
+        "mechanical switch",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "record",
+        "haptic"
+      ],
+      "fabBoundsMm": [
+        [
+          97.85,
+          104.55,
+          102.15,
+          107.45
+        ],
+        [
+          102.9,
+          101.25,
+          106.0,
+          104.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.776209,
+      "differentNetPadMinimumMm": 0.775,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C1",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "2db78ad8-13a5-5388-5502-31e869a0efb8"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "c0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          98.65,
+          100.25,
+          99.25,
+          101.35
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.45,
+      "differentNetPadMinimumMm": 0.59,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C15",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "716f1180-5bad-ff01-45ec-ec82302bda03"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "c0603",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          106.0,
+          96.2,
+          106.9,
+          97.9
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.7,
+      "differentNetPadMinimumMm": 1.025,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C2",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "c0603",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.65,
+      "differentNetPadMinimumMm": 0.625,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "LED1",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "0be7f0e2-0080-90fe-0ce9-12de195194be",
+        "26813000-5a26-8a3f-2531-bb825b75febd"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "discrete diode/LED",
+        "radio module"
+      ],
+      "footprints": [
+        "led",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          99.55,
+          100.15,
+          100.45,
+          101.85
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.35,
+      "differentNetPadMinimumMm": 0.325,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R10",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "59f4569e-64ae-cb02-2351-eca21e0af1be"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "r0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          105.625,
+          88.73,
+          106.775,
+          89.37
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.325,
+      "differentNetPadMinimumMm": 0.47,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R3",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "55fa76e4-149d-9884-2cbf-45dc6e1c243c"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "r0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          94.63,
+          100.225,
+          95.27,
+          101.375
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.425,
+      "differentNetPadMinimumMm": 0.57,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R6",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "6e2b3740-63cd-619f-596f-8bfe4f11b65d"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "r0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          93.88,
+          90.975,
+          94.52,
+          92.125
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.18,
+      "differentNetPadMinimumMm": 0.53,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R8",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "18a8d96a-28b4-04f6-6a10-e35654923e4a",
+        "26813000-5a26-8a3f-2531-bb825b75febd"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "r0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          95.875,
+          99.98,
+          97.025,
+          100.62
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.18,
+      "differentNetPadMinimumMm": 0.53,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R9",
+        "U1"
+      ],
+      "drcItemUuids": [
+        "0a5c6f86-3700-6eda-785d-4d3a4645d466",
+        "26813000-5a26-8a3f-2531-bb825b75febd"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "standard chip passive",
+        "radio module"
+      ],
+      "footprints": [
+        "r0402",
+        "radio"
+      ],
+      "fabBoundsMm": [
+        [
+          105.625,
+          91.73,
+          106.775,
+          92.37
+        ],
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.325,
+      "differentNetPadMinimumMm": 0.47,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U1",
+        "U2"
+      ],
+      "drcItemUuids": [
+        "057b7ce0-712b-ef20-2323-9ea0488cd3a0",
+        "26813000-5a26-8a3f-2531-bb825b75febd"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "radio module",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "radio",
+        "flash"
+      ],
+      "fabBoundsMm": [
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ],
+        [
+          88.4,
+          92.75,
+          94.5,
+          100.85
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.2,
+      "differentNetPadMinimumMm": 1.445,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U1",
+        "U5"
+      ],
+      "drcItemUuids": [
+        "06e346e0-1141-1c81-1b9e-f22225fcc7c3",
+        "26813000-5a26-8a3f-2531-bb825b75febd"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "radio module",
+        "exposed-pad leadless IC"
+      ],
+      "footprints": [
+        "radio",
+        "gauge"
+      ],
+      "fabBoundsMm": [
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ],
+        [
+          100.65,
+          100.25,
+          102.75,
+          102.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.45,
+      "differentNetPadMinimumMm": 0.475,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U1",
+        "U6"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "795bc776-37fe-e916-095d-f54a4abad3aa"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "radio module",
+        "fine-pitch gull-wing IC"
+      ],
+      "footprints": [
+        "radio",
+        "haptic"
+      ],
+      "fabBoundsMm": [
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ],
+        [
+          102.9,
+          101.25,
+          106.0,
+          104.35
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.45,
+      "differentNetPadMinimumMm": 0.5,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "U1",
+        "U7"
+      ],
+      "drcItemUuids": [
+        "26813000-5a26-8a3f-2531-bb825b75febd",
+        "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+      ],
+      "classification": "radio module",
+      "packageFamilies": [
+        "radio module",
+        "SOT IC/transistor"
+      ],
+      "footprints": [
+        "radio",
+        "ldo"
+      ],
+      "fabBoundsMm": [
+        [
+          94.7,
+          84.2,
+          105.3,
+          99.8
+        ],
+        [
+          106.6,
+          92.55,
+          108.3,
+          95.55
+        ]
+      ],
+      "fabEnvelopeGapMm": 1.3,
+      "differentNetPadMinimumMm": 0.7,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C4",
+        "R10"
+      ],
+      "drcItemUuids": [
+        "59f4569e-64ae-cb02-2351-eca21e0af1be",
+        "7be789b6-42bb-97ea-015e-b98a3ffe24d6"
+      ],
+      "classification": "silicon capacitor",
+      "packageFamilies": [
+        "silicon capacitor",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "sicap",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          106.05,
+          89.65,
+          106.85,
+          90.95
+        ],
+        [
+          105.625,
+          88.73,
+          106.775,
+          89.37
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.28,
+      "differentNetPadMinimumMm": 0.33,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C1",
+        "C2"
+      ],
+      "drcItemUuids": [
+        "2db78ad8-13a5-5388-5502-31e869a0efb8",
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0402",
+        "c0603"
+      ],
+      "fabBoundsMm": [
+        [
+          98.65,
+          100.25,
+          99.25,
+          101.35
+        ],
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.25,
+      "differentNetPadMinimumMm": 0.216448,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C10",
+        "C7"
+      ],
+      "drcItemUuids": [
+        "004d3060-160e-42df-2bcf-555e419067dd",
+        "2f88c2c0-252a-ed1f-1acd-177e106f41dd"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0603",
+        "c0603"
+      ],
+      "fabBoundsMm": [
+        [
+          100.05,
+          110.1,
+          101.75,
+          111.0
+        ],
+        [
+          98.25,
+          109.0,
+          99.15,
+          110.7
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.9,
+      "differentNetPadMinimumMm": 0.743303,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C14",
+        "R13"
+      ],
+      "drcItemUuids": [
+        "196b17c2-27f1-c69e-694e-a4fe55547ca2",
+        "620b7500-4c4a-6281-3689-500220c83d83"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0603",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          109.5,
+          93.2,
+          110.4,
+          94.9
+        ],
+        [
+          110.13,
+          91.225,
+          110.77,
+          92.375
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.825,
+      "differentNetPadMinimumMm": 0.245,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C17",
+        "R3"
+      ],
+      "drcItemUuids": [
+        "4b46c0e0-6107-d35f-76c8-e5de737607a3",
+        "55fa76e4-149d-9884-2cbf-45dc6e1c243c"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          93.9,
+          101.5,
+          95.0,
+          102.1
+        ],
+        [
+          94.63,
+          100.225,
+          95.27,
+          101.375
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.125,
+      "differentNetPadMinimumMm": 0.38,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C17",
+        "R4"
+      ],
+      "drcItemUuids": [
+        "4b269c40-40c8-c69f-366a-f0fe2c0d1b5d",
+        "4b46c0e0-6107-d35f-76c8-e5de737607a3"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          93.9,
+          101.5,
+          95.0,
+          102.1
+        ],
+        [
+          92.88,
+          102.225,
+          93.52,
+          103.375
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.400031,
+      "differentNetPadMinimumMm": 0.17,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C2",
+        "R16"
+      ],
+      "drcItemUuids": [
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74",
+        "710e3706-4d94-ea9a-0c38-0c3a3524d226"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0603",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ],
+        [
+          97.625,
+          102.73,
+          98.775,
+          103.37
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.58,
+      "differentNetPadMinimumMm": 0.205,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C2",
+        "R7"
+      ],
+      "drcItemUuids": [
+        "1e4dc1c0-340e-d43f-49cf-e6be5f90f93d",
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0603",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ],
+        [
+          95.875,
+          101.08,
+          97.025,
+          101.72
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.475,
+      "differentNetPadMinimumMm": 0.245,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C2",
+        "R8"
+      ],
+      "drcItemUuids": [
+        "18a8d96a-28b4-04f6-6a10-e35654923e4a",
+        "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0603",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          97.5,
+          100.45,
+          98.4,
+          102.15
+        ],
+        [
+          95.875,
+          99.98,
+          97.025,
+          100.62
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.475,
+      "differentNetPadMinimumMm": 0.245,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C5",
+        "C6"
+      ],
+      "drcItemUuids": [
+        "0fbc0de0-1a19-e381-2477-b9222ed58ec3",
+        "2914ca20-3372-9fc1-3dd0-7562482e4b03"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0402",
+        "c0603"
+      ],
+      "fabBoundsMm": [
+        [
+          88.65,
+          91.75,
+          89.75,
+          92.35
+        ],
+        [
+          89.0,
+          89.45,
+          89.9,
+          91.15
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.6,
+      "differentNetPadMinimumMm": 0.215,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C9",
+        "R1"
+      ],
+      "drcItemUuids": [
+        "18c26b80-2e83-7dff-4444-907e5a05a2fd",
+        "32155040-3c73-25e1-46d0-fb82512ed123"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0805",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          94.525,
+          105.75,
+          95.875,
+          107.85
+        ],
+        [
+          96.13,
+          105.475,
+          96.77,
+          106.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.255,
+      "differentNetPadMinimumMm": 0.205,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "C9",
+        "R2"
+      ],
+      "drcItemUuids": [
+        "0584cfa0-103c-42df-25fd-555e3bbe67dd",
+        "32155040-3c73-25e1-46d0-fb82512ed123"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "c0805",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          94.525,
+          105.75,
+          95.875,
+          107.85
+        ],
+        [
+          93.63,
+          105.475,
+          94.27,
+          106.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.255,
+      "differentNetPadMinimumMm": 0.205,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R11",
+        "R14"
+      ],
+      "drcItemUuids": [
+        "1f0382c0-14a5-ad1f-0a47-d77e0015fe23",
+        "30db3000-469c-427f-5c5d-54fe721e677d"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "r0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          91.88,
+          103.225,
+          92.52,
+          104.375
+        ],
+        [
+          92.63,
+          104.975,
+          93.27,
+          106.125
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.61,
+      "differentNetPadMinimumMm": 0.219544,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R11",
+        "R21"
+      ],
+      "drcItemUuids": [
+        "1f0382c0-14a5-ad1f-0a47-d77e0015fe23",
+        "2f05b160-1944-9ee1-0383-8c62123d861d"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "r0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          91.88,
+          103.225,
+          92.52,
+          104.375
+        ],
+        [
+          91.63,
+          104.975,
+          92.27,
+          106.125
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.6,
+      "differentNetPadMinimumMm": 0.19,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R11",
+        "R5"
+      ],
+      "drcItemUuids": [
+        "1f0382c0-14a5-ad1f-0a47-d77e0015fe23",
+        "635d498a-2200-6b2a-1f5c-733660b95196"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "r0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          91.88,
+          103.225,
+          92.52,
+          104.375
+        ],
+        [
+          91.88,
+          101.475,
+          92.52,
+          102.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.6,
+      "differentNetPadMinimumMm": 0.19,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    },
+    {
+      "references": [
+        "R13",
+        "R15"
+      ],
+      "drcItemUuids": [
+        "196b17c2-27f1-c69e-694e-a4fe55547ca2",
+        "1bd77460-0616-61e1-0faa-b09e256bc31d"
+      ],
+      "classification": "standard chip passive",
+      "packageFamilies": [
+        "standard chip passive",
+        "standard chip passive"
+      ],
+      "footprints": [
+        "r0402",
+        "r0402"
+      ],
+      "fabBoundsMm": [
+        [
+          110.13,
+          91.225,
+          110.77,
+          92.375
+        ],
+        [
+          110.13,
+          89.475,
+          110.77,
+          90.625
+        ]
+      ],
+      "fabEnvelopeGapMm": 0.6,
+      "differentNetPadMinimumMm": 0.19,
+      "disposition": "OPEN: assembler process acceptance or A04 spacing change required"
+    }
+  ]
+}

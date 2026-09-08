@@ -1,6 +1,6 @@
 [project]
 name = "aura-companion"
-version = "0.3.0"
+version = "0.3.1"
 description = "Local Bluetooth audio sync and transcription for AURA A03"
 requires-python = ">=3.12,<3.14"
 dependencies = ["bleak==3.0.2", "faster-whisper>=1.2.0,<2"]

@@ -38,6 +38,8 @@ The **24 × 42 × 0.8 mm, four-layer board**, shown directly from its native KiC
 
 ## Project map
 
+New: [Omi codebase review and AURA first-wear plan](docs/research/omi-review.md), with a source-based comparison, all 78 assembly collisions classified, and companion recovery improvements. This review identifies a real component-tolerance conflict that requires an A04 placement revision; it does not qualify A03 for assembled-unit ordering.
+
 | Directory | Contents |
 | --- | --- |
 | `hardware/` | tscircuit source, routed native KiCad board, readable schematic, BOM and validation evidence |

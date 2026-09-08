@@ -30,6 +30,8 @@ The pendant captures audio; transcription runs on the local computer. The portal
 
 Capture closes on a physical press, privacy cutoff, low voltage or storage error. Committed journal pages can recover an interrupted recording. Sync copies bytes, verifies per-chunk and whole-record CRC, then writes a WAV. The device copy remains until an explicit verified delete. Reclaiming NAND requires every record to be deleted plus a physical maintenance hold and confirmed command.
 
+Companion 0.3.1 revalidates previously saved WAVs and capture metadata to avoid repeat radio downloads. Missing receipts can be repaired after validating the whole WAV. The Bluetooth session closes before local transcription and optional upload, with individual processing failures retained for explicit recovery. Notes and receipts use atomic file replacement. These improvements do not add mobile background sync or automatic device deletion. See the [Omi comparison and first-wear plan](research/omi-review.md) for the evidence and remaining hardware work.
+
 Whisper produces a local transcript. Default summaries are extractive; optional local Ollama output stays editable. Upload sends a note with a stable source identity, making retries idempotent within the configured ingestion token. Uploaded originals are stored independently from exported Context Packs. Archiving removes a note from live context immediately and can be reversed.
 
 Export includes source titles, capture dates and transcript excerpts. Large packs are explicitly truncated in the preview rather than silently claiming complete context. Captured text is marked untrusted source data; downstream model behavior remains the AI provider's responsibility.

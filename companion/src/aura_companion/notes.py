@@ -3,6 +3,7 @@ from pathlib import Path
 import re
 import urllib.request
 
+from .files import atomic_write_text
 
 def extractive_notes(text: str):
     """Small honest baseline: use the speaker's words; do not invent tasks."""
@@ -49,9 +50,13 @@ def refine_with_ollama(note: dict, model: str):
 def write_note(note: dict, path: Path):
     json_path = path.with_suffix(".note.json")
     md_path = path.with_suffix(".md")
-    json_path.write_text(json.dumps(note, indent=2, ensure_ascii=False), encoding="utf-8")
+    serialized = json.dumps(note, indent=2, ensure_ascii=False)
     summary = "\n".join(f"- {line}" for line in note["summary"])
     actions = "\n".join(f"- [ ] {line}" for line in note["suggested_actions"]) or "No explicit action found."
     segments = "\n".join(f"[{s['start']:.1f}s] {s['text']}" for s in note["segments"])
-    md_path.write_text(f"# {note['title']}\n\n{summary}\n\n## Suggested actions\n\n{actions}\n\n## Transcript\n\n{segments}\n\n---\n{note['summary_method']}\n", encoding="utf-8")
+    markdown = f"# {note['title']}\n\n{summary}\n\n## Suggested actions\n\n{actions}\n\n## Transcript\n\n{segments}\n\n---\n{note['summary_method']}\n"
+    # JSON is authoritative; Markdown is a regenerable view. Each replacement
+    # is atomic, but the two files are not a filesystem transaction.
+    atomic_write_text(md_path, markdown)
+    atomic_write_text(json_path, serialized)
     return json_path, md_path

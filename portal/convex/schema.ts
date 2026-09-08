@@ -1,6 +1,7 @@
 import { defineSchema, defineTable } from "convex/server";
 import { authTables } from "@convex-dev/auth/server";
 import { v } from "convex/values";
+import { captureValidator } from "./captureFields";
 
 export default defineSchema({
   ...authTables,
@@ -15,13 +16,20 @@ export default defineSchema({
     updatedAt: v.number(),
     source: v.string(),
     sourceId: v.optional(v.string()),
+    // Optional additions preserve existing v1 documents without a destructive migration.
+    captureKey: v.optional(v.string()),
+    capture: v.optional(captureValidator),
+    sourceTranscript: v.optional(v.string()),
     archived: v.boolean(),
     contextEnabled: v.boolean(),
     searchText: v.string(),
   })
     .index("by_owner", ["ownerId", "archived", "recordedAt"])
     .index("by_live_context", ["ownerId", "archived", "contextEnabled", "recordedAt"])
+    .index("by_owner_arrival", ["ownerId", "archived"])
+    .index("by_live_context_arrival", ["ownerId", "archived", "contextEnabled"])
     .index("by_source", ["ownerId", "sourceId"])
+    .index("by_capture", ["ownerId", "captureKey"])
     .searchIndex("search_notes", {
       searchField: "searchText",
       filterFields: ["ownerId", "archived"],

@@ -1,6 +1,64 @@
 import { query, mutation, internalMutation, internalQuery } from "./_generated/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { v, ConvexError } from "convex/values";
+import type { MutationCtx } from "./_generated/server";
+import type { Id } from "./_generated/dataModel";
+import { captureValidator } from "./captureFields";
+import { captureKey, parseCapture, transcriptDigest, type Capture } from "../lib/capture";
+
+type NoteInput = {
+  title: string;
+  transcript: string;
+  summary: string[];
+  actions: string[];
+  tags: string[];
+  recordedAt: number;
+  contextEnabled: boolean;
+};
+
+async function storeCapture(
+  ctx: MutationCtx,
+  ownerId: Id<"users">,
+  data: NoteInput,
+  input: Capture,
+  source: "pendant" | "portal",
+) {
+  const capture = parseCapture(input, data.recordedAt);
+  if ((await transcriptDigest(data.transcript)) !== capture.transcriptRevision)
+    throw new ConvexError({ code: "INVALID_SOURCE", message: "Transcript digest does not match." });
+  const key = captureKey(capture);
+  // The owner comes from the authenticated token/session, never from supplied capture IDs.
+  // Read + conditional insert share one Convex mutation transaction, including retries.
+  const previous = await ctx.db
+    .query("notes")
+    .withIndex("by_capture", (q) => q.eq("ownerId", ownerId).eq("captureKey", key))
+    .unique();
+  if (previous) {
+    if (
+      previous.sourceTranscript !== data.transcript ||
+      JSON.stringify(parseCapture(previous.capture, previous.capture?.startedAtMs ?? 0)) !==
+        JSON.stringify(capture)
+    )
+      throw new ConvexError({
+        code: "SOURCE_CONFLICT",
+        message: "Capture already exists with different source data.",
+      });
+    // Preserve edits, archival status and the owner's current sharing choice on every retry.
+    return previous._id;
+  }
+  return ctx.db.insert("notes", {
+    ...data,
+    ownerId,
+    captureKey: key,
+    sourceId: key,
+    capture,
+    sourceTranscript: data.transcript,
+    source,
+    archived: false,
+    updatedAt: Date.now(),
+    searchText: [data.title, data.transcript, ...data.summary, ...data.tags].join(" "),
+  });
+}
 
 const fields = {
   title: v.string(),
@@ -56,26 +114,36 @@ export const list = query({
         .take(100);
     return ctx.db
       .query("notes")
-      .withIndex("by_owner", (q) => q.eq("ownerId", ownerId).eq("archived", archived))
+      .withIndex("by_owner_arrival", (q) => q.eq("ownerId", ownerId).eq("archived", archived))
       .order("desc")
       .take(200);
   },
 });
 
 export const save = mutation({
-  args: { id: v.optional(v.id("notes")), ...fields },
+  args: { id: v.optional(v.id("notes")), capture: v.optional(captureValidator), ...fields },
   handler: async (ctx, args) => {
     const ownerId = await getAuthUserId(ctx);
     if (!ownerId) throw new ConvexError("Sign in first.");
     validate(args);
-    const { id, ...data } = args;
+    const { id, capture, ...data } = args;
     const searchText = [data.title, data.transcript, ...data.summary, ...data.tags].join(" ");
     if (id) {
       const previous = await ctx.db.get(id);
       if (!previous || previous.ownerId !== ownerId) throw new ConvexError("Note not found.");
-      await ctx.db.patch(id, { ...data, searchText, updatedAt: Date.now() });
+      if (capture) throw new ConvexError("Captured source metadata cannot be edited.");
+      const retainedSource =
+        previous.sourceTranscript && previous.sourceTranscript !== data.transcript
+          ? ` ${previous.sourceTranscript}`
+          : "";
+      await ctx.db.patch(id, {
+        ...data,
+        searchText: searchText + retainedSource,
+        updatedAt: Date.now(),
+      });
       return id;
     }
+    if (capture) return storeCapture(ctx, ownerId, data, capture, "portal");
     return ctx.db.insert("notes", {
       ...data,
       ownerId,
@@ -108,21 +176,35 @@ export const toggleContext = mutation({
 });
 
 export const ingest = internalMutation({
-  args: { tokenId: v.id("tokens"), sourceId: v.string(), ...fields },
+  args: {
+    tokenId: v.id("tokens"),
+    sourceId: v.optional(v.string()),
+    capture: v.optional(captureValidator),
+    ...fields,
+  },
   handler: async (ctx, args) => {
     const token = await ctx.db.get(args.tokenId);
-    if (!token || token.revoked || token.expiresAt < Date.now() || token.scope !== "ingest")
-      throw new ConvexError("Invalid device token.");
+    if (!token || token.revoked || token.expiresAt <= Date.now() || token.scope !== "ingest")
+      throw new ConvexError({ code: "UNAUTHORIZED", message: "Invalid device token." });
     validate(args);
-    if (!args.sourceId.trim() || args.sourceId.length > 160)
+    const { tokenId: _tokenId, sourceId: inputSourceId, capture, ...data } = args;
+    if (capture)
+      return storeCapture(
+        ctx,
+        token.ownerId,
+        { ...data, contextEnabled: token.autoContext },
+        capture,
+        "pendant",
+      );
+    // Legacy v1 IDs have no trustworthy device identity. Do not guess cross-token equivalence.
+    if (!inputSourceId?.trim() || inputSourceId.length > 160)
       throw new ConvexError("Invalid source ID.");
-    const sourceId = `${token._id}:${args.sourceId}`;
+    const sourceId = `${token._id}:${inputSourceId}`;
     const previous = await ctx.db
       .query("notes")
       .withIndex("by_source", (q) => q.eq("ownerId", token.ownerId).eq("sourceId", sourceId))
       .unique();
     if (previous) return previous._id;
-    const { tokenId: _tokenId, ...data } = args;
     return ctx.db.insert("notes", {
       ...data,
       sourceId,
@@ -145,7 +227,7 @@ export const liveContext = internalQuery({
       .unique();
     const notes = await ctx.db
       .query("notes")
-      .withIndex("by_live_context", (q) =>
+      .withIndex("by_live_context_arrival", (q) =>
         q.eq("ownerId", args.ownerId).eq("archived", false).eq("contextEnabled", true),
       )
       .order("desc")

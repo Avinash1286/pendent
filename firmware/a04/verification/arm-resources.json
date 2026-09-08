@@ -1,45 +1,49 @@
 {
   "status": "ARM_cross_compiled_not_executed",
   "target": "nrf52840dk/nrf52840",
-  "purpose": "A04 codec MCU ABI/resource probe; not A04 wearable firmware",
+  "purpose": "A04 codec and revision-3 archive MCU ABI/resource probe; not A04 wearable firmware",
   "zephyr": "4.2.0",
   "sdk": "0.17.2",
   "opus": "1.6.1",
   "memory_regions": {
     "FLASH": {
-      "used_bytes": 170520,
+      "used_bytes": 173752,
       "capacity_bytes": 1048576
     },
     "RAM": {
-      "used_bytes": 90304,
+      "used_bytes": 91776,
       "capacity_bytes": 262144
     }
   },
   "memory_evidence": "Actual ELF _flash_used and _image_ram_size symbols, checked against configured capacities",
   "symbols": {
-    "encoder_state": {
-      "bytes": 32768,
-      "address": 536873208
-    },
     "capture": {
       "bytes": 1992,
-      "address": 536871216
+      "address": 536872720
+    },
+    "archive": {
+      "bytes": 1496,
+      "address": 536871224
+    },
+    "encoder_state": {
+      "bytes": 32768,
+      "address": 536874712
     },
     "input": {
       "bytes": 640,
-      "address": 536906688
+      "address": 536908184
     },
     "codec_stack": {
       "bytes": 49216,
-      "address": 536907392
+      "address": 536908864
     },
     "opus_encoder_get_size": {
       "bytes": 24,
-      "address": 116481
+      "address": 119403
     },
     "opus_encode": {
       "bytes": 80,
-      "address": 29577
+      "address": 31733
     }
   },
   "allocated_sections": [
@@ -51,62 +55,62 @@
     },
     {
       "name": "text",
-      "bytes": 133396,
+      "bytes": 136348,
       "address": 256,
       "type": "SHT_PROGBITS"
     },
     {
       "name": ".ARM.exidx",
       "bytes": 8,
-      "address": 133652,
+      "address": 136604,
       "type": "SHT_ARM_EXIDX"
     },
     {
       "name": "initlevel",
       "bytes": 64,
-      "address": 133660,
+      "address": 136612,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "device_area",
       "bytes": 128,
-      "address": 133724,
+      "address": 136676,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "sw_isr_table",
       "bytes": 384,
-      "address": 133852,
+      "address": 136804,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "gpio_driver_api_area",
       "bytes": 36,
-      "address": 134236,
+      "address": 137188,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "clock_control_driver_api_area",
       "bytes": 28,
-      "address": 134272,
+      "address": 137224,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "uart_driver_api_area",
       "bytes": 12,
-      "address": 134300,
+      "address": 137252,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "tbss",
       "bytes": 4,
-      "address": 134312,
+      "address": 137264,
       "type": "SHT_NOBITS"
     },
     {
       "name": "rodata",
-      "bytes": 36020,
-      "address": 134320,
+      "bytes": 36308,
+      "address": 137264,
       "type": "SHT_PROGBITS"
     },
     {
@@ -124,24 +128,24 @@
     {
       "name": ".last_section",
       "bytes": 4,
-      "address": 170516,
+      "address": 173748,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "bss",
-      "bytes": 36245,
+      "bytes": 37741,
       "address": 536871088,
       "type": "SHT_NOBITS"
     },
     {
       "name": "noinit",
       "bytes": 53824,
-      "address": 536907392,
+      "address": 536908864,
       "type": "SHT_NOBITS"
     }
   ],
   "stack_analysis": {
-    "translation_units_with_reports": 132,
+    "translation_units_with_reports": 135,
     "largest_reported_functions": [
       {
         "function": "silk_encode_frame_FIX",
@@ -224,29 +228,31 @@
   },
   "artifacts": {
     "zephyr.elf": {
-      "bytes": 1820884,
-      "sha256": "2fdb0eea2d16fbc73bb01b594da360555e4e584c629d358c2242836735803253"
+      "bytes": 1845124,
+      "sha256": "074a34ad4ed5ecb28c316d9e43af521a59f59fd3852a1f24a5543edbb207dede"
     },
     "zephyr.hex": {
-      "bytes": 479698,
-      "sha256": "2aedd8821d3388cbcc015bfab5f48c8de05e6a0dfa7ea3534829834cd71bd971"
+      "bytes": 488804,
+      "sha256": "44530e0af9fd1f28e84736d33d13673d85f29ca4d548b5c925621e2c09829490"
     },
     "zephyr.bin": {
-      "bytes": 170520,
-      "sha256": "7e43a143441b96acc1c687ddd7aa78efc38bd526bc0debb2d3e49b9d4157b232"
+      "bytes": 173752,
+      "sha256": "e0a64cd8166b7091ba4df90235cf8959577f6c5130f589f5f5b39753e5d34c97"
     },
     "zephyr.map": {
-      "bytes": 584258,
-      "sha256": "5a1a00df2f2eecb24d5d1b77f0340f58a92c359ea7de9a7564ce52d13a1d92ee"
+      "bytes": 589624,
+      "sha256": "7f0dbc117d3b3986eb74a97ae4274c362075e68203c86760228abf2867144293"
     }
   },
   "config_sha256": "16395ebbb2aead48f6db0f2a4848c4ca7d4c19aea9baed6c992d8154af4621cf",
   "source_sha256": {
+    "src/aura_archive.c": "23f57ccc47f056c76c9e7dd4018bad781c784c3f5967accea3d4532792051fb6",
     "src/aura_opus.c": "b455e1e2a03a6dad8e2de110728c03e5d9bcf8dcfc9f71455404624ddd637956",
-    "src/zephyr_probe.c": "5bdacccea818fc36735c042e095c181fa3bd1751dd2dcf27e464610186d8a42c",
+    "src/zephyr_probe.c": "c67f6843a7b59fabd719e953e086a1c4f1839ec64f97312b9d3083f612fdd3ad",
+    "include/aura_archive.h": "95449878ad34135e91683c293f26038a00d3526c70b5ed9499f89b803e487fc3",
     "include/aura_opus.h": "d4020bb992c504c99c33b7903e3530c206d1188b8cfe46cfbd80801c1fe11e6a",
     "cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
-    "CMakeLists.txt": "c930686cae05cb9434f9ff573cd57dadbceb256f5200e362d866187c466d1e8c",
+    "CMakeLists.txt": "52f50bb32f8d00e21aef846b78ac58d0cffa5ba0baa62936c26200c23f065a5a",
     "prj.conf": "c101ccabc12ce8be0129c0c11f2584c311691d3dce9d230a56e984fc1363171f",
     "dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852"
   },

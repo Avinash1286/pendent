@@ -9,6 +9,7 @@ from .device import connect, discover
 from .files import atomic_write_text
 from .notes import transcribe, refine_with_ollama, write_note
 from .upload import upload_note
+from .archive_import import import_capture
 
 
 def _sync_receipt(path: Path, stage: str, status: str):
@@ -154,7 +155,12 @@ def main():
     sync.add_argument("--transcribe", action="store_true")
     process = sub.add_parser("transcribe", help="Transcribe an existing audio file locally")
     process.add_argument("file", type=Path)
-    for command in [sync, process]:
+    archive = sub.add_parser("import-capture", help="Verify an experimental A04 archive and preserve local audio/provenance")
+    archive.add_argument("file", type=Path)
+    archive.add_argument("--output", type=Path, default=Path("recordings"))
+    archive.add_argument("--allow-interrupted", action="store_true", help="Explicitly recover a complete verified prefix; unknown lost audio is labelled")
+    archive.add_argument("--transcribe", action="store_true")
+    for command in [sync, process, archive]:
         command.add_argument("--model", default="base", help="faster-whisper model or local model directory")
         command.add_argument("--language", default=None, help="Optional language code; default auto-detect")
         command.add_argument("--ollama", default=None, help="Optional installed localhost Ollama model for refined notes")
@@ -172,7 +178,17 @@ def main():
     try:
         if args.command == "sync" and args.upload and not args.transcribe:
             raise ValueError("sync --upload also requires --transcribe; raw audio is never uploaded")
-        if args.command == "transcribe":
+        if args.command == "import-capture":
+            if args.upload and not args.transcribe:
+                raise ValueError("import-capture --upload also requires --transcribe; raw audio is never uploaded")
+            result = import_capture(args.file, args.output, allow_interrupted=args.allow_interrupted)
+            print(f"Verified local {result.status} capture: {result.wav}")
+            print(f"Source archive and provenance retained: {result.metadata}")
+            if args.transcribe:
+                failure = asyncio.run(_process_saved_recording(result.wav, args))
+                if failure:
+                    raise RuntimeError(failure)
+        elif args.command == "transcribe":
             if not args.file.is_file():
                 raise ValueError("Audio file does not exist")
             note = transcribe(args.file, args.model, args.language)

@@ -17,15 +17,17 @@ wheels = [
 
 [[package]]
 name = "aura-companion"
-version = "0.3.1"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
+    { name = "av" },
     { name = "bleak" },
     { name = "faster-whisper" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "av", specifier = "==18.1.0" },
     { name = "bleak", specifier = "==3.0.2" },
     { name = "faster-whisper", specifier = ">=1.2.0,<2" },
 ]

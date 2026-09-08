@@ -2,6 +2,37 @@
 
 Python3.12, Bleak3 and faster-whisper. The companion transfers committed audio from AURA, checks each packet and the complete recording, creates a normal WAV, and transcribes locally. It runs on Windows, macOS and Linux with a supported Bluetooth adapter. It is a desktop companion; this package is not an iOS/Android app.
 
+## A04 archive import — 0.4.0
+
+The new local file path connects the C Opus encoder's **experimental revision-3 archive** to verified audio, transcription and portal provenance. It does not provide A04 Bluetooth or firmware for a physical pendant. A03 `scan`/`sync` commands below still use their original v1 protocol; old experimental v2 and AOC1 test-container bytes are rejected by this importer.
+
+From `companion/`, with the pinned dependencies installed:
+
+```sh
+uv run --locked aura import-capture ../firmware/a04/fixtures/capture-20ms.aura --output recordings
+uv run --locked aura import-capture ../firmware/a04/fixtures/capture-20ms.aura --output recordings --transcribe --model tiny.en --language en
+```
+
+These checked-in fixtures contain synthetic test speech. The second command runs real local Whisper transcription; initial model download may require network access. Add `--upload` only when you want the resulting text and provenance sent to your configured portal. `--upload` requires `--transcribe`. Raw audio remains local.
+
+Import verifies a bounded archive snapshot, commits the complete source and terminal receipt in SQLite, exports Ogg Opus/mono 16 kHz WAV and publishes `.capture.json` last. The `.aur`, `.wav`, `.capture.json` and `.receipts/` files together preserve the source and its verification; `.opus` is a portable listening export. Keep the bundle and back it up. A file-level commit does not establish physical flash/power-loss guarantees, and this command sends no receipt or deletion request to a pendant.
+
+Each filename binds the device, capture and terminal revision digest. Repeat imports verify and reuse a committed bundle without re-decoding it. New exports record decoder/library versions. A missing final sidecar after interrupted publication can be repaired by reimport; conflicting or corrupt existing files are preserved and rejected. One OS-held lock serializes import into each output directory. The input bound is 320 MiB, the protocol payload bound 256 MiB and the metadata bound 1,000 bookmarks; production mobile/storage limits still need measurement.
+
+Interrupted source recovery is explicit:
+
+```sh
+uv run --locked aura import-capture ../firmware/a04/fixtures/capture-20ms-interrupted.aura --output recordings --allow-interrupted
+```
+
+Only complete verified records are retained. The original total duration remains unknown; a bookmark in lost encoder-tail audio is labelled unavailable. A recovered prefix and a later finalized source remain separate local revisions. The portal currently returns a source conflict for those differing revisions under one capture identity until an explicit review/promotion workflow is implemented.
+
+Transcription rechecks the sibling source archive, receipt, exact WAV hash/dimensions and recovery metadata before attaching provenance. Notes preserve segments, method/model/version, capture time confidence and bookmarks. Unknown time stays unknown. Existing note JSON is saved under `.note-revisions/` before a different current note replaces it, including when a sidecar was accidentally removed. Hashes and capture IDs detect inconsistency; they do not authenticate a physical device.
+
+Inference reads a private WAV snapshot verified against the initial source, then rechecks the original bundle before attaching that identity. Temporary snapshots are removed on normal/error exit; an abrupt process termination may leave one in the operating system's temporary directory. Revision publication flushes files and, on POSIX, their directory chain before replacing the current note. Windows uses file flush and atomic replacement without an equivalent directory-persistence guarantee here. Preserve backups; these operations have not been physically power-cut qualified.
+
+[Wire specification and C implementation](../firmware/a04/ARCHIVE.md) · [Portal source contract](../docs/a04/portal-provenance.md) · [Real synthetic transcription fixture](tests/assets/a04-capture.note.json) · [Local portal integration evidence](../portal/verification/a04-provenance-local.json).
+
 ## Install and run
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then from this directory:
@@ -86,7 +117,7 @@ uv run aura transcribe recordings/your-recording.wav --upload
 uv run aura sync --device DEVICE_ADDRESS --output recordings --transcribe --upload
 ```
 
-`sync --upload` requires `--transcribe`. There is no upload by default. The companion sends title, transcript, summary, suggested actions, tags and a recording timestamp to `/api/ingest` with a bearer token; it never sends the WAV. The upload identity is a SHA-256 of the sibling WAV, so retrying or editing a note's title does not create another identity. If its audio file is absent, a canonical note hash supplies a stable fallback. Prefer retaining the WAV for a consistent identity across edits. `recordedAt` comes from explicit note metadata, then the verified recording's time, then source-file modification time when the capture time is unknown.
+`sync --upload` requires `--transcribe`. There is no upload by default. The companion sends title, transcript, summary, suggested actions, tags and a recording timestamp to `/api/ingest` with a bearer token; it never sends the WAV. For legacy notes without capture provenance, the upload identity is a SHA-256 of the sibling WAV, so retrying or editing a note's title does not create another identity. If its audio file is absent, a canonical note hash supplies a stable fallback. Prefer retaining the WAV for a consistent identity across edits. Legacy `recordedAt` comes from explicit note metadata, then the verified recording's time, then source-file modification time when the capture time is unknown. A04 captured notes instead retain their manifest time/confidence (including unknown time as zero), immutable device/capture identity, archive receipt digest, segments, transcription method and bookmarks. Token rotation deduplicates these captures within the authenticated owner; a conflicting source revision is rejected for review. No source authenticity is inferred from an ID or checksum.
 
 The client permits HTTPS, plus loopback HTTP for local development, and refuses redirects entirely so the bearer token cannot be forwarded to a different origin. A successful response must explicitly confirm `{id, stored:true}`. A failure preserves local files and is not silently retried. Public demonstration portals may lack private ingestion configuration; the command requires your configured backend credential.
 

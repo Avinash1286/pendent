@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-09-08T21:26:51.047Z",
+  "status": "PASS",
+  "origin": "http://127.0.0.1:3000",
+  "backend": "http://127.0.0.1:3210",
+  "site": "http://127.0.0.1:3211",
+  "sourceNoteSha256": "dc0af0515c69fec8a981fac732c1d9e056559b1de547e89d4c642618024c652c",
+  "checks": [
+    "Next.js signup and owner authentication",
+    "Python AUR3 note upload into real local Convex",
+    "Rotated token reuses source and preserves consent",
+    "Owner boundary for identical declared capture",
+    "Source conflict preserves original",
+    "Owner edits retain immutable source",
+    "Consent-controlled live context retains source revision",
+    "Synthetic notes archived, tokens revoked and sessions signed out"
+  ],
+  "limitations": "Synthetic HTTP integration against real local Next.js and Convex, using the Python uploader. No browser interaction, cloud deployment, physical BLE transfer or authenticated-device proof. Synthetic account records remain only in ignored local data; their tokens are revoked and notes archived."
+}

@@ -24,7 +24,7 @@ def main():
         symbol_values = {symbol.name: symbol["st_value"] for symbol in symbols.iter_symbols()}
         selected = {}
         for symbol in symbols.iter_symbols():
-            if symbol.name in ("encoder_state", "capture", "codec_stack", "input", "opus_encode", "opus_encoder_get_size"):
+            if symbol.name in ("encoder_state", "capture", "archive", "codec_stack", "input", "opus_encode", "opus_encoder_get_size"):
                 selected[symbol.name] = {"bytes": symbol["st_size"], "address": symbol["st_value"]}
         sections = [{"name": section.name, "bytes": section["sh_size"], "address": section["sh_addr"],
                      "type": section["sh_type"]} for section in elf.iter_sections()
@@ -41,7 +41,7 @@ def main():
         if required not in compile_commands:
             raise ValueError("Missing actual Opus compiler option: " + required)
     stack_entries = []
-    for path in (BUILD / "opus").rglob("*.su"):
+    for path in BUILD.rglob("*.su"):
         for line in path.read_text().splitlines():
             fields = line.split("\t")
             if len(fields) == 3:
@@ -68,14 +68,14 @@ def main():
     report = {
         "status": "ARM_cross_compiled_not_executed",
         "target": "nrf52840dk/nrf52840",
-        "purpose": "A04 codec MCU ABI/resource probe; not A04 wearable firmware",
+        "purpose": "A04 codec and revision-3 archive MCU ABI/resource probe; not A04 wearable firmware",
         "zephyr": "4.2.0", "sdk": "0.17.2", "opus": "1.6.1",
         "memory_regions": {name: {"used_bytes": used, "capacity_bytes": capacities[name]}
                            for name, used in memories.items()},
         "memory_evidence": "Actual ELF _flash_used and _image_ram_size symbols, checked against configured capacities",
         "symbols": selected,
         "allocated_sections": sections,
-        "stack_analysis": {"translation_units_with_reports": len(list((BUILD / 'opus').rglob('*.su'))),
+        "stack_analysis": {"translation_units_with_reports": len(list(BUILD.rglob('*.su'))),
                            "largest_reported_functions": sorted(stack_entries, key=lambda x: x['compiler_reported_bytes'], reverse=True)[:15],
                            "dynamic_functions": sum("dynamic" in x["classification"] for x in stack_entries),
                            "limitation": "Reports include compiled library functions later removed by linker GC. Per-function static lower bounds do not sum to a runtime stack high-water; alloca requires physical measurement."},
@@ -87,7 +87,7 @@ def main():
         "not_verified": ["physical execution", "stack high-water", "encode deadline", "power/current", "PDM input",
                          "flash commit latency", "concurrent BLE", "final A04 board mapping", "signed boot/OTA"],
     }
-    (ROOT / "verification/arm-resources.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "verification/arm-resources.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"status": report["status"], "memory_regions": report["memory_regions"], "symbols": selected}, indent=2))
 
 

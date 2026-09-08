@@ -7,3 +7,5 @@ verification/** -text
 *.wav binary
 *.aoc binary
 *.opus binary
+*.aura binary
+*.receipt binary

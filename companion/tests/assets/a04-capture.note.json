@@ -1,0 +1,56 @@
+{
+  "audio_file": "aura-11111111111111111111111111111111-34343434343434343434343434343434-415b78879cadf5d3e11065fd697a6155bfa15916d0cadee5dfaaecbc6198db38.wav",
+  "language": "en",
+  "duration_seconds": 7.5529375,
+  "transcript": "Remember to send the design files to Maya on Friday. The new pendant should feel comfortable and simple to use.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.0,
+      "text": "Remember to send the design files to Maya on Friday. The new pendant should feel comfortable and simple to use."
+    }
+  ],
+  "transcription": {
+    "engine": "faster-whisper",
+    "model": "tiny.en",
+    "version": "1.2.1"
+  },
+  "title": "Send the design files to Maya on Friday",
+  "summary": [
+    "Remember to send the design files to Maya on Friday.",
+    "The new pendant should feel comfortable and simple to use."
+  ],
+  "suggested_actions": [
+    "Remember to send the design files to Maya on Friday."
+  ],
+  "summary_method": "extractive — original sentences, not an LLM summary",
+  "capture": {
+    "version": 2,
+    "deviceId": "11111111111111111111111111111111",
+    "captureId": "34343434343434343434343434343434",
+    "archiveDigest": "415b78879cadf5d3e11065fd697a6155bfa15916d0cadee5dfaaecbc6198db38",
+    "sampleRate": 16000,
+    "sourceSamples": 120847,
+    "startedAtMs": 0,
+    "timeConfidence": "unknown",
+    "interrupted": false,
+    "bookmarks": [
+      8000,
+      32000
+    ],
+    "transcriptRevision": "000143fce48da14e46cea5f8d03735e3dbd7ca0538ef56f7353a578c787c2c42",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.0,
+        "text": "Remember to send the design files to Maya on Friday. The new pendant should feel comfortable and simple to use."
+      }
+    ],
+    "transcription": {
+      "engine": "faster-whisper",
+      "model": "tiny.en",
+      "version": "1.2.1"
+    }
+  },
+  "recordedAt": 0
+}

@@ -99,7 +99,7 @@ def main():
     prefix = ROOT / "fixtures/speech"
     run = subprocess.run([str(tools / "host/aura_codec_test.exe"), str(source_raw), str(prefix)],
                          text=True, capture_output=True, check=True)
-    (ROOT / "verification/host-codec.txt").write_text(run.stdout, encoding="utf-8")
+    (ROOT / "verification/host-codec.txt").write_text(run.stdout, encoding="utf-8", newline="\n")
     metrics = []
     for ms in (10, 20):
         archive = ROOT / f"fixtures/speech-{ms}ms.aoc"
@@ -136,7 +136,7 @@ def main():
         "not_verified": ["MCU encode deadline", "MCU stack high-water", "power", "PDM input", "durable flash sink",
                          "BLE concurrency", "physical microphone quality", "language/transcription benchmark"],
     }
-    (ROOT / "verification/host-roundtrip.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "verification/host-roundtrip.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(run.stdout, end="")
     print(json.dumps(report, indent=2))
 

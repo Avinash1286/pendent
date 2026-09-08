@@ -428,11 +428,19 @@ function Workspace() {
                       )}
                     </div>
                     <footer>
-                      <time dateTime={new Date(note.recordedAt).toISOString()}>
-                        {new Date(note.recordedAt).toLocaleDateString(undefined, {
-                          month: "short",
-                          day: "numeric",
-                        })}
+                      <time
+                        dateTime={
+                          note.capture?.timeConfidence === "unknown"
+                            ? undefined
+                            : new Date(note.recordedAt).toISOString()
+                        }
+                      >
+                        {note.capture?.timeConfidence === "unknown"
+                          ? "Capture time unknown"
+                          : new Date(note.recordedAt).toLocaleDateString(undefined, {
+                              month: "short",
+                              day: "numeric",
+                            })}
                       </time>
                       <button
                         aria-label={
@@ -831,7 +839,8 @@ function Workspace() {
               {editing?._id ? "A thought, in detail." : "Give a thought a place."}
             </Dialog.Title>
             <Dialog.Description>
-              Edit the original thought, its summary and the context you choose to share.
+              Edit your note, its summary and the context you choose to share. Captured sources are
+              retained separately.
             </Dialog.Description>
             {editing && (
               <form
@@ -843,6 +852,7 @@ function Workspace() {
                   try {
                     await saveNote({
                       id: editing._id,
+                      capture: editing._id ? undefined : editing.capture,
                       title: String(data.get("title")),
                       transcript: String(data.get("transcript")),
                       summary: String(data.get("summary"))
@@ -874,14 +884,87 @@ function Workspace() {
                   <input name="title" required maxLength={160} defaultValue={editing.title ?? ""} />
                 </label>
                 <label>
-                  Original thought
+                  {editing.capture ? "Your note" : "Original thought"}
                   <textarea
                     name="transcript"
                     rows={6}
                     maxLength={60000}
                     defaultValue={editing.transcript ?? ""}
+                    readOnly={!!editing.capture && !editing._id}
                   />
                 </label>
+                {editing.capture && (
+                  <details className="capture-source">
+                    <summary>
+                      Captured source ·{" "}
+                      {(editing.capture.sourceSamples / editing.capture.sampleRate).toFixed(2)}{" "}
+                      seconds
+                    </summary>
+                    <p className="fine">
+                      {editing.capture.timeConfidence === "unknown"
+                        ? "Capture time unknown."
+                        : "Capture time synchronized by the host."}{" "}
+                      {editing.capture.interrupted &&
+                        "Interrupted capture; the missing tail length is unknown. "}
+                      The original transcript and timing stay unchanged when you edit your note.
+                      {!editing._id && " Save this import before editing the note."}
+                    </p>
+                    <p className="fine">
+                      {editing.capture.transcription.engine} · {editing.capture.transcription.model}{" "}
+                      · {editing.capture.transcription.version}
+                    </p>
+                    {editing.capture.bookmarks.length > 0 && (
+                      <p className="fine">
+                        Bookmarks:{" "}
+                        {editing.capture.bookmarks
+                          .map(
+                            (sample) =>
+                              `${(sample / editing.capture!.sampleRate).toFixed(2)}s${sample > editing.capture!.sourceSamples ? " (audio unavailable)" : ""}`,
+                          )
+                          .join(", ")}
+                      </p>
+                    )}
+                    <div className="capture-segments">
+                      {editing.capture.segments.length ? (
+                        editing.capture.segments.map((segment, index) => (
+                          <p key={index}>
+                            <time>
+                              {segment.start.toFixed(2)}–{segment.end.toFixed(2)}s
+                            </time>{" "}
+                            {segment.text}
+                          </p>
+                        ))
+                      ) : (
+                        <p>{editing.sourceTranscript ?? editing.transcript}</p>
+                      )}
+                    </div>
+                    <button
+                      className="secondary"
+                      type="button"
+                      onClick={() =>
+                        download(
+                          "aura-captured-source.json",
+                          JSON.stringify(
+                            {
+                              title: editing.title,
+                              transcript: editing.sourceTranscript ?? editing.transcript,
+                              recordedAt: editing.capture!.startedAtMs,
+                              capture: editing.capture,
+                              summary: [],
+                              actions: [],
+                              tags: [],
+                            },
+                            null,
+                            2,
+                          ),
+                          "application/json",
+                        )
+                      }
+                    >
+                      <Download size={16} /> Download captured source
+                    </button>
+                  </details>
+                )}
                 <div className="form-columns">
                   <label>
                     Summary
@@ -927,10 +1010,13 @@ function Workspace() {
                         "aura-note.md",
                         buildContext(null, [
                           {
+                            _id: editing._id,
                             title: editing.title ?? "Thought",
                             recordedAt: editing.recordedAt ?? Date.now(),
                             transcript: editing.transcript ?? "",
                             summary: editing.summary ?? [],
+                            capture: editing.capture,
+                            sourceTranscript: editing.sourceTranscript,
                           },
                         ]),
                       )

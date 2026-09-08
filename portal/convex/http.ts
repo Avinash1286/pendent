@@ -60,6 +60,7 @@ http.route({
       const id = await ctx.runMutation(internal.notes.ingest, {
         tokenId: token._id,
         sourceId: data.sourceId,
+        capture: data.capture,
         title: data.title,
         transcript: data.transcript,
         summary: data.summary,
@@ -69,7 +70,19 @@ http.route({
         contextEnabled: false,
       });
       return json({ id, stored: true });
-    } catch {
+    } catch (error) {
+      const code =
+        error &&
+        typeof error === "object" &&
+        "data" in error &&
+        error.data &&
+        typeof error.data === "object" &&
+        "code" in error.data
+          ? error.data.code
+          : null;
+      if (code === "SOURCE_CONFLICT")
+        return json({ error: "Capture already exists with different source data.", code }, 409);
+      if (code === "UNAUTHORIZED") return json({ error: "Unauthorized" }, 401);
       return json({ error: "Invalid note or storage request. Check field types and limits." }, 400);
     }
   }),

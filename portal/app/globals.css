@@ -1096,6 +1096,26 @@ input[type="checkbox"] {
 .sidebar nav .mobile-signout {
   display: none;
 }
+.capture-source {
+  border: 1px solid #deded8;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.capture-source summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.capture-segments {
+  max-height: 260px;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.capture-segments time {
+  color: #73736c;
+  font-variant-numeric: tabular-nums;
+}
 @media (max-width: 760px) {
   .sidebar nav .mobile-signout {
     display: flex;

@@ -1,0 +1,158 @@
+{
+  "status": "C_Python_durable_receiver_FFmpeg_passed_device_unmeasured",
+  "wire_version": 3,
+  "source_sha256": "845096068f1fb6a944ba1aecdb7cc6a1f27d0096a5a78b60b09011c310dbe46e",
+  "fixtures": [
+    {
+      "file": "fixtures/capture-10ms.aura",
+      "status": "finalized",
+      "file_sha256": "02a65e3f88a52f5669dac35c07b383c7e02ec5f8587d299ed26ef5e9c01da6e6",
+      "terminal_digest": "5a5aac1737cf60fd928006da49f14fee3bd58ca67b981aa98ee13e0900abffcf",
+      "packet_prefix_digest": "3e21f4b94790e9a35783e76c98776a5dfd4f653a0cedf8e0bbce3a27590ecfe7",
+      "bytes": 47261,
+      "records": 758,
+      "audio_packets": 756,
+      "encoded_bytes": 27365,
+      "encoded_samples": 120960,
+      "source_samples": 120847,
+      "original_source_samples": 120847,
+      "pre_skip": 40,
+      "end_trim": 73,
+      "decoded_samples": 120847,
+      "waveform_snr_db": 11.982,
+      "bookmarks": [
+        {
+          "source_sample": 8000,
+          "available": true
+        },
+        {
+          "source_sample": 32000,
+          "available": true
+        }
+      ],
+      "c_terminal_receipt_match": true,
+      "c_open_prefix_match": false
+    },
+    {
+      "file": "fixtures/capture-20ms.aura",
+      "status": "finalized",
+      "file_sha256": "b3f18e0fdbd375c542404488fd261409e904ddc2d7523d4b68c24329579d44b7",
+      "terminal_digest": "415b78879cadf5d3e11065fd697a6155bfa15916d0cadee5dfaaecbc6198db38",
+      "packet_prefix_digest": "4ffb9993792e83a75b067110bc642c34dd1a50c194793116a3c6a80f06676935",
+      "bytes": 37066,
+      "records": 380,
+      "audio_packets": 378,
+      "encoded_bytes": 26998,
+      "encoded_samples": 120960,
+      "source_samples": 120847,
+      "original_source_samples": 120847,
+      "pre_skip": 40,
+      "end_trim": 73,
+      "decoded_samples": 120847,
+      "waveform_snr_db": 11.919,
+      "bookmarks": [
+        {
+          "source_sample": 8000,
+          "available": true
+        },
+        {
+          "source_sample": 32000,
+          "available": true
+        }
+      ],
+      "c_terminal_receipt_match": true,
+      "c_open_prefix_match": false
+    },
+    {
+      "file": "fixtures/capture-20ms-interrupted.aura",
+      "status": "interrupted",
+      "file_sha256": "f5b70b7395e6bca4a984e80e021121db8ccb7f2fe0d986c9378a1380320212b8",
+      "terminal_digest": "fee2159bdf9f3adbb96713b8f3927a3f23c13cec126b0a7e637cda4558c3e046",
+      "packet_prefix_digest": "8f3460351efa0c6741ead8a42e640e40b5ccb4cd555f454b8a3c55836a2f56be",
+      "bytes": 37063,
+      "records": 380,
+      "audio_packets": 377,
+      "encoded_bytes": 26995,
+      "encoded_samples": 120640,
+      "source_samples": 120600,
+      "original_source_samples": null,
+      "pre_skip": 40,
+      "end_trim": 0,
+      "decoded_samples": 120600,
+      "waveform_snr_db": 11.919,
+      "bookmarks": [
+        {
+          "source_sample": 8000,
+          "available": true
+        },
+        {
+          "source_sample": 32000,
+          "available": true
+        },
+        {
+          "source_sample": 120640,
+          "available": false
+        }
+      ],
+      "c_terminal_receipt_match": true,
+      "c_open_prefix_match": false
+    },
+    {
+      "file": "fixtures/capture-20ms-open.aura",
+      "status": "interrupted",
+      "file_sha256": "bfc4df73c0631f49adc584f4e431454f8b054867fb695d843d26a6daf68d37ce",
+      "terminal_digest": "423a08286345cbfc6c698d30deb0775d21a43909969385f0c97d51f22319d6c8",
+      "packet_prefix_digest": "c45da91eaa65e7a7482b383f86295b92348277a724a09b8acc4c5d18f12af845",
+      "bytes": 36917,
+      "records": 379,
+      "audio_packets": 377,
+      "encoded_bytes": 26995,
+      "encoded_samples": 120640,
+      "source_samples": 120600,
+      "original_source_samples": null,
+      "pre_skip": 40,
+      "end_trim": 0,
+      "decoded_samples": 120600,
+      "waveform_snr_db": 11.919,
+      "bookmarks": [
+        {
+          "source_sample": 8000,
+          "available": true
+        },
+        {
+          "source_sample": 32000,
+          "available": true
+        }
+      ],
+      "c_terminal_receipt_match": false,
+      "c_open_prefix_match": true
+    }
+  ],
+  "code_source_sha256": {
+    "firmware/a04/src/aura_archive.c": "23f57ccc47f056c76c9e7dd4018bad781c784c3f5967accea3d4532792051fb6",
+    "firmware/a04/include/aura_archive.h": "95449878ad34135e91683c293f26038a00d3526c70b5ed9499f89b803e487fc3",
+    "firmware/a04/src/aura_opus.c": "b455e1e2a03a6dad8e2de110728c03e5d9bcf8dcfc9f71455404624ddd637956",
+    "firmware/a04/tests/host_archive.c": "ba0a7f2c7a33e5dfeda1f6cc76910f65dc6c0d2e51fd356e1f2da4291b59d9ed",
+    "firmware/a04/scripts/verify_archives.py": "b4b2390832cfa6a17aded1b900af5bc3fad255f73a07d637c76d862b516053a9",
+    "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d",
+    "companion/tests/test_protocol_v2.py": "757ccd58155b4c5562c480c1bcd37e6417db67070744cfc7fe3b4684f4c31ca7"
+  },
+  "guarantees_exercised": [
+    "real Opus encode",
+    "exact C/Python CRC and SHA256 chain",
+    "idempotent partial-write retries at exact offsets",
+    "terminal metadata binding",
+    "durable SQLite batch import and restart/replay",
+    "independent decoded duration",
+    "source-timeline bookmarks"
+  ],
+  "not_verified": [
+    "physical MCU execution",
+    "PDM input",
+    "NAND journal/reboot recovery",
+    "BLE/mobile lifecycle",
+    "runtime stack/timing/current",
+    "ownership/authentication",
+    "signed boot/OTA"
+  ]
+}

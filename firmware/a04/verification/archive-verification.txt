@@ -1,0 +1,8 @@
+PASS archive 10ms status=1 packets=758 audio=756 bytes=27365 samples=120960 retries=5 writer_context=1504
+PASS archive 20ms status=1 packets=380 audio=378 bytes=26998 samples=120960 retries=5 writer_context=1504
+PASS archive 20ms status=2 packets=380 audio=377 bytes=26995 samples=120640 retries=5 writer_context=1504
+PASS archive 20ms status=0 packets=379 audio=377 bytes=26995 samples=120640 retries=4 writer_context=1504
+PASS fixtures/capture-10ms.aura: finalized, 120847 decoded source samples, SNR 11.982 dB, 2 bookmarks
+PASS fixtures/capture-20ms.aura: finalized, 120847 decoded source samples, SNR 11.919 dB, 2 bookmarks
+PASS fixtures/capture-20ms-interrupted.aura: interrupted, 120600 decoded source samples, SNR 11.919 dB, 3 bookmarks
+PASS fixtures/capture-20ms-open.aura: interrupted, 120600 decoded source samples, SNR 11.919 dB, 2 bookmarks

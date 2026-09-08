@@ -1,3 +1,5 @@
+import { parseCapture, type Capture } from "./capture";
+
 export type ImportedNote = {
   title: string;
   transcript: string;
@@ -6,6 +8,7 @@ export type ImportedNote = {
   tags: string[];
   recordedAt: number;
   contextEnabled: boolean;
+  capture?: Capture;
 };
 
 function strings(value: unknown, name: string, count: number, length: number): string[] {
@@ -40,7 +43,11 @@ export function parseImportedNote(
       "The note needs a text transcript of at most 60,000 characters. Nothing was imported.",
     );
   }
-  const recordedAt = data.recordedAt === undefined ? fallbackTimestamp : data.recordedAt;
+  // A v2 capture must supply its actual/unknown source time, never file modification time.
+  const recordedAt =
+    data.recordedAt === undefined && data.capture === undefined
+      ? fallbackTimestamp
+      : data.recordedAt;
   if (
     typeof recordedAt !== "number" ||
     !Number.isFinite(recordedAt) ||
@@ -57,5 +64,6 @@ export function parseImportedNote(
     tags: strings(data.tags, "tags", 10, 40),
     recordedAt,
     contextEnabled: false,
+    ...(data.capture === undefined ? {} : { capture: parseCapture(data.capture, recordedAt, now) }),
   };
 }

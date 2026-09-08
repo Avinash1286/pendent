@@ -81,25 +81,26 @@ CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:2271 (message):
  * Dtc (required version >= 1.4.6)
  * ScaTools
 
--- Configuring done (26.8s)
--- Generating done (1.1s)
+-- Configuring done (68.6s)
+-- Generating done (1.5s)
 -- Build files have been written to: F:/circuit/.tools/a04-opus/arm
 [0/1] Re-running CMake...
-[1/128] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
-[2/10] Generating linker_zephyr_pre0.cmd
-[3/10] Building C object CMakeFiles/app.dir/src/aura_opus.c.obj
-[4/10] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
-[5/10] Linking C static library app\libapp.a
-[6/10] Linking C executable zephyr\zephyr_pre0.elf
-[7/10] Generating linker.cmd
-[8/10] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
-[9/10] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
-[10/10] Linking C executable zephyr\zephyr.elf
+[1/129] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[2/11] Generating linker_zephyr_pre0.cmd
+[3/11] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
+[4/11] Building C object CMakeFiles/app.dir/src/aura_opus.c.obj
+[5/11] Building C object CMakeFiles/app.dir/src/aura_archive.c.obj
+[6/11] Linking C static library app\libapp.a
+[7/11] Linking C executable zephyr\zephyr_pre0.elf
+[8/11] Generating linker.cmd
+[9/11] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
+[10/11] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[11/11] Linking C executable zephyr\zephyr.elf
 Memory region         Used Size  Region Size  %age Used
 
-           FLASH:      170520 B         1 MB     16.26%
+           FLASH:      173752 B         1 MB     16.57%
 
-             RAM:       90304 B       256 KB     34.45%
+             RAM:       91776 B       256 KB     35.01%
 
         IDT_LIST:          0 GB        32 KB      0.00%
 

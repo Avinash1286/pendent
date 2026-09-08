@@ -47,7 +47,7 @@ Client configuration syntax varies; the example describes the URL/header contrac
 
 ## Backend contracts
 
-- `POST /api/ingest`: bearer ingestion token; JSON `sourceId`, `title`, `transcript`, `summary[]`, `actions[]`, `tags[]`, `recordedAt` (Unix milliseconds). Returns `{id, stored:true}`. Retries with the same token/source ID do not duplicate a note.
+- `POST /api/ingest`: bearer ingestion token; JSON `title`, `transcript`, `summary[]`, `actions[]`, `tags[]`, `recordedAt` (Unix milliseconds), plus either legacy `sourceId` or the new `capture` metadata object. Returns `{id, stored:true}`. Legacy v1 retries remain token/source scoped. V2 capture imports deduplicate by authenticated owner + device ID + capture ID across token rotation, preserve the original transcript/segments and reject conflicting source replays with HTTP 409. [Exact provenance schema and compatibility limits](../docs/a04/portal-provenance.md).
 - `GET /api/context`: bearer context token; returns `{markdown, noteCount, generatedAt}`.
 - `POST /mcp`: bearer context token; JSON-RPC 2.0.
 

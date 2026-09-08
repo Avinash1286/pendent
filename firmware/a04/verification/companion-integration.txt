@@ -1,0 +1,7 @@
+Command: companion/.venv/Scripts/python.exe -m unittest discover -s companion/tests -q
+Environment: pinned companion dependencies on Windows; synthetic fixtures only.
+
+----------------------------------------------------------------------
+Ran 95 tests in 7.123s
+
+OK

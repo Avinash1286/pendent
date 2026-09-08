@@ -2,12 +2,15 @@
 import hashlib
 import ipaddress
 import json
+import math
 import os
 import time
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, HTTPRedirectHandler, build_opener
+
+from .capture_source import load_capture_source, validate_capture
 
 
 class NoRedirects(HTTPRedirectHandler):
@@ -39,6 +42,49 @@ def _strings(note: dict, key: str, limit: int, item_limit=2000) -> list[str]:
     return values
 
 
+def _capture_payload(note: dict, wav: Path | None) -> dict | None:
+    if "capture" not in note:
+        return None
+    capture = validate_capture(note["capture"])
+    keys = {"version", "deviceId", "captureId", "archiveDigest", "sampleRate", "sourceSamples",
+            "startedAtMs", "timeConfidence", "interrupted", "bookmarks", "transcriptRevision", "segments", "transcription"}
+    if set(capture) != keys:
+        raise ValueError("Capture provenance has unknown or missing fields")
+    if capture["transcriptRevision"] != hashlib.sha256(note["transcript"].encode("utf-8")).hexdigest():
+        raise ValueError("Transcript changed since its capture revision; review the source before upload")
+    if any(key in note and note[key] != capture[key] for key in ("segments", "transcription")):
+        raise ValueError("Note timing or transcription method conflicts with its source revision")
+    if wav and (saved := load_capture_source(wav)) is not None:
+        if any(capture[key] != value for key, value in saved.items()):
+            raise ValueError("Note capture identity conflicts with its verified audio source")
+    segments = capture["segments"]
+    if not isinstance(segments, list) or len(segments) > 2000:
+        raise ValueError("Capture transcript exceeds the segment limit")
+    previous_end = 0
+    text_size = 0
+    for segment in segments:
+        if not isinstance(segment, dict) or set(segment) != {"start", "end", "text"}:
+            raise ValueError("Invalid capture transcript segment")
+        start, end, text = segment["start"], segment["end"], segment["text"]
+        if (type(start) not in (float, int) or type(end) not in (float, int)
+                or not math.isfinite(start) or not math.isfinite(end)
+                or start < previous_end or end < start or end > capture["sourceSamples"] / 16000):
+            raise ValueError("Capture transcript timing exceeds its retained audio")
+        if not isinstance(text, str) or len(text.encode("utf-16-le")) // 2 > 2000:
+            raise ValueError("Invalid capture segment text")
+        text_size += len(text.encode("utf-16-le")) // 2
+        if text_size > 60000:
+            raise ValueError("Capture transcript segments exceed the upload limit")
+        previous_end = end
+    method = capture["transcription"]
+    if not isinstance(method, dict) or set(method) != {"engine", "model", "version"}:
+        raise ValueError("Missing capture transcription method")
+    if any(not isinstance(value, str) or not value.strip() or len(value.encode("utf-16-le")) // 2 > 160
+           for value in method.values()):
+        raise ValueError("Invalid capture transcription method")
+    return capture
+
+
 def note_payload(note_path: Path) -> dict:
     if note_path.stat().st_size > 2_000_000:
         raise ValueError("Note file exceeds 2 MB")
@@ -58,7 +104,10 @@ def note_payload(note_path: Path) -> dict:
         candidate = note_path.parent / source
         if candidate.is_file() and candidate.resolve().parent == note_path.resolve().parent:
             wav = candidate
-    if wav:
+    capture = _capture_payload(note, wav)
+    if capture:
+        source_id = "v2:" + capture["deviceId"] + ":" + capture["captureId"]
+    elif wav:
         with wav.open("rb") as stream:
             for block in iter(lambda: stream.read(65536), b""):
                 digest.update(block)
@@ -68,6 +117,10 @@ def note_payload(note_path: Path) -> dict:
         canonical = json.dumps(note, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
         source_id = "sha256:note:" + hashlib.sha256(canonical.encode()).hexdigest()
     recorded_at = note.get("recordedAt")
+    if capture:
+        if recorded_at is not None and recorded_at != capture["startedAtMs"]:
+            raise ValueError("Note recording time conflicts with its capture source")
+        recorded_at = capture["startedAtMs"]
     if recorded_at is None and wav:
         metadata = wav.with_suffix(".json")
         if metadata.is_file() and metadata.stat().st_size < 100_000:
@@ -79,10 +132,13 @@ def note_payload(note_path: Path) -> dict:
         recorded_at = int((wav or note_path).stat().st_mtime * 1000)
     if isinstance(recorded_at, bool) or not isinstance(recorded_at, int) or not 0 <= recorded_at <= int(time.time() * 1000) + 86_400_000:
         raise ValueError("recordedAt must be an epoch timestamp in milliseconds")
-    return {"sourceId": source_id, "title": title, "transcript": note["transcript"],
+    payload = {"sourceId": source_id, "title": title, "transcript": note["transcript"],
             "summary": _strings(note, "summary", 20),
             "actions": _strings(note, "suggested_actions", 30),
             "tags": _strings(note, "tags", 10, 40), "recordedAt": recorded_at}
+    if capture:
+        payload["capture"] = capture
+    return payload
 
 
 def upload_note(note_path: Path, *, portal_url=None, token=None) -> dict:

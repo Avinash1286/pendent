@@ -1,0 +1,272 @@
+{
+  "revision": "A04 M1 mechanism candidate",
+  "status": "UNQUALIFIED MECHANISM TRIAL; PCB INTERFACES ARE PROPOSALS",
+  "nativePcbModified": false,
+  "nativePlacementImported": false,
+  "physicalQualification": false,
+  "printRelease": false,
+  "units": "mm; Blender geometry uses millimetre coordinates with scale_length0.001",
+  "axes": {
+    "x": "right",
+    "y": "bail",
+    "z": "front; rear outer plane z=0"
+  },
+  "bodyDiameterMm": 41.0,
+  "pcbDiameterMm": 35.2,
+  "pcbThicknessMm": 1.6,
+  "cellScenarios": [
+    {
+      "id": "thin-cell",
+      "maximumAllocationMm": [
+        26.0,
+        21.0,
+        3.3
+      ],
+      "bodyDepthMm": 10.8,
+      "supplierQualified": false,
+      "description": "Existing controlled maximum goal; no qualified pack"
+    },
+    {
+      "id": "documented-pack",
+      "maximumAllocationMm": [
+        26.0,
+        21.0,
+        4.3
+      ],
+      "bodyDepthMm": 11.8,
+      "supplierQualified": false,
+      "description": "LiPol LP402024 dated maximum 25 x 20.5 x 4.3 body inside larger XY allocation; current pack/PCM/NTC approval still open"
+    }
+  ],
+  "stackMm": {
+    "rearSkin": 1.0,
+    "cellBacking": 0.15,
+    "cellGrowth": 0.4,
+    "dielectricAndFreeSpace": 0.15,
+    "pcb": 1.6,
+    "topPartsPlusMount": 2.45,
+    "pressedFaceClearance": 0.3,
+    "faceTravel": 0.4,
+    "faceSkin": 1.0,
+    "rimSetback": 0.05
+  },
+  "face": {
+    "diameterMm": 35.2,
+    "apertureDiameterMm": 35.7,
+    "flangeInnerRadiusMm": 16.9,
+    "flangeOuterRadiusMm": 18.35,
+    "flangeThicknessMm": 0.8,
+    "travelMm": 0.4,
+    "guideRadialClearanceMm": 0.2,
+    "guideTangentialClearanceMm": 0.2,
+    "retainerInnerRadiusMm": 16.3,
+    "retainerOuterRadiusMm": 18.75,
+    "retainerThicknessMm": 1.1,
+    "loadPath": "Face flange to stationary retainer and rear columns; upper lip limits outward motion",
+    "returnPads": "Three separately cut nominal 1.0 x 1.5 x 1.6 silicone-foam pads; 0.1 preload and 0.5 compression at stop are geometric allocations, not a force or fatigue qualification",
+    "retainerLocalRelief": "Two closure-boss bridges and an upper maximum-radio relief; inspect exact STL/XY map"
+  },
+  "closure": {
+    "screwCandidate": "M1.6 x 6 DIN85 slotted pan head, stainless; head diameter3.2 and height1.0 nominal",
+    "nutCandidate": "M1.6 ISO4032, width across flats3.2 max, height1.3 max",
+    "screwCentresXYMm": [
+      [
+        -17.79,
+        -0.1
+      ],
+      [
+        16.5,
+        6.5
+      ]
+    ],
+    "bossRadiusMm": 2.7,
+    "nutPocketAcrossFlatsMm": 3.45,
+    "nutSeatTopZMm": 6.8,
+    "headSeatZMm": 1.1,
+    "screwClearanceDiameterMm": 1.9,
+    "headPocketDiameterMm": 3.5,
+    "torqueQualified": false
+  },
+  "retainerColumns": {
+    "radiusFromOriginMm": 17.8,
+    "columnRadiusMm": 1.3,
+    "anglesDeg": [
+      90,
+      230,
+      320
+    ],
+    "requiredPcbNotchRadiusMm": 1.6
+  },
+  "privacy": {
+    "nativePart": "JS202011JCQN",
+    "nativePartFitsTopStack": false,
+    "candidate": "Nidec CUS-22TB",
+    "candidateAcceptedInNativePcb": false,
+    "mountingProposal": "B.Cu; body long axis Y, actuator downward, side fork translates Y",
+    "centreXYMm": [
+      13.5,
+      0.0
+    ],
+    "bodyMaximumMm": [
+      4.3,
+      6.9,
+      1.6
+    ],
+    "totalActuatorInclusiveHeightBudgetMm": 3.3,
+    "solderSeatingMm": 0.15,
+    "fullLeadSpanNominalMm": 5.9,
+    "travelNominalMm": 1.5,
+    "actuatorWidthMaximumMm": 1.4,
+    "actuatorDepthMaximumMm": 0.9,
+    "forkGapMm": 1.8,
+    "commons": [
+      2,
+      5
+    ],
+    "throws": [
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "qualification": "Exact worst-case stroke, fork take-up, shell stops and supply contact truth require measurement; no forced overtravel",
+    "sources": [
+      "https://www.nidec-components.com/e/catalog/switch/cus.pdf",
+      "https://www.ckswitches.com/media/1422/js.pdf"
+    ],
+    "padEdgeClearanceNominalMm": 0.6,
+    "actualNativeCopperToEdgeRuleMm": 0.5,
+    "unshimmedShellTravelMm": 2.4,
+    "endStopsRequireMeasuredShimAdjustment": true
+  },
+  "controlsProposal": {
+    "faceSwitchXYMm": [
+      -5.0,
+      -4.0
+    ],
+    "faceSwitch": "KMR211NGULCLFS",
+    "actuatorHeightNominalMm": 1.9,
+    "switchTravelRangeMm": [
+      0.1,
+      0.3
+    ],
+    "plungerProtrusionMm": 1.2,
+    "plungerSoftTipMm": 0.0,
+    "plungerQualification": "Interchangeable short insert is a sizing blank. No rigid powered actuation until safe travel/overtravel is measured and insert shortened or compliant tip qualified.",
+    "statusLedXYMm": [
+      0.0,
+      0.0
+    ],
+    "serviceReset": "Rear-cover removal access; no blind pin tool alongside the cell"
+  },
+  "acousticsProposal": {
+    "pcbPortXYMm": [
+      [
+        -6.5,
+        -13.8
+      ],
+      [
+        6.5,
+        -13.8
+      ]
+    ],
+    "ductOutsideRadiusMm": 1.5,
+    "boreDiameterMm": 1.3,
+    "sidePortZMm": 2.6,
+    "gasketThicknessRestMm": 0.5,
+    "gasketWorkingThicknessMm": 0.4,
+    "gasketOuterDiameterMm": 3.0,
+    "pcbPortDiameterMm": 1.0,
+    "nativePortDatumConfirmed": false,
+    "sealQualified": false
+  },
+  "dockProposal": {
+    "contactCentresXYMm": [
+      [
+        -3.0,
+        -15.5
+      ],
+      [
+        0.0,
+        -15.5
+      ],
+      [
+        3.0,
+        -15.5
+      ]
+    ],
+    "nets": [
+      "GND",
+      "DOCK_5V",
+      "GND"
+    ],
+    "contactTarget": "Proposed exposed B.Cu pads; not yet native placement",
+    "accessBoreDiameterMm": 2.0,
+    "pogoCandidate": "Mill-Max0906-1-15-20-75-14-11-0",
+    "pogoMidStrokeHeightMm": 3.8,
+    "requiredDockRaisedNoseMm": {
+      "thin-cell": 1.2,
+      "documented-pack": 2.2
+    },
+    "dockQualified": false
+  },
+  "temperatureSensorProposal": {
+    "candidate": "Semitec103AT-2",
+    "bodyMaximumMm": [
+      4.0,
+      3.7,
+      2.4
+    ],
+    "centreXYMm": [
+      13.2,
+      -7.0
+    ],
+    "cellEdgeNominalGapMm": 0.1,
+    "changeFromStudy": "Move to lower right edge, below underside CUS22 and away from closure bosses",
+    "contactAndCarrierQualified": false
+  },
+  "componentAllocationsOnly": {
+    "radioCentreXYMm": [
+      0,
+      8.6
+    ],
+    "radioMaximumMm": [
+      10.7,
+      15.7,
+      2.25
+    ],
+    "radioSolderMm": 0.15,
+    "motorCentreXYMm": [
+      6.0,
+      -5.0
+    ],
+    "motorMaximumDiameterMm": 10.1,
+    "motorMountedMaximumHeightMm": 2.45,
+    "motorTabReachMm": 6.6,
+    "actualNativeLocations": false
+  },
+  "materials": {
+    "rigidParts": "Separate washed/cured Tough2000V2-class SLA mechanical trials; no skin-contact or lifetime qualification",
+    "diffuserAndDash": "Separate clear SLA optical trials; no efficiency/uniformity claim",
+    "returns": "Separate silicone foam; printed rigid flexures are not used as return springs",
+    "finish": "Nonconductive prototype finish; champagne shader is appearance only"
+  },
+  "requiredBeforePoweredAssembly": [
+    "Accept exact privacy part and full native pad map",
+    "Author and inspect board notches/keepouts/underside components",
+    "Import all actual maximum package/lead envelopes",
+    "Select qualified pack and sensor assembly",
+    "Measure plunger and face actuation/release/overtravel",
+    "Select and test return foam and screw torque",
+    "Qualify acoustic seals, dock nose/contact depth, RF and wear"
+  ],
+  "cavityDiameterMm": 38.6,
+  "cellCentreXYMm": [
+    -1.9,
+    -1.3
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "status": "EXPERIMENTAL SOLIDS; NOT A PROVEN INSERTION OR ASSEMBLY SEQUENCE",
+  "source": "thin-cell/aura-a04-mechanism.blend",
+  "sourceSha256": "483dbdf86cdd160cfbb76bdd62a057e994bd9cb19568f62f485618a68bf971b6",
+  "rendererSha256": "340bec8d502defa94a1d0b6b7396d66532dec3a0b82bac7eaafad99dc5de63f1",
+  "image": "thin-cell/mechanism-exploded.png",
+  "imageSha256": "b9b0e46f2dbb569b1d30f7cb7616333c73abc4cec988953158d2390c47ac3c9e",
+  "displayedPrintedSolids": 14,
+  "purchasedProxiesHidden": true,
+  "physicalQualification": false,
+  "offsetsMm": {
+    "01_FRONT_HOUSING_WITH_BAIL": [
+      0,
+      0,
+      2
+    ],
+    "02_CAPTIVE_FACE_PADDLE": [
+      0,
+      0,
+      30
+    ],
+    "03_FACE_RETAINER": [
+      0,
+      0,
+      17
+    ],
+    "04_FIXED_DIFFUSER_RING": [
+      0,
+      0,
+      38
+    ],
+    "05_MOVING_STATUS_LIGHTPIPE": [
+      26,
+      0,
+      29
+    ],
+    "06_PLUNGER_SIZING_INSERT": [
+      -22,
+      -2,
+      24
+    ],
+    "07_REAR_COVER_AND_SLIDER_KEEPER": [
+      0,
+      0,
+      -32
+    ],
+    "08_CUS22_PRIVACY_FORK": [
+      13,
+      0,
+      -7
+    ],
+    "09_ACOUSTIC_DUCT_LEFT": [
+      -11,
+      -2,
+      -22
+    ],
+    "09_ACOUSTIC_DUCT_RIGHT": [
+      11,
+      -2,
+      -22
+    ],
+    "10_DOCK_CONTACT_ACCESS_CARRIER": [
+      0,
+      -10,
+      -25
+    ],
+    "11_RIGHT_LOWER_SENSOR_CARRIER": [
+      13,
+      0,
+      -23
+    ],
+    "90_UNPOWERED_NOTCHED_BOARD_GAUGE": [
+      -22,
+      0,
+      -8
+    ],
+    "91_UNPOWERED_MAX_PACK_GAUGE": [
+      0,
+      0,
+      -20
+    ]
+  }
+}

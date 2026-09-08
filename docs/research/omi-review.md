@@ -4,6 +4,8 @@ Reviewed 2026-09-09. Upstream snapshot: [`BasedHardware/omi@f42089f`](https://gi
 
 [Cited source file identities](omi-source-snapshot.json) record upstream Git blob hashes so the findings remain tied to the reviewed code as Omi changes.
 
+**A04 implementation update:** the baseline findings below are retained as reviewed. Since that review, AURA has added a shared C/Python revision-3 Opus archive, verified local import, real Whisper transcription, stable owner/capture ingestion across token rotation and retained portal source metadata. The current companion suite passes 95 tests; actual local Next.js/Convex integration used synthetic speech. [Current software evidence](../../companion/VERIFICATION.md) and [the A04 requirements matrix](../a04/requirements.md) distinguish that progress from outstanding device, mobile, electrical and mechanical work.
+
 **Decision:** keep AURA's deliberate capture, physical microphone disconnect, recoverable local audio and owner-approved AI context. Adopt Omi's attention to reconnection, compression, mobile recovery and measured hardware tests. First validate wearing and recording on an off-the-shelf development board; revise AURA's component placement before ordering assembled custom boards. Omi's consumer electronics are substantially more complex to fabricate than AURA's module-based design.
 
 This is a bounded source review, not an exhaustive security audit or a claim that either device was tested on a body. The clone was inspected without running its applications or firmware. Hardware, battery, radio and phone-background behavior require physical tests. No board order has been placed.

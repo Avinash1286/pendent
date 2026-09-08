@@ -18,6 +18,17 @@ The current checkpoint includes a **72-component schematic candidate**, a shared
 
 The working local software path now takes a **real C-generated audio archive through local Whisper transcription into Next.js/Convex**. It preserves the original capture, exact audio duration, bookmarks and transcript provenance. Interrupted captures remain explicit, and token rotation does not duplicate an existing source. These checks use synthetic speech; microphone, Bluetooth and worn-device behavior still need physical validation. [Try the archive importer](companion/README.md#a04-archive-import--040) · [Read the verification](companion/VERIFICATION.md) · [Portal provenance and recovery](docs/a04/portal-provenance.md).
 
+A separate **41 mm M1 mechanism trial** explores 10.8/11.8 mm depths for two battery allowances. Each set contains 14 digitally checked STL specimens, including two unpowered gauges. The audit records blocked straight face insertion, missing positive PCB support and a status-lightpipe collision during a full press. These are development specimens, **not a complete-body print release**; the native PCB and privacy switch have not been changed to match the proposals. [Mechanical source, inspection render and findings](enclosure/a04/mechanism/README.md).
+
+<details>
+<summary>Inspect the A04 M1 experimental parts</summary>
+
+![Actual A04 M1 experimental part meshes; green board and ochre pack are unpowered fit gauges, and the assembly path remains unresolved](enclosure/a04/mechanism/thin-cell/mechanism-exploded.png)
+
+The exploded offsets show the parts, not a verified assembly sequence. Read the [recorded failures and print-trial limits](enclosure/a04/mechanism/README.md#verification-and-known-failures) before using these files.
+
+</details>
+
 The website, film, PCB and eight-part print kit linked below belong to the earlier **A03 development release**. They are retained for reproducibility and are not A04 deliverables.
 
 ## A03 development release

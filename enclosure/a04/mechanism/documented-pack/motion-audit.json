@@ -1,0 +1,132 @@
+{
+  "status": "MECHANISM TRIAL; NOT NATIVE OR PHYSICAL FIT VALIDATION",
+  "scenario": "documented-pack",
+  "thresholdMm3": 0.001,
+  "staticPrintedPartFindings": [],
+  "faceSweep": [
+    {
+      "inwardStrokeMm": 0,
+      "rigidIntersectionFindings": []
+    },
+    {
+      "inwardStrokeMm": 0.1,
+      "rigidIntersectionFindings": [
+        {
+          "a": "06_PLUNGER_SIZING_INSERT",
+          "b": "PROPOSED_KMR2_ENVELOPE",
+          "intersectionMm3": 0.1425020706653335
+        }
+      ]
+    },
+    {
+      "inwardStrokeMm": 0.2,
+      "rigidIntersectionFindings": [
+        {
+          "a": "06_PLUNGER_SIZING_INSERT",
+          "b": "PROPOSED_KMR2_ENVELOPE",
+          "intersectionMm3": 0.4275004363059943
+        }
+      ]
+    },
+    {
+      "inwardStrokeMm": 0.3,
+      "rigidIntersectionFindings": [
+        {
+          "a": "06_PLUNGER_SIZING_INSERT",
+          "b": "PROPOSED_KMR2_ENVELOPE",
+          "intersectionMm3": 0.7125015199184226
+        }
+      ]
+    },
+    {
+      "inwardStrokeMm": 0.4,
+      "rigidIntersectionFindings": [
+        {
+          "a": "05_MOVING_STATUS_LIGHTPIPE",
+          "b": "PROPOSED_RADIO_MAX_WITH_SEATING",
+          "intersectionMm3": 0.02199976182015132
+        },
+        {
+          "a": "06_PLUNGER_SIZING_INSERT",
+          "b": "PROPOSED_KMR2_ENVELOPE",
+          "intersectionMm3": 0.9974998855590833
+        }
+      ]
+    }
+  ],
+  "privacySweep": [
+    {
+      "translationYMm": -0.75,
+      "rigidIntersectionFindings": [],
+      "leverSurroundingFindings": []
+    },
+    {
+      "translationYMm": -0.375,
+      "rigidIntersectionFindings": [],
+      "leverSurroundingFindings": []
+    },
+    {
+      "translationYMm": 0,
+      "rigidIntersectionFindings": [],
+      "leverSurroundingFindings": []
+    },
+    {
+      "translationYMm": 0.375,
+      "rigidIntersectionFindings": [],
+      "leverSurroundingFindings": []
+    },
+    {
+      "translationYMm": 0.75,
+      "rigidIntersectionFindings": [],
+      "leverSurroundingFindings": []
+    }
+  ],
+  "maximumAllocationFindings": [],
+  "maximumProxyPairFindings": [],
+  "allRigidTrialChecksPass": false,
+  "nonActuatingRigidClearancesPass": false,
+  "captureActuationContactFindings": [
+    {
+      "a": "06_PLUNGER_SIZING_INSERT",
+      "b": "PROPOSED_KMR2_ENVELOPE",
+      "intersectionMm3": 0.1425020706653335
+    },
+    {
+      "a": "06_PLUNGER_SIZING_INSERT",
+      "b": "PROPOSED_KMR2_ENVELOPE",
+      "intersectionMm3": 0.4275004363059943
+    },
+    {
+      "a": "06_PLUNGER_SIZING_INSERT",
+      "b": "PROPOSED_KMR2_ENVELOPE",
+      "intersectionMm3": 0.7125015199184226
+    },
+    {
+      "a": "06_PLUNGER_SIZING_INSERT",
+      "b": "PROPOSED_KMR2_ENVELOPE",
+      "intersectionMm3": 0.9974998855590833
+    }
+  ],
+  "captureActuationValidated": false,
+  "captureInterfaceNote": "Rigid sizing insert contact with nominal KMR2 envelope is reported, not waived. At full0.4mm face stroke nominal demanded switch depression is0.35mm; published0.1-0.3mm electrical travel does not establish safe overtravel. Measure/trim insert or qualify compliance before powered actuation.",
+  "physicalQualification": false,
+  "nativePlacementImported": false,
+  "switchTimingProven": false,
+  "continuousSweepProven": false,
+  "method": "Exact CSG intersection volume on saved assembly meshes; authored contact surfaces below0.001mm3 threshold. Five sampled face positions versus every other printed solid and six rigid component bounds. Five nominal slider/lever positions versus stationary solids and bounds. All rigid proxy pairs checked at rest. No tolerance, insertion-path or force simulation.",
+  "blendSha256": "e0648e359ac20544442609e0e6c8459e08e3498eafab9567b919f786fb58595e",
+  "checkerSha256": "6d632e467a0e404ccafe33608da76728ef5ff0ae87ad5e0491a28f475a06bbf7",
+  "sourceBindings": {
+    "contractSha256": true,
+    "generatorSha256": true,
+    "blendSha256": true
+  },
+  "manifestSha256": "d405d7286d00e1ae69f469f6b61fa4c2ff94ecb35cd36079ec64d346f17599fd",
+  "exclusions": [
+    "Full CUS pads, leads and solder anchors are not CSG solids; separate nominal pad-corner calculation only.",
+    "Slider and lever share five nominal translations; fork take-up and unshimmed2.4mm shell stroke are not validated.",
+    "The0.4mm cell-growth reservation is not included in the rigid pack gauge.",
+    "No complete insertion sequence or positive axial PCB support is proven.",
+    "Motor tab, wire paths, adhesive, tolerances, foam force and actual native component placement are not verified."
+  ]
+}

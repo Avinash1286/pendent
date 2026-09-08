@@ -1,0 +1,13 @@
+{
+  "image": "thin-cell/mechanism-exploded.png",
+  "imageSha256": "b9b0e46f2dbb569b1d30f7cb7616333c73abc4cec988953158d2390c47ac3c9e",
+  "reviewedOn": "2026-09-09",
+  "reviewer": "Codex root and mechanical agent",
+  "visuallyInspected": true,
+  "observations": [
+    "The image displays the experimental part meshes with visible separation.",
+    "The unqualified-study label and unresolved-assembly caption are visible.",
+    "The green board and ochre battery shapes are unpowered gauges; no populated PCB is displayed."
+  ],
+  "scope": "Visual inspection of this exact PNG through the image viewer. Not a qualified engineering, print, assembly or physical review. Regenerated images require a new inspection."
+}

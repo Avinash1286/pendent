@@ -1,0 +1,390 @@
+{
+  "revision": "A04 M1 mechanism candidate",
+  "status": "UNQUALIFIED MECHANISM TRIAL; PCB INTERFACES ARE PROPOSALS",
+  "scenario": "thin-cell",
+  "physicalQualification": false,
+  "printRelease": false,
+  "nativePlacementImported": false,
+  "nativePcbChanged": false,
+  "bodyDiameterMm": 41.0,
+  "bodyDepthMm": 10.8,
+  "pcbThicknessMm": 1.6,
+  "cellMaximumAllocationMm": [
+    26,
+    21,
+    3.3
+  ],
+  "pcbBottomZMm": 5.0,
+  "pcbTopZMm": 6.6,
+  "componentTopZMm": 9.05,
+  "retainerBottomZMm": 6.9,
+  "retainerStopZMm": 8.0,
+  "contractSha256": "0799c63c8239b283ad6e52226efd432a258dfdd0f7c2ed23d042522b99c76107",
+  "generatorSha256": "be845a6919d262a204d0ff6131a129e3329fe15dea000a081030de572358e540",
+  "blendSha256": "483dbdf86cdd160cfbb76bdd62a057e994bd9cb19568f62f485618a68bf971b6",
+  "parts": [
+    {
+      "object": "01_FRONT_HOUSING_WITH_BAIL",
+      "file": "01_front_housing_with_bail.stl",
+      "description": "Hollow housing, fixed outward stops, captive nut seats, real bail passage, removable privacy side panel and acoustic access",
+      "devicePartCandidate": true,
+      "bytes": 413984,
+      "sha256": "c23dd93e9f37525625bfd60ab3cd627c3ac4389e59cdaab9f4567fd17a262db1",
+      "assemblyBoundsMm": [
+        [
+          -20.5,
+          -20.5,
+          1.0
+        ],
+        [
+          20.5,
+          24.0,
+          10.800000190734863
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.0
+      ]
+    },
+    {
+      "object": "02_CAPTIVE_FACE_PADDLE",
+      "file": "02_captive_face_paddle.stl",
+      "description": "35.2 mm face, true retaining flange, three guides, status through-slot and replaceable sizing-plunger socket",
+      "devicePartCandidate": true,
+      "bytes": 205184,
+      "sha256": "49d8db3b8eedb0709499f8b64b6e74799954b5508ec2ec218a786fc9d31df468",
+      "assemblyBoundsMm": [
+        [
+          -18.113304138183594,
+          -18.350000381469727,
+          8.399999618530273
+        ],
+        [
+          18.350000381469727,
+          18.649999618530273,
+          10.75
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.399999618530273
+      ]
+    },
+    {
+      "object": "03_FACE_RETAINER",
+      "file": "03_face_retainer.stl",
+      "description": "Clamped by three rear columns; rigid overload stop at 0.40 mm stroke, openings for separate silicone returns",
+      "devicePartCandidate": true,
+      "bytes": 153284,
+      "sha256": "75211ba22509edc4e76d5fbc7fa995d65632a1afd2723b7434e3935c267a7d52",
+      "assemblyBoundsMm": [
+        [
+          -18.5285587310791,
+          -18.75,
+          6.899999618530273
+        ],
+        [
+          18.75,
+          18.75,
+          8.0
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -6.899999618530273
+      ]
+    },
+    {
+      "object": "04_FIXED_DIFFUSER_RING",
+      "file": "04_fixed_diffuser_ring.stl",
+      "description": "Separate clear optical trial; fixed seat, no uniformity or efficiency qualification",
+      "devicePartCandidate": true,
+      "bytes": 76884,
+      "sha256": "1578422c0fd3c1ccedc3e36d10c0a6d899a93bacf7391c31e397953743833aa0",
+      "assemblyBoundsMm": [
+        [
+          -18.5,
+          -18.5,
+          10.049999237060547
+        ],
+        [
+          18.5,
+          18.5,
+          10.75
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -10.049999237060547
+      ]
+    },
+    {
+      "object": "05_MOVING_STATUS_LIGHTPIPE",
+      "file": "05_moving_status_lightpipe.stl",
+      "description": "Separate clear pipe retained behind real face slot; moves with face; optical gap remains unqualified",
+      "devicePartCandidate": true,
+      "bytes": 2284,
+      "sha256": "6fa5d6f41e1115d8a8483e0415f224d200598e29deabf8a2b86ddcf8c860adb9",
+      "assemblyBoundsMm": [
+        [
+          -2.200000047683716,
+          -0.800000011920929,
+          8.450000762939453
+        ],
+        [
+          2.200000047683716,
+          0.800000011920929,
+          10.75
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.450000762939453
+      ]
+    },
+    {
+      "object": "06_PLUNGER_SIZING_INSERT",
+      "file": "06_plunger_sizing_insert.stl",
+      "description": "Sizing blank with 1.20 mm protrusion; do not rigidly actuate powered KMR2 until measured/trimmed/compliant-tip qualification",
+      "devicePartCandidate": true,
+      "bytes": 684,
+      "sha256": "e3c8ac49cab28cf28e72109d686fb7a6993b69cb15c9abc3b13cef7f7f91d8dd",
+      "assemblyBoundsMm": [
+        [
+          -5.949999809265137,
+          -4.75,
+          8.550000190734863
+        ],
+        [
+          -4.050000190734863,
+          -3.25,
+          9.84999942779541
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.550000190734863
+      ]
+    },
+    {
+      "object": "07_REAR_COVER_AND_SLIDER_KEEPER",
+      "file": "07_rear_cover_and_slider_keeper.stl",
+      "description": "Removable rear, three retainer supports, recessed screw seats, privacy keeper, contact well and open lead cleats",
+      "devicePartCandidate": true,
+      "bytes": 397084,
+      "sha256": "b52bd5863bee36d0a56efd91cc4d48a25aeb36c45cf0df2256274bb475908783",
+      "assemblyBoundsMm": [
+        [
+          -20.5,
+          -20.5,
+          0.0
+        ],
+        [
+          20.5,
+          20.5,
+          6.900000095367432
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "object": "08_CUS22_PRIVACY_FORK",
+      "file": "08_cus22_privacy_fork.stl",
+      "description": "Real captive translating fork; 1.8 mm lever opening, nominal 1.5 mm motion and 2.4 mm unshimmed shell allowance; endpoint shims/actual switch timing must be measured; proposed CUS22 only",
+      "devicePartCandidate": true,
+      "bytes": 4284,
+      "sha256": "867aeb0371a97660e844c8b7a53640a6ae0725eed3bdf39604e62fd57f8903a1",
+      "assemblyBoundsMm": [
+        [
+          13.25,
+          -3.0,
+          1.399999976158142
+        ],
+        [
+          21.799999237060547,
+          3.0,
+          3.1999998092651367
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.399999976158142
+      ]
+    },
+    {
+      "object": "09_ACOUSTIC_DUCT_LEFT",
+      "file": "09_acoustic_duct_left.stl",
+      "description": "Separate open 1.30 mm L bore; 0.40 mm working gasket gap to proposed PCB port; actual acoustic seal and response unqualified",
+      "devicePartCandidate": true,
+      "bytes": 126084,
+      "sha256": "01839e850ebac81d23ac961c2aade886e4384567194a870e2f5d6e1072714ac2",
+      "assemblyBoundsMm": [
+        [
+          -8.0,
+          -19.857460021972656,
+          1.0999994277954102
+        ],
+        [
+          -5.0,
+          -12.300000190734863,
+          4.599999904632568
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.0999994277954102
+      ]
+    },
+    {
+      "object": "09_ACOUSTIC_DUCT_RIGHT",
+      "file": "09_acoustic_duct_right.stl",
+      "description": "Separate open 1.30 mm L bore; 0.40 mm working gasket gap to proposed PCB port; actual acoustic seal and response unqualified",
+      "devicePartCandidate": true,
+      "bytes": 126084,
+      "sha256": "3a4ebda20c62b5127fb14286a411b746007f1c8fdebf61cc442d34ca2eb670a6",
+      "assemblyBoundsMm": [
+        [
+          5.0,
+          -19.857460021972656,
+          1.0999994277954102
+        ],
+        [
+          8.0,
+          -12.300000190734863,
+          4.599999904632568
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.0999994277954102
+      ]
+    },
+    {
+      "object": "10_DOCK_CONTACT_ACCESS_CARRIER",
+      "file": "10_dock_contact_access_carrier.stl",
+      "description": "Insulating access to proposed B.Cu pads; requires raised keyed dock nose, not raw 4.5 mm pins reaching a 5-6 mm recess",
+      "devicePartCandidate": true,
+      "bytes": 117884,
+      "sha256": "87f9dfbbf815cf3fba62cf5ca7750585513a679ab45251d2d5ee75a421db806d",
+      "assemblyBoundsMm": [
+        [
+          -4.699999809265137,
+          -17.049999237060547,
+          0.0
+        ],
+        [
+          4.699999809265137,
+          -13.549999237060547,
+          4.699999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "object": "11_RIGHT_LOWER_SENSOR_CARRIER",
+      "file": "11_right_lower_sensor_carrier.stl",
+      "description": "Open cell-side thermal pocket below privacy switch; contact adhesive, lead relief and thermal lag still unqualified",
+      "devicePartCandidate": true,
+      "bytes": 3184,
+      "sha256": "69cacd058eccb4960fa9bb3192347cbe7727bc691130aeee6e51112e19dff1c1",
+      "assemblyBoundsMm": [
+        [
+          11.199999809265137,
+          -9.649999618530273,
+          1.0
+        ],
+        [
+          16.100000381469727,
+          -4.349999904632568,
+          4.0
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.0
+      ]
+    },
+    {
+      "object": "90_UNPOWERED_NOTCHED_BOARD_GAUGE",
+      "file": "90_unpowered_notched_board_gauge.stl",
+      "description": "Physical fit gauge ONLY; differs from unnotched native board and includes unaccepted port proposals",
+      "devicePartCandidate": false,
+      "bytes": 196284,
+      "sha256": "3317fac4ebd6959923025a45b9c7f277178a7c93f6215be0e805d9bba555be50",
+      "assemblyBoundsMm": [
+        [
+          -17.35554313659668,
+          -17.600000381469727,
+          5.0
+        ],
+        [
+          17.600000381469727,
+          17.52743911743164,
+          6.600000381469727
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -5.0
+      ]
+    },
+    {
+      "object": "91_UNPOWERED_MAX_PACK_GAUGE",
+      "file": "91_unpowered_max_pack_gauge.stl",
+      "description": "Solid unpowered gauge, not a battery; dimensions are controlled allocation, not a qualified supplied assembly",
+      "devicePartCandidate": false,
+      "bytes": 684,
+      "sha256": "33878a0bc04b0e0d24b1c78d5a171dd852ef78911ee73e8693a67b880125ad31",
+      "assemblyBoundsMm": [
+        [
+          -14.899999618530273,
+          -11.800000190734863,
+          1.149999976158142
+        ],
+        [
+          11.100000381469727,
+          9.199999809265137,
+          4.449999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.149999976158142
+      ]
+    }
+  ],
+  "partCount": 14,
+  "devicePartCandidates": 12,
+  "unpoweredGauges": 2,
+  "requiredPcbChanges": [
+    "Two screw-boss notches radius3.05",
+    "Three support notches radius1.6",
+    "Maximum top parts excluded from retainer annulus",
+    "Underside CUS22 footprint/body/actuator and solder anchors",
+    "Two actual bottom-mic acoustic ports and gasket keepouts",
+    "Underside dock pads accessible in chimney",
+    "NTC pocket moved right/lower",
+    "Actual module/flash/motor/72-part placement and routing still absent"
+  ]
+}

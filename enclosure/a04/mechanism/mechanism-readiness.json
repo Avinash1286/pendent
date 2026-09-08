@@ -1,0 +1,326 @@
+{
+  "revision": "A04 M1",
+  "status": "EXPERIMENTAL CHECKPOINT; ASSEMBLY AND MOTION FAILURES REMAIN",
+  "blenderVersionUsed": "5.2.1 LTS",
+  "nativePcbModified": false,
+  "nativePlacementImported": false,
+  "physicalQualification": false,
+  "completeBodyAssemblyReady": false,
+  "printRelease": false,
+  "wearableReady": false,
+  "exportedStlSpecimens": 28,
+  "devicePartCandidatesPerScenario": 12,
+  "unpoweredGaugesPerScenario": 2,
+  "sourceAndExportBindingsPass": true,
+  "scenarios": [
+    {
+      "id": "thin-cell",
+      "stlSpecimens": 14,
+      "meshExportChecksPass": true,
+      "allRigidTrialChecksPass": false,
+      "nonActuatingRigidClearancesPass": false,
+      "captureActuationValidated": false,
+      "faceSweepSamples": 5,
+      "privacySweepSamples": 5,
+      "bodyDiameterMm": 41.0,
+      "bodyDepthMm": 10.8,
+      "pcbActualThicknessMm": 1.6
+    },
+    {
+      "id": "documented-pack",
+      "stlSpecimens": 14,
+      "meshExportChecksPass": true,
+      "allRigidTrialChecksPass": false,
+      "nonActuatingRigidClearancesPass": false,
+      "captureActuationValidated": false,
+      "faceSweepSamples": 5,
+      "privacySweepSamples": 5,
+      "bodyDiameterMm": 41.0,
+      "bodyDepthMm": 11.8,
+      "pcbActualThicknessMm": 1.6
+    }
+  ],
+  "blockingFindings": [
+    "Fixed closure bosses obstruct straight rear insertion of the full face skin; no alternate insertion construction/path is proven.",
+    "PCB axial support/retention is absent; its assembly Z remains a placement assumption.",
+    "Moving status lightpipe intersects maximum radio envelope by about0.022mm3 at0.4mm inward travel in both scenarios.",
+    "Sizing plunger demands0.35mm depression; safe switch overtravel is not established by0.1-0.3mm electrical travel.",
+    "Native JS202011JCQN conflicts with thin generic top stack; CUS22 is a proposed unaccepted substitution."
+  ],
+  "unqualifiedInterfaces": [
+    "Small pack/boss/body gaps and0.4mm reserved growth space",
+    "CUS terminal/anchor grounding, footprint, take-up, shell stops and full stroke",
+    "All native package locations/maximum leads/antenna keepout",
+    "Fastener insertion, torque, foam return force/creep and assembly accessibility",
+    "Actual battery/PCM/NTC adhesion, strain relief and thermal response",
+    "Acoustic datum/sealing, optical behaviour and raised keyed charging dock"
+  ],
+  "inspectionImage": {
+    "path": "thin-cell/mechanism-exploded.png",
+    "width": 1400,
+    "height": 1400,
+    "pngContainerChecksPass": true,
+    "visuallyInspected": true,
+    "visualReviewRecord": "visual-review.json",
+    "label": "UNQUALIFIED MECHANISM STUDY; 12 candidate parts + 2 unpowered gauges; assembly path unresolved"
+  },
+  "files": [
+    {
+      "path": "allocation-audit.json",
+      "bytes": 13307,
+      "sha256": "0cb7d3ab4d353995f0556e41286c6d29a8371a9de80619aa6a9cab52d4e8d62a"
+    },
+    {
+      "path": "audit_allocation.py",
+      "bytes": 5903,
+      "sha256": "43992580e1dc9f2d11dc7749f8209f1e064e350c69ae015b97fcfc509bdcfc4f"
+    },
+    {
+      "path": "build_mechanism.py",
+      "bytes": 18534,
+      "sha256": "be845a6919d262a204d0ff6131a129e3329fe15dea000a081030de572358e540"
+    },
+    {
+      "path": "check_motion.py",
+      "bytes": 6847,
+      "sha256": "6d632e467a0e404ccafe33608da76728ef5ff0ae87ad5e0491a28f475a06bbf7"
+    },
+    {
+      "path": "documented-pack/01_front_housing_with_bail.stl",
+      "bytes": 413184,
+      "sha256": "9ac4e0558f790040d927b08f71753bfcc391262a709426eee82293e680df60e8"
+    },
+    {
+      "path": "documented-pack/02_captive_face_paddle.stl",
+      "bytes": 205184,
+      "sha256": "49d8db3b8eedb0709499f8b64b6e74799954b5508ec2ec218a786fc9d31df468"
+    },
+    {
+      "path": "documented-pack/03_face_retainer.stl",
+      "bytes": 153284,
+      "sha256": "75211ba22509edc4e76d5fbc7fa995d65632a1afd2723b7434e3935c267a7d52"
+    },
+    {
+      "path": "documented-pack/04_fixed_diffuser_ring.stl",
+      "bytes": 76884,
+      "sha256": "1578422c0fd3c1ccedc3e36d10c0a6d899a93bacf7391c31e397953743833aa0"
+    },
+    {
+      "path": "documented-pack/05_moving_status_lightpipe.stl",
+      "bytes": 2284,
+      "sha256": "6fa5d6f41e1115d8a8483e0415f224d200598e29deabf8a2b86ddcf8c860adb9"
+    },
+    {
+      "path": "documented-pack/06_plunger_sizing_insert.stl",
+      "bytes": 684,
+      "sha256": "e3c8ac49cab28cf28e72109d686fb7a6993b69cb15c9abc3b13cef7f7f91d8dd"
+    },
+    {
+      "path": "documented-pack/07_rear_cover_and_slider_keeper.stl",
+      "bytes": 397084,
+      "sha256": "8d655a8dac4eb1c00ee4773508794064ae3390d4624b3f20915816cc8890233f"
+    },
+    {
+      "path": "documented-pack/08_cus22_privacy_fork.stl",
+      "bytes": 4284,
+      "sha256": "ded779d4800e9926880429b1819450a22e61dc6c4171508f840e5442113fa120"
+    },
+    {
+      "path": "documented-pack/09_acoustic_duct_left.stl",
+      "bytes": 126084,
+      "sha256": "61c2337cd40c569e6e15366e45ebc31bd569d8682b7d83fc5fc0fcdfe0fc2e70"
+    },
+    {
+      "path": "documented-pack/09_acoustic_duct_right.stl",
+      "bytes": 126084,
+      "sha256": "02b82aff51bf97f5a0dd1bd576d72b7ff1497a263f3fa97442d270d392c86e1a"
+    },
+    {
+      "path": "documented-pack/10_dock_contact_access_carrier.stl",
+      "bytes": 117884,
+      "sha256": "4cf85ac58048344d9fc79f12b5104057fa8caa84edad49e874d15392550f9b04"
+    },
+    {
+      "path": "documented-pack/11_right_lower_sensor_carrier.stl",
+      "bytes": 3184,
+      "sha256": "69cacd058eccb4960fa9bb3192347cbe7727bc691130aeee6e51112e19dff1c1"
+    },
+    {
+      "path": "documented-pack/90_unpowered_notched_board_gauge.stl",
+      "bytes": 196284,
+      "sha256": "3317fac4ebd6959923025a45b9c7f277178a7c93f6215be0e805d9bba555be50"
+    },
+    {
+      "path": "documented-pack/91_unpowered_max_pack_gauge.stl",
+      "bytes": 684,
+      "sha256": "c71cab618af0986425afb42f0a8f3a27cfb08c09aefb4375b358ec4ba428b17e"
+    },
+    {
+      "path": "documented-pack/aura-a04-mechanism.blend",
+      "bytes": 987759,
+      "sha256": "e0648e359ac20544442609e0e6c8459e08e3498eafab9567b919f786fb58595e"
+    },
+    {
+      "path": "documented-pack/mesh-audit.json",
+      "bytes": 15419,
+      "sha256": "ad899937157ee3e0bac02256084a38cc99dfb60b5f32abca4bd06cc08fbffb4f"
+    },
+    {
+      "path": "documented-pack/motion-audit.json",
+      "bytes": 4635,
+      "sha256": "97232c8705bed45604cd65a6a408ff469290d7ae1137b0b80a9e27622aabb63b"
+    },
+    {
+      "path": "documented-pack/parts-manifest.json",
+      "bytes": 11423,
+      "sha256": "d405d7286d00e1ae69f469f6b61fa4c2ff94ecb35cd36079ec64d346f17599fd"
+    },
+    {
+      "path": "evidence/cus22-body-detail.png",
+      "bytes": 91738,
+      "sha256": "d27827257450fd5a42c1d957d293c46a10188f6becc5e3d4b013a26ea6b857af"
+    },
+    {
+      "path": "evidence/cus22-pad-detail.png",
+      "bytes": 51000,
+      "sha256": "4bd70e1e1caea5bcc1e87fa2671d5f13d7fbd10b81d94a9ff050bb91337cb0d7"
+    },
+    {
+      "path": "inspection-render.json",
+      "bytes": 1628,
+      "sha256": "ff1c136b720aa39f733f28b6ee77398e2aef51c61e510066f4925206afc09320"
+    },
+    {
+      "path": "mechanism-contract.json",
+      "bytes": 7634,
+      "sha256": "0799c63c8239b283ad6e52226efd432a258dfdd0f7c2ed23d042522b99c76107"
+    },
+    {
+      "path": "package_checkpoint.py",
+      "bytes": 5246,
+      "sha256": "c67f00d2a958466d2da2fa2f736d26aef0beac89b1d785732ed53abf71bc1820"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14427,
+      "sha256": "14a04cdd55f2031b9f1ea9486b456cb8996eecf43fadff3e71c75240a2f45890"
+    },
+    {
+      "path": "render_mechanism.py",
+      "bytes": 5300,
+      "sha256": "340bec8d502defa94a1d0b6b7396d66532dec3a0b82bac7eaafad99dc5de63f1"
+    },
+    {
+      "path": "thin-cell/01_front_housing_with_bail.stl",
+      "bytes": 413984,
+      "sha256": "c23dd93e9f37525625bfd60ab3cd627c3ac4389e59cdaab9f4567fd17a262db1"
+    },
+    {
+      "path": "thin-cell/02_captive_face_paddle.stl",
+      "bytes": 205184,
+      "sha256": "49d8db3b8eedb0709499f8b64b6e74799954b5508ec2ec218a786fc9d31df468"
+    },
+    {
+      "path": "thin-cell/03_face_retainer.stl",
+      "bytes": 153284,
+      "sha256": "75211ba22509edc4e76d5fbc7fa995d65632a1afd2723b7434e3935c267a7d52"
+    },
+    {
+      "path": "thin-cell/04_fixed_diffuser_ring.stl",
+      "bytes": 76884,
+      "sha256": "1578422c0fd3c1ccedc3e36d10c0a6d899a93bacf7391c31e397953743833aa0"
+    },
+    {
+      "path": "thin-cell/05_moving_status_lightpipe.stl",
+      "bytes": 2284,
+      "sha256": "6fa5d6f41e1115d8a8483e0415f224d200598e29deabf8a2b86ddcf8c860adb9"
+    },
+    {
+      "path": "thin-cell/06_plunger_sizing_insert.stl",
+      "bytes": 684,
+      "sha256": "e3c8ac49cab28cf28e72109d686fb7a6993b69cb15c9abc3b13cef7f7f91d8dd"
+    },
+    {
+      "path": "thin-cell/07_rear_cover_and_slider_keeper.stl",
+      "bytes": 397084,
+      "sha256": "b52bd5863bee36d0a56efd91cc4d48a25aeb36c45cf0df2256274bb475908783"
+    },
+    {
+      "path": "thin-cell/08_cus22_privacy_fork.stl",
+      "bytes": 4284,
+      "sha256": "867aeb0371a97660e844c8b7a53640a6ae0725eed3bdf39604e62fd57f8903a1"
+    },
+    {
+      "path": "thin-cell/09_acoustic_duct_left.stl",
+      "bytes": 126084,
+      "sha256": "01839e850ebac81d23ac961c2aade886e4384567194a870e2f5d6e1072714ac2"
+    },
+    {
+      "path": "thin-cell/09_acoustic_duct_right.stl",
+      "bytes": 126084,
+      "sha256": "3a4ebda20c62b5127fb14286a411b746007f1c8fdebf61cc442d34ca2eb670a6"
+    },
+    {
+      "path": "thin-cell/10_dock_contact_access_carrier.stl",
+      "bytes": 117884,
+      "sha256": "87f9dfbbf815cf3fba62cf5ca7750585513a679ab45251d2d5ee75a421db806d"
+    },
+    {
+      "path": "thin-cell/11_right_lower_sensor_carrier.stl",
+      "bytes": 3184,
+      "sha256": "69cacd058eccb4960fa9bb3192347cbe7727bc691130aeee6e51112e19dff1c1"
+    },
+    {
+      "path": "thin-cell/90_unpowered_notched_board_gauge.stl",
+      "bytes": 196284,
+      "sha256": "3317fac4ebd6959923025a45b9c7f277178a7c93f6215be0e805d9bba555be50"
+    },
+    {
+      "path": "thin-cell/91_unpowered_max_pack_gauge.stl",
+      "bytes": 684,
+      "sha256": "33878a0bc04b0e0d24b1c78d5a171dd852ef78911ee73e8693a67b880125ad31"
+    },
+    {
+      "path": "thin-cell/aura-a04-mechanism.blend",
+      "bytes": 988213,
+      "sha256": "483dbdf86cdd160cfbb76bdd62a057e994bd9cb19568f62f485618a68bf971b6"
+    },
+    {
+      "path": "thin-cell/mechanism-exploded.png",
+      "bytes": 2332997,
+      "sha256": "b9b0e46f2dbb569b1d30f7cb7616333c73abc4cec988953158d2390c47ac3c9e"
+    },
+    {
+      "path": "thin-cell/mechanism-inspection.blend",
+      "bytes": 1004960,
+      "sha256": "40959b284741fc46f081811afe1b7ae63b37aa77bb781a2733d5c54c5ab7f537"
+    },
+    {
+      "path": "thin-cell/mesh-audit.json",
+      "bytes": 15415,
+      "sha256": "e3799028bdd347f605019e4526ff703248ee02bf512799f4f4c8a2782cd13c5d"
+    },
+    {
+      "path": "thin-cell/motion-audit.json",
+      "bytes": 4629,
+      "sha256": "4ec5f125ff8d387b12caa12cf6fb5aa819dc3927732a540bd1c291c5c4806469"
+    },
+    {
+      "path": "thin-cell/parts-manifest.json",
+      "bytes": 11412,
+      "sha256": "6345ccf81a37620f29e1809457a1662fd33ba66429096827831ab93926ba063c"
+    },
+    {
+      "path": "verify_meshes.py",
+      "bytes": 4368,
+      "sha256": "0646ba4e8ec7edcb48fe88e1c03f47ea21700568024089ab9e4090a610e81ef2"
+    },
+    {
+      "path": "visual-review.json",
+      "bytes": 714,
+      "sha256": "e527c9723f24c46195fe2c7fbed619c14c7fa0970ca244616a3bd4c0ef7f5943"
+    }
+  ],
+  "fileCount": 51,
+  "manifestScope": "Paths relative to this mechanism directory. This manifest does not hash itself. Original40mm study, verified coupon, A03 release and native PCB are outside this new checkpoint."
+}

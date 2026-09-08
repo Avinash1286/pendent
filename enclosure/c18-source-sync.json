@@ -1,0 +1,24 @@
+{
+  "scope": "C18 nonpolar capacitor native/source pin-orientation correction only",
+  "native_files_edited_by_this_script": [],
+  "source_before_sha256": "468394907181c9b1799fc953e34684fe66d9091e76b2119da603879ac6e84260",
+  "source_after_sha256": "757b60d148a5225e45975728e2fdcf8f0c5385d06ea5a12f158afc19dbef2dd2",
+  "before": {
+    "x": -2.05,
+    "y": -13.3,
+    "r": 90
+  },
+  "after": {
+    "x": -2.05,
+    "y": -13.3,
+    "r": 270
+  },
+  "placement_and_pinmap_signature_before": "fda5bab9bfb1addc434f9139f5b13d0a4eb87019ad10af55f3b91acc5ec6024b",
+  "logical_netlist_sha256_before": "6762a6991074d30911bb6300366aa94157f5d84bb689d831e658c0f861aaaacf",
+  "verified": true,
+  "components": 61,
+  "other_package_placements_unchanged": true,
+  "all_logical_pinmaps_unchanged": true,
+  "logical_netlist_unchanged": true,
+  "manifest_sha256": "ce3ebb9c34bdd5dd4fdf3fa0c159dce3d0be271d43e33f25c382057f9e3c5190"
+}

@@ -1,0 +1,876 @@
+{
+  "status": "CONNECTED_PROTOTYPE_FABRICATION_REVIEW",
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "boardUnchangedDuringExport": true,
+  "unconnectedItems": 0,
+  "schematicParityFindings": 0,
+  "ercErrors": 0,
+  "ercWarnings": 0,
+  "bareBoardDrcErrors": 0,
+  "drcFindingsByType": {
+    "courtyards_overlap": 78
+  },
+  "assemblyApproved": false,
+  "physicalQualification": false,
+  "componentCount": 61,
+  "placementCandidates": 57,
+  "componentOriginChecks": [
+    {
+      "reference": "U1",
+      "nativeAlignedCentreMm": [
+        0.0,
+        8.0
+      ],
+      "sourceCentreMm": [
+        0,
+        8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "MK1",
+      "nativeAlignedCentreMm": [
+        -8.5,
+        9.269999999999996
+      ],
+      "sourceCentreMm": [
+        -8.5,
+        9.27
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "MK2",
+      "nativeAlignedCentreMm": [
+        8.5,
+        9.269999999999996
+      ],
+      "sourceCentreMm": [
+        8.5,
+        9.27
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U2",
+      "nativeAlignedCentreMm": [
+        -8.549999999999997,
+        3.200000000000003
+      ],
+      "sourceCentreMm": [
+        -8.55,
+        3.2
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U3",
+      "nativeAlignedCentreMm": [
+        -4.049999999999997,
+        -9.549999999999997
+      ],
+      "sourceCentreMm": [
+        -4.05,
+        -9.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U4",
+      "nativeAlignedCentreMm": [
+        -0.04999999999999716,
+        -13.049999999999997
+      ],
+      "sourceCentreMm": [
+        -0.05,
+        -13.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U5",
+      "nativeAlignedCentreMm": [
+        1.7000000000000028,
+        -1.2999999999999972
+      ],
+      "sourceCentreMm": [
+        1.7,
+        -1.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U6",
+      "nativeAlignedCentreMm": [
+        4.450000000000003,
+        -2.799999999999997
+      ],
+      "sourceCentreMm": [
+        4.45,
+        -2.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U7",
+      "nativeAlignedCentreMm": [
+        7.450000000000003,
+        5.950000000000003
+      ],
+      "sourceCentreMm": [
+        7.45,
+        5.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U8",
+      "nativeAlignedCentreMm": [
+        8.200000000000003,
+        -6.049999999999997
+      ],
+      "sourceCentreMm": [
+        8.2,
+        -6.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "U9",
+      "nativeAlignedCentreMm": [
+        -4.549999999999997,
+        -12.299999999999997
+      ],
+      "sourceCentreMm": [
+        -4.55,
+        -12.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "Q1",
+      "nativeAlignedCentreMm": [
+        -4.549999999999997,
+        -3.799999999999997
+      ],
+      "sourceCentreMm": [
+        -4.55,
+        -3.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "SW1",
+      "nativeAlignedCentreMm": [
+        9.5,
+        -0.20000000000000284
+      ],
+      "sourceCentreMm": [
+        9.5,
+        -0.2
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "SW2",
+      "nativeAlignedCentreMm": [
+        0.0,
+        -6.0
+      ],
+      "sourceCentreMm": [
+        0,
+        -6
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "D1",
+      "nativeAlignedCentreMm": [
+        0.7999999999999972,
+        -9.049999999999997
+      ],
+      "sourceCentreMm": [
+        0.8,
+        -9.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "D2",
+      "nativeAlignedCentreMm": [
+        -0.5499999999999972,
+        -15.799999999999997
+      ],
+      "sourceCentreMm": [
+        -0.55,
+        -15.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "LED1",
+      "nativeAlignedCentreMm": [
+        0.0,
+        -1.0
+      ],
+      "sourceCentreMm": [
+        0,
+        -1
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R1",
+      "nativeAlignedCentreMm": [
+        -3.549999999999997,
+        -6.049999999999997
+      ],
+      "sourceCentreMm": [
+        -3.55,
+        -6.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R2",
+      "nativeAlignedCentreMm": [
+        -6.049999999999997,
+        -6.049999999999997
+      ],
+      "sourceCentreMm": [
+        -6.05,
+        -6.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R3",
+      "nativeAlignedCentreMm": [
+        -5.049999999999997,
+        -0.7999999999999972
+      ],
+      "sourceCentreMm": [
+        -5.05,
+        -0.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R4",
+      "nativeAlignedCentreMm": [
+        -6.799999999999997,
+        -2.799999999999997
+      ],
+      "sourceCentreMm": [
+        -6.8,
+        -2.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R5",
+      "nativeAlignedCentreMm": [
+        -7.799999999999997,
+        -2.049999999999997
+      ],
+      "sourceCentreMm": [
+        -7.8,
+        -2.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R6",
+      "nativeAlignedCentreMm": [
+        -5.799999999999997,
+        8.450000000000003
+      ],
+      "sourceCentreMm": [
+        -5.8,
+        8.45
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R7",
+      "nativeAlignedCentreMm": [
+        -3.549999999999997,
+        -1.4000000000000057
+      ],
+      "sourceCentreMm": [
+        -3.55,
+        -1.4
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R8",
+      "nativeAlignedCentreMm": [
+        -3.549999999999997,
+        -0.29999999999999716
+      ],
+      "sourceCentreMm": [
+        -3.55,
+        -0.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R9",
+      "nativeAlignedCentreMm": [
+        6.200000000000003,
+        7.950000000000003
+      ],
+      "sourceCentreMm": [
+        6.2,
+        7.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R10",
+      "nativeAlignedCentreMm": [
+        6.200000000000003,
+        10.950000000000003
+      ],
+      "sourceCentreMm": [
+        6.2,
+        10.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R11",
+      "nativeAlignedCentreMm": [
+        -7.799999999999997,
+        -3.799999999999997
+      ],
+      "sourceCentreMm": [
+        -7.8,
+        -3.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R13",
+      "nativeAlignedCentreMm": [
+        10.450000000000003,
+        8.200000000000003
+      ],
+      "sourceCentreMm": [
+        10.45,
+        8.2
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R14",
+      "nativeAlignedCentreMm": [
+        -7.049999999999997,
+        -5.549999999999997
+      ],
+      "sourceCentreMm": [
+        -7.05,
+        -5.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R15",
+      "nativeAlignedCentreMm": [
+        10.450000000000003,
+        9.950000000000003
+      ],
+      "sourceCentreMm": [
+        10.45,
+        9.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R16",
+      "nativeAlignedCentreMm": [
+        -1.7999999999999972,
+        -3.049999999999997
+      ],
+      "sourceCentreMm": [
+        -1.8,
+        -3.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R17",
+      "nativeAlignedCentreMm": [
+        -9.299999999999997,
+        -1.5499999999999972
+      ],
+      "sourceCentreMm": [
+        -9.3,
+        -1.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R18",
+      "nativeAlignedCentreMm": [
+        -9.299999999999997,
+        -2.549999999999997
+      ],
+      "sourceCentreMm": [
+        -9.3,
+        -2.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R19",
+      "nativeAlignedCentreMm": [
+        -10.799999999999997,
+        -2.299999999999997
+      ],
+      "sourceCentreMm": [
+        -10.8,
+        -2.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R20",
+      "nativeAlignedCentreMm": [
+        -9.299999999999997,
+        -3.549999999999997
+      ],
+      "sourceCentreMm": [
+        -9.3,
+        -3.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R21",
+      "nativeAlignedCentreMm": [
+        -8.049999999999997,
+        -5.549999999999997
+      ],
+      "sourceCentreMm": [
+        -8.05,
+        -5.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R22",
+      "nativeAlignedCentreMm": [
+        -8.5,
+        -13.400000000000006
+      ],
+      "sourceCentreMm": [
+        -8.5,
+        -13.4
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "R23",
+      "nativeAlignedCentreMm": [
+        -8.5,
+        -11.5
+      ],
+      "sourceCentreMm": [
+        -8.5,
+        -11.5
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C1",
+      "nativeAlignedCentreMm": [
+        -1.0499999999999972,
+        -0.7999999999999972
+      ],
+      "sourceCentreMm": [
+        -1.05,
+        -0.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C2",
+      "nativeAlignedCentreMm": [
+        -2.049999999999997,
+        -1.2999999999999972
+      ],
+      "sourceCentreMm": [
+        -2.05,
+        -1.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C3",
+      "nativeAlignedCentreMm": [
+        -6.549999999999997,
+        10.450000000000003
+      ],
+      "sourceCentreMm": [
+        -6.55,
+        10.45
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C4",
+      "nativeAlignedCentreMm": [
+        6.450000000000003,
+        9.700000000000003
+      ],
+      "sourceCentreMm": [
+        6.45,
+        9.7
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C5",
+      "nativeAlignedCentreMm": [
+        -10.799999999999997,
+        7.950000000000003
+      ],
+      "sourceCentreMm": [
+        -10.8,
+        7.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C6",
+      "nativeAlignedCentreMm": [
+        -10.549999999999997,
+        9.700000000000003
+      ],
+      "sourceCentreMm": [
+        -10.55,
+        9.7
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C7",
+      "nativeAlignedCentreMm": [
+        -1.2999999999999972,
+        -9.849999999999994
+      ],
+      "sourceCentreMm": [
+        -1.3,
+        -9.85
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C8",
+      "nativeAlignedCentreMm": [
+        -8.0,
+        -9.049999999999997
+      ],
+      "sourceCentreMm": [
+        -8,
+        -9.05
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C9",
+      "nativeAlignedCentreMm": [
+        -4.799999999999997,
+        -6.799999999999997
+      ],
+      "sourceCentreMm": [
+        -4.8,
+        -6.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C10",
+      "nativeAlignedCentreMm": [
+        0.9000000000000057,
+        -10.549999999999997
+      ],
+      "sourceCentreMm": [
+        0.9,
+        -10.55
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C11",
+      "nativeAlignedCentreMm": [
+        1.4500000000000028,
+        -3.299999999999997
+      ],
+      "sourceCentreMm": [
+        1.45,
+        -3.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C12",
+      "nativeAlignedCentreMm": [
+        6.700000000000003,
+        -0.7999999999999972
+      ],
+      "sourceCentreMm": [
+        6.7,
+        -0.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C13",
+      "nativeAlignedCentreMm": [
+        3.950000000000003,
+        -6.299999999999997
+      ],
+      "sourceCentreMm": [
+        3.95,
+        -6.3
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C14",
+      "nativeAlignedCentreMm": [
+        9.950000000000003,
+        5.950000000000003
+      ],
+      "sourceCentreMm": [
+        9.95,
+        5.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C15",
+      "nativeAlignedCentreMm": [
+        6.450000000000003,
+        2.950000000000003
+      ],
+      "sourceCentreMm": [
+        6.45,
+        2.95
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C16",
+      "nativeAlignedCentreMm": [
+        10.700000000000003,
+        -5.799999999999997
+      ],
+      "sourceCentreMm": [
+        10.7,
+        -5.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C17",
+      "nativeAlignedCentreMm": [
+        -5.549999999999997,
+        -1.7999999999999972
+      ],
+      "sourceCentreMm": [
+        -5.55,
+        -1.8
+      ],
+      "status": "PASS"
+    },
+    {
+      "reference": "C18",
+      "nativeAlignedCentreMm": [
+        -2.049999999999997,
+        -13.299999999999997
+      ],
+      "sourceCentreMm": [
+        -2.05,
+        -13.3
+      ],
+      "status": "PASS"
+    }
+  ],
+  "throughVias": [
+    {
+      "diameterMm": 0.35,
+      "drillMm": 0.15,
+      "count": 2
+    },
+    {
+      "diameterMm": 0.45,
+      "drillMm": 0.2,
+      "count": 175
+    }
+  ],
+  "plotOrigin": "Board centre; positive Y toward necklace bail; all Gerber/drill files use the same auxiliary origin",
+  "positionFiles": {
+    "component-centres.csv": "Body/reference centres from checked source, not converter origins",
+    "native-footprint-origins.csv": "Raw native CAD origins for comparison; includes custom contacts"
+  },
+  "files": [
+    {
+      "path": "fabrication/aura-a03.ipc",
+      "bytes": 33594,
+      "sha256": "7be900de4c5c6ef2c238b1ed00a6f568b2391ad464656c307410b3b33b3f3877"
+    },
+    {
+      "path": "fabrication/drills/aura-a03-NPTH-drl_map.pdf",
+      "bytes": 21397,
+      "sha256": "1b7ee944e798eda2f3270a20a03dba819eb5c0d9f3d24906569e6f2d54ef3af4"
+    },
+    {
+      "path": "fabrication/drills/aura-a03-NPTH.drl",
+      "bytes": 364,
+      "sha256": "489795aeb51fae16e93b09b17b87847448de322dd53b5cd0697f6dfd84aeb375"
+    },
+    {
+      "path": "fabrication/drills/aura-a03-PTH-drl_map.pdf",
+      "bytes": 31977,
+      "sha256": "4cfb81f5d22c9c46a2d746d725ba665338eb55c6cc6ec6c8e16a4370b3c100b1"
+    },
+    {
+      "path": "fabrication/drills/aura-a03-PTH.drl",
+      "bytes": 2947,
+      "sha256": "e2737292737f8ff08588bac9ebbe02b9a1cb899e6b1a3ae872a3c0f490a86aa8"
+    },
+    {
+      "path": "fabrication/drills/drill-report.txt",
+      "bytes": 769,
+      "sha256": "7b0a090f6c30a1b5bf38bd04a7d933762f07546a6ee0c8e163e44ce8ea065bf5"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-B_Cu.gbl",
+      "bytes": 150689,
+      "sha256": "b193e72173ef94962f04d8d90622cbf0a5276a800cd5ed2154a3ff1c1b4062bd"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-B_Mask.gbs",
+      "bytes": 1031,
+      "sha256": "579e45403ccf57e5921e366b3c3a830f7d9cc8d27805344f39102f005adac88b"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-B_Silkscreen.gbo",
+      "bytes": 1043,
+      "sha256": "22ebd1f4238d03f391ba341c9730d30d11d5934740ba354dba3584462214ccff"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-Edge_Cuts.gm1",
+      "bytes": 31549,
+      "sha256": "d7e51d018176d549e0139f4f2815f323ae8833c6163cdab5a740e76f919e48ae"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-F_Cu.gtl",
+      "bytes": 259229,
+      "sha256": "6fa8bc7223fd66f728c5282cbc70e3e0a061d3492ce4575f1dcfc4aa60389dd1"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-F_Mask.gts",
+      "bytes": 9444,
+      "sha256": "7c1bb68fb272362b14fb8ea7cff89c8bcd1ecae65dc1d0c82353ae47208291ca"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-F_Silkscreen.gto",
+      "bytes": 14328,
+      "sha256": "f371a895541cbe6557fa096114b7c6f13e76ce8554055a31d82273946ba46575"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-In1_Cu.g1",
+      "bytes": 137673,
+      "sha256": "9fa5a8a8cf25dd1b0f6181242ba1b842ee92c9069640f1bd29a7bb9d9aa7f538"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-In2_Cu.g2",
+      "bytes": 140308,
+      "sha256": "3186a9102e3c6fda0c3b60b39b639e678901e0875fb61015d00116e9fdc312ba"
+    },
+    {
+      "path": "fabrication/gerbers/aura-a03-job.gbrjob",
+      "bytes": 3364,
+      "sha256": "0ec89469efb4e58f23704fbbef5ab10e9ba8ca258e2811917dd38cc1925180f0"
+    },
+    {
+      "path": "assembly/bom.csv",
+      "bytes": 6397,
+      "sha256": "6f0711e7125b74a5230dcda3c4c86d871060d45580602920d123d6010e8728b0"
+    },
+    {
+      "path": "assembly/component-centres.csv",
+      "bytes": 6485,
+      "sha256": "37f30df8f8a058a3d2c557f34ad6461f0b2e0e7b6c9b170c34550039421e6d47"
+    },
+    {
+      "path": "assembly/native-footprint-origins.csv",
+      "bytes": 3685,
+      "sha256": "462e15a6d815598f45b5533c906852cc224acb1482d39528ecb42be3107fadeb"
+    },
+    {
+      "path": "assembly/stencil/aura-a03-B_Paste.gbp",
+      "bytes": 915,
+      "sha256": "d4b805001f3716f4e7bc316c1ec1133088fc653190835ceb7357986624f9eb2b"
+    },
+    {
+      "path": "assembly/stencil/aura-a03-F_Paste.gtp",
+      "bytes": 8672,
+      "sha256": "f3ac5723f0599a8d8b7cb48863b3d96f4cce9cf5e28247e98ed65ddd92b98e58"
+    },
+    {
+      "path": "assembly/stencil/aura-a03-job.gbrjob",
+      "bytes": 2482,
+      "sha256": "53c5bebf137a9a0aa8250033dcc26eb7f3845cdb4cf3c6a739abd9f3a60b5d09"
+    },
+    {
+      "path": "review/board-layers.pdf",
+      "bytes": 587245,
+      "sha256": "50bb2e58dbab8bd6cf9cfe80e57639a584be8948a243730f37fb88f7eec0dec6"
+    },
+    {
+      "path": "review/drc.json",
+      "bytes": 60505,
+      "sha256": "b512ea20202e4734e6bd2a9306cafee5359a523bebb04810c13149c481d6c3d3"
+    },
+    {
+      "path": "review/erc.json",
+      "bytes": 2057,
+      "sha256": "1fe20c13b7c59a522c5ce6e4f4131a63e0d691454196cc99624367e5e86e8f2d"
+    },
+    {
+      "path": "review/native-smd-pad-spacing-audit.json",
+      "bytes": 1378978,
+      "sha256": "8decdd6355f9ff7472fc19fa7810b1ff37abf8e1f9e1e5ca282d99e65542c8e6"
+    },
+    {
+      "path": "review/native-via-aperture-audit.json",
+      "bytes": 97447,
+      "sha256": "325320e764592ceee1e88a60310f07193e7166b1026ae5349f03b89458d323d1"
+    },
+    {
+      "path": "review/schematic.pdf",
+      "bytes": 177432,
+      "sha256": "e3259d3d46b63a34289ed2d3f5dd0cb56951bdd4131fe3d54aa97bba37fbfd82"
+    }
+  ],
+  "additionalClearanceAudits": {
+    "padSpacing": {
+      "status": "PASS",
+      "differentNetPairs": 25158,
+      "violations": 0,
+      "thresholdMm": 0.15
+    },
+    "viaApertures": {
+      "status": "PASS_NO_INTERSECTIONS",
+      "vias": 177,
+      "comparisons": 88500,
+      "intersections": 0
+    }
+  }
+}

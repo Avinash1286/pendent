@@ -1,0 +1,3603 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Historical declarative MCP reconstruction input. Completed native implementation is documented in actualNativeImplementation and native-schematic-parity.json.",
+  "libraryName": "AuraA03",
+  "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+  "sourceManifest": "F:/circuit/hardware/output/design-manifest.json",
+  "sourceManifestSha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147",
+  "schematicSuggestedPath": "F:/circuit/hardware/output/aura-a03-native.kicad_sch",
+  "gridMm": 1.27,
+  "pinPitchMm": 2.54,
+  "symbols": [
+    {
+      "references": [
+        "U1"
+      ],
+      "notes": [
+        "Pin numbers, base names and types checked against KiCad 10 RF_Module:MDBT50Q-1MV2 and Raytac Version L pin assignment retrieved in memory. GPIO are bidirectional physical pads; assigned A03 functions are carried in names.",
+        "Pin 46 is P0.22, intentionally unused in A03; it is not a physically NC pad. Pin 31 is DCCH power_out, intentionally open in normal-voltage mode. Pin 32 VBUS remains power_in even though this USB-disabled design grounds it.",
+        "All six actual ground pads use power_in and have separate visible endpoints; no hidden stacked power pins. GPIO function and firmware direction remain separate review requirements."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "MDBT50Q_1MV2_A03",
+        "referencePrefix": "U",
+        "description": "nRF52840 BLE module",
+        "datasheet": "https://www.espruino.com/datasheets/MDBT50Q-1M.pdf",
+        "footprint": "tscircuit:MDBT50Q-1MV2",
+        "pins": [
+          {
+            "number": "1",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -22.86,
+              "y": 38.1,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -22.86,
+              "y": 35.56,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "P1.10",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 33.02,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "P1.11",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 30.48,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "P1.12",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 27.94,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "P1.13",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 25.4,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "P1.14",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 22.86,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "P1.15",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 20.32,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "9",
+            "name": "P0.03",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 17.78,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "10",
+            "name": "P0.29",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 15.24,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "11",
+            "name": "P0.02",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 12.7,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "12",
+            "name": "P0.31",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 10.16,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "13",
+            "name": "P0.28",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 7.62,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "14",
+            "name": "P0.30",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "15",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -22.86,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "16",
+            "name": "P027_SCL",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "17",
+            "name": "P0.00",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "18",
+            "name": "P0.01",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "19",
+            "name": "P026_SDA",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -7.62,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "20",
+            "name": "P004_PDM_CLK",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -10.16,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "21",
+            "name": "P005_PDM_DATA",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -12.7,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "22",
+            "name": "P006_REC_EN",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -15.24,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "23",
+            "name": "P0.07",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -17.78,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "24",
+            "name": "P008_RECORD",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -20.32,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "25",
+            "name": "P108_PRIVACY",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -22.86,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "26",
+            "name": "P1.09",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -25.4,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "27",
+            "name": "P0.11",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -27.94,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "28",
+            "name": "VDD",
+            "type": "power_in",
+            "at": {
+              "x": -22.86,
+              "y": -30.48,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "29",
+            "name": "P0.12",
+            "type": "bidirectional",
+            "at": {
+              "x": -22.86,
+              "y": -33.02,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "30",
+            "name": "VDDH",
+            "type": "power_in",
+            "at": {
+              "x": -22.86,
+              "y": -35.56,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "31",
+            "name": "DCCH",
+            "type": "power_out",
+            "at": {
+              "x": -22.86,
+              "y": -38.1,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "32",
+            "name": "VBUS",
+            "type": "power_in",
+            "at": {
+              "x": 22.86,
+              "y": 38.1,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "33",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": 22.86,
+              "y": 35.56,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "34",
+            "name": "D-",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 33.02,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "35",
+            "name": "D+",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 30.48,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "36",
+            "name": "P014_MOSI",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 27.94,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "37",
+            "name": "P013_MISO",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 25.4,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "38",
+            "name": "P016_SCK",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 22.86,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "39",
+            "name": "P015_CS",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 20.32,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "40",
+            "name": "P018_RESET",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 17.78,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "41",
+            "name": "P017_HAPTIC",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 15.24,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "42",
+            "name": "P019_GAUGE",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 12.7,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "43",
+            "name": "P021_STAT1",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 10.16,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "44",
+            "name": "P020_STAT2",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 7.62,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "45",
+            "name": "P023_CHG_ALLOW",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "46",
+            "name": "P0.22",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "47",
+            "name": "P1.00",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "48",
+            "name": "P0.24",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "49",
+            "name": "P0.25",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "50",
+            "name": "P1.02",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -7.62,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "51",
+            "name": "SWDIO",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -10.16,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "52",
+            "name": "P0.09",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -12.7,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "53",
+            "name": "SWDCLK",
+            "type": "input",
+            "at": {
+              "x": 22.86,
+              "y": -15.24,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "54",
+            "name": "P0.10",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -17.78,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "55",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": 22.86,
+              "y": -20.32,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "56",
+            "name": "P1.04",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -22.86,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "57",
+            "name": "P1.06",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -25.4,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "58",
+            "name": "P1.07",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -27.94,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "59",
+            "name": "P1.05",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -30.48,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "60",
+            "name": "P1.03",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -33.02,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "61",
+            "name": "P1.01",
+            "type": "bidirectional",
+            "at": {
+              "x": 22.86,
+              "y": -35.56,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -20.32,
+            "y1": -40.64,
+            "x2": 20.32,
+            "y2": 40.64,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U2"
+      ],
+      "notes": [
+        "ZE 8x6 package has pins 1-8 plus project-numbered exposed pad 9. EP is permitted NC or GND, so passive is intentional; A03 connects it to GND. IO0-IO3 are physically bidirectional, including WP/HOLD in quad mode; A03 firmware uses standard SPI."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "W25N01GVZEIG_A03",
+        "referencePrefix": "U",
+        "description": "1Gbit SPI NAND /128MiB",
+        "datasheet": "https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf",
+        "footprint": "tscircuit:W25N01GVZEIG",
+        "pins": [
+          {
+            "number": "1",
+            "name": "N_CS",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "DO_IO1",
+            "type": "bidirectional",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "N_WP_IO2",
+            "type": "bidirectional",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "DI_IO0",
+            "type": "bidirectional",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "CLK",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "N_HOLD_IO3",
+            "type": "bidirectional",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "VCC",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "9",
+            "name": "EP_GND",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -7.62,
+            "x2": 12.7,
+            "y2": 7.62,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U3"
+      ],
+      "notes": [
+        "Rev B Table 4-1 roles used. Open-drain outputs use KiCad open_collector. BAT both sources charging current and accepts battery power; KiCad has no power-bidirectional type, so passive is deliberate and VBAT needs an external-source power flag. EP is a thermal ground pad, numbered 11 in the authored footprint.",
+        "TS/MR, ISET and ILIM/VSET are analog bias/sense I/O according to TI. Comparator/protection validity is not proved by ERC."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "BQ25185DLHR_A03",
+        "referencePrefix": "U",
+        "description": "53mA Li-ion powerpath charger",
+        "datasheet": "https://www.ti.com/lit/ds/symlink/bq25185.pdf",
+        "footprint": "tscircuit:BQ25185DLHR",
+        "pins": [
+          {
+            "number": "1",
+            "name": "SYS",
+            "type": "power_out",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 7.62,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "BAT",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "STAT2",
+            "type": "open_collector",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "N_CE",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "TS_MR",
+            "type": "bidirectional",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "ILIM_VSET",
+            "type": "bidirectional",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 7.62,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "ISET",
+            "type": "bidirectional",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "9",
+            "name": "STAT1",
+            "type": "open_collector",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "10",
+            "name": "IN",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "11",
+            "name": "EP_GND",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -7.62,
+            "x2": 12.7,
+            "y2": 10.16,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U4",
+        "U7"
+      ],
+      "notes": [
+        "DBV package, no exposed pad. Pin 4 has no internal connection and must retain the intentional NC marker."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "TLV75530PDBVR_A03",
+        "referencePrefix": "U",
+        "description": "3.0V system regulator",
+        "datasheet": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+        "footprint": "tscircuit:TLV75530PDBVR",
+        "pins": [
+          {
+            "number": "1",
+            "name": "IN",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "EN",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "NC",
+            "type": "no_connect",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "OUT",
+            "type": "power_out",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U5"
+      ],
+      "notes": [
+        "Rev 7 page 6: MAX17048 CELL is not internally connected but manufacturer directs it to positive battery terminal. Model as passive, not no_connect, to preserve that required external connection. MAX17049 differs.",
+        "CTG and exposed pad connect GND. QSTRT is an input grounded when unused, not an NC. ALRT is open-drain; SDA bidirectional open-drain bus."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "MAX17048G_T10_A03",
+        "referencePrefix": "U",
+        "description": "ModelGauge fuel gauge",
+        "datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf",
+        "footprint": "tscircuit:MAX17048G+T10",
+        "pins": [
+          {
+            "number": "1",
+            "name": "CTG",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "CELL",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "VDD",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "N_ALRT",
+            "type": "open_collector",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "QSTRT",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "SCL",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "SDA",
+            "type": "bidirectional",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "9",
+            "name": "EP_GND",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -7.62,
+            "x2": 12.7,
+            "y2": 7.62,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U6"
+      ],
+      "notes": [
+        "DGS pin map from TI Rev D page 5; REG is the internal 1.8 V regulator output and only bypassed. Pin 6 can be VDD or NC per datasheet; A03 explicitly ties it to VSYS with pin 10. Differential output terminals remain outputs, not power flags."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "DRV2605LDGSR_A03",
+        "referencePrefix": "U",
+        "description": "LRA closed-loop haptics",
+        "datasheet": "https://www.ti.com/lit/ds/symlink/drv2605l.pdf",
+        "footprint": "tscircuit:DRV2605LDGSR",
+        "pins": [
+          {
+            "number": "1",
+            "name": "REG",
+            "type": "power_out",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "SCL",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "SDA",
+            "type": "bidirectional",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "IN_TRIG",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "EN",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "VDD_NC",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "OUT_P",
+            "type": "output",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "9",
+            "name": "OUT_N",
+            "type": "output",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "10",
+            "name": "VDD",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -7.62,
+            "x2": 12.7,
+            "y2": 7.62,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U8"
+      ],
+      "notes": [
+        "DCU pin order from TI Rev Q Table Pin Functions. Pins 3 and 6 are three-state outputs with Ioff protection; no swapped A/Y pairs."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "SN74LVC2G125DCUR_A03",
+        "referencePrefix": "U",
+        "description": "Ioff protected PDM isolation",
+        "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf",
+        "footprint": "tscircuit:SN74LVC2G125DCUR",
+        "pins": [
+          {
+            "number": "1",
+            "name": "N_OE1",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 5.08,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "A1_CLK",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "Y2_DATA",
+            "type": "tri_state",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "A2_DATA",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 5.08,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "Y1_CLK",
+            "type": "tri_state",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "7",
+            "name": "N_OE2",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "8",
+            "name": "VCC",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 7.62,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "U9"
+      ],
+      "notes": [
+        "DDC pin numbers differ from DSE. OUTA unused but remains an actual open-drain output with explicit NC marker; OUTB sinks charge-permission node."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "TLV6700DDCR_A03",
+        "referencePrefix": "U",
+        "description": "Independent charge hot cutoff",
+        "datasheet": "https://www.ti.com/lit/ds/symlink/tlv6700.pdf",
+        "footprint": "tscircuit:TLV6700DDCR",
+        "pins": [
+          {
+            "number": "1",
+            "name": "OUTA",
+            "type": "open_collector",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "INA_P",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "INB_N",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "VDD",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "OUTB",
+            "type": "open_collector",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "Q1"
+      ],
+      "notes": [
+        "Pins are G1/S2/D3. Source and drain are passive switch terminals; body diode anode is source 2 and cathode is drain 3. Box is an explicit pin-mapped engineering symbol; final drawing should show body diode to make polarity review easy."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "DMG2302UK_A03",
+        "referencePrefix": "Q",
+        "description": "Default-off charge permission",
+        "datasheet": "https://www.diodes.com/datasheet/download/DMG2302UK.pdf",
+        "footprint": "tscircuit:DMG2302UK-7",
+        "pins": [
+          {
+            "number": "1",
+            "name": "GATE",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "SOURCE",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "DRAIN",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -2.54,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "SW1"
+      ],
+      "notes": [
+        "DPDT commons 2 and 5. ON joins 2-1 and 5-4; OFF joins 2-3 and 5-6. Do not use a stock DPDT symbol unless its numbered commons match. Physical switch position is not modeled as a copper short in the netlist."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "JS202011JCQN_A03",
+        "referencePrefix": "SW",
+        "description": "Mechanical DPDT microphone OFF",
+        "datasheet": "https://www.ckswitches.com/media/1422/js.pdf",
+        "footprint": "tscircuit:JS202011JCQN",
+        "pins": [
+          {
+            "number": "1",
+            "name": "A_ON",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "A_COMMON",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "A_OFF",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "B_ON",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "B_COMMON",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "B_OFF",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "MK1",
+        "MK2"
+      ],
+      "notes": [
+        "Knowles Rev A pages 4/9: DATA enters high impedance for multiplexed opposite half-cycles; tri_state is accurate for tied stereo DATA pins. Stock Sensor_Audio symbol uses output and can produce a false output-conflict. SELECT MK1 is GND and SELECT MK2 is MIC_VDD."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "SPH0641LU4H_1_A03",
+        "referencePrefix": "MK",
+        "description": "Left PDM microphone",
+        "datasheet": "https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf",
+        "footprint": "tscircuit:SPH0641LU4H-1",
+        "pins": [
+          {
+            "number": "1",
+            "name": "DATA",
+            "type": "tri_state",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "SELECT",
+            "type": "input",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "GND",
+            "type": "power_in",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "CLOCK",
+            "type": "input",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "VDD",
+            "type": "power_in",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "J1"
+      ],
+      "notes": [
+        "Authored PCB contacts, not purchased SMT parts. Numbers and names preserve the existing design. Battery, dock and debugger are external interfaces; do not assign power_out to every contact simply to silence ERC."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "AURA_DOCK_PADS",
+        "referencePrefix": "J",
+        "description": "3 ENIG rear pogo contacts",
+        "datasheet": "~",
+        "footprint": "tscircuit:AURA-DOCK-PADS",
+        "pins": [
+          {
+            "number": "1",
+            "name": "GND_L",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "DOCK_5V",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "GND_R",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -2.54,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "J2"
+      ],
+      "notes": [
+        "Authored PCB contacts, not purchased SMT parts. Numbers and names preserve the existing design. Battery, dock and debugger are external interfaces; do not assign power_out to every contact simply to silence ERC."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "AURA_BATTERY_PADS",
+        "referencePrefix": "J",
+        "description": "Protected LiPo and pack10kNTC",
+        "datasheet": "~",
+        "footprint": "tscircuit:AURA-BATTERY-PADS",
+        "pins": [
+          {
+            "number": "1",
+            "name": "VBAT",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "BAT_NTC",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -2.54,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "J3"
+      ],
+      "notes": [
+        "Authored PCB contacts, not purchased SMT parts. Numbers and names preserve the existing design. Battery, dock and debugger are external interfaces; do not assign power_out to every contact simply to silence ERC."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "AURA_SWD_PADS",
+        "referencePrefix": "J",
+        "description": "6 pogo programming pads",
+        "datasheet": "~",
+        "footprint": "tscircuit:AURA-SWD-PADS",
+        "pins": [
+          {
+            "number": "1",
+            "name": "VTREF",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "SWDIO",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "3",
+            "name": "SWDCLK",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": -2.54,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "4",
+            "name": "RESET_N",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "5",
+            "name": "GND_A",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          },
+          {
+            "number": "6",
+            "name": "GND_B",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": -2.54,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -5.08,
+            "x2": 12.7,
+            "y2": 5.08,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    },
+    {
+      "references": [
+        "J4"
+      ],
+      "notes": [
+        "Authored PCB contacts, not purchased SMT parts. Numbers and names preserve the existing design. Battery, dock and debugger are external interfaces; do not assign power_out to every contact simply to silence ERC."
+      ],
+      "createSymbol": {
+        "libraryPath": "F:/circuit/hardware/library/AuraA03.kicad_sym",
+        "name": "AURA_LRA_PADS",
+        "referencePrefix": "J",
+        "description": "C08-00A LRA wire pads",
+        "datasheet": "~",
+        "footprint": "tscircuit:AURA-LRA-PADS",
+        "pins": [
+          {
+            "number": "1",
+            "name": "LRA_P",
+            "type": "passive",
+            "at": {
+              "x": -15.239999999999998,
+              "y": 0,
+              "angle": 0
+            },
+            "length": 2.54
+          },
+          {
+            "number": "2",
+            "name": "LRA_N",
+            "type": "passive",
+            "at": {
+              "x": 15.239999999999998,
+              "y": 0,
+              "angle": 180
+            },
+            "length": 2.54
+          }
+        ],
+        "rectangles": [
+          {
+            "x1": -12.7,
+            "y1": -2.54,
+            "x2": 12.7,
+            "y2": 2.54,
+            "fill": "background",
+            "width": 0.254
+          }
+        ],
+        "inBom": true,
+        "onBoard": true
+      }
+    }
+  ],
+  "instances": [
+    {
+      "reference": "U1",
+      "symbol": "AuraA03:MDBT50Q_1MV2_A03",
+      "value": "nRF52840 BLE module",
+      "footprint": "tscircuit:MDBT50Q-1MV2",
+      "nets": {
+        "1": "GND",
+        "2": "GND",
+        "15": "GND",
+        "16": "I2C_SCL",
+        "19": "I2C_SDA",
+        "20": "PDM_CLK_MCU",
+        "21": "PDM_DATA_MCU",
+        "22": "RECORD_EN",
+        "24": "RECORD_N",
+        "25": "PRIVACY_N",
+        "28": "V3",
+        "30": "V3",
+        "32": "GND",
+        "33": "GND",
+        "36": "SPI_MOSI",
+        "37": "SPI_MISO",
+        "38": "SPI_SCK_MCU",
+        "39": "SPI_CS_N",
+        "40": "RESET_N",
+        "41": "HAPTIC_EN",
+        "42": "GAUGE_ALERT_N",
+        "43": "CHG_STAT1",
+        "44": "CHG_STAT2",
+        "45": "CHG_ALLOW",
+        "51": "SWDIO",
+        "53": "SWDCLK",
+        "55": "GND"
+      },
+      "metadata": {
+        "MPN": "MDBT50Q-1MV2",
+        "block": "radio",
+        "notes": "Normal-voltage mode: VDD and VDDH tied3.0V; DCCH open; unused VBUS grounded; internal LFRC initial firmware. Antenna keepout Y>11.95 per Raytac Version L."
+      }
+    },
+    {
+      "reference": "MK1",
+      "symbol": "AuraA03:SPH0641LU4H_1_A03",
+      "value": "Left PDM microphone",
+      "footprint": "tscircuit:SPH0641LU4H-1",
+      "nets": {
+        "1": "PDM_DATA_MIC",
+        "2": "GND",
+        "3": "GND",
+        "4": "PDM_CLK_MIC",
+        "5": "MIC_VDD"
+      },
+      "metadata": {
+        "MPN": "SPH0641LU4H-1",
+        "block": "audio",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "MK2",
+      "symbol": "AuraA03:SPH0641LU4H_1_A03",
+      "value": "Right PDM microphone",
+      "footprint": "tscircuit:SPH0641LU4H-1",
+      "nets": {
+        "1": "PDM_DATA_MIC",
+        "2": "MIC_VDD",
+        "3": "GND",
+        "4": "PDM_CLK_MIC",
+        "5": "MIC_VDD"
+      },
+      "metadata": {
+        "MPN": "SPH0641LU4H-1",
+        "block": "audio",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U2",
+      "symbol": "AuraA03:W25N01GVZEIG_A03",
+      "value": "1Gbit SPI NAND /128MiB",
+      "footprint": "tscircuit:W25N01GVZEIG",
+      "nets": {
+        "1": "SPI_CS_N",
+        "2": "SPI_MISO",
+        "3": "FLASH_WP_N",
+        "4": "GND",
+        "5": "SPI_MOSI",
+        "6": "SPI_SCK",
+        "7": "FLASH_HOLD_N",
+        "8": "V3",
+        "9": "GND"
+      },
+      "metadata": {
+        "MPN": "W25N01GVZEIG",
+        "block": "storage",
+        "notes": "Corrected ZE package8×6mm, EP3.4×4.3mm. RevR permits EP floating or GND; GND chosen. No exposed vias under EP. Internal ECC/bad-block handling required."
+      }
+    },
+    {
+      "reference": "U3",
+      "symbol": "AuraA03:BQ25185DLHR_A03",
+      "value": "53mA Li-ion powerpath charger",
+      "footprint": "tscircuit:BQ25185DLHR",
+      "nets": {
+        "1": "VSYS",
+        "2": "VBAT",
+        "3": "CHG_STAT2",
+        "4": "CHG_DISABLE",
+        "5": "GND",
+        "6": "TS_MON",
+        "7": "CHG_VSET",
+        "8": "CHG_ISET",
+        "9": "CHG_STAT1",
+        "10": "DOCK_IN",
+        "11": "GND"
+      },
+      "metadata": {
+        "MPN": "BQ25185DLHR",
+        "block": "power",
+        "notes": "R_ISET5.62k gives53.38mA nominal. R22 seriesNTC and U9 hardwarehot cutoff; Q1 requires firmwarepermission, defaultoff. Thermal calculation is conditional on selected NTC and pack qualification."
+      }
+    },
+    {
+      "reference": "U4",
+      "symbol": "AuraA03:TLV75530PDBVR_A03",
+      "value": "3.0V system regulator",
+      "footprint": "tscircuit:TLV75530PDBVR",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND",
+        "3": "VSYS",
+        "5": "V3"
+      },
+      "metadata": {
+        "MPN": "TLV75530PDBVR",
+        "block": "power",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U5",
+      "symbol": "AuraA03:MAX17048G_T10_A03",
+      "value": "ModelGauge fuel gauge",
+      "footprint": "tscircuit:MAX17048G+T10",
+      "nets": {
+        "1": "GND",
+        "2": "VBAT",
+        "3": "VBAT",
+        "4": "GND",
+        "5": "GAUGE_ALERT_N",
+        "6": "GND",
+        "7": "I2C_SCL",
+        "8": "I2C_SDA",
+        "9": "GND"
+      },
+      "metadata": {
+        "MPN": "MAX17048G+T10",
+        "block": "power",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U6",
+      "symbol": "AuraA03:DRV2605LDGSR_A03",
+      "value": "LRA closed-loop haptics",
+      "footprint": "tscircuit:DRV2605LDGSR",
+      "nets": {
+        "1": "HAPTIC_REG",
+        "2": "I2C_SCL",
+        "3": "I2C_SDA",
+        "4": "GND",
+        "5": "HAPTIC_EN",
+        "6": "VSYS",
+        "7": "LRA_P",
+        "8": "GND",
+        "9": "LRA_N",
+        "10": "VSYS"
+      },
+      "metadata": {
+        "MPN": "DRV2605LDGSR",
+        "block": "ux",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U7",
+      "symbol": "AuraA03:TLV75530PDBVR_A03",
+      "value": "Recording-only3V microphone regulator",
+      "footprint": "tscircuit:TLV75530PDBVR",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND",
+        "3": "RECORD_EN",
+        "5": "MIC_SUPPLY"
+      },
+      "metadata": {
+        "MPN": "TLV75530PDBVR",
+        "block": "privacy",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U8",
+      "symbol": "AuraA03:SN74LVC2G125DCUR_A03",
+      "value": "Ioff protected PDM isolation",
+      "footprint": "tscircuit:SN74LVC2G125DCUR",
+      "nets": {
+        "1": "GND",
+        "2": "PDM_CLK_MCU",
+        "3": "PDM_DATA_MCU",
+        "4": "GND",
+        "5": "PDM_DATA_MIC",
+        "6": "PDM_CLK_BUF",
+        "7": "GND",
+        "8": "MIC_VDD"
+      },
+      "metadata": {
+        "MPN": "SN74LVC2G125DCUR",
+        "block": "privacy",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "U9",
+      "symbol": "AuraA03:TLV6700DDCR_A03",
+      "value": "Independent charge hot cutoff",
+      "footprint": "tscircuit:TLV6700DDCR",
+      "nets": {
+        "2": "GND",
+        "3": "GND",
+        "4": "TS_MON",
+        "5": "VSYS",
+        "6": "TEMP_ALLOW_SINK"
+      },
+      "metadata": {
+        "MPN": "TLV6700DDCR",
+        "block": "power",
+        "notes": "INB- above400mV sinks OUTB; falling below~394.5mV opens chargepermission. Require1ms stableVSYS before CHG_ALLOW. C18 bypass nearVDD."
+      }
+    },
+    {
+      "reference": "Q1",
+      "symbol": "AuraA03:DMG2302UK_A03",
+      "value": "Default-off charge permission",
+      "footprint": "tscircuit:DMG2302UK-7",
+      "nets": {
+        "1": "CHG_ALLOW",
+        "2": "TEMP_ALLOW_SINK",
+        "3": "CHG_DISABLE"
+      },
+      "metadata": {
+        "MPN": "DMG2302UK-7",
+        "block": "power",
+        "notes": "Gate1 drivenMCUwithR3pulldown; source2 comparatorOUTB; drain3 active-lowchargerCE. Bodydiode source-to-drain prevents OFF drain pullinglow."
+      }
+    },
+    {
+      "reference": "SW1",
+      "symbol": "AuraA03:JS202011JCQN_A03",
+      "value": "Mechanical DPDT microphone OFF",
+      "footprint": "tscircuit:JS202011JCQN",
+      "nets": {
+        "1": "MIC_SUPPLY",
+        "2": "MIC_VDD",
+        "3": "GND",
+        "4": "GND",
+        "5": "PRIVACY_N",
+        "6": "V3"
+      },
+      "metadata": {
+        "MPN": "JS202011JCQN",
+        "block": "privacy",
+        "notes": "Center commons2,5. OFF connects2-3 and5-6. Break-before-make; verify actuator orientation on first article."
+      }
+    },
+    {
+      "reference": "SW2",
+      "symbol": "Switch:SW_Push",
+      "value": "Flush face record / stop",
+      "footprint": "tscircuit:KMR211NGULCLFS",
+      "nets": {
+        "1": "RECORD_N",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "KMR211NGULCLFS",
+        "block": "ux",
+        "notes": "C&K KMR211 NG ULC: no groundtab, lowcurrent contacts,1.2N,0.20±0.10mm electricaltravel,1.9mm actuatorheight. A03 face0.35mm travel/.02mm restgap; returngasket/overtravel needqualification. Singlepressrecord/stop,doublepressbookmark."
+      }
+    },
+    {
+      "reference": "D1",
+      "symbol": "Device:D_Schottky",
+      "value": "Reverse-dock Schottky",
+      "footprint": "tscircuit:BAT54WS-7-F",
+      "nets": {
+        "1": "DOCK_IN",
+        "2": "DOCK_5V"
+      },
+      "metadata": {
+        "MPN": "BAT54WS-7-F",
+        "block": "power",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "D2",
+      "symbol": "Device:D_TVS",
+      "value": "Dock transient suppression",
+      "footprint": "tscircuit:PESD5V0S1BA,115",
+      "nets": {
+        "1": "DOCK_5V",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "PESD5V0S1BA,115",
+        "block": "power",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "LED1",
+      "symbol": "Device:LED",
+      "value": "Amber hard recording indicator",
+      "footprint": "tscircuit:LTST-C190KFKT",
+      "nets": {
+        "1": "GND",
+        "2": "LED_RECORD_A"
+      },
+      "metadata": {
+        "MPN": "LTST-C190KFKT",
+        "block": "privacy",
+        "notes": "Indicator receives microphone rail power, has no independent firmware-off command."
+      }
+    },
+    {
+      "reference": "J1",
+      "symbol": "AuraA03:AURA_DOCK_PADS",
+      "value": "3 ENIG rear pogo contacts",
+      "footprint": "tscircuit:AURA-DOCK-PADS",
+      "nets": {
+        "1": "GND",
+        "2": "DOCK_5V",
+        "3": "GND"
+      },
+      "metadata": {
+        "MPN": "AURA-DOCK-PADS",
+        "block": "power",
+        "notes": "Three1.7mm pads atX-3/0/+3,Y-19 belowcell. Rear contactcarrier/tails needqualification. Matingdockkeyed,current-limited5V100mA; magnetsincaseonly."
+      }
+    },
+    {
+      "reference": "J2",
+      "symbol": "AuraA03:AURA_BATTERY_PADS",
+      "value": "Protected LiPo and pack10kNTC",
+      "footprint": "tscircuit:AURA-BATTERY-PADS",
+      "nets": {
+        "1": "VBAT",
+        "2": "GND",
+        "3": "BAT_NTC"
+      },
+      "metadata": {
+        "MPN": "AURA-BATTERY-PADS",
+        "block": "power",
+        "notes": "Candidate FPBattery DNK302025-150mAh actual27±1×20×3mm inclPCM; caseallowance20.5×28×3.3mm,4.2V chemistry. AddSemitec103AT-2 satisfyingreviewedR/Tacceptanceband. Packmaxthickness/swelling/4.221V tolerance andattachedNTCnotqualified."
+      }
+    },
+    {
+      "reference": "J3",
+      "symbol": "AuraA03:AURA_SWD_PADS",
+      "value": "6 pogo programming pads",
+      "footprint": "tscircuit:AURA-SWD-PADS",
+      "nets": {
+        "1": "V3",
+        "2": "SWDIO",
+        "3": "SWDCLK",
+        "4": "RESET_N",
+        "5": "GND",
+        "6": "GND"
+      },
+      "metadata": {
+        "MPN": "AURA-SWD-PADS",
+        "block": "radio",
+        "notes": ""
+      }
+    },
+    {
+      "reference": "J4",
+      "symbol": "AuraA03:AURA_LRA_PADS",
+      "value": "C08-00A LRA wire pads",
+      "footprint": "tscircuit:AURA-LRA-PADS",
+      "nets": {
+        "1": "LRA_P",
+        "2": "LRA_N"
+      },
+      "metadata": {
+        "MPN": "AURA-LRA-PADS",
+        "block": "ux",
+        "notes": "PrecisionMicrodrives C08-00A candidate8±0.1mm×2.6±0.15mm,1.2Vrmsrated/1.25max,240Hz. Start0.84Vrmsengineeringtarget; driverregisters/autoresonancecalibrationandavailabilityunqualified."
+      }
+    },
+    {
+      "reference": "R1",
+      "symbol": "Device:R",
+      "value": "5.62k",
+      "footprint": "tscircuit:RC0402FR-075K62L",
+      "nets": {
+        "1": "CHG_ISET",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-075K62L",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R2",
+      "symbol": "Device:R",
+      "value": "24k",
+      "footprint": "tscircuit:RC0402FR-0724KL",
+      "nets": {
+        "1": "CHG_VSET",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0724KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R3",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "CHG_ALLOW",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R4",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "CHG_STAT1",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R5",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "CHG_STAT2",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R6",
+      "symbol": "Device:R",
+      "value": "4.7k",
+      "footprint": "tscircuit:RC0402FR-074K7L",
+      "nets": {
+        "1": "I2C_SCL",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-074K7L",
+        "block": "radio",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R7",
+      "symbol": "Device:R",
+      "value": "4.7k",
+      "footprint": "tscircuit:RC0402FR-074K7L",
+      "nets": {
+        "1": "I2C_SDA",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-074K7L",
+        "block": "radio",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R8",
+      "symbol": "Device:R",
+      "value": "100k",
+      "footprint": "tscircuit:RC0402FR-07100KL",
+      "nets": {
+        "1": "GAUGE_ALERT_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-07100KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R9",
+      "symbol": "Device:R",
+      "value": "100k",
+      "footprint": "tscircuit:RC0402FR-07100KL",
+      "nets": {
+        "1": "RECORD_EN",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-07100KL",
+        "block": "privacy",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R10",
+      "symbol": "Device:R",
+      "value": "100k",
+      "footprint": "tscircuit:RC0402FR-07100KL",
+      "nets": {
+        "1": "HAPTIC_EN",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-07100KL",
+        "block": "ux",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R11",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "RECORD_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "ux",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R13",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "PRIVACY_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "privacy",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R14",
+      "symbol": "Device:R",
+      "value": "1k",
+      "footprint": "tscircuit:RC0402FR-071KL",
+      "nets": {
+        "1": "MIC_VDD",
+        "2": "LED_RECORD_A"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-071KL",
+        "block": "privacy",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R15",
+      "symbol": "Device:R",
+      "value": "100k",
+      "footprint": "tscircuit:RC0402FR-07100KL",
+      "nets": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-07100KL",
+        "block": "privacy",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R16",
+      "symbol": "Device:R",
+      "value": "33",
+      "footprint": "tscircuit:RC0402FR-0733RL",
+      "nets": {
+        "1": "PDM_CLK_BUF",
+        "2": "PDM_CLK_MIC"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0733RL",
+        "block": "audio",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R17",
+      "symbol": "Device:R",
+      "value": "33",
+      "footprint": "tscircuit:RC0402FR-0733RL",
+      "nets": {
+        "1": "SPI_SCK_MCU",
+        "2": "SPI_SCK"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0733RL",
+        "block": "storage",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R18",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "SPI_CS_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "storage",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R19",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "FLASH_WP_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "storage",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R20",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "FLASH_HOLD_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "storage",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R21",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "RESET_N",
+        "2": "V3"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "radio",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R22",
+      "symbol": "Device:R",
+      "value": "3.3k",
+      "footprint": "tscircuit:RC0402FR-073K3L",
+      "nets": {
+        "1": "TS_MON",
+        "2": "BAT_NTC"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-073K3L",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "R23",
+      "symbol": "Device:R",
+      "value": "10k",
+      "footprint": "tscircuit:RC0402FR-0710KL",
+      "nets": {
+        "1": "CHG_DISABLE",
+        "2": "VSYS"
+      },
+      "metadata": {
+        "MPN": "RC0402FR-0710KL",
+        "block": "power",
+        "notes": "YageoRC0402 1%,63mW at70C,50V,100ppm/C. Manufacturer series/specsheet crosscheck; supplier availability to confirm."
+      }
+    },
+    {
+      "reference": "C1",
+      "symbol": "Device:C",
+      "value": "100nF",
+      "footprint": "tscircuit:C0402C104K4RACTU",
+      "nets": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C104K4RACTU",
+        "block": "radio",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C2",
+      "symbol": "Device:C",
+      "value": "4.7uF",
+      "footprint": "tscircuit:C0603C475K8PACTU",
+      "nets": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C475K8PACTU",
+        "block": "radio",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C3",
+      "symbol": "Device:C",
+      "value": "100nF silicon",
+      "footprint": "tscircuit:939113424610-T3N",
+      "nets": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "939113424610-T3N",
+        "block": "audio",
+        "notes": "Murata BBSC silicon,100nF±15%,3.8V rated,1.2×0.7×0.4mm. Replaces ClassII ceramic at mic. Rev3.00 pads/MPN and assemblyRev1.42 checked; mask/paste registration, assembly leakage and acousticperformance needqualification."
+      }
+    },
+    {
+      "reference": "C4",
+      "symbol": "Device:C",
+      "value": "100nF silicon",
+      "footprint": "tscircuit:939113424610-T3N",
+      "nets": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "939113424610-T3N",
+        "block": "audio",
+        "notes": "Murata BBSC silicon,100nF±15%,3.8V rated,1.2×0.7×0.4mm. Replaces ClassII ceramic at mic. Rev3.00 pads/MPN and assemblyRev1.42 checked; mask/paste registration, assembly leakage and acousticperformance needqualification."
+      }
+    },
+    {
+      "reference": "C5",
+      "symbol": "Device:C",
+      "value": "100nF",
+      "footprint": "tscircuit:C0402C104K4RACTU",
+      "nets": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C104K4RACTU",
+        "block": "storage",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C6",
+      "symbol": "Device:C",
+      "value": "4.7uF",
+      "footprint": "tscircuit:C0603C475K8PACTU",
+      "nets": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C475K8PACTU",
+        "block": "storage",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C7",
+      "symbol": "Device:C",
+      "value": "2.2uF",
+      "footprint": "tscircuit:C0603C225K8RACTU",
+      "nets": {
+        "1": "DOCK_IN",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C225K8RACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C8",
+      "symbol": "Device:C",
+      "value": "4.7uF",
+      "footprint": "tscircuit:C0603C475K8PACTU",
+      "nets": {
+        "1": "VBAT",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C475K8PACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C9",
+      "symbol": "Device:C",
+      "value": "10uF",
+      "footprint": "tscircuit:C0805C106K8PACTU",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0805C106K8PACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C10",
+      "symbol": "Device:C",
+      "value": "2.2uF",
+      "footprint": "tscircuit:C0603C225K8RACTU",
+      "nets": {
+        "1": "V3",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C225K8RACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C11",
+      "symbol": "Device:C",
+      "value": "100nF",
+      "footprint": "tscircuit:C0402C104K4RACTU",
+      "nets": {
+        "1": "VBAT",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C104K4RACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C12",
+      "symbol": "Device:C",
+      "value": "1uF",
+      "footprint": "tscircuit:C0603C105K4RACTU",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C105K4RACTU",
+        "block": "ux",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C13",
+      "symbol": "Device:C",
+      "value": "1uF",
+      "footprint": "tscircuit:C0603C105K4RACTU",
+      "nets": {
+        "1": "HAPTIC_REG",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C105K4RACTU",
+        "block": "ux",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C14",
+      "symbol": "Device:C",
+      "value": "1uF",
+      "footprint": "tscircuit:C0603C105K4RACTU",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C105K4RACTU",
+        "block": "privacy",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C15",
+      "symbol": "Device:C",
+      "value": "1uF",
+      "footprint": "tscircuit:C0603C105K4RACTU",
+      "nets": {
+        "1": "MIC_SUPPLY",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0603C105K4RACTU",
+        "block": "privacy",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C16",
+      "symbol": "Device:C",
+      "value": "100nF",
+      "footprint": "tscircuit:C0402C104K4RACTU",
+      "nets": {
+        "1": "MIC_VDD",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C104K4RACTU",
+        "block": "privacy",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C17",
+      "symbol": "Device:C",
+      "value": "10nF",
+      "footprint": "tscircuit:C0402C103K5RACTU",
+      "nets": {
+        "1": "RECORD_N",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C103K5RACTU",
+        "block": "ux",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    },
+    {
+      "reference": "C18",
+      "symbol": "Device:C",
+      "value": "100nF",
+      "footprint": "tscircuit:C0402C104K4RACTU",
+      "nets": {
+        "1": "VSYS",
+        "2": "GND"
+      },
+      "metadata": {
+        "MPN": "C0402C104K4RACTU",
+        "block": "power",
+        "notes": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified."
+      }
+    }
+  ],
+  "noConnects": [
+    {
+      "componentRef": "U1",
+      "pinName": "3"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "4"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "5"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "6"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "7"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "8"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "9"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "10"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "11"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "12"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "13"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "14"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "17"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "18"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "23"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "26"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "27"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "29"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "31"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "34"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "35"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "46"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "47"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "48"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "49"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "50"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "52"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "54"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "56"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "57"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "58"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "59"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "60"
+    },
+    {
+      "componentRef": "U1",
+      "pinName": "61"
+    },
+    {
+      "componentRef": "U4",
+      "pinName": "4"
+    },
+    {
+      "componentRef": "U7",
+      "pinName": "4"
+    },
+    {
+      "componentRef": "U9",
+      "pinName": "1"
+    }
+  ],
+  "powerFlagRecommendations": [
+    {
+      "net": "GND",
+      "basis": "External dock/battery return; passive connectors cannot drive power_in."
+    },
+    {
+      "net": "DOCK_5V",
+      "basis": "Keyed current-limited 5 V dock supplies J1.2."
+    },
+    {
+      "net": "DOCK_IN",
+      "basis": "D1 Schottky forward path supplies charger IN; ERC does not infer drive through a passive diode."
+    },
+    {
+      "net": "VBAT",
+      "basis": "Protected external rechargeable cell supplies this rail; BQ BAT is bidirectional power terminal."
+    },
+    {
+      "net": "MIC_VDD",
+      "basis": "SW1 ON passes regulated MIC_SUPPLY and OFF grounds the rail; flag documents conditional rail source, not constant power. Physical switching and startup require separate audit."
+    }
+  ],
+  "standardSymbolPinChecks": {
+    "Device:R": "1 and 2 passive, orientation not electrical polarity",
+    "Device:C": "1 and 2 passive nonpolarized",
+    "Device:LED": "1 cathode, 2 anode",
+    "Device:D_Schottky": "1 cathode, 2 anode; D1.1 DOCK_IN and D1.2 DOCK_5V",
+    "Device:D_TVS": "Two passive terminals; selected PESD5V0S1BA bidirectional so no electrical orientation dependence",
+    "Switch:SW_Push": "1 and 2 contact nodes; physical KMR duplicated pads 1/2 remain one logical pin each"
+  },
+  "validation": {
+    "realReferences": 61,
+    "customSymbols": 15,
+    "customReferences": 17,
+    "authoredNets": 43,
+    "authoredConnectedPinPairs": 208,
+    "explicitNoConnects": 37,
+    "logicalNetlistParity": "PASS: exact net name and component.pin sets against output/logical-netlist.json",
+    "customPinSets": "PASS: custom numeric pins equal connected plus authored NC pins",
+    "pending": "Not instantiated yet; run native ERC, native netlist parity and symbol/footprint UUID reconciliation before any PCB sync."
+  },
+  "actualNativeImplementation": {
+    "rootSchematic": "output/aura-a03-electrical.kicad_sch",
+    "symbolLibrary": "library/AuraA03.kicad_sym",
+    "customSymbolCount": 14,
+    "u1Symbol": "RF_Module:MDBT50Q-1MV2",
+    "unusedProposedSymbol": "MDBT50Q_1MV2_A03",
+    "note": "Original instance footprint entries below are historical converter IDs. The verified native instance footprint links are listed here.",
+    "components": [
+      {
+        "reference": "C1",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C104K4RACTU"
+      },
+      {
+        "reference": "C2",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C475K8PACTU"
+      },
+      {
+        "reference": "J3",
+        "footprint": "AURA:AURA-SWD-PADS",
+        "mpn": "AURA-SWD-PADS"
+      },
+      {
+        "reference": "R6",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-074K7L"
+      },
+      {
+        "reference": "R7",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-074K7L"
+      },
+      {
+        "reference": "R21",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "U1",
+        "footprint": "RF_Module:Raytac_MDBT50Q",
+        "mpn": "MDBT50Q-1MV2"
+      },
+      {
+        "reference": "C3",
+        "footprint": "AURA:AURA_SiCap_1.2x0.7mm_P0.7mm",
+        "mpn": "939113424610-T3N"
+      },
+      {
+        "reference": "C4",
+        "footprint": "AURA:AURA_SiCap_1.2x0.7mm_P0.7mm",
+        "mpn": "939113424610-T3N"
+      },
+      {
+        "reference": "C14",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C105K4RACTU"
+      },
+      {
+        "reference": "C15",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C105K4RACTU"
+      },
+      {
+        "reference": "C16",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C104K4RACTU"
+      },
+      {
+        "reference": "LED1",
+        "footprint": "LED_SMD:LED_0603_1608Metric",
+        "mpn": "LTST-C190KFKT"
+      },
+      {
+        "reference": "MK1",
+        "footprint": "Sensor_Audio:Knowles_LGA-5_3.5x2.65mm",
+        "mpn": "SPH0641LU4H-1"
+      },
+      {
+        "reference": "MK2",
+        "footprint": "Sensor_Audio:Knowles_LGA-5_3.5x2.65mm",
+        "mpn": "SPH0641LU4H-1"
+      },
+      {
+        "reference": "R9",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-07100KL"
+      },
+      {
+        "reference": "R13",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R14",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-071KL"
+      },
+      {
+        "reference": "R15",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-07100KL"
+      },
+      {
+        "reference": "R16",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0733RL"
+      },
+      {
+        "reference": "SW1",
+        "footprint": "Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN",
+        "mpn": "JS202011JCQN"
+      },
+      {
+        "reference": "U7",
+        "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+        "mpn": "TLV75530PDBVR"
+      },
+      {
+        "reference": "U8",
+        "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+        "mpn": "SN74LVC2G125DCUR"
+      },
+      {
+        "reference": "C5",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C104K4RACTU"
+      },
+      {
+        "reference": "C6",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C475K8PACTU"
+      },
+      {
+        "reference": "R17",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0733RL"
+      },
+      {
+        "reference": "R18",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R19",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R20",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "U2",
+        "footprint": "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm",
+        "mpn": "W25N01GVZEIG"
+      },
+      {
+        "reference": "C7",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C225K8RACTU"
+      },
+      {
+        "reference": "C8",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C475K8PACTU"
+      },
+      {
+        "reference": "C9",
+        "footprint": "Capacitor_SMD:C_0805_2012Metric",
+        "mpn": "C0805C106K8PACTU"
+      },
+      {
+        "reference": "C18",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C104K4RACTU"
+      },
+      {
+        "reference": "D1",
+        "footprint": "Diode_SMD:D_SOD-323",
+        "mpn": "BAT54WS-7-F"
+      },
+      {
+        "reference": "D2",
+        "footprint": "Diode_SMD:D_SOD-323",
+        "mpn": "PESD5V0S1BA,115"
+      },
+      {
+        "reference": "J1",
+        "footprint": "AURA:AURA-DOCK-PADS",
+        "mpn": "AURA-DOCK-PADS"
+      },
+      {
+        "reference": "J2",
+        "footprint": "AURA:AURA-BATTERY-PADS",
+        "mpn": "AURA-BATTERY-PADS"
+      },
+      {
+        "reference": "Q1",
+        "footprint": "Package_TO_SOT_SMD:SOT-23",
+        "mpn": "DMG2302UK-7"
+      },
+      {
+        "reference": "R1",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-075K62L"
+      },
+      {
+        "reference": "R2",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0724KL"
+      },
+      {
+        "reference": "R3",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R4",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R5",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "R22",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-073K3L"
+      },
+      {
+        "reference": "R23",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "U3",
+        "footprint": "Package_DFN_QFN:Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm",
+        "mpn": "BQ25185DLHR"
+      },
+      {
+        "reference": "U9",
+        "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+        "mpn": "TLV6700DDCR"
+      },
+      {
+        "reference": "C10",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C225K8RACTU"
+      },
+      {
+        "reference": "C11",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C104K4RACTU"
+      },
+      {
+        "reference": "C12",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C105K4RACTU"
+      },
+      {
+        "reference": "C13",
+        "footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "mpn": "C0603C105K4RACTU"
+      },
+      {
+        "reference": "C17",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "mpn": "C0402C103K5RACTU"
+      },
+      {
+        "reference": "J4",
+        "footprint": "AURA:AURA-LRA-PADS",
+        "mpn": "AURA-LRA-PADS"
+      },
+      {
+        "reference": "R8",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-07100KL"
+      },
+      {
+        "reference": "R10",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-07100KL"
+      },
+      {
+        "reference": "R11",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "mpn": "RC0402FR-0710KL"
+      },
+      {
+        "reference": "SW2",
+        "footprint": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
+        "mpn": "KMR211NGULCLFS"
+      },
+      {
+        "reference": "U4",
+        "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+        "mpn": "TLV75530PDBVR"
+      },
+      {
+        "reference": "U5",
+        "footprint": "Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm",
+        "mpn": "MAX17048G+T10"
+      },
+      {
+        "reference": "U6",
+        "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+        "mpn": "DRV2605LDGSR"
+      }
+    ],
+    "verificationReport": "output/native-schematic-parity.json",
+    "erc": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "connectedPinCount": 208,
+    "intendedNetCount": 43,
+    "intentionalNCCount": 37
+  }
+}

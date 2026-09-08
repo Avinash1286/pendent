@@ -4,6 +4,8 @@ Except for the explicitly authored AURA silicon-capacitor land, the `.kicad_mod`
 
 The original files are retained for pad, stencil, annular microphone ground, and courtyard review. `scripts/prepare-library.mjs` extracts pads into `src/footprints.json`. The tscircuit authoring layer preserves pad positions, sizes and right-angle rotations, but currently renders rounded rectangular lands as rectangles. The microphone annulus is rebuilt as a polygon ring to retain the central acoustic opening. Re-exported KiCad libraries and stencil masks therefore require comparison with these originals before manufacture.
 
+The per-reference files in `../pcb-snapshot.pretty/` are derived native snapshots carrying these same source land patterns and restored Fab/courtyard geometry. The KiCad-derived portions retain the attribution and license above; the snapshot report records the original source hashes and unchanged pad geometry. Authored AURA custom-contact and SiCap portions remain identified separately.
+
 `RF_Module.lib` and `Sensor_Audio.lib` were downloaded from the official archived GitHub mirror of KiCad symbols and were used as pin-map crosscheck references. Those files carry the same KiCad library licensing policy.
 
 `AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod` is an authored land pattern based on dimensional facts from Murata BBSC Rev.3.00 and its Assembly by Reflow Rev.1.42. It is not an official Murata CAD file. The source index links those documents. It is provided under the repository's license, with manufacturing tolerances and stencil qualification still required.

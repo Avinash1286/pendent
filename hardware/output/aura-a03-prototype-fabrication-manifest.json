@@ -1,0 +1,23 @@
+{
+  "status": "CONNECTED_PROTOTYPE_FABRICATION_REVIEW",
+  "path": "output/aura-a03-prototype-fabrication.zip",
+  "bytes": 2026411,
+  "sha256": "e560e5fc176fcf469bc27e704b7a9be2aa77bc6faed06cea6f2e241fb0b26e7f",
+  "fileCount": 226,
+  "manifestFileCount": 223,
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "sourceManifestSha256": "98cbdaa48ba370e5f7e89c2a765a8481a06437ef3a30181403a261fd6fb34336",
+  "assemblyCourtyardFindings": 78,
+  "assemblyApproved": false,
+  "physicalQualification": false,
+  "zipDate": [
+    1980,
+    1,
+    1,
+    0,
+    0,
+    0
+  ],
+  "compression": "DEFLATE level 9",
+  "crcAndExactFileHashesVerified": true
+}

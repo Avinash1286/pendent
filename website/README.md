@@ -47,6 +47,8 @@ vercel deploy --prod
 
 The root `.vercelignore` excludes hardware/render workspaces while retaining website assets. `website/vercel.json` sets the static Vite build and security headers. Automatic Git deployments are disabled so development checkpoints can be pushed independently; validated releases use the Vercel CLI directly. There are no GitHub Actions workflows.
 
+After deployment, run `node scripts/verify-deployment.mjs <deployment-id>` from `website/`. It verifies HTTP delivery and compares the public model, film, captions and poster against local assets by SHA-256, then writes `docs/deployment-verification.json`. This performs HTTP and file checks, not browser interaction testing.
+
 ## Asset provenance
 
 Product models/renders originate in `../enclosure`. Video and captions originate in `../film/aura-launch`. The Manrope variable font is redistributed under its SIL Open Font License in `public/fonts/OFL.txt`. The release README provides the final site URL.

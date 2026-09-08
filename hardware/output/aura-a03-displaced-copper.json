@@ -1,0 +1,34 @@
+[
+  {
+    "uuid": "00cecb26-cc58-474c-bc28-397306aefab9",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "4b985c15-7201-4f6e-98ba-ae014c2c2f84",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "51665356-1131-4366-ae3d-e715c0e0a2dc",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "588961c0-42e0-4b14-9319-2919c1b370de",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "a3049485-4ec5-47dd-a5f1-59dd12467e71",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "a860b745-66d8-46d6-9540-025387a4c182",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "ba8b765f-eda1-4eb8-a191-6f514b9a114c",
+    "net": "VSYS"
+  },
+  {
+    "uuid": "d12ba2a4-542f-4307-a9dd-81599350e392",
+    "net": "VSYS"
+  }
+]

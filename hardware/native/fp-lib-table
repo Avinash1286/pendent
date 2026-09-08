@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "AURA")(type "KiCad")(uri "${KIPRJMOD}/../library.pretty")(options "")(descr "Reviewed AURA custom silicon-capacitor land and original KiCad references"))
+
+  (lib (name "AURA_PCB")(type "KiCad")(uri "${KIPRJMOD}/../pcb-snapshot.pretty")(options "")(descr "AURA A03 exact native pad snapshots with restored manufacturer Fab and courtyards"))
+)

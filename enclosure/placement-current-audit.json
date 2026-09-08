@@ -1,6 +1,7 @@
 {
   "scope": "Current saved component placement assessment",
   "scene_sha256": "25780cc538bb25db6df25e3af51778f81035e04bca98b08444ad4ae4418f9733",
+  "placement_reference_sha256": "3008266af1262fd25b8342fc6cda04d8731acaca23bc48c66b38b397a8f7d8ab",
   "body_reference_sha256": "a4ee25c7ef1339e8a340300e96a9e56f43d09b75a4942f2892f791230e18e837",
   "baseline_positions": {
     "U1": {
@@ -306,7 +307,7 @@
     "C18": {
       "x": -2.05,
       "y": -13.3,
-      "r": 90
+      "r": 270
     }
   },
   "physical_qualification": false,
@@ -334,7 +335,7 @@
         "C18": {
           "x": -2.05,
           "y": -13.3,
-          "r": 90
+          "r": 270
         },
         "R22": {
           "x": -8.5,

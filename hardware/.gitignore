@@ -1,7 +1,10 @@
 # Third-party runtimes and per-run local settings are reproducible dependencies.
 tools/*.jar
+tools/python/
 output/freerouting*-runtime/
-output/*.kicad_prl
+**/*.kicad_prl
+**/*-backups/
+**/~*.lck
 
 # Preserve the exact current routing evidence despite the root log exclusion.
 !output/aura-a03-freerouting.log

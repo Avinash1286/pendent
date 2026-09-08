@@ -3,7 +3,7 @@
   "hardware_owner_freeze_confirmed_by_caller": true,
   "physical_qualification": false,
   "source": "hardware/src/design.ts resolved parts and placement-overrides.json",
-  "source_sha256": "468394907181c9b1799fc953e34684fe66d9091e76b2119da603879ac6e84260",
+  "source_sha256": "757b60d148a5225e45975728e2fdcf8f0c5385d06ea5a12f158afc19dbef2dd2",
   "before_sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5",
   "changes": {
     "D1": {
@@ -111,10 +111,24 @@
       "after": {
         "x": -2.05,
         "y": -13.3,
-        "r": 90
+        "r": 270
       }
     }
   },
-  "after_sha256": "0aa17dc6c745526d3f983649c308f8d99b724b4ccba9fc0be781cabb60f00f22",
-  "native_freeze_evidence": "../hardware/output/aura-a03-final-placement-changes.json"
+  "after_sha256": "3008266af1262fd25b8342fc6cda04d8731acaca23bc48c66b38b397a8f7d8ab",
+  "native_freeze_evidence": "../hardware/output/aura-a03-final-placement-changes.json",
+  "followup_orientation_sync": {
+    "reference": "C18",
+    "reference_before_sha256": "0aa17dc6c745526d3f983649c308f8d99b724b4ccba9fc0be781cabb60f00f22",
+    "source_before_rotation_degrees": 90,
+    "source_after_rotation_degrees": 270,
+    "canonical_visual_rotation_degrees": 90,
+    "source_evidence": "c18-source-sync.json",
+    "symmetry_evidence": "c18-symmetry-audit.json",
+    "unchanged_xy": true,
+    "all_other_placements_unchanged": true,
+    "physical_body_unchanged": true,
+    "pcb_pin_rotation_exempted": false,
+    "original_native_freeze_evidence_is_historical": true
+  }
 }

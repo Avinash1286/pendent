@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T06:01:35",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.4",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2",
+            "violations": []
+        },
+        {
+            "path": "/Radio and debug/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2/662b8161-5716-4090-9d3b-cadbdc8f1cb4",
+            "violations": []
+        },
+        {
+            "path": "/Audio and privacy/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5",
+            "violations": []
+        },
+        {
+            "path": "/Offline storage/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155",
+            "violations": []
+        },
+        {
+            "path": "/Charging and thermal limit/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2/f6decb16-57a5-4374-90a3-9a4fdbfabe56",
+            "violations": []
+        },
+        {
+            "path": "/System power and controls/",
+            "uuid_path": "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10",
+            "violations": []
+        }
+    ],
+    "source": "aura-a03-electrical.kicad_sch"
+}

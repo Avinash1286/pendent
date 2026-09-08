@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "operation": "Only five Sheet file Y coordinates per overview moved down 2.54 mm",
+  "boardTouched": false,
+  "childSchematicsTouched": false,
+  "roots": [
+    {
+      "path": "output/aura-a03-electrical.kicad_sch",
+      "inputSha256": "bb9fb750d9e8f0b5f393068360f91dd707e164b8155f974ed9ff5f8143ab41aa",
+      "outputSha256": "d5612a5e8c405a57025bebc0f212c5fe805f4ef0308c672c3f32d2d2c931c4ca",
+      "fieldPositions": [
+        {
+          "sheet": "a03-radio.kicad_sch",
+          "x": "32.54",
+          "oldY": "71.27",
+          "newY": "73.81"
+        },
+        {
+          "sheet": "a03-audio.kicad_sch",
+          "x": "157.54",
+          "oldY": "71.27",
+          "newY": "73.81"
+        },
+        {
+          "sheet": "a03-storage.kicad_sch",
+          "x": "32.54",
+          "oldY": "126.27",
+          "newY": "128.81"
+        },
+        {
+          "sheet": "a03-charging.kicad_sch",
+          "x": "157.54",
+          "oldY": "126.27",
+          "newY": "128.81"
+        },
+        {
+          "sheet": "a03-controls.kicad_sch",
+          "x": "32.54",
+          "oldY": "181.27",
+          "newY": "183.81"
+        }
+      ],
+      "allOtherBytesUnchanged": true,
+      "allUuidsUnchanged": true
+    },
+    {
+      "path": "native/aura-a03.kicad_sch",
+      "inputSha256": "e2f54fcf7a3975feab922536939c07a0791810246f981388fd92240776879ce6",
+      "outputSha256": "86ae74de503e042518e84396b72a16099a86e8ec9c70b11bc4441253f4d414a2",
+      "fieldPositions": [
+        {
+          "sheet": "a03-radio.kicad_sch",
+          "x": "32.54",
+          "oldY": "71.27",
+          "newY": "73.81"
+        },
+        {
+          "sheet": "a03-audio.kicad_sch",
+          "x": "157.54",
+          "oldY": "71.27",
+          "newY": "73.81"
+        },
+        {
+          "sheet": "a03-storage.kicad_sch",
+          "x": "32.54",
+          "oldY": "126.27",
+          "newY": "128.81"
+        },
+        {
+          "sheet": "a03-charging.kicad_sch",
+          "x": "157.54",
+          "oldY": "126.27",
+          "newY": "128.81"
+        },
+        {
+          "sheet": "a03-controls.kicad_sch",
+          "x": "32.54",
+          "oldY": "181.27",
+          "newY": "183.81"
+        }
+      ],
+      "allOtherBytesUnchanged": true,
+      "allUuidsUnchanged": true
+    }
+  ],
+  "verification": {
+    "netlists": [
+      {
+        "netlist": "output/aura-a03-native.net.xml",
+        "sha256": "90b8906cc122296a896cf51f32d1a5e4eaad2df1a437d2eef17864f1d9c80423",
+        "components": 61,
+        "intendedNets": 43,
+        "connectedPins": 208,
+        "intentionalNCs": 37,
+        "membershipAndComponentMetadataUnchanged": true
+      },
+      {
+        "netlist": "native/aura-a03.net.xml",
+        "sha256": "e0bbb3aa1d2ccc28bf5200714d3f200229271acaaec8feea06f5cd30792aa73a",
+        "components": 61,
+        "intendedNets": 43,
+        "connectedPins": 208,
+        "intentionalNCs": 37,
+        "membershipAndComponentMetadataUnchanged": true
+      }
+    ],
+    "pdfs": [
+      {
+        "path": "output/aura-a03-native-schematic.pdf",
+        "pages": 6,
+        "sha256": "a29099d21785809b645c5cb73a26c31e089dc3dadde93c336f7803b68ba08337"
+      },
+      {
+        "path": "native/review/schematic.pdf",
+        "pages": 6,
+        "sha256": "e3259d3d46b63a34289ed2d3f5dd0cb56951bdd4131fe3d54aa97bba37fbfd82"
+      }
+    ],
+    "originalAndPairedErcFindings": 0,
+    "protectedBoardsOtherPdfsAndManufacturingReportUnchanged": true,
+    "pairedBoardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+    "visualReview": "PASS: both regenerated overview pages inspected; all five filename labels clear their box borders with no clipping.",
+    "unchangedDetailedPages": [
+      {
+        "pdf": "output/aura-a03-native-schematic.pdf",
+        "unchangedPageContentStreams": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "pdf": "native/review/schematic.pdf",
+        "unchangedPageContentStreams": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "changedFilesExceptThisReport": [
+    {
+      "path": "scripts/fix-schematic-sheetfile-labels.py",
+      "sha256": "b0dbae28147892a6b003584940b8a52cc77546aa623c335c78900757ae7722b7"
+    },
+    {
+      "path": "output/aura-a03-electrical.kicad_sch",
+      "sha256": "d5612a5e8c405a57025bebc0f212c5fe805f4ef0308c672c3f32d2d2c931c4ca"
+    },
+    {
+      "path": "native/aura-a03.kicad_sch",
+      "sha256": "86ae74de503e042518e84396b72a16099a86e8ec9c70b11bc4441253f4d414a2"
+    },
+    {
+      "path": "output/aura-a03-native-schematic.pdf",
+      "sha256": "a29099d21785809b645c5cb73a26c31e089dc3dadde93c336f7803b68ba08337"
+    },
+    {
+      "path": "native/review/schematic.pdf",
+      "sha256": "e3259d3d46b63a34289ed2d3f5dd0cb56951bdd4131fe3d54aa97bba37fbfd82"
+    },
+    {
+      "path": "output/aura-a03-native.net.xml",
+      "sha256": "90b8906cc122296a896cf51f32d1a5e4eaad2df1a437d2eef17864f1d9c80423"
+    },
+    {
+      "path": "native/aura-a03.net.xml",
+      "sha256": "e0bbb3aa1d2ccc28bf5200714d3f200229271acaaec8feea06f5cd30792aa73a"
+    },
+    {
+      "path": "output/aura-a03-native-erc.json",
+      "sha256": "fda27040848d28b054cbd2a04de18be8cf449efec53e781d72ebff6142b297a9"
+    },
+    {
+      "path": "native/review/erc.json",
+      "sha256": "1fe20c13b7c59a522c5ce6e4f4131a63e0d691454196cc99624367e5e86e8f2d"
+    },
+    {
+      "path": "output/native-schematic-parity.json",
+      "sha256": "bd60c2d1bd03edce6f3f59c2ab85721ea3f0ea42a0b77c883f7dacbb9c99856e"
+    }
+  ]
+}

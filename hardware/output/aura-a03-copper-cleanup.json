@@ -1,0 +1,303 @@
+{
+  "status": "CONNECTED_COPPER_CLEANUP_PROMOTED",
+  "sourceSha256": "e7d545cc3f415ab173867c3a12a2160ea83ebf70029fcdac4bd8e99bef82746c",
+  "outputSha256": "14fc416af6ee4921a26d3aabb4ec325199cb3a1578fe77d40d7d0c61209d9ac2",
+  "sourceBackup": ".scratch\\canonical-pre-cleanup-e7d545cc3f415ab173867c3a12a2160ea83ebf70029fcdac4bd8e99bef82746c.kicad_pcb",
+  "removedCopperCount": 109,
+  "removedCopperUuids": [
+    "02ea6a9a-e699-41bd-8f44-1f6ab94c6ee4",
+    "07216061-6554-40f0-ab22-45400cef5f80",
+    "07f21b63-f834-4ae3-8944-cd284bbfc55a",
+    "093a94a7-d77e-4fb7-a751-16c5369a3ad1",
+    "09a15626-1473-4b8a-aba4-d1cad430d272",
+    "0b564e34-d24b-45fc-8cce-ebc72d02a369",
+    "0c02f620-a7e7-4ff6-8944-395251577d6f",
+    "11cddd6c-3814-4cad-88df-eaf104a1be51",
+    "1246d1bd-d34a-400d-8473-e0052deca710",
+    "161312d3-7547-4d05-9ea6-c66d50714f3c",
+    "1617e721-c689-47bc-9bf2-ead70082d999",
+    "18381709-a542-423a-8d47-ce74af733fd7",
+    "1947c2ff-09cc-4e55-8dc3-d8d4dcb4d174",
+    "1951df9c-23a6-4cd6-84d1-bc054b101bc6",
+    "1b49c329-d89b-444e-bd9a-a1ea0418f428",
+    "1cbaa012-a26c-44fb-b8dd-a628235fe319",
+    "1d8349d8-0eb6-4546-a4a9-d1ca00cb8075",
+    "22f5fdf3-f992-445a-93e1-5e2d5ca0ecc9",
+    "23457f5c-c41a-428d-be06-597b319970b5",
+    "25c63a36-e5da-4430-bbe6-11ac22500ebe",
+    "2af9042b-0cf3-4d20-bbd7-5a5d85a1ee31",
+    "2b867a62-18fa-49f0-967c-e17c4a671f6b",
+    "2c552ba1-7bd4-4979-8ec4-ce3e5a82ae48",
+    "2d4d0af8-6e83-4066-a0ab-7359b48bad0b",
+    "2fc8c33a-ec0c-4724-a2de-243b99b71d37",
+    "3216d1bf-86c3-48d0-a18c-157afeb51a8b",
+    "33370d14-e273-4abd-b85d-261214cba2ac",
+    "33651728-9b59-4d4f-b6e6-cde1918b8cff",
+    "33bf58fa-5ff3-40f0-9a18-0a63d0f0f34e",
+    "3909fb5a-d782-4a88-afd4-43d588b60c5e",
+    "3946c551-b6ef-4f3f-b2ab-1e632d2d3bd0",
+    "39f1a2de-faab-4441-863d-dc7eff4fa3a0",
+    "3a781a0f-19d6-43a6-9371-d7510244da0c",
+    "3a7943fb-a0c9-48ef-a5d2-e2d0ea965e96",
+    "3c69a45f-d3c7-4fd5-99f6-4dd1278f97f8",
+    "3c7209a2-9e28-4d8a-a8a6-700a75f48224",
+    "3cfc2fb7-fb8a-4b00-b2e1-d628ced2762c",
+    "3dcca7ae-e58b-4db3-af1b-fd9d37ba50d4",
+    "49c79311-38d5-4ac4-89a0-7a63064af96e",
+    "54187f18-64e8-4d4f-bce9-d940a88840fa",
+    "54f9dfd1-e8fa-4b46-b80e-7e1525d5b9c1",
+    "569f648f-454f-474f-aa40-67c80ca61776",
+    "59e90c00-4bb4-4ab6-846a-631f9c1a01ac",
+    "5e10b99b-92a7-4638-a01a-4e54bebc0a93",
+    "5ff1d036-496c-4537-93e6-f42b8b424565",
+    "612dcd6d-b316-4caa-b0e5-4a9c591beca8",
+    "617dbf21-2e51-4033-86ac-fb3a74a90ba4",
+    "61e4ad88-11f8-4f57-a5fe-f0f39c9dce73",
+    "6ae1501b-7ada-426a-ba92-a0cc435ec218",
+    "6c02d95d-fcb4-487d-b305-5a7820533dc5",
+    "6cf6cafe-fae4-43a7-a05e-083d91cf2327",
+    "6cf9781e-72ab-41fb-8c90-2a225fbf4f99",
+    "6edc280d-930f-4fa3-a4df-0a8eacdc2013",
+    "6edfd12a-79cc-482f-8eea-1759012db7ef",
+    "6ff7460b-9db6-418a-bb46-ed999dcb033d",
+    "701ad610-01ec-4c28-96c8-d7adc4cdc7b4",
+    "70e455ca-78ab-4a04-83d2-e99890b48983",
+    "73ba0748-cd6d-4be0-b4b7-598ea26a36b9",
+    "7ba9717c-1ea8-40c6-b739-7b92575050fd",
+    "80584988-cc6f-4d4e-acfc-fbbdf5fc2811",
+    "86f7eab4-d7d6-46e9-95c5-0077b6800b5c",
+    "88d8fff3-05b5-4ac7-91aa-5c42b1460957",
+    "897cc2df-d32f-44e5-bf58-0443ff99a8ef",
+    "8e77b9ec-1cc7-4d2d-9455-4eeb4a540945",
+    "95642787-fe9c-48b3-bfb7-29a1f1bb2ce4",
+    "964bce84-d182-47a8-a504-660e655bf773",
+    "97f08400-908c-40b2-9331-297c06b0902a",
+    "9a091839-95b6-417c-bf6c-e2e3ab1a6e33",
+    "9ba6e39e-1233-41dd-9562-7654db7e2c34",
+    "a2261e67-71fe-4c85-b03c-6e28101718d3",
+    "a545e6bb-d341-406e-a65e-f067b07c0c4e",
+    "a78abacc-e2bc-46e4-84ab-4135c55bcb71",
+    "a8109e84-058a-49e8-8954-ad61cf161d79",
+    "ac5840fe-aaad-47eb-81ba-a623c7ce1eac",
+    "acc9c93f-b09e-434d-82c7-a792e7f7e1a9",
+    "ae0c57c5-9473-4949-897d-aec57c6d38db",
+    "b01c4946-6c79-4801-9698-e7f50d45f81d",
+    "b5de171d-53ec-4dd9-bcec-de6b9d4df3fe",
+    "b672b3e9-4682-457c-8513-2a9dfb060cd5",
+    "b6bed09c-dea2-45a9-ae6f-88ccce3aa099",
+    "b9ef680e-6c7b-4ae0-bb83-98e1889a8b62",
+    "bd8c89c8-2230-468c-b95f-89d9cc582407",
+    "bdfe170e-8a06-4d5e-8aa2-f2cd7fb50ae2",
+    "be844215-49c5-4f95-bede-3624068e8364",
+    "bee74a90-ff80-4c83-9ff0-e06d0590c743",
+    "c04c6fc4-1614-45c9-9c90-0ada707ffb8d",
+    "c0f3f831-f92c-45b0-8534-fc2cb4c43795",
+    "c1842fb2-ee76-49ec-be2d-5b7b3ef3fdd3",
+    "c226647a-e08f-4ac6-a802-1f9f48b41559",
+    "c5fb1e79-5476-4b67-8058-17c6d1b7efa5",
+    "c725182d-5f04-4c46-a964-12259241292a",
+    "ce8df9f3-de81-4630-8ea0-c24f163f6b52",
+    "d0c07cc0-7839-477c-bc1d-3f8d987dc6f9",
+    "d16a404d-ecfc-42ce-8daa-abcaba95cdff",
+    "d2cc4613-41bf-45c9-bdb1-a1b127bac8f4",
+    "d3458465-50b6-4ca4-9e3a-9c5e469c0c2f",
+    "d387dee8-aa12-43f7-8119-66dad177af1b",
+    "d6a2ce2e-5ea1-4a7f-aae0-96176cb70805",
+    "dcf5782d-b92d-4283-ac3d-bec29ed0791f",
+    "dcff6c5d-43ef-4d87-87cb-847caf104aa0",
+    "e2a27a29-878c-49f5-a668-ab4aa27ccc25",
+    "ecaed79c-8a61-4cbe-a441-2c46a3447185",
+    "ed403374-47b6-44dd-b5f8-5cce617a7bd4",
+    "f18ac181-04cf-48a8-b0e3-907e3110b909",
+    "f25ce7db-2d7e-443c-ada2-7ff96e3e1f1e",
+    "f2b9d0f6-329d-4dd7-bbea-7c4837497829",
+    "f3a3cdd0-2595-4ffa-aa83-97683134c73d",
+    "f74c2409-f2de-4791-97bd-7816da91b678",
+    "fe2cda31-7afc-422e-aaae-ee266f94cac3"
+  ],
+  "trimmedCopperCount": 5,
+  "verifiedTrims": [
+    {
+      "start": {
+        "fraction": 0.17647058823529413,
+        "point": [
+          97825000,
+          108975000
+        ],
+        "otherUuid": "14477437-be48-4a03-a1d7-e6863c4875b6",
+        "otherClass": "PCB_VIA"
+      },
+      "end": {
+        "fraction": 1,
+        "point": [
+          96775000,
+          107925000
+        ],
+        "otherUuid": "ddc87e01-eef8-44c8-81ea-ebedd0fa8f55",
+        "otherClass": "PCB_VIA"
+      },
+      "oldStart": [
+        98050000,
+        109200000
+      ],
+      "oldEnd": [
+        96775000,
+        107925000
+      ],
+      "oldLengthMm": 1.8031222920256962,
+      "newLengthMm": 1.4849242404917498,
+      "uuid": "4ac99085-2ea0-4cfa-9ea6-a45f5cac98b5",
+      "net": "CHG_STAT1",
+      "layer": "B.Cu",
+      "widthMm": 0.1
+    },
+    {
+      "start": {
+        "fraction": 0.4149869575527626,
+        "point": [
+          101250000,
+          108875000
+        ],
+        "otherUuid": "48859281-5aaf-4cd4-95c7-0d27fe0c022c",
+        "otherClass": "PCB_TRACK"
+      },
+      "end": {
+        "fraction": 1,
+        "point": [
+          101250000,
+          108628300
+        ],
+        "otherUuid": "dd25e531-1d31-43ef-87b1-99d056a04257",
+        "otherClass": "PCB_TRACK"
+      },
+      "oldStart": [
+        101250000,
+        109050000
+      ],
+      "oldEnd": [
+        101250000,
+        108628300
+      ],
+      "oldLengthMm": 0.4217,
+      "newLengthMm": 0.2467,
+      "uuid": "8027827f-d146-47ac-882a-dd076c3cb64e",
+      "net": "DOCK_5V",
+      "layer": "F.Cu",
+      "widthMm": 0.15
+    },
+    {
+      "start": {
+        "fraction": 0,
+        "point": [
+          93200000,
+          101559800
+        ],
+        "otherUuid": "54ae8bec-02a8-4f30-bfa8-9ab445b132ea",
+        "otherClass": "PCB_TRACK"
+      },
+      "end": {
+        "fraction": 0.01726568005637773,
+        "point": [
+          93204900,
+          101554900
+        ],
+        "otherUuid": "faf139f7-fc35-4be1-83d3-88dd3ae24182",
+        "otherClass": "PCB_TRACK"
+      },
+      "oldStart": [
+        93200000,
+        101559800
+      ],
+      "oldEnd": [
+        93483800,
+        101276000
+      ],
+      "oldLengthMm": 0.4013538090014844,
+      "newLengthMm": 0.006929646455628166,
+      "uuid": "8bb6015b-d451-4192-ad6c-4f703348808d",
+      "net": "CHG_STAT1",
+      "layer": "F.Cu",
+      "widthMm": 0.15
+    },
+    {
+      "start": {
+        "fraction": 0,
+        "point": [
+          96300000,
+          108975000
+        ],
+        "otherUuid": "44ea2787-a855-4a12-a909-3137362ea933",
+        "otherClass": "PCB_TRACK"
+      },
+      "end": {
+        "fraction": 0.7697368421052632,
+        "point": [
+          97762500,
+          110437500
+        ],
+        "otherUuid": "e2a871ee-9fcb-478c-9b2e-4fd176e5fcf7",
+        "otherClass": "PCB_VIA"
+      },
+      "oldStart": [
+        96300000,
+        108975000
+      ],
+      "oldEnd": [
+        98200000,
+        110875000
+      ],
+      "oldLengthMm": 2.6870057685088806,
+      "newLengthMm": 2.0682873349706514,
+      "uuid": "ad606202-069e-44cf-b456-5e601d31ceb0",
+      "net": "CHG_VSET",
+      "layer": "B.Cu",
+      "widthMm": 0.1
+    },
+    {
+      "start": {
+        "fraction": 0,
+        "point": [
+          93697100,
+          113859500
+        ],
+        "otherUuid": "0653c8f2-e887-42ed-919a-7dc962258e73",
+        "otherClass": "PCB_TRACK"
+      },
+      "end": {
+        "fraction": 0.7675218689993599,
+        "point": [
+          96575000,
+          113859500
+        ],
+        "otherUuid": "fb0321d5-bba8-4796-980d-5d9b7a4d6e9f",
+        "otherClass": "PCB_VIA"
+      },
+      "oldStart": [
+        93697100,
+        113859500
+      ],
+      "oldEnd": [
+        97446700,
+        113859500
+      ],
+      "oldLengthMm": 3.7496,
+      "newLengthMm": 2.8779,
+      "uuid": "f54606bd-e040-46de-9771-248abd5a5ca9",
+      "net": "TS_MON",
+      "layer": "In1.Cu",
+      "widthMm": 0.15
+    }
+  ],
+  "padNetPlacementAllOtherGeometryUnchanged": true,
+  "drcBeforeLibraryRestoration": {
+    "unconnected": 0,
+    "errors": 0,
+    "violationCounts": {
+      "lib_footprint_issues": 61,
+      "nonmirrored_text_on_back_layer": 4
+    },
+    "totalViolations": 65
+  },
+  "remainingDanglingFindings": [],
+  "noRuleExclusionsAdded": true
+}

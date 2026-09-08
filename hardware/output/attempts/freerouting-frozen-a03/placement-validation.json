@@ -1,0 +1,60 @@
+{
+  "createdAt": "2026-09-07T20:03:54.792Z",
+  "elapsedSeconds": 140.493,
+  "boardSpec": {
+    "width": 24,
+    "height": 42,
+    "radius": 10,
+    "thickness": 0.8,
+    "layers": 4,
+    "antennaKeepout": {
+      "minY": 11.95
+    },
+    "revision": "EVT-A03",
+    "status": "Logical design and PCB routing draft. Do not fabricate before the validation gates in hardware.md."
+  },
+  "counts": {
+    "source_project_metadata": 1,
+    "source_group": 1,
+    "source_net": 43,
+    "source_port": 247,
+    "source_component": 61,
+    "source_board": 1,
+    "source_refdes_convention_warning": 48,
+    "source_component_internal_connection": 2,
+    "source_trace": 208,
+    "schematic_component": 61,
+    "schematic_text": 211,
+    "schematic_group": 1,
+    "schematic_port": 245,
+    "schematic_trace": 169,
+    "schematic_net_label": 71,
+    "schematic_component_styling_warning": 1,
+    "pcb_component": 61,
+    "pcb_board": 1,
+    "pcb_smtpad": 309,
+    "pcb_solder_paste": 245,
+    "pcb_fabrication_note_path": 160,
+    "pcb_hole": 2,
+    "pcb_fabrication_note_text": 61,
+    "pcb_keepout": 1,
+    "pcb_silkscreen_text": 2,
+    "pcb_port": 247,
+    "pcb_connector_not_in_accessible_orientation_warning": 2,
+    "cad_component": 61,
+    "pcb_placement_error": 1,
+    "pcb_component_missing_courtyard_warning": 61,
+    "source_component_pins_underspecified_warning": 57,
+    "source_no_power_pin_defined_warning": 61,
+    "source_no_ground_pin_defined_warning": 61
+  },
+  "errors": [
+    {
+      "type": "pcb_placement_error",
+      "pcb_placement_error_id": "pcb_placement_error_0",
+      "error_type": "pcb_placement_error",
+      "message": "Copper for component U1 overlaps a PCB keepout",
+      "subcircuit_id": "subcircuit_source_group_0"
+    }
+  ]
+}

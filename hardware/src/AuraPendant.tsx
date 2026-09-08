@@ -52,7 +52,7 @@ export default function AuraPendant({route=false}:{route?:boolean}){
     title="AURA EVT-A03 · private capture pendant" solderMaskColor="black" silkscreenColor="white"
     routingDisabled={!route} autorouter={{algorithmFn:createKiCadRoutingToolsAutorouter({gridStep:0.12,clearance:0.12,maxIterations:120000,viaCost:6})}}
     schTraceAutoLabelEnabled schMaxTraceDistance={0.5} bomDisabled
-    minTraceWidth={0.12} nominalTraceWidth={0.15} minTraceToPadEdgeClearance={0.12}
+    minTraceWidth={0.10} nominalTraceWidth={0.15} minTraceToPadEdgeClearance={0.12}
     minPadEdgeToPadEdgeClearance={0.12} minBoardEdgeClearance={0.3}
     minViaHoleDiameter={0.2} minViaPadDiameter={0.45}>
     {Array.from(new Set(parts.flatMap(p=>Object.values(p.pins)))).map(n=><net key={n} name={n} />)}

@@ -236,7 +236,13 @@ def body_dims(ref):
 def package(name,ref,dims,material=black):
     pos=placements[ref]
     ob=cube(name,(pos['x'],pos['y'],.65+dims[2]/2),dims,material,.08)
-    ob.rotation_euler.z=math.radians(pos.get('r',0));ob['hardware_reference']=ref
+    visual_rotation=pos.get('r',0)
+    # C18 alone is an unmarked symmetric body. Source PCB pin rotation stays 270.
+    # Actual triangle/normal invariance is proved in c18-symmetry-audit.json.
+    if ref=='C18' and visual_rotation==270:
+        assert body_specs[ref]['mpn']=='C0402C104K4RACTU'
+        visual_rotation=90
+    ob.rotation_euler.z=math.radians(visual_rotation);ob['hardware_reference']=ref
     ob['geometry_status']='package envelope proxy, not vendor STEP'
     if ref in body_specs:
         ob['manufacturer_part_number']=body_specs[ref]['mpn']

@@ -1,0 +1,70 @@
+{
+  "edition": "A03 context and assembly",
+  "githubRepository": "https://github.com/Avinash1286/pendent",
+  "releaseTag": "a03-context-dev",
+  "website": "https://pendent-eight.vercel.app",
+  "status": "Development release; assembly and physical qualification pending",
+  "pathsRelativeTo": "repository root",
+  "artifacts": [
+    {
+      "path": "hardware/output/aura-a03-prototype-fabrication.zip",
+      "assetName": "aura-a03-prototype-fabrication.zip",
+      "bytes": 2026411,
+      "sha256": "e560e5fc176fcf469bc27e704b7a9be2aa77bc6faed06cea6f2e241fb0b26e7f"
+    },
+    {
+      "path": "hardware/output/aura-a03-prototype-fabrication-manifest.json",
+      "assetName": "aura-a03-prototype-fabrication-manifest.json",
+      "bytes": 678,
+      "sha256": "807288e41eac9dcb170dd804ec5efe3a1c0f9a30518214522a4ad12f600bc381"
+    },
+    {
+      "path": "enclosure/aura-a03-print-kit.zip",
+      "assetName": "aura-a03-print-kit.zip",
+      "bytes": 305639,
+      "sha256": "dae9937223822ee4f84c01d170b004df1a6c8576e99c869d0f2f040b5fe3077e"
+    },
+    {
+      "path": "enclosure/aura-product.blend",
+      "assetName": "aura-product.blend",
+      "bytes": 1262444,
+      "sha256": "25780cc538bb25db6df25e3af51778f81035e04bca98b08444ad4ae4418f9733"
+    },
+    {
+      "path": "enclosure/aura-device.glb",
+      "assetName": "aura-device.glb",
+      "bytes": 2108420,
+      "sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a"
+    },
+    {
+      "path": "film/aura-launch/renders/aura-launch.mp4",
+      "assetName": "aura-launch.mp4",
+      "bytes": 13469070,
+      "sha256": "1f208827348028c6aba7508524e1d1da0ffa45779663bf3bf75e97fb6cdfaee0"
+    },
+    {
+      "path": "firmware/release/aura-a03.hex",
+      "assetName": "aura-a03.hex",
+      "bytes": 616429,
+      "sha256": "94a72d7d68decde347c0619d4564a80548defff8fb68da6ce57a53e4a12192f8"
+    },
+    {
+      "path": "firmware/release/aura-a03.bin",
+      "assetName": "aura-a03.bin",
+      "bytes": 219108,
+      "sha256": "cf3b32c688537ce48575260b3c993c980eae5410aef9a080df693749f4b707cf"
+    },
+    {
+      "path": "firmware/release/aura-a03.elf",
+      "assetName": "aura-a03.elf",
+      "bytes": 3993676,
+      "sha256": "3d52c3f219cad8a8c8bcc179b4cc4e736866a49ea54467e29ac3f7cf49ab409b"
+    },
+    {
+      "path": "firmware/release/manifest.json",
+      "assetName": "manifest.json",
+      "bytes": 1098,
+      "sha256": "d8535c70f5807f26e6199443c6629034c5ba94d161acf51ee291bf1557a018b0"
+    }
+  ]
+}

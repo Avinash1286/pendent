@@ -1,0 +1,2980 @@
+(kicad_sch
+  (version 20260101)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (uuid 89d951f4-0ddd-4020-8859-50aece564542)
+  (paper "A4")
+  (lib_symbols
+    (symbol "AuraA03:TLV75530PDBVR_A03"
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 2.54 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "TLV75530PDBVR_A03"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+        (at 0 -5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv755p.pdf"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Description" "3.0V system regulator"
+        (at 0 -10.16 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (symbol "TLV75530PDBVR_A03_0_1"
+        (rectangle
+          (start -12.7 -5.08)
+          (end 12.7 5.08)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "TLV75530PDBVR_A03_1_1"
+        (pin power_in line
+          (at -15.24 2.54 0)
+          (length 2.54)
+          (name "IN"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at -15.24 -2.54 0)
+          (length 2.54)
+          (name "EN"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin no_connect line
+          (at 15.24 2.54 180)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_out line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "OUT"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+    )
+    (symbol "Device:C"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0.254)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (in_pos_files yes)
+      (duplicate_pin_numbers_are_jumpers no)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (justify left)
+        )
+      )
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (justify left)
+        )
+      )
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Datasheet" ""
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762)
+          )
+          (stroke
+            (width 0.508)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762)
+          )
+          (stroke
+            (width 0.508)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "AuraA03:MAX17048G_T10_A03"
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 2.54 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "MAX17048G_T10_A03"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm"
+        (at 0 -5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Description" "ModelGauge fuel gauge"
+        (at 0 -10.16 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (symbol "MAX17048G_T10_A03_0_1"
+        (rectangle
+          (start -12.7 -7.62)
+          (end 12.7 7.62)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "MAX17048G_T10_A03_1_1"
+        (pin power_in line
+          (at -15.24 5.08 0)
+          (length 2.54)
+          (name "CTG"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -15.24 2.54 0)
+          (length 2.54)
+          (name "CELL"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at -15.24 -2.54 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin open_collector line
+          (at -15.24 -5.08 0)
+          (length 2.54)
+          (name "N_ALRT"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at 15.24 5.08 180)
+          (length 2.54)
+          (name "QSTRT"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "6"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at 15.24 2.54 180)
+          (length 2.54)
+          (name "SCL"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "7"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "SDA"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "8"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at 15.24 -2.54 180)
+          (length 2.54)
+          (name "EP_GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "9"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+    )
+    (symbol "Device:R"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (in_pos_files yes)
+      (duplicate_pin_numbers_are_jumpers no)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "R"
+        (at 0 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Datasheet" ""
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "AuraA03:DRV2605LDGSR_A03"
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 2.54 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "DRV2605LDGSR_A03"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
+        (at 0 -5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Description" "LRA closed-loop haptics"
+        (at 0 -10.16 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (symbol "DRV2605LDGSR_A03_0_1"
+        (rectangle
+          (start -12.7 -7.62)
+          (end 12.7 7.62)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "DRV2605LDGSR_A03_1_1"
+        (pin power_out line
+          (at -15.24 5.08 0)
+          (length 2.54)
+          (name "REG"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at -15.24 2.54 0)
+          (length 2.54)
+          (name "SCL"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "SDA"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at -15.24 -2.54 0)
+          (length 2.54)
+          (name "IN_TRIG"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at -15.24 -5.08 0)
+          (length 2.54)
+          (name "EN"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at 15.24 5.08 180)
+          (length 2.54)
+          (name "VDD_NC"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "6"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin output line
+          (at 15.24 2.54 180)
+          (length 2.54)
+          (name "OUT_P"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "7"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "8"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin output line
+          (at 15.24 -2.54 180)
+          (length 2.54)
+          (name "OUT_N"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "9"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at 15.24 -5.08 180)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "10"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+    )
+    (symbol "AuraA03:AURA_LRA_PADS"
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "J"
+        (at 2.54 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "AURA_LRA_PADS"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "AURA:AURA-LRA-PADS"
+        (at 0 -5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Datasheet" ""
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Description" "C08-00A LRA wire pads"
+        (at 0 -10.16 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (symbol "AURA_LRA_PADS_0_1"
+        (rectangle
+          (start -12.7 -2.54)
+          (end 12.7 2.54)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "AURA_LRA_PADS_1_1"
+        (pin passive line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "LRA_P"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "LRA_N"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+    )
+    (symbol "Switch:SW_Push"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 1.016)
+        (hide yes)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (in_pos_files yes)
+      (duplicate_pin_numbers_are_jumpers no)
+      (property "Reference" "SW"
+        (at 1.27 2.54 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (justify left)
+        )
+      )
+      (property "Value" "SW_Push"
+        (at 0 -1.524 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at 0 5.08 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Datasheet" ""
+        (at 0 5.08 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Description" "Push button switch, generic, two pins"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_keywords" "switch normally-open pushbutton push-button"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (symbol "SW_Push_0_1"
+        (circle
+          (center -2.032 0)
+          (radius 0.508)
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy 0 1.27)
+            (xy 0 3.048)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (circle
+          (center 2.032 0)
+          (radius 0.508)
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy 2.54 1.27)
+            (xy -2.54 1.27)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (pin passive line
+          (at -5.08 0 0)
+          (length 2.54)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 5.08 0 180)
+          (length 2.54)
+          (name "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+  )
+  (symbol
+    (lib_id "AuraA03:TLV75530PDBVR_A03")
+    (at 58.42 53.34 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "1eab8dd0-7fea-4e46-8a51-fc0d00a2130d")
+    (property "Reference" "U4"
+      (at 58.420000 44.450000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "TLV75530PDBVR"
+      (at 58.420000 62.230000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_U4"
+      (at 58.42 48.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv755p.pdf"
+      (at 58.42 45.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "3.0V system regulator"
+      (at 58.42 43.18 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "d4337fab-732c-47a2-87df-4246b2e18011")
+    )
+    (pin "2"
+      (uuid "05495d54-ccfd-48d9-876c-e41664128b30")
+    )
+    (pin "3"
+      (uuid "3457dc84-5aed-4389-b58f-3f6c110c0b1e")
+    )
+    (pin "4"
+      (uuid "e729539c-a4d6-4c89-ad34-69746810d9cb")
+    )
+    (pin "5"
+      (uuid "97d71689-7a28-4d79-813c-b7d9baba5d6d")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "U4")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "U4")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "TLV75530PDBVR"
+      (at 58.420000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "3.0V system regulator"
+      (at 58.420000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 114.3 48.26 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "374a55e4-b458-4040-bc25-c1bdbb64cf69")
+    (property "Reference" "C10"
+      (at 119.380000 46.990000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "2.2uF"
+      (at 119.380000 49.530000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C10"
+      (at 115.265 44.45 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 114.3 48.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 114.3 48.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "19b64382-181a-47f3-81e5-3ef41bc9b153")
+    )
+    (pin "2"
+      (uuid "4d7fa96b-4634-4696-82f2-6bc61a7e979e")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "C10")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "C10")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0603C225K8RACTU"
+      (at 114.300000 48.260000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "2.2uF"
+      (at 114.300000 48.260000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "AuraA03:MAX17048G_T10_A03")
+    (at 205.74 53.34 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "f8cafe39-515c-4d3f-8788-5b9bd732b333")
+    (property "Reference" "U5"
+      (at 205.740000 41.910000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "MAX17048G+T10"
+      (at 205.740000 64.770000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_U5"
+      (at 205.74 48.26 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf"
+      (at 205.74 45.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "ModelGauge fuel gauge"
+      (at 205.74 43.18 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "2074f96d-8b36-46b7-9760-925964476186")
+    )
+    (pin "2"
+      (uuid "bfe95dae-ef91-4077-8c10-640269e9d422")
+    )
+    (pin "3"
+      (uuid "979045a3-2637-43ea-a49e-8c1d18f59546")
+    )
+    (pin "4"
+      (uuid "4aa84aed-4aed-4ed5-acbe-1dfbf42cc94f")
+    )
+    (pin "5"
+      (uuid "51105307-963f-48f7-bb7b-d7d8a7d850d6")
+    )
+    (pin "6"
+      (uuid "1992b2c7-ec61-494c-814f-c156782fc292")
+    )
+    (pin "7"
+      (uuid "ae826728-82de-417c-9c17-ca4fac56c3d4")
+    )
+    (pin "8"
+      (uuid "e3ed1ae5-c4a7-4824-88c3-b0e99635fbeb")
+    )
+    (pin "9"
+      (uuid "2eb7c98c-c035-4c7b-b641-9cdd38473ce3")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "U5")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "U5")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "MAX17048G+T10"
+      (at 205.740000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "ModelGauge fuel gauge"
+      (at 205.740000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 254 50.8 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "61b44a18-df0d-4cbd-97ac-8094f2d974c2")
+    (property "Reference" "C11"
+      (at 259.080000 49.530000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "100nF"
+      (at 259.080000 52.070000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C11"
+      (at 254.965 46.99 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 254 50.8 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 254 50.8 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "0ae025d1-55e8-4882-9bd4-a6fce90fdf58")
+    )
+    (pin "2"
+      (uuid "7ea4d57f-2519-45d4-9807-7e5e8844cedf")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "C11")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "C11")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0402C104K4RACTU"
+      (at 254.000000 50.800000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "100nF"
+      (at 254.000000 50.800000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 162.56 86.36 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "46a73691-b997-4004-8d00-13d1589ed2d4")
+    (property "Reference" "R8"
+      (at 167.640000 85.090000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "100k"
+      (at 167.640000 87.630000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R8"
+      (at 160.782 86.36 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 162.56 86.36 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 162.56 86.36 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "78b86b61-f015-4e27-ac7e-2a82f58564d6")
+    )
+    (pin "2"
+      (uuid "976fb04c-a985-4b91-85ca-eeba7aff0a67")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "R8")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "R8")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-07100KL"
+      (at 162.560000 86.360000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "100k"
+      (at 162.560000 86.360000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "AuraA03:DRV2605LDGSR_A03")
+    (at 63.5 129.54 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "5d1ba350-f941-4e7c-9006-0b490851e161")
+    (property "Reference" "U6"
+      (at 63.500000 118.110000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "DRV2605LDGSR"
+      (at 63.500000 140.970000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_U6"
+      (at 63.5 124.46 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
+      (at 63.5 121.92 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "LRA closed-loop haptics"
+      (at 63.5 119.38 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "9e851cbc-9213-444d-9d3d-821c34a11394")
+    )
+    (pin "10"
+      (uuid "07b02016-e7d9-4feb-8deb-e2e082f9fc3d")
+    )
+    (pin "2"
+      (uuid "947e57aa-40c4-43a6-92bf-894ba48ea731")
+    )
+    (pin "3"
+      (uuid "90083898-1166-4970-921f-0a8e77e1ebce")
+    )
+    (pin "4"
+      (uuid "10410239-c02d-48cc-9e8f-707d283bbeb5")
+    )
+    (pin "5"
+      (uuid "b7c0ac50-a7dc-4b7f-8f96-3b72cf14edb0")
+    )
+    (pin "6"
+      (uuid "5bf9cdfa-d2b6-4a28-a0ff-4423e5fc1cac")
+    )
+    (pin "7"
+      (uuid "3a81b3fb-1f56-45ef-a909-ef1adf6515e8")
+    )
+    (pin "8"
+      (uuid "9896294f-ab61-4bde-b214-545494ecedda")
+    )
+    (pin "9"
+      (uuid "2e573bd9-f06b-442c-a1e5-36eb68321a9e")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "U6")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "U6")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "DRV2605LDGSR"
+      (at 63.500000 129.540000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "LRA closed-loop haptics"
+      (at 63.500000 129.540000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "AuraA03:AURA_LRA_PADS")
+    (at 121.92 127 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "be44a065-272a-475b-825d-12c8583ad458")
+    (property "Reference" "J4"
+      (at 121.920000 120.650000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "AURA-LRA-PADS"
+      (at 121.920000 133.350000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_J4"
+      (at 121.92 121.92 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 121.92 119.38 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "C08-00A LRA wire pads"
+      (at 121.92 116.84 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "e6d8904a-9347-42c7-b7f6-af509302e11a")
+    )
+    (pin "2"
+      (uuid "b535fe6c-fb85-4c49-bacf-3b21cd98b34d")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "J4")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "J4")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "AURA-LRA-PADS"
+      (at 121.920000 127.000000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "C08-00A LRA wire pads"
+      (at 121.920000 127.000000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 43.18 172.72 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "ef5a61fb-d522-4f15-a313-4c547c96b81f")
+    (property "Reference" "C12"
+      (at 48.260000 171.450000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "1uF"
+      (at 48.260000 173.990000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C12"
+      (at 44.145 168.91 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 43.18 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 43.18 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "c7ec6776-66e3-4ffe-9b63-a1319a23aaf9")
+    )
+    (pin "2"
+      (uuid "fe563d7c-dd49-429c-b08e-5ea67e7951c2")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "C12")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "C12")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0603C105K4RACTU"
+      (at 43.180000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "1uF"
+      (at 43.180000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 83.82 172.72 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "f598895b-4f70-42a6-8060-4383423b71f2")
+    (property "Reference" "C13"
+      (at 88.900000 171.450000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "1uF"
+      (at 88.900000 173.990000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C13"
+      (at 84.785 168.91 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 83.82 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 83.82 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "9276471c-a654-45d6-8b32-cf9000abcbd3")
+    )
+    (pin "2"
+      (uuid "a9b6c0a0-567f-4648-8d63-6c0653e0d3e6")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "C13")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "C13")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0603C105K4RACTU"
+      (at 83.820000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "1uF"
+      (at 83.820000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 124.46 172.72 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "4af4e065-031c-4978-be13-aa485152f5d8")
+    (property "Reference" "R10"
+      (at 129.540000 171.450000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "100k"
+      (at 129.540000 173.990000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R10"
+      (at 122.682 172.72 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 124.46 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 124.46 172.72 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "545a0761-c8c3-4047-90fc-c37f0787f6f8")
+    )
+    (pin "2"
+      (uuid "4688be29-a8d9-464f-b9c4-b297e269cdfd")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "R10")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "R10")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-07100KL"
+      (at 124.460000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "100k"
+      (at 124.460000 172.720000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Switch:SW_Push")
+    (at 215.9 124.46 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "4f1a4c33-6611-4b22-8784-88a8e265d418")
+    (property "Reference" "SW2"
+      (at 215.900000 118.110000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "KMR211NGULCLFS"
+      (at 215.900000 130.810000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_SW2"
+      (at 215.9 129.54 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 215.9 129.54 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Push button switch, generic, two pins"
+      (at 215.9 124.46 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "2fe0f368-1542-4e17-9c6a-80be89915531")
+    )
+    (pin "2"
+      (uuid "7a5f60f6-8ae3-485c-86c4-32e3696e46f7")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "SW2")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "SW2")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "KMR211NGULCLFS"
+      (at 215.900000 124.460000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "Flush face record / stop"
+      (at 215.900000 124.460000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 187.96 160.02 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "61eb9a13-2738-4104-a419-27cb124177c8")
+    (property "Reference" "R11"
+      (at 193.040000 158.750000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "10k"
+      (at 193.040000 161.290000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R11"
+      (at 186.182 160.02 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 187.96 160.02 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 187.96 160.02 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "465b2fd9-fba0-44d1-b88a-7cc32b2b0963")
+    )
+    (pin "2"
+      (uuid "99f58b9e-7904-470b-89f7-66c477e38b0f")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "R11")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "R11")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-0710KL"
+      (at 187.960000 160.020000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "10k"
+      (at 187.960000 160.020000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 233.68 160.02 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "de1c7172-b199-46c4-820f-749c60012783")
+    (property "Reference" "C17"
+      (at 238.760000 158.750000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "10nF"
+      (at 238.760000 161.290000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C17"
+      (at 234.645 156.21 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 233.68 160.02 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 233.68 160.02 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "d112b471-92d8-40a7-a3cb-28b92fcfff13")
+    )
+    (pin "2"
+      (uuid "2c2b95f2-b1aa-4fb1-ba56-ef93f4c96ce4")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/89d951f4-0ddd-4020-8859-50aece564542"
+          (reference "C17")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+          (reference "C17")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0402C103K5RACTU"
+      (at 233.680000 160.020000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "10nF"
+      (at 233.680000 160.020000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (global_label "VSYS"
+    (at 43.18 50.800000000000004 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "ab03760e-1cd8-4ddb-b675-90b7dad91e92")
+  )
+  (global_label "GND"
+    (at 43.18 53.34 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "aae9be44-fd21-49e7-8351-6df1b5f9e61b")
+  )
+  (global_label "VSYS"
+    (at 43.18 55.88 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "a709b8ce-22a8-4809-8013-0eb936aea04f")
+  )
+  (global_label "V3"
+    (at 73.66 53.34 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "bed78ed1-97ed-42c1-96ea-a3dfffb2c3c6")
+  )
+  (global_label "V3"
+    (at 114.3 44.449999999999996 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "0112dd9f-7fe3-43c3-b654-cf8a47c285dd")
+  )
+  (global_label "GND"
+    (at 114.3 52.07 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "e517542a-eb1c-4f98-9f69-48f093838e4c")
+  )
+  (global_label "GND"
+    (at 190.5 48.260000000000005 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "3ec04235-390c-437c-97ab-eeb6140a9c50")
+  )
+  (global_label "VBAT"
+    (at 190.5 50.800000000000004 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "81153015-919a-45c1-b26d-9b933871204c")
+  )
+  (global_label "VBAT"
+    (at 190.5 53.34 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "f7e8254f-0ec4-44ac-85a2-7f79bf38fc6d")
+  )
+  (global_label "GND"
+    (at 190.5 55.88 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "43c66af3-28ae-42f9-a640-4f286ff4f3e4")
+  )
+  (global_label "GAUGE_ALERT_N"
+    (at 190.5 58.42 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "501c2f98-1726-4676-b6f3-60d9c10f9917")
+  )
+  (global_label "GND"
+    (at 220.98000000000002 48.260000000000005 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "67023a4e-2631-4db7-bc2a-67b1a8f658f1")
+  )
+  (global_label "I2C_SCL"
+    (at 220.98000000000002 50.800000000000004 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "0d5de4db-d202-4d48-a28e-b9bc4b35d48a")
+  )
+  (global_label "I2C_SDA"
+    (at 220.98000000000002 53.34 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "3511e094-492d-482d-ad2b-b0df46b4afbb")
+  )
+  (global_label "GND"
+    (at 220.98000000000002 55.88 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "bcb3b299-e3b6-48ac-a6df-27c71532e7c0")
+  )
+  (global_label "VBAT"
+    (at 254.0 46.989999999999995 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "46b56f8c-185d-4f22-9c49-f142e1cb45ef")
+  )
+  (global_label "GND"
+    (at 254.0 54.61 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "9ea3dcf6-6a67-4e01-875d-6ec657c1fec1")
+  )
+  (global_label "GAUGE_ALERT_N"
+    (at 162.56 82.55 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "2da23efb-1de5-4013-8b0b-0af684fe22f4")
+  )
+  (global_label "V3"
+    (at 162.56 90.17 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "2159053d-eaaf-43d1-a179-21b9da03d63e")
+  )
+  (global_label "HAPTIC_REG"
+    (at 48.26 124.46 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "c9cd259f-bd51-4cfe-a8d8-0740bcd87f86")
+  )
+  (global_label "I2C_SCL"
+    (at 48.26 126.99999999999999 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "d51b37fd-b6f0-4822-aca8-5feb4b5c8c15")
+  )
+  (global_label "I2C_SDA"
+    (at 48.26 129.54 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "2f833993-5161-471e-bf86-a9a620b94e12")
+  )
+  (global_label "GND"
+    (at 48.26 132.07999999999998 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "5b5032c2-a2ce-4998-a815-b520049cd102")
+  )
+  (global_label "HAPTIC_EN"
+    (at 48.26 134.62 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "a4f75bcc-e22d-4c99-a014-c5a2a7439fc7")
+  )
+  (global_label "VSYS"
+    (at 78.74 124.46 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "71a8685b-92c3-4d6b-b622-dc13cf38c308")
+  )
+  (global_label "LRA_P"
+    (at 78.74 126.99999999999999 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "9dfe51a8-a536-4596-a5eb-b9297863972b")
+  )
+  (global_label "GND"
+    (at 78.74 129.54 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "9a22723b-7137-4158-b37d-cf59565a8a82")
+  )
+  (global_label "LRA_N"
+    (at 78.74 132.07999999999998 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "6b81b6cf-24ed-4e1f-8a56-8fa3cfea6f69")
+  )
+  (global_label "VSYS"
+    (at 78.74 134.62 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "26c7a08b-2fc7-4757-87e6-99137eee9bc9")
+  )
+  (global_label "LRA_P"
+    (at 106.68 127.0 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "2c970451-bc1d-404d-ab85-a4c053e20c35")
+  )
+  (global_label "LRA_N"
+    (at 137.16 127.0 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "ce2689bb-6f80-4775-b26b-65f4b7c9a29d")
+  )
+  (global_label "VSYS"
+    (at 43.18 168.91 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "6ca8e33f-227b-4b78-895c-96f0e10b69c4")
+  )
+  (global_label "GND"
+    (at 43.18 176.53 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "05f77f67-b7c2-434d-aec5-0bbac733c070")
+  )
+  (global_label "HAPTIC_REG"
+    (at 83.82 168.91 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "c1ed5bfa-0190-44b3-aba7-8371f78f5b9e")
+  )
+  (global_label "GND"
+    (at 83.82 176.53 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "ce94a1a2-5ebe-4cfd-8817-181825e164ee")
+  )
+  (global_label "HAPTIC_EN"
+    (at 124.46 168.91 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "3414ad9a-eb39-4168-8e1a-04d37b3eac47")
+  )
+  (global_label "GND"
+    (at 124.46 176.53 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "3ea05f9e-afe1-4607-9347-e12c7a4f7d27")
+  )
+  (global_label "RECORD_N"
+    (at 210.82 124.46 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "37f1f75f-beff-48b1-bce2-de469a2eface")
+  )
+  (global_label "GND"
+    (at 220.98000000000002 124.46 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "510d72f4-a438-45f4-86ec-94458a09b73b")
+  )
+  (global_label "RECORD_N"
+    (at 187.96 156.21 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "04528e3f-6dcb-41cf-ad45-78a481971547")
+  )
+  (global_label "V3"
+    (at 187.96 163.83 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "d4ef2117-b680-4195-920a-3f38835acb37")
+  )
+  (global_label "RECORD_N"
+    (at 233.68 156.21 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "bdbd2594-8c9b-4fdf-8715-c1fa8bf5537b")
+  )
+  (global_label "GND"
+    (at 233.68 163.83 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "1e088fe0-79a7-4b01-8351-a1033f1cc61b")
+  )
+  (no_connect
+    (at 73.66 50.800000000000004)
+    (uuid "267523c1-3c17-44f3-950b-cd10d83501d7")
+  )
+  (text "AURA A03 / POWER + RECORD + HAPTICS"
+    (exclude_from_sim no)
+    (at 20.32 20.32 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+      (justify left bottom)
+    )
+    (uuid "d7857764-cc89-491f-9a9b-758a15f512e3")
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+  )
+  (title_block
+    (title "AURA / System power and controls")
+    (date "2026-09-08")
+    (rev "EVT-A03")
+    (company "AURA product engineering")
+  )
+)

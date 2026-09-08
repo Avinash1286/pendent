@@ -2,19 +2,19 @@
 
 **Capture the context of your life.**
 
-[Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Run the notes portal](portal/README.md)
+[Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Download the release](https://github.com/Avinash1286/pendent/releases/tag/a03-context-dev) · [Run the notes portal](portal/README.md)
 
 An open product-development project for a compact necklace AI note-taking device. Electronics, printable industrial design, chip firmware, local transcription, a Next.js / Convex notes portal, an interactive Three.js showcase and a Hyperframes launch film live together here.
 
 ## Project status
 
-**A03 development release.** The software and digital artifacts are usable for development; this is not a manufactured or certified device. PCB routing/import validation is incomplete, so no fabrication-approved board is supplied. The case has printable meshes with geometric audits; real fit, battery, acoustic and RF tests remain. Firmware is compiled for the nRF52840 but has not run on an assembled AURA. The notes portal uses real local Convex; cloud setup awaits account terms acceptance. No orders or payments are accepted.
+**A03 context and assembly edition.** [Prototype fabrication files](hardware/native/README.md) are exported from the paired KiCad project: zero unconnected items, schematic mismatches, ERC findings or bare-board DRC errors. **78 unsuppressed courtyard overlaps remain for assembly review.** The case has printable meshes with geometric audits; real fit, battery, acoustic and RF tests remain. Firmware is compiled for the nRF52840 but has not run on an assembled AURA. The notes portal uses real local Convex; cloud setup awaits account terms acceptance. This is not a manufactured or certified device, and no orders or payments are accepted. See the [current release guide](docs/release-a03-context.md) for downloads and verification.
 
 ## Project map
 
 | Directory | Contents |
 | --- | --- |
-| `hardware/` | tscircuit source, circuit outputs, BOM and validation evidence |
+| `hardware/` | tscircuit source, routed native KiCad board, readable schematic, BOM and validation evidence |
 | `enclosure/` | Blender source, editable generator, printable enclosure meshes, GLB and product renders |
 | `firmware/` | Zephyr nRF52840 firmware, reproducible tool setup, flashable build artifacts and native tests |
 | `companion/` | Bluetooth sync, CRC verification, local Whisper transcription and optional portal upload |
@@ -27,8 +27,8 @@ An open product-development project for a compact necklace AI note-taking device
 
 - 48 × 28 × 10 mm capsule body, 54 mm tall including the bail; 24 × 42 mm PCB.
 - A glossy black recording paddle in a satin polymer surround, a bookmark gesture, visible microphone-power indication and a physical privacy slider.
-- A physical microphone power disconnect, offline local audio storage and BLE phone transfer.
-- Dual digital microphones, a protected rechargeable cell and a magnetic contact charging dock.
+- A physical microphone power disconnect, offline local audio storage and Bluetooth transfer to the companion.
+- Dual digital microphones, a protected rechargeable-cell candidate and rear contacts for a magnetic charging dock; the complete dock remains to be designed and qualified.
 - Local computer transcription and optional notes upload are implemented. A mobile companion remains future work.
 - 16 kHz mono PCM storage has an ideal capacity of about 66 minutes before bad blocks and metadata; battery runtime is unmeasured.
 

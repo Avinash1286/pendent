@@ -1,6 +1,6 @@
 # AURA EVT-A03 · hardware engineering dossier
 
-**Status: authored electrical design, placement and routing work; not fabrication-ready.** The A03 capsule is 48 × 28 × 10 mm and the board is 24 × 42 × 0.8 mm with R10 corners. The sources include real component pin maps, footprints, schematics and net assignments. Product renders are appearance references; they do not establish a working device, acoustic quality, endurance, RF performance or manufacturing approval.
+**Current status: connected native prototype; assembly and physical qualification remain open.** Start with the [paired KiCad project and manufacturing guide](../hardware/native/README.md) for current source files, exports and exact DRC status. The A03 capsule is 48 × 28 × 10 mm and the board is 24 × 42 × 0.8 mm with R10 corners. Product renders do not establish acoustic quality, endurance, RF performance or manufacturing approval.
 
 The primary design is [AuraPendant.tsx](../hardware/src/AuraPendant.tsx), with the electrical definition in [design.ts](../hardware/src/design.ts). Generated artifacts and exact validation reports are in [hardware/output](../hardware/output). A placement check is distinct from routed-board connectivity and DRC.
 
@@ -24,7 +24,7 @@ The primary design is [AuraPendant.tsx](../hardware/src/AuraPendant.tsx), with t
 | External interface | Three rear contact pads; keyed magnetic dock concept | 5 V limited input with two ground contacts; dock contact hardware remains unqualified |
 | Service | Six SWD pads, battery and motor wire pads | Programming, recovery and first-article testing |
 
-AI transcription, summaries, search and task extraction run in a paired phone or opt-in cloud service. The pendant does not run a language model. No completed phone application or AI service is included. Local capture must survive phone and network disconnection. See the [firmware contract](../hardware/firmware/contract.md) and its explicit implementation limits.
+The implemented [desktop companion](../companion/README.md) performs local Whisper transcription and optional transcript upload to the [Next.js/Convex portal](../portal/README.md). The pendant does not run a language model. A mobile companion remains future work. Local capture is designed to survive network disconnection; physical recording and BLE transfer are still untested. See the [compiled firmware guide](../firmware/README.md) for implemented behavior and bring-up.
 
 The compiled firmware configures stereo PDM capture at 1.280 MHz with ratio 80, yielding 16 kHz, then averages left and right into PCM16 mono. It waits 50 ms after the microphone rail turns on and discards two 40 ms startup buffers. This is implemented behavior in an untested image, not measured audio performance or beamforming.
 
@@ -64,7 +64,15 @@ The [thermal review](thermal-review.md) gives conditional cold-stop and hot-stop
 
 C3/C4 now use exact Murata silicon parts. Their authored copper pads are 0.50 × 0.70 mm on 0.70 mm pitch, with intended 0.40 × 0.60 mm mask openings and 0.30 × 0.50 mm paste apertures. Murata's reflow note gives minimum land dimensions 0.314 × 0.514 mm and maximum gap 0.386 mm for this die; stencil thickness, mask registration and assembly leakage require qualification. This addresses the retrieved Knowles Class II warning, while acoustic performance remains untested. C9 is an exact KEMET 10 µF / 10 V 0805 part. TI requires 10 µF nominal and at least 1 µF after DC-bias derating; capacitance under actual bias, temperature and aging must be checked.
 
-## Verification and routing evidence
+## Current verification
+
+The native schematic reconstruction resolves the original converter failures: 61 references, 43 intended nets, 208 connected pin memberships and 37 intentional NCs pass native export parity; ERC has zero errors and warnings. The completed native route has zero unconnected items. The paired project's [manufacturing report](../hardware/native/review/manufacturing-checks.json) and [full native DRC](../hardware/native/review/drc.json) are authoritative for current copper and assembly findings. Native pad-to-pad and via-to-SMD/paste audits are separate from generic courtyard margins and physical qualification.
+
+The current component records match the enclosure. C18's final electrical orientation is 270°; its unmarked nonpolar body is proven invariant under the 180° difference from the canonical visual orientation. See the [model audit](../enclosure/model-sync-audit.json). All other checked model rotations are exact.
+
+## Historical conversion and routing evidence
+
+The following paragraphs document superseded converter/standalone-router snapshots. They explain the native reconstruction and routing work; their incomplete-connectivity/ERC counts are not the current paired project's results. After the connector cancellation described below, the user authorized the source/CLI fallback and the import/routing work was completed.
 
 The source has **61 component/PCB-feature references and 43 nets**. Four references are custom PCB contact/pad features, not purchasable SMT components. Logical tests check pin identity, defaults, thermal-gate connections, isolation, NC pins and acoustic alignment. Export checks verify all 208 authored connected logical pins against the numeric pads in the generated KiCad board, including duplicate switch lands. These do not establish routed connectivity.
 
@@ -88,13 +96,13 @@ The final six-pass strict-DRC refinement completed in 7 min 24 s within its eigh
 
 ## Manufacturing release gates
 
-1. Complete all copper connections, define/fill return planes and intentional power/thermal paths, then import into the matching board and run independent KiCad connectivity/DRC with no unexplained violations. A placement-only export must not be sent to fabrication.
-2. Finish ERC electrical pin types, power flags, courtyards and generated footprint library registration. Complete pad/pin/polarity review, mic ring/NPTH and paste inspection, silicon-capacitor mask/paste checks, and assembly rotation verification. C3/C4 direct bypasses now use silicon; other Class II capacitors, including nearby C5/C6, still need acoustic placement review against Knowles guidance before assembly.
+1. **Digital routing and pairing checks completed:** the final native project has filled ground zones, zero unconnected items, zero schematic mismatches and zero bare-board DRC errors. The manufacturer must still review the complete stack, mixed drill tools, return paths and thermal behavior against its process and the intended use.
+2. **Native ERC and library registration completed:** zero ERC errors/warnings, 61 exact footprint snapshots, 0.15 mm SMD pad-spacing checks and via-to-SMD/paste checks pass. **78 courtyard overlaps remain unsuppressed.** Obtain assembly-process review for those margins, stencil/mask registration, exposed pads and supplier zero-angle conventions. C3/C4 direct bypasses use silicon; other Class II capacitors, including nearby C5/C6, still need acoustic placement review against Knowles guidance before assembly.
 3. Qualify the complete protected pack and attached NTC, including allowed 4.221 V charge maximum, assembled resistance acceptance, cutoff temperatures, thermal lag, swelling, peak discharge and mechanical clearance. Qualify C08-00A supply status and calibrated drive limits.
 4. Verify power sequencing, charging faults, depleted-cell recovery, microphone disconnect/back-power, LDO dropout, storage power-loss recovery, haptics and skin-facing temperature on real hardware. Do not infer these from the state-machine tests or render.
 5. Complete and exercise the firmware/audio/storage/transfer/security functions described in the firmware package. A compiled image alone is not evidence of successful recording, Bluetooth transfer or note retention.
 6. Validate assembled acoustics, clothing rustle, wind, ESD, RF with chain/body present, face/slider durability and applicable market requirements. Module certification does not certify this finished wearable.
-7. After these gates, create a reviewed manufacturing release with Gerbers, plated/nonplated drill files, stackup, netlist, assembly drawings, approved BOM, component positions, stencil and fabrication notes. No fabrication-ready or purchase-ready release is currently claimed.
+7. Prototype Gerbers, separate plated/nonplated drill files, stackup metadata, IPC-D-356 netlist, review drawings, candidate BOM, component positions and stencil data are now available in the [native package](../hardware/native/README.md). After the remaining assembly and physical gates, issue a supplier-approved production release with qualified parts. This package does not establish assembly or purchase approval.
 
 ## Documentation provenance
 

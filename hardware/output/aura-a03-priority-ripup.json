@@ -1,0 +1,134 @@
+[
+  {
+    "uuid": "3cb328d2-0190-47b2-be83-e3d32b59e936",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "3ee95ad3-496e-4493-8bb7-ee8e8d49710a",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "48fcf4f6-b5ad-41d6-b392-380594217317",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "650a17a4-839d-4738-9aae-e5b2b760e3d0",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "85c5b5eb-8c25-4b81-97c5-b5bae584c8d9",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "a9039fab-8bfc-4f86-a541-2cb16ca1bed6",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "ae11b65a-850a-4ccd-a49d-cd069d98ff22",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "d796574b-1c49-4315-9128-554e9a911f4c",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "2fe01cf2-1288-4d8e-9443-679b9e7e80dd",
+    "net": "VBAT"
+  },
+  {
+    "uuid": "05838af3-56c0-483c-8373-a1681c34b70f",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "168ada8d-1975-4008-bc70-e762f1b157b6",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "1f97a96c-6711-4e87-833c-2a7deb510afd",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "225fe9a3-bfcd-4efc-8936-c137e2501e4a",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "2cf9c1b3-d677-4d9b-a683-7836ab1bb158",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "2d47a8f7-a631-462e-8eca-4014dc412b69",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "477226e4-9776-428b-9842-9c79b0a6a500",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "54bf0e8a-6db0-4dd4-b493-ed48ccaf22e6",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "61820b14-4009-4e6b-ae08-3bf2e6e9e250",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "61b41717-6818-49c4-b50d-10cbebc43a30",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "68cb3d5f-0704-428f-a591-984808b1e268",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "86dc9c11-7ded-4c6d-848c-149ac7bf64b4",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "8c2db0da-b1ae-4d9a-bc07-dd95d7c2fbef",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "96d7df34-a9e3-4924-9e96-c1434e2aa13c",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "a1928b7a-cc95-4474-9b11-df3511876b5b",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "c5dd16ce-fc9d-4a8d-894e-c67079614901",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "c7e8aa2b-d094-4347-afb0-5685cb429c4f",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "c828a704-1551-46d8-89e4-952b0c3f8a9c",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "d97024d8-6d54-4ad4-904b-053c623e827d",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "169746ea-d041-4155-b035-7de55b7b46d4",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "6449e557-09df-42a2-94b5-c4a1986bef57",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "8e85680d-9e28-4f16-bdf5-4e63f713cdbd",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "5837c108-4df2-4105-af27-7b0e18ee3994",
+    "net": "CHG_ISET"
+  },
+  {
+    "uuid": "9d8fa838-4cd5-4bf7-b720-0f8df549e90c",
+    "net": "CHG_ISET"
+  }
+]

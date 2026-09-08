@@ -34,8 +34,8 @@
     },
     {
       "path": "enclosure/aura-a03-print-kit.zip",
-      "bytes": 302156,
-      "sha256": "A4E94BA82D977A4583598AE09E93E58945F75C4D81F70A7E52D134AAE9EB58DA"
+      "bytes": 305639,
+      "sha256": "DAE9937223822EE4F84C01D170B004DF1A6C8576E99C869D0F2F040B5FE3077E"
     },
     {
       "path": "enclosure/renders/exploded.png",
@@ -44,8 +44,8 @@
     },
     {
       "path": "enclosure/asset-manifest.json",
-      "bytes": 8929,
-      "sha256": "92D0B94F4F8A1619EEE5890E209808656AEDEB58E417CF7C138B4C293EC28387"
+      "bytes": 9417,
+      "sha256": "876AF3C1A0FBAF9653C28CC031A8A79393C2174CCFF82589A53686641674E759"
     },
     {
       "path": "film/aura-launch/assets/aura-device.glb",
@@ -82,5 +82,16 @@
       "bytes": 1909,
       "sha256": "34DE4505A45F24A9C0464C1AB33D5B659174530F0AD4A7ADED88711CDFC07338"
     }
-  ]
+  ],
+  "c18_orientation_sync": {
+    "source_rotation_degrees": 270,
+    "canonical_visual_rotation_degrees": 90,
+    "exact_package_rotations": 55,
+    "proven_body_symmetry_matches": 1,
+    "unintended_deviations": 0,
+    "models_and_movie_byte_identical": true,
+    "pcb_pin_rotation_exempted": false,
+    "evidence": "enclosure/c18-symmetry-audit.json",
+    "evidence_sha256": "0190E30DE3DC189DAC1D1F7C338E9BDC9C844ED6B63A1A9C1A22E4321A74FDD0"
+  }
 }

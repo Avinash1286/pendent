@@ -1,0 +1,32 @@
+[
+  {
+    "sheet": "radio",
+    "orientedLabels": 39,
+    "electricalGeometry": "UNCHANGED",
+    "metadataReferences": 7
+  },
+  {
+    "sheet": "audio",
+    "orientedLabels": 51,
+    "electricalGeometry": "UNCHANGED",
+    "metadataReferences": 16
+  },
+  {
+    "sheet": "storage",
+    "orientedLabels": 21,
+    "electricalGeometry": "UNCHANGED",
+    "metadataReferences": 7
+  },
+  {
+    "sheet": "charging",
+    "orientedLabels": 54,
+    "electricalGeometry": "UNCHANGED",
+    "metadataReferences": 18
+  },
+  {
+    "sheet": "controls",
+    "orientedLabels": 43,
+    "electricalGeometry": "UNCHANGED",
+    "metadataReferences": 13
+  }
+]

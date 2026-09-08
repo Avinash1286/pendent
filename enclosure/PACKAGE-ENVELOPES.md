@@ -4,7 +4,11 @@ The A03 mechanical sync replaces the original generic 0402 passive blocks with d
 
 `snapshot_component_bodies.mjs` records dimensions and exact MPNs without changing positions. `sync_hardware_reference.mjs` resolves final hardware source positions only after its caller confirms the hardware owner's routing freeze. `build_aura.py -- --no-render` rebuilds the model and manufacturing meshes. `verify_print_invariance.mjs` then compares all eight STLs with the pre-sync checkpoint using both file hashes and order-independent triangle signatures.
 
-`verify_model_sync.mjs` reads the exported binary GLB independently, checks all 56 package XY positions and rotations against the placement snapshot, and checks the local dimensions and heights of the 50 power/passive/diode bodies. Its output is `model-sync-audit.json`; all checks pass for the synchronized model.
+`verify_model_sync.mjs` reads the exported binary GLB independently and checks all 56 package XY positions, **55 exact rotations plus one proven C18 body-symmetry match**, and the local dimensions and heights of the 50 power/passive/diode bodies. Its output is [model-sync-audit.json](model-sync-audit.json); zero unintended deviations remain.
+
+The final C18 source/PCB rotation is **270°** at (−2.05, −13.3); the saved visual body remains at **90°**. This exception is restricted to C18's exact MPN, KEMET C0402C104K4RACTU, an unmarked nonpolar capacitor. [c18-source-sync.json](c18-source-sync.json) records the bounded source correction: all other 60 placements, all 61 logical pin maps and the logical netlist stayed unchanged. PCB pin orientation is not exempted or changed by the model audit.
+
+[verify_c18_symmetry.mjs](verify_c18_symmetry.mjs) decodes the actual C18 mesh in all three GLBs. Each has 216 unique positions and 428 triangles; the complete triangle set and each triangle's shading normals are invariant under a half-turn, with zero measured vertex or normal error. The material is uniform and untextured, and the proxy has no pad or marking geometry. [c18-symmetry-audit.json](c18-symmetry-audit.json) binds this proof to the existing binary hashes. `build_aura.py` reproduces the same canonical 90° body from the 270° source entry. Blender, all GLBs, the eight print STLs, product photographs and the 44-second film remain byte-for-byte unchanged by this orientation-only follow-up.
 
 ## Verified maximum dimensions
 
@@ -26,4 +30,4 @@ For Q1, the SOT-23 footprint has its long plastic-body axis along local Y. The f
 
 Other packages, including resistors and D1, retain nominal source-catalog envelopes. No XY placement tolerance or solder-fillet envelope is included. The positive gaps do not prove assembly yield, repair access, printer or molding accuracy, switch motion, seals, RF behavior, temperature performance, battery swelling or safe wear. **Physical qualification remains false.** The final hardware package separately owns copper clearance, courtyards, routing checks and fabrication status.
 
-Exterior product photographs remain valid for an internal-only update. `render_synced_exploded.py` refreshes the internal exploded photograph from the saved scene without rebuilding or saving geometry; the film stages the regenerated device GLB and rerenders its existing assembly sequence.
+Exterior product photographs remain valid for an internal-only update. The preceding nine-component update used `render_synced_exploded.py` to refresh the exploded photograph and rerendered the film's assembly sequence. The later C18 orientation-only correction requires no visual rerender because the exported triangle and shading invariance is proved above.

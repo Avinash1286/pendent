@@ -467,7 +467,7 @@
       "mpn": "BAT54WS-7-F",
       "value": "Reverse-dock Schottky",
       "fp": "diode",
-      "x": 0.2,
+      "x": 0.8,
       "y": -9.05,
       "pins": {
         "1": "DOCK_IN",
@@ -669,7 +669,7 @@
       "value": "4.7k",
       "fp": "r0402",
       "x": -3.55,
-      "y": -2.05,
+      "y": -1.4,
       "pins": {
         "1": "I2C_SDA",
         "2": "V3"
@@ -878,8 +878,8 @@
       "mpn": "RC0402FR-073K3L",
       "value": "3.3k",
       "fp": "r0402",
-      "x": -7.3,
-      "y": -9.8,
+      "x": -8.5,
+      "y": -13.4,
       "pins": {
         "1": "TS_MON",
         "2": "BAT_NTC"
@@ -893,8 +893,8 @@
       "mpn": "RC0402FR-0710KL",
       "value": "10k",
       "fp": "r0402",
-      "x": -7.3,
-      "y": -7.8,
+      "x": -8.5,
+      "y": -11.5,
       "pins": {
         "1": "CHG_DISABLE",
         "2": "VSYS"
@@ -998,8 +998,8 @@
       "mpn": "C0603C225K8RACTU",
       "value": "2.2uF",
       "fp": "c0603",
-      "x": -1.8,
-      "y": -9.3,
+      "x": -1.3,
+      "y": -9.85,
       "pins": {
         "1": "DOCK_IN",
         "2": "GND"
@@ -1013,7 +1013,7 @@
       "mpn": "C0603C475K8PACTU",
       "value": "4.7uF",
       "fp": "c0603",
-      "x": -6.3,
+      "x": -8,
       "y": -9.05,
       "pins": {
         "1": "VBAT",
@@ -1043,7 +1043,7 @@
       "mpn": "C0603C225K8RACTU",
       "value": "2.2uF",
       "fp": "c0603",
-      "x": 0.2,
+      "x": 0.9,
       "y": -10.55,
       "pins": {
         "1": "V3",
@@ -1149,7 +1149,7 @@
       "value": "10nF",
       "fp": "c0402",
       "x": -5.55,
-      "y": -2.05,
+      "y": -1.8,
       "pins": {
         "1": "RECORD_N",
         "2": "GND"
@@ -1164,14 +1164,14 @@
       "value": "100nF",
       "fp": "c0402",
       "x": -2.05,
-      "y": -12.3,
+      "y": -13.3,
       "pins": {
         "1": "VSYS",
         "2": "GND"
       },
       "block": "power",
       "note": "KEMET candidate,10% tolerance;1uF/100nF16V,10nF50V,2.2uF/4.7uF10V.4.7uF is X5R; other assigned parts X7R. Verify effective capacitance at bias/temperature;10uF part remains unqualified.",
-      "r": 90
+      "r": 270
     }
   ]
 }

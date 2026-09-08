@@ -1,0 +1,1487 @@
+(kicad_sch
+  (version 20260101)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (uuid 2000ec5f-ab76-4b49-8a34-6fb71d3b20dd)
+  (paper "A4")
+  (lib_symbols
+    (symbol "AuraA03:W25N01GVZEIG_A03"
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 2.54 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "W25N01GVZEIG_A03"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
+        (at 0 -5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Datasheet" "https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (property "Description" "1Gbit SPI NAND /128MiB"
+        (at 0 -10.16 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+        (hide yes)
+      )
+      (symbol "W25N01GVZEIG_A03_0_1"
+        (rectangle
+          (start -12.7 -7.62)
+          (end 12.7 7.62)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "W25N01GVZEIG_A03_1_1"
+        (pin input line
+          (at -15.24 5.08 0)
+          (length 2.54)
+          (name "N_CS"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at -15.24 2.54 0)
+          (length 2.54)
+          (name "DO_IO1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "N_WP_IO2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at -15.24 -2.54 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at -15.24 -5.08 0)
+          (length 2.54)
+          (name "DI_IO0"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin input line
+          (at 15.24 5.08 180)
+          (length 2.54)
+          (name "CLK"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "6"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin bidirectional line
+          (at 15.24 2.54 180)
+          (length 2.54)
+          (name "N_HOLD_IO3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "7"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin power_in line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "8"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15.24 -2.54 180)
+          (length 2.54)
+          (name "EP_GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "9"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+    )
+    (symbol "Device:R"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (in_pos_files yes)
+      (duplicate_pin_numbers_are_jumpers no)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "R"
+        (at 0 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Datasheet" ""
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Device:C"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0.254)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (in_pos_files yes)
+      (duplicate_pin_numbers_are_jumpers no)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (justify left)
+        )
+      )
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (justify left)
+        )
+      )
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Datasheet" ""
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (show_name no)
+        (do_not_autoplace no)
+        (hide yes)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762)
+          )
+          (stroke
+            (width 0.508)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762)
+          )
+          (stroke
+            (width 0.508)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name ""
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+  )
+  (symbol
+    (lib_id "AuraA03:W25N01GVZEIG_A03")
+    (at 88.9 73.66 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "0e87ee00-e578-46ba-8e2f-5c937a7976a9")
+    (property "Reference" "U2"
+      (at 88.900000 62.230000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Value" "W25N01GVZEIG"
+      (at 88.900000 85.090000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_U2"
+      (at 88.9 68.58 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" "https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf"
+      (at 88.9 66.04 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "1Gbit SPI NAND /128MiB"
+      (at 88.9 63.5 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "cfb45381-a60c-4144-a63d-ae02a292f0d3")
+    )
+    (pin "2"
+      (uuid "c0433a59-be0a-4428-b4b1-80619b61ec41")
+    )
+    (pin "3"
+      (uuid "16adc804-a654-4094-bab5-cf78f7b3571e")
+    )
+    (pin "4"
+      (uuid "b7804708-8a9e-43fc-9838-b4fd54f0a099")
+    )
+    (pin "5"
+      (uuid "1eb584cc-e596-40d8-96ae-00df59e0931f")
+    )
+    (pin "6"
+      (uuid "dc50e60f-b9a3-47cf-93ff-d5b97acb13fc")
+    )
+    (pin "7"
+      (uuid "658339ba-d656-40ae-b15f-a1968bb5d223")
+    )
+    (pin "8"
+      (uuid "2bf880f0-d265-45fa-aee7-5356cc66f608")
+    )
+    (pin "9"
+      (uuid "bb1936e2-437e-4753-b3ae-cf9dadff1c07")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "U2")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "U2")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "W25N01GVZEIG"
+      (at 88.900000 73.660000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "1Gbit SPI NAND /128MiB"
+      (at 88.900000 73.660000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 172.72 53.34 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "3ac9d2be-f678-4ecb-b27d-93095ff5faf3")
+    (property "Reference" "R17"
+      (at 177.800000 52.070000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "33"
+      (at 177.800000 54.610000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R17"
+      (at 170.942 53.34 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 172.72 53.34 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 172.72 53.34 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "1df9b680-b7ee-41a7-b816-573e24edce08")
+    )
+    (pin "2"
+      (uuid "1b376e58-9fed-4605-b898-89fe8da391b8")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "R17")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "R17")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-0733RL"
+      (at 172.720000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "33"
+      (at 172.720000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 220.98 53.34 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "747befea-7047-45a0-97ff-4ba4c05d233c")
+    (property "Reference" "R18"
+      (at 226.060000 52.070000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "10k"
+      (at 226.060000 54.610000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R18"
+      (at 219.202 53.34 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 220.98 53.34 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 220.98 53.34 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "658ffec5-7b56-475d-af5f-8b201cc83f2d")
+    )
+    (pin "2"
+      (uuid "d5e87a4b-638f-47d5-ac14-4d906da9cb90")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "R18")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "R18")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-0710KL"
+      (at 220.980000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "10k"
+      (at 220.980000 53.340000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 172.72 99.06 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "3514a2fd-75cb-4ed8-abe3-429bc38088f2")
+    (property "Reference" "R19"
+      (at 177.800000 97.790000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "10k"
+      (at 177.800000 100.330000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R19"
+      (at 170.942 99.06 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 172.72 99.06 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 172.72 99.06 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "85b5ac17-1f54-4a97-a708-159495baa8ea")
+    )
+    (pin "2"
+      (uuid "0ed92317-f82b-4bab-994e-4610da29c60f")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "R19")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "R19")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-0710KL"
+      (at 172.720000 99.060000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "10k"
+      (at 172.720000 99.060000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:R")
+    (at 220.98 99.06 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "97dca62f-4fef-45b4-93c6-f93058890286")
+    (property "Reference" "R20"
+      (at 226.060000 97.790000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "10k"
+      (at 226.060000 100.330000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_R20"
+      (at 219.202 99.06 90)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 220.98 99.06 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Resistor"
+      (at 220.98 99.06 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "1ab9801c-e859-4818-8006-555cc62cf947")
+    )
+    (pin "2"
+      (uuid "9070c4af-de6f-4d08-8cd0-a861cb6f1fc9")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "R20")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "R20")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "RC0402FR-0710KL"
+      (at 220.980000 99.060000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "10k"
+      (at 220.980000 99.060000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 93.98 139.7 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "7cab3b4a-8e2e-47a5-b21b-dbc6522b4370")
+    (property "Reference" "C5"
+      (at 99.060000 138.430000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "100nF"
+      (at 99.060000 140.970000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C5"
+      (at 94.945 135.89 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 93.98 139.7 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 93.98 139.7 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "10d41e5f-6eab-42dc-8b79-7caabb153c33")
+    )
+    (pin "2"
+      (uuid "d715a242-6d51-43af-ad6e-a587b5a7d9db")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "C5")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "C5")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0402C104K4RACTU"
+      (at 93.980000 139.700000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "100nF"
+      (at 93.980000 139.700000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:C")
+    (at 157.48 139.7 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (uuid "a92ef492-7d12-4626-92d2-a0164c2c36b2")
+    (property "Reference" "C6"
+      (at 162.560000 138.430000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "4.7uF"
+      (at 162.560000 140.970000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" "AURA_PCB:A03_C6"
+      (at 158.445 135.89 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Datasheet" ""
+      (at 157.48 139.7 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Description" "Unpolarized capacitor"
+      (at 157.48 139.7 0)
+      (hide yes)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (pin "1"
+      (uuid "bdbc8bd2-8b2d-4b20-a58f-b18ebec2b2dd")
+    )
+    (pin "2"
+      (uuid "db8ad2e3-e5f1-42ed-b0ff-55aea51752df")
+    )
+    (instances
+      (project "aura-a03"
+        (path "/2000ec5f-ab76-4b49-8a34-6fb71d3b20dd"
+          (reference "C6")
+          (unit 1)
+        )
+        (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+          (reference "C6")
+          (unit 1)
+        )
+      )
+    )
+    (property "MPN" "C0603C475K8PACTU"
+      (at 157.480000 139.700000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Function" "4.7uF"
+      (at 157.480000 139.700000 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+  )
+  (global_label "SPI_CS_N"
+    (at 73.66000000000001 68.58 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "ba03b7ce-5384-414f-bb55-9009c40d8918")
+  )
+  (global_label "SPI_MISO"
+    (at 73.66000000000001 71.11999999999999 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "b22b14ae-61bc-409d-bf3f-00c02c41ba52")
+  )
+  (global_label "FLASH_WP_N"
+    (at 73.66000000000001 73.66 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "b54669d8-3df6-41de-9376-057daa5e6700")
+  )
+  (global_label "GND"
+    (at 73.66000000000001 76.2 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "9e955a0d-302e-4245-9667-8e4f074db316")
+  )
+  (global_label "SPI_MOSI"
+    (at 73.66000000000001 78.74 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "cbcdcbf3-f080-43b1-a8f2-489f9eb8d519")
+  )
+  (global_label "SPI_SCK"
+    (at 104.14 68.58 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "8f51a5ad-14d0-474c-95f0-11b45cc8be05")
+  )
+  (global_label "FLASH_HOLD_N"
+    (at 104.14 71.11999999999999 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "39fae285-91e6-4dcf-8e57-e1d6e7f0e9cd")
+  )
+  (global_label "V3"
+    (at 104.14 73.66 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "d873cdd7-b856-465d-9063-6831e07a1097")
+  )
+  (global_label "GND"
+    (at 104.14 76.2 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "e3864a86-5901-4e27-82ce-29291fcdd76e")
+  )
+  (global_label "SPI_SCK_MCU"
+    (at 172.72 49.53 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "bf57db4a-5b94-4cf2-b0b4-e244a59a252e")
+  )
+  (global_label "SPI_SCK"
+    (at 172.72 57.150000000000006 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "837e792b-0b3b-4c71-b1b2-0703faf8ea58")
+  )
+  (global_label "SPI_CS_N"
+    (at 220.98 49.53 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "cf0af446-45c4-4c04-9498-8a986a0da6d7")
+  )
+  (global_label "V3"
+    (at 220.98 57.150000000000006 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "421d81c0-e68f-4ff2-92eb-9b0236bd52a0")
+  )
+  (global_label "FLASH_WP_N"
+    (at 172.72 95.25 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "7cad4bbf-2db7-40ff-ae63-d3a621489f76")
+  )
+  (global_label "V3"
+    (at 172.72 102.87 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "d7719a2a-e972-4a8a-be2e-4e6c8f14822e")
+  )
+  (global_label "FLASH_HOLD_N"
+    (at 220.98 95.25 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "aecaa212-8227-4cef-b802-02dcc0673857")
+  )
+  (global_label "V3"
+    (at 220.98 102.87 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "b1abd545-5258-490e-ac40-8b93855e1100")
+  )
+  (global_label "V3"
+    (at 93.98 135.89 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "1a5466e4-87c4-4626-b40d-61669521c59c")
+  )
+  (global_label "GND"
+    (at 93.98 143.51 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "7efd1e3a-c050-4a77-89b8-dae43ba98c72")
+  )
+  (global_label "V3"
+    (at 157.48 135.89 180)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "ff6de400-4cb9-4ca2-a754-d0cbf11abc09")
+  )
+  (global_label "GND"
+    (at 157.48 143.51 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "21140ef3-e122-4be0-8c13-a3e25b9ccb69")
+  )
+  (text "AURA A03 / OFFLINE FLASH STORAGE"
+    (exclude_from_sim no)
+    (at 20.32 20.32 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+      (justify left bottom)
+    )
+    (uuid "4af33203-f489-4e64-a0a6-fe8fe17de8d3")
+  )
+  (text "ZE package exposed pad pin 9 connects to GND.\nProvide NAND ECC, bad-block mapping and wear management.\nAudio encryption and crash-safe file recovery belong in firmware."
+    (exclude_from_sim no)
+    (at 50.8 167.64 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left bottom)
+    )
+    (uuid "3cb8dfe5-5261-40f5-ac5f-83f066a85d70")
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+  )
+  (title_block
+    (title "AURA / Offline flash storage")
+    (date "2026-09-08")
+    (rev "EVT-A03")
+    (company "AURA product engineering")
+  )
+)

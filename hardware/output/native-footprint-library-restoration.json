@@ -1,0 +1,2718 @@
+{
+  "mode": "APPLIED",
+  "board": "output\\aura-a03-native-routing.kicad_pcb",
+  "inputSha256": "14fc416af6ee4921a26d3aabb4ec325199cb3a1578fe77d40d7d0c61209d9ac2",
+  "footprints": [
+    {
+      "ref": "C1",
+      "oldId": "tscircuit:C0402C104K4RACTU",
+      "newId": "AURA_PCB:A03_C1",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        98.95,
+        100.8
+      ],
+      "alignedBodyOrigin": [
+        98.95,
+        100.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        98.65,
+        100.25,
+        99.25,
+        101.35
+      ],
+      "frontCourtyardBoundsMm": [
+        98.445,
+        99.845,
+        99.455,
+        101.755
+      ]
+    },
+    {
+      "ref": "C10",
+      "oldId": "tscircuit:C0603C225K8RACTU",
+      "newId": "AURA_PCB:A03_C10",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        100.9,
+        110.55
+      ],
+      "alignedBodyOrigin": [
+        100.9,
+        110.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        100.05,
+        110.1,
+        101.75,
+        111.0
+      ],
+      "frontCourtyardBoundsMm": [
+        99.375,
+        109.775,
+        102.425,
+        111.325
+      ]
+    },
+    {
+      "ref": "C11",
+      "oldId": "tscircuit:C0402C104K4RACTU",
+      "newId": "AURA_PCB:A03_C11",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        101.45,
+        103.3
+      ],
+      "alignedBodyOrigin": [
+        101.45,
+        103.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        100.9,
+        103.0,
+        102.0,
+        103.6
+      ],
+      "frontCourtyardBoundsMm": [
+        100.495,
+        102.795,
+        102.405,
+        103.805
+      ]
+    },
+    {
+      "ref": "C12",
+      "oldId": "tscircuit:C0603C105K4RACTU",
+      "newId": "AURA_PCB:A03_C12",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        106.7,
+        100.8
+      ],
+      "alignedBodyOrigin": [
+        106.7,
+        100.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        106.25,
+        99.95,
+        107.15,
+        101.65
+      ],
+      "frontCourtyardBoundsMm": [
+        105.925,
+        99.275,
+        107.475,
+        102.325
+      ]
+    },
+    {
+      "ref": "C13",
+      "oldId": "tscircuit:C0603C105K4RACTU",
+      "newId": "AURA_PCB:A03_C13",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        103.95,
+        106.3
+      ],
+      "alignedBodyOrigin": [
+        103.95,
+        106.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        103.1,
+        105.85,
+        104.8,
+        106.75
+      ],
+      "frontCourtyardBoundsMm": [
+        102.425,
+        105.525,
+        105.475,
+        107.075
+      ]
+    },
+    {
+      "ref": "C14",
+      "oldId": "tscircuit:C0603C105K4RACTU",
+      "newId": "AURA_PCB:A03_C14",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        109.95,
+        94.05
+      ],
+      "alignedBodyOrigin": [
+        109.95,
+        94.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        109.5,
+        93.2,
+        110.4,
+        94.9
+      ],
+      "frontCourtyardBoundsMm": [
+        109.175,
+        92.525,
+        110.725,
+        95.575
+      ]
+    },
+    {
+      "ref": "C15",
+      "oldId": "tscircuit:C0603C105K4RACTU",
+      "newId": "AURA_PCB:A03_C15",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        106.45,
+        97.05
+      ],
+      "alignedBodyOrigin": [
+        106.45,
+        97.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        106.0,
+        96.2,
+        106.9,
+        97.9
+      ],
+      "frontCourtyardBoundsMm": [
+        105.675,
+        95.525,
+        107.225,
+        98.575
+      ]
+    },
+    {
+      "ref": "C16",
+      "oldId": "tscircuit:C0402C104K4RACTU",
+      "newId": "AURA_PCB:A03_C16",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        110.7,
+        105.8
+      ],
+      "alignedBodyOrigin": [
+        110.7,
+        105.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        110.4,
+        105.25,
+        111.0,
+        106.35
+      ],
+      "frontCourtyardBoundsMm": [
+        110.195,
+        104.845,
+        111.205,
+        106.755
+      ]
+    },
+    {
+      "ref": "C17",
+      "oldId": "tscircuit:C0402C103K5RACTU",
+      "newId": "AURA_PCB:A03_C17",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        94.45,
+        101.8
+      ],
+      "alignedBodyOrigin": [
+        94.45,
+        101.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        93.9,
+        101.5,
+        95.0,
+        102.1
+      ],
+      "frontCourtyardBoundsMm": [
+        93.495,
+        101.295,
+        95.405,
+        102.305
+      ]
+    },
+    {
+      "ref": "C18",
+      "oldId": "tscircuit:C0402C104K4RACTU",
+      "newId": "AURA_PCB:A03_C18",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        97.95,
+        113.3
+      ],
+      "alignedBodyOrigin": [
+        97.95,
+        113.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        97.65,
+        112.75,
+        98.25,
+        113.85
+      ],
+      "frontCourtyardBoundsMm": [
+        97.445,
+        112.345,
+        98.455,
+        114.255
+      ]
+    },
+    {
+      "ref": "C2",
+      "oldId": "tscircuit:C0603C475K8PACTU",
+      "newId": "AURA_PCB:A03_C2",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        97.95,
+        101.3
+      ],
+      "alignedBodyOrigin": [
+        97.95,
+        101.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        97.5,
+        100.45,
+        98.4,
+        102.15
+      ],
+      "frontCourtyardBoundsMm": [
+        97.175,
+        99.775,
+        98.725,
+        102.825
+      ]
+    },
+    {
+      "ref": "C3",
+      "oldId": "tscircuit:939113424610-T3N",
+      "newId": "AURA_PCB:A03_C3",
+      "source": "library\\AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "sourceSha256": "935440c9e93a0ca4521fa6ef1704416d393892ecd1eb51196ec9b68495ecdcf8",
+      "nativeOrigin": [
+        93.45,
+        89.55
+      ],
+      "alignedBodyOrigin": [
+        93.45,
+        89.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        93.05,
+        88.9,
+        93.85,
+        90.2
+      ],
+      "frontCourtyardBoundsMm": [
+        92.805,
+        88.655,
+        94.095,
+        90.445
+      ]
+    },
+    {
+      "ref": "C4",
+      "oldId": "tscircuit:939113424610-T3N",
+      "newId": "AURA_PCB:A03_C4",
+      "source": "library\\AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "sourceSha256": "935440c9e93a0ca4521fa6ef1704416d393892ecd1eb51196ec9b68495ecdcf8",
+      "nativeOrigin": [
+        106.45,
+        90.3
+      ],
+      "alignedBodyOrigin": [
+        106.45,
+        90.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        106.05,
+        89.65,
+        106.85,
+        90.95
+      ],
+      "frontCourtyardBoundsMm": [
+        105.805,
+        89.405,
+        107.095,
+        91.195
+      ]
+    },
+    {
+      "ref": "C5",
+      "oldId": "tscircuit:C0402C104K4RACTU",
+      "newId": "AURA_PCB:A03_C5",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "sourceSha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4",
+      "nativeOrigin": [
+        89.2,
+        92.05
+      ],
+      "alignedBodyOrigin": [
+        89.2,
+        92.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        88.65,
+        91.75,
+        89.75,
+        92.35
+      ],
+      "frontCourtyardBoundsMm": [
+        88.245,
+        91.545,
+        90.155,
+        92.555
+      ]
+    },
+    {
+      "ref": "C6",
+      "oldId": "tscircuit:C0603C475K8PACTU",
+      "newId": "AURA_PCB:A03_C6",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        89.45,
+        90.3
+      ],
+      "alignedBodyOrigin": [
+        89.45,
+        90.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        89.0,
+        89.45,
+        89.9,
+        91.15
+      ],
+      "frontCourtyardBoundsMm": [
+        88.675,
+        88.775,
+        90.225,
+        91.825
+      ]
+    },
+    {
+      "ref": "C7",
+      "oldId": "tscircuit:C0603C225K8RACTU",
+      "newId": "AURA_PCB:A03_C7",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        98.7,
+        109.85
+      ],
+      "alignedBodyOrigin": [
+        98.7,
+        109.85
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        98.25,
+        109.0,
+        99.15,
+        110.7
+      ],
+      "frontCourtyardBoundsMm": [
+        97.925,
+        108.325,
+        99.475,
+        111.375
+      ]
+    },
+    {
+      "ref": "C8",
+      "oldId": "tscircuit:C0603C475K8PACTU",
+      "newId": "AURA_PCB:A03_C8",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "sourceSha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857",
+      "nativeOrigin": [
+        92.0,
+        109.05
+      ],
+      "alignedBodyOrigin": [
+        92.0,
+        109.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.55,
+        108.2,
+        92.45,
+        109.9
+      ],
+      "frontCourtyardBoundsMm": [
+        91.225,
+        107.525,
+        92.775,
+        110.575
+      ]
+    },
+    {
+      "ref": "C9",
+      "oldId": "tscircuit:C0805C106K8PACTU",
+      "newId": "AURA_PCB:A03_C9",
+      "source": "library\\C_0805_2012Metric.kicad_mod",
+      "sourceSha256": "e890bdf55fa18fc6df6878eb1b5251a991e1b93985509175eb269d3d002880b4",
+      "nativeOrigin": [
+        95.2,
+        106.8
+      ],
+      "alignedBodyOrigin": [
+        95.2,
+        106.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.525,
+        105.75,
+        95.875,
+        107.85
+      ],
+      "frontCourtyardBoundsMm": [
+        94.175,
+        105.055,
+        96.225,
+        108.545
+      ]
+    },
+    {
+      "ref": "D1",
+      "oldId": "tscircuit:BAT54WS-7-F",
+      "newId": "AURA_PCB:A03_D1",
+      "source": "library\\D_SOD-323.kicad_mod",
+      "sourceSha256": "77ac02f4955d3dc824de14f5874874e0e5b095afdda5aab7c6558c1f6b83297e",
+      "nativeOrigin": [
+        100.8,
+        109.05
+      ],
+      "alignedBodyOrigin": [
+        100.8,
+        109.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 14,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        99.85,
+        108.3,
+        101.75,
+        109.8
+      ],
+      "frontCourtyardBoundsMm": [
+        99.155,
+        108.055,
+        102.445,
+        110.045
+      ]
+    },
+    {
+      "ref": "D2",
+      "oldId": "tscircuit:PESD5V0S1BA,115",
+      "newId": "AURA_PCB:A03_D2",
+      "source": "library\\D_SOD-323.kicad_mod",
+      "sourceSha256": "77ac02f4955d3dc824de14f5874874e0e5b095afdda5aab7c6558c1f6b83297e",
+      "nativeOrigin": [
+        99.45,
+        115.8
+      ],
+      "alignedBodyOrigin": [
+        99.45,
+        115.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 14,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        98.5,
+        115.05,
+        100.4,
+        116.55
+      ],
+      "frontCourtyardBoundsMm": [
+        97.805,
+        114.805,
+        101.095,
+        116.795
+      ]
+    },
+    {
+      "ref": "J1",
+      "oldId": "tscircuit:AURA-DOCK-PADS",
+      "newId": "AURA_PCB:A03_J1",
+      "source": "library.pretty\\AURA-DOCK-PADS.kicad_mod",
+      "sourceSha256": "a2d380918ce7a586bdfca009b2cab603520a9b71f0b4f295a2f4c6d6c8b83abf",
+      "nativeOrigin": [
+        100.0,
+        119.0
+      ],
+      "alignedBodyOrigin": [
+        100.0,
+        119.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 1,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 0,
+      "backCourtyardContours": 1,
+      "contactContainerPreserved": true,
+      "fabBoundsMm": null,
+      "backCourtyardBoundsMm": [
+        95.855,
+        117.855,
+        104.145,
+        120.145
+      ]
+    },
+    {
+      "ref": "J2",
+      "oldId": "tscircuit:AURA-BATTERY-PADS",
+      "newId": "AURA_PCB:A03_J2",
+      "source": "library.pretty\\AURA-BATTERY-PADS.kicad_mod",
+      "sourceSha256": "88cb02d2ad0858ce25695d1ef1dbb32dac72739b5ffaa604bdbf9e53f5f93138",
+      "nativeOrigin": [
+        94.0,
+        112.0
+      ],
+      "alignedBodyOrigin": [
+        94.0,
+        112.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 1,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 0,
+      "backCourtyardContours": 1,
+      "contactContainerPreserved": true,
+      "fabBoundsMm": null,
+      "backCourtyardBoundsMm": [
+        91.705,
+        111.205,
+        96.295,
+        112.795
+      ]
+    },
+    {
+      "ref": "J3",
+      "oldId": "tscircuit:AURA-SWD-PADS",
+      "newId": "AURA_PCB:A03_J3",
+      "source": "library.pretty\\AURA-SWD-PADS.kicad_mod",
+      "sourceSha256": "0934bf3d08113d1d6c6d1a9c0934e1c73b9ec0db5827f9e98eac119f6a5ac674",
+      "nativeOrigin": [
+        101.0,
+        100.0
+      ],
+      "alignedBodyOrigin": [
+        101.0,
+        100.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 1,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 0,
+      "backCourtyardContours": 1,
+      "contactContainerPreserved": true,
+      "fabBoundsMm": null,
+      "backCourtyardBoundsMm": [
+        96.505,
+        99.255,
+        105.495,
+        100.745
+      ]
+    },
+    {
+      "ref": "J4",
+      "oldId": "tscircuit:AURA-LRA-PADS",
+      "newId": "AURA_PCB:A03_J4",
+      "source": "library.pretty\\AURA-LRA-PADS.kicad_mod",
+      "sourceSha256": "6c6cb788ea7c0c04dcb2928e8ea39271cae78fcef26c460acab0b09633cbe8d3",
+      "nativeOrigin": [
+        108.0,
+        113.0
+      ],
+      "alignedBodyOrigin": [
+        108.0,
+        113.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 1,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 0,
+      "backCourtyardContours": 1,
+      "contactContainerPreserved": true,
+      "fabBoundsMm": null,
+      "backCourtyardBoundsMm": [
+        106.455,
+        112.205,
+        109.545,
+        113.795
+      ]
+    },
+    {
+      "ref": "LED1",
+      "oldId": "tscircuit:LTST-C190KFKT",
+      "newId": "AURA_PCB:A03_LED1",
+      "source": "library\\LED_0603_1608Metric.kicad_mod",
+      "sourceSha256": "923edc26771553cc36919e187c64d599da73e11c1f4f3e52c80b86512036faff",
+      "nativeOrigin": [
+        100.0,
+        101.0
+      ],
+      "alignedBodyOrigin": [
+        100.0,
+        101.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 6,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        99.55,
+        100.15,
+        100.45,
+        101.85
+      ],
+      "frontCourtyardBoundsMm": [
+        99.225,
+        99.475,
+        100.775,
+        102.525
+      ]
+    },
+    {
+      "ref": "MK1",
+      "oldId": "tscircuit:SPH0641LU4H-1",
+      "newId": "AURA_PCB:A03_MK1",
+      "source": "library\\Knowles_LGA-5_3.5x2.65mm.kicad_mod",
+      "sourceSha256": "be76ce60727e914da14f555470cb70797f7af95bb037ac73455b25eadb8916a8",
+      "nativeOrigin": [
+        91.5,
+        90.4575
+      ],
+      "alignedBodyOrigin": [
+        91.5,
+        90.73
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 9,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        90.125,
+        88.93,
+        92.875,
+        92.53
+      ],
+      "frontCourtyardBoundsMm": [
+        89.875,
+        88.685,
+        93.125,
+        92.775
+      ]
+    },
+    {
+      "ref": "MK2",
+      "oldId": "tscircuit:SPH0641LU4H-1",
+      "newId": "AURA_PCB:A03_MK2",
+      "source": "library\\Knowles_LGA-5_3.5x2.65mm.kicad_mod",
+      "sourceSha256": "be76ce60727e914da14f555470cb70797f7af95bb037ac73455b25eadb8916a8",
+      "nativeOrigin": [
+        108.5,
+        90.4575
+      ],
+      "alignedBodyOrigin": [
+        108.5,
+        90.73
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 9,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        107.125,
+        88.93,
+        109.875,
+        92.53
+      ],
+      "frontCourtyardBoundsMm": [
+        106.875,
+        88.685,
+        110.125,
+        92.775
+      ]
+    },
+    {
+      "ref": "Q1",
+      "oldId": "tscircuit:DMG2302UK-7",
+      "newId": "AURA_PCB:A03_Q1",
+      "source": "library\\SOT-23.kicad_mod",
+      "sourceSha256": "7fb2859c6463f3a37966a1a20c31d8bfe7d4e8459d00bb165d5a7488270816c5",
+      "nativeOrigin": [
+        95.45,
+        103.8
+      ],
+      "alignedBodyOrigin": [
+        95.45,
+        103.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 17,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.75,
+        102.3,
+        96.15,
+        105.3
+      ],
+      "frontCourtyardBoundsMm": [
+        93.475,
+        102.055,
+        97.425,
+        105.545
+      ]
+    },
+    {
+      "ref": "R1",
+      "oldId": "tscircuit:RC0402FR-075K62L",
+      "newId": "AURA_PCB:A03_R1",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        96.45,
+        106.05
+      ],
+      "alignedBodyOrigin": [
+        96.45,
+        106.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        96.13,
+        105.475,
+        96.77,
+        106.625
+      ],
+      "frontCourtyardBoundsMm": [
+        95.935,
+        105.075,
+        96.965,
+        107.025
+      ]
+    },
+    {
+      "ref": "R10",
+      "oldId": "tscircuit:RC0402FR-07100KL",
+      "newId": "AURA_PCB:A03_R10",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        106.2,
+        89.05
+      ],
+      "alignedBodyOrigin": [
+        106.2,
+        89.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        105.625,
+        88.73,
+        106.775,
+        89.37
+      ],
+      "frontCourtyardBoundsMm": [
+        105.225,
+        88.535,
+        107.175,
+        89.565
+      ]
+    },
+    {
+      "ref": "R11",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R11",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        92.2,
+        103.8
+      ],
+      "alignedBodyOrigin": [
+        92.2,
+        103.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.88,
+        103.225,
+        92.52,
+        104.375
+      ],
+      "frontCourtyardBoundsMm": [
+        91.685,
+        102.825,
+        92.715,
+        104.775
+      ]
+    },
+    {
+      "ref": "R13",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R13",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        110.45,
+        91.8
+      ],
+      "alignedBodyOrigin": [
+        110.45,
+        91.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        110.13,
+        91.225,
+        110.77,
+        92.375
+      ],
+      "frontCourtyardBoundsMm": [
+        109.935,
+        90.825,
+        110.965,
+        92.775
+      ]
+    },
+    {
+      "ref": "R14",
+      "oldId": "tscircuit:RC0402FR-071KL",
+      "newId": "AURA_PCB:A03_R14",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        92.95,
+        105.55
+      ],
+      "alignedBodyOrigin": [
+        92.95,
+        105.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        92.63,
+        104.975,
+        93.27,
+        106.125
+      ],
+      "frontCourtyardBoundsMm": [
+        92.435,
+        104.575,
+        93.465,
+        106.525
+      ]
+    },
+    {
+      "ref": "R15",
+      "oldId": "tscircuit:RC0402FR-07100KL",
+      "newId": "AURA_PCB:A03_R15",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        110.45,
+        90.05
+      ],
+      "alignedBodyOrigin": [
+        110.45,
+        90.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        110.13,
+        89.475,
+        110.77,
+        90.625
+      ],
+      "frontCourtyardBoundsMm": [
+        109.935,
+        89.075,
+        110.965,
+        91.025
+      ]
+    },
+    {
+      "ref": "R16",
+      "oldId": "tscircuit:RC0402FR-0733RL",
+      "newId": "AURA_PCB:A03_R16",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        98.2,
+        103.05
+      ],
+      "alignedBodyOrigin": [
+        98.2,
+        103.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        97.625,
+        102.73,
+        98.775,
+        103.37
+      ],
+      "frontCourtyardBoundsMm": [
+        97.225,
+        102.535,
+        99.175,
+        103.565
+      ]
+    },
+    {
+      "ref": "R17",
+      "oldId": "tscircuit:RC0402FR-0733RL",
+      "newId": "AURA_PCB:A03_R17",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        90.7,
+        101.55
+      ],
+      "alignedBodyOrigin": [
+        90.7,
+        101.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        90.125,
+        101.23,
+        91.275,
+        101.87
+      ],
+      "frontCourtyardBoundsMm": [
+        89.725,
+        101.035,
+        91.675,
+        102.065
+      ]
+    },
+    {
+      "ref": "R18",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R18",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        90.7,
+        102.55
+      ],
+      "alignedBodyOrigin": [
+        90.7,
+        102.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        90.125,
+        102.23,
+        91.275,
+        102.87
+      ],
+      "frontCourtyardBoundsMm": [
+        89.725,
+        102.035,
+        91.675,
+        103.065
+      ]
+    },
+    {
+      "ref": "R19",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R19",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        89.2,
+        102.3
+      ],
+      "alignedBodyOrigin": [
+        89.2,
+        102.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        88.88,
+        101.725,
+        89.52,
+        102.875
+      ],
+      "frontCourtyardBoundsMm": [
+        88.685,
+        101.325,
+        89.715,
+        103.275
+      ]
+    },
+    {
+      "ref": "R2",
+      "oldId": "tscircuit:RC0402FR-0724KL",
+      "newId": "AURA_PCB:A03_R2",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        93.95,
+        106.05
+      ],
+      "alignedBodyOrigin": [
+        93.95,
+        106.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        93.63,
+        105.475,
+        94.27,
+        106.625
+      ],
+      "frontCourtyardBoundsMm": [
+        93.435,
+        105.075,
+        94.465,
+        107.025
+      ]
+    },
+    {
+      "ref": "R20",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R20",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        90.7,
+        103.55
+      ],
+      "alignedBodyOrigin": [
+        90.7,
+        103.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        90.125,
+        103.23,
+        91.275,
+        103.87
+      ],
+      "frontCourtyardBoundsMm": [
+        89.725,
+        103.035,
+        91.675,
+        104.065
+      ]
+    },
+    {
+      "ref": "R21",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R21",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        91.95,
+        105.55
+      ],
+      "alignedBodyOrigin": [
+        91.95,
+        105.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.63,
+        104.975,
+        92.27,
+        106.125
+      ],
+      "frontCourtyardBoundsMm": [
+        91.435,
+        104.575,
+        92.465,
+        106.525
+      ]
+    },
+    {
+      "ref": "R22",
+      "oldId": "tscircuit:RC0402FR-073K3L",
+      "newId": "AURA_PCB:A03_R22",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        91.5,
+        113.4
+      ],
+      "alignedBodyOrigin": [
+        91.5,
+        113.4
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.18,
+        112.825,
+        91.82,
+        113.975
+      ],
+      "frontCourtyardBoundsMm": [
+        90.985,
+        112.425,
+        92.015,
+        114.375
+      ]
+    },
+    {
+      "ref": "R23",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R23",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        91.5,
+        111.5
+      ],
+      "alignedBodyOrigin": [
+        91.5,
+        111.5
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.18,
+        110.925,
+        91.82,
+        112.075
+      ],
+      "frontCourtyardBoundsMm": [
+        90.985,
+        110.525,
+        92.015,
+        112.475
+      ]
+    },
+    {
+      "ref": "R3",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R3",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        94.95,
+        100.8
+      ],
+      "alignedBodyOrigin": [
+        94.95,
+        100.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.63,
+        100.225,
+        95.27,
+        101.375
+      ],
+      "frontCourtyardBoundsMm": [
+        94.435,
+        99.825,
+        95.465,
+        101.775
+      ]
+    },
+    {
+      "ref": "R4",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R4",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        93.2,
+        102.8
+      ],
+      "alignedBodyOrigin": [
+        93.2,
+        102.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        92.88,
+        102.225,
+        93.52,
+        103.375
+      ],
+      "frontCourtyardBoundsMm": [
+        92.685,
+        101.825,
+        93.715,
+        103.775
+      ]
+    },
+    {
+      "ref": "R5",
+      "oldId": "tscircuit:RC0402FR-0710KL",
+      "newId": "AURA_PCB:A03_R5",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        92.2,
+        102.05
+      ],
+      "alignedBodyOrigin": [
+        92.2,
+        102.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        91.88,
+        101.475,
+        92.52,
+        102.625
+      ],
+      "frontCourtyardBoundsMm": [
+        91.685,
+        101.075,
+        92.715,
+        103.025
+      ]
+    },
+    {
+      "ref": "R6",
+      "oldId": "tscircuit:RC0402FR-074K7L",
+      "newId": "AURA_PCB:A03_R6",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        94.2,
+        91.55
+      ],
+      "alignedBodyOrigin": [
+        94.2,
+        91.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        93.88,
+        90.975,
+        94.52,
+        92.125
+      ],
+      "frontCourtyardBoundsMm": [
+        93.685,
+        90.575,
+        94.715,
+        92.525
+      ]
+    },
+    {
+      "ref": "R7",
+      "oldId": "tscircuit:RC0402FR-074K7L",
+      "newId": "AURA_PCB:A03_R7",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        96.45,
+        101.4
+      ],
+      "alignedBodyOrigin": [
+        96.45,
+        101.4
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        95.875,
+        101.08,
+        97.025,
+        101.72
+      ],
+      "frontCourtyardBoundsMm": [
+        95.475,
+        100.885,
+        97.425,
+        101.915
+      ]
+    },
+    {
+      "ref": "R8",
+      "oldId": "tscircuit:RC0402FR-07100KL",
+      "newId": "AURA_PCB:A03_R8",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        96.45,
+        100.3
+      ],
+      "alignedBodyOrigin": [
+        96.45,
+        100.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        95.875,
+        99.98,
+        97.025,
+        100.62
+      ],
+      "frontCourtyardBoundsMm": [
+        95.475,
+        99.785,
+        97.425,
+        100.815
+      ]
+    },
+    {
+      "ref": "R9",
+      "oldId": "tscircuit:RC0402FR-07100KL",
+      "newId": "AURA_PCB:A03_R9",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "sourceSha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c",
+      "nativeOrigin": [
+        106.2,
+        92.05
+      ],
+      "alignedBodyOrigin": [
+        106.2,
+        92.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 2,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        105.625,
+        91.73,
+        106.775,
+        92.37
+      ],
+      "frontCourtyardBoundsMm": [
+        105.225,
+        91.535,
+        107.175,
+        92.565
+      ]
+    },
+    {
+      "ref": "SW1",
+      "oldId": "tscircuit:JS202011JCQN",
+      "newId": "AURA_PCB:A03_SW1",
+      "source": "library\\SW_DPDT_CK_JS202011JCQN.kicad_mod",
+      "sourceSha256": "8628bbdd5d2bc38a5be087a7016a9d8aafa62d8350c8fbf71534bf89b496c0e9",
+      "nativeOrigin": [
+        109.5,
+        100.2
+      ],
+      "alignedBodyOrigin": [
+        109.5,
+        100.2
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        107.65,
+        95.65,
+        111.35,
+        104.75
+      ],
+      "frontCourtyardBoundsMm": [
+        107.205,
+        95.405,
+        111.795,
+        104.995
+      ]
+    },
+    {
+      "ref": "SW2",
+      "oldId": "tscircuit:KMR211NGULCLFS",
+      "newId": "AURA_PCB:A03_SW2",
+      "source": "library\\SW_Push_1P1T_NO_CK_KMR2.kicad_mod",
+      "sourceSha256": "615aefe4786313a5f3d6ca898f0df8325cc5ae252d0b97e5c3107c359cdbeed4",
+      "nativeOrigin": [
+        100.0,
+        106.0
+      ],
+      "alignedBodyOrigin": [
+        100.0,
+        106.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 9,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        97.85,
+        104.55,
+        102.15,
+        107.45
+      ],
+      "frontCourtyardBoundsMm": [
+        97.155,
+        104.155,
+        102.845,
+        107.845
+      ]
+    },
+    {
+      "ref": "U1",
+      "oldId": "tscircuit:MDBT50Q-1MV2",
+      "newId": "AURA_PCB:A03_U1",
+      "source": "library\\Raytac_MDBT50Q.kicad_mod",
+      "sourceSha256": "4eabf381cae5f43c2f7c2a1e798ed3b5522117505b66a855398b397ad1b10d2f",
+      "nativeOrigin": [
+        100.0,
+        93.75
+      ],
+      "alignedBodyOrigin": [
+        100.0,
+        92.0
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 10,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.7,
+        84.2,
+        105.3,
+        99.8
+      ],
+      "frontCourtyardBoundsMm": [
+        94.205,
+        83.705,
+        105.795,
+        100.295
+      ]
+    },
+    {
+      "ref": "U2",
+      "oldId": "tscircuit:W25N01GVZEIG",
+      "newId": "AURA_PCB:A03_U2",
+      "source": "library\\WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm.kicad_mod",
+      "sourceSha256": "55da0470975312ab806b435f67399382642ddf2080d56bf5e5d9ec97b082ff8e",
+      "nativeOrigin": [
+        91.45,
+        96.8
+      ],
+      "alignedBodyOrigin": [
+        91.45,
+        96.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        88.4,
+        92.75,
+        94.5,
+        100.85
+      ],
+      "frontCourtyardBoundsMm": [
+        88.155,
+        92.425,
+        94.745,
+        101.175
+      ]
+    },
+    {
+      "ref": "U3",
+      "oldId": "tscircuit:BQ25185DLHR",
+      "newId": "AURA_PCB:A03_U3",
+      "source": "library\\Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.kicad_mod",
+      "sourceSha256": "16f5ec936ca5a33f69e2528b70c55f960b651bfb106b1089e7cc809cf1b27530",
+      "nativeOrigin": [
+        95.95,
+        109.55
+      ],
+      "alignedBodyOrigin": [
+        95.95,
+        109.55
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.8,
+        108.5,
+        97.1,
+        110.6
+      ],
+      "frontCourtyardBoundsMm": [
+        94.175,
+        108.255,
+        97.725,
+        110.845
+      ]
+    },
+    {
+      "ref": "U4",
+      "oldId": "tscircuit:TLV75530PDBVR",
+      "newId": "AURA_PCB:A03_U4",
+      "source": "library\\SOT-23-5.kicad_mod",
+      "sourceSha256": "684a94089f59798a46492dac8dd0242edfa4d915e76a210abdca369e4faa4f9b",
+      "nativeOrigin": [
+        99.95,
+        113.05
+      ],
+      "alignedBodyOrigin": [
+        99.95,
+        113.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 17,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        98.45,
+        112.2,
+        101.45,
+        113.9
+      ],
+      "frontCourtyardBoundsMm": [
+        98.205,
+        110.955,
+        101.695,
+        115.145
+      ]
+    },
+    {
+      "ref": "U5",
+      "oldId": "tscircuit:MAX17048G+T10",
+      "newId": "AURA_PCB:A03_U5",
+      "source": "library\\TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm.kicad_mod",
+      "sourceSha256": "b468dcd32fbe8553d6b4c0e220653f0e49c6811cb679a38540d1b0a3968c602f",
+      "nativeOrigin": [
+        101.7,
+        101.3
+      ],
+      "alignedBodyOrigin": [
+        101.7,
+        101.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        100.65,
+        100.25,
+        102.75,
+        102.35
+      ],
+      "frontCourtyardBoundsMm": [
+        100.405,
+        99.625,
+        102.995,
+        102.975
+      ]
+    },
+    {
+      "ref": "U6",
+      "oldId": "tscircuit:DRV2605LDGSR",
+      "newId": "AURA_PCB:A03_U6",
+      "source": "library\\MSOP-10_3x3mm_P0.5mm.kicad_mod",
+      "sourceSha256": "58ac9b376faa5c5f6aa3f01271756228330de4931d48610c9d14ba9cc70c258d",
+      "nativeOrigin": [
+        104.45,
+        102.8
+      ],
+      "alignedBodyOrigin": [
+        104.45,
+        102.8
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        102.9,
+        101.25,
+        106.0,
+        104.35
+      ],
+      "frontCourtyardBoundsMm": [
+        102.655,
+        99.655,
+        106.245,
+        105.945
+      ]
+    },
+    {
+      "ref": "U7",
+      "oldId": "tscircuit:TLV75530PDBVR",
+      "newId": "AURA_PCB:A03_U7",
+      "source": "library\\SOT-23-5.kicad_mod",
+      "sourceSha256": "684a94089f59798a46492dac8dd0242edfa4d915e76a210abdca369e4faa4f9b",
+      "nativeOrigin": [
+        107.45,
+        94.05
+      ],
+      "alignedBodyOrigin": [
+        107.45,
+        94.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 17,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        106.6,
+        92.55,
+        108.3,
+        95.55
+      ],
+      "frontCourtyardBoundsMm": [
+        105.355,
+        92.305,
+        109.545,
+        95.795
+      ]
+    },
+    {
+      "ref": "U8",
+      "oldId": "tscircuit:SN74LVC2G125DCUR",
+      "newId": "AURA_PCB:A03_U8",
+      "source": "library\\VSSOP-8_2.3x2mm_P0.5mm.kicad_mod",
+      "sourceSha256": "86c45430902f81c684c44234069616fc5b91e77178e928437c9a103bd4bcaf35",
+      "nativeOrigin": [
+        108.2,
+        106.05
+      ],
+      "alignedBodyOrigin": [
+        108.2,
+        106.05
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        107.0,
+        105.0,
+        109.4,
+        107.1
+      ],
+      "frontCourtyardBoundsMm": [
+        105.875,
+        104.755,
+        110.525,
+        107.345
+      ]
+    },
+    {
+      "ref": "U9",
+      "oldId": "tscircuit:TLV6700DDCR",
+      "newId": "AURA_PCB:A03_U9",
+      "source": "library\\SOT-23-6.kicad_mod",
+      "sourceSha256": "ea29040bed73e5dfa455e36f2c9324b0de7782c5a6cf79040b7d885ff766fdb4",
+      "nativeOrigin": [
+        95.45,
+        112.3
+      ],
+      "alignedBodyOrigin": [
+        95.45,
+        112.3
+      ],
+      "sourcePadAlignmentMaxResidualMm": 0.0,
+      "restoredGraphicShapes": 13,
+      "replacedGraphicShapes": 0,
+      "frontCourtyardContours": 1,
+      "backCourtyardContours": 0,
+      "contactContainerPreserved": false,
+      "fabBoundsMm": [
+        94.6,
+        110.8,
+        96.3,
+        113.8
+      ],
+      "frontCourtyardBoundsMm": [
+        93.355,
+        110.555,
+        97.545,
+        114.045
+      ]
+    }
+  ],
+  "padIdentityGeometryAndLayerSetsUnchanged": true,
+  "routedCopperUnchanged": true,
+  "textUpdates": [
+    {
+      "ref": "J2",
+      "oldPosition": [
+        94.0,
+        112.0
+      ],
+      "newPosition": [
+        94.0,
+        112.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J1",
+      "oldPosition": [
+        100.0,
+        119.0
+      ],
+      "newPosition": [
+        100.0,
+        119.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J3",
+      "oldPosition": [
+        101.0,
+        100.0
+      ],
+      "newPosition": [
+        101.0,
+        100.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J4",
+      "oldPosition": [
+        108.0,
+        113.0
+      ],
+      "newPosition": [
+        108.0,
+        113.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "R23",
+      "oldPosition": [
+        92.7,
+        107.8
+      ],
+      "newPosition": [
+        91.5,
+        111.5
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "R22",
+      "oldPosition": [
+        92.7,
+        109.8
+      ],
+      "newPosition": [
+        91.5,
+        113.4
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C8",
+      "oldPosition": [
+        93.7,
+        109.05
+      ],
+      "newPosition": [
+        92.0,
+        109.05
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C17",
+      "oldPosition": [
+        94.45,
+        102.05
+      ],
+      "newPosition": [
+        94.45,
+        101.8
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "R7",
+      "oldPosition": [
+        96.45,
+        102.05
+      ],
+      "newPosition": [
+        96.45,
+        101.4
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C18",
+      "oldPosition": [
+        97.95,
+        112.3
+      ],
+      "newPosition": [
+        97.95,
+        113.3
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C7",
+      "oldPosition": [
+        98.2,
+        109.3
+      ],
+      "newPosition": [
+        98.7,
+        109.85
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "D1",
+      "oldPosition": [
+        100.2,
+        109.05
+      ],
+      "newPosition": [
+        100.8,
+        109.05
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C10",
+      "oldPosition": [
+        100.2,
+        110.55
+      ],
+      "newPosition": [
+        100.9,
+        110.55
+      ],
+      "mirrored": false
+    }
+  ],
+  "courtyardOverlaps": [
+    {
+      "references": [
+        "C10",
+        "C7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C10",
+        "D1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C10",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW1",
+        "U8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C12",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C16",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW1",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C16",
+        "U8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK1",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R3",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R5",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R17",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R6",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "R2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "LED1",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C11",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U5",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R9",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R9",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "LED1",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "LED1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R16"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "SW2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "C6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R8",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "R1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R13",
+        "R15"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R13"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "R13"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R15"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R21"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R14"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C12",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R3",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R10",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R6",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C15",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C6",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "C2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R16"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C7",
+        "D1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C7",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "U3"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U3",
+        "U9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C13",
+        "SW2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C13",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C18",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C18",
+        "U9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C3",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "R4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "R3"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "D2",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R10"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "MK2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C4",
+        "MK2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C4",
+        "R10"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C15",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW2",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    }
+  ],
+  "fabBoundingBoxOverlaps": [],
+  "library": "pcb-snapshot.pretty",
+  "tableUri": "${KIPRJMOD}/../pcb-snapshot.pretty",
+  "limitations": [
+    "No source copper, masks or paste replace the reviewed native pad geometry.",
+    "Four contact footprint containers remain F.Cu as in the converter; their B.Cu lands and mirrored B.Fab/B.CrtYd source geometry are preserved.",
+    "Courtyard and Fab overlaps are reported for correction, never suppressed.",
+    "Final native DRC after application is required; footprints are unique per reference to avoid MPN geometry conflation."
+  ],
+  "outputSha256": "8fd4df090a35c8fd2b003c2110e75cc9635e77a8a17d073b7ecdd1e5b3b08038"
+}

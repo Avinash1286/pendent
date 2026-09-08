@@ -1,103 +1,1172 @@
 {
   "revision": "EVT-A03",
-  "createdAt": "2026-09-07T20:54:23.221Z",
-  "status": "ENGINEERING_REVIEW_ONLY",
+  "createdAt": "2026-09-08T00:20:56.033Z",
+  "status": "CONNECTED_PROTOTYPE_FABRICATION_REVIEW",
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "nativeProject": "native/aura-a03.kicad_pro",
+  "prototypeManufacturingOutputsReleased": true,
+  "bareBoardExportValidated": true,
   "fabricationReady": false,
+  "assemblyApproved": false,
+  "physicalQualification": false,
+  "assemblyCourtyardFindings": 78,
+  "interpretation": "Connected prototype fabrication data; courtyard margins require assembler review. No production, assembled-device or purchasing approval.",
   "board": {
     "widthMm": 24,
     "heightMm": 42,
     "radiusMm": 10,
     "thicknessMm": 0.8,
-    "copperLayers": 4
+    "copperLayers": 4,
+    "stackup": {
+      "template": "JLC04081H-3313",
+      "nominalThicknessMm": 0.8,
+      "materialSumMm": 0.7992,
+      "layersMm": [
+        0.035,
+        0.0994,
+        0.0152,
+        0.5,
+        0.0152,
+        0.0994,
+        0.035
+      ]
+    }
   },
   "logical": {
     "references": 61,
-    "nets": 43,
-    "connectedPinsVerifiedInPlacement": 208
+    "intendedNets": 43,
+    "connectedPins": 208,
+    "intentionalNcPins": 37
   },
   "assembly": {
     "candidateSmtReferences": 57,
     "customPcbFeatures": 4
   },
-  "routing": {
-    "revision": "EVT-A03",
-    "generatedAt": "2026-09-07T20:52:37.702Z",
-    "sessionPath": "output/aura-a03-route-refine.ses",
-    "sessionSha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00",
-    "wirePaths": 545,
-    "vias": 109,
-    "layerWirePaths": {
-      "F.Cu": 461,
-      "In1.Cu": 34,
-      "In2.Cu": 30,
-      "B.Cu": 20
+  "checks": {
+    "unconnectedItems": 0,
+    "schematicParityFindings": 0,
+    "ercErrors": 0,
+    "ercWarnings": 0,
+    "bareBoardDrcErrors": 0,
+    "padSpacing": {
+      "status": "PASS",
+      "differentNetPairs": 25158,
+      "violations": 0,
+      "thresholdMm": 0.15
     },
-    "standaloneDrc": {
-      "path": "output/aura-a03-refine-freerouting-drc.json",
-      "violations": 1,
-      "violationTypes": [
-        "via_dangling"
-      ],
-      "disconnectedNetGroups": 8,
-      "disconnectedNets": [
-        "GND",
-        "SPI_CS_N",
-        "CHG_STAT1",
-        "CHG_STAT2",
-        "I2C_SDA",
-        "CHG_DISABLE",
-        "CHG_VSET",
-        "CHG_ISET"
-      ],
-      "countingNote": "Freerouting DRC groups all members of each disconnected net; this length is not the router airwire count."
-    },
-    "inputMatches": [
-      {
-        "path": "output/aura-placement.kicad_pcb",
-        "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7",
-        "unchanged": true
-      },
-      {
-        "path": "output/aura-a03.dsn",
-        "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2",
-        "unchanged": true
-      },
-      {
-        "path": "output/design-manifest.json",
-        "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147",
-        "unchanged": true
-      }
-    ],
-    "importedIntoKiCad": false,
-    "fabricationReady": false,
-    "limitation": "Standalone session inspection only. Connector import was previously cancelled without reason. No imported-board DRC, return planes, manufacturing release or hardware qualification is established.",
-    "inMemoryRouterFinal": {
-      "path": "output/aura-a03-refine.log",
-      "unroutedConnections": 10,
-      "violations": 4,
-      "reconciliation": "Serialized-session reload has different counts. Preserve both; no independent imported-KiCad check has been performed."
+    "viaApertures": {
+      "status": "PASS_NO_INTERSECTIONS",
+      "vias": 177,
+      "comparisons": 88500,
+      "intersections": 0
     }
   },
-  "schematicErc": {
-    "findings": 968,
-    "types": {
-      "pin_not_connected": 220,
-      "endpoint_off_grid": 494,
-      "lib_symbol_issues": 132,
-      "unconnected_wire_endpoint": 122
-    }
-  },
-  "manufacturingOutputsReleased": false,
+  "historicalEvidence": "Other output/ routing/converter snapshots are superseded; native/ is the current editable authority.",
   "files": [
     {
-      "path": "src/design.ts",
-      "bytes": 11062,
-      "sha256": "9afcd05ff501b06664656701736887073f1e4bbfc920b0b992a6314fcbab40fb"
+      "path": "README.md",
+      "bytes": 4924,
+      "sha256": "095e7b3015fa2381a35913459efb50168e81736b0229b66639474e5fa6d3834e"
+    },
+    {
+      "path": "firmware/capture-controller.test.ts",
+      "bytes": 2435,
+      "sha256": "187e745b021ff3c9d73795c35b5b1ed555e6edb973d28ca9b5ec089e1784422d"
+    },
+    {
+      "path": "firmware/capture-controller.ts",
+      "bytes": 1785,
+      "sha256": "d0925c62d31f0e788662ced59fba5002a582e1aad3189ee9653b70100e663f4a"
+    },
+    {
+      "path": "firmware/contract.md",
+      "bytes": 1802,
+      "sha256": "a06c193e72a347e959b02079fbe03813253272045dac71d0ebef3da92564e6fb"
+    },
+    {
+      "path": "library.pretty/AURA-BATTERY-PADS.kicad_mod",
+      "bytes": 1374,
+      "sha256": "88cb02d2ad0858ce25695d1ef1dbb32dac72739b5ffaa604bdbf9e53f5f93138"
+    },
+    {
+      "path": "library.pretty/AURA-DOCK-PADS.kicad_mod",
+      "bytes": 1372,
+      "sha256": "a2d380918ce7a586bdfca009b2cab603520a9b71f0b4f295a2f4c6d6c8b83abf"
+    },
+    {
+      "path": "library.pretty/AURA-LRA-PADS.kicad_mod",
+      "bytes": 1225,
+      "sha256": "6c6cb788ea7c0c04dcb2928e8ea39271cae78fcef26c460acab0b09633cbe8d3"
+    },
+    {
+      "path": "library.pretty/AURA-SWD-PADS.kicad_mod",
+      "bytes": 1827,
+      "sha256": "0934bf3d08113d1d6c6d1a9c0934e1c73b9ec0db5827f9e98eac119f6a5ac674"
+    },
+    {
+      "path": "library.pretty/AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "bytes": 2045,
+      "sha256": "95986b8f4d1c4bafcdcc9748c31265770d4ea4f3d758c6156864ba7ab48ffd55"
+    },
+    {
+      "path": "library/AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "bytes": 828,
+      "sha256": "935440c9e93a0ca4521fa6ef1704416d393892ecd1eb51196ec9b68495ecdcf8"
+    },
+    {
+      "path": "library/AuraA03.kicad_sym",
+      "bytes": 45324,
+      "sha256": "bd8bd7b640b24d9c95c12c0d89175e1b067c54e791744ffbbc8de951d31190e6"
+    },
+    {
+      "path": "library/C_0402_1005Metric.kicad_mod",
+      "bytes": 2048,
+      "sha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4"
+    },
+    {
+      "path": "library/C_0603_1608Metric.kicad_mod",
+      "bytes": 2040,
+      "sha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857"
+    },
+    {
+      "path": "library/C_0805_2012Metric.kicad_mod",
+      "bytes": 2142,
+      "sha256": "e890bdf55fa18fc6df6878eb1b5251a991e1b93985509175eb269d3d002880b4"
+    },
+    {
+      "path": "library/D_SOD-323.kicad_mod",
+      "bytes": 4704,
+      "sha256": "77ac02f4955d3dc824de14f5874874e0e5b095afdda5aab7c6558c1f6b83297e"
+    },
+    {
+      "path": "library/Knowles_LGA-5_3.5x2.65mm.kicad_mod",
+      "bytes": 6024,
+      "sha256": "be76ce60727e914da14f555470cb70797f7af95bb037ac73455b25eadb8916a8"
+    },
+    {
+      "path": "library/LED_0603_1608Metric.kicad_mod",
+      "bytes": 2593,
+      "sha256": "923edc26771553cc36919e187c64d599da73e11c1f4f3e52c80b86512036faff"
+    },
+    {
+      "path": "library/MSOP-10_3x3mm_P0.5mm.kicad_mod",
+      "bytes": 5126,
+      "sha256": "58ac9b376faa5c5f6aa3f01271756228330de4931d48610c9d14ba9cc70c258d"
+    },
+    {
+      "path": "library/NOTICE.md",
+      "bytes": 2067,
+      "sha256": "83e5aa53d3e8b2666fe7cf7330ce6c91207985c463a3ff498b6f8e8a9a18e916"
+    },
+    {
+      "path": "library/RF_Module.lib",
+      "bytes": 49342,
+      "sha256": "03bf3a163ee407d88128f4bfe65a38cb5435f7c523bff0db0c97941b44a81d82"
+    },
+    {
+      "path": "library/R_0402_1005Metric.kicad_mod",
+      "bytes": 2049,
+      "sha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c"
+    },
+    {
+      "path": "library/Raytac_MDBT50Q.kicad_mod",
+      "bytes": 16146,
+      "sha256": "4eabf381cae5f43c2f7c2a1e798ed3b5522117505b66a855398b397ad1b10d2f"
+    },
+    {
+      "path": "library/SOT-23-5.kicad_mod",
+      "bytes": 5072,
+      "sha256": "684a94089f59798a46492dac8dd0242edfa4d915e76a210abdca369e4faa4f9b"
+    },
+    {
+      "path": "library/SOT-23-6.kicad_mod",
+      "bytes": 4568,
+      "sha256": "ea29040bed73e5dfa455e36f2c9324b0de7782c5a6cf79040b7d885ff766fdb4"
+    },
+    {
+      "path": "library/SOT-23.kicad_mod",
+      "bytes": 4800,
+      "sha256": "7fb2859c6463f3a37966a1a20c31d8bfe7d4e8459d00bb165d5a7488270816c5"
+    },
+    {
+      "path": "library/SW_DPDT_CK_JS202011JCQN.kicad_mod",
+      "bytes": 6490,
+      "sha256": "8628bbdd5d2bc38a5be087a7016a9d8aafa62d8350c8fbf71534bf89b496c0e9"
+    },
+    {
+      "path": "library/SW_Push_1P1T_NO_CK_KMR2.kicad_mod",
+      "bytes": 4388,
+      "sha256": "615aefe4786313a5f3d6ca898f0df8325cc5ae252d0b97e5c3107c359cdbeed4"
+    },
+    {
+      "path": "library/Sensor_Audio.lib",
+      "bytes": 1656,
+      "sha256": "bfa94d6b5452a18472c1998bff941f7c6e3f7fc10dc788196f4fec97b119c365"
+    },
+    {
+      "path": "library/TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm.kicad_mod",
+      "bytes": 4986,
+      "sha256": "b468dcd32fbe8553d6b4c0e220653f0e49c6811cb679a38540d1b0a3968c602f"
+    },
+    {
+      "path": "library/Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.kicad_mod",
+      "bytes": 4903,
+      "sha256": "16f5ec936ca5a33f69e2528b70c55f960b651bfb106b1089e7cc809cf1b27530"
+    },
+    {
+      "path": "library/VSSOP-8_2.3x2mm_P0.5mm.kicad_mod",
+      "bytes": 4343,
+      "sha256": "86c45430902f81c684c44234069616fc5b91e77178e928437c9a103bd4bcaf35"
+    },
+    {
+      "path": "library/WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm.kicad_mod",
+      "bytes": 5488,
+      "sha256": "2c8a7ebec96c94bfe09f97278bbef9523df19950ed268699e9677f0e30a99f04"
+    },
+    {
+      "path": "library/WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm.kicad_mod",
+      "bytes": 5536,
+      "sha256": "55da0470975312ab806b435f67399382642ddf2080d56bf5e5d9ec97b082ff8e"
+    },
+    {
+      "path": "native/README.md",
+      "bytes": 7208,
+      "sha256": "46488cf16012e6213a64a52b734ce5c361e52f82657ea3156ed0273c3cc72ceb"
+    },
+    {
+      "path": "native/a03-audio.kicad_sch",
+      "bytes": 77019,
+      "sha256": "7dada7641c7229498ef784277403a3a2bca26c81286c98c1dfb45a39753317fb"
+    },
+    {
+      "path": "native/a03-charging.kicad_sch",
+      "bytes": 89738,
+      "sha256": "6dba276a11b52a483a1fedc759a839c12c5f88ac958313cb94afb77104e267e8"
+    },
+    {
+      "path": "native/a03-controls.kicad_sch",
+      "bytes": 63685,
+      "sha256": "9da0b82cedb0360e9d0b10672642f61b0842a1d56633e9ce67af2bbd7843af5e"
+    },
+    {
+      "path": "native/a03-radio.kicad_sch",
+      "bytes": 69041,
+      "sha256": "e1f304f42eb50644d5cbe3b4e24d5df2073d0929af6dfaedff7e4856e8ead3eb"
+    },
+    {
+      "path": "native/a03-storage.kicad_sch",
+      "bytes": 31768,
+      "sha256": "aec20832c11d1e486c0ec4ba8f3898d24f03cc643a70a040d098495b34db5a2f"
+    },
+    {
+      "path": "native/assembly/bom.csv",
+      "bytes": 6397,
+      "sha256": "6f0711e7125b74a5230dcda3c4c86d871060d45580602920d123d6010e8728b0"
+    },
+    {
+      "path": "native/assembly/component-centres.csv",
+      "bytes": 6485,
+      "sha256": "37f30df8f8a058a3d2c557f34ad6461f0b2e0e7b6c9b170c34550039421e6d47"
+    },
+    {
+      "path": "native/assembly/native-footprint-origins.csv",
+      "bytes": 3685,
+      "sha256": "462e15a6d815598f45b5533c906852cc224acb1482d39528ecb42be3107fadeb"
+    },
+    {
+      "path": "native/assembly/stencil/aura-a03-B_Paste.gbp",
+      "bytes": 915,
+      "sha256": "d4b805001f3716f4e7bc316c1ec1133088fc653190835ceb7357986624f9eb2b"
+    },
+    {
+      "path": "native/assembly/stencil/aura-a03-F_Paste.gtp",
+      "bytes": 8672,
+      "sha256": "f3ac5723f0599a8d8b7cb48863b3d96f4cce9cf5e28247e98ed65ddd92b98e58"
+    },
+    {
+      "path": "native/assembly/stencil/aura-a03-job.gbrjob",
+      "bytes": 2482,
+      "sha256": "53c5bebf137a9a0aa8250033dcc26eb7f3845cdb4cf3c6a739abd9f3a60b5d09"
+    },
+    {
+      "path": "native/aura-a03.kicad_pcb",
+      "bytes": 1278130,
+      "sha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064"
+    },
+    {
+      "path": "native/aura-a03.kicad_pro",
+      "bytes": 9932,
+      "sha256": "f60b592d8b418acca11c646a1c97b1de3bd65c5bbdd359ef757da01bcf97b656"
+    },
+    {
+      "path": "native/aura-a03.kicad_sch",
+      "bytes": 6076,
+      "sha256": "86ae74de503e042518e84396b72a16099a86e8ec9c70b11bc4441253f4d414a2"
+    },
+    {
+      "path": "native/aura-a03.net.xml",
+      "bytes": 123444,
+      "sha256": "e0bbb3aa1d2ccc28bf5200714d3f200229271acaaec8feea06f5cd30792aa73a"
+    },
+    {
+      "path": "native/fabrication/aura-a03.ipc",
+      "bytes": 33594,
+      "sha256": "7be900de4c5c6ef2c238b1ed00a6f568b2391ad464656c307410b3b33b3f3877"
+    },
+    {
+      "path": "native/fabrication/drills/aura-a03-NPTH-drl_map.pdf",
+      "bytes": 21397,
+      "sha256": "1b7ee944e798eda2f3270a20a03dba819eb5c0d9f3d24906569e6f2d54ef3af4"
+    },
+    {
+      "path": "native/fabrication/drills/aura-a03-NPTH.drl",
+      "bytes": 364,
+      "sha256": "489795aeb51fae16e93b09b17b87847448de322dd53b5cd0697f6dfd84aeb375"
+    },
+    {
+      "path": "native/fabrication/drills/aura-a03-PTH-drl_map.pdf",
+      "bytes": 31977,
+      "sha256": "4cfb81f5d22c9c46a2d746d725ba665338eb55c6cc6ec6c8e16a4370b3c100b1"
+    },
+    {
+      "path": "native/fabrication/drills/aura-a03-PTH.drl",
+      "bytes": 2947,
+      "sha256": "e2737292737f8ff08588bac9ebbe02b9a1cb899e6b1a3ae872a3c0f490a86aa8"
+    },
+    {
+      "path": "native/fabrication/drills/drill-report.txt",
+      "bytes": 769,
+      "sha256": "7b0a090f6c30a1b5bf38bd04a7d933762f07546a6ee0c8e163e44ce8ea065bf5"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-B_Cu.gbl",
+      "bytes": 150689,
+      "sha256": "b193e72173ef94962f04d8d90622cbf0a5276a800cd5ed2154a3ff1c1b4062bd"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-B_Mask.gbs",
+      "bytes": 1031,
+      "sha256": "579e45403ccf57e5921e366b3c3a830f7d9cc8d27805344f39102f005adac88b"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-B_Silkscreen.gbo",
+      "bytes": 1043,
+      "sha256": "22ebd1f4238d03f391ba341c9730d30d11d5934740ba354dba3584462214ccff"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-Edge_Cuts.gm1",
+      "bytes": 31549,
+      "sha256": "d7e51d018176d549e0139f4f2815f323ae8833c6163cdab5a740e76f919e48ae"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-F_Cu.gtl",
+      "bytes": 259229,
+      "sha256": "6fa8bc7223fd66f728c5282cbc70e3e0a061d3492ce4575f1dcfc4aa60389dd1"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-F_Mask.gts",
+      "bytes": 9444,
+      "sha256": "7c1bb68fb272362b14fb8ea7cff89c8bcd1ecae65dc1d0c82353ae47208291ca"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-F_Silkscreen.gto",
+      "bytes": 14328,
+      "sha256": "f371a895541cbe6557fa096114b7c6f13e76ce8554055a31d82273946ba46575"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-In1_Cu.g1",
+      "bytes": 137673,
+      "sha256": "9fa5a8a8cf25dd1b0f6181242ba1b842ee92c9069640f1bd29a7bb9d9aa7f538"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-In2_Cu.g2",
+      "bytes": 140308,
+      "sha256": "3186a9102e3c6fda0c3b60b39b639e678901e0875fb61015d00116e9fdc312ba"
+    },
+    {
+      "path": "native/fabrication/gerbers/aura-a03-job.gbrjob",
+      "bytes": 3364,
+      "sha256": "0ec89469efb4e58f23704fbbef5ab10e9ba8ca258e2811917dd38cc1925180f0"
+    },
+    {
+      "path": "native/fp-lib-table",
+      "bytes": 390,
+      "sha256": "c1ef4ea161f7d792b2f32bdd19687d21f1dbaeb2561ae71267bfad251e624fcb"
+    },
+    {
+      "path": "native/project-linkage.json",
+      "bytes": 6297,
+      "sha256": "b11cda889b3fbb051ca20e7d63d8b88aa0795859f34f9e220b8cad70a13836d3"
+    },
+    {
+      "path": "native/review/board-layers.pdf",
+      "bytes": 587245,
+      "sha256": "50bb2e58dbab8bd6cf9cfe80e57639a584be8948a243730f37fb88f7eec0dec6"
+    },
+    {
+      "path": "native/review/drc.json",
+      "bytes": 60505,
+      "sha256": "b512ea20202e4734e6bd2a9306cafee5359a523bebb04810c13149c481d6c3d3"
+    },
+    {
+      "path": "native/review/erc.json",
+      "bytes": 2057,
+      "sha256": "1fe20c13b7c59a522c5ce6e4f4131a63e0d691454196cc99624367e5e86e8f2d"
+    },
+    {
+      "path": "native/review/manufacturing-checks.json",
+      "bytes": 19404,
+      "sha256": "e3552cf55ae35e9ce3904eba4a747d00e796bd37331af22ac7e4c033be3f9199"
+    },
+    {
+      "path": "native/review/native-smd-pad-spacing-audit.json",
+      "bytes": 1378978,
+      "sha256": "8decdd6355f9ff7472fc19fa7810b1ff37abf8e1f9e1e5ca282d99e65542c8e6"
+    },
+    {
+      "path": "native/review/native-via-aperture-audit.json",
+      "bytes": 97447,
+      "sha256": "325320e764592ceee1e88a60310f07193e7166b1026ae5349f03b89458d323d1"
+    },
+    {
+      "path": "native/review/schematic.pdf",
+      "bytes": 177432,
+      "sha256": "e3259d3d46b63a34289ed2d3f5dd0cb56951bdd4131fe3d54aa97bba37fbfd82"
+    },
+    {
+      "path": "native/sym-lib-table",
+      "bytes": 192,
+      "sha256": "7e503587818ee5a3d35a17abecdc129fb6234b2883facd36f648c000f10b9a08"
+    },
+    {
+      "path": "output/a03-audio.kicad_sch",
+      "bytes": 73952,
+      "sha256": "4d7b4f147f6851ba71c54c35dd160c5a02f289b6849785a1c909a74043c57357"
+    },
+    {
+      "path": "output/a03-charging.kicad_sch",
+      "bytes": 86128,
+      "sha256": "4352ef00c3004533d16d0e4bc75c4612fb93e5364501ea106b4d7498d01dba59"
+    },
+    {
+      "path": "output/a03-controls.kicad_sch",
+      "bytes": 61110,
+      "sha256": "33e73976d14bcad495371cc2b507c1519b39abd94403715bf04b9aea41d25565"
+    },
+    {
+      "path": "output/a03-radio.kicad_sch",
+      "bytes": 66103,
+      "sha256": "ed69d2212bf932009dfd32fa43a803a0454ded6dfd8049d3a4d7d450f4b64a9e"
+    },
+    {
+      "path": "output/a03-storage.kicad_sch",
+      "bytes": 30507,
+      "sha256": "04391dd63c202da16f5d33dc82ae432584e340bc5b6e951106020045331914cf"
+    },
+    {
+      "path": "output/active-build.json",
+      "bytes": 103,
+      "sha256": "854b58d7cf6ccd6c3201019495af494e998f55ca2e6794bbbb3435061c1f7354"
+    },
+    {
+      "path": "output/assembly-bom.csv",
+      "bytes": 6861,
+      "sha256": "30f9ddb4f2dc1e2a54ca872a06a515272600655a64e8f35dc687c5cd75064043"
+    },
+    {
+      "path": "output/aura-a03-copper-cleanup.json",
+      "bytes": 9796,
+      "sha256": "d647b75ded869129f41ec3fd39eb7f824911907f554f1c742821db11a6d96f4f"
+    },
+    {
+      "path": "output/aura-a03-electrical.kicad_pro",
+      "bytes": 147,
+      "sha256": "12e849e6dfbf49bef6889c618d06864c3067b0836d3196c89275d4a80db90b56"
+    },
+    {
+      "path": "output/aura-a03-electrical.kicad_sch",
+      "bytes": 5820,
+      "sha256": "d5612a5e8c405a57025bebc0f212c5fe805f4ef0308c672c3f32d2d2c931c4ca"
+    },
+    {
+      "path": "output/aura-a03-native-erc.json",
+      "bytes": 2046,
+      "sha256": "fda27040848d28b054cbd2a04de18be8cf449efec53e781d72ebff6142b297a9"
+    },
+    {
+      "path": "output/aura-a03-native-routing.kicad_pcb",
+      "bytes": 1239592,
+      "sha256": "8fd4df090a35c8fd2b003c2110e75cc9635e77a8a17d073b7ecdd1e5b3b08038"
+    },
+    {
+      "path": "output/aura-a03-native-routing.kicad_pro",
+      "bytes": 9858,
+      "sha256": "e45384fd9000af23ba6714feee7ec32acb0c8ac29e26ae2bb5588d26f7f51849"
+    },
+    {
+      "path": "output/aura-a03-native-schematic.pdf",
+      "bytes": 178393,
+      "sha256": "a29099d21785809b645c5cb73a26c31e089dc3dadde93c336f7803b68ba08337"
+    },
+    {
+      "path": "output/aura-a03-native.net.xml",
+      "bytes": 125340,
+      "sha256": "90b8906cc122296a896cf51f32d1a5e4eaad2df1a437d2eef17864f1d9c80423"
+    },
+    {
+      "path": "output/aura-a03-restored-final-drc.json",
+      "bytes": 60498,
+      "sha256": "d4c5199895e33f37d6d87a3512fdbbf66fcba62c724aa94d13813778533ee266"
+    },
+    {
+      "path": "output/aura-placement.circuit.json",
+      "bytes": 1196941,
+      "sha256": "76e45a58f66bd5bbb299944746e820b34a928deb4f3884cae08af28cf0eb1ff6"
+    },
+    {
+      "path": "output/aura-placement.pcb.svg",
+      "bytes": 184400,
+      "sha256": "3259138fde1667c94dc1810a713a0d873d3bbe1ae7fee45a217972b5f75d17b8"
+    },
+    {
+      "path": "output/cpl-top.csv",
+      "bytes": 8975,
+      "sha256": "533850acc79aea654062a06e39d7aea5a7c0c0985661323d8a6b31db478a4010"
+    },
+    {
+      "path": "output/design-manifest.json",
+      "bytes": 29869,
+      "sha256": "ce3ebb9c34bdd5dd4fdf3fa0c159dce3d0be271d43e33f25c382057f9e3c5190"
+    },
+    {
+      "path": "output/external-bom.csv",
+      "bytes": 673,
+      "sha256": "3210a5ada13e8c2c24e826d43c8d7b538e1a8b6f4069e0c48b9669fec0f43e9e"
+    },
+    {
+      "path": "output/fp-lib-table",
+      "bytes": 390,
+      "sha256": "c1ef4ea161f7d792b2f32bdd19687d21f1dbaeb2561ae71267bfad251e624fcb"
+    },
+    {
+      "path": "output/logical-checks.json",
+      "bytes": 242,
+      "sha256": "e3900640a1cbf3d380ceb5d858e7744df43b534f0437c5da00ed1b9d7dead6ff"
+    },
+    {
+      "path": "output/logical-netlist.json",
+      "bytes": 3467,
+      "sha256": "6762a6991074d30911bb6300366aa94157f5d84bb689d831e658c0f861aaaacf"
+    },
+    {
+      "path": "output/native-footprint-alignment-audit.json",
+      "bytes": 19924,
+      "sha256": "28d1bf0157a0d6dc7b19ca7ce8946f6b0a1dc5ce5d5e682b08ce604a40a66cc3"
+    },
+    {
+      "path": "output/native-footprint-library-restoration.json",
+      "bytes": 63171,
+      "sha256": "fba72e7ef4d13cb1e28ef6d7996808510210b11a04bcbed2f5ab89f3fe400d92"
+    },
+    {
+      "path": "output/native-schematic-format-checks.json",
+      "bytes": 634,
+      "sha256": "aa8c2a8e092cdb01a70d183eff7e040e69a1395270bd07ccdc6edd3f2e06397c"
+    },
+    {
+      "path": "output/native-schematic-parity.json",
+      "bytes": 18751,
+      "sha256": "bd60c2d1bd03edce6f3f59c2ab85721ea3f0ea42a0b77c883f7dacbb9c99856e"
+    },
+    {
+      "path": "output/native-sheetfile-layout-checks.json",
+      "bytes": 5783,
+      "sha256": "1ba21c20278698ff6c19ebe1811ba17d7182b008966e1d6db87c35993eee78bf"
+    },
+    {
+      "path": "output/native-smd-pad-spacing-audit.json",
+      "bytes": 1378978,
+      "sha256": "8decdd6355f9ff7472fc19fa7810b1ff37abf8e1f9e1e5ca282d99e65542c8e6"
+    },
+    {
+      "path": "output/native-via-aperture-audit.json",
+      "bytes": 97447,
+      "sha256": "325320e764592ceee1e88a60310f07193e7166b1026ae5349f03b89458d323d1"
+    },
+    {
+      "path": "output/placement.csv",
+      "bytes": 1930,
+      "sha256": "37293e2d531e61b96bed24c01b9322972bc815c3ea1ddfb3bca48c02582aa86a"
+    },
+    {
+      "path": "output/sym-lib-table",
+      "bytes": 192,
+      "sha256": "7e503587818ee5a3d35a17abecdc129fb6234b2883facd36f648c000f10b9a08"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 183430,
+      "sha256": "9efd2d638022bbd9a19b86f5b3de26b92bc6025705e2e5485f911b892ad1c131"
+    },
+    {
+      "path": "package.json",
+      "bytes": 886,
+      "sha256": "2a7bd9588d8c2ae2e10991594f45981a6edd9641d97af418d546095482d7b78c"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C1.kicad_mod",
+      "bytes": 1936,
+      "sha256": "c13b48555babb1ef92faed594b94859d108d8062ef4cbb2c0a0b88a49f0a923a"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C10.kicad_mod",
+      "bytes": 1935,
+      "sha256": "0f3ce1150a8d2af595df29aa4cf32f4a3d2e766be87e117a6a2f625b4457b6ee"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C11.kicad_mod",
+      "bytes": 1937,
+      "sha256": "b41e76478c43f7bd0e6bb2fbd85b1681ff67e23604f1f0ad653d3ec545bfb4fa"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C12.kicad_mod",
+      "bytes": 1935,
+      "sha256": "2dcdf54402b7eefcab0dfb6c47caa4c8ab3c4bdf945620344d6461f30d7ee7a2"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C13.kicad_mod",
+      "bytes": 1917,
+      "sha256": "359c0b4b063a3af663ddc3933635434caf5af09bc1af628de1610a7b0b3ab4c0"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C14.kicad_mod",
+      "bytes": 1928,
+      "sha256": "eda228b90716f330da06b9628ef01d51bee3d70dc2105cce8caebf18f8dd5d16"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C15.kicad_mod",
+      "bytes": 1935,
+      "sha256": "7144836e296a45bf49eb977bcae989a9c1c1e924a024855ee6feb02a566a4311"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C16.kicad_mod",
+      "bytes": 1937,
+      "sha256": "bcadae27c1f4621f6a5189c58abb88b290ae81620152e860560927b11b68ad77"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C17.kicad_mod",
+      "bytes": 1919,
+      "sha256": "d975584d04faa5efc38e160ae6434068b87e3cae58f092df11105921509a0a0f"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C18.kicad_mod",
+      "bytes": 1937,
+      "sha256": "d0d4852ec9c42e040383769c6878778962cdaf60c8f6c378b88bdf35d13b67c2"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C2.kicad_mod",
+      "bytes": 1934,
+      "sha256": "16ccbad6b40254e30b936e620dabd4e99f88e9d1197bf0e301f46594d9c25da9"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C3.kicad_mod",
+      "bytes": 2054,
+      "sha256": "f7f162158810fb33281357282210962f2bf352a51ad0ac2810d6640c1728ea8f"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C4.kicad_mod",
+      "bytes": 2054,
+      "sha256": "852a896422748ece488ef8a0d29840684cebce60a94acd69b8e35c4b03c94cfb"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C5.kicad_mod",
+      "bytes": 1918,
+      "sha256": "bed1ab9955fd803991eea3c852ecbb85681c62588bfd9986bc14a30f3e535ee7"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C6.kicad_mod",
+      "bytes": 1934,
+      "sha256": "392f8b3a3b384cf5379415bff3074e0ca5ef6588124cf1b285c30d153485bd03"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C7.kicad_mod",
+      "bytes": 1927,
+      "sha256": "adb2a9474a02e0d81719a851c95ab82897cecee0525ec6465c11d8dc7b79b50e"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C8.kicad_mod",
+      "bytes": 1934,
+      "sha256": "d8846a0b64f419c98ebf7e8bb4805fcc9fef53acb09689e85a723482632e067c"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_C9.kicad_mod",
+      "bytes": 1926,
+      "sha256": "2927bb75822bd2e120dd6a3560a20a5bdba18f10bb5a9e4938fe0284f5f355b5"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_D1.kicad_mod",
+      "bytes": 3908,
+      "sha256": "42b99bba446dc32ebc755d2b12bf072177305fa2bbab0a83397b940fe3bd5458"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_D2.kicad_mod",
+      "bytes": 3950,
+      "sha256": "372e88f930e2e1ee9dd8a740dcbb1d3a0dcba802a8a1e4cdba63b7de5be4cf76"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_J1.kicad_mod",
+      "bytes": 1886,
+      "sha256": "114a36f3ee68f2a5b9de78fddca7785a852bccb1ae7494234fcc262453306a2b"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_J2.kicad_mod",
+      "bytes": 1865,
+      "sha256": "647a8df929c4dd97eb82fe039d37558b66d5043dab64d6ee59029b09b85b5cab"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_J3.kicad_mod",
+      "bytes": 2336,
+      "sha256": "93a510fb89ef3c31d8dbe9b6f210ee74feb5f86d1a29e0aff9575ee887be7261"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_J4.kicad_mod",
+      "bytes": 1702,
+      "sha256": "68c9aac3e4c2f6184d928e991a93449958c6402d5607f0fd78ae0fe4e0cf8e2d"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_LED1.kicad_mod",
+      "bytes": 2608,
+      "sha256": "5c51c2faa61a6616f1d1a44529fdc6d383fa1c194ee554f58b442922109f9021"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_MK1.kicad_mod",
+      "bytes": 4845,
+      "sha256": "d8303b32776ccadce1257e12174195653a7ed76e8c28cbd23f86d8e96b48061a"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_MK2.kicad_mod",
+      "bytes": 4825,
+      "sha256": "2c8bd0d33a175cbc21696505991ccb7df5afe80aa385a4fce717f344beeb702f"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_Q1.kicad_mod",
+      "bytes": 4745,
+      "sha256": "8346136780bd9b63ff8c6e5c7b1bd5a30a0f915829f009bf1ee58f219ed247da"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R1.kicad_mod",
+      "bytes": 1940,
+      "sha256": "e43cd0a2e1ef6120c1ef5a343a323f779b6b8f0570bcef76b352a2747483e898"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R10.kicad_mod",
+      "bytes": 1941,
+      "sha256": "25ab86100b059f249b7f3249fcaad4ebf42ed348b713894bce754b673fb9d7e7"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R11.kicad_mod",
+      "bytes": 1920,
+      "sha256": "b6fd2a702131222617bbd5851be51ffc23b457aabd6e9625fea767ebbe82a967"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R13.kicad_mod",
+      "bytes": 1920,
+      "sha256": "3ceae107c0b688f8542e2f2e4c6ab3643dbc05b86c80ffe8d803fc13452d01bf"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R14.kicad_mod",
+      "bytes": 1919,
+      "sha256": "3bec3cab31a884524da74d05b5ad08f79c6ebab422814e2eea86b29ccb6e3895"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R15.kicad_mod",
+      "bytes": 1934,
+      "sha256": "067dae9cfe2a13b8f94faf66819e6fd562347c9f54938fbc1009ab63de826167"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R16.kicad_mod",
+      "bytes": 1902,
+      "sha256": "e303f5103a7b077991731d94781cd439b088f7b263578ad766d198a2d22d8453"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R17.kicad_mod",
+      "bytes": 1920,
+      "sha256": "a79d1f3bede0739f2935a3a2022aaedb82ce2922854ca2b9ebc83961ca17789d"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R18.kicad_mod",
+      "bytes": 1920,
+      "sha256": "5daa8d81a07e37c27ba90e047ad6c64a000c136c55de5d44ab75421ed1fdd864"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R19.kicad_mod",
+      "bytes": 1913,
+      "sha256": "165e8f1127762476554a41946bec3dd297c177288fc152c4ec121138609a3e18"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R2.kicad_mod",
+      "bytes": 1939,
+      "sha256": "57ae6ce569ca55c8331f9ab8ddc2abce7a380c56b83b42d4abd6033d32b00d2c"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R20.kicad_mod",
+      "bytes": 1920,
+      "sha256": "47181c640c7f8119be621d038b3ecfae569883353295f241f9341e77b2ab2653"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R21.kicad_mod",
+      "bytes": 1920,
+      "sha256": "f51de0155d84152d4f2bc902715f4c7a2e2a2f8d7828cdd23a5c8b89a28ff9b3"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R22.kicad_mod",
+      "bytes": 1920,
+      "sha256": "fce36695ec703a552c1c71df82450090d84360be9c6150ee92a9b5032b5de8e3"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R23.kicad_mod",
+      "bytes": 1913,
+      "sha256": "709f3653fb094ec523ca9b82ee4a25161134ab2c64ab9e70ad09bd037f293b0a"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R3.kicad_mod",
+      "bytes": 1932,
+      "sha256": "8783fe9e8f763eda20e95e687352645f6a3d8e291ac9320849b1949a013340aa"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R4.kicad_mod",
+      "bytes": 1912,
+      "sha256": "44708bfed77a4f360c9495e9b8de73269d56fd9aa7d1c1e94ad40693557497c9"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R5.kicad_mod",
+      "bytes": 1919,
+      "sha256": "cd21aaf26054344d9d1af374e2e660b708e0b3ffcbcd983235d36c89cc2c88dd"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R6.kicad_mod",
+      "bytes": 1912,
+      "sha256": "fbbd4322b5e61961b50bc159617202ca1ff20b57878c7746347d37813dd749b3"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R7.kicad_mod",
+      "bytes": 1919,
+      "sha256": "3355be1c87b17687913e48f799f0dc9c354e7af75c0179cfdcf730a3f41ff6db"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R8.kicad_mod",
+      "bytes": 1920,
+      "sha256": "fcb63ba805cb057a83ad6d3f9add88140af9eda3c4fc5079ff37046789902177"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_R9.kicad_mod",
+      "bytes": 1940,
+      "sha256": "e31ab8bcaa78f47eb9b090f16592c8e058e5831d19473eda7db9cd87b6dd260e"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_SW1.kicad_mod",
+      "bytes": 4419,
+      "sha256": "810441b7b69f2addca4eaf5175cb1f7434515931c3b818eecc6fb09e39a42cfd"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_SW2.kicad_mod",
+      "bytes": 3399,
+      "sha256": "78a5114dec242fb93a7d621aca41d3f7da75b9d08c0bfd25be769b9cf6e2bb66"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U1.kicad_mod",
+      "bytes": 12023,
+      "sha256": "c74081c4dfb58ab2ac0692469c12e15e50461a04b8a1497d9348bd59bb4ca706"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U2.kicad_mod",
+      "bytes": 4990,
+      "sha256": "ca4d42f20f9ad32996e91b3eaa6f311d7496805690aecca003c59dab3b7e6e2a"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U3.kicad_mod",
+      "bytes": 5222,
+      "sha256": "dd168ca3f84370a8448bee2feabb798f1bf4f7f338d85ce97df8d30ea54c27f7"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U4.kicad_mod",
+      "bytes": 5076,
+      "sha256": "20b93fac41c11d78323f28f27b0250865dcc903957884b700d4b280f8a6428d2"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U5.kicad_mod",
+      "bytes": 5059,
+      "sha256": "6a26c3a90eacdc4e1424f134125e6d6929cc552ed5b4874cc8717e07d779b370"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U6.kicad_mod",
+      "bytes": 5125,
+      "sha256": "efb837417b7c1d899f7fca90689a165e1d9af2da2e322a951c96a8d24c84081c"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U7.kicad_mod",
+      "bytes": 5076,
+      "sha256": "e03837110c0c00c0215b2c91df19a4247bc62427e70a6ba57e7e28e4a25cdad7"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U8.kicad_mod",
+      "bytes": 4820,
+      "sha256": "4bbf217fe011edeb27d20821d5ab1ec1c076f0edecd5dc9a5838507b0a8ac307"
+    },
+    {
+      "path": "pcb-snapshot.pretty/A03_U9.kicad_mod",
+      "bytes": 4508,
+      "sha256": "d280f589f79760909f579c690cbaa56323c0e070d183f3dcf4711a6fc3584d85"
+    },
+    {
+      "path": "requirements-native.txt",
+      "bytes": 120,
+      "sha256": "ad1f90bd06f69b3cbd253c8e09a93884686946a6b5a11100795226011f574112"
+    },
+    {
+      "path": "scripts/add-ground-system.py",
+      "bytes": 4473,
+      "sha256": "9bb8b0a96543c4e14191b2c17ca14217276dfd5537971c761f6fdf047fdd4a1e"
+    },
+    {
+      "path": "scripts/assembly-package.mjs",
+      "bytes": 2030,
+      "sha256": "8e294fdb8f1bc55e306f1682ddc3d1eac83ba5550c18c6363bf0d8a268d696cd"
+    },
+    {
+      "path": "scripts/audit-native-pad-spacing.py",
+      "bytes": 11863,
+      "sha256": "6d31b0d8a3e1b54e7c10714fa46d5ef1abf8af0e16234880c6d9616998ddbd01"
+    },
+    {
+      "path": "scripts/audit-native-via-apertures.py",
+      "bytes": 17260,
+      "sha256": "b5ec5d167cb4b397552b972ef1923d549488faa044ee88ab171dcbea52109a93"
+    },
+    {
+      "path": "scripts/build.tsx",
+      "bytes": 2453,
+      "sha256": "bca6382ccc48a42db1817a5dcaf2d3e864c85b33c65564e380f1c67d01cb089a"
+    },
+    {
+      "path": "scripts/charger-fanout.py",
+      "bytes": 2426,
+      "sha256": "0354aabe32416f5db44ed956bb3aa618d379e9f0bbf0c0416729edb6baf1d9ff"
+    },
+    {
+      "path": "scripts/cleanup-native-copper.py",
+      "bytes": 2134,
+      "sha256": "583f4a2c58595c45f068e8241c8057d504a9a19da709b0538cc35d3391222fab"
+    },
+    {
+      "path": "scripts/clear-fanout-conflicts.py",
+      "bytes": 1243,
+      "sha256": "7a7cfbfb4e2eb10d102807b874ae7360c6caba0d1cd5bd1df0e52a8b32eefb90"
+    },
+    {
+      "path": "scripts/complete-native-routing.py",
+      "bytes": 13116,
+      "sha256": "6fdf211eabe98729cfeae5e46c3d7b0604da6b050c3cddd2024aef89a39d88d2"
+    },
+    {
+      "path": "scripts/connect-ground-islands.py",
+      "bytes": 3541,
+      "sha256": "17ff73faee902654205334e653f673fe3d5c3c36a67334b4419c96049aeeed6e"
+    },
+    {
+      "path": "scripts/export-native-package.py",
+      "bytes": 10307,
+      "sha256": "2ed44d199f6cd1039c87339e87727115e336c2f25e3d7b312a76f5e2c36a8631"
+    },
+    {
+      "path": "scripts/export.mjs",
+      "bytes": 1576,
+      "sha256": "ca72f2f7c6035f4d998025413f7318d5b36040516e38905894e6cb338c754797"
+    },
+    {
+      "path": "scripts/final-ground-cap-orientation.py",
+      "bytes": 959,
+      "sha256": "73465b8e6d45466ddfbf2d437193a673dc998fe06cdbaa713d67a9b7d4ce3b3a"
+    },
+    {
+      "path": "scripts/final-pullup-escape.py",
+      "bytes": 2695,
+      "sha256": "46894bab5025a067b866c20f5c78a16ca40a1af46b8495b7246f26904d2bd705"
+    },
+    {
+      "path": "scripts/finish-ground-and-rf.py",
+      "bytes": 1198,
+      "sha256": "ce63473704a46473e982312013cc4ac8754886a93bc5708ce98e0558145bf955"
+    },
+    {
+      "path": "scripts/finish-native-cleanup-candidate.py",
+      "bytes": 4609,
+      "sha256": "edc73146f5c781e90600a9c5091cb142955a002b67da83a04335fa8d31872c05"
+    },
+    {
+      "path": "scripts/fix-schematic-sheetfile-labels.py",
+      "bytes": 2898,
+      "sha256": "b0dbae28147892a6b003584940b8a52cc77546aa623c335c78900757ae7722b7"
+    },
+    {
+      "path": "scripts/format-native-schematic.mjs",
+      "bytes": 8082,
+      "sha256": "d88efe636fa4f2924516edea562616b4a5272748665da1ddd658600b8e5a78d2"
+    },
+    {
+      "path": "scripts/import-native-session.py",
+      "bytes": 2029,
+      "sha256": "e867413ba17e5e686d7f499d0622802b18a70f0ec722504aa477e75791cb10dc"
+    },
+    {
+      "path": "scripts/inspect-native-footprint-alignment.py",
+      "bytes": 2790,
+      "sha256": "ffef509db49328b8754fc2101853ec95f5e4f61bf9997331f20cd2d2dd67dca8"
+    },
+    {
+      "path": "scripts/inspect-routing.mjs",
+      "bytes": 6450,
+      "sha256": "543058c9d249c8f8cf0e97b305e4388811d76fdb79ca6902f14fc3969bb9dc3b"
+    },
+    {
+      "path": "scripts/manifest.ts",
+      "bytes": 163,
+      "sha256": "dcd5cce030005d91c29df81e24f77480aeeb4405964921e078d0bbf232a07637"
+    },
+    {
+      "path": "scripts/native-symbol-specs.json",
+      "bytes": 96538,
+      "sha256": "7d51728af8bae8e363ef04ec919696272c73d7e1db239e11c7080f4d4750eebb"
+    },
+    {
+      "path": "scripts/normalize-export.mjs",
+      "bytes": 1651,
+      "sha256": "8c64d9d4fbfa077d1e1063803879c6ab01de1ab3ffcde146adab5e6416aac4df"
+    },
+    {
+      "path": "scripts/overview.mjs",
+      "bytes": 3676,
+      "sha256": "b5115cda195fbfc14e1b44dd488ef84473def7f307c8a5c548e0f28a66c34d70"
+    },
+    {
+      "path": "scripts/package-native-archive.py",
+      "bytes": 9064,
+      "sha256": "6b31c252284dbaeb4fc9ab1886561df305cb536a412271bcc662c625f2350b60"
+    },
+    {
+      "path": "scripts/package-status.mjs",
+      "bytes": 5944,
+      "sha256": "791029e9d31eef5a9f80fbd45019aee60369a97d93bc839b2d1fd278e2fa47be"
+    },
+    {
+      "path": "scripts/pair-native-project.py",
+      "bytes": 10295,
+      "sha256": "4d0d3ed0a135999b3ec447eb399359f01b90e81fa23c334ec98501128de6c88d"
+    },
+    {
+      "path": "scripts/place.mjs",
+      "bytes": 3946,
+      "sha256": "88ca35313c3ce2792308cf1ab949a155e2b03d34f6d7cb9e27e705308a9b2a8a"
+    },
+    {
+      "path": "scripts/prepare-library.mjs",
+      "bytes": 2348,
+      "sha256": "59c76e665125364672d52606c79bf2938e0bcbd6407046e6f6efbc9512e7dc25"
+    },
+    {
+      "path": "scripts/prepare-native-dangling-cleanup.py",
+      "bytes": 14909,
+      "sha256": "fa5899bd0fd8cd3f8862387a81e92d418a0933a0b9d6ced21f1422590b35469d"
+    },
+    {
+      "path": "scripts/prioritize-charger-status.py",
+      "bytes": 781,
+      "sha256": "7198c891795a66df1fa8726d90d2223c2100a7bee3a7c0a48094c61945621c07"
+    },
+    {
+      "path": "scripts/project-rules.mjs",
+      "bytes": 1496,
+      "sha256": "91bddfe1e76fce2db7faa57749d11933c66817aec0f8a4b2ef29ce516a70e714"
+    },
+    {
+      "path": "scripts/promote-native-cleanup-candidate.py",
+      "bytes": 4526,
+      "sha256": "6287c4f6d31ecdc16024bad8fe7f3aa5225a3b05f0858c1095560223893f3173"
+    },
+    {
+      "path": "scripts/refine-charger-placement.py",
+      "bytes": 894,
+      "sha256": "e4b39860cf7bcc3d8612a6e04c35faaf4d836f374eeee86e849542fd692dab8e"
+    },
+    {
+      "path": "scripts/remove-displaced-copper.py",
+      "bytes": 1230,
+      "sha256": "831a7b1a1ddb204b83d571f31dcc9f64c7353d28b2019a0500577550921a14c4"
+    },
+    {
+      "path": "scripts/remove-orphan-copper.py",
+      "bytes": 1648,
+      "sha256": "ba65a1e8dfaaf454cd294b70de393c5db2c3a9fa8d4cd166371d2cf1b64a3da7"
+    },
+    {
+      "path": "scripts/restore-mic-land.mjs",
+      "bytes": 2226,
+      "sha256": "2b859f1699153da30a16829fbce230107293a9c17bdc038b839ba4e08577a1fa"
+    },
+    {
+      "path": "scripts/restore-native-footprint-library.py",
+      "bytes": 11779,
+      "sha256": "e83d473e6d86a2fbbb68de38764a55f2c3c0589c53e885d5b03fad8559f697e5"
+    },
+    {
+      "path": "scripts/route-freerouting.ps1",
+      "bytes": 1152,
+      "sha256": "3717cdbda5ce61a644398fcc31d80b6120b17f2073954b9459056c23c5881b14"
+    },
+    {
+      "path": "scripts/sync-refined-placement.mjs",
+      "bytes": 1090,
+      "sha256": "159f8b05898087cd71ff3dc025249a198e3f13b66053214c0b1a3be524231ba6"
+    },
+    {
+      "path": "scripts/trim-native-dangling-overhangs.py",
+      "bytes": 6802,
+      "sha256": "c195af553a935cd93704372a0e33ee8a74d309560a48ea179527f3a518b1a342"
+    },
+    {
+      "path": "scripts/verify-export.mjs",
+      "bytes": 3037,
+      "sha256": "802d3e877df5f349c63cd3a8822d4bf851fb2b094115f6944af4436aa4c1527f"
+    },
+    {
+      "path": "scripts/verify-native-schematic.ps1",
+      "bytes": 6185,
+      "sha256": "b62dc93ed548fd433e3086c18178dbe53c5994c7964418d780de735d673b1091"
+    },
+    {
+      "path": "scripts/verify.mjs",
+      "bytes": 2308,
+      "sha256": "a7b9df7b4b62b5bac59c894129f43d986f6ad12d6644b7045113ae47940725c2"
+    },
+    {
+      "path": "sources/README.md",
+      "bytes": 6414,
+      "sha256": "c050c8348f17d1c0f1b6dca04d65323da89fa4773aa6f18cd2fca2309b624dbb"
+    },
+    {
+      "path": "sources/jlc-4layer-08mm-stackups.json",
+      "bytes": 25827,
+      "sha256": "371081c50a980ffda1480508906813f195b6c4ec3b04d025f403f5945fc46ce0"
     },
     {
       "path": "src/AuraPendant.tsx",
       "bytes": 4382,
-      "sha256": "70c8a23c27600145bb78e698909038bf37fea638d89d73be575e441ff855a869"
+      "sha256": "a859c1606e9493331442531dec4191cb2346490e01375a0c291dd7325aa1cdb8"
+    },
+    {
+      "path": "src/design.ts",
+      "bytes": 11062,
+      "sha256": "9afcd05ff501b06664656701736887073f1e4bbfc920b0b992a6314fcbab40fb"
     },
     {
       "path": "src/footprints.json",
@@ -106,173 +1175,8 @@
     },
     {
       "path": "src/placement-overrides.json",
-      "bytes": 3520,
-      "sha256": "0d309ae674763a38b98290ca3032c05099adde6021a5e5148294e8b5bc36d4e5"
-    },
-    {
-      "path": "output/design-manifest.json",
-      "bytes": 29869,
-      "sha256": "1de59667923fb32d5cefd7e8c2e3c54ef13608a57896bd2961c45638140f4147"
-    },
-    {
-      "path": "output/logical-netlist.json",
-      "bytes": 3467,
-      "sha256": "6762a6991074d30911bb6300366aa94157f5d84bb689d831e658c0f861aaaacf"
-    },
-    {
-      "path": "output/logical-checks.json",
-      "bytes": 242,
-      "sha256": "e3900640a1cbf3d380ceb5d858e7744df43b534f0437c5da00ed1b9d7dead6ff"
-    },
-    {
-      "path": "output/aura-placement.circuit.json",
-      "bytes": 1197011,
-      "sha256": "b2d5fda3c8886472b98aefb6a5c3918e4bd3129c9774237976e9b2470b9b1a16"
-    },
-    {
-      "path": "output/aura-placement.kicad_pcb",
-      "bytes": 242515,
-      "sha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7"
-    },
-    {
-      "path": "output/aura.kicad_sch",
-      "bytes": 684740,
-      "sha256": "c98134ec51b7e9aae73f9755a918abe406b67c16658deb30b8104a6fd5b8aac0"
-    },
-    {
-      "path": "output/aura-placement.kicad_pro",
-      "bytes": 1381,
-      "sha256": "0dcfec32457765490663c894c34871ae98f1ad18752b20bae9002205f7a8482c"
-    },
-    {
-      "path": "output/aura-placement.pcb.svg",
-      "bytes": 184382,
-      "sha256": "a1a64d4fa3574110b71a8e96ec4ef627d22a130ce311f51a27709fe595f3955b"
-    },
-    {
-      "path": "output/aura-placement.schematic.svg",
-      "bytes": 621802,
-      "sha256": "939468e63f09e38b09d17e57b8c2b9c59d1bf79b68d99e7684dbcacb33ac8569"
-    },
-    {
-      "path": "output/aura-a03.dsn",
-      "bytes": 43292,
-      "sha256": "5adf975930a819b389656ca7c4692bffdc0a61efcde786d3d49dac0d87bc24a2"
-    },
-    {
-      "path": "output/aura-a03-routing-inputs.json",
-      "bytes": 800,
-      "sha256": "e34340224d29a62e78bd059b6240144050b91e500c2c14a474d98e9d45997a99"
-    },
-    {
-      "path": "output/aura-a03-refinement-inputs.json",
-      "bytes": 1036,
-      "sha256": "2e3902af8bf3ebf6cc50675d96c545fb94e3980fe1dcb9b9ceec8cd32f6cff5c"
-    },
-    {
-      "path": "output/aura-a03-route-attempt.ses",
-      "bytes": 88251,
-      "sha256": "b85576f9b4dc55e21f9d54fab465fa6d105e55c0198733033aab45f30be84cd6"
-    },
-    {
-      "path": "output/aura-a03-route-refine.ses",
-      "bytes": 104936,
-      "sha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00"
-    },
-    {
-      "path": "output/aura-a03-route-freerouting-drc.json",
-      "bytes": 62383,
-      "sha256": "8fa411345b77a74cb4ad3ac6684b2e5d701f4d9adff13812220245f0587962f2"
-    },
-    {
-      "path": "output/aura-a03-refine-freerouting-drc.json",
-      "bytes": 50153,
-      "sha256": "c9b8cf0d44c5d482fb3415ee295b8b7a093426d2530563d9b9f85893a6c6b95b"
-    },
-    {
-      "path": "output/aura-a03-routing-status.json",
-      "bytes": 1897,
-      "sha256": "8b9e4e2ad96a6fba2be3d0bed9f47130b9e0cffc5d0206522bc13afcb74ed91e"
-    },
-    {
-      "path": "output/kicad-a03-final-placement-drc.json",
-      "bytes": 170587,
-      "sha256": "44b077bcc115c501591b6050876c04fce8170f0914c20e3905cc758fdd13dd06"
-    },
-    {
-      "path": "output/kicad-a03-schematic-erc.json",
-      "bytes": 621773,
-      "sha256": "06e42ddc81d48164fae0d3f68f873bd2111111937ab1e14df83ca1e697faade5"
-    },
-    {
-      "path": "output/export-checks.json",
-      "bytes": 754,
-      "sha256": "78057bfaecde6349ee57f47805aa9ca8815385534cb685b0ae296eb77ab104f5"
-    },
-    {
-      "path": "output/placement-validation.json",
-      "bytes": 1754,
-      "sha256": "06c5485f8c5b68e8fe2658b92b7c26e4a8d7ff08f34e9f5245944849200c4a90"
-    },
-    {
-      "path": "output/assembly-bom.csv",
-      "bytes": 6861,
-      "sha256": "30f9ddb4f2dc1e2a54ca872a06a515272600655a64e8f35dc687c5cd75064043"
-    },
-    {
-      "path": "output/cpl-top.csv",
-      "bytes": 8975,
-      "sha256": "b37e547cc3750413c55d8b41885b144cf3e9e59c518734aa81356060b26ac7ff"
-    },
-    {
-      "path": "output/external-bom.csv",
-      "bytes": 673,
-      "sha256": "3210a5ada13e8c2c24e826d43c8d7b538e1a8b6f4069e0c48b9669fec0f43e9e"
-    },
-    {
-      "path": "output/fabrication-review-notes.md",
-      "bytes": 4466,
-      "sha256": "9d2c8477af4e396a729e3a816574dde986d59cd0cbed87e9ab3bf6ef3040be9e"
-    },
-    {
-      "path": "output/assembly-plan.svg",
-      "bytes": 16709,
-      "sha256": "06707c18476ffa579dc570962ddb07c8a6f77d6b14e29b61c4f4510af400ded7"
-    },
-    {
-      "path": "output/assembly-plan.png",
-      "bytes": 120058,
-      "sha256": "be62486c9a92eebdf12200ead5d0bf58265aa2121227ff6a4e3e1ad242053c42"
-    },
-    {
-      "path": "output/aura-a03-route-study.svg",
-      "bytes": 204287,
-      "sha256": "2a15257c8dadedd90c885dc71f555389195886a0c68efe66ac066768aae9fd12"
-    },
-    {
-      "path": "output/aura-a03-route-study.png",
-      "bytes": 192755,
-      "sha256": "20086dc9ba82cd4d39a6edfd458cfa1798d0627d2b8f0f49470befe5a230b016"
-    },
-    {
-      "path": "output/aura-a03-freerouting.log",
-      "bytes": 10982,
-      "sha256": "00567d9cb410a4b24fd970acf13e0c17c9709f2078f0bc7343ef9c10d460e1ae"
-    },
-    {
-      "path": "output/aura-a03-refine.log",
-      "bytes": 2988,
-      "sha256": "3b532e0e2d94a8313564584cf9181c87604a706819975ac5a6cdc5cb19800fd9"
-    },
-    {
-      "path": "output/aura-a03-route-drc.log",
-      "bytes": 595,
-      "sha256": "881cf4f6bf0309c143dde0dd1bed087ebc7c4d33dcedd72e445524df03775b7a"
-    },
-    {
-      "path": "output/aura-a03-refine-drc.log",
-      "bytes": 595,
-      "sha256": "ac48f92c4f676f8a25e7808c47fb8bef0216a005c23b188e2f7cc01db842c8f3"
+      "bytes": 3521,
+      "sha256": "757b60d148a5225e45975728e2fdcf8f0c5385d06ea5a12f158afc19dbef2dd2"
     }
   ]
 }

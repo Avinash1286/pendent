@@ -1,0 +1,98 @@
+(footprint "A03_J2"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -3 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5c193072-89e9-49fd-bf64-9189b0268477")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "AURA-BATTERY-PADS"
+		(at 0 3 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "293be14a-9859-4e4a-b908-722f4c8d483e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4769445b-d9c2-4481-b726-7dea50e2a573")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5efcd66d-bfe3-46e0-b3a0-e3c956b01944")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier Part Number" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "39bb1eb6-63dc-df2a-0174-dd0a60f32516")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start 2.25 -0.75)
+		(end -2.25 0.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "5a95b58b-f426-4124-8762-f6c75b64650a")
+	)
+	(pad "1" smd circle
+		(at 1.5 0)
+		(size 1 1)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "64ce5332-4e5f-1e8e-018c-904e4b45fdf2")
+	)
+	(pad "2" smd circle
+		(at 0 0)
+		(size 1 1)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(zone_connect 2)
+		(uuid "43b3115c-1101-6efc-21b0-33645461d5c4")
+	)
+	(pad "3" smd circle
+		(at -1.5 0)
+		(size 1 1)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "2b435600-78c2-8fdf-39be-364213c1039d")
+	)
+	(embedded_fonts no)
+)

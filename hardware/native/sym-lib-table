@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AuraA03")(type "KiCad")(uri "${KIPRJMOD}/../library/AuraA03.kicad_sym")(options "")(descr "AURA A03 reviewed typed native schematic symbols"))
+)

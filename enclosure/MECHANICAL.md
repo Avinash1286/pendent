@@ -13,7 +13,8 @@ AURA is a compact note-taking pendant with a polished black recording face insid
 | `component-body-reference.json` | Source nominal package dimensions and individually verified maximum-body envelopes. |
 | `hardware-placement-sync.json`, `placement-current-audit.json` | Final nine-component placement delta and focused package/cavity clearance assessment. |
 | `print-invariance.json` | Baseline/current signatures that detect unintended changes to any of the eight print meshes. |
-| `model-sync-audit.json` | Independent GLB transform checks for all 56 package proxies and dimension checks for 50 power/passive/diode bodies. |
+| `model-sync-audit.json` | Independent GLB checks: 56 exact XY positions, 55 exact rotations plus one proven C18 symmetry match, and 50 power/passive/diode body dimensions. |
+| `c18-source-sync.json`, `c18-symmetry-audit.json` | Final C18 PCB/source rotation is 270°; the unmarked visual body remains 90°. Actual exported triangles and shading normals prove equivalence in all three GLBs. |
 | `aura-product.blend` | Editable assembled scene, with hidden FABRICATION collection. |
 | `aura-front-shell.stl` | Open frame with face retention ledge, travel stops, slider opening and bosses. |
 | `aura-rear-shell.stl` | Rear cup with bail, PCB shelves/clips, battery cavity and contact opening. |
@@ -33,6 +34,8 @@ AURA is a compact note-taking pendant with a polished black recording face insid
 Earlier revisions under `archive/` are superseded. `archive/A02-working` was interrupted by the user-directed A03 revision and is not a completed design.
 
 The current A03 internal model incorporates the final charger/comparator routing moves and the Q1 body-clearance correction. All eight printable STLs remain **byte-for-byte identical** to the pre-sync checkpoint. `print-invariance.json` records both file and triangle-geometry signatures. The ten-package focused audit reports no envelope overlaps, contacts or case/moving-face intersections; manufacturer maxima are used for the individually verified parts described in `PACKAGE-ENVELOPES.md`. These digital checks do not change the prototype's qualification status.
+
+The final C18 pin-orientation correction changes its authored rotation from 90° to 270° at unchanged XY. The exact C18 MPN's unmarked body is half-turn symmetric: the actual 428 exported triangles and their shading normals match exactly in all three GLBs. The saved body stays at canonical 90°; Blender, GLBs, photographs, print meshes and film bytes are preserved. This is a body-only equivalence, not a waiver of PCB pin rotation. See [the symmetry proof and source lineage](PACKAGE-ENVELOPES.md).
 
 ## Mechanical contract
 

@@ -1,0 +1,716 @@
+{
+  "mode": "READ_ONLY_PLAN",
+  "footprints": 61,
+  "restoredShapes": 297,
+  "courtyardOverlaps": [
+    {
+      "references": [
+        "C10",
+        "C7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C10",
+        "D1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C10",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW1",
+        "U8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C12",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C16",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "SW1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW1",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C16",
+        "U8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK1",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R3",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R5",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R17",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R6",
+        "U2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "R2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "LED1",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C11",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U5",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R9",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R9",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "LED1",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "LED1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "Q1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "R16"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "Q1",
+        "SW2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "C6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C5",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R8",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R8"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "R1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R13",
+        "R15"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R13"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "R13"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R15"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R21"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R14"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R11",
+        "R5"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C12",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R3",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R10",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "R6",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C15",
+        "U1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U1",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C6",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C1",
+        "C2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C2",
+        "R16"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C18",
+        "C7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C7",
+        "D1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C7",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C9",
+        "U3"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "U3",
+        "U9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C13",
+        "SW2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C13",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C18",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C18",
+        "U9"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C3",
+        "MK1"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "R4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C17",
+        "R3"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "D2",
+        "U4"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "R10"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "MK2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C4",
+        "MK2"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "MK2",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C4",
+        "R10"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C14",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "C15",
+        "U7"
+      ],
+      "layer": "F.Courtyard"
+    },
+    {
+      "references": [
+        "SW2",
+        "U6"
+      ],
+      "layer": "F.Courtyard"
+    }
+  ],
+  "fabBoundingBoxOverlaps": [
+    {
+      "references": [
+        "Q1",
+        "R7"
+      ],
+      "layer": "F.Fab",
+      "bboxOverlapMm": [
+        0.275,
+        0.07
+      ],
+      "interpretation": "Conservative Fab graphic bounds: inspect actual outlines; this is not a waived placement error."
+    },
+    {
+      "references": [
+        "C17",
+        "Q1"
+      ],
+      "layer": "F.Fab",
+      "bboxOverlapMm": [
+        0.25,
+        0.05
+      ],
+      "interpretation": "Conservative Fab graphic bounds: inspect actual outlines; this is not a waived placement error."
+    }
+  ],
+  "textUpdates": [
+    {
+      "ref": "J2",
+      "oldPosition": [
+        94.0,
+        112.0
+      ],
+      "newPosition": [
+        94.0,
+        112.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J1",
+      "oldPosition": [
+        100.0,
+        119.0
+      ],
+      "newPosition": [
+        100.0,
+        119.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J3",
+      "oldPosition": [
+        101.0,
+        100.0
+      ],
+      "newPosition": [
+        101.0,
+        100.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "J4",
+      "oldPosition": [
+        108.0,
+        113.0
+      ],
+      "newPosition": [
+        108.0,
+        113.0
+      ],
+      "mirrored": true
+    },
+    {
+      "ref": "R23",
+      "oldPosition": [
+        92.7,
+        107.8
+      ],
+      "newPosition": [
+        91.5,
+        111.5
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "R22",
+      "oldPosition": [
+        92.7,
+        109.8
+      ],
+      "newPosition": [
+        91.5,
+        113.4
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C8",
+      "oldPosition": [
+        93.7,
+        109.05
+      ],
+      "newPosition": [
+        92.0,
+        109.05
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C7",
+      "oldPosition": [
+        98.2,
+        109.3
+      ],
+      "newPosition": [
+        98.7,
+        110.1
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "D1",
+      "oldPosition": [
+        100.2,
+        109.05
+      ],
+      "newPosition": [
+        100.8,
+        109.05
+      ],
+      "mirrored": false
+    },
+    {
+      "ref": "C10",
+      "oldPosition": [
+        100.2,
+        110.55
+      ],
+      "newPosition": [
+        100.9,
+        110.55
+      ],
+      "mirrored": false
+    }
+  ],
+  "report": "output\\native-footprint-library-plan.json"
+}

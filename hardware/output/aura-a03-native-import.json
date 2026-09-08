@@ -1,0 +1,14 @@
+{
+  "source": "output\\aura-placement.kicad_pcb",
+  "sourceSha256": "acca59ce44d8633a79e9c5a57e9c587d7813745d9df028b98186b3976fb1c1f7",
+  "session": "output\\aura-a03-route-refine.ses",
+  "sessionSha256": "c2bc0c25aaf0af01287ef0b226945062e1eabc99b750239792701b5971015c00",
+  "destination": "output\\aura-a03-native-routing.kicad_pcb",
+  "destinationSha256": "9a908a883abadafece9194f81ffd7283c362f9e70b0f6962f272e93ebe500e7b",
+  "padIdentitiesAndGeometryUnchanged": true,
+  "footprints": 61,
+  "trackSegments": 958,
+  "vias": 109,
+  "fabricationReady": false,
+  "authorization": "User explicitly requested tscircuit/CLI fallback after connector import cancellation."
+}

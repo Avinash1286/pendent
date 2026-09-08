@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "Fresh-directory native project portability check; assembly and physical qualification remain open",
+  "archive": "hardware/output/aura-a03-prototype-fabrication.zip",
+  "archiveBytes": 2026411,
+  "archiveSha256": "e560e5fc176fcf469bc27e704b7a9be2aa77bc6faed06cea6f2e241fb0b26e7f",
+  "archiveEntries": 226,
+  "manifestFilesHashVerified": 223,
+  "containedRegularPathsVerified": true,
+  "extractedIntoNewDirectory": true,
+  "existingFilesOverwritten": false,
+  "board": "hardware/native/aura-a03.kicad_pcb",
+  "boardSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "extractedBoardMatchesSource": true,
+  "boardUnchangedDuringChecks": true,
+  "cliVersion": "10.0.4",
+  "checks": {
+    "unconnectedItems": 0,
+    "schematicParityFindings": 0,
+    "ercErrors": 0,
+    "ercWarnings": 0,
+    "bareBoardDrcErrors": 0,
+    "assemblyCourtyardErrors": 78,
+    "drcWarnings": 0,
+    "libraryWarnings": 0,
+    "drcFindingsByType": {
+      "courtyards_overlap": 78
+    }
+  },
+  "reportsWrittenOutsideExtractedNativeFolder": true,
+  "assemblyApproved": false,
+  "physicalQualification": false
+}

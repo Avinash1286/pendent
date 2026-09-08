@@ -1,0 +1,4122 @@
+{
+  "schemaVersion": 1,
+  "mode": "READ_ONLY",
+  "verifiedAt": "2026-09-08T00:03:13.650842+00:00",
+  "board": "native\\aura-a03.kicad_pcb",
+  "inputSha256": "b9ec8ebf1a0afaa7563ed4838e145cebb4f14055f71e25b2dbcb0329b0180064",
+  "boardUnchanged": true,
+  "nativeVersion": "10.0.4",
+  "status": "PASS_NO_INTERSECTIONS",
+  "method": {
+    "copper": "Native PAD.GetEffectiveShape on actual front/back SMD copper; custom holes retained.",
+    "paste": "Resolved GetSolderPasteMargin per axis; native clone shape follows KiCad plotter size/corner changes. Separate paste-only microphone arcs use PCB_SHAPE.GetEffectiveShape.",
+    "collision": "Native SHAPE.Collide at zero clearance against the actual drill disk and outer copper disk. Same-net pairs included. Coordinates in mm; native units 1 nm.",
+    "interpretation": "A hole intersecting paste or an SMD land is a via-in-pad manufacturing concern. Annular-ring-only overlap is reported separately. Normal mask tenting is not epoxy filling plus capping, and no fabrication acceptance is inferred.",
+    "plotSource": "https://docs.kicad.org/doxygen/plot__board__layers_8cpp_source.html",
+    "manufacturingSource": "https://jlcpcb.com/capabilities/pcb-capabilities",
+    "scope": "All through-vias versus front/back SMD copper and actual paste apertures. Does not claim drill-wall, copper-trace clearance, soldermask dam, or component-body compliance.",
+    "noRuleExclusions": true
+  },
+  "summary": {
+    "viaCount": 177,
+    "targetInventory": {
+      "smd_copper_F.Cu": 233,
+      "pad_paste_F.Paste": 231,
+      "smd_copper_B.Cu": 14,
+      "pad_paste_B.Paste": 14,
+      "graphic_paste_F.Paste": 8
+    },
+    "comparisons": {
+      "smd_copper": 43719,
+      "pad_paste": 43365,
+      "graphic_paste": 1416
+    },
+    "intersections": 0,
+    "uniqueIntersectingVias": 0,
+    "pasteIntersections": 0,
+    "uniquePasteIntersectingVias": 0,
+    "pasteDrillOverlaps": 0,
+    "pasteAnnulusOnlyOverlaps": 0,
+    "smdCopperIntersections": 0,
+    "smdCopperDrillOverlaps": 0,
+    "smdCopperAnnulusOnlyOverlaps": 0,
+    "differentNetCopperIntersections": 0,
+    "classCounts": {}
+  },
+  "suppressedZeroAreaPastePads": [],
+  "vias": [
+    {
+      "uuid": "0cd269eb-e5d7-4cd1-a84c-df1696d88e7a",
+      "positionMm": [
+        109.7274,
+        98.5335
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0de68b02-457c-49d1-8148-8dd816c3b079",
+      "positionMm": [
+        102.5523,
+        97.9655
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "127adc50-afbd-4011-ba3b-0813bcd30b7d",
+      "positionMm": [
+        100.0005,
+        103.0438
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "21404f8c-21ef-4f8c-96f7-cb8c8a7fd865",
+      "positionMm": [
+        94.7061,
+        94.5181
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "254795fa-9c1b-4b52-8514-4ec1f160082d",
+      "positionMm": [
+        100.075,
+        111.375
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "489e5f3f-6c02-4ceb-ad60-61fd2afbb2d9",
+      "positionMm": [
+        89.545,
+        93.7223
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "569b233b-54d5-4038-9b75-eef02d9ec3c3",
+      "positionMm": [
+        100.35,
+        109.725
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9d8df9b0-0b05-4f7f-808e-40f10e2091f4",
+      "positionMm": [
+        89.4443,
+        103.4978
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c968fbe8-64df-4094-a514-7e6e212297ee",
+      "positionMm": [
+        111.0482,
+        91.7972
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "fa3ed8da-f166-44ee-ac83-8b6428aacbb4",
+      "positionMm": [
+        92.4767,
+        99.2127
+      ],
+      "net": "V3",
+      "netCode": 1,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "01daf774-e824-424c-9015-03cf7322aebb",
+      "positionMm": [
+        99.763,
+        111.902
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0f23875a-8312-46ac-afe7-39d20666371e",
+      "positionMm": [
+        94.1572,
+        100.5721
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "10262882-1c25-4988-a7de-89c84285b6da",
+      "positionMm": [
+        110.5,
+        110.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "12c72eaf-fd49-4f48-8e11-506232e2e79b",
+      "positionMm": [
+        101.5,
+        116.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "150e6015-79b9-4356-a3d7-a269cbde6350",
+      "positionMm": [
+        95.65,
+        88.77
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "16dbd97f-d8f6-4689-b3a1-f785917c512a",
+      "positionMm": [
+        98.723,
+        106.593
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "18025890-ad91-4750-9085-32b627bf57ce",
+      "positionMm": [
+        95.692,
+        104.015
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1b7825ba-fbd1-4303-a11d-5976f702c0f2",
+      "positionMm": [
+        106.8,
+        108.1
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1cd033ec-2fdd-4165-9d4f-29bd16b9d0c8",
+      "positionMm": [
+        97.5,
+        103.721
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1e72134a-284d-4afb-a195-c390b8738f67",
+      "positionMm": [
+        104.018,
+        107.007
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1f91db49-f63c-42b2-9f7f-0b598291b67a",
+      "positionMm": [
+        96.4,
+        97.072
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "241a89cb-5d64-4b55-8fa4-b5bafd0c429d",
+      "positionMm": [
+        91.45,
+        94.8
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2706e7e1-c8ad-46cf-8a75-3669c5127cd5",
+      "positionMm": [
+        107.288,
+        91.462
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "298540ff-de0f-4282-b826-68d0472189a0",
+      "positionMm": [
+        93.307,
+        112.4
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2cb0a2bf-40d9-40a7-a92c-654c9c6144f5",
+      "positionMm": [
+        105.601,
+        90.799
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "33bdfaef-9c60-442a-9a7a-e48440cd1251",
+      "positionMm": [
+        98.5,
+        89.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "3679e0fc-eb2b-44b6-9888-900492fff963",
+      "positionMm": [
+        98.5,
+        119.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "431d6afa-b134-45a2-91d6-df09e4e7ec25",
+      "positionMm": [
+        104.5,
+        119.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "45f7cce2-200f-43cc-bf9b-046a9e88bda9",
+      "positionMm": [
+        99.9536,
+        101.0415
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.15,
+      "diameterMm": {
+        "F.Cu": 0.35,
+        "B.Cu": 0.35
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4b4f825f-a941-4d3a-b320-f1f128519c91",
+      "positionMm": [
+        90.727,
+        92.37
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4e955536-3e9e-4e07-9a7b-38ce8a047d09",
+      "positionMm": [
+        107.223,
+        96.068
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "512a1360-7cb4-42b8-900f-fad26920d1a6",
+      "positionMm": [
+        92.5,
+        116.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "516ed994-cdc8-4bf1-a061-5af1068ad8aa",
+      "positionMm": [
+        95.8,
+        119.0
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "54288988-d3b0-46e2-9ffc-1943127df9d1",
+      "positionMm": [
+        100.97,
+        105.7
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "5ec072ef-e886-4d7d-be5f-92c684058d1c",
+      "positionMm": [
+        105.195,
+        88.555
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "5f441484-bfd9-4825-bc4a-12270a950ae0",
+      "positionMm": [
+        110.5,
+        113.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6d13cd17-5be1-4173-be5f-0ab243db4222",
+      "positionMm": [
+        105.6,
+        106.026
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7113385d-d204-4e5f-826b-818105770f97",
+      "positionMm": [
+        110.545,
+        104.74
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7252bee9-a4e1-42a6-8a2f-87163e8dcaa3",
+      "positionMm": [
+        98.4,
+        115.3
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "730964f4-2ad9-40e7-ab31-54b1f5d31901",
+      "positionMm": [
+        94.028,
+        114.313
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7bf14c1f-a253-4831-aa08-773e12047929",
+      "positionMm": [
+        88.65,
+        89.525
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "837b5367-cf8a-41ae-8e04-a2d6a766ea0a",
+      "positionMm": [
+        107.588,
+        94.05
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "8d4bf368-f9ee-4782-ac81-bdeb8e72d29b",
+      "positionMm": [
+        89.5,
+        110.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "8f2ba50c-1721-41c9-85e1-052220a3c4c2",
+      "positionMm": [
+        89.5,
+        113.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9136f781-0818-4127-9e61-1041f0064744",
+      "positionMm": [
+        98.209,
+        111.854
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9c21e668-4943-4aed-8fe6-6ea9da559730",
+      "positionMm": [
+        101.25,
+        106.8
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "a155a820-d352-4ef3-a1ca-df97ac3f366d",
+      "positionMm": [
+        101.5,
+        89.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "a5c65e26-6dce-4a7b-97e7-8dfbcfffc58e",
+      "positionMm": [
+        107.5,
+        116.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "a7765572-da4d-430a-934c-57729686ae3d",
+      "positionMm": [
+        90.26,
+        91.895
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "aec76689-20d9-43f7-9345-31cddca36316",
+      "positionMm": [
+        89.5,
+        107.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "b97d05f4-9c7f-463e-905c-db466d32185e",
+      "positionMm": [
+        93.15,
+        88.68
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "bd1b1a05-3d03-470c-9d03-642528839f9e",
+      "positionMm": [
+        95.5,
+        116.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c71b2ef7-2164-4d6d-8291-0f4fd05716d2",
+      "positionMm": [
+        104.5,
+        113.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c737f016-d75e-432a-97ea-5bf897f5bbe6",
+      "positionMm": [
+        108.7,
+        105.8
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "cd39ecaa-42fe-4198-b843-21cd72e538ab",
+      "positionMm": [
+        110.493,
+        101.927
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "d32e0114-c3f0-44be-8e85-6d4392a0dfd9",
+      "positionMm": [
+        111.143,
+        90.96
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "da81d0c3-9659-4a4d-beba-fce429534bdd",
+      "positionMm": [
+        104.5,
+        116.5
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "dc10e710-b328-45af-97ea-0a95940322d8",
+      "positionMm": [
+        104.521,
+        88.733
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "dd4b24ed-8534-4562-a572-f8e973762974",
+      "positionMm": [
+        110.235,
+        95.888
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "de60487f-8c12-4dc7-abc7-9f1ee2b8892c",
+      "positionMm": [
+        95.274,
+        110.774
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e2cac4ac-cc21-4c01-bbe8-abd291ebd8b0",
+      "positionMm": [
+        92.773,
+        108.068
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e4926d9a-e88f-4dec-b757-09e8a4431af1",
+      "positionMm": [
+        106.8,
+        104.8
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e4a59dc4-888f-42e3-a2b9-d281c3d4f2c7",
+      "positionMm": [
+        99.691,
+        115.153
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ea10efd6-1813-4cc1-8697-6686673d1035",
+      "positionMm": [
+        107.6,
+        101.584
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f02ae7e6-fa22-488a-9781-96fc320763c4",
+      "positionMm": [
+        105.69,
+        91.45
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f43d139b-538e-420c-9ea2-8dba04d47047",
+      "positionMm": [
+        90.507,
+        90.828
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f5a3e198-1ae8-4b12-bb47-97324ea08c62",
+      "positionMm": [
+        101.8,
+        119.0
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f6332954-a2dc-4e93-9d13-087903042f77",
+      "positionMm": [
+        102.978,
+        101.744
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f8d38834-ecd4-42f5-8fb9-e18b06acefad",
+      "positionMm": [
+        108.75,
+        96.921
+      ],
+      "net": "GND",
+      "netCode": 2,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1bf959e0-76e8-43d7-8a6d-079edc1b2c8f",
+      "positionMm": [
+        107.1533,
+        102.55
+      ],
+      "net": "MIC_SUPPLY",
+      "netCode": 3,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "44f8eac0-a094-4a15-8586-a5672b68f471",
+      "positionMm": [
+        106.45,
+        98.6293
+      ],
+      "net": "MIC_SUPPLY",
+      "netCode": 3,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0fbf74f9-8d53-4799-abee-db85732ed748",
+      "positionMm": [
+        109.2967,
+        101.0029
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "22c03902-b12e-447c-a4ae-b424fca7f589",
+      "positionMm": [
+        94.18,
+        89.6054
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "3a225181-f318-4232-a24a-ee6f32c91572",
+      "positionMm": [
+        109.3375,
+        88.8029
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "5e895d87-5aee-4cf8-a784-64325ea545ed",
+      "positionMm": [
+        93.3931,
+        107.116
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "77e980f4-78dd-4ed6-b26f-acb084c0ee5f",
+      "positionMm": [
+        110.7,
+        106.9247
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "bf621bcb-e271-45a4-a320-6262c87b889a",
+      "positionMm": [
+        105.025,
+        90.85
+      ],
+      "net": "MIC_VDD",
+      "netCode": 4,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "410ef319-80ac-4237-a67d-3fe00b4283e5",
+      "positionMm": [
+        100.417,
+        97.582
+      ],
+      "net": "PRIVACY_N",
+      "netCode": 5,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "8cf83949-a987-4584-80a9-6e20ef119ee9",
+      "positionMm": [
+        109.5508,
+        99.8417
+      ],
+      "net": "PRIVACY_N",
+      "netCode": 5,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "cfae5884-b8de-435d-83ce-6108ffd8c776",
+      "positionMm": [
+        110.9995,
+        92.8595
+      ],
+      "net": "PRIVACY_N",
+      "netCode": 5,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2b55e724-c619-4dda-b9e3-65baf56d29e9",
+      "positionMm": [
+        107.6217,
+        104.82
+      ],
+      "net": "PDM_CLK_MCU",
+      "netCode": 6,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "8c13e643-06b7-43db-9ba8-fc0caa729452",
+      "positionMm": [
+        98.3613,
+        97.1788
+      ],
+      "net": "PDM_CLK_MCU",
+      "netCode": 6,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4e2ff13f-d113-4f2b-ad30-f7fd9d674788",
+      "positionMm": [
+        107.7745,
+        106.4716
+      ],
+      "net": "PDM_DATA_MCU",
+      "netCode": 7,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c3b90685-6e94-4ec4-99d8-379869335916",
+      "positionMm": [
+        98.783,
+        97.6009
+      ],
+      "net": "PDM_DATA_MCU",
+      "netCode": 7,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1561a905-fc10-44fb-89ef-beb85cd9c751",
+      "positionMm": [
+        90.6625,
+        88.8029
+      ],
+      "net": "PDM_DATA_MIC",
+      "netCode": 8,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2e8f6656-12a0-4d80-b5b7-4405692f3f89",
+      "positionMm": [
+        108.6204,
+        106.8421
+      ],
+      "net": "PDM_DATA_MIC",
+      "netCode": 8,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "94e7924c-b6da-44e4-bfb2-2f69a4a910dd",
+      "positionMm": [
+        107.6625,
+        88.792
+      ],
+      "net": "PDM_DATA_MIC",
+      "netCode": 8,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0e45bb5f-b53a-47b8-991f-670950c3ff1a",
+      "positionMm": [
+        108.1455,
+        107.1839
+      ],
+      "net": "PDM_CLK_BUF",
+      "netCode": 9,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e01ed83b-7989-4c89-a592-0a7cfbfba1ed",
+      "positionMm": [
+        98.1942,
+        103.6274
+      ],
+      "net": "PDM_CLK_BUF",
+      "netCode": 9,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "09169ab3-e1da-477c-9a1a-8b1cbff449f6",
+      "positionMm": [
+        105.2989,
+        95.985
+      ],
+      "net": "SPI_CS_N",
+      "netCode": 10,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "b6e277fa-b891-4188-82e5-f561fb2fbf9b",
+      "positionMm": [
+        89.545,
+        99.8637
+      ],
+      "net": "SPI_CS_N",
+      "netCode": 10,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "041806c2-1c95-41c4-87e1-ede121e4311c",
+      "positionMm": [
+        90.7438,
+        94.4321
+      ],
+      "net": "SPI_MISO",
+      "netCode": 11,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "16c3823e-8132-4c7b-b9e3-8c3aeb05451e",
+      "positionMm": [
+        105.3111,
+        96.7144
+      ],
+      "net": "SPI_MISO",
+      "netCode": 11,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "5b2b8ebe-0444-42e5-9b19-5bc74a3aa903",
+      "positionMm": [
+        92.085,
+        99.7895
+      ],
+      "net": "FLASH_WP_N",
+      "netCode": 12,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "8ec47f60-f7f7-4dcb-ba24-e278d4fa919d",
+      "positionMm": [
+        89.4012,
+        99.2412
+      ],
+      "net": "FLASH_WP_N",
+      "netCode": 12,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ca0b8b7f-90b7-455c-8bc3-77e64e794c82",
+      "positionMm": [
+        102.9802,
+        96.572
+      ],
+      "net": "SPI_MOSI",
+      "netCode": 13,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e09e9641-1904-4224-a2d9-091c7fcd323e",
+      "positionMm": [
+        93.8954,
+        93.5904
+      ],
+      "net": "SPI_MOSI",
+      "netCode": 13,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "65ce1e54-8e8d-4a8a-b1fb-375d4cf1107e",
+      "positionMm": [
+        90.19,
+        100.8733
+      ],
+      "net": "SPI_SCK",
+      "netCode": 14,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6b05c61b-276a-40dd-b8ed-2e7f32591f5e",
+      "positionMm": [
+        92.6351,
+        93.6033
+      ],
+      "net": "SPI_SCK",
+      "netCode": 14,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6c319013-81b9-4f53-abea-ac21f1c3faf6",
+      "positionMm": [
+        91.2617,
+        93.6791
+      ],
+      "net": "FLASH_HOLD_N",
+      "netCode": 15,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9bae9a14-6a17-4594-91fb-1fccc2ae4350",
+      "positionMm": [
+        89.6384,
+        104.0811
+      ],
+      "net": "FLASH_HOLD_N",
+      "netCode": 15,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ccf74564-799b-4fda-9aa7-5531e640ef75",
+      "positionMm": [
+        94.525,
+        106.9
+      ],
+      "net": "CHG_VSET",
+      "netCode": 16,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e2a871ee-9fcb-478c-9b2e-4fd176e5fcf7",
+      "positionMm": [
+        97.85,
+        110.35
+      ],
+      "net": "CHG_VSET",
+      "netCode": 16,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "19259c37-6b01-49ec-a88e-4560a6ee5b38",
+      "positionMm": [
+        93.525,
+        108.675
+      ],
+      "net": "VBAT",
+      "netCode": 17,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "43e0bd28-ed8b-48ae-9aa2-1c11f8d7d0b4",
+      "positionMm": [
+        101.2359,
+        104.2284
+      ],
+      "net": "VBAT",
+      "netCode": 17,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "b048a728-c734-4dca-b2dd-b8fa5df8ba0a",
+      "positionMm": [
+        93.275,
+        111.125
+      ],
+      "net": "VBAT",
+      "netCode": 17,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ce6e5fd4-58cf-4dd2-a431-dd26e40a7d7b",
+      "positionMm": [
+        93.5,
+        110.725
+      ],
+      "net": "VBAT",
+      "netCode": 17,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "685fd27a-ec32-4784-949d-28a20b893849",
+      "positionMm": [
+        102.7875,
+        101.0018
+      ],
+      "net": "GAUGE_ALERT_N",
+      "netCode": 18,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9adb2579-8b29-4ea7-b51a-fdad05e55050",
+      "positionMm": [
+        103.0985,
+        94.7048
+      ],
+      "net": "GAUGE_ALERT_N",
+      "netCode": 18,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "10465f93-e1c8-4da2-a06c-8d992e83552e",
+      "positionMm": [
+        94.8675,
+        91.0984
+      ],
+      "net": "I2C_SCL",
+      "netCode": 19,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c74e940d-aa28-4c63-8143-7d570a88446b",
+      "positionMm": [
+        95.841,
+        98.4927
+      ],
+      "net": "I2C_SCL",
+      "netCode": 19,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e9b4ea8b-4d55-4d53-a6e3-5fb9a1d3f1a2",
+      "positionMm": [
+        100.5864,
+        96.7007
+      ],
+      "net": "I2C_SCL",
+      "netCode": 19,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "fab57824-daa3-42af-8073-36463b237298",
+      "positionMm": [
+        103.6883,
+        103.7421
+      ],
+      "net": "I2C_SCL",
+      "netCode": 19,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1c11a6cc-348b-4398-a8dd-f56d00eb60f6",
+      "positionMm": [
+        102.925,
+        102.325
+      ],
+      "net": "I2C_SDA",
+      "netCode": 20,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7932da44-82fe-4cc6-80b3-6c9bfe40625b",
+      "positionMm": [
+        99.15,
+        104.625
+      ],
+      "net": "I2C_SDA",
+      "netCode": 20,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7b2ede8b-caab-4270-a6ae-87b351e20dc9",
+      "positionMm": [
+        96.96,
+        101.95
+      ],
+      "net": "I2C_SDA",
+      "netCode": 20,
+      "drillMm": 0.15,
+      "diameterMm": {
+        "F.Cu": 0.35,
+        "B.Cu": 0.35
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "812080ac-9da9-45c3-94d3-430ea318f450",
+      "positionMm": [
+        104.2601,
+        103.785
+      ],
+      "net": "I2C_SDA",
+      "netCode": 20,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "d22a8a59-9453-4185-a51d-af40cfa66618",
+      "positionMm": [
+        97.4197,
+        98.0276
+      ],
+      "net": "I2C_SDA",
+      "netCode": 20,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "76062a06-f377-461d-9c87-a6b1f0bbeb06",
+      "positionMm": [
+        107.3399,
+        92.4751
+      ],
+      "net": "RECORD_EN",
+      "netCode": 21,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f051c0df-3966-4c18-b677-55a35f089dff",
+      "positionMm": [
+        99.7401,
+        97.02
+      ],
+      "net": "RECORD_EN",
+      "netCode": 21,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2dac4332-9896-4869-8f36-8ab54da38031",
+      "positionMm": [
+        96.7398,
+        98.3107
+      ],
+      "net": "LED_RECORD_A",
+      "netCode": 22,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4a9c317c-f400-47c2-aa97-4bbe26bc1d53",
+      "positionMm": [
+        91.3148,
+        105.5067
+      ],
+      "net": "LED_RECORD_A",
+      "netCode": 22,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "3674a1ec-50fa-4abd-924e-0ef2ccc6dca0",
+      "positionMm": [
+        94.0996,
+        99.1246
+      ],
+      "net": "CHG_ALLOW",
+      "netCode": 23,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "53db8917-8c75-4be7-a2b5-ae410fb2e03a",
+      "positionMm": [
+        96.3875,
+        104.1017
+      ],
+      "net": "CHG_ALLOW",
+      "netCode": 23,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "882add41-232b-4916-9efc-57e0876fae36",
+      "positionMm": [
+        103.0887,
+        93.1146
+      ],
+      "net": "CHG_ALLOW",
+      "netCode": 23,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "04d2477c-8cb3-46a8-98df-1e51fae9f55d",
+      "positionMm": [
+        97.525,
+        111.625
+      ],
+      "net": "TEMP_ALLOW_SINK",
+      "netCode": 24,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "29f0e517-28a4-4c58-a4e4-815f8e00dbaf",
+      "positionMm": [
+        98.6095,
+        104.41
+      ],
+      "net": "TEMP_ALLOW_SINK",
+      "netCode": 24,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7f2b24a4-9482-44d6-aa2a-226126fe2090",
+      "positionMm": [
+        93.375,
+        110.1
+      ],
+      "net": "CHG_DISABLE",
+      "netCode": 25,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "833564c5-bea5-4853-a29e-ff38e7185e78",
+      "positionMm": [
+        93.575,
+        108.075
+      ],
+      "net": "CHG_DISABLE",
+      "netCode": 25,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "a4006ac3-227f-44e0-80a9-34e5a39d984b",
+      "positionMm": [
+        92.625,
+        106.8
+      ],
+      "net": "CHG_DISABLE",
+      "netCode": 25,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "df4b5d5e-0232-439d-b714-9f7f8d57b220",
+      "positionMm": [
+        95.15,
+        104.475
+      ],
+      "net": "CHG_DISABLE",
+      "netCode": 25,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "f52f2cdb-e21b-4cce-8565-cc72f5dc1819",
+      "positionMm": [
+        94.125,
+        108.025
+      ],
+      "net": "CHG_DISABLE",
+      "netCode": 25,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0cdbf4c5-dba7-4da4-8404-85002963e08f",
+      "positionMm": [
+        101.0938,
+        108.4721
+      ],
+      "net": "DOCK_5V",
+      "netCode": 26,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "3050d47c-3b94-4f1d-9899-48506e487368",
+      "positionMm": [
+        100.5,
+        116.3842
+      ],
+      "net": "DOCK_5V",
+      "netCode": 26,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9c28a61f-92b9-4327-81c0-0f870ac47fa3",
+      "positionMm": [
+        103.8559,
+        120.044
+      ],
+      "net": "DOCK_5V",
+      "netCode": 26,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "5479c4e3-16b3-4191-badb-6d1239a37b96",
+      "positionMm": [
+        99.525,
+        109.625
+      ],
+      "net": "CHG_ISET",
+      "netCode": 27,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "be74d002-a0f5-470e-9f13-9fd916c991b6",
+      "positionMm": [
+        96.9,
+        107.05
+      ],
+      "net": "CHG_ISET",
+      "netCode": 27,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "665c2be9-b70b-48af-9781-4b7e3ff4fa5e",
+      "positionMm": [
+        92.275,
+        113.2
+      ],
+      "net": "TS_MON",
+      "netCode": 28,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "fb0321d5-bba8-4796-980d-5d9b7a4d6e9f",
+      "positionMm": [
+        96.575,
+        113.825
+      ],
+      "net": "TS_MON",
+      "netCode": 28,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4a9f94ed-f24c-43f1-8447-b612cc34f186",
+      "positionMm": [
+        90.925,
+        111.5
+      ],
+      "net": "BAT_NTC",
+      "netCode": 29,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e9ec323d-178d-4fdd-b09c-ca206dce454f",
+      "positionMm": [
+        92.075,
+        112.625
+      ],
+      "net": "BAT_NTC",
+      "netCode": 29,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "25a218f4-1566-4def-8d84-1a8263b81854",
+      "positionMm": [
+        94.3386,
+        104.4558
+      ],
+      "net": "RECORD_N",
+      "netCode": 30,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "4b42b9db-e610-4f63-87d7-665effcca09b",
+      "positionMm": [
+        94.0605,
+        101.1861
+      ],
+      "net": "RECORD_N",
+      "netCode": 30,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6218dcce-6547-49e9-86ed-d6b73f3e7e10",
+      "positionMm": [
+        99.765,
+        105.2
+      ],
+      "net": "RECORD_N",
+      "netCode": 30,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6221f794-7d7a-4ff2-80d5-1278dc89f766",
+      "positionMm": [
+        99.8254,
+        97.5967
+      ],
+      "net": "RECORD_N",
+      "netCode": 30,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "040685c0-f8f4-4e02-8149-0e6f9ed84427",
+      "positionMm": [
+        92.7,
+        111.15
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "0a957488-a02f-460b-b9ad-07970c92882f",
+      "positionMm": [
+        105.875,
+        101.7221
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "2830616e-0cfc-4f87-a941-cb6ee7718863",
+      "positionMm": [
+        107.8468,
+        99.2645
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "98d03dc6-8da0-4ade-aba9-925da36a7c3c",
+      "positionMm": [
+        93.95,
+        107.45
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "a4151a62-ad4c-4a58-9d88-6d2ab99e9b7d",
+      "positionMm": [
+        103.679,
+        102.1946
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ff8f0e34-36ea-4372-9e3c-ca79d4f2b475",
+      "positionMm": [
+        101.0565,
+        113.1718
+      ],
+      "net": "VSYS",
+      "netCode": 31,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "7fcc914d-d221-4613-8580-231a1b43fcd2",
+      "positionMm": [
+        91.4381,
+        100.882
+      ],
+      "net": "SPI_SCK_MCU",
+      "netCode": 53,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e8633ed0-2687-49f6-9879-640436fd3068",
+      "positionMm": [
+        103.0955,
+        95.9922
+      ],
+      "net": "SPI_SCK_MCU",
+      "netCode": 53,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ab36f177-8ded-4d64-9af8-ffae555fedf5",
+      "positionMm": [
+        102.7422,
+        95.1613
+      ],
+      "net": "RESET_N",
+      "netCode": 54,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c202c43a-8561-417c-b1a2-27cb7074b367",
+      "positionMm": [
+        91.925,
+        106.6
+      ],
+      "net": "RESET_N",
+      "netCode": 54,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "dae986d3-d18b-493b-bceb-5bee6466742a",
+      "positionMm": [
+        105.45,
+        103.7882
+      ],
+      "net": "HAPTIC_EN",
+      "netCode": 55,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "dd893a83-124f-4590-a227-61f53fe7ff61",
+      "positionMm": [
+        106.1483,
+        93.9272
+      ],
+      "net": "HAPTIC_EN",
+      "netCode": 55,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e8e4de48-e4fe-42ad-abb0-4af6bb7aedf1",
+      "positionMm": [
+        106.2023,
+        88.4752
+      ],
+      "net": "HAPTIC_EN",
+      "netCode": 55,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "14477437-be48-4a03-a1d7-e6863c4875b6",
+      "positionMm": [
+        97.85,
+        108.95
+      ],
+      "net": "CHG_STAT1",
+      "netCode": 56,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "42ce4452-1aaf-4b4d-8d14-a2ef8bb28b57",
+      "positionMm": [
+        103.0953,
+        93.75
+      ],
+      "net": "CHG_STAT1",
+      "netCode": 56,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c61aae1e-8b40-4a33-b8dd-0973960b0820",
+      "positionMm": [
+        93.325,
+        101.75
+      ],
+      "net": "CHG_STAT1",
+      "netCode": 56,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "ddc87e01-eef8-44c8-81ea-ebedd0fa8f55",
+      "positionMm": [
+        96.775,
+        107.925
+      ],
+      "net": "CHG_STAT1",
+      "netCode": 56,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "3d6230d7-ed34-42f3-af7c-a13b9b86e3f7",
+      "positionMm": [
+        94.775,
+        102.825
+      ],
+      "net": "CHG_STAT2",
+      "netCode": 57,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "483ac2a8-583e-4fe8-9515-7cc54e95eacd",
+      "positionMm": [
+        94.75,
+        104.9
+      ],
+      "net": "CHG_STAT2",
+      "netCode": 57,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9fd0197d-3637-49a9-b457-84931399cbb4",
+      "positionMm": [
+        94.0,
+        109.575
+      ],
+      "net": "CHG_STAT2",
+      "netCode": 57,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "cff4f6a2-d25d-4283-8133-41bed90bab4c",
+      "positionMm": [
+        95.075,
+        106.725
+      ],
+      "net": "CHG_STAT2",
+      "netCode": 57,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "014ea48f-7ae5-4c89-a1eb-15491a128f54",
+      "positionMm": [
+        103.1458,
+        90.9548
+      ],
+      "net": "SWDIO",
+      "netCode": 63,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "6eaf3cfe-5246-4fb4-b151-ee2c8c1eb617",
+      "positionMm": [
+        103.5498,
+        98.4856
+      ],
+      "net": "SWDIO",
+      "netCode": 63,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "08839343-3693-48da-91a7-b710eec61a99",
+      "positionMm": [
+        103.1425,
+        89.35
+      ],
+      "net": "SWDCLK",
+      "netCode": 65,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "b9a32cb7-6f35-46b6-a5bb-8b8ae5f22853",
+      "positionMm": [
+        101.3484,
+        97.5913
+      ],
+      "net": "SWDCLK",
+      "netCode": 65,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "b52194fd-f0fd-4cb7-b6ca-15d5d32333ef",
+      "positionMm": [
+        111.1275,
+        90.3641
+      ],
+      "net": "PDM_CLK_MIC",
+      "netCode": 75,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "c9dd0e0d-180e-4201-94bb-c2ba70c9ead5",
+      "positionMm": [
+        93.4446,
+        92.1426
+      ],
+      "net": "PDM_CLK_MIC",
+      "netCode": 75,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "e545cc09-3922-491a-8759-d2d6d3f91818",
+      "positionMm": [
+        99.0641,
+        103.8568
+      ],
+      "net": "PDM_CLK_MIC",
+      "netCode": 75,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "24c4b339-0211-479b-838b-ce2a5c643277",
+      "positionMm": [
+        108.75,
+        112.1395
+      ],
+      "net": "LRA_P",
+      "netCode": 76,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "bcd5e0a8-d996-409b-a496-d1f6ef871dea",
+      "positionMm": [
+        105.875,
+        99.6875
+      ],
+      "net": "LRA_P",
+      "netCode": 76,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "1f0735c2-09dd-4f87-8487-53eb076eb920",
+      "positionMm": [
+        104.1124,
+        101.8091
+      ],
+      "net": "LRA_N",
+      "netCode": 77,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    },
+    {
+      "uuid": "9fcb0546-9477-4710-9bb5-095d6dd7c6e0",
+      "positionMm": [
+        104.6819,
+        112.1533
+      ],
+      "net": "LRA_N",
+      "netCode": 77,
+      "drillMm": 0.2,
+      "diameterMm": {
+        "F.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "nativeViaType": 4,
+      "nativeCappingMode": 0,
+      "nativeFillingMode": 0,
+      "nativePrimaryDrillCappedFlag": false,
+      "nativePrimaryDrillFilledFlag": false,
+      "tented": {
+        "F.Cu": true,
+        "B.Cu": true
+      }
+    }
+  ],
+  "intersections": [],
+  "elapsedSeconds": 0.328
+}

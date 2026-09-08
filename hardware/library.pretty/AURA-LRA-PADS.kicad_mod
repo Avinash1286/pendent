@@ -1,0 +1,47 @@
+(footprint "AURA-LRA-PADS"
+  (version 20241229)
+  (generator "kicad-mcp")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (descr "AURA authored PCB contact feature; matched to frozen tscircuit pad centers")
+
+  (property "Reference" "REF**" (at 0 -1.27 0)
+    (layer "F.SilkS")
+    (uuid "7ea18480-f5d0-4559-b824-0b2df66a9ada")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "AURA-LRA-PADS" (at 0 1.27 0)
+    (layer "F.Fab")
+    (uuid "b6741ebe-e279-4780-a811-f56221444ca8")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" "" (at 0 0 0)
+    (layer "F.Fab")
+    (uuid "5ff96ea3-2b3c-482b-921d-1d580af7cc68")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_rect
+    (start -1.5 -0.75)
+    (end 1.5 0.75)
+    (stroke (width 0.05) (type default))
+    (fill none)
+    (layer "F.CrtYd")
+    (uuid "92df99c3-7fbb-4bdb-8051-4cf924e12623")
+  )
+
+  (pad "1" smd circle
+    (at -0.75 0)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "7b614962-3cb8-44af-bda5-f717962c3474")
+  )
+
+  (pad "2" smd circle
+    (at 0.75 0)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "a06e417f-db1d-4142-8bcd-28d6a41d2c51")
+  )
+
+)

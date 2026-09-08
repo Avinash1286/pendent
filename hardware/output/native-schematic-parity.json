@@ -1,0 +1,897 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-08T00:16:37.4710169Z",
+  "status": "PASS",
+  "nativeTool": "Eeschema 10.0.4",
+  "rootSchematic": "output/aura-a03-electrical.kicad_sch",
+  "componentCount": 61,
+  "intendedNetCount": 43,
+  "connectedPinCount": 208,
+  "nativeNetCount": 80,
+  "intentionalNCCount": 37,
+  "exactNCMarkers": 37,
+  "explicitPowerFlags": 4,
+  "ercErrors": 0,
+  "ercWarnings": 0,
+  "projectAuthoredExclusions": [],
+  "defaultIgnoredChecks": [
+    {
+      "description": "Global label only appears once in the schematic",
+      "key": "single_global_label"
+    },
+    {
+      "description": "Four connection points are joined together",
+      "key": "four_way_junction"
+    },
+    {
+      "description": "SPICE model issue",
+      "key": "simulation_model_issue"
+    },
+    {
+      "description": "Assigned footprint doesn't match footprint filters",
+      "key": "footprint_filter"
+    }
+  ],
+  "checkedNets": [
+    {
+      "name": "BAT_NTC",
+      "status": "PASS",
+      "pins": [
+        "J2.3",
+        "R22.2"
+      ]
+    },
+    {
+      "name": "CHG_ALLOW",
+      "status": "PASS",
+      "pins": [
+        "Q1.1",
+        "R3.1",
+        "U1.45"
+      ]
+    },
+    {
+      "name": "CHG_DISABLE",
+      "status": "PASS",
+      "pins": [
+        "Q1.3",
+        "R23.1",
+        "U3.4"
+      ]
+    },
+    {
+      "name": "CHG_ISET",
+      "status": "PASS",
+      "pins": [
+        "R1.1",
+        "U3.8"
+      ]
+    },
+    {
+      "name": "CHG_STAT1",
+      "status": "PASS",
+      "pins": [
+        "R4.1",
+        "U1.43",
+        "U3.9"
+      ]
+    },
+    {
+      "name": "CHG_STAT2",
+      "status": "PASS",
+      "pins": [
+        "R5.1",
+        "U1.44",
+        "U3.3"
+      ]
+    },
+    {
+      "name": "CHG_VSET",
+      "status": "PASS",
+      "pins": [
+        "R2.1",
+        "U3.7"
+      ]
+    },
+    {
+      "name": "DOCK_5V",
+      "status": "PASS",
+      "pins": [
+        "D1.2",
+        "D2.1",
+        "J1.2"
+      ]
+    },
+    {
+      "name": "DOCK_IN",
+      "status": "PASS",
+      "pins": [
+        "C7.1",
+        "D1.1",
+        "U3.10"
+      ]
+    },
+    {
+      "name": "FLASH_HOLD_N",
+      "status": "PASS",
+      "pins": [
+        "R20.1",
+        "U2.7"
+      ]
+    },
+    {
+      "name": "FLASH_WP_N",
+      "status": "PASS",
+      "pins": [
+        "R19.1",
+        "U2.3"
+      ]
+    },
+    {
+      "name": "GAUGE_ALERT_N",
+      "status": "PASS",
+      "pins": [
+        "R8.1",
+        "U1.42",
+        "U5.5"
+      ]
+    },
+    {
+      "name": "GND",
+      "status": "PASS",
+      "pins": [
+        "C1.2",
+        "C10.2",
+        "C11.2",
+        "C12.2",
+        "C13.2",
+        "C14.2",
+        "C15.2",
+        "C16.2",
+        "C17.2",
+        "C18.2",
+        "C2.2",
+        "C3.2",
+        "C4.2",
+        "C5.2",
+        "C6.2",
+        "C7.2",
+        "C8.2",
+        "C9.2",
+        "D2.2",
+        "J1.1",
+        "J1.3",
+        "J2.2",
+        "J3.5",
+        "J3.6",
+        "LED1.1",
+        "MK1.2",
+        "MK1.3",
+        "MK2.3",
+        "R1.2",
+        "R10.2",
+        "R15.2",
+        "R2.2",
+        "R3.2",
+        "R9.2",
+        "SW1.3",
+        "SW1.4",
+        "SW2.2",
+        "U1.1",
+        "U1.15",
+        "U1.2",
+        "U1.32",
+        "U1.33",
+        "U1.55",
+        "U2.4",
+        "U2.9",
+        "U3.11",
+        "U3.5",
+        "U4.2",
+        "U5.1",
+        "U5.4",
+        "U5.6",
+        "U5.9",
+        "U6.4",
+        "U6.8",
+        "U7.2",
+        "U8.1",
+        "U8.4",
+        "U8.7",
+        "U9.2",
+        "U9.3"
+      ]
+    },
+    {
+      "name": "HAPTIC_EN",
+      "status": "PASS",
+      "pins": [
+        "R10.1",
+        "U1.41",
+        "U6.5"
+      ]
+    },
+    {
+      "name": "HAPTIC_REG",
+      "status": "PASS",
+      "pins": [
+        "C13.1",
+        "U6.1"
+      ]
+    },
+    {
+      "name": "I2C_SCL",
+      "status": "PASS",
+      "pins": [
+        "R6.1",
+        "U1.16",
+        "U5.7",
+        "U6.2"
+      ]
+    },
+    {
+      "name": "I2C_SDA",
+      "status": "PASS",
+      "pins": [
+        "R7.1",
+        "U1.19",
+        "U5.8",
+        "U6.3"
+      ]
+    },
+    {
+      "name": "LED_RECORD_A",
+      "status": "PASS",
+      "pins": [
+        "LED1.2",
+        "R14.2"
+      ]
+    },
+    {
+      "name": "LRA_N",
+      "status": "PASS",
+      "pins": [
+        "J4.2",
+        "U6.9"
+      ]
+    },
+    {
+      "name": "LRA_P",
+      "status": "PASS",
+      "pins": [
+        "J4.1",
+        "U6.7"
+      ]
+    },
+    {
+      "name": "MIC_SUPPLY",
+      "status": "PASS",
+      "pins": [
+        "C15.1",
+        "SW1.1",
+        "U7.5"
+      ]
+    },
+    {
+      "name": "MIC_VDD",
+      "status": "PASS",
+      "pins": [
+        "C16.1",
+        "C3.1",
+        "C4.1",
+        "MK1.5",
+        "MK2.2",
+        "MK2.5",
+        "R14.1",
+        "R15.1",
+        "SW1.2",
+        "U8.8"
+      ]
+    },
+    {
+      "name": "PDM_CLK_BUF",
+      "status": "PASS",
+      "pins": [
+        "R16.1",
+        "U8.6"
+      ]
+    },
+    {
+      "name": "PDM_CLK_MCU",
+      "status": "PASS",
+      "pins": [
+        "U1.20",
+        "U8.2"
+      ]
+    },
+    {
+      "name": "PDM_CLK_MIC",
+      "status": "PASS",
+      "pins": [
+        "MK1.4",
+        "MK2.4",
+        "R16.2"
+      ]
+    },
+    {
+      "name": "PDM_DATA_MCU",
+      "status": "PASS",
+      "pins": [
+        "U1.21",
+        "U8.3"
+      ]
+    },
+    {
+      "name": "PDM_DATA_MIC",
+      "status": "PASS",
+      "pins": [
+        "MK1.1",
+        "MK2.1",
+        "U8.5"
+      ]
+    },
+    {
+      "name": "PRIVACY_N",
+      "status": "PASS",
+      "pins": [
+        "R13.1",
+        "SW1.5",
+        "U1.25"
+      ]
+    },
+    {
+      "name": "RECORD_EN",
+      "status": "PASS",
+      "pins": [
+        "R9.1",
+        "U1.22",
+        "U7.3"
+      ]
+    },
+    {
+      "name": "RECORD_N",
+      "status": "PASS",
+      "pins": [
+        "C17.1",
+        "R11.1",
+        "SW2.1",
+        "U1.24"
+      ]
+    },
+    {
+      "name": "RESET_N",
+      "status": "PASS",
+      "pins": [
+        "J3.4",
+        "R21.1",
+        "U1.40"
+      ]
+    },
+    {
+      "name": "SPI_CS_N",
+      "status": "PASS",
+      "pins": [
+        "R18.1",
+        "U1.39",
+        "U2.1"
+      ]
+    },
+    {
+      "name": "SPI_MISO",
+      "status": "PASS",
+      "pins": [
+        "U1.37",
+        "U2.2"
+      ]
+    },
+    {
+      "name": "SPI_MOSI",
+      "status": "PASS",
+      "pins": [
+        "U1.36",
+        "U2.5"
+      ]
+    },
+    {
+      "name": "SPI_SCK",
+      "status": "PASS",
+      "pins": [
+        "R17.2",
+        "U2.6"
+      ]
+    },
+    {
+      "name": "SPI_SCK_MCU",
+      "status": "PASS",
+      "pins": [
+        "R17.1",
+        "U1.38"
+      ]
+    },
+    {
+      "name": "SWDCLK",
+      "status": "PASS",
+      "pins": [
+        "J3.3",
+        "U1.53"
+      ]
+    },
+    {
+      "name": "SWDIO",
+      "status": "PASS",
+      "pins": [
+        "J3.2",
+        "U1.51"
+      ]
+    },
+    {
+      "name": "TEMP_ALLOW_SINK",
+      "status": "PASS",
+      "pins": [
+        "Q1.2",
+        "U9.6"
+      ]
+    },
+    {
+      "name": "TS_MON",
+      "status": "PASS",
+      "pins": [
+        "R22.1",
+        "U3.6",
+        "U9.4"
+      ]
+    },
+    {
+      "name": "V3",
+      "status": "PASS",
+      "pins": [
+        "C1.1",
+        "C10.1",
+        "C2.1",
+        "C5.1",
+        "C6.1",
+        "J3.1",
+        "R11.2",
+        "R13.2",
+        "R18.2",
+        "R19.2",
+        "R20.2",
+        "R21.2",
+        "R4.2",
+        "R5.2",
+        "R6.2",
+        "R7.2",
+        "R8.2",
+        "SW1.6",
+        "U1.28",
+        "U1.30",
+        "U2.8",
+        "U4.5"
+      ]
+    },
+    {
+      "name": "VBAT",
+      "status": "PASS",
+      "pins": [
+        "C11.1",
+        "C8.1",
+        "J2.1",
+        "U3.2",
+        "U5.2",
+        "U5.3"
+      ]
+    },
+    {
+      "name": "VSYS",
+      "status": "PASS",
+      "pins": [
+        "C12.1",
+        "C14.1",
+        "C18.1",
+        "C9.1",
+        "R23.2",
+        "U3.1",
+        "U4.1",
+        "U4.3",
+        "U6.10",
+        "U6.6",
+        "U7.1",
+        "U9.5"
+      ]
+    }
+  ],
+  "intentionalNCs": [
+    "U1.10",
+    "U1.11",
+    "U1.12",
+    "U1.13",
+    "U1.14",
+    "U1.17",
+    "U1.18",
+    "U1.23",
+    "U1.26",
+    "U1.27",
+    "U1.29",
+    "U1.3",
+    "U1.31",
+    "U1.34",
+    "U1.35",
+    "U1.4",
+    "U1.46",
+    "U1.47",
+    "U1.48",
+    "U1.49",
+    "U1.5",
+    "U1.50",
+    "U1.52",
+    "U1.54",
+    "U1.56",
+    "U1.57",
+    "U1.58",
+    "U1.59",
+    "U1.6",
+    "U1.60",
+    "U1.61",
+    "U1.7",
+    "U1.8",
+    "U1.9",
+    "U4.4",
+    "U7.4",
+    "U9.1"
+  ],
+  "components": [
+    {
+      "reference": "C1",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C104K4RACTU"
+    },
+    {
+      "reference": "C2",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C475K8PACTU"
+    },
+    {
+      "reference": "J3",
+      "footprint": "AURA:AURA-SWD-PADS",
+      "mpn": "AURA-SWD-PADS"
+    },
+    {
+      "reference": "R6",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-074K7L"
+    },
+    {
+      "reference": "R7",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-074K7L"
+    },
+    {
+      "reference": "R21",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "U1",
+      "footprint": "RF_Module:Raytac_MDBT50Q",
+      "mpn": "MDBT50Q-1MV2"
+    },
+    {
+      "reference": "C3",
+      "footprint": "AURA:AURA_SiCap_1.2x0.7mm_P0.7mm",
+      "mpn": "939113424610-T3N"
+    },
+    {
+      "reference": "C4",
+      "footprint": "AURA:AURA_SiCap_1.2x0.7mm_P0.7mm",
+      "mpn": "939113424610-T3N"
+    },
+    {
+      "reference": "C14",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C105K4RACTU"
+    },
+    {
+      "reference": "C15",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C105K4RACTU"
+    },
+    {
+      "reference": "C16",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C104K4RACTU"
+    },
+    {
+      "reference": "LED1",
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "mpn": "LTST-C190KFKT"
+    },
+    {
+      "reference": "MK1",
+      "footprint": "Sensor_Audio:Knowles_LGA-5_3.5x2.65mm",
+      "mpn": "SPH0641LU4H-1"
+    },
+    {
+      "reference": "MK2",
+      "footprint": "Sensor_Audio:Knowles_LGA-5_3.5x2.65mm",
+      "mpn": "SPH0641LU4H-1"
+    },
+    {
+      "reference": "R9",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-07100KL"
+    },
+    {
+      "reference": "R13",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R14",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-071KL"
+    },
+    {
+      "reference": "R15",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-07100KL"
+    },
+    {
+      "reference": "R16",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0733RL"
+    },
+    {
+      "reference": "SW1",
+      "footprint": "Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN",
+      "mpn": "JS202011JCQN"
+    },
+    {
+      "reference": "U7",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "mpn": "TLV75530PDBVR"
+    },
+    {
+      "reference": "U8",
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "mpn": "SN74LVC2G125DCUR"
+    },
+    {
+      "reference": "C5",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C104K4RACTU"
+    },
+    {
+      "reference": "C6",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C475K8PACTU"
+    },
+    {
+      "reference": "R17",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0733RL"
+    },
+    {
+      "reference": "R18",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R19",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R20",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "U2",
+      "footprint": "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm",
+      "mpn": "W25N01GVZEIG"
+    },
+    {
+      "reference": "C7",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C225K8RACTU"
+    },
+    {
+      "reference": "C8",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C475K8PACTU"
+    },
+    {
+      "reference": "C9",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C0805C106K8PACTU"
+    },
+    {
+      "reference": "C18",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C104K4RACTU"
+    },
+    {
+      "reference": "D1",
+      "footprint": "Diode_SMD:D_SOD-323",
+      "mpn": "BAT54WS-7-F"
+    },
+    {
+      "reference": "D2",
+      "footprint": "Diode_SMD:D_SOD-323",
+      "mpn": "PESD5V0S1BA,115"
+    },
+    {
+      "reference": "J1",
+      "footprint": "AURA:AURA-DOCK-PADS",
+      "mpn": "AURA-DOCK-PADS"
+    },
+    {
+      "reference": "J2",
+      "footprint": "AURA:AURA-BATTERY-PADS",
+      "mpn": "AURA-BATTERY-PADS"
+    },
+    {
+      "reference": "Q1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "mpn": "DMG2302UK-7"
+    },
+    {
+      "reference": "R1",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-075K62L"
+    },
+    {
+      "reference": "R2",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0724KL"
+    },
+    {
+      "reference": "R3",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R4",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R5",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "R22",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-073K3L"
+    },
+    {
+      "reference": "R23",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "U3",
+      "footprint": "Package_DFN_QFN:Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm",
+      "mpn": "BQ25185DLHR"
+    },
+    {
+      "reference": "U9",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "mpn": "TLV6700DDCR"
+    },
+    {
+      "reference": "C10",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C225K8RACTU"
+    },
+    {
+      "reference": "C11",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C104K4RACTU"
+    },
+    {
+      "reference": "C12",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C105K4RACTU"
+    },
+    {
+      "reference": "C13",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "mpn": "C0603C105K4RACTU"
+    },
+    {
+      "reference": "C17",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "mpn": "C0402C103K5RACTU"
+    },
+    {
+      "reference": "J4",
+      "footprint": "AURA:AURA-LRA-PADS",
+      "mpn": "AURA-LRA-PADS"
+    },
+    {
+      "reference": "R8",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-07100KL"
+    },
+    {
+      "reference": "R10",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-07100KL"
+    },
+    {
+      "reference": "R11",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "mpn": "RC0402FR-0710KL"
+    },
+    {
+      "reference": "SW2",
+      "footprint": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
+      "mpn": "KMR211NGULCLFS"
+    },
+    {
+      "reference": "U4",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "mpn": "TLV75530PDBVR"
+    },
+    {
+      "reference": "U5",
+      "footprint": "Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm",
+      "mpn": "MAX17048G+T10"
+    },
+    {
+      "reference": "U6",
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "mpn": "DRV2605LDGSR"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "output/design-manifest.json",
+      "sha256": "ce3ebb9c34bdd5dd4fdf3fa0c159dce3d0be271d43e33f25c382057f9e3c5190"
+    },
+    {
+      "path": "output/logical-netlist.json",
+      "sha256": "6762a6991074d30911bb6300366aa94157f5d84bb689d831e658c0f861aaaacf"
+    },
+    {
+      "path": "output/aura-a03-electrical.kicad_sch",
+      "sha256": "d5612a5e8c405a57025bebc0f212c5fe805f4ef0308c672c3f32d2d2c931c4ca"
+    },
+    {
+      "path": "output/aura-a03-native.net.xml",
+      "sha256": "90b8906cc122296a896cf51f32d1a5e4eaad2df1a437d2eef17864f1d9c80423"
+    },
+    {
+      "path": "output/aura-a03-native-erc.json",
+      "sha256": "fda27040848d28b054cbd2a04de18be8cf449efec53e781d72ebff6142b297a9"
+    },
+    {
+      "path": "library/AuraA03.kicad_sym",
+      "sha256": "bd8bd7b640b24d9c95c12c0d89175e1b067c54e791744ffbbc8de951d31190e6"
+    },
+    {
+      "path": "output/a03-radio.kicad_sch",
+      "sha256": "ed69d2212bf932009dfd32fa43a803a0454ded6dfd8049d3a4d7d450f4b64a9e"
+    },
+    {
+      "path": "output/a03-audio.kicad_sch",
+      "sha256": "4d7b4f147f6851ba71c54c35dd160c5a02f289b6849785a1c909a74043c57357"
+    },
+    {
+      "path": "output/a03-storage.kicad_sch",
+      "sha256": "04391dd63c202da16f5d33dc82ae432584e340bc5b6e951106020045331914cf"
+    },
+    {
+      "path": "output/a03-charging.kicad_sch",
+      "sha256": "4352ef00c3004533d16d0e4bc75c4612fb93e5364501ea106b4d7498d01dba59"
+    },
+    {
+      "path": "output/a03-controls.kicad_sch",
+      "sha256": "33e73976d14bcad495371cc2b507c1519b39abd94403715bf04b9aea41d25565"
+    }
+  ],
+  "failures": [],
+  "limitation": "Electrical parity and native ERC only. No board synchronization; battery, RF, thermal and firmware qualification remain separate."
+}

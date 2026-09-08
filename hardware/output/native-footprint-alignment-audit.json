@@ -1,0 +1,983 @@
+{
+  "board": "output/aura-a03-native-routing.kicad_pcb",
+  "mode": "READ_ONLY",
+  "footprints": [
+    {
+      "ref": "C1",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        98.95,
+        100.8
+      ],
+      "alignedSourceOrigin": [
+        98.95,
+        100.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C10",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        100.9,
+        110.55
+      ],
+      "alignedSourceOrigin": [
+        100.9,
+        110.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C11",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        101.45,
+        103.3
+      ],
+      "alignedSourceOrigin": [
+        101.45,
+        103.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C12",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        106.7,
+        100.8
+      ],
+      "alignedSourceOrigin": [
+        106.7,
+        100.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C13",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        103.95,
+        106.3
+      ],
+      "alignedSourceOrigin": [
+        103.95,
+        106.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C14",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        109.95,
+        94.05
+      ],
+      "alignedSourceOrigin": [
+        109.95,
+        94.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C15",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        106.45,
+        97.05
+      ],
+      "alignedSourceOrigin": [
+        106.45,
+        97.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C16",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        110.7,
+        105.8
+      ],
+      "alignedSourceOrigin": [
+        110.7,
+        105.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C17",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        94.45,
+        102.05
+      ],
+      "alignedSourceOrigin": [
+        94.45,
+        102.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C18",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        97.95,
+        112.3
+      ],
+      "alignedSourceOrigin": [
+        97.95,
+        112.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C2",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        97.95,
+        101.3
+      ],
+      "alignedSourceOrigin": [
+        97.95,
+        101.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C3",
+      "source": "library\\AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        93.45,
+        89.55
+      ],
+      "alignedSourceOrigin": [
+        93.45,
+        89.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C4",
+      "source": "library\\AURA_SiCap_1.2x0.7mm_P0.7mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        106.45,
+        90.3
+      ],
+      "alignedSourceOrigin": [
+        106.45,
+        90.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C5",
+      "source": "library\\C_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        89.2,
+        92.05
+      ],
+      "alignedSourceOrigin": [
+        89.2,
+        92.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C6",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        89.45,
+        90.3
+      ],
+      "alignedSourceOrigin": [
+        89.45,
+        90.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C7",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        98.7,
+        110.1
+      ],
+      "alignedSourceOrigin": [
+        98.7,
+        110.1
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C8",
+      "source": "library\\C_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        92.0,
+        109.05
+      ],
+      "alignedSourceOrigin": [
+        92.0,
+        109.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "C9",
+      "source": "library\\C_0805_2012Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        95.2,
+        106.8
+      ],
+      "alignedSourceOrigin": [
+        95.2,
+        106.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "D1",
+      "source": "library\\D_SOD-323.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        100.8,
+        109.05
+      ],
+      "alignedSourceOrigin": [
+        100.8,
+        109.05
+      ],
+      "graphics": 14,
+      "errors": []
+    },
+    {
+      "ref": "D2",
+      "source": "library\\D_SOD-323.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        99.45,
+        115.8
+      ],
+      "alignedSourceOrigin": [
+        99.45,
+        115.8
+      ],
+      "graphics": 14,
+      "errors": []
+    },
+    {
+      "ref": "J1",
+      "source": "library.pretty\\AURA-DOCK-PADS.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        100.0,
+        119.0
+      ],
+      "alignedSourceOrigin": [
+        100.0,
+        119.0
+      ],
+      "graphics": 1,
+      "errors": []
+    },
+    {
+      "ref": "J2",
+      "source": "library.pretty\\AURA-BATTERY-PADS.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        94.0,
+        112.0
+      ],
+      "alignedSourceOrigin": [
+        94.0,
+        112.0
+      ],
+      "graphics": 1,
+      "errors": []
+    },
+    {
+      "ref": "J3",
+      "source": "library.pretty\\AURA-SWD-PADS.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        101.0,
+        100.0
+      ],
+      "alignedSourceOrigin": [
+        101.0,
+        100.0
+      ],
+      "graphics": 1,
+      "errors": []
+    },
+    {
+      "ref": "J4",
+      "source": "library.pretty\\AURA-LRA-PADS.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        108.0,
+        113.0
+      ],
+      "alignedSourceOrigin": [
+        108.0,
+        113.0
+      ],
+      "graphics": 1,
+      "errors": []
+    },
+    {
+      "ref": "LED1",
+      "source": "library\\LED_0603_1608Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        100.0,
+        101.0
+      ],
+      "alignedSourceOrigin": [
+        100.0,
+        101.0
+      ],
+      "graphics": 6,
+      "errors": []
+    },
+    {
+      "ref": "MK1",
+      "source": "library\\Knowles_LGA-5_3.5x2.65mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        91.5,
+        90.4575
+      ],
+      "alignedSourceOrigin": [
+        91.5,
+        90.73
+      ],
+      "graphics": 9,
+      "errors": []
+    },
+    {
+      "ref": "MK2",
+      "source": "library\\Knowles_LGA-5_3.5x2.65mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        108.5,
+        90.4575
+      ],
+      "alignedSourceOrigin": [
+        108.5,
+        90.73
+      ],
+      "graphics": 9,
+      "errors": []
+    },
+    {
+      "ref": "Q1",
+      "source": "library\\SOT-23.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        95.45,
+        103.8
+      ],
+      "alignedSourceOrigin": [
+        95.45,
+        103.8
+      ],
+      "graphics": 17,
+      "errors": []
+    },
+    {
+      "ref": "R1",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        96.45,
+        106.05
+      ],
+      "alignedSourceOrigin": [
+        96.45,
+        106.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R10",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        106.2,
+        89.05
+      ],
+      "alignedSourceOrigin": [
+        106.2,
+        89.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R11",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        92.2,
+        103.8
+      ],
+      "alignedSourceOrigin": [
+        92.2,
+        103.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R13",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        110.45,
+        91.8
+      ],
+      "alignedSourceOrigin": [
+        110.45,
+        91.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R14",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        92.95,
+        105.55
+      ],
+      "alignedSourceOrigin": [
+        92.95,
+        105.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R15",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        110.45,
+        90.05
+      ],
+      "alignedSourceOrigin": [
+        110.45,
+        90.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R16",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        98.2,
+        103.05
+      ],
+      "alignedSourceOrigin": [
+        98.2,
+        103.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R17",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        90.7,
+        101.55
+      ],
+      "alignedSourceOrigin": [
+        90.7,
+        101.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R18",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        90.7,
+        102.55
+      ],
+      "alignedSourceOrigin": [
+        90.7,
+        102.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R19",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        89.2,
+        102.3
+      ],
+      "alignedSourceOrigin": [
+        89.2,
+        102.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R2",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        93.95,
+        106.05
+      ],
+      "alignedSourceOrigin": [
+        93.95,
+        106.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R20",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        90.7,
+        103.55
+      ],
+      "alignedSourceOrigin": [
+        90.7,
+        103.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R21",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        91.95,
+        105.55
+      ],
+      "alignedSourceOrigin": [
+        91.95,
+        105.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R22",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        91.5,
+        113.4
+      ],
+      "alignedSourceOrigin": [
+        91.5,
+        113.4
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R23",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        91.5,
+        111.5
+      ],
+      "alignedSourceOrigin": [
+        91.5,
+        111.5
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R3",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        94.95,
+        100.8
+      ],
+      "alignedSourceOrigin": [
+        94.95,
+        100.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R4",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        93.2,
+        102.8
+      ],
+      "alignedSourceOrigin": [
+        93.2,
+        102.8
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R5",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        92.2,
+        102.05
+      ],
+      "alignedSourceOrigin": [
+        92.2,
+        102.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R6",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": -90.0,
+      "nativeOrigin": [
+        94.2,
+        91.55
+      ],
+      "alignedSourceOrigin": [
+        94.2,
+        91.55
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R7",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        96.45,
+        102.05
+      ],
+      "alignedSourceOrigin": [
+        96.45,
+        102.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R8",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        96.45,
+        100.3
+      ],
+      "alignedSourceOrigin": [
+        96.45,
+        100.3
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "R9",
+      "source": "library\\R_0402_1005Metric.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        106.2,
+        92.05
+      ],
+      "alignedSourceOrigin": [
+        106.2,
+        92.05
+      ],
+      "graphics": 2,
+      "errors": []
+    },
+    {
+      "ref": "SW1",
+      "source": "library\\SW_DPDT_CK_JS202011JCQN.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        109.5,
+        100.2
+      ],
+      "alignedSourceOrigin": [
+        109.5,
+        100.2
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "SW2",
+      "source": "library\\SW_Push_1P1T_NO_CK_KMR2.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        100.0,
+        106.0
+      ],
+      "alignedSourceOrigin": [
+        100.0,
+        106.0
+      ],
+      "graphics": 9,
+      "errors": []
+    },
+    {
+      "ref": "U1",
+      "source": "library\\Raytac_MDBT50Q.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        100.0,
+        93.75
+      ],
+      "alignedSourceOrigin": [
+        100.0,
+        92.0
+      ],
+      "graphics": 10,
+      "errors": []
+    },
+    {
+      "ref": "U2",
+      "source": "library\\WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        91.45,
+        96.8
+      ],
+      "alignedSourceOrigin": [
+        91.45,
+        96.8
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "U3",
+      "source": "library\\Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        95.95,
+        109.55
+      ],
+      "alignedSourceOrigin": [
+        95.95,
+        109.55
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "U4",
+      "source": "library\\SOT-23-5.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        99.95,
+        113.05
+      ],
+      "alignedSourceOrigin": [
+        99.95,
+        113.05
+      ],
+      "graphics": 17,
+      "errors": []
+    },
+    {
+      "ref": "U5",
+      "source": "library\\TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        101.7,
+        101.3
+      ],
+      "alignedSourceOrigin": [
+        101.7,
+        101.3
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "U6",
+      "source": "library\\MSOP-10_3x3mm_P0.5mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 90.0,
+      "nativeOrigin": [
+        104.45,
+        102.8
+      ],
+      "alignedSourceOrigin": [
+        104.45,
+        102.8
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "U7",
+      "source": "library\\SOT-23-5.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 180.0,
+      "nativeOrigin": [
+        107.45,
+        94.05
+      ],
+      "alignedSourceOrigin": [
+        107.45,
+        94.05
+      ],
+      "graphics": 17,
+      "errors": []
+    },
+    {
+      "ref": "U8",
+      "source": "library\\VSSOP-8_2.3x2mm_P0.5mm.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        108.2,
+        106.05
+      ],
+      "alignedSourceOrigin": [
+        108.2,
+        106.05
+      ],
+      "graphics": 13,
+      "errors": []
+    },
+    {
+      "ref": "U9",
+      "source": "library\\SOT-23-6.kicad_mod",
+      "layer": "F.Cu",
+      "rotation": 0.0,
+      "nativeOrigin": [
+        95.45,
+        112.3
+      ],
+      "alignedSourceOrigin": [
+        95.45,
+        112.3
+      ],
+      "graphics": 13,
+      "errors": []
+    }
+  ],
+  "failedAlignments": 0
+}

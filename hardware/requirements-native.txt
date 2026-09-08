@@ -1,0 +1,4 @@
+# Optional geometric routing analysis; use KiCad 10's Python 3.11 on Windows.
+numpy==2.4.6
+scipy==1.17.1
+shapely==2.1.2

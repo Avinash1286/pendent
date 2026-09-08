@@ -1,0 +1,26 @@
+Drill report for aura-a03.kicad_pcb
+Created on 2026-09-08T05:47:23
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'aura-a03-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.150mm  0.0059"  (2 holes))
+    T2  0.200mm  0.0079"  (175 holes))
+
+    Total plated holes count 177
+
+
+Drill file 'aura-a03-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  0.500mm  0.0197"  (2 holes))
+
+    Total unplated holes count 2

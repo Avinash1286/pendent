@@ -18,6 +18,7 @@ focused_path=root/'placement-current-audit.json'
 if focused_path.exists():
     focused=json.loads(focused_path.read_text(encoding='utf-8'))
     assert focused['scene_sha256']==hashlib.sha256((root/'aura-product.blend').read_bytes()).hexdigest(),'Focused audit is stale for this Blender source'
+    assert focused['placement_reference_sha256']==hashlib.sha256((root/'pcb-placement-reference.json').read_bytes()).hexdigest(),'Focused audit placement reference is stale'
     item=focused['candidates']['current']
     assert not item['component_envelope_overlaps'] and not item['component_envelope_contacts'],'Focused package envelopes overlap/touch'
     assert all(v<.0001 for v in item['solid_intersections_mm3'].values()),'Focused package/case collision'
@@ -28,17 +29,20 @@ if (root/'print-invariance.json').exists():
 if (root/'model-sync-audit.json').exists():
     model_audit=json.loads((root/'model-sync-audit.json').read_text(encoding='utf-8'))
     assert model_audit['ok'] and model_audit['glb_sha256']==hashlib.sha256((root/'aura-device.glb').read_bytes()).hexdigest(),'Exported model audit is stale or failed'
+    assert model_audit['placement_reference_sha256']==hashlib.sha256((root/'pcb-placement-reference.json').read_bytes()).hexdigest(),'Model audit placement reference is stale'
+    assert model_audit['symmetry_audit_sha256']==hashlib.sha256((root/'c18-symmetry-audit.json').read_bytes()).hexdigest(),'Model audit symmetry evidence is stale'
+    assert model_audit['exact_rotation_count']==55 and model_audit['symmetry_equivalent_rotation_count']==1 and model_audit['unintended_deviation_count']==0
 parts=['aura-front-shell.stl','aura-rear-shell.stl','aura-record-face.stl','aura-privacy-slider.stl','aura-top-retainer.stl','aura-contact-carrier.stl','aura-fit-coupon.stl','aura-dock-alignment-jig.stl']
 for name in parts:
     data=(root/name).read_bytes();count=int.from_bytes(data[80:84],'little')
     assert count>0 and len(data)==84+50*count,('Invalid/empty binary STL',name,count,len(data))
 docs=['PRINTING.md','MECHANICAL.md','PACKAGE-ENVELOPES.md','aura-mechanical-drawing.svg','design-contract.json','mesh-audit.json','assembly-audit.json']
-for name in ['placement-current-audit.json','print-invariance.json','model-sync-audit.json','hardware-placement-sync.json','pcb-placement-reference.json','component-body-reference.json']:
+for name in ['placement-current-audit.json','print-invariance.json','model-sync-audit.json','hardware-placement-sync.json','pcb-placement-reference.json','component-body-reference.json','c18-source-sync.json','c18-symmetry-audit.json']:
     if (root/name).exists():docs.append(name)
 with zipfile.ZipFile(root/'aura-a03-print-kit.zip','w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
     for name in parts+docs:archive.write(root/name,name)
 if '--prints-only' in sys.argv:
-    (root/'asset-manifest.json').write_text(json.dumps({'revision':'A03','body_mm':contract['body_mm'],'overall_case_height_mm':54,'print_parts':parts,'print_kit':'aura-a03-print-kit.zip','physical_qualification':False,'render_batch_state':'RUNNING; run finalize_package.py after all six final renders and visual QA','render_log':'a03-release.log'},indent=2),encoding='utf-8')
+    (root/'asset-manifest.json').write_text(json.dumps({'revision':'A03','body_mm':contract['body_mm'],'overall_case_height_mm':54,'print_parts':parts,'print_kit':'aura-a03-print-kit.zip','physical_qualification':False,'render_batch_state':'RUNNING; run finalize_package.py after all six final renders and visual QA','render_log':'a03-release.log'},indent=2),encoding='utf-8',newline='\n')
     print('A03 eight-part print ZIP refreshed; render manifest unchanged')
     sys.exit(0)
 renders=[]
@@ -51,5 +55,5 @@ for p in sorted(root.iterdir()):
         files.append(p)
 files += [root/r['path'] for r in renders]
 manifest={'revision':'A03','generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'units':{'blender_glb':'metres','stl':'millimetres'},'body_mm':contract['body_mm'],'overall_case_height_mm':54,'physical_qualification':False,'render_visual_qa':'Caller must inspect final images after the render batch; not validated by this script','print_parts':parts,'renders':renders,'files':[{'path':p.relative_to(root).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]}
-(root/'asset-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
+(root/'asset-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
 print('A03 print ZIP and manifest refreshed:',len(files),'files')

@@ -1,0 +1,256 @@
+(kicad_sch
+  (version 20260101)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (uuid 6950691d-a748-45d4-8307-1b382ed2ece2)
+  (paper "A4")
+  (lib_symbols)
+  (sheet
+    (at 30.0 35.0)
+    (size 100.0 35.0)
+    (fields_autoplaced yes)
+    (stroke
+      (width 0.0006)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0.0000)
+    )
+    (uuid "662b8161-5716-4090-9d3b-cadbdc8f1cb4")
+    (property "Sheet name" "Radio and debug"
+      (at 32.54 33.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+    (property "Sheet file" "a03-radio.kicad_sch"
+      (at 32.54 73.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+  )
+  (sheet
+    (at 155.0 35.0)
+    (size 100.0 35.0)
+    (fields_autoplaced yes)
+    (stroke
+      (width 0.0006)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0.0000)
+    )
+    (uuid "d541b7d1-fdfc-40c7-8d7a-720bcd75dce5")
+    (property "Sheet name" "Audio and privacy"
+      (at 157.54 33.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+    (property "Sheet file" "a03-audio.kicad_sch"
+      (at 157.54 73.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+  )
+  (sheet
+    (at 30.0 90.0)
+    (size 100.0 35.0)
+    (fields_autoplaced yes)
+    (stroke
+      (width 0.0006)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0.0000)
+    )
+    (uuid "1922139f-f1bf-46eb-9cc2-3e306522e155")
+    (property "Sheet name" "Offline storage"
+      (at 32.54 88.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+    (property "Sheet file" "a03-storage.kicad_sch"
+      (at 32.54 128.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+  )
+  (sheet
+    (at 155.0 90.0)
+    (size 100.0 35.0)
+    (fields_autoplaced yes)
+    (stroke
+      (width 0.0006)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0.0000)
+    )
+    (uuid "f6decb16-57a5-4374-90a3-9a4fdbfabe56")
+    (property "Sheet name" "Charging and thermal limit"
+      (at 157.54 88.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+    (property "Sheet file" "a03-charging.kicad_sch"
+      (at 157.54 128.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+  )
+  (sheet
+    (at 30.0 145.0)
+    (size 100.0 35.0)
+    (fields_autoplaced yes)
+    (stroke
+      (width 0.0006)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0.0000)
+    )
+    (uuid "1a007a54-8095-49ff-b013-c420fc4c1b10")
+    (property "Sheet name" "System power and controls"
+      (at 32.54 143.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+    (property "Sheet file" "a03-controls.kicad_sch"
+      (at 32.54 183.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom)
+      )
+    )
+  )
+  (text "AURA / EVT-A03   NATIVE ELECTRICAL DESIGN"
+    (exclude_from_sim no)
+    (at 30.48 22.86 0)
+    (effects
+      (font
+        (size 3.81 3.81)
+        (bold yes)
+      )
+      (justify left bottom)
+    )
+    (uuid "70144276-d7cb-4271-b3f2-43d8d3dd0bb2")
+  )
+  (text "nRF52840 BLE radio\nSWD programming and recovery pads\n3.0 V normal-voltage module supply"
+    (exclude_from_sim no)
+    (at 35.56 43.18 0)
+    (effects
+      (font
+        (size 1.52 1.52)
+      )
+      (justify left bottom)
+    )
+    (uuid "1bff62f3-2357-41e5-a0a2-a515b6809f8f")
+  )
+  (text "Dual PDM microphones and bus isolation\nMechanical microphone power cut\nHardwired amber microphone-power indicator"
+    (exclude_from_sim no)
+    (at 160.02 43.18 0)
+    (effects
+      (font
+        (size 1.52 1.52)
+      )
+      (justify left bottom)
+    )
+    (uuid "c6aac49c-54c8-4759-9799-37106d9afec8")
+  )
+  (text "1 Gbit SPI NAND for offline audio\nPower-up write-protect and hold pull-ups\nFirmware must manage ECC and bad blocks"
+    (exclude_from_sim no)
+    (at 35.56 99.06 0)
+    (effects
+      (font
+        (size 1.52 1.52)
+      )
+      (justify left bottom)
+    )
+    (uuid "e19c17bd-0604-4ec8-b27f-ad201c3d3677")
+  )
+  (text "53 mA nominal charger and system power path\nPack NTC comparator; default-off charge permission\nProtected 4.2 V cell and qualified NTC required"
+    (exclude_from_sim no)
+    (at 160.02 99.06 0)
+    (effects
+      (font
+        (size 1.52 1.52)
+      )
+      (justify left bottom)
+    )
+    (uuid "e708dade-67f2-40e0-b7c6-52ae37df05ff")
+  )
+  (text "3.0 V system rail and battery fuel gauge\nTactile capture button\nClosed-loop LRA haptic driver"
+    (exclude_from_sim no)
+    (at 35.56 154.94 0)
+    (effects
+      (font
+        (size 1.52 1.52)
+      )
+      (justify left bottom)
+    )
+    (uuid "20083cb9-ff8f-4abb-81dc-f245ab5faf62")
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+    (path "/6950691d-a748-45d4-8307-1b382ed2ece2/662b8161-5716-4090-9d3b-cadbdc8f1cb4"
+      (page "2")
+    )
+    (path "/6950691d-a748-45d4-8307-1b382ed2ece2/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5"
+      (page "3")
+    )
+    (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1922139f-f1bf-46eb-9cc2-3e306522e155"
+      (page "4")
+    )
+    (path "/6950691d-a748-45d4-8307-1b382ed2ece2/f6decb16-57a5-4374-90a3-9a4fdbfabe56"
+      (page "5")
+    )
+    (path "/6950691d-a748-45d4-8307-1b382ed2ece2/1a007a54-8095-49ff-b013-c420fc4c1b10"
+      (page "6")
+    )
+  )
+  (title_block
+    (title "AURA / Native electrical design")
+    (date "2026-09-08")
+    (rev "EVT-A03")
+    (company "AURA product engineering")
+  )
+)

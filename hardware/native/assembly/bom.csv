@@ -1,0 +1,58 @@
+Reference,Quantity,MPN,Value,NativeFootprint,AssemblyStatus
+U1,1,MDBT50Q-1MV2,nRF52840 BLE module,AURA_PCB:A03_U1,Candidate; dense assembly and supplier qualification pending
+MK1,1,SPH0641LU4H-1,Left PDM microphone,AURA_PCB:A03_MK1,Candidate; dense assembly and supplier qualification pending
+MK2,1,SPH0641LU4H-1,Right PDM microphone,AURA_PCB:A03_MK2,Candidate; dense assembly and supplier qualification pending
+U2,1,W25N01GVZEIG,1Gbit SPI NAND /128MiB,AURA_PCB:A03_U2,Candidate; dense assembly and supplier qualification pending
+U3,1,BQ25185DLHR,53mA Li-ion powerpath charger,AURA_PCB:A03_U3,Candidate; dense assembly and supplier qualification pending
+U4,1,TLV75530PDBVR,3.0V system regulator,AURA_PCB:A03_U4,Candidate; dense assembly and supplier qualification pending
+U5,1,MAX17048G+T10,ModelGauge fuel gauge,AURA_PCB:A03_U5,Candidate; dense assembly and supplier qualification pending
+U6,1,DRV2605LDGSR,LRA closed-loop haptics,AURA_PCB:A03_U6,Candidate; dense assembly and supplier qualification pending
+U7,1,TLV75530PDBVR,Recording-only3V microphone regulator,AURA_PCB:A03_U7,Candidate; dense assembly and supplier qualification pending
+U8,1,SN74LVC2G125DCUR,Ioff protected PDM isolation,AURA_PCB:A03_U8,Candidate; dense assembly and supplier qualification pending
+U9,1,TLV6700DDCR,Independent charge hot cutoff,AURA_PCB:A03_U9,Candidate; dense assembly and supplier qualification pending
+Q1,1,DMG2302UK-7,Default-off charge permission,AURA_PCB:A03_Q1,Candidate; dense assembly and supplier qualification pending
+SW1,1,JS202011JCQN,Mechanical DPDT microphone OFF,AURA_PCB:A03_SW1,Candidate; dense assembly and supplier qualification pending
+SW2,1,KMR211NGULCLFS,Flush face record / stop,AURA_PCB:A03_SW2,Candidate; dense assembly and supplier qualification pending
+D1,1,BAT54WS-7-F,Reverse-dock Schottky,AURA_PCB:A03_D1,Candidate; dense assembly and supplier qualification pending
+D2,1,"PESD5V0S1BA,115",Dock transient suppression,AURA_PCB:A03_D2,Candidate; dense assembly and supplier qualification pending
+LED1,1,LTST-C190KFKT,Amber hard recording indicator,AURA_PCB:A03_LED1,Candidate; dense assembly and supplier qualification pending
+R1,1,RC0402FR-075K62L,5.62k,AURA_PCB:A03_R1,Candidate; dense assembly and supplier qualification pending
+R2,1,RC0402FR-0724KL,24k,AURA_PCB:A03_R2,Candidate; dense assembly and supplier qualification pending
+R3,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R3,Candidate; dense assembly and supplier qualification pending
+R4,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R4,Candidate; dense assembly and supplier qualification pending
+R5,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R5,Candidate; dense assembly and supplier qualification pending
+R6,1,RC0402FR-074K7L,4.7k,AURA_PCB:A03_R6,Candidate; dense assembly and supplier qualification pending
+R7,1,RC0402FR-074K7L,4.7k,AURA_PCB:A03_R7,Candidate; dense assembly and supplier qualification pending
+R8,1,RC0402FR-07100KL,100k,AURA_PCB:A03_R8,Candidate; dense assembly and supplier qualification pending
+R9,1,RC0402FR-07100KL,100k,AURA_PCB:A03_R9,Candidate; dense assembly and supplier qualification pending
+R10,1,RC0402FR-07100KL,100k,AURA_PCB:A03_R10,Candidate; dense assembly and supplier qualification pending
+R11,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R11,Candidate; dense assembly and supplier qualification pending
+R13,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R13,Candidate; dense assembly and supplier qualification pending
+R14,1,RC0402FR-071KL,1k,AURA_PCB:A03_R14,Candidate; dense assembly and supplier qualification pending
+R15,1,RC0402FR-07100KL,100k,AURA_PCB:A03_R15,Candidate; dense assembly and supplier qualification pending
+R16,1,RC0402FR-0733RL,33,AURA_PCB:A03_R16,Candidate; dense assembly and supplier qualification pending
+R17,1,RC0402FR-0733RL,33,AURA_PCB:A03_R17,Candidate; dense assembly and supplier qualification pending
+R18,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R18,Candidate; dense assembly and supplier qualification pending
+R19,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R19,Candidate; dense assembly and supplier qualification pending
+R20,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R20,Candidate; dense assembly and supplier qualification pending
+R21,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R21,Candidate; dense assembly and supplier qualification pending
+R22,1,RC0402FR-073K3L,3.3k,AURA_PCB:A03_R22,Candidate; dense assembly and supplier qualification pending
+R23,1,RC0402FR-0710KL,10k,AURA_PCB:A03_R23,Candidate; dense assembly and supplier qualification pending
+C1,1,C0402C104K4RACTU,100nF,AURA_PCB:A03_C1,Candidate; dense assembly and supplier qualification pending
+C2,1,C0603C475K8PACTU,4.7uF,AURA_PCB:A03_C2,Candidate; dense assembly and supplier qualification pending
+C3,1,939113424610-T3N,100nF silicon,AURA_PCB:A03_C3,Candidate; dense assembly and supplier qualification pending
+C4,1,939113424610-T3N,100nF silicon,AURA_PCB:A03_C4,Candidate; dense assembly and supplier qualification pending
+C5,1,C0402C104K4RACTU,100nF,AURA_PCB:A03_C5,Candidate; dense assembly and supplier qualification pending
+C6,1,C0603C475K8PACTU,4.7uF,AURA_PCB:A03_C6,Candidate; dense assembly and supplier qualification pending
+C7,1,C0603C225K8RACTU,2.2uF,AURA_PCB:A03_C7,Candidate; dense assembly and supplier qualification pending
+C8,1,C0603C475K8PACTU,4.7uF,AURA_PCB:A03_C8,Candidate; dense assembly and supplier qualification pending
+C9,1,C0805C106K8PACTU,10uF,AURA_PCB:A03_C9,Candidate; dense assembly and supplier qualification pending
+C10,1,C0603C225K8RACTU,2.2uF,AURA_PCB:A03_C10,Candidate; dense assembly and supplier qualification pending
+C11,1,C0402C104K4RACTU,100nF,AURA_PCB:A03_C11,Candidate; dense assembly and supplier qualification pending
+C12,1,C0603C105K4RACTU,1uF,AURA_PCB:A03_C12,Candidate; dense assembly and supplier qualification pending
+C13,1,C0603C105K4RACTU,1uF,AURA_PCB:A03_C13,Candidate; dense assembly and supplier qualification pending
+C14,1,C0603C105K4RACTU,1uF,AURA_PCB:A03_C14,Candidate; dense assembly and supplier qualification pending
+C15,1,C0603C105K4RACTU,1uF,AURA_PCB:A03_C15,Candidate; dense assembly and supplier qualification pending
+C16,1,C0402C104K4RACTU,100nF,AURA_PCB:A03_C16,Candidate; dense assembly and supplier qualification pending
+C17,1,C0402C103K5RACTU,10nF,AURA_PCB:A03_C17,Candidate; dense assembly and supplier qualification pending
+C18,1,C0402C104K4RACTU,100nF,AURA_PCB:A03_C18,Candidate; dense assembly and supplier qualification pending

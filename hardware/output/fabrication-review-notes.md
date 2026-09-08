@@ -1,5 +1,7 @@
 # AURA EVT-A03 fabrication review notes
 
+Historical notes for the earlier placement/session package. The current connected native project, exports, stack and remaining assembly-review constraints are in [the native manufacturing guide](../native/README.md). The HOLD and routing status below describe the superseded pre-import snapshot.
+
 **HOLD — engineering intent only. Do not submit the present placement board or standalone session for fabrication.** The session has not been imported into KiCad, copper completion and independent routed-board DRC are outstanding, and battery/RF/assembly qualification remains incomplete. The authoritative status is `aura-a03-routing-status.json` together with `kicad-a03-final-placement-drc.json` and `../../docs/hardware.md`.
 
 ## Board intent

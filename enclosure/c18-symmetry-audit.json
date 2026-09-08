@@ -1,0 +1,115 @@
+{
+  "scope": "C18 exact-MPN visual body symmetry only; PCB pin orientation is not exempted",
+  "ok": true,
+  "reference": "C18",
+  "mpn": "C0402C104K4RACTU",
+  "source_rotation_degrees": 270,
+  "canonical_visual_rotation_degrees": 90,
+  "symmetry_degrees": 180,
+  "position_tolerance_metres": 2e-10,
+  "normal_tolerance": 0.00001,
+  "proof": "Each actual exported body is a connected closed manifold with an invariant complete triangle set, including the normals associated with each triangle vertex, under a half-turn. This proves the same triangulated surface and interpolated shading, without relying on a bounding box or convexity assumption. The material is uniform and untextured; UVs are unused. No pads or pin labels are represented.",
+  "manufacturer_marking": "No",
+  "manufacturer_specification": "https://search.kemet.com/download/specsheet/C0402C104K4RACTU",
+  "physical_qualification": false,
+  "meshes": [
+    {
+      "path": "aura-device.glb",
+      "glb_sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a",
+      "node": "Passive_Reference_C18",
+      "mpn": "C0402C104K4RACTU",
+      "visual_rotation_degrees": 90,
+      "unique_position_count": 216,
+      "triangle_count": 428,
+      "connected_closed_manifold": true,
+      "euler_characteristic": 2,
+      "volume_mm3": 0.23910259685230648,
+      "maximum_half_turn_vertex_error_metres": 0,
+      "maximum_half_turn_normal_error": 0,
+      "vertex_set_half_turn_invariant": true,
+      "normal_field_half_turn_invariant": true,
+      "triangle_connectivity_half_turn_invariant": true,
+      "shaded_triangle_signature": "88cdd1c962e716bd3fa4e87306b086a98e5a2f065d405064fb205ae5e76fbd10",
+      "triangle_associated_normals_half_turn_invariant": true,
+      "uniform_untextured_material": true,
+      "unused_uvs_present": true,
+      "physical_body_solid_half_turn_invariant": true
+    },
+    {
+      "path": "aura-pendant.glb",
+      "glb_sha256": "634a9facee379874444c120e4978ec42811c330679d971c849f478a806180e80",
+      "node": "Passive_Reference_C18",
+      "mpn": "C0402C104K4RACTU",
+      "visual_rotation_degrees": 90,
+      "unique_position_count": 216,
+      "triangle_count": 428,
+      "connected_closed_manifold": true,
+      "euler_characteristic": 2,
+      "volume_mm3": 0.23910259685230648,
+      "maximum_half_turn_vertex_error_metres": 0,
+      "maximum_half_turn_normal_error": 0,
+      "vertex_set_half_turn_invariant": true,
+      "normal_field_half_turn_invariant": true,
+      "triangle_connectivity_half_turn_invariant": true,
+      "shaded_triangle_signature": "88cdd1c962e716bd3fa4e87306b086a98e5a2f065d405064fb205ae5e76fbd10",
+      "triangle_associated_normals_half_turn_invariant": true,
+      "uniform_untextured_material": true,
+      "unused_uvs_present": true,
+      "physical_body_solid_half_turn_invariant": true
+    },
+    {
+      "path": "aura-exploded.glb",
+      "glb_sha256": "4b2fe53470fabf70384097e84d25a2c54ffd7a70d793f47bbdf67d85522d21c7",
+      "node": "Passive_Reference_C18",
+      "mpn": "C0402C104K4RACTU",
+      "visual_rotation_degrees": 90,
+      "unique_position_count": 216,
+      "triangle_count": 428,
+      "connected_closed_manifold": true,
+      "euler_characteristic": 2,
+      "volume_mm3": 0.23910259685230648,
+      "maximum_half_turn_vertex_error_metres": 0,
+      "maximum_half_turn_normal_error": 0,
+      "vertex_set_half_turn_invariant": true,
+      "normal_field_half_turn_invariant": true,
+      "triangle_connectivity_half_turn_invariant": true,
+      "shaded_triangle_signature": "88cdd1c962e716bd3fa4e87306b086a98e5a2f065d405064fb205ae5e76fbd10",
+      "triangle_associated_normals_half_turn_invariant": true,
+      "uniform_untextured_material": true,
+      "unused_uvs_present": true,
+      "physical_body_solid_half_turn_invariant": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "aura-device.glb",
+      "sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a",
+      "bytes": 2108420,
+      "unchanged": true
+    },
+    {
+      "path": "aura-pendant.glb",
+      "sha256": "634a9facee379874444c120e4978ec42811c330679d971c849f478a806180e80",
+      "bytes": 2733672,
+      "unchanged": true
+    },
+    {
+      "path": "aura-exploded.glb",
+      "sha256": "4b2fe53470fabf70384097e84d25a2c54ffd7a70d793f47bbdf67d85522d21c7",
+      "bytes": 1976500,
+      "unchanged": true
+    },
+    {
+      "path": "aura-product.blend",
+      "sha256": "25780cc538bb25db6df25e3af51778f81035e04bca98b08444ad4ae4418f9733",
+      "bytes": 1262444,
+      "unchanged": true
+    },
+    {
+      "path": "../film/aura-launch/renders/aura-launch.mp4",
+      "sha256": "1f208827348028c6aba7508524e1d1da0ffa45779663bf3bf75e97fb6cdfaee0",
+      "bytes": 13469070,
+      "unchanged": true
+    }
+  ]
+}

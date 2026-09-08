@@ -57,6 +57,7 @@ pressed.location.z-=.35*MM;pressed.name='Audit_Pressed_Face'
 obstacles=[bpy.data.objects[name] for name in ['Housing_Front','Housing_Back','Battery_Envelope','Haptic_Reference','Haptic_Insulator','RF_Module_Envelope']]+[pressed]
 result={'scope':'Current saved component placement assessment' if current_mode else 'Provisional routing-move assessment; no placement changes made by this script',
  'scene_sha256':hashlib.sha256((ROOT/'aura-product.blend').read_bytes()).hexdigest(),
+ 'placement_reference_sha256':hashlib.sha256((ROOT/'pcb-placement-reference.json').read_bytes()).hexdigest() if current_mode else None,
  'body_reference_sha256':hashlib.sha256((ROOT/'component-body-reference.json').read_bytes()).hexdigest(),
  'baseline_positions':placements,
  'physical_qualification':False,'units':'mm and mm³','method':'Source body rectangles, exact manufacturer maximum bodies where verified, plus0.10mm vertical solder allowance; manifold boolean against actual saved cavity/face/cell/motor/RF solids',
@@ -97,5 +98,5 @@ for candidate,changes in candidates.items():
         entry['q1_maximum_lead_sweep']=leads
     result['candidates'][candidate]=entry
 bpy.data.objects.remove(pressed,do_unlink=True)
-(ROOT/('placement-current-audit.json' if current_mode else 'placement-sync-audit.json')).write_text(json.dumps(result,indent=2)+'\n')
+(ROOT/('placement-current-audit.json' if current_mode else 'placement-sync-audit.json')).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(json.dumps({name:{'overlaps':item['component_envelope_overlaps'],'solid_collisions':{key:volume for key,volume in item['solid_intersections_mm3'].items() if volume>.0001},'nearest_other_body':item['nearest_other_body'],'pressed_face_gaps':item['pressed_face_vertical_gap_mm']} for name,item in result['candidates'].items()},indent=2),flush=True)

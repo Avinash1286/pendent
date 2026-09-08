@@ -1,5 +1,7 @@
 # AURA EVT-A independent electrical review
 
+Historical bounded review. Current native connectivity, ERC, manufacturing outputs and remaining assembly findings are recorded in the [A03 native project guide](../hardware/native/README.md). Later corrections noted here supersede the original capacity and package assumptions; the earlier routing/ERC counts below describe review-time snapshots.
+
 Reviewed 2026-09-08 against `hardware/src/design.ts`, `AuraPendant.tsx`, `placement-overrides.json`, exported logical netlist/BOM and the firmware contract. Hardware routing was being revised concurrently. This is a bounded design review, not ERC, DRC, bench validation or fabrication approval. No hardware source was changed by this review.
 
 Later A03 update: the target is now 150 mAh with a 20.5 × 28 × 3.3 mm reserved pack volume. The hardware author reports moving the charger/gauge bypass capacitors close to their ICs and correcting the NAND ZE package from a subsequently retrieved Rev.R sheet. Their final routes still require verification. The current conditional temperature-cutoff proposal, pack sourcing evidence and exact LRA candidate are in [thermal-review.md](thermal-review.md); that report supersedes the earlier capacity and direct-NTC assumptions below.

@@ -2,7 +2,12 @@
   "revision": "A03",
   "ok": true,
   "glb_sha256": "a0d3b7e04b07141e8dd1b356f22eae08e609571b16788506ccfb431f409ac72a",
+  "placement_reference_sha256": "3008266af1262fd25b8342fc6cda04d8731acaca23bc48c66b38b397a8f7d8ab",
+  "symmetry_audit_sha256": "0190e30de3dc189dac1d1f7c338e9bdc9c844ed6b63a1a9c1a22e4321a74fdd0",
   "package_transform_count": 56,
+  "exact_rotation_count": 55,
+  "symmetry_equivalent_rotation_count": 1,
+  "unintended_deviation_count": 0,
   "dimension_check_count": 50,
   "coordinate_convention": "glTF X=CAD X; glTF Y=CAD Z; glTF Z=−CAD Y. Units converted to millimetres for checking.",
   "physical_qualification": false,
@@ -14,7 +19,9 @@
         0.7999999797903001,
         -9.050000458955765
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 360,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         2.4999999441206455,
         1.2499999720603228,
@@ -29,7 +36,9 @@
         -0.5499999970197678,
         -15.799999237060547
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         2.4999999441206455,
         1.2499999720603228,
@@ -44,7 +53,9 @@
         -8.550000376999378,
         3.1999999191612005
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90
     },
     {
       "ref": "MK1",
@@ -53,7 +64,9 @@
         -8.500000461935997,
         9.270000271499157
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0
     },
     {
       "ref": "MK2",
@@ -62,7 +75,9 @@
         8.500000461935997,
         9.270000271499157
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0
     },
     {
       "ref": "C1",
@@ -71,7 +86,9 @@
         -1.0499999625608325,
         -0.7999999797903001
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -86,7 +103,9 @@
         -2.050000010058284,
         -1.3000000035390258
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -101,7 +120,9 @@
         -6.550000049173832,
         10.449999943375587
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.2000000569969416,
         0.699999975040555,
@@ -116,7 +137,9 @@
         6.4500002190470695,
         9.700000286102295
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.2000000569969416,
         0.699999975040555,
@@ -131,7 +154,9 @@
         -10.80000028014183,
         7.950000464916229
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -146,7 +171,9 @@
         -10.54999977350235,
         9.700000286102295
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -161,7 +188,9 @@
         -1.3000000035390258,
         -9.850000031292439
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -176,7 +205,9 @@
         -8.00000037997961,
         -9.050000458955765
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -191,7 +222,9 @@
         -4.800000227987766,
         -6.800000090152025
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         2.0000000949949026,
         1.2499999720603228,
@@ -206,7 +239,9 @@
         0.8999999845400453,
         -10.54999977350235
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -221,7 +256,9 @@
         1.449999981559813,
         -3.2999999821186066
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -236,7 +273,9 @@
         6.6999997943639755,
         -0.7999999797903001
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -251,7 +290,9 @@
         3.9499998092651367,
         -6.300000008195639
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -266,7 +307,9 @@
         9.949999861419201,
         5.950000137090683
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -281,7 +324,9 @@
         6.4500002190470695,
         2.950000111013651
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.5999999595806003,
         0.7999999797903001,
@@ -296,7 +341,9 @@
         10.700000450015068,
         -5.799999926239252
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -311,7 +358,9 @@
         -5.549999885261059,
         -1.7999999690800905
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 360,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -326,7 +375,11 @@
         -2.050000010058284,
         -13.299999758601189
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "symmetry-equivalent",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": 90,
+      "symmetry_evidence": "c18-symmetry-audit.json",
+      "pcb_pin_rotation_exempted": false,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -341,7 +394,9 @@
         -3.5500000230968,
         -6.049999967217445
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -356,7 +411,9 @@
         -6.049999967217445,
         -6.049999967217445
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -371,7 +428,9 @@
         -5.049999803304672,
         -0.7999999797903001
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -386,7 +445,9 @@
         -6.800000090152025,
         -2.79999990016222
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -401,7 +462,9 @@
         -7.799999788403511,
         -2.050000010058284
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -416,7 +479,9 @@
         -5.799999926239252,
         8.449999615550041
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -431,7 +496,9 @@
         -3.5500000230968,
         -1.39999995008111
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 540,
+      "model_rotation_degrees": -179.999999,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -446,7 +513,9 @@
         -3.5500000230968,
         -0.3000000142492354
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 540,
+      "model_rotation_degrees": -179.999999,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -461,7 +530,9 @@
         6.200000178068876,
         7.950000464916229
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -476,7 +547,9 @@
         6.200000178068876,
         10.950000025331974
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -491,7 +564,9 @@
         -7.799999788403511,
         -3.800000064074993
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -506,7 +581,9 @@
         10.449999943375587,
         8.200000040233135
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -521,7 +598,9 @@
         -7.0500001311302185,
         -5.549999885261059
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -536,7 +615,9 @@
         10.449999943375587,
         9.949999861419201
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -551,7 +632,9 @@
         -1.7999999690800905,
         -3.0499999411404133
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 360,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -566,7 +649,9 @@
         -9.30000003427267,
         -1.550000044517219
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -581,7 +666,9 @@
         -9.30000003427267,
         -2.5500000920146704
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -596,7 +683,9 @@
         -10.80000028014183,
         -2.300000051036477
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -611,7 +700,9 @@
         -9.30000003427267,
         -3.5500000230968
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -626,7 +717,9 @@
         -8.050000295042992,
         -5.549999885261059
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 450,
+      "model_rotation_degrees": 89.99999,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -641,7 +734,9 @@
         -8.500000461935997,
         -13.399999588727951
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -656,7 +751,9 @@
         -8.500000461935997,
         -11.500000022351742
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 270,
+      "model_rotation_degrees": -90,
       "nominal_body_mm": [
         1.0000000474974513,
         0.5000000237487257,
@@ -671,7 +768,9 @@
         -4.550000187009573,
         -3.800000064074993
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         1.3000000035390258,
         2.899999963119626,
@@ -686,7 +785,9 @@
         -4.050000105053186,
         -9.549999609589577
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         2.199999988079071,
         2.0000000949949026,
@@ -701,7 +802,9 @@
         -0.04999999873689376,
         -13.050000183284283
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         2.899999963119626,
         2.79999990016222,
@@ -716,7 +819,9 @@
         1.7000000225380063,
         -1.3000000035390258
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         2.0000000949949026,
         2.0000000949949026,
@@ -731,7 +836,9 @@
         4.449999891221523,
         -2.79999990016222
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90,
       "nominal_body_mm": [
         4.900000058114529,
         3.000000026077032,
@@ -746,7 +853,9 @@
         7.449999917298555,
         5.950000137090683
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 180,
+      "model_rotation_degrees": -179.999995,
       "nominal_body_mm": [
         2.899999963119626,
         2.79999990016222,
@@ -761,7 +870,9 @@
         8.200000040233135,
         -6.049999967217445
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         3.100000089034438,
         2.0000000949949026,
@@ -776,7 +887,9 @@
         -4.550000187009573,
         -12.299999594688416
       ],
-      "rotation_matches": true,
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0,
       "nominal_body_mm": [
         2.899999963119626,
         2.79999990016222,
@@ -791,7 +904,9 @@
         9.499999694526196,
         -0.19999999494757503
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 90,
+      "model_rotation_degrees": 90
     },
     {
       "ref": "SW2",
@@ -800,7 +915,9 @@
         0,
         -6.000000052154064
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0
     },
     {
       "ref": "U1",
@@ -809,7 +926,9 @@
         0,
         8.00000037997961
       ],
-      "rotation_matches": true
+      "rotation_match_kind": "exact",
+      "source_rotation_degrees": 0,
+      "model_rotation_degrees": 0
     }
   ]
 }

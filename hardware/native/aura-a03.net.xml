@@ -1,0 +1,2862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>F:\circuit\hardware\native\aura-a03.kicad_sch</source>
+    <date>2026-09-08T06:01:33</date>
+    <tool>Eeschema 10.0.4</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>AURA / Native electrical design</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>aura-a03.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/">
+      <title_block>
+        <title>AURA / Radio and programming</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>a03-radio.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/">
+      <title_block>
+        <title>AURA / Audio and physical privacy</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>a03-audio.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/">
+      <title_block>
+        <title>AURA / Offline flash storage</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>a03-storage.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/">
+      <title_block>
+        <title>AURA / Charging and thermal permission</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>a03-charging.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/">
+      <title_block>
+        <title>AURA / System power and controls</title>
+        <company>AURA product engineering</company>
+        <rev>EVT-A03</rev>
+        <date>2026-09-08</date>
+        <source>a03-controls.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>AURA_PCB:A03_C1</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C104K4RACTU</field>
+        <field name="Function">100nF</field>
+        <field name="Footprint">AURA_PCB:A03_C1</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C104K4RACTU"/>
+      <property name="Function" value="100nF"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>d77f8e70-25a0-4575-9b46-789754672e5e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>4.7uF</value>
+      <footprint>AURA_PCB:A03_C2</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C475K8PACTU</field>
+        <field name="Function">4.7uF</field>
+        <field name="Footprint">AURA_PCB:A03_C2</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C475K8PACTU"/>
+      <property name="Function" value="4.7uF"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>7915ef3b-3ec1-46a0-9518-95f2204f359d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>AURA-SWD-PADS</value>
+      <footprint>AURA_PCB:A03_J3</footprint>
+      <description>6 pogo programming pads</description>
+      <fields>
+        <field name="MPN">AURA-SWD-PADS</field>
+        <field name="Function">6 pogo programming pads</field>
+        <field name="Footprint">AURA_PCB:A03_J3</field>
+        <field name="Datasheet"/>
+        <field name="Description">6 pogo programming pads</field>
+      </fields>
+      <libsource lib="AuraA03" part="AURA_SWD_PADS" description="6 pogo programming pads"/>
+      <property name="MPN" value="AURA-SWD-PADS"/>
+      <property name="Function" value="6 pogo programming pads"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>c014a31a-a58d-4ead-8e74-6a1c0f2586ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>4.7k</value>
+      <footprint>AURA_PCB:A03_R6</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-074K7L</field>
+        <field name="Function">4.7k</field>
+        <field name="Footprint">AURA_PCB:A03_R6</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-074K7L"/>
+      <property name="Function" value="4.7k"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>7edf43c8-3510-4da3-bb11-7cfd9de0eca8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>4.7k</value>
+      <footprint>AURA_PCB:A03_R7</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-074K7L</field>
+        <field name="Function">4.7k</field>
+        <field name="Footprint">AURA_PCB:A03_R7</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-074K7L"/>
+      <property name="Function" value="4.7k"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>969206cd-c84b-4dc1-9cd3-99548ee5eade</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R21">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R21</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R21</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>bcdc8cc2-ffc6-4e2a-b909-104696720d26</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>MDBT50Q-1MV2</value>
+      <footprint>AURA_PCB:A03_U1</footprint>
+      <datasheet>https://www.raytac.com/download/index.php?index_id=43</datasheet>
+      <description>Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module</description>
+      <fields>
+        <field name="MPN">MDBT50Q-1MV2</field>
+        <field name="Function">nRF52840 BLE module</field>
+        <field name="Footprint">AURA_PCB:A03_U1</field>
+        <field name="Datasheet">https://www.raytac.com/download/index.php?index_id=43</field>
+        <field name="Description">Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module</field>
+      </fields>
+      <libsource lib="RF_Module" part="MDBT50Q-1MV2" description="Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module"/>
+      <property name="MPN" value="MDBT50Q-1MV2"/>
+      <property name="Function" value="nRF52840 BLE module"/>
+      <property name="Sheetname" value="Radio and debug"/>
+      <property name="Sheetfile" value="a03-radio.kicad_sch"/>
+      <property name="ki_keywords" value="BLE ANT ZigBee Thread 802.15.4 nRF52840 nordic MDBT50Q"/>
+      <property name="ki_fp_filters" value="Raytac?MDBT50Q*"/>
+      <sheetpath names="/Radio and debug/" tstamps="/662b8161-5716-4090-9d3b-cadbdc8f1cb4/"/>
+      <tstamps>98b99c38-51b8-4409-9a7d-726b002f668c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="51"/>
+            <pin num="53"/>
+            <pin num="11"/>
+            <pin num="9"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="13"/>
+            <pin num="10"/>
+            <pin num="14"/>
+            <pin num="12"/>
+            <pin num="52"/>
+            <pin num="54"/>
+            <pin num="34"/>
+            <pin num="35"/>
+            <pin num="61"/>
+            <pin num="50"/>
+            <pin num="60"/>
+            <pin num="56"/>
+            <pin num="59"/>
+            <pin num="57"/>
+            <pin num="58"/>
+            <pin num="25"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="28"/>
+            <pin num="30"/>
+            <pin num="1"/>
+            <pin num="33"/>
+            <pin num="55"/>
+            <pin num="2"/>
+            <pin num="15"/>
+            <pin num="32"/>
+            <pin num="31"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="22"/>
+            <pin num="24"/>
+            <pin num="37"/>
+            <pin num="36"/>
+            <pin num="39"/>
+            <pin num="38"/>
+            <pin num="41"/>
+            <pin num="40"/>
+            <pin num="42"/>
+            <pin num="44"/>
+            <pin num="43"/>
+            <pin num="46"/>
+            <pin num="45"/>
+            <pin num="48"/>
+            <pin num="49"/>
+            <pin num="19"/>
+            <pin num="16"/>
+            <pin num="47"/>
+            <pin num="29"/>
+            <pin num="27"/>
+            <pin num="26"/>
+            <pin num="23"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>100nF silicon</value>
+      <footprint>AURA_PCB:A03_C3</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">939113424610-T3N</field>
+        <field name="Function">100nF silicon</field>
+        <field name="Footprint">AURA_PCB:A03_C3</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="939113424610-T3N"/>
+      <property name="Function" value="100nF silicon"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>b00182a0-5ebb-462f-8b6c-327c265282de</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>100nF silicon</value>
+      <footprint>AURA_PCB:A03_C4</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">939113424610-T3N</field>
+        <field name="Function">100nF silicon</field>
+        <field name="Footprint">AURA_PCB:A03_C4</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="939113424610-T3N"/>
+      <property name="Function" value="100nF silicon"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>c2f18aef-45ec-453d-b423-c48504a371f2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>1uF</value>
+      <footprint>AURA_PCB:A03_C14</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C105K4RACTU</field>
+        <field name="Function">1uF</field>
+        <field name="Footprint">AURA_PCB:A03_C14</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C105K4RACTU"/>
+      <property name="Function" value="1uF"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>6b926981-de4b-4c90-8298-c54571f465ef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>1uF</value>
+      <footprint>AURA_PCB:A03_C15</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C105K4RACTU</field>
+        <field name="Function">1uF</field>
+        <field name="Footprint">AURA_PCB:A03_C15</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C105K4RACTU"/>
+      <property name="Function" value="1uF"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>a1a4fb21-ea6f-4f0e-9673-308ab2f4b1ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>100nF</value>
+      <footprint>AURA_PCB:A03_C16</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C104K4RACTU</field>
+        <field name="Function">100nF</field>
+        <field name="Footprint">AURA_PCB:A03_C16</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C104K4RACTU"/>
+      <property name="Function" value="100nF"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>2d34fbeb-1487-4278-96b8-592fa1448be2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="LED1">
+      <value>LTST-C190KFKT</value>
+      <footprint>AURA_PCB:A03_LED1</footprint>
+      <description>Light emitting diode</description>
+      <fields>
+        <field name="MPN">LTST-C190KFKT</field>
+        <field name="Function">Amber hard recording indicator</field>
+        <field name="Footprint">AURA_PCB:A03_LED1</field>
+        <field name="Datasheet"/>
+        <field name="Description">Light emitting diode</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="MPN" value="LTST-C190KFKT"/>
+      <property name="Function" value="Amber hard recording indicator"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>bf01e89d-2011-42da-85ac-f5fa7c16d450</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MK1">
+      <value>SPH0641LU4H-1</value>
+      <footprint>AURA_PCB:A03_MK1</footprint>
+      <datasheet>https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</datasheet>
+      <description>Left PDM microphone</description>
+      <fields>
+        <field name="MPN">SPH0641LU4H-1</field>
+        <field name="Function">Left PDM microphone</field>
+        <field name="Footprint">AURA_PCB:A03_MK1</field>
+        <field name="Datasheet">https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</field>
+        <field name="Description">Left PDM microphone</field>
+      </fields>
+      <libsource lib="AuraA03" part="SPH0641LU4H_1_A03" description="Left PDM microphone"/>
+      <property name="MPN" value="SPH0641LU4H-1"/>
+      <property name="Function" value="Left PDM microphone"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>c33ba012-660a-4205-a19a-75353970258d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MK2">
+      <value>SPH0641LU4H-1</value>
+      <footprint>AURA_PCB:A03_MK2</footprint>
+      <datasheet>https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</datasheet>
+      <description>Left PDM microphone</description>
+      <fields>
+        <field name="MPN">SPH0641LU4H-1</field>
+        <field name="Function">Right PDM microphone</field>
+        <field name="Footprint">AURA_PCB:A03_MK2</field>
+        <field name="Datasheet">https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</field>
+        <field name="Description">Left PDM microphone</field>
+      </fields>
+      <libsource lib="AuraA03" part="SPH0641LU4H_1_A03" description="Left PDM microphone"/>
+      <property name="MPN" value="SPH0641LU4H-1"/>
+      <property name="Function" value="Right PDM microphone"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>3b51293c-7151-4c32-9ea8-84d8848f1c32</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>100k</value>
+      <footprint>AURA_PCB:A03_R9</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-07100KL</field>
+        <field name="Function">100k</field>
+        <field name="Footprint">AURA_PCB:A03_R9</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-07100KL"/>
+      <property name="Function" value="100k"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>b139862c-8f98-4505-8abf-c4f0f65e2ea0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R13</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R13</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>8adf8b25-d3b1-4929-b711-b468e14a9cc5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>1k</value>
+      <footprint>AURA_PCB:A03_R14</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-071KL</field>
+        <field name="Function">1k</field>
+        <field name="Footprint">AURA_PCB:A03_R14</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-071KL"/>
+      <property name="Function" value="1k"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>4baba5f8-b48f-46c6-be68-8d884e00234a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>100k</value>
+      <footprint>AURA_PCB:A03_R15</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-07100KL</field>
+        <field name="Function">100k</field>
+        <field name="Footprint">AURA_PCB:A03_R15</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-07100KL"/>
+      <property name="Function" value="100k"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>90bd9f05-9422-44b0-98a4-91f00ba78eac</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R16">
+      <value>33</value>
+      <footprint>AURA_PCB:A03_R16</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0733RL</field>
+        <field name="Function">33</field>
+        <field name="Footprint">AURA_PCB:A03_R16</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0733RL"/>
+      <property name="Function" value="33"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>89117c43-4713-4dca-a24d-7bb221b9cfea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW1">
+      <value>JS202011JCQN</value>
+      <footprint>AURA_PCB:A03_SW1</footprint>
+      <datasheet>https://www.ckswitches.com/media/1422/js.pdf</datasheet>
+      <description>Mechanical DPDT microphone OFF</description>
+      <fields>
+        <field name="MPN">JS202011JCQN</field>
+        <field name="Function">Mechanical DPDT microphone OFF</field>
+        <field name="Footprint">AURA_PCB:A03_SW1</field>
+        <field name="Datasheet">https://www.ckswitches.com/media/1422/js.pdf</field>
+        <field name="Description">Mechanical DPDT microphone OFF</field>
+      </fields>
+      <libsource lib="AuraA03" part="JS202011JCQN_A03" description="Mechanical DPDT microphone OFF"/>
+      <property name="MPN" value="JS202011JCQN"/>
+      <property name="Function" value="Mechanical DPDT microphone OFF"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>ff037b7f-ea4e-4852-8d9b-7cdd862fe734</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U7">
+      <value>TLV75530PDBVR</value>
+      <footprint>AURA_PCB:A03_U7</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tlv755p.pdf</datasheet>
+      <description>3.0V system regulator</description>
+      <fields>
+        <field name="MPN">TLV75530PDBVR</field>
+        <field name="Function">Recording-only3V microphone regulator</field>
+        <field name="Footprint">AURA_PCB:A03_U7</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv755p.pdf</field>
+        <field name="Description">3.0V system regulator</field>
+      </fields>
+      <libsource lib="AuraA03" part="TLV75530PDBVR_A03" description="3.0V system regulator"/>
+      <property name="MPN" value="TLV75530PDBVR"/>
+      <property name="Function" value="Recording-only3V microphone regulator"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>75d83c62-6394-48d2-9819-82fafffd0cef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U8">
+      <value>SN74LVC2G125DCUR</value>
+      <footprint>AURA_PCB:A03_U8</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</datasheet>
+      <description>Ioff protected PDM isolation</description>
+      <fields>
+        <field name="MPN">SN74LVC2G125DCUR</field>
+        <field name="Function">Ioff protected PDM isolation</field>
+        <field name="Footprint">AURA_PCB:A03_U8</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</field>
+        <field name="Description">Ioff protected PDM isolation</field>
+      </fields>
+      <libsource lib="AuraA03" part="SN74LVC2G125DCUR_A03" description="Ioff protected PDM isolation"/>
+      <property name="MPN" value="SN74LVC2G125DCUR"/>
+      <property name="Function" value="Ioff protected PDM isolation"/>
+      <property name="Sheetname" value="Audio and privacy"/>
+      <property name="Sheetfile" value="a03-audio.kicad_sch"/>
+      <sheetpath names="/Audio and privacy/" tstamps="/d541b7d1-fdfc-40c7-8d7a-720bcd75dce5/"/>
+      <tstamps>9dfb6e3d-d79d-42f2-9567-20e2ec897801</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>100nF</value>
+      <footprint>AURA_PCB:A03_C5</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C104K4RACTU</field>
+        <field name="Function">100nF</field>
+        <field name="Footprint">AURA_PCB:A03_C5</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C104K4RACTU"/>
+      <property name="Function" value="100nF"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>7cab3b4a-8e2e-47a5-b21b-dbc6522b4370</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>4.7uF</value>
+      <footprint>AURA_PCB:A03_C6</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C475K8PACTU</field>
+        <field name="Function">4.7uF</field>
+        <field name="Footprint">AURA_PCB:A03_C6</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C475K8PACTU"/>
+      <property name="Function" value="4.7uF"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>a92ef492-7d12-4626-92d2-a0164c2c36b2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R17">
+      <value>33</value>
+      <footprint>AURA_PCB:A03_R17</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0733RL</field>
+        <field name="Function">33</field>
+        <field name="Footprint">AURA_PCB:A03_R17</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0733RL"/>
+      <property name="Function" value="33"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>3ac9d2be-f678-4ecb-b27d-93095ff5faf3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R18</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R18</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>747befea-7047-45a0-97ff-4ba4c05d233c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R19</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R19</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>3514a2fd-75cb-4ed8-abe3-429bc38088f2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R20">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R20</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R20</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>97dca62f-4fef-45b4-93c6-f93058890286</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>W25N01GVZEIG</value>
+      <footprint>AURA_PCB:A03_U2</footprint>
+      <datasheet>https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf</datasheet>
+      <description>1Gbit SPI NAND /128MiB</description>
+      <fields>
+        <field name="MPN">W25N01GVZEIG</field>
+        <field name="Function">1Gbit SPI NAND /128MiB</field>
+        <field name="Footprint">AURA_PCB:A03_U2</field>
+        <field name="Datasheet">https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf</field>
+        <field name="Description">1Gbit SPI NAND /128MiB</field>
+      </fields>
+      <libsource lib="AuraA03" part="W25N01GVZEIG_A03" description="1Gbit SPI NAND /128MiB"/>
+      <property name="MPN" value="W25N01GVZEIG"/>
+      <property name="Function" value="1Gbit SPI NAND /128MiB"/>
+      <property name="Sheetname" value="Offline storage"/>
+      <property name="Sheetfile" value="a03-storage.kicad_sch"/>
+      <sheetpath names="/Offline storage/" tstamps="/1922139f-f1bf-46eb-9cc2-3e306522e155/"/>
+      <tstamps>0e87ee00-e578-46ba-8e2f-5c937a7976a9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>2.2uF</value>
+      <footprint>AURA_PCB:A03_C7</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C225K8RACTU</field>
+        <field name="Function">2.2uF</field>
+        <field name="Footprint">AURA_PCB:A03_C7</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C225K8RACTU"/>
+      <property name="Function" value="2.2uF"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>9a9c3b82-ff83-4920-8248-39be3c59cf9d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>4.7uF</value>
+      <footprint>AURA_PCB:A03_C8</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C475K8PACTU</field>
+        <field name="Function">4.7uF</field>
+        <field name="Footprint">AURA_PCB:A03_C8</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C475K8PACTU"/>
+      <property name="Function" value="4.7uF"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>3f79eb5d-cdfb-4daf-b579-5e4f8a513507</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>10uF</value>
+      <footprint>AURA_PCB:A03_C9</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0805C106K8PACTU</field>
+        <field name="Function">10uF</field>
+        <field name="Footprint">AURA_PCB:A03_C9</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0805C106K8PACTU"/>
+      <property name="Function" value="10uF"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>719653aa-aa6b-44df-b64d-c287a5c585ad</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>100nF</value>
+      <footprint>AURA_PCB:A03_C18</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C104K4RACTU</field>
+        <field name="Function">100nF</field>
+        <field name="Footprint">AURA_PCB:A03_C18</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C104K4RACTU"/>
+      <property name="Function" value="100nF"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>53f71e5d-b25a-4a92-bc27-38e23dee9ea0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>BAT54WS-7-F</value>
+      <footprint>AURA_PCB:A03_D1</footprint>
+      <description>Schottky diode</description>
+      <fields>
+        <field name="MPN">BAT54WS-7-F</field>
+        <field name="Function">Reverse-dock Schottky</field>
+        <field name="Footprint">AURA_PCB:A03_D1</field>
+        <field name="Datasheet"/>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
+      <property name="MPN" value="BAT54WS-7-F"/>
+      <property name="Function" value="Reverse-dock Schottky"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>91eb11ed-4642-402a-acd9-581d6859fbb1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>PESD5V0S1BA,115</value>
+      <footprint>AURA_PCB:A03_D2</footprint>
+      <description>Bidirectional transient-voltage-suppression diode</description>
+      <fields>
+        <field name="MPN">PESD5V0S1BA,115</field>
+        <field name="Function">Dock transient suppression</field>
+        <field name="Footprint">AURA_PCB:A03_D2</field>
+        <field name="Datasheet"/>
+        <field name="Description">Bidirectional transient-voltage-suppression diode</field>
+      </fields>
+      <libsource lib="Device" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <property name="MPN" value="PESD5V0S1BA,115"/>
+      <property name="Function" value="Dock transient suppression"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="diode TVS thyrector"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>f64caea3-8c3c-4baa-9253-2433a9d5e2c0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>AURA-DOCK-PADS</value>
+      <footprint>AURA_PCB:A03_J1</footprint>
+      <description>3 ENIG rear pogo contacts</description>
+      <fields>
+        <field name="MPN">AURA-DOCK-PADS</field>
+        <field name="Function">3 ENIG rear pogo contacts</field>
+        <field name="Footprint">AURA_PCB:A03_J1</field>
+        <field name="Datasheet"/>
+        <field name="Description">3 ENIG rear pogo contacts</field>
+      </fields>
+      <libsource lib="AuraA03" part="AURA_DOCK_PADS" description="3 ENIG rear pogo contacts"/>
+      <property name="MPN" value="AURA-DOCK-PADS"/>
+      <property name="Function" value="3 ENIG rear pogo contacts"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>2efb9c2d-bfed-46df-9abe-8deed130342d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>AURA-BATTERY-PADS</value>
+      <footprint>AURA_PCB:A03_J2</footprint>
+      <description>Protected LiPo and pack10kNTC</description>
+      <fields>
+        <field name="MPN">AURA-BATTERY-PADS</field>
+        <field name="Function">Protected LiPo and pack10kNTC</field>
+        <field name="Footprint">AURA_PCB:A03_J2</field>
+        <field name="Datasheet"/>
+        <field name="Description">Protected LiPo and pack10kNTC</field>
+      </fields>
+      <libsource lib="AuraA03" part="AURA_BATTERY_PADS" description="Protected LiPo and pack10kNTC"/>
+      <property name="MPN" value="AURA-BATTERY-PADS"/>
+      <property name="Function" value="Protected LiPo and pack10kNTC"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>6595a214-c5ea-4fe4-a7d7-89c1b045ef70</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q1">
+      <value>DMG2302UK-7</value>
+      <footprint>AURA_PCB:A03_Q1</footprint>
+      <datasheet>https://www.diodes.com/datasheet/download/DMG2302UK.pdf</datasheet>
+      <description>Default-off charge permission</description>
+      <fields>
+        <field name="MPN">DMG2302UK-7</field>
+        <field name="Function">Default-off charge permission</field>
+        <field name="Footprint">AURA_PCB:A03_Q1</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMG2302UK.pdf</field>
+        <field name="Description">Default-off charge permission</field>
+      </fields>
+      <libsource lib="AuraA03" part="DMG2302UK_A03" description="Default-off charge permission"/>
+      <property name="MPN" value="DMG2302UK-7"/>
+      <property name="Function" value="Default-off charge permission"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>01502111-53bf-4228-ac04-95227892bdc0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>5.62k</value>
+      <footprint>AURA_PCB:A03_R1</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-075K62L</field>
+        <field name="Function">5.62k</field>
+        <field name="Footprint">AURA_PCB:A03_R1</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-075K62L"/>
+      <property name="Function" value="5.62k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>17b12149-1a92-4e89-a88a-01c4c829c8e6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>24k</value>
+      <footprint>AURA_PCB:A03_R2</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0724KL</field>
+        <field name="Function">24k</field>
+        <field name="Footprint">AURA_PCB:A03_R2</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0724KL"/>
+      <property name="Function" value="24k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>aab561be-6540-40ec-afaa-a67dbcae85d0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R3</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R3</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>843dca85-cbc9-4eaf-97e6-942c9ebc331d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R4</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R4</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>ba0fa1c0-dfc0-4177-b5d8-f9f73ea0b41c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R5</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R5</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>4fa975eb-05a8-4b8f-9ac3-6113da9a1f27</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R22">
+      <value>3.3k</value>
+      <footprint>AURA_PCB:A03_R22</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-073K3L</field>
+        <field name="Function">3.3k</field>
+        <field name="Footprint">AURA_PCB:A03_R22</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-073K3L"/>
+      <property name="Function" value="3.3k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>ab9e4b91-f0d7-4875-b2fa-cfe6a40e24f0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R23">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R23</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R23</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>ff1bc5e9-1ef1-47da-9e5d-35b5fd00925a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>BQ25185DLHR</value>
+      <footprint>AURA_PCB:A03_U3</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/bq25185.pdf</datasheet>
+      <description>53mA Li-ion powerpath charger</description>
+      <fields>
+        <field name="MPN">BQ25185DLHR</field>
+        <field name="Function">53mA Li-ion powerpath charger</field>
+        <field name="Footprint">AURA_PCB:A03_U3</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/bq25185.pdf</field>
+        <field name="Description">53mA Li-ion powerpath charger</field>
+      </fields>
+      <libsource lib="AuraA03" part="BQ25185DLHR_A03" description="53mA Li-ion powerpath charger"/>
+      <property name="MPN" value="BQ25185DLHR"/>
+      <property name="Function" value="53mA Li-ion powerpath charger"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>a2d65c6d-ed82-4ed2-9b1e-0817ebc34c24</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U9">
+      <value>TLV6700DDCR</value>
+      <footprint>AURA_PCB:A03_U9</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tlv6700.pdf</datasheet>
+      <description>Independent charge hot cutoff</description>
+      <fields>
+        <field name="MPN">TLV6700DDCR</field>
+        <field name="Function">Independent charge hot cutoff</field>
+        <field name="Footprint">AURA_PCB:A03_U9</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv6700.pdf</field>
+        <field name="Description">Independent charge hot cutoff</field>
+      </fields>
+      <libsource lib="AuraA03" part="TLV6700DDCR_A03" description="Independent charge hot cutoff"/>
+      <property name="MPN" value="TLV6700DDCR"/>
+      <property name="Function" value="Independent charge hot cutoff"/>
+      <property name="Sheetname" value="Charging and thermal limit"/>
+      <property name="Sheetfile" value="a03-charging.kicad_sch"/>
+      <sheetpath names="/Charging and thermal limit/" tstamps="/f6decb16-57a5-4374-90a3-9a4fdbfabe56/"/>
+      <tstamps>a481c136-5cad-4da5-b726-63851819bee7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>2.2uF</value>
+      <footprint>AURA_PCB:A03_C10</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C225K8RACTU</field>
+        <field name="Function">2.2uF</field>
+        <field name="Footprint">AURA_PCB:A03_C10</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C225K8RACTU"/>
+      <property name="Function" value="2.2uF"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>374a55e4-b458-4040-bc25-c1bdbb64cf69</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>100nF</value>
+      <footprint>AURA_PCB:A03_C11</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C104K4RACTU</field>
+        <field name="Function">100nF</field>
+        <field name="Footprint">AURA_PCB:A03_C11</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C104K4RACTU"/>
+      <property name="Function" value="100nF"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>61b44a18-df0d-4cbd-97ac-8094f2d974c2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>1uF</value>
+      <footprint>AURA_PCB:A03_C12</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C105K4RACTU</field>
+        <field name="Function">1uF</field>
+        <field name="Footprint">AURA_PCB:A03_C12</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C105K4RACTU"/>
+      <property name="Function" value="1uF"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>ef5a61fb-d522-4f15-a313-4c547c96b81f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>1uF</value>
+      <footprint>AURA_PCB:A03_C13</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0603C105K4RACTU</field>
+        <field name="Function">1uF</field>
+        <field name="Footprint">AURA_PCB:A03_C13</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0603C105K4RACTU"/>
+      <property name="Function" value="1uF"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>f598895b-4f70-42a6-8060-4383423b71f2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>10nF</value>
+      <footprint>AURA_PCB:A03_C17</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="MPN">C0402C103K5RACTU</field>
+        <field name="Function">10nF</field>
+        <field name="Footprint">AURA_PCB:A03_C17</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="C0402C103K5RACTU"/>
+      <property name="Function" value="10nF"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>de1c7172-b199-46c4-820f-749c60012783</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J4">
+      <value>AURA-LRA-PADS</value>
+      <footprint>AURA_PCB:A03_J4</footprint>
+      <description>C08-00A LRA wire pads</description>
+      <fields>
+        <field name="MPN">AURA-LRA-PADS</field>
+        <field name="Function">C08-00A LRA wire pads</field>
+        <field name="Footprint">AURA_PCB:A03_J4</field>
+        <field name="Datasheet"/>
+        <field name="Description">C08-00A LRA wire pads</field>
+      </fields>
+      <libsource lib="AuraA03" part="AURA_LRA_PADS" description="C08-00A LRA wire pads"/>
+      <property name="MPN" value="AURA-LRA-PADS"/>
+      <property name="Function" value="C08-00A LRA wire pads"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>be44a065-272a-475b-825d-12c8583ad458</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>100k</value>
+      <footprint>AURA_PCB:A03_R8</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-07100KL</field>
+        <field name="Function">100k</field>
+        <field name="Footprint">AURA_PCB:A03_R8</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-07100KL"/>
+      <property name="Function" value="100k"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>46a73691-b997-4004-8d00-13d1589ed2d4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>100k</value>
+      <footprint>AURA_PCB:A03_R10</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-07100KL</field>
+        <field name="Function">100k</field>
+        <field name="Footprint">AURA_PCB:A03_R10</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-07100KL"/>
+      <property name="Function" value="100k"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>4af4e065-031c-4978-be13-aa485152f5d8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <footprint>AURA_PCB:A03_R11</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="MPN">RC0402FR-0710KL</field>
+        <field name="Function">10k</field>
+        <field name="Footprint">AURA_PCB:A03_R11</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0402FR-0710KL"/>
+      <property name="Function" value="10k"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>61eb9a13-2738-4104-a419-27cb124177c8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW2">
+      <value>KMR211NGULCLFS</value>
+      <footprint>AURA_PCB:A03_SW2</footprint>
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="MPN">KMR211NGULCLFS</field>
+        <field name="Function">Flush face record / stop</field>
+        <field name="Footprint">AURA_PCB:A03_SW2</field>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="MPN" value="KMR211NGULCLFS"/>
+      <property name="Function" value="Flush face record / stop"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>4f1a4c33-6611-4b22-8784-88a8e265d418</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U4">
+      <value>TLV75530PDBVR</value>
+      <footprint>AURA_PCB:A03_U4</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tlv755p.pdf</datasheet>
+      <description>3.0V system regulator</description>
+      <fields>
+        <field name="MPN">TLV75530PDBVR</field>
+        <field name="Function">3.0V system regulator</field>
+        <field name="Footprint">AURA_PCB:A03_U4</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv755p.pdf</field>
+        <field name="Description">3.0V system regulator</field>
+      </fields>
+      <libsource lib="AuraA03" part="TLV75530PDBVR_A03" description="3.0V system regulator"/>
+      <property name="MPN" value="TLV75530PDBVR"/>
+      <property name="Function" value="3.0V system regulator"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>1eab8dd0-7fea-4e46-8a51-fc0d00a2130d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U5">
+      <value>MAX17048G+T10</value>
+      <footprint>AURA_PCB:A03_U5</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf</datasheet>
+      <description>ModelGauge fuel gauge</description>
+      <fields>
+        <field name="MPN">MAX17048G+T10</field>
+        <field name="Function">ModelGauge fuel gauge</field>
+        <field name="Footprint">AURA_PCB:A03_U5</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf</field>
+        <field name="Description">ModelGauge fuel gauge</field>
+      </fields>
+      <libsource lib="AuraA03" part="MAX17048G_T10_A03" description="ModelGauge fuel gauge"/>
+      <property name="MPN" value="MAX17048G+T10"/>
+      <property name="Function" value="ModelGauge fuel gauge"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>f8cafe39-515c-4d3f-8788-5b9bd732b333</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U6">
+      <value>DRV2605LDGSR</value>
+      <footprint>AURA_PCB:A03_U6</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/drv2605l.pdf</datasheet>
+      <description>LRA closed-loop haptics</description>
+      <fields>
+        <field name="MPN">DRV2605LDGSR</field>
+        <field name="Function">LRA closed-loop haptics</field>
+        <field name="Footprint">AURA_PCB:A03_U6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/drv2605l.pdf</field>
+        <field name="Description">LRA closed-loop haptics</field>
+      </fields>
+      <libsource lib="AuraA03" part="DRV2605LDGSR_A03" description="LRA closed-loop haptics"/>
+      <property name="MPN" value="DRV2605LDGSR"/>
+      <property name="Function" value="LRA closed-loop haptics"/>
+      <property name="Sheetname" value="System power and controls"/>
+      <property name="Sheetfile" value="a03-controls.kicad_sch"/>
+      <sheetpath names="/System power and controls/" tstamps="/1a007a54-8095-49ff-b013-c420fc4c1b10/"/>
+      <tstamps>5d1ba350-f941-4e7c-9006-0b490851e161</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="AuraA03" part="AURA_BATTERY_PADS">
+      <description>Protected LiPo and pack10kNTC</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">AURA_BATTERY_PADS</field>
+        <field name="Footprint">AURA:AURA-BATTERY-PADS</field>
+        <field name="Datasheet"/>
+        <field name="Description">Protected LiPo and pack10kNTC</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VBAT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="BAT_NTC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="AURA_DOCK_PADS">
+      <description>3 ENIG rear pogo contacts</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">AURA_DOCK_PADS</field>
+        <field name="Footprint">AURA:AURA-DOCK-PADS</field>
+        <field name="Datasheet"/>
+        <field name="Description">3 ENIG rear pogo contacts</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_L" type="passive"/>
+        <pin num="2" name="DOCK_5V" type="passive"/>
+        <pin num="3" name="GND_R" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="AURA_LRA_PADS">
+      <description>C08-00A LRA wire pads</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">AURA_LRA_PADS</field>
+        <field name="Footprint">AURA:AURA-LRA-PADS</field>
+        <field name="Datasheet"/>
+        <field name="Description">C08-00A LRA wire pads</field>
+      </fields>
+      <pins>
+        <pin num="1" name="LRA_P" type="passive"/>
+        <pin num="2" name="LRA_N" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="AURA_SWD_PADS">
+      <description>6 pogo programming pads</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">AURA_SWD_PADS</field>
+        <field name="Footprint">AURA:AURA-SWD-PADS</field>
+        <field name="Datasheet"/>
+        <field name="Description">6 pogo programming pads</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VTREF" type="passive"/>
+        <pin num="2" name="SWDIO" type="passive"/>
+        <pin num="3" name="SWDCLK" type="passive"/>
+        <pin num="4" name="RESET_N" type="passive"/>
+        <pin num="5" name="GND_A" type="passive"/>
+        <pin num="6" name="GND_B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="BQ25185DLHR_A03">
+      <description>53mA Li-ion powerpath charger</description>
+      <docs>https://www.ti.com/lit/ds/symlink/bq25185.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BQ25185DLHR_A03</field>
+        <field name="Footprint">Package_DFN_QFN:Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/bq25185.pdf</field>
+        <field name="Description">53mA Li-ion powerpath charger</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SYS" type="power_out"/>
+        <pin num="2" name="BAT" type="passive"/>
+        <pin num="3" name="STAT2" type="open_collector"/>
+        <pin num="4" name="N_CE" type="input"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="TS_MR" type="bidirectional"/>
+        <pin num="7" name="ILIM_VSET" type="bidirectional"/>
+        <pin num="8" name="ISET" type="bidirectional"/>
+        <pin num="9" name="STAT1" type="open_collector"/>
+        <pin num="10" name="IN" type="power_in"/>
+        <pin num="11" name="EP_GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="DMG2302UK_A03">
+      <description>Default-off charge permission</description>
+      <docs>https://www.diodes.com/datasheet/download/DMG2302UK.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">DMG2302UK_A03</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMG2302UK.pdf</field>
+        <field name="Description">Default-off charge permission</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GATE" type="input"/>
+        <pin num="2" name="SOURCE" type="passive"/>
+        <pin num="3" name="DRAIN" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="DRV2605LDGSR_A03">
+      <description>LRA closed-loop haptics</description>
+      <docs>https://www.ti.com/lit/ds/symlink/drv2605l.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DRV2605LDGSR_A03</field>
+        <field name="Footprint">Package_SO:MSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/drv2605l.pdf</field>
+        <field name="Description">LRA closed-loop haptics</field>
+      </fields>
+      <pins>
+        <pin num="1" name="REG" type="power_out"/>
+        <pin num="2" name="SCL" type="input"/>
+        <pin num="3" name="SDA" type="bidirectional"/>
+        <pin num="4" name="IN_TRIG" type="input"/>
+        <pin num="5" name="EN" type="input"/>
+        <pin num="6" name="VDD_NC" type="power_in"/>
+        <pin num="7" name="OUT_P" type="output"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="OUT_N" type="output"/>
+        <pin num="10" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="JS202011JCQN_A03">
+      <description>Mechanical DPDT microphone OFF</description>
+      <docs>https://www.ckswitches.com/media/1422/js.pdf</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">JS202011JCQN_A03</field>
+        <field name="Footprint">Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN</field>
+        <field name="Datasheet">https://www.ckswitches.com/media/1422/js.pdf</field>
+        <field name="Description">Mechanical DPDT microphone OFF</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A_ON" type="passive"/>
+        <pin num="2" name="A_COMMON" type="passive"/>
+        <pin num="3" name="A_OFF" type="passive"/>
+        <pin num="4" name="B_ON" type="passive"/>
+        <pin num="5" name="B_COMMON" type="passive"/>
+        <pin num="6" name="B_OFF" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="MAX17048G_T10_A03">
+      <description>ModelGauge fuel gauge</description>
+      <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MAX17048G_T10_A03</field>
+        <field name="Footprint">Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf</field>
+        <field name="Description">ModelGauge fuel gauge</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CTG" type="power_in"/>
+        <pin num="2" name="CELL" type="passive"/>
+        <pin num="3" name="VDD" type="power_in"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="N_ALRT" type="open_collector"/>
+        <pin num="6" name="QSTRT" type="input"/>
+        <pin num="7" name="SCL" type="input"/>
+        <pin num="8" name="SDA" type="bidirectional"/>
+        <pin num="9" name="EP_GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="SN74LVC2G125DCUR_A03">
+      <description>Ioff protected PDM isolation</description>
+      <docs>https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC2G125DCUR_A03</field>
+        <field name="Footprint">Package_SO:VSSOP-8_2.3x2mm_P0.5mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</field>
+        <field name="Description">Ioff protected PDM isolation</field>
+      </fields>
+      <pins>
+        <pin num="1" name="N_OE1" type="input"/>
+        <pin num="2" name="A1_CLK" type="input"/>
+        <pin num="3" name="Y2_DATA" type="tri_state"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="A2_DATA" type="input"/>
+        <pin num="6" name="Y1_CLK" type="tri_state"/>
+        <pin num="7" name="N_OE2" type="input"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="SPH0641LU4H_1_A03">
+      <description>Left PDM microphone</description>
+      <docs>https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</docs>
+      <fields>
+        <field name="Reference">MK</field>
+        <field name="Value">SPH0641LU4H_1_A03</field>
+        <field name="Footprint">Sensor_Audio:Knowles_LGA-5_3.5x2.65mm</field>
+        <field name="Datasheet">https://xonstorage.z8.web.core.windows.net/pdf/knowles_sph0641lu4h1_apr22_xonlink.pdf</field>
+        <field name="Description">Left PDM microphone</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DATA" type="tri_state"/>
+        <pin num="2" name="SELECT" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="CLOCK" type="input"/>
+        <pin num="5" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="TLV6700DDCR_A03">
+      <description>Independent charge hot cutoff</description>
+      <docs>https://www.ti.com/lit/ds/symlink/tlv6700.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLV6700DDCR_A03</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv6700.pdf</field>
+        <field name="Description">Independent charge hot cutoff</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUTA" type="open_collector"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="INA_P" type="input"/>
+        <pin num="4" name="INB_N" type="input"/>
+        <pin num="5" name="VDD" type="power_in"/>
+        <pin num="6" name="OUTB" type="open_collector"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="TLV75530PDBVR_A03">
+      <description>3.0V system regulator</description>
+      <docs>https://www.ti.com/lit/ds/symlink/tlv755p.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLV75530PDBVR_A03</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv755p.pdf</field>
+        <field name="Description">3.0V system regulator</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="AuraA03" part="W25N01GVZEIG_A03">
+      <description>1Gbit SPI NAND /128MiB</description>
+      <docs>https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">W25N01GVZEIG_A03</field>
+        <field name="Footprint">Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm</field>
+        <field name="Datasheet">https://www.marthel.pl/katalog/W25N01GV%20Rev%20R%20070323.pdf</field>
+        <field name="Description">1Gbit SPI NAND /128MiB</field>
+      </fields>
+      <pins>
+        <pin num="1" name="N_CS" type="input"/>
+        <pin num="2" name="DO_IO1" type="bidirectional"/>
+        <pin num="3" name="N_WP_IO2" type="bidirectional"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="DI_IO0" type="bidirectional"/>
+        <pin num="6" name="CLK" type="input"/>
+        <pin num="7" name="N_HOLD_IO3" type="bidirectional"/>
+        <pin num="8" name="VCC" type="power_in"/>
+        <pin num="9" name="EP_GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Schottky">
+      <description>Schottky diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_TVS">
+      <description>Bidirectional transient-voltage-suppression diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_TVS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Bidirectional transient-voltage-suppression diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Light emitting diode</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="RF_Module" part="MDBT50Q-1MV2">
+      <description>Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module</description>
+      <docs>https://www.raytac.com/download/index.php?index_id=43</docs>
+      <footprints>
+        <fp>Raytac?MDBT50Q*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MDBT50Q-1MV2</field>
+        <field name="Footprint">RF_Module:Raytac_MDBT50Q</field>
+        <field name="Datasheet">https://www.raytac.com/download/index.php?index_id=43</field>
+        <field name="Description">Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="P1.10" type="bidirectional"/>
+        <pin num="4" name="P1.11" type="bidirectional"/>
+        <pin num="5" name="P1.12" type="bidirectional"/>
+        <pin num="6" name="P1.13" type="bidirectional"/>
+        <pin num="7" name="P1.14" type="bidirectional"/>
+        <pin num="8" name="P1.15" type="bidirectional"/>
+        <pin num="9" name="P0.03" type="bidirectional"/>
+        <pin num="10" name="P0.29" type="bidirectional"/>
+        <pin num="11" name="P0.02" type="bidirectional"/>
+        <pin num="12" name="P0.31" type="bidirectional"/>
+        <pin num="13" name="P0.28" type="bidirectional"/>
+        <pin num="14" name="P0.30" type="bidirectional"/>
+        <pin num="15" name="GND" type="passive"/>
+        <pin num="16" name="P0.27" type="bidirectional"/>
+        <pin num="17" name="P0.00" type="bidirectional"/>
+        <pin num="18" name="P0.01" type="bidirectional"/>
+        <pin num="19" name="P0.26" type="bidirectional"/>
+        <pin num="20" name="P0.04" type="bidirectional"/>
+        <pin num="21" name="P0.05" type="bidirectional"/>
+        <pin num="22" name="P0.06" type="bidirectional"/>
+        <pin num="23" name="P0.07" type="bidirectional"/>
+        <pin num="24" name="P0.08" type="bidirectional"/>
+        <pin num="25" name="P1.08" type="bidirectional"/>
+        <pin num="26" name="P1.09" type="bidirectional"/>
+        <pin num="27" name="P0.11" type="bidirectional"/>
+        <pin num="28" name="VDD" type="power_in"/>
+        <pin num="29" name="P0.12" type="bidirectional"/>
+        <pin num="30" name="VDDH" type="power_in"/>
+        <pin num="31" name="DCCH" type="power_out"/>
+        <pin num="32" name="VBUS" type="power_in"/>
+        <pin num="33" name="GND" type="passive"/>
+        <pin num="34" name="D-" type="bidirectional"/>
+        <pin num="35" name="D+" type="bidirectional"/>
+        <pin num="36" name="P0.14" type="bidirectional"/>
+        <pin num="37" name="P0.13" type="bidirectional"/>
+        <pin num="38" name="P0.16" type="bidirectional"/>
+        <pin num="39" name="P0.15" type="bidirectional"/>
+        <pin num="40" name="P0.18" type="bidirectional"/>
+        <pin num="41" name="P0.17" type="bidirectional"/>
+        <pin num="42" name="P0.19" type="bidirectional"/>
+        <pin num="43" name="P0.21" type="bidirectional"/>
+        <pin num="44" name="P0.20" type="bidirectional"/>
+        <pin num="45" name="P0.23" type="bidirectional"/>
+        <pin num="46" name="P0.22" type="bidirectional"/>
+        <pin num="47" name="P1.00" type="bidirectional"/>
+        <pin num="48" name="P0.24" type="bidirectional"/>
+        <pin num="49" name="P0.25" type="bidirectional"/>
+        <pin num="50" name="P1.02" type="bidirectional"/>
+        <pin num="51" name="SWDIO" type="bidirectional"/>
+        <pin num="52" name="P0.09" type="bidirectional"/>
+        <pin num="53" name="SWDCLK" type="input"/>
+        <pin num="54" name="P0.10" type="bidirectional"/>
+        <pin num="55" name="GND" type="passive"/>
+        <pin num="56" name="P1.04" type="bidirectional"/>
+        <pin num="57" name="P1.06" type="bidirectional"/>
+        <pin num="58" name="P1.07" type="bidirectional"/>
+        <pin num="59" name="P1.05" type="bidirectional"/>
+        <pin num="60" name="P1.03" type="bidirectional"/>
+        <pin num="61" name="P1.01" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="AuraA03">
+      <uri>${KIPRJMOD}/../library/AuraA03.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>${KICAD10_SYMBOL_DIR}/Device.kicad_sym</uri>
+    </library>
+    <library logical="RF_Module">
+      <uri>${KICAD10_SYMBOL_DIR}/RF_Module.kicad_sym</uri>
+    </library>
+    <library logical="Switch">
+      <uri>${KICAD10_SYMBOL_DIR}/Switch.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="BAT_NTC" class="Default">
+      <node ref="J2" pin="3" pinfunction="BAT_NTC_3" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+    </net>
+    <net code="2" name="CHG_ALLOW" class="Default">
+      <node ref="Q1" pin="1" pinfunction="GATE_1" pintype="input"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="45" pinfunction="P0.23_45" pintype="bidirectional"/>
+    </net>
+    <net code="3" name="CHG_DISABLE" class="Default">
+      <node ref="Q1" pin="3" pinfunction="DRAIN_3" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="N_CE_4" pintype="input"/>
+    </net>
+    <net code="4" name="CHG_ISET" class="Default">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="ISET_8" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="CHG_STAT1" class="Default">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="43" pinfunction="P0.21_43" pintype="bidirectional"/>
+      <node ref="U3" pin="9" pinfunction="STAT1_9" pintype="open_collector"/>
+    </net>
+    <net code="6" name="CHG_STAT2" class="Default">
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U1" pin="44" pinfunction="P0.20_44" pintype="bidirectional"/>
+      <node ref="U3" pin="3" pinfunction="STAT2_3" pintype="open_collector"/>
+    </net>
+    <net code="7" name="CHG_VSET" class="Default">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="ILIM_VSET_7" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="DOCK_5V" class="Default">
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="A1_1" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="DOCK_5V_2" pintype="passive"/>
+    </net>
+    <net code="9" name="DOCK_IN" class="Default">
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="U3" pin="10" pinfunction="IN_10" pintype="power_in"/>
+    </net>
+    <net code="10" name="FLASH_HOLD_N" class="Default">
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="N_HOLD_IO3_7" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="FLASH_WP_N" class="Default">
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="N_WP_IO2_3" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="GAUGE_ALERT_N" class="Default">
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="42" pinfunction="P0.19_42" pintype="bidirectional"/>
+      <node ref="U5" pin="5" pinfunction="N_ALRT_5" pintype="open_collector"/>
+    </net>
+    <net code="13" name="GND" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A2_2" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="GND_L_1" pintype="passive"/>
+      <node ref="J1" pin="3" pinfunction="GND_R_3" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J3" pin="5" pinfunction="GND_A_5" pintype="passive"/>
+      <node ref="J3" pin="6" pinfunction="GND_B_6" pintype="passive"/>
+      <node ref="LED1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="MK1" pin="2" pinfunction="SELECT_2" pintype="input"/>
+      <node ref="MK1" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="MK2" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="3" pinfunction="A_OFF_3" pintype="passive"/>
+      <node ref="SW1" pin="4" pinfunction="B_ON_4" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GND_1" pintype="power_in"/>
+      <node ref="U1" pin="15" pinfunction="GND_15" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="U1" pin="32" pinfunction="VBUS_32" pintype="power_in"/>
+      <node ref="U1" pin="33" pinfunction="GND_33" pintype="passive"/>
+      <node ref="U1" pin="55" pinfunction="GND_55" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U2" pin="9" pinfunction="EP_GND_9" pintype="passive"/>
+      <node ref="U3" pin="11" pinfunction="EP_GND_11" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="GND_5" pintype="power_in"/>
+      <node ref="U4" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U5" pin="1" pinfunction="CTG_1" pintype="power_in"/>
+      <node ref="U5" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U5" pin="6" pinfunction="QSTRT_6" pintype="input"/>
+      <node ref="U5" pin="9" pinfunction="EP_GND_9" pintype="power_in"/>
+      <node ref="U6" pin="4" pinfunction="IN_TRIG_4" pintype="input"/>
+      <node ref="U6" pin="8" pinfunction="GND_8" pintype="power_in"/>
+      <node ref="U7" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U8" pin="1" pinfunction="N_OE1_1" pintype="input"/>
+      <node ref="U8" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U8" pin="7" pinfunction="N_OE2_7" pintype="input"/>
+      <node ref="U9" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U9" pin="3" pinfunction="INA_P_3" pintype="input"/>
+    </net>
+    <net code="14" name="HAPTIC_EN" class="Default">
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="U1" pin="41" pinfunction="P0.17_41" pintype="bidirectional"/>
+      <node ref="U6" pin="5" pinfunction="EN_5" pintype="input"/>
+    </net>
+    <net code="15" name="HAPTIC_REG" class="Default">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="U6" pin="1" pinfunction="REG_1" pintype="power_out"/>
+    </net>
+    <net code="16" name="I2C_SCL" class="Default">
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="P0.27_16" pintype="bidirectional"/>
+      <node ref="U5" pin="7" pinfunction="SCL_7" pintype="input"/>
+      <node ref="U6" pin="2" pinfunction="SCL_2" pintype="input"/>
+    </net>
+    <net code="17" name="I2C_SDA" class="Default">
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="P0.26_19" pintype="bidirectional"/>
+      <node ref="U5" pin="8" pinfunction="SDA_8" pintype="bidirectional"/>
+      <node ref="U6" pin="3" pinfunction="SDA_3" pintype="bidirectional"/>
+    </net>
+    <net code="18" name="LED_RECORD_A" class="Default">
+      <node ref="LED1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="19" name="LRA_N" class="Default">
+      <node ref="J4" pin="2" pinfunction="LRA_N_2" pintype="passive"/>
+      <node ref="U6" pin="9" pinfunction="OUT_N_9" pintype="output"/>
+    </net>
+    <net code="20" name="LRA_P" class="Default">
+      <node ref="J4" pin="1" pinfunction="LRA_P_1" pintype="passive"/>
+      <node ref="U6" pin="7" pinfunction="OUT_P_7" pintype="output"/>
+    </net>
+    <net code="21" name="MIC_SUPPLY" class="Default">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="A_ON_1" pintype="passive"/>
+      <node ref="U7" pin="5" pinfunction="OUT_5" pintype="power_out"/>
+    </net>
+    <net code="22" name="MIC_VDD" class="Default">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="MK1" pin="5" pinfunction="VDD_5" pintype="power_in"/>
+      <node ref="MK2" pin="2" pinfunction="SELECT_2" pintype="input"/>
+      <node ref="MK2" pin="5" pinfunction="VDD_5" pintype="power_in"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="A_COMMON_2" pintype="passive"/>
+      <node ref="U8" pin="8" pinfunction="VCC_8" pintype="power_in"/>
+    </net>
+    <net code="23" name="PDM_CLK_BUF" class="Default">
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U8" pin="6" pinfunction="Y1_CLK_6" pintype="tri_state"/>
+    </net>
+    <net code="24" name="PDM_CLK_MCU" class="Default">
+      <node ref="U1" pin="20" pinfunction="P0.04_20" pintype="bidirectional"/>
+      <node ref="U8" pin="2" pinfunction="A1_CLK_2" pintype="input"/>
+    </net>
+    <net code="25" name="PDM_CLK_MIC" class="Default">
+      <node ref="MK1" pin="4" pinfunction="CLOCK_4" pintype="input"/>
+      <node ref="MK2" pin="4" pinfunction="CLOCK_4" pintype="input"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+    </net>
+    <net code="26" name="PDM_DATA_MCU" class="Default">
+      <node ref="U1" pin="21" pinfunction="P0.05_21" pintype="bidirectional"/>
+      <node ref="U8" pin="3" pinfunction="Y2_DATA_3" pintype="tri_state"/>
+    </net>
+    <net code="27" name="PDM_DATA_MIC" class="Default">
+      <node ref="MK1" pin="1" pinfunction="DATA_1" pintype="tri_state"/>
+      <node ref="MK2" pin="1" pinfunction="DATA_1" pintype="tri_state"/>
+      <node ref="U8" pin="5" pinfunction="A2_DATA_5" pintype="input"/>
+    </net>
+    <net code="28" name="PRIVACY_N" class="Default">
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="5" pinfunction="B_COMMON_5" pintype="passive"/>
+      <node ref="U1" pin="25" pinfunction="P1.08_25" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="RECORD_EN" class="Default">
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="P0.06_22" pintype="bidirectional"/>
+      <node ref="U7" pin="3" pinfunction="EN_3" pintype="input"/>
+    </net>
+    <net code="30" name="RECORD_N" class="Default">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="P0.08_24" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="RESET_N" class="Default">
+      <node ref="J3" pin="4" pinfunction="RESET_N_4" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="U1" pin="40" pinfunction="P0.18_40" pintype="bidirectional"/>
+    </net>
+    <net code="32" name="SPI_CS_N" class="Default">
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="P0.15_39" pintype="bidirectional"/>
+      <node ref="U2" pin="1" pinfunction="N_CS_1" pintype="input"/>
+    </net>
+    <net code="33" name="SPI_MISO" class="Default">
+      <node ref="U1" pin="37" pinfunction="P0.13_37" pintype="bidirectional"/>
+      <node ref="U2" pin="2" pinfunction="DO_IO1_2" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="SPI_MOSI" class="Default">
+      <node ref="U1" pin="36" pinfunction="P0.14_36" pintype="bidirectional"/>
+      <node ref="U2" pin="5" pinfunction="DI_IO0_5" pintype="bidirectional"/>
+    </net>
+    <net code="35" name="SPI_SCK" class="Default">
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="CLK_6" pintype="input"/>
+    </net>
+    <net code="36" name="SPI_SCK_MCU" class="Default">
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U1" pin="38" pinfunction="P0.16_38" pintype="bidirectional"/>
+    </net>
+    <net code="37" name="SWDCLK" class="Default">
+      <node ref="J3" pin="3" pinfunction="SWDCLK_3" pintype="passive"/>
+      <node ref="U1" pin="53" pinfunction="SWDCLK_53" pintype="input"/>
+    </net>
+    <net code="38" name="SWDIO" class="Default">
+      <node ref="J3" pin="2" pinfunction="SWDIO_2" pintype="passive"/>
+      <node ref="U1" pin="51" pinfunction="SWDIO_51" pintype="bidirectional"/>
+    </net>
+    <net code="39" name="TEMP_ALLOW_SINK" class="Default">
+      <node ref="Q1" pin="2" pinfunction="SOURCE_2" pintype="passive"/>
+      <node ref="U9" pin="6" pinfunction="OUTB_6" pintype="open_collector"/>
+    </net>
+    <net code="40" name="TS_MON" class="Default">
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="TS_MR_6" pintype="bidirectional"/>
+      <node ref="U9" pin="4" pinfunction="INB_N_4" pintype="input"/>
+    </net>
+    <net code="41" name="V3" class="Default">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="VTREF_1" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="6" pinfunction="B_OFF_6" pintype="passive"/>
+      <node ref="U1" pin="28" pinfunction="VDD_28" pintype="power_in"/>
+      <node ref="U1" pin="30" pinfunction="VDDH_30" pintype="power_in"/>
+      <node ref="U2" pin="8" pinfunction="VCC_8" pintype="power_in"/>
+      <node ref="U4" pin="5" pinfunction="OUT_5" pintype="power_out"/>
+    </net>
+    <net code="42" name="VBAT" class="Default">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="VBAT_1" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="BAT_2" pintype="passive"/>
+      <node ref="U5" pin="2" pinfunction="CELL_2" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="VDD_3" pintype="power_in"/>
+    </net>
+    <net code="43" name="VSYS" class="Default">
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="SYS_1" pintype="power_out"/>
+      <node ref="U4" pin="1" pinfunction="IN_1" pintype="power_in"/>
+      <node ref="U4" pin="3" pinfunction="EN_3" pintype="input"/>
+      <node ref="U6" pin="10" pinfunction="VDD_10" pintype="power_in"/>
+      <node ref="U6" pin="6" pinfunction="VDD_NC_6" pintype="power_in"/>
+      <node ref="U7" pin="1" pinfunction="IN_1" pintype="power_in"/>
+      <node ref="U9" pin="5" pinfunction="VDD_5" pintype="power_in"/>
+    </net>
+    <net code="44" name="unconnected-(U1-D+-Pad35)" class="Default">
+      <node ref="U1" pin="35" pinfunction="D+_35" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U1-D--Pad34)" class="Default">
+      <node ref="U1" pin="34" pinfunction="D-_34" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U1-DCCH-Pad31)" class="Default">
+      <node ref="U1" pin="31" pinfunction="DCCH_31" pintype="power_out+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U1-P0.00-Pad17)" class="Default">
+      <node ref="U1" pin="17" pinfunction="P0.00_17" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U1-P0.01-Pad18)" class="Default">
+      <node ref="U1" pin="18" pinfunction="P0.01_18" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U1-P0.02-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="P0.02_11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U1-P0.03-Pad9)" class="Default">
+      <node ref="U1" pin="9" pinfunction="P0.03_9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U1-P0.07-Pad23)" class="Default">
+      <node ref="U1" pin="23" pinfunction="P0.07_23" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U1-P0.09-Pad52)" class="Default">
+      <node ref="U1" pin="52" pinfunction="P0.09_52" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U1-P0.10-Pad54)" class="Default">
+      <node ref="U1" pin="54" pinfunction="P0.10_54" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(U1-P0.11-Pad27)" class="Default">
+      <node ref="U1" pin="27" pinfunction="P0.11_27" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(U1-P0.12-Pad29)" class="Default">
+      <node ref="U1" pin="29" pinfunction="P0.12_29" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(U1-P0.22-Pad46)" class="Default">
+      <node ref="U1" pin="46" pinfunction="P0.22_46" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="57" name="unconnected-(U1-P0.24-Pad48)" class="Default">
+      <node ref="U1" pin="48" pinfunction="P0.24_48" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="58" name="unconnected-(U1-P0.25-Pad49)" class="Default">
+      <node ref="U1" pin="49" pinfunction="P0.25_49" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(U1-P0.28-Pad13)" class="Default">
+      <node ref="U1" pin="13" pinfunction="P0.28_13" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(U1-P0.29-Pad10)" class="Default">
+      <node ref="U1" pin="10" pinfunction="P0.29_10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(U1-P0.30-Pad14)" class="Default">
+      <node ref="U1" pin="14" pinfunction="P0.30_14" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U1-P0.31-Pad12)" class="Default">
+      <node ref="U1" pin="12" pinfunction="P0.31_12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(U1-P1.00-Pad47)" class="Default">
+      <node ref="U1" pin="47" pinfunction="P1.00_47" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(U1-P1.01-Pad61)" class="Default">
+      <node ref="U1" pin="61" pinfunction="P1.01_61" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="65" name="unconnected-(U1-P1.02-Pad50)" class="Default">
+      <node ref="U1" pin="50" pinfunction="P1.02_50" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="66" name="unconnected-(U1-P1.03-Pad60)" class="Default">
+      <node ref="U1" pin="60" pinfunction="P1.03_60" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(U1-P1.04-Pad56)" class="Default">
+      <node ref="U1" pin="56" pinfunction="P1.04_56" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(U1-P1.05-Pad59)" class="Default">
+      <node ref="U1" pin="59" pinfunction="P1.05_59" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(U1-P1.06-Pad57)" class="Default">
+      <node ref="U1" pin="57" pinfunction="P1.06_57" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="70" name="unconnected-(U1-P1.07-Pad58)" class="Default">
+      <node ref="U1" pin="58" pinfunction="P1.07_58" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="71" name="unconnected-(U1-P1.09-Pad26)" class="Default">
+      <node ref="U1" pin="26" pinfunction="P1.09_26" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(U1-P1.10-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="P1.10_3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(U1-P1.11-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="P1.11_4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="74" name="unconnected-(U1-P1.12-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="P1.12_5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(U1-P1.13-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="P1.13_6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="76" name="unconnected-(U1-P1.14-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="P1.14_7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="77" name="unconnected-(U1-P1.15-Pad8)" class="Default">
+      <node ref="U1" pin="8" pinfunction="P1.15_8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="78" name="unconnected-(U4-NC-Pad4)" class="Default">
+      <node ref="U4" pin="4" pinfunction="NC_4" pintype="no_connect"/>
+    </net>
+    <net code="79" name="unconnected-(U7-NC-Pad4)" class="Default">
+      <node ref="U7" pin="4" pinfunction="NC_4" pintype="no_connect"/>
+    </net>
+    <net code="80" name="unconnected-(U9-OUTA-Pad1)" class="Default">
+      <node ref="U9" pin="1" pinfunction="OUTA_1" pintype="open_collector+no_connect"/>
+    </net>
+  </nets>
+</export>

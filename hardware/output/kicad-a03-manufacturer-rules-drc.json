@@ -1,0 +1,1419 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T05:00:37",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.4",
+    "schematic_parity": [],
+    "source": "aura-a03-native-routing.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Zone 'GND return and shielding; RF exclusion north of y=11.95' [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 88.3,
+                        "y": 88.05
+                    },
+                    "uuid": "d6e40f2e-e100-46d4-9566-0f7089ed2d55"
+                },
+                {
+                    "description": "Zone 'GND return and shielding; RF exclusion north of y=11.95' [GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 88.3,
+                        "y": 88.05
+                    },
+                    "uuid": "4d269b4a-5a18-447f-8ab3-c7a5c7904080"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VSYS] on F.Cu, length 0.3250 mm",
+                    "pos": {
+                        "x": 98.325,
+                        "y": 112.35
+                    },
+                    "uuid": "26863db8-bade-467e-b9a7-0a6864ea552c"
+                },
+                {
+                    "description": "Pad 1 [VSYS] of C18 on F.Cu",
+                    "pos": {
+                        "x": 97.95,
+                        "y": 112.82
+                    },
+                    "uuid": "50fd7cb2-6468-6f72-77d3-623274c1ab0e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [V3] on F.Cu, length 0.5073 mm",
+                    "pos": {
+                        "x": 96.9826,
+                        "y": 100.8353
+                    },
+                    "uuid": "b01c4946-6c79-4801-9698-e7f50d45f81d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [V3] on F.Cu, length 0.3744 mm",
+                    "pos": {
+                        "x": 97.95,
+                        "y": 101.4283
+                    },
+                    "uuid": "b6bed09c-dea2-45a9-ae6f-88ccce3aa099"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_VSET] on B.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 98.05,
+                        "y": 110.1
+                    },
+                    "uuid": "d3458465-50b6-4ca4-9e3a-9c5e469c0c2f"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [VBAT] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 93.375,
+                        "y": 109.15
+                    },
+                    "uuid": "f18ac181-04cf-48a8-b0e3-907e3110b909"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VBAT] on In1.Cu, length 1.5444 mm",
+                    "pos": {
+                        "x": 93.2876,
+                        "y": 111.163
+                    },
+                    "uuid": "86f7eab4-d7d6-46e9-95c5-0077b6800b5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [I2C_SDA] on F.Cu, length 0.1636 mm",
+                    "pos": {
+                        "x": 96.6211,
+                        "y": 101.5333
+                    },
+                    "uuid": "2fc8c33a-ec0c-4724-a2de-243b99b71d37"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_DISABLE] on F.Cu, length 0.0354 mm",
+                    "pos": {
+                        "x": 93.875,
+                        "y": 108.475
+                    },
+                    "uuid": "ecaed79c-8a61-4cbe-a441-2c46a3447185"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_DISABLE] on In2.Cu, length 0.0354 mm",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 108.65
+                    },
+                    "uuid": "1b49c329-d89b-444e-bd9a-a1ea0418f428"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [DOCK_5V] on F.Cu, length 0.4217 mm",
+                    "pos": {
+                        "x": 101.25,
+                        "y": 109.05
+                    },
+                    "uuid": "8027827f-d146-47ac-882a-dd076c3cb64e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [CHG_ISET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 97.85,
+                        "y": 109.65
+                    },
+                    "uuid": "2af9042b-0cf3-4d20-bbd7-5a5d85a1ee31"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TS_MON] on F.Cu, length 0.8592 mm",
+                    "pos": {
+                        "x": 96.5875,
+                        "y": 113.25
+                    },
+                    "uuid": "3909fb5a-d782-4a88-afd4-43d588b60c5e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [TS_MON] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 92.7,
+                        "y": 112.8624
+                    },
+                    "uuid": "25c63a36-e5da-4430-bbe6-11ac22500ebe"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [TS_MON] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 97.85,
+                        "y": 111.15
+                    },
+                    "uuid": "6cf9781e-72ab-41fb-8c90-2a225fbf4f99"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TS_MON] on In1.Cu, length 0.1750 mm",
+                    "pos": {
+                        "x": 92.1,
+                        "y": 110.825
+                    },
+                    "uuid": "569f648f-454f-474f-aa40-67c80ca61776"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TS_MON] on In1.Cu, length 3.7496 mm",
+                    "pos": {
+                        "x": 93.6971,
+                        "y": 113.8595
+                    },
+                    "uuid": "f54606bd-e040-46de-9771-248abd5a5ca9"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BAT_NTC] on F.Cu, length 0.0250 mm",
+                    "pos": {
+                        "x": 91.225,
+                        "y": 109.9
+                    },
+                    "uuid": "59e90c00-4bb4-4ab6-846a-631f9c1a01ac"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VSYS] on F.Cu, length 0.0354 mm",
+                    "pos": {
+                        "x": 98.45,
+                        "y": 113.425
+                    },
+                    "uuid": "f74c2409-f2de-4791-97bd-7816da91b678"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VSYS] on In1.Cu, length 1.9781 mm",
+                    "pos": {
+                        "x": 96.278,
+                        "y": 107.5937
+                    },
+                    "uuid": "11cddd6c-3814-4cad-88df-eaf104a1be51"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VSYS] on In1.Cu, length 0.8111 mm",
+                    "pos": {
+                        "x": 92.8287,
+                        "y": 108.9924
+                    },
+                    "uuid": "33651728-9b59-4d4f-b6e6-cde1918b8cff"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VSYS] on In1.Cu, length 0.0250 mm",
+                    "pos": {
+                        "x": 92.375,
+                        "y": 109.05
+                    },
+                    "uuid": "8e77b9ec-1cc7-4d2d-9455-4eeb4a540945"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_STAT1] on F.Cu, length 0.4014 mm",
+                    "pos": {
+                        "x": 93.2,
+                        "y": 101.5598
+                    },
+                    "uuid": "8bb6015b-d451-4192-ad6c-4f703348808d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_STAT1] on B.Cu, length 1.8031 mm",
+                    "pos": {
+                        "x": 98.05,
+                        "y": 109.2
+                    },
+                    "uuid": "4ac99085-2ea0-4cfa-9ea6-a45f5cac98b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [CHG_STAT1] on In1.Cu, length 0.1069 mm",
+                    "pos": {
+                        "x": 93.4082,
+                        "y": 101.3516
+                    },
+                    "uuid": "be844215-49c5-4f95-bede-3624068e8364"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [DOCK_IN] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 97.85,
+                        "y": 108.2
+                    },
+                    "uuid": "a2261e67-71fe-4c85-b03c-6e28101718d3"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 100.9,
+                        "y": 110.55
+                    },
+                    "uuid": "004d3060-160e-42df-2bcf-555e419067dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 109.5,
+                        "y": 100.2
+                    },
+                    "uuid": "01322884-428f-06e4-7c14-1abc3ab73c5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U8",
+                    "pos": {
+                        "x": 108.2,
+                        "y": 106.05
+                    },
+                    "uuid": "01997872-3fc3-65ee-7edf-bbb23d82dd52"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 91.45,
+                        "y": 96.8
+                    },
+                    "uuid": "057b7ce0-712b-ef20-2323-9ea0488cd3a0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 93.95,
+                        "y": 106.05
+                    },
+                    "uuid": "0584cfa0-103c-42df-25fd-555e3bbe67dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U5",
+                    "pos": {
+                        "x": 101.7,
+                        "y": 101.3
+                    },
+                    "uuid": "06e346e0-1141-1c81-1b9e-f22225fcc7c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R9",
+                    "pos": {
+                        "x": 106.2,
+                        "y": 92.05
+                    },
+                    "uuid": "0a5c6f86-3700-6eda-785d-4d3a4645d466"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint LED1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 101.0
+                    },
+                    "uuid": "0be7f0e2-0080-90fe-0ce9-12de195194be"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 95.45,
+                        "y": 103.8
+                    },
+                    "uuid": "0f60c530-31fc-1930-7358-f7904b4a2a10"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C5",
+                    "pos": {
+                        "x": 89.2,
+                        "y": 92.05
+                    },
+                    "uuid": "0fbc0de0-1a19-e381-2477-b9222ed58ec3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C11",
+                    "pos": {
+                        "x": 101.45,
+                        "y": 103.3
+                    },
+                    "uuid": "0fec71e0-25ad-845f-3b6e-96de512fa95d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 119.0
+                    },
+                    "uuid": "18a3236e-250b-a54e-3174-272e3ddca90e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R8",
+                    "pos": {
+                        "x": 96.45,
+                        "y": 100.3
+                    },
+                    "uuid": "18a8d96a-28b4-04f6-6a10-e35654923e4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 96.45,
+                        "y": 106.05
+                    },
+                    "uuid": "18c26b80-2e83-7dff-4444-907e5a05a2fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R13",
+                    "pos": {
+                        "x": 110.45,
+                        "y": 91.8
+                    },
+                    "uuid": "196b17c2-27f1-c69e-694e-a4fe55547ca2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R15",
+                    "pos": {
+                        "x": 110.45,
+                        "y": 90.05
+                    },
+                    "uuid": "1bd77460-0616-61e1-0faa-b09e256bc31d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R7",
+                    "pos": {
+                        "x": 96.45,
+                        "y": 101.4
+                    },
+                    "uuid": "1e4dc1c0-340e-d43f-49cf-e6be5f90f93d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R22",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 113.4
+                    },
+                    "uuid": "1efeddc0-295c-b361-33ba-89023e185ea3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R11",
+                    "pos": {
+                        "x": 92.2,
+                        "y": 103.8
+                    },
+                    "uuid": "1f0382c0-14a5-ad1f-0a47-d77e0015fe23"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C12",
+                    "pos": {
+                        "x": 106.7,
+                        "y": 100.8
+                    },
+                    "uuid": "266448be-67c1-271e-56e1-fa8215851c22"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 93.75
+                    },
+                    "uuid": "26813000-5a26-8a3f-2531-bb825b75febd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C6",
+                    "pos": {
+                        "x": 89.45,
+                        "y": 90.3
+                    },
+                    "uuid": "2914ca20-3372-9fc1-3dd0-7562482e4b03"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R18",
+                    "pos": {
+                        "x": 90.7,
+                        "y": 102.55
+                    },
+                    "uuid": "2aa6d684-6c03-b4e4-529f-6cbc11428e5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 98.95,
+                        "y": 100.8
+                    },
+                    "uuid": "2db78ad8-13a5-5388-5502-31e869a0efb8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 97.95,
+                        "y": 101.3
+                    },
+                    "uuid": "2eb3096c-700f-e7cc-4e93-39d40d365b74"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R21",
+                    "pos": {
+                        "x": 91.95,
+                        "y": 105.55
+                    },
+                    "uuid": "2f05b160-1944-9ee1-0383-8c62123d861d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C7",
+                    "pos": {
+                        "x": 98.7,
+                        "y": 109.85
+                    },
+                    "uuid": "2f88c2c0-252a-ed1f-1acd-177e106f41dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 95.95,
+                        "y": 109.55
+                    },
+                    "uuid": "3043ed0a-1118-f156-5275-cfb66c2d51ea"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R14",
+                    "pos": {
+                        "x": 92.95,
+                        "y": 105.55
+                    },
+                    "uuid": "30db3000-469c-427f-5c5d-54fe721e677d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 95.2,
+                        "y": 106.8
+                    },
+                    "uuid": "32155040-3c73-25e1-46d0-fb82512ed123"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 112.0
+                    },
+                    "uuid": "34c37ce0-25ac-c101-7fe3-011e2572c33d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R19",
+                    "pos": {
+                        "x": 89.2,
+                        "y": 102.3
+                    },
+                    "uuid": "35b87460-4016-4a01-4a74-1fa254d1f543"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R23",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 111.5
+                    },
+                    "uuid": "3a007860-2fa2-a2bf-2544-cd1e1ae6f77d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint J3",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 100.0
+                    },
+                    "uuid": "3d20089c-30b7-86bc-244f-04dc17e682fc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C13",
+                    "pos": {
+                        "x": 103.95,
+                        "y": 106.3
+                    },
+                    "uuid": "3ebbc8a0-547c-db1f-6a3d-ed9e7fff001d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R20",
+                    "pos": {
+                        "x": 90.7,
+                        "y": 103.55
+                    },
+                    "uuid": "40db1b7e-0081-c2e2-41de-a1427cc4805e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C18",
+                    "pos": {
+                        "x": 97.95,
+                        "y": 113.3
+                    },
+                    "uuid": "4378fa38-7b2a-2768-39cd-4908078f9558"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint MK1",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 90.4575
+                    },
+                    "uuid": "4775e742-772d-3a5e-35d0-5bfe0b8c8262"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 93.2,
+                        "y": 102.8
+                    },
+                    "uuid": "4b269c40-40c8-c69f-366a-f0fe2c0d1b5d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C17",
+                    "pos": {
+                        "x": 94.45,
+                        "y": 101.8
+                    },
+                    "uuid": "4b46c0e0-6107-d35f-76c8-e5de737607a3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 99.45,
+                        "y": 115.8
+                    },
+                    "uuid": "4f7056ce-6f32-cad2-2dd5-ec721386f1ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C16",
+                    "pos": {
+                        "x": 110.7,
+                        "y": 105.8
+                    },
+                    "uuid": "5491c586-1334-e726-2e27-f73a6f84d59a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 94.95,
+                        "y": 100.8
+                    },
+                    "uuid": "55fa76e4-149d-9884-2cbf-45dc6e1c243c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint MK2",
+                    "pos": {
+                        "x": 108.5,
+                        "y": 90.4575
+                    },
+                    "uuid": "56ac61a0-40eb-4f21-2b2a-3ca215692a23"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R10",
+                    "pos": {
+                        "x": 106.2,
+                        "y": 89.05
+                    },
+                    "uuid": "59f4569e-64ae-cb02-2351-eca21e0af1be"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint J4",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 113.0
+                    },
+                    "uuid": "5c93e522-68fc-6702-7564-e8e27e32953e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C8",
+                    "pos": {
+                        "x": 92.0,
+                        "y": 109.05
+                    },
+                    "uuid": "5f2ee5e0-5f74-3bc0-1e17-5d6023458100"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C14",
+                    "pos": {
+                        "x": 109.95,
+                        "y": 94.05
+                    },
+                    "uuid": "620b7500-4c4a-6281-3689-500220c83d83"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 92.2,
+                        "y": 102.05
+                    },
+                    "uuid": "635d498a-2200-6b2a-1f5c-733660b95196"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R17",
+                    "pos": {
+                        "x": 90.7,
+                        "y": 101.55
+                    },
+                    "uuid": "641aa444-5a88-7d5c-192b-9efc28313f64"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 100.8,
+                        "y": 109.05
+                    },
+                    "uuid": "6427d940-4e66-c6c1-38a5-b44222e4a1c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U4",
+                    "pos": {
+                        "x": 99.95,
+                        "y": 113.05
+                    },
+                    "uuid": "68f4a398-55ae-7e08-1451-9fa82d0b3eb8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U9",
+                    "pos": {
+                        "x": 95.45,
+                        "y": 112.3
+                    },
+                    "uuid": "6b134760-29b6-6900-17a6-7560590353c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R6",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 91.55
+                    },
+                    "uuid": "6e2b3740-63cd-619f-596f-8bfe4f11b65d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint R16",
+                    "pos": {
+                        "x": 98.2,
+                        "y": 103.05
+                    },
+                    "uuid": "710e3706-4d94-ea9a-0c38-0c3a3524d226"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C15",
+                    "pos": {
+                        "x": 106.45,
+                        "y": 97.05
+                    },
+                    "uuid": "716f1180-5bad-ff01-45ec-ec82302bda03"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 106.0
+                    },
+                    "uuid": "763dcb5e-69d5-497e-5d6c-c79e510445be"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U6",
+                    "pos": {
+                        "x": 104.45,
+                        "y": 102.8
+                    },
+                    "uuid": "795bc776-37fe-e916-095d-f54a4abad3aa"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 93.45,
+                        "y": 89.55
+                    },
+                    "uuid": "7a01c4d4-38a4-e674-08b7-f7ec4a14d64c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 106.45,
+                        "y": 90.3
+                    },
+                    "uuid": "7be789b6-42bb-97ea-015e-b98a3ffe24d6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'tscircuit'",
+            "items": [
+                {
+                    "description": "Footprint U7",
+                    "pos": {
+                        "x": 107.45,
+                        "y": 94.05
+                    },
+                    "uuid": "7c197da4-3abc-9f44-06a0-3f1c47fd1d7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text 'J2' on B.Fab",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 112.0
+                    },
+                    "uuid": "016c386a-4b66-55d6-67c7-1bea1af48daa"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text 'J1' on B.Fab",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 119.0
+                    },
+                    "uuid": "2abc1cec-2216-7154-6ee8-ff944444722c"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text 'J3' on B.Fab",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 100.0
+                    },
+                    "uuid": "27e3ac18-74b6-3a58-3e77-37680e5b56d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text 'J4' on B.Fab",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 113.0
+                    },
+                    "uuid": "4b3eb0bc-0193-dd84-4e66-6bc464c705fc"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        }
+    ]
+}

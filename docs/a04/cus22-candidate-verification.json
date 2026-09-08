@@ -5,10 +5,10 @@
   "authoredThrough": "mcp__kicad__create_footprint",
   "parser": "KiCad 10.0.4",
   "hashes": {
-    "hardware\\a04\\AuraA04.pretty\\Nidec_CUS22TB_Candidate.kicad_mod": "1f520dd04824c2c87f2f30832416852b3f320ccc36a985277333360f2a8175a4",
-    "hardware\\a04\\aura-a04.kicad_pcb": "62a1492e8e55bd9f732c8d3df92cbfb227e73a31c822b8ee552886ca1debbaa5"
+    "hardware/a04/AuraA04.pretty/Nidec_CUS22TB_Candidate.kicad_mod": "1f520dd04824c2c87f2f30832416852b3f320ccc36a985277333360f2a8175a4",
+    "hardware/a04/aura-a04.kicad_pcb": "62a1492e8e55bd9f732c8d3df92cbfb227e73a31c822b8ee552886ca1debbaa5"
   },
-  "auditScriptSha256": "edf40f1435204431e9f60569d402122961931d39ac1072d5894f0e51d82dcca1",
+  "auditScriptSha256": "558db9ac9cfa50465e3ba8af0423b250e116d55658b16e951449ffde5726dd02",
   "landPatternCheckPass": true,
   "errors": [],
   "landPatternCheckScope": "numbered pads, NPTHs and fab/courtyard rectangles only; excludes adoption gates below",

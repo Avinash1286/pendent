@@ -34,7 +34,7 @@ def same(actual, expected):
 
 
 def main():
-    before = {str(p.relative_to(ROOT)): digest(p) for p in (FOOTPRINT, BOARD)}
+    before = {p.relative_to(ROOT).as_posix(): digest(p) for p in (FOOTPRINT, BOARD)}
     fp = pcbnew.FootprintLoad(str(FOOTPRINT.parent), FOOTPRINT.stem)
     if fp is None:
         raise RuntimeError("KiCad could not parse the candidate")

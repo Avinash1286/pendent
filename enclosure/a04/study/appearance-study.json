@@ -1,0 +1,16 @@
+{
+  "status": "provisional appearance blockout; not validated CAD",
+  "physical_qualification": false,
+  "print_release": false,
+  "native_placement_imported": false,
+  "body_diameter_mm": 40,
+  "body_depth_mm": 10.8,
+  "pcb_thickness_mm": 1.6,
+  "target_depth_mm": 10.0,
+  "source": "aura-a04-packaging.blend",
+  "source_blend_sha256": "35830e158b8df0705c89c6f8cd8ffb4fe0da4eac69de00569ae1619baeebeb86",
+  "contract_sha256": "4687d75b608d3e920acc46d6d72fa6b54d94d170b98c158ae34a033243a05c0f",
+  "image": "aura-a04-study.png",
+  "sha256": "f2cd553d9428fbb1b69fa50f72f782c7b29df8c890dc83e915a986dc0e649a10",
+  "geometry_note": "Cosmetic bevel modifiers and unqualified styling chain added for this appearance view."
+}

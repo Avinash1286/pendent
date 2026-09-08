@@ -1,0 +1,219 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-09T02:35:10",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.4",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb",
+            "violations": [
+                {
+                    "description": "Symbol 'DockContacts' doesn't match copy in library 'AuraA04'",
+                    "items": [
+                        {
+                            "description": "Symbol J1 [DockContacts]",
+                            "pos": {
+                                "x": 1.905,
+                                "y": 0.2032
+                            },
+                            "uuid": "0eb7e1fe-d2ff-4683-830c-41548be6cc0b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'BatteryPads' doesn't match copy in library 'AuraA04'",
+                    "items": [
+                        {
+                            "description": "Symbol J2 [BatteryPads]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 1.397
+                            },
+                            "uuid": "7b495b76-bcec-4f10-8d0a-9a507413b42f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'PDM_CLK_MCU'",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 0.9652
+                            },
+                            "uuid": "fbbcddf8-c19d-4aca-b3ba-8164a2161cec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'PDM_DATA_MCU'",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 0.9906
+                            },
+                            "uuid": "628541f5-15e1-42a4-9dbc-31730250b730"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Symbol 'MotorPads' doesn't match copy in library 'AuraA04'",
+                    "items": [
+                        {
+                            "description": "Symbol J4 [MotorPads]",
+                            "pos": {
+                                "x": 1.3462,
+                                "y": 0.6096
+                            },
+                            "uuid": "14819ff2-98bf-427b-99eb-f56fbeceaf64"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'PDM_CLK'",
+                            "pos": {
+                                "x": 0.508,
+                                "y": 0.762
+                            },
+                            "uuid": "34d60610-a939-4730-b8be-1b1e0e600da5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'PDM_DATA'",
+                            "pos": {
+                                "x": 0.508,
+                                "y": 0.7874
+                            },
+                            "uuid": "f9365b68-235f-425c-a9fc-e04d4c55e69a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Symbol 'SWDPads' doesn't match copy in library 'AuraA04'",
+                    "items": [
+                        {
+                            "description": "Symbol J3 [SWDPads]",
+                            "pos": {
+                                "x": 2.0574,
+                                "y": 1.4478
+                            },
+                            "uuid": "d7098344-27df-41c3-a0b4-9c26b86318a9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'SPI_SCK_MCU'",
+                            "pos": {
+                                "x": 1.2319,
+                                "y": 1.0414
+                            },
+                            "uuid": "75804070-90ad-4fce-a303-5ec15ab30050"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
+        },
+        {
+            "path": "/Power, battery and charging/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/0cda7753-9ff2-4af4-95b4-18394a737530",
+            "violations": []
+        },
+        {
+            "path": "/Radio, secure recovery and storage/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/f7aa3b40-3e97-48a2-a979-88d1ef493ad1",
+            "violations": []
+        },
+        {
+            "path": "/Microphones, privacy and interaction/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/5f8f0dff-8d5f-4df1-9e2a-54df30143ddd",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U8 Pin 2 [A1_CLK, Input, Line]",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 0.9652
+                            },
+                            "uuid": "dff4fa9c-66d4-482d-888e-12359afad4a8"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                }
+            ]
+        },
+        {
+            "path": "/Power, battery and charging/Battery sensing and independent charge gate/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/0cda7753-9ff2-4af4-95b4-18394a737530/fad06254-e617-47e6-a788-f8b273daeac7",
+            "violations": []
+        },
+        {
+            "path": "/Microphones, privacy and interaction/Capture, haptics and decorative ring/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/5f8f0dff-8d5f-4df1-9e2a-54df30143ddd/b9500376-6cc2-4683-a854-c5b618024686",
+            "violations": []
+        },
+        {
+            "path": "/Radio, secure recovery and storage/Recoverable local audio storage/",
+            "uuid_path": "/fc56431b-2c61-403b-b132-5718e8eee5cb/f7aa3b40-3e97-48a2-a979-88d1ef493ad1/c22aafb1-1b01-43d5-bc25-d1a8fcfb872d",
+            "violations": []
+        }
+    ],
+    "source": "aura-a04.kicad_sch"
+}

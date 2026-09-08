@@ -1,0 +1,54 @@
+PASS state size/alignment, bad profile/reinit invalidation, empty capture, 10/20ms chunking, repeated commit failure, exact retry, final-tail retry, trim and closed-input tests; opus=libopus 1.6.1-fixed state=15268
+{"frame_ms":10,"source_samples":120847,"encoded_samples":120960,"packets":756,"pre_skip":40,"end_trim":73,"encoded_bytes":27365,"max_packet_bytes":61,"state_bytes":15268}
+{"frame_ms":20,"source_samples":120847,"encoded_samples":120960,"packets":378,"pre_skip":40,"end_trim":73,"encoded_bytes":26998,"max_packet_bytes":118,"state_bytes":15268}
+{
+  "status": "host_passed_device_unmeasured",
+  "opus_version": "1.6.1",
+  "source": "AURA's pre-existing synthetic speech fixture, resampled to mono PCM16 16 kHz",
+  "source_sha256": "845096068f1fb6a944ba1aecdb7cc6a1f27d0096a5a78b60b09011c310dbe46e",
+  "ffmpeg_version": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "profiles": [
+    {
+      "frame_ms": 10,
+      "sample_rate": 16000,
+      "source_samples": 120847,
+      "encoded_samples": 120960,
+      "packets": 756,
+      "pre_skip": 40,
+      "end_trim": 73,
+      "encoded_bytes": 27365,
+      "max_packet_bytes": 61,
+      "host_snr_db": 11.981,
+      "ffmpeg_snr_db": 11.982,
+      "decoder_agreement_snr_db": 49.938,
+      "measured_payload_bitrate": 28984.749,
+      "archive_sha256": "e30164d994cdaf47e5e70e0dcfa8591a3947c4e176ee4450acb0a80984915f1a"
+    },
+    {
+      "frame_ms": 20,
+      "sample_rate": 16000,
+      "source_samples": 120847,
+      "encoded_samples": 120960,
+      "packets": 378,
+      "pre_skip": 40,
+      "end_trim": 73,
+      "encoded_bytes": 26998,
+      "max_packet_bytes": 118,
+      "host_snr_db": 11.918,
+      "ffmpeg_snr_db": 11.919,
+      "decoder_agreement_snr_db": 49.298,
+      "measured_payload_bitrate": 28596.026,
+      "archive_sha256": "0618514a55ed9fd6aaa8c9f55903413f9f1697fbee68454c5f7b44fef94b49e0"
+    }
+  ],
+  "not_verified": [
+    "MCU encode deadline",
+    "MCU stack high-water",
+    "power",
+    "PDM input",
+    "durable flash sink",
+    "BLE concurrency",
+    "physical microphone quality",
+    "language/transcription benchmark"
+  ]
+}

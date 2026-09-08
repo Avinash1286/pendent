@@ -1,0 +1,76 @@
+(footprint "SWDPads"
+  (version 20241229)
+  (generator "kicad-mcp")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (descr "A04 2x3 1.27mm pitch programming pogo lands. Pin1 VTREF is sense only, never an external charge input.")
+  (tags "AURA A04 copper contacts no paste")
+
+  (property "Reference" "REF**" (at 0 -3.32 0)
+    (layer "F.SilkS")
+    (uuid "9f0bbf93-f0c0-4b9f-b234-05cad749e310")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "SWDPads" (at 0 3.32 0)
+    (layer "F.Fab")
+    (uuid "fcc05d8b-3f78-4551-870e-f1e1b16d9dda")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" "" (at 0 0 0)
+    (layer "F.Fab")
+    (uuid "8e1d2e78-adf7-4bce-9841-d1c29607978f")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_rect
+    (start -1.385 -2.02)
+    (end 1.385 2.02)
+    (stroke (width 0.05) (type default))
+    (fill none)
+    (layer "F.CrtYd")
+    (uuid "7ccd4853-0c19-4c61-8b66-02f6baed09d2")
+  )
+
+  (pad "1" smd circle
+    (at -0.635 -1.27)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "07fe917a-62c9-44cf-9af5-6e4d2dd708fc")
+  )
+
+  (pad "2" smd circle
+    (at 0.635 -1.27)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "1cf9b7ab-a427-4617-8737-a9957c07612b")
+  )
+
+  (pad "3" smd circle
+    (at -0.635 0)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "9e64a47e-746f-491d-b91c-8bc54506e753")
+  )
+
+  (pad "4" smd circle
+    (at 0.635 0)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "0bdd6542-594b-4ce7-aab9-792d3a9f7fe1")
+  )
+
+  (pad "5" smd circle
+    (at -0.635 1.27)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "a4e4fa66-3a0e-44cb-a768-aa50b0a4b139")
+  )
+
+  (pad "6" smd circle
+    (at 0.635 1.27)
+    (size 1 1)
+    (layers "F.Cu" "F.Mask")
+    (uuid "76ec4b82-d45a-45db-80a4-28650a3014ba")
+  )
+
+)

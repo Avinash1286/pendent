@@ -1,0 +1,9 @@
+{
+  "archive": "a04-process-coupon.zip",
+  "sha256": "d06e6da71d2dd1cfe94e65aeceb22422b6c4eaf3d7ad5e6c8f188e67229e1cb9",
+  "bytes": 2199550,
+  "file_count": 19,
+  "physical_qualification": false,
+  "purpose": "Unpowered process coupon only; not complete pendant parts",
+  "reopened_crc_and_bytes": "pass"
+}

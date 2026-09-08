@@ -1,0 +1,58 @@
+(footprint "BatteryPads"
+  (version 20241229)
+  (generator "kicad-mcp")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (descr "A04 solder lands for protected cell and attached NTC; mechanical wire strain relief and pack qualification required.")
+  (tags "AURA A04 copper contacts no paste")
+
+  (property "Reference" "REF**" (at 0 -2.45 0)
+    (layer "F.SilkS")
+    (uuid "56f0fde9-7f13-493c-8840-e87f029fe5a4")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "BatteryPads" (at 0 2.45 0)
+    (layer "F.Fab")
+    (uuid "b709f670-f2ed-48c2-9863-36a33d024bcc")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" "" (at 0 0 0)
+    (layer "F.Fab")
+    (uuid "b40326cf-c9e0-4981-9b00-fbc8bc0bc2c0")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_rect
+    (start -3.49 -1.15)
+    (end 3.49 1.15)
+    (stroke (width 0.05) (type default))
+    (fill none)
+    (layer "F.CrtYd")
+    (uuid "abb39138-817c-4591-8cca-bf7dde4afa2a")
+  )
+
+  (pad "1" smd roundrect
+    (at -2.54 0)
+    (size 1.4 1.8)
+    (layers "F.Cu" "F.Mask")
+    (roundrect_rratio 0.25)
+    (uuid "982fc7d5-4501-40db-a9e1-d647fdebfa8f")
+  )
+
+  (pad "2" smd roundrect
+    (at 0 0)
+    (size 1.4 1.8)
+    (layers "F.Cu" "F.Mask")
+    (roundrect_rratio 0.25)
+    (uuid "3369626e-8f4b-40a5-afa5-2400ba9c0025")
+  )
+
+  (pad "3" smd roundrect
+    (at 2.54 0)
+    (size 1.4 1.8)
+    (layers "F.Cu" "F.Mask")
+    (roundrect_rratio 0.25)
+    (uuid "5fe99e46-75df-41b5-86d5-1df732fd2ac6")
+  )
+
+)

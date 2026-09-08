@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "AuraA04")(type "KiCad")(uri "F:/circuit/hardware/a04/AuraA04.pretty")(options "")(descr "MCP-authored A04 copper contact and programming lands."))
+  (lib (name "AuraVerified")(type "KiCad")(uri "F:/circuit/hardware/library.pretty")(options "")(descr "Reviewed existing silicon microphone bypass land; package-only library reuse, no A03 routing."))
+)

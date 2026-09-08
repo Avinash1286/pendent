@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AuraA03Verified")(type "KiCad")(uri "F:/circuit/hardware/library/AuraA03.kicad_sym")(options "")(descr "Existing exact-MPN symbols as pin-map references; new A04 design uses independent schematic and routing."))
+  (lib (name "AuraA04")(type "KiCad")(uri "F:/circuit/hardware/a04/AuraA04.kicad_sym")(options "")(descr "New AURA A04 exact-MPN symbols authored using KiCad MCP; SLUSF69A verified pin mapping."))
+)

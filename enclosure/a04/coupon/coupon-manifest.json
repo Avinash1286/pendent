@@ -1,0 +1,83 @@
+{
+  "revision": "A04 coupon v1",
+  "units": "millimetres",
+  "purpose": "Unpowered same-process face/rim/bail fit trials",
+  "complete_device_parts": false,
+  "physical_qualification": false,
+  "specimen_count": 9,
+  "target_face_diameter_mm": 35.2,
+  "radial_gap_series_mm": [
+    0.15,
+    0.2,
+    0.25,
+    0.3
+  ],
+  "wall_series_mm": [
+    1.0,
+    1.2,
+    1.5
+  ],
+  "bail_bore_diameter_mm": 2.6,
+  "relative_pin_diameters_mm": [
+    2.4,
+    2.5,
+    2.6
+  ],
+  "generator_sha256": "e2e992951a6511108b06f7d89bf083e28b34c5b6adbc0033a0865ad8e2791239",
+  "parts": [
+    {
+      "file": "a04-face-ring-r15.stl",
+      "description": "Full-size35.2 mm face gauge; 0.15 mm nominal radial gap",
+      "bytes": 140284,
+      "sha256": "1fc71dbb1d16aafa52a776fd24465a8a7e6fc2175ad439b0d43ddb6eff748b8d"
+    },
+    {
+      "file": "a04-face-ring-r20.stl",
+      "description": "Full-size35.2 mm face gauge; 0.20 mm nominal radial gap",
+      "bytes": 160884,
+      "sha256": "68eb4b28817e96ecce6cfdf20afac32f5d16f2334254da042bb00b6f7581581e"
+    },
+    {
+      "file": "a04-face-ring-r25.stl",
+      "description": "Full-size35.2 mm face gauge; 0.25 mm nominal radial gap",
+      "bytes": 157184,
+      "sha256": "8cc66adde8f6d88c9c132491a242c0177dbe4a5127ff280af7b60bdef26b8c16"
+    },
+    {
+      "file": "a04-face-ring-r30.stl",
+      "description": "Full-size35.2 mm face gauge; 0.30 mm nominal radial gap",
+      "bytes": 172684,
+      "sha256": "8d24bcd648cb15588b705de38cdf957338e14243bf2a76ba58487ea16dacbaef"
+    },
+    {
+      "file": "a04-face-gauge-35p2.stl",
+      "description": "35.2 mm working face,1.0 mm skin;37.2 mm retaining flange and rear grip",
+      "bytes": 218984,
+      "sha256": "7fde67f01ba08b10ac373e76f1d1d51cd62144a4670c0bef84c2cc4b3c8c950a"
+    },
+    {
+      "file": "a04-wall-bail-card.stl",
+      "description": "1.0/1.2/1.5 mm walls,8 mm exposed height;2.6 mm transverse bail hole",
+      "bytes": 304884,
+      "sha256": "dcdc127efbc4bc77540277627479e7e987d33baaaf75dff2df3b63737ffe4f27"
+    },
+    {
+      "file": "a04-relative-pin-24.stl",
+      "description": "2.4 mm nominal pin for2.6 mm bail hole; measure actual diameter",
+      "bytes": 160784,
+      "sha256": "9aa3801b909f0e0554c54ed8c8e1c07d80d54d3906265472e4af599676896618"
+    },
+    {
+      "file": "a04-relative-pin-25.stl",
+      "description": "2.5 mm nominal pin for2.6 mm bail hole; measure actual diameter",
+      "bytes": 173584,
+      "sha256": "e1bdccd7c1137554774df4c096597ac06363cb0705202a7e1b6151f026412afb"
+    },
+    {
+      "file": "a04-relative-pin-26.stl",
+      "description": "2.6 mm nominal pin for2.6 mm bail hole; measure actual diameter",
+      "bytes": 182084,
+      "sha256": "d601ad0eaa3f75c7d2304d00dbaa45c347caa79e0f504c1571a2799831f72e3e"
+    }
+  ]
+}

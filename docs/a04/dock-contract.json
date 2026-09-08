@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "reviewedDate": "2026-09-09",
+  "status": "REVIEWED CORE ONLY; NOT READY FOR FABRICATION OR CHARGING",
+  "cadMutationPerformed": false,
+  "scope": "Exact proposed electrical core and open protection/assembly gates. Root authors subsequent CAD through KiCad MCP. References are local to a future separate dock schematic.",
+  "sources": {
+    "limiter": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+    "usbConnector": "https://gct.co/connector/usb4085",
+    "usbConnectorPinDrawing": "https://www.farnell.com/cad/2648880.pdf",
+    "usbVoltage": "https://www.usb.org/document-library/usb-20-specification",
+    "ccTermination": "https://www.st.com/resource/en/application_note/an5225-usb-typec-power-delivery-using-stm32-mcus-and-mpus-stmicroelectronics.pdf",
+    "pogo": "https://datasheet.octopart.com/0906-1-15-20-75-14-11-0-Mill-Max-datasheet-180665644.pdf"
+  },
+  "interface": {
+    "type": "Nonmagnetic keyed three-contact cradle",
+    "contactNets": [
+      "GND",
+      "DOCK_5V",
+      "GND"
+    ],
+    "proposedPitchMm": 3,
+    "usbNominalV": 5,
+    "usbMaxDcV": 5.5,
+    "pdNegotiation": false,
+    "usbData": false,
+    "currentLimitMa": {
+      "min": 50,
+      "typical": 75,
+      "max": 100
+    },
+    "guaranteedAvailableMa": 50,
+    "transientSurgeBoundedByDcLimit": false,
+    "mechanicalRetentionProven": false
+  },
+  "components": [
+    {
+      "ref": "U1",
+      "mpn": "TPS2553DBVR",
+      "footprintCandidate": "Package_TO_SOT_SMD:SOT-23-6",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND",
+        "3": "USB_VBUS",
+        "5": "USB_VBUS",
+        "6": "DOCK_5V"
+      },
+      "noConnect": [
+        "4"
+      ],
+      "pinDefinitions": [
+        {
+          "number": "1",
+          "name": "IN",
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "EN",
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "FAULT_N",
+          "type": "open_collector"
+        },
+        {
+          "number": "5",
+          "name": "ILIM",
+          "type": "passive",
+          "datasheetRole": "Analog configuration output; direct IN strap explicitly supported"
+        },
+        {
+          "number": "6",
+          "name": "OUT",
+          "type": "power_out"
+        }
+      ],
+      "operatingInputRangeV": [
+        2.5,
+        6.5
+      ],
+      "absoluteMaxVoltageV": 7,
+      "notes": "Pin5 directly to pin1; no RILIM resistor. /FAULT intentionally unused. Exact DBV mechanical/land check remains before release."
+    },
+    {
+      "ref": "J1",
+      "mpn": "USB4085-GF-A",
+      "footprintCandidate": "Connector_USB:USB_C_Receptacle_GCT_USB4085",
+      "pins": {
+        "A1": "GND",
+        "A12": "GND",
+        "B1": "GND",
+        "B12": "GND",
+        "SH": "GND",
+        "A4": "USB_VBUS",
+        "A9": "USB_VBUS",
+        "B4": "USB_VBUS",
+        "B9": "USB_VBUS",
+        "A5": "CC1",
+        "B5": "CC2"
+      },
+      "noConnect": [
+        "A6",
+        "B6",
+        "A7",
+        "B7",
+        "A8",
+        "B8"
+      ],
+      "physicalPadCount": 20,
+      "notes": "16 contacts plus four common SH shell pads. Generic S1 shell pin requires MCP reconciliation. Six physical data/SBU contacts are NC; there are two copies each of D+, D- and one each SBU."
+    },
+    {
+      "ref": "R1",
+      "mpn": "RC0402FR-075K1L",
+      "value": "5.1k",
+      "tolerancePercent": 1,
+      "footprintCandidate": "Resistor_SMD:R_0402_1005Metric",
+      "pins": {
+        "1": "CC1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R2",
+      "mpn": "RC0402FR-075K1L",
+      "value": "5.1k",
+      "tolerancePercent": 1,
+      "footprintCandidate": "Resistor_SMD:R_0402_1005Metric",
+      "pins": {
+        "1": "CC2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C1",
+      "mpn": "GRM188R61E475KE11D",
+      "value": "4.7uF",
+      "voltageRatingV": 25,
+      "dielectric": "X5R",
+      "tolerancePercent": 10,
+      "maxBodyMm": [
+        1.75,
+        0.95,
+        0.95
+      ],
+      "footprintCandidate": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND"
+      },
+      "source": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E475KE11-01A.pdf",
+      "effectiveCapacitanceVerified": false
+    },
+    {
+      "ref": "C2",
+      "mpn": "GRM188R61E105KA12D",
+      "value": "1uF",
+      "voltageRatingV": 25,
+      "dielectric": "X5R",
+      "tolerancePercent": 10,
+      "maxBodyMm": [
+        1.7,
+        0.9,
+        0.9
+      ],
+      "footprintCandidate": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND"
+      },
+      "source": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E105KA12-01.pdf",
+      "effectiveCapacitanceVerified": false
+    },
+    {
+      "ref": "C3",
+      "mpn": "GRM188R61E105KA12D",
+      "value": "1uF",
+      "voltageRatingV": 25,
+      "dielectric": "X5R",
+      "tolerancePercent": 10,
+      "maxBodyMm": [
+        1.7,
+        0.9,
+        0.9
+      ],
+      "footprintCandidate": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "DOCK_5V",
+        "2": "GND"
+      },
+      "source": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E105KA12-01.pdf",
+      "effectiveCapacitanceVerified": false
+    },
+    {
+      "ref": "J2",
+      "mpn": "0906-1-15-20-75-14-11-0",
+      "pins": {
+        "1": "GND"
+      },
+      "footprintCandidate": null,
+      "initialHeightNominalMm": 4.5,
+      "strokeNominalMm": 1.4,
+      "workingHeightMidpointNominalMm": 3.8,
+      "plungerDiameterNominalMm": 1.07,
+      "mountingHoleMinimumMm": 0.508,
+      "solderTailNominalDiameterMm": 0.432,
+      "springPinGeneralLengthToleranceMm": 0.1524,
+      "diameterGeneralToleranceMm": 0.0508,
+      "notes": "Exact final drill/tolerance/carrier/retention/contact finish unqualified. Do not infer AURA cycle rating from contact catalogue."
+    },
+    {
+      "ref": "J3",
+      "mpn": "0906-1-15-20-75-14-11-0",
+      "pins": {
+        "1": "DOCK_5V"
+      },
+      "footprintCandidate": null,
+      "initialHeightNominalMm": 4.5,
+      "strokeNominalMm": 1.4,
+      "workingHeightMidpointNominalMm": 3.8,
+      "plungerDiameterNominalMm": 1.07,
+      "mountingHoleMinimumMm": 0.508,
+      "solderTailNominalDiameterMm": 0.432,
+      "springPinGeneralLengthToleranceMm": 0.1524,
+      "diameterGeneralToleranceMm": 0.0508,
+      "notes": "Exact final drill/tolerance/carrier/retention/contact finish unqualified. Do not infer AURA cycle rating from contact catalogue."
+    },
+    {
+      "ref": "J4",
+      "mpn": "0906-1-15-20-75-14-11-0",
+      "pins": {
+        "1": "GND"
+      },
+      "footprintCandidate": null,
+      "initialHeightNominalMm": 4.5,
+      "strokeNominalMm": 1.4,
+      "workingHeightMidpointNominalMm": 3.8,
+      "plungerDiameterNominalMm": 1.07,
+      "mountingHoleMinimumMm": 0.508,
+      "solderTailNominalDiameterMm": 0.432,
+      "springPinGeneralLengthToleranceMm": 0.1524,
+      "diameterGeneralToleranceMm": 0.0508,
+      "notes": "Exact final drill/tolerance/carrier/retention/contact finish unqualified. Do not infer AURA cycle rating from contact catalogue."
+    }
+  ],
+  "releaseGates": [
+    "TPS2553 input/output transient protection and layout: 7V absolute maximum is below pendant TVS 14V surge clamp.",
+    "Effective capacitance after bias, tolerance, temperature and aging; exact manufacturer worst-case envelope missing.",
+    "Final GCT revision/PCN, native SH shell pad to symbol pin match, plated slots and package maxima.",
+    "Pogo mounting-hole tolerance, carrier, compression/retention, wear/plating and alignment.",
+    "USB source compatibility and both orientations; no general host/suspend compliance claim.",
+    "Contact bounce, sustained shorts, thermal cycling and reverse/misaligned contacts.",
+    "BQ input DPM, startup, dropout and near-full termination at source and load corners.",
+    "Exact approved battery and thermistor assembly remain unselected."
+  ],
+  "unselectedOption": {
+    "name": "Wide-input 3.3-4.5V preregulator ahead of TPS2553",
+    "reason": "Not adopted. A linear charger cannot boost to a near-full cell; full dropout/tolerance/diode/headroom and transient feedthrough analysis is required."
+  }
+}

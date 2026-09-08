@@ -1,0 +1,9 @@
+third_party/** -text
+dependencies/** -text
+verification/** -text
+*.bin binary
+*.elf binary
+*.hex binary
+*.wav binary
+*.aoc binary
+*.opus binary

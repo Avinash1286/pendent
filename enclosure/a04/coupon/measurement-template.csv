@@ -1,0 +1,13 @@
+specimen,quantity,nominal_mm,measured_direction_1_mm,measured_direction_2_mm,instrument_uncertainty_mm,process_material_orientation,finish_stage,fit_observation,operator_date
+F352,working_face_diameter,35.20,,,,,,,
+R15,bore_diameter,35.50,,,,,,,
+R20,bore_diameter,35.60,,,,,,,
+R25,bore_diameter,35.70,,,,,,,
+R30,bore_diameter,35.80,,,,,,,
+10,wall_thickness,1.00,,,,,,,
+12,wall_thickness,1.20,,,,,,,
+15,wall_thickness,1.50,,,,,,,
+B26,transverse_bore,2.60,,,,,,,
+P24,straight_shaft_diameter,2.40,,,,,,,
+P25,straight_shaft_diameter,2.50,,,,,,,
+P26,straight_shaft_diameter,2.60,,,,,,,

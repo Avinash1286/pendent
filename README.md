@@ -2,11 +2,25 @@
 
 **Capture the context of your life.**
 
-[Explore the live 3D product](https://pendent-eight.vercel.app) · [Watch the launch film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Download the release](https://github.com/Avinash1286/pendent/releases/tag/a03-context-dev) · [Run the notes portal](portal/README.md)
-
-[![AURA pendant with a glossy black recording face, satin surround and necklace chain](enclosure/renders/hero.png)](https://pendent-eight.vercel.app)
+[Explore the A03 showcase](https://pendent-eight.vercel.app) · [Watch the A03 film](https://pendent-eight.vercel.app/film/aura-launch.mp4) · [Download the A03 release](https://github.com/Avinash1286/pendent/releases/tag/a03-context-dev) · [Run the notes portal](portal/README.md)
 
 An open product-development project for a compact necklace AI note-taking device. Electronics, printable industrial design, chip firmware, local transcription, a Next.js / Convex notes portal, an interactive Three.js showcase and a Hyperframes launch film live together here.
+
+## A04 circular redesign — in progress
+
+[![AURA A04 circular packaging study: pale satin face, narrow champagne-looking rim and fine chain; provisional geometry, not a print release](enclosure/a04/study/aura-a04-study.png)](docs/a04/requirements.md)
+
+A04 is a fresh circular design created through **KiCad MCP**, with a 40 mm exterior target, a physical microphone disconnect, recoverable update storage and a source-preserving audio protocol. The inspected packaging study is **10.8 mm deep with the actual 1.6 mm draft PCB**; a 10.0 mm body remains a target requiring a thinner board and verified component/pack clearances. The new schematic, placement, enclosure mechanisms and end-to-end software are still being developed. **A04 is not ready to fabricate, print as a complete device, wear or sell.**
+
+[Full objective and evidence gates](docs/a04/requirements.md) · [New KiCad project](hardware/a04/aura-a04.kicad_pro) · [Mechanical contract](docs/a04/industrial-design.md) · [Software contract and recovery tests](docs/a04/software-contract.md) · [Omi source review](docs/research/omi-review.md)
+
+The current checkpoint includes a **72-component schematic candidate**, an experimental Opus encoder that builds for the nRF52840, **47 passing companion tests**, and **nine printable unpowered fit specimens** with exported mesh/dimension checks. The schematic still has one ERC error, nine warnings and three net-name mismatches; the board is not placed or routed. [Native capture evidence](docs/a04/native-capture-verification.json) · [Opus build/audio evidence](firmware/a04/README.md) · [Printable fit coupon kit](enclosure/a04/coupon/README.md).
+
+The website, film, PCB and eight-part print kit linked below belong to the earlier **A03 development release**. They are retained for reproducibility and are not A04 deliverables.
+
+## A03 development release
+
+[![AURA A03 capsule pendant with a glossy black recording face, satin surround and necklace chain](enclosure/renders/hero.png)](https://pendent-eight.vercel.app)
 
 ## Launch film
 

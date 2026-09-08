@@ -1,0 +1,149 @@
+{
+  "status": "incomplete candidate; not a fabrication or launch release",
+  "cad_mutated_by_audit": false,
+  "netlist_source": "hardware/a04/review/a04-candidate-2.net",
+  "netlist_sha256": "1c3c36035e4b16211a3fb2f4a8cbd5009b58d55e98f4cabe10faaa3c38a4122f",
+  "contract_sha256": "2d19466557f7803b5c52882f2dbfb2875d550afa8a8209dc23e6e211976abb50",
+  "schematic_source_sha256": {
+    "hardware/a04/a04-audio-controls.kicad_sch": "88d7fc1c5599be57a682331905a3a579db425bd31159ee1f8c3f53dfbb8cf5fa",
+    "hardware/a04/a04-battery-thermal.kicad_sch": "a3e6d598d7f2e89d42619ceb3d538c831368305f8edccbbe3c9215bc8d77ae92",
+    "hardware/a04/a04-interaction.kicad_sch": "30c54b7c7f2d9725fd7f87445db4719059f3a6e0c9cfe9e264114c36bb049910",
+    "hardware/a04/a04-nand-storage.kicad_sch": "38f5b256f9bb09eceab1aafa0b18217bbd6a17a38f9688225f81b41deedda90e",
+    "hardware/a04/a04-power.kicad_sch": "82f49f65eac65d00e098e21c42b0e0006e6068d5e7b13c5827cb535ea79d1086",
+    "hardware/a04/a04-radio-storage.kicad_sch": "ad08cb69bfda7a019e3e29f57c4e14c83142af3615a6a96a5ad72ec5c8d2ed5b",
+    "hardware/a04/aura-a04.kicad_sch": "9abfe750d5d714255cb6da3a2433d19b21856ed00c842ca9a01f7cff639f3acc"
+  },
+  "board_sha256": "62a1492e8e55bd9f732c8d3df92cbfb227e73a31c822b8ee552886ca1debbaa5",
+  "expected_pcb_references": 72,
+  "exported_pcb_references": 72,
+  "missing_references": [],
+  "extra_references": [],
+  "expected_connected_endpoints": 239,
+  "connectivity_mismatches": [
+    {
+      "reference": "U1",
+      "pin": "20",
+      "expected_net": "PDM_CLK_MCU",
+      "actual_net": "PDM_CLK"
+    },
+    {
+      "reference": "U1",
+      "pin": "21",
+      "expected_net": "PDM_DATA_MCU",
+      "actual_net": "PDM_DATA"
+    },
+    {
+      "reference": "U1",
+      "pin": "38",
+      "expected_net": "SPI_SCK_MCU",
+      "actual_net": "SPI_SCK"
+    }
+  ],
+  "specified_part_mismatches": [],
+  "duplicate_global_labels": [
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "VSYS",
+      "at_mm": [
+        91.44,
+        45.72
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "VBAT",
+      "at_mm": [
+        66.04,
+        50.8
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "CHARGER_PG_N",
+      "at_mm": [
+        91.44,
+        50.8
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "CHARGER_CE_N",
+      "at_mm": [
+        66.04,
+        55.88
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "GND",
+      "at_mm": [
+        76.2,
+        73.66
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "BAT_TS",
+      "at_mm": [
+        66.04,
+        63.5
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "I2C_SDA",
+      "at_mm": [
+        91.44,
+        60.96
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "I2C_SCL",
+      "at_mm": [
+        91.44,
+        66.04
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "CHARGER_INT_N",
+      "at_mm": [
+        91.44,
+        55.88
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "DOCK_5V_PROTECTED",
+      "at_mm": [
+        66.04,
+        45.72
+      ],
+      "count": 2
+    },
+    {
+      "sheet": "a04-power.kicad_sch",
+      "net": "GND",
+      "at_mm": [
+        83.82,
+        73.66
+      ],
+      "count": 2
+    }
+  ],
+  "native_board_thickness_mm": 1.6,
+  "placed_pcb_footprints": 0,
+  "pcb_track_segments": 0,
+  "fabrication_release": false,
+  "limitations": "Net-name and export checks only. No correctness, routing, stackup, assembly, physical fit or qualification claim."
+}

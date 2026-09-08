@@ -1,0 +1,40 @@
+{
+  "revision": "A04",
+  "status": "proposed allocation study; not a fit audit",
+  "physical_qualification": false,
+  "print_release": false,
+  "native_placement_imported": false,
+  "collision_checks_complete": false,
+  "contract_sha256": "4687d75b608d3e920acc46d6d72fa6b54d94d170b98c158ae34a033243a05c0f",
+  "pcb_diameter_mm": 35.2,
+  "pcb_thickness_mm": 1.6,
+  "target_depth_mm": 10.0,
+  "model_depth_mm": 10.8,
+  "target_depth_met": false,
+  "board_radial_cavity_clearance_mm": 1.1999999999999993,
+  "planes_mm": {
+    "back": -5.3999999999999995,
+    "rear_inner_floor": -4.3999999999999995,
+    "cell_bottom": -4.249999999999999,
+    "cell_top": -0.9499999999999993,
+    "growth_top": -0.5499999999999993,
+    "pcb_bottom": -0.39999999999999925,
+    "pcb_top": 1.2000000000000008,
+    "max_component_top": 3.6500000000000012,
+    "pressed_face_underside": 3.950000000000001,
+    "face_rest_underside": 4.350000000000001,
+    "face_front": 5.350000000000001,
+    "front_datum": 5.3999999999999995
+  },
+  "not_modelled": [
+    "actual populated board",
+    "PCB notches",
+    "face retention/plunger/stops",
+    "privacy linkage",
+    "real acoustic ducts",
+    "optical lightguide",
+    "selected cell/haptic/contacts",
+    "closure hardware",
+    "qualified thermal sensor contact and carrier"
+  ]
+}

@@ -1,0 +1,3 @@
+[1/3] Building C object CMakeFiles/aura_codec_test.dir/F_/circuit/firmware/a04/src/aura_opus.c.obj
+[2/3] Building C object CMakeFiles/aura_codec_test.dir/host_codec.c.obj
+[3/3] Linking C executable aura_codec_test.exe

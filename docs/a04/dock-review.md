@@ -1,0 +1,37 @@
+# A04 charging dock core review
+
+Reviewed 2026-09-09. This is a concrete circuit contract for subsequent KiCad MCP capture, **not a released dock, USB compliance claim or charging approval**. No dock CAD or supplier order was created in this review. The [machine-readable core](dock-contract.json) assigns every proposed core pin and separates unresolved protection from the reviewed current limiter.
+
+Use a nonmagnetic keyed cradle with three contacts: GND / limited 5 V / GND. The symmetric outer grounds prevent polarity reversal at 180 degrees, but do not prevent shorting while sliding, conductive debris, liquid bridges or incorrect contact alignment. A mechanical stop and strain relief must carry insertion and spring loads. The pendant's PG indication can show insertion; a powered dock contact alone does not establish successful charging.
+
+## Reviewed circuit
+
+| Reference | Exact candidate | Connection / design input |
+|---|---|---|
+| U1 | TI TPS2553DBVR | SOT23-6: IN1, EN3 and ILIM5 all connect directly to USB_VBUS; GND2 to ground; OUT6 to DOCK_5V; /FAULT4 intentionally unused in this core. **ILIM is a direct strap to IN, not an extrapolated resistor value.** |
+| J1 | GCT USB4085-GF-A | USB-C, 16 through-hole contacts, no USB data or PD controller. A4/A9/B4/B9=USB_VBUS; A1/A12/B1/B12 and shell=GND; A5=CC1, B5=CC2. Six physical D+/D-/SBU contacts are intentionally unused. |
+| R1/R2 | Yageo RC0402FR-075K1L | Separate 5.1 kOhm, 1% resistors from CC1 and CC2 to ground. Do not join CC1 and CC2. |
+| C1 | Murata GRM188R61E475KE11D | 4.7 uF, 25 V X5R, 0603, at USB input; max body1.75 x0.95 x0.95 mm. Bulk/input cable ringing remains a measured requirement. |
+| C2 | Murata GRM188R61E105KA12D | 1 uF, 25 V X5R, 0603, immediately at U1 IN; max body1.70 x0.90 x0.90 mm. Require at least0.1 uF effective at operating bias. |
+| C3 | Murata GRM188R61E105KA12D | 1 uF, 25 V X5R, 0603, at U1 OUT. This is a candidate transient/load capacitor, not an established system ESD network. |
+| J2/J3/J4 | Mill-Max 0906-1-15-20-75-14-11-0 | Individual through-hole spring contacts on a proposed3 mm pitch, GND / DOCK_5V / GND. Final drill, carrier, contact alignment, working compression and mounting tolerance must be qualified before footprint release. |
+
+TPS2553's direct ILIM-to-IN configuration is specified at **50 /75 /100 mA minimum /typical /maximum DC output limit**. Only50 mA is guaranteed available; a40 mA pendant charge target must give way to input DPM as system load grows. Pause haptics and heavy flash/transfer work while charging if tests establish this is needed. The2 us short-response value is typical, not a maximum surge bound; output capacitor discharge is outside the DC current limit. At5.5 V, even100 mA into a short represents550 mW before thermal cycling. Test sustained shorts and dock temperature, not only nominal charging. [TI Rev.F pp.5-7,15,20](https://www.ti.com/lit/ds/symlink/tps2553.pdf).
+
+USB's maximum DC VBUS is **5.50 V**. The dock proposes fixed default-voltage operation with Rd termination; it does not request9/12/15/20 V. The Type-C resistor scheme identifies a sink, but these resistors neither measure source capability nor prove all USB host/suspend behavior. Use an identified compliant5 V USB-C supply for the first bench prototype and test both plug orientations. [USB specification library with VBUS Max Limit ECN](https://www.usb.org/document-library/usb-20-specification), [ST AN5225 Table6](https://www.st.com/resource/en/application_note/an5225-usb-typec-power-delivery-using-stm32-mcus-and-mpus-stmicroelectronics.pdf).
+
+## Footprint and sourcing checks
+
+The installed `Connector_USB:USB_C_Receptacle_GCT_USB4085` footprint has16 contact drills0.4 mm and four plated oval shell slots; the shell pads are numbered **SH**, not S1. A generic USB-C symbol whose shell is S1 must be reconciled through MCP. The native contact pads are0.70 mm, compared with0.65 mm in the reviewed older GCT layout. Keep real clearances and plated slots. The [manufacturer product page](https://gct.co/connector/usb4085) lists the family active with a3.46 mm profile; current product ratings differ from the older [GCT drawing mirrored by Farnell](https://www.farnell.com/cad/2648880.pdf). Obtain the supplied revision before package freeze. The older drawing's pin assignment is the source for this core, and the current PCN is an explicit check.
+
+The exact Mill-Max part is [distributor-listed active](https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/0906-1-15-20-75-14-11-0/1147049). Its nominal initial height is4.50 mm, stroke1.40 mm, and midpoint working height3.80 mm; the plunger diameter is1.07 mm. Manufacturer sheet updated2021-07-28 specifies0.508 mm minimum mounting hole and0.432 mm nominal solder tail, with spring-pin length tolerance+/-0.1524 mm and diameter tolerance+/-0.0508 mm. Do not design the final hole from nominal tail diameter alone. Gold thickness, mating pad finish, contamination and wear require a first article. The two reviewed manufacturer publications describe durability differently, so this is not a million-cycle AURA claim. [Manufacturer-authored exact-part sheet, distributor mirror](https://datasheet.octopart.com/0906-1-15-20-75-14-11-0-Mill-Max-datasheet-180665644.pdf).
+
+Capacitor values and dimensions are verified against Murata's [4.7 uF reference sheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E475KE11-01A.pdf) and [1 uF reference sheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E105KA12-01.pdf). A manufacturer worst-case DC-bias/aging envelope was not supplied in these sheets. The1 uF effective minimum for pendant C7 and0.1 uF minimum for dock IN therefore remain explicit verification requirements. These ratings are not inferred from the25 V label alone.
+
+## Open protection and release gates
+
+**TPS2553's7 V absolute maximum is not protected merely by copying the pendant TVS.** Pendant D2 TPD1E10B06DYAR is suitable as a5.5 V standoff candidate for BQ25186's25 V absolute-maximum input, but its specified surge clamp can reach14 V. The dock's IEC rating was tested on an EVM output with external capacitance; it is not proof for this smaller core, its USB input, or the completed cradle. The dock input/output clamp, capacitor and layout coordination is unresolved. No ESD component is silently omitted from a purported released BOM: the core is held at this gate.
+
+A wide-input preregulator was considered but is **not adopted**. A3.3-4.5 V output cannot be justified using the charger's3 V minimum operating input: a linear charger cannot boost to a near-full4.17/4.20 V cell. Any regulator option must cover tolerance/dropout, contacts, limiter resistance, pendant BAT54WS drop, charger headroom and fast transient feedthrough. It would also need its own output overshoot proof; adding it does not automatically solve the7 V dock limit.
+
+Before dock fabrication or battery charging: close the transient network, final USB/pogo revision and footprint checks, effective capacitor limits, connector strain relief/retention/compression, short/current-limit thermal behavior, contact bounce and reverse/misaligned contact tests, charger DPM/startup/termination at supply corners, and exact pack/NTC qualification. The [battery review](battery-candidate-review.md) still selects no approved pack. Stop at this checkpoint; the current dock core does not authorize charging a worn device.

@@ -1,0 +1,264 @@
+{
+  "status": "ARM_cross_compiled_not_executed",
+  "target": "nrf52840dk/nrf52840",
+  "purpose": "A04 codec MCU ABI/resource probe; not A04 wearable firmware",
+  "zephyr": "4.2.0",
+  "sdk": "0.17.2",
+  "opus": "1.6.1",
+  "memory_regions": {
+    "FLASH": {
+      "used_bytes": 170520,
+      "capacity_bytes": 1048576
+    },
+    "RAM": {
+      "used_bytes": 90304,
+      "capacity_bytes": 262144
+    }
+  },
+  "memory_evidence": "Actual ELF _flash_used and _image_ram_size symbols, checked against configured capacities",
+  "symbols": {
+    "encoder_state": {
+      "bytes": 32768,
+      "address": 536873208
+    },
+    "capture": {
+      "bytes": 1992,
+      "address": 536871216
+    },
+    "input": {
+      "bytes": 640,
+      "address": 536906688
+    },
+    "codec_stack": {
+      "bytes": 49216,
+      "address": 536907392
+    },
+    "opus_encoder_get_size": {
+      "bytes": 24,
+      "address": 116481
+    },
+    "opus_encode": {
+      "bytes": 80,
+      "address": 29577
+    }
+  },
+  "allocated_sections": [
+    {
+      "name": "rom_start",
+      "bytes": 256,
+      "address": 0,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "text",
+      "bytes": 133396,
+      "address": 256,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": ".ARM.exidx",
+      "bytes": 8,
+      "address": 133652,
+      "type": "SHT_ARM_EXIDX"
+    },
+    {
+      "name": "initlevel",
+      "bytes": 64,
+      "address": 133660,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "device_area",
+      "bytes": 128,
+      "address": 133724,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "sw_isr_table",
+      "bytes": 384,
+      "address": 133852,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "gpio_driver_api_area",
+      "bytes": 36,
+      "address": 134236,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "clock_control_driver_api_area",
+      "bytes": 28,
+      "address": 134272,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "uart_driver_api_area",
+      "bytes": 12,
+      "address": 134300,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "tbss",
+      "bytes": 4,
+      "address": 134312,
+      "type": "SHT_NOBITS"
+    },
+    {
+      "name": "rodata",
+      "bytes": 36020,
+      "address": 134320,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "datas",
+      "bytes": 168,
+      "address": 536870912,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "device_states",
+      "bytes": 8,
+      "address": 536871080,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": ".last_section",
+      "bytes": 4,
+      "address": 170516,
+      "type": "SHT_PROGBITS"
+    },
+    {
+      "name": "bss",
+      "bytes": 36245,
+      "address": 536871088,
+      "type": "SHT_NOBITS"
+    },
+    {
+      "name": "noinit",
+      "bytes": 53824,
+      "address": 536907392,
+      "type": "SHT_NOBITS"
+    }
+  ],
+  "stack_analysis": {
+    "translation_units_with_reports": 132,
+    "largest_reported_functions": [
+      {
+        "function": "silk_encode_frame_FIX",
+        "compiler_reported_bytes": 10760,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_multistream_encode_native",
+        "compiler_reported_bytes": 9728,
+        "classification": "dynamic"
+      },
+      {
+        "function": "silk_LBRR_encode_FIX",
+        "compiler_reported_bytes": 4464,
+        "classification": "dynamic"
+      },
+      {
+        "function": "celt_decode_lost",
+        "compiler_reported_bytes": 2400,
+        "classification": "dynamic"
+      },
+      {
+        "function": "celt_plc_pitch_search.constprop",
+        "compiler_reported_bytes": 2080,
+        "classification": "dynamic"
+      },
+      {
+        "function": "silk_resampler_down2_3",
+        "compiler_reported_bytes": 2016,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_encode_native",
+        "compiler_reported_bytes": 984,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_multistream_packet_unpad",
+        "compiler_reported_bytes": 920,
+        "classification": "static"
+      },
+      {
+        "function": "silk_pitch_analysis_core",
+        "compiler_reported_bytes": 840,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_packet_pad_impl",
+        "compiler_reported_bytes": 784,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_packet_unpad",
+        "compiler_reported_bytes": 784,
+        "classification": "static"
+      },
+      {
+        "function": "silk_Decode",
+        "compiler_reported_bytes": 736,
+        "classification": "dynamic"
+      },
+      {
+        "function": "silk_burg_modified_c",
+        "compiler_reported_bytes": 728,
+        "classification": "static"
+      },
+      {
+        "function": "opus_packet_extensions_generate",
+        "compiler_reported_bytes": 672,
+        "classification": "static"
+      },
+      {
+        "function": "analysis_compute_gru",
+        "compiler_reported_bytes": 584,
+        "classification": "static"
+      }
+    ],
+    "dynamic_functions": 65,
+    "limitation": "Reports include compiled library functions later removed by linker GC. Per-function static lower bounds do not sum to a runtime stack high-water; alloca requires physical measurement."
+  },
+  "artifacts": {
+    "zephyr.elf": {
+      "bytes": 1820884,
+      "sha256": "2fdb0eea2d16fbc73bb01b594da360555e4e584c629d358c2242836735803253"
+    },
+    "zephyr.hex": {
+      "bytes": 479698,
+      "sha256": "2aedd8821d3388cbcc015bfab5f48c8de05e6a0dfa7ea3534829834cd71bd971"
+    },
+    "zephyr.bin": {
+      "bytes": 170520,
+      "sha256": "7e43a143441b96acc1c687ddd7aa78efc38bd526bc0debb2d3e49b9d4157b232"
+    },
+    "zephyr.map": {
+      "bytes": 584258,
+      "sha256": "5a1a00df2f2eecb24d5d1b77f0340f58a92c359ea7de9a7564ce52d13a1d92ee"
+    }
+  },
+  "config_sha256": "16395ebbb2aead48f6db0f2a4848c4ca7d4c19aea9baed6c992d8154af4621cf",
+  "source_sha256": {
+    "src/aura_opus.c": "b455e1e2a03a6dad8e2de110728c03e5d9bcf8dcfc9f71455404624ddd637956",
+    "src/zephyr_probe.c": "5bdacccea818fc36735c042e095c181fa3bd1751dd2dcf27e464610186d8a42c",
+    "include/aura_opus.h": "d4020bb992c504c99c33b7903e3530c206d1188b8cfe46cfbd80801c1fe11e6a",
+    "cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "CMakeLists.txt": "c930686cae05cb9434f9ff573cd57dadbceb256f5200e362d866187c466d1e8c",
+    "prj.conf": "c101ccabc12ce8be0129c0c11f2584c311691d3dce9d230a56e984fc1363171f",
+    "dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852"
+  },
+  "not_verified": [
+    "physical execution",
+    "stack high-water",
+    "encode deadline",
+    "power/current",
+    "PDM input",
+    "flash commit latency",
+    "concurrent BLE",
+    "final A04 board mapping",
+    "signed boot/OTA"
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "status": "exported coupon mesh/dimension checks pass",
+  "physical_qualification": false,
+  "complete_device_parts": false,
+  "units": "millimetres",
+  "specimen_count": 9,
+  "verifier_sha256": "79683f444280504441605bd701788f6360332c891aa365540baa4303be510d80",
+  "manifest_sha256": "947e59bb6273e2868a5ace76a4b23778a264091005f18b25707092d5e030c4a7",
+  "dimensional_comparison_tolerance_mm": 0.005,
+  "checks": "binary STL length/hash; welded closed oriented single solid; positive volume; actual exported bore/face/wall/pin dimensions",
+  "limitations": "No printer/material accuracy, fit, strength, surface finish or self-intersection guarantee; measure real prints.",
+  "parts": [
+    {
+      "file": "a04-face-ring-r15.stl",
+      "sha256": "1fc71dbb1d16aafa52a776fd24465a8a7e6fc2175ad439b0d43ddb6eff748b8d",
+      "triangles": 2804,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 407.9691693552877,
+      "bounds_mm": [
+        [
+          -20.0,
+          -24.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          1.35
+        ]
+      ],
+      "dimensions_mm": [
+        40.0,
+        44.0,
+        1.35
+      ],
+      "functional_dimensions": {
+        "bore_diameter_min_mm": 35.49799958837681,
+        "bore_diameter_max_mm": 35.5000135478622,
+        "nominal_radial_gap_mm": 0.15
+      }
+    },
+    {
+      "file": "a04-face-ring-r20.stl",
+      "sha256": "68eb4b28817e96ecce6cfdf20afac32f5d16f2334254da042bb00b6f7581581e",
+      "triangles": 3216,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 401.3716434735293,
+      "bounds_mm": [
+        [
+          -20.0,
+          -24.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          1.35
+        ]
+      ],
+      "dimensions_mm": [
+        40.0,
+        44.0,
+        1.35
+      ],
+      "functional_dimensions": {
+        "bore_diameter_min_mm": 35.597989565367314,
+        "bore_diameter_max_mm": 35.60001173800369,
+        "nominal_radial_gap_mm": 0.2
+      }
+    },
+    {
+      "file": "a04-face-ring-r25.stl",
+      "sha256": "8cc66adde8f6d88c9c132491a242c0177dbe4a5127ff280af7b60bdef26b8c16",
+      "triangles": 3142,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 394.61879508386596,
+      "bounds_mm": [
+        [
+          -20.0,
+          -24.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          1.35
+        ]
+      ],
+      "dimensions_mm": [
+        40.0,
+        44.0,
+        1.35
+      ],
+      "functional_dimensions": {
+        "bore_diameter_min_mm": 35.69733007025595,
+        "bore_diameter_max_mm": 35.70001212327525,
+        "nominal_radial_gap_mm": 0.25
+      }
+    },
+    {
+      "file": "a04-face-ring-r30.stl",
+      "sha256": "8d24bcd648cb15588b705de38cdf957338e14243bf2a76ba58487ea16dacbaef",
+      "triangles": 3452,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 387.9099268745319,
+      "bounds_mm": [
+        [
+          -20.0,
+          -24.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          1.35
+        ]
+      ],
+      "dimensions_mm": [
+        40.0,
+        44.0,
+        1.35
+      ],
+      "functional_dimensions": {
+        "bore_diameter_min_mm": 35.7973403456849,
+        "bore_diameter_max_mm": 35.80000809039014,
+        "nominal_radial_gap_mm": 0.3
+      }
+    },
+    {
+      "file": "a04-face-gauge-35p2.stl",
+      "sha256": "7fde67f01ba08b10ac373e76f1d1d51cd62144a4670c0bef84c2cc4b3c8c950a",
+      "triangles": 4378,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 1716.2266902254585,
+      "bounds_mm": [
+        [
+          -18.6,
+          -18.6,
+          0.0
+        ],
+        [
+          18.6,
+          18.6,
+          4.6
+        ]
+      ],
+      "dimensions_mm": [
+        37.2,
+        37.2,
+        4.6
+      ],
+      "functional_dimensions": {
+        "working_face_diameter_min_mm": 35.19998859752656,
+        "working_face_diameter_max_mm": 35.200012353321696,
+        "retaining_flange_diameter_mm": 37.2
+      }
+    },
+    {
+      "file": "a04-wall-bail-card.stl",
+      "sha256": "dcdc127efbc4bc77540277627479e7e987d33baaaf75dff2df3b63737ffe4f27",
+      "triangles": 6096,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 3131.8224143016114,
+      "bounds_mm": [
+        [
+          -30.0,
+          -15.0,
+          0.0
+        ],
+        [
+          30.0,
+          15.0,
+          9.5
+        ]
+      ],
+      "dimensions_mm": [
+        60.0,
+        30.0,
+        9.5
+      ],
+      "functional_dimensions": {
+        "wall_1.0_measured_mm": 1.0,
+        "wall_1.2_measured_mm": 1.1999999999999993,
+        "wall_1.5_measured_mm": 1.5,
+        "bail_bore_diameter_min_mm": 2.599991593294101,
+        "bail_bore_diameter_max_mm": 2.600009752674017
+      }
+    },
+    {
+      "file": "a04-relative-pin-24.stl",
+      "sha256": "9aa3801b909f0e0554c54ed8c8e1c07d80d54d3906265472e4af599676896618",
+      "triangles": 3214,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 131.73058307205332,
+      "bounds_mm": [
+        [
+          -5.0,
+          -3.5,
+          0.0
+        ],
+        [
+          5.0,
+          3.5,
+          7.55
+        ]
+      ],
+      "dimensions_mm": [
+        10.0,
+        7.0,
+        7.55
+      ],
+      "functional_dimensions": {
+        "shaft_diameter_min_mm": 2.399820318479285,
+        "shaft_diameter_max_mm": 2.4000006751300416
+      }
+    },
+    {
+      "file": "a04-relative-pin-25.stl",
+      "sha256": "e1bdccd7c1137554774df4c096597ac06363cb0705202a7e1b6151f026412afb",
+      "triangles": 3470,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 133.92934432563823,
+      "bounds_mm": [
+        [
+          -5.0,
+          -3.5,
+          0.0
+        ],
+        [
+          5.0,
+          3.5,
+          7.55
+        ]
+      ],
+      "dimensions_mm": [
+        10.0,
+        7.0,
+        7.55
+      ],
+      "functional_dimensions": {
+        "shaft_diameter_min_mm": 2.4998127460118598,
+        "shaft_diameter_max_mm": 2.500000425931987
+      }
+    },
+    {
+      "file": "a04-relative-pin-26.stl",
+      "sha256": "d601ad0eaa3f75c7d2304d00dbaa45c347caa79e0f504c1571a2799831f72e3e",
+      "triangles": 3640,
+      "connected_solids": 1,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "degenerate_triangles": 0,
+      "signed_volume_mm3": 136.22495230946495,
+      "bounds_mm": [
+        [
+          -5.0,
+          -3.5,
+          0.0
+        ],
+        [
+          5.0,
+          3.5,
+          7.55
+        ]
+      ],
+      "dimensions_mm": [
+        10.0,
+        7.0,
+        7.55
+      ],
+      "functional_dimensions": {
+        "shaft_diameter_min_mm": 2.5998053370950482,
+        "shaft_diameter_max_mm": 2.600000599308096
+      }
+    }
+  ]
+}

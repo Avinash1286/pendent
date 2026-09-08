@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only electrical review and declarative MCP library inputs. This file creates or edits no CAD.",
+  "reviewedDate": "2026-09-09",
+  "status": "Pin definitions verified; architecture proposed, physical validation and final battery remain open.",
+  "symbolUnits": 1,
+  "pinNaming": "Physical datasheet names. Net assignment is a separate recommendation and is not a board connectivity assertion.",
+  "components": [
+    {
+      "mpn": "MDBT50Q-1MV2",
+      "manufacturer": "Raytac",
+      "source": {
+        "url": "https://www.raytac.com/tw/download/index.php?index_id=24",
+        "reviewedMirror": "https://www.espruino.com/datasheets/MDBT50Q-1M.pdf",
+        "revision": "L",
+        "date": "2023-05-24",
+        "pinTablePages": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "dimensionPage": 7,
+        "rfPage": 11
+      },
+      "nativeSymbol": "RF_Module:MDBT50Q-1MV2",
+      "nativeFootprint": "RF_Module:Raytac_MDBT50Q",
+      "package": {
+        "nominalMm": {
+          "width": 10.5,
+          "length": 15.5,
+          "height": 2.05
+        },
+        "toleranceMm": {
+          "minus": 0.15,
+          "plus": 0.2
+        },
+        "maximumMm": {
+          "width": 10.7,
+          "length": 15.7,
+          "height": 2.25
+        },
+        "maximumVerified": true,
+        "rfKeepout": {
+          "minimumWidthMm": 10.5,
+          "minimumDepthMm": 3.8,
+          "layers": "Every copper layer",
+          "notes": "Extend full available board width at antenna end. Corresponding antenna volume clear of battery, conductive enclosure, chain, screws and other metal; final RF placement and host certification remain physical verification gates."
+        },
+        "footprintVerifiedAgainstDrawing": "Existing library is candidate; root must compare actual MCP footprint pad positions against manufacturer pp9-10 before PCB release."
+      },
+      "power": {
+        "selectedVoltageV": 3,
+        "mode": "Normal-voltage mode verified from Raytac Version L pp40-41: VDD and VDDH tied +3V0; DCCH open. VBUS=GND with USB disabled per p46.",
+        "supplyRangeV": [
+          1.7,
+          3.6
+        ],
+        "groundPadNumbers": [
+          1,
+          2,
+          15,
+          33,
+          55
+        ],
+        "integratedComponents": "32 MHz crystal and Reg1 inductor; no external Reg0 inductor in selected mode"
+      },
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "3",
+          "name": "P1.10",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "4",
+          "name": "P1.11",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "5",
+          "name": "P1.12",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "6",
+          "name": "P1.13",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "7",
+          "name": "P1.14",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "8",
+          "name": "P1.15",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "9",
+          "name": "P0.03/AIN1",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "10",
+          "name": "P0.29/AIN5",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "11",
+          "name": "P0.02/AIN0",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "12",
+          "name": "P0.31/AIN7",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "13",
+          "name": "P0.28/AIN4",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "14",
+          "name": "P0.30/AIN6",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "15",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "16",
+          "name": "P0.27",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "I2C_SCL",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "17",
+          "name": "P0.00/XL1",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "18",
+          "name": "P0.01/XL2",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "19",
+          "name": "P0.26",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "I2C_SDA",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "20",
+          "name": "P0.04/AIN2",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "PDM_CLK_MCU",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "21",
+          "name": "P0.05/AIN3",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "PDM_DATA_MCU",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "22",
+          "name": "P0.06",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "MIC_ENABLE",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "23",
+          "name": "P0.07/TRACECLK",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "RING_PWM",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "24",
+          "name": "P0.08",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "CAPTURE_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "25",
+          "name": "P1.08",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "PRIVACY_SENSE",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "26",
+          "name": "P1.09/TRACEDATA3",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "27",
+          "name": "P0.11/TRACEDATA2",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "28",
+          "name": "VDD",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "+3V0",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "29",
+          "name": "P0.12/TRACEDATA1",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "30",
+          "name": "VDDH",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "+3V0",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "31",
+          "name": "DCCH",
+          "type": "power_out",
+          "datasheetFunction": "Power",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "32",
+          "name": "VBUS",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "33",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "34",
+          "name": "D-",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "35",
+          "name": "D+",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "36",
+          "name": "P0.14",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "SPI_MOSI",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "37",
+          "name": "P0.13",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "SPI_MISO",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "38",
+          "name": "P0.16",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "SPI_SCK_MCU",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "39",
+          "name": "P0.15",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "NAND_CS_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "40",
+          "name": "P0.18/nRESET",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "RESET_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "41",
+          "name": "P0.17",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "HAPTIC_EN",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "42",
+          "name": "P0.19",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "GAUGE_ALERT_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "43",
+          "name": "P0.21",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "CHARGER_INT_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "44",
+          "name": "P0.20",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "CHARGER_PG_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "45",
+          "name": "P0.23",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "CHARGE_ALLOW",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "46",
+          "name": "P0.22",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "NOR_CS_N",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "47",
+          "name": "P1.00/TRACEDATA0",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "48",
+          "name": "P0.24",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "49",
+          "name": "P0.25",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true
+        },
+        {
+          "number": "50",
+          "name": "P1.02",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "51",
+          "name": "SWDIO",
+          "type": "bidirectional",
+          "datasheetFunction": "Debug",
+          "recommendedNet": "SWDIO",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "52",
+          "name": "P0.09/NFC1",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "53",
+          "name": "SWDCLK",
+          "type": "input",
+          "datasheetFunction": "Debug",
+          "recommendedNet": "SWDCLK",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "54",
+          "name": "P0.10/NFC2",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "55",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "Power",
+          "recommendedNet": "GND",
+          "intentionallyUnused": false
+        },
+        {
+          "number": "56",
+          "name": "P1.04",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "57",
+          "name": "P1.06",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "58",
+          "name": "P1.07",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "59",
+          "name": "P1.05",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "60",
+          "name": "P1.03",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        },
+        {
+          "number": "61",
+          "name": "P1.01",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": null,
+          "intentionallyUnused": true,
+          "restriction": "Standard drive, low frequency <=10 kHz only. Do not route SPI, I2C, UART or PWM here."
+        }
+      ]
+    },
+    {
+      "mpn": "BQ25186DLHR",
+      "manufacturer": "Texas Instruments",
+      "source": {
+        "url": "https://www.ti.com/lit/ds/symlink/bq25186.pdf",
+        "revision": "SLUSF69A Rev A, Jan 2025",
+        "pinTablePage": 3,
+        "groundThermalPadPage": 48,
+        "packageOutlinePage": 54,
+        "landPatternPage": 55,
+        "stencilPage": 56
+      },
+      "nativeSymbol": null,
+      "suggestedSymbolName": "BQ25186DLHR",
+      "nativeFootprint": "Package_DFN_QFN:Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm",
+      "package": {
+        "nominalMm": {
+          "width": 2.2,
+          "length": 2,
+          "height": 0.8
+        },
+        "maximumMm": {
+          "width": 2.3,
+          "length": 2.1,
+          "height": 0.8
+        },
+        "maximumVerified": true,
+        "pitchMm": 0.4,
+        "landPattern": {
+          "padCount": 11,
+          "rowCenterSpacingMm": 2.1,
+          "padSizeMm": [
+            0.5,
+            0.2
+          ],
+          "epSizeMm": [
+            0.9,
+            1.5
+          ],
+          "sourceDrawing": "4226298/A 10/2020 DLH0010A"
+        },
+        "layoutGate": "Must preserve courtyard and effective copper spacing; do not put open drilled vias in EP/paste. 0.125mm manufacturer stencil example needs assembler process agreement with microphone paste."
+      },
+      "power": {
+        "inputSelectedV": 5,
+        "fastChargeSelectedMa": 40,
+        "fastChargeGuaranteedRangeMa": [
+          36,
+          44
+        ],
+        "inputLimitSelectedMa": 100,
+        "inputLimitGuaranteedRangeMa": [
+          80,
+          98
+        ],
+        "normalVoltageTargetV": 4.17,
+        "normalVoltageWorstCaseV": 4.19085,
+        "resetVoltageTargetV": 4.2,
+        "resetVoltageWorstCaseV": 4.221,
+        "resetChargeCurrentMa": 10,
+        "voltageAccuracyPercent": 0.5,
+        "batteryOnlyTypicalUa": 4,
+        "shipTypicalUa": 3.2,
+        "packApproval": false,
+        "packGate": "Actual protected pack must explicitly tolerate all reset/default and configured voltages/currents, temperature limits and system peaks. Software 4.17V is not a safety guarantee. /CE default pull-down enables; external hardware permission must default inactive."
+      },
+      "pins": [
+        {
+          "number": "1",
+          "name": "SYS",
+          "type": "power_out",
+          "datasheetFunction": "P",
+          "recommendedNet": "VSYS",
+          "note": "System output, capacitor 10uF nominal and >=1uF effective."
+        },
+        {
+          "number": "2",
+          "name": "BAT",
+          "type": "power_in",
+          "datasheetFunction": "P",
+          "recommendedNet": "VBAT",
+          "note": "Bidirectional energy: charges cell and takes battery power. ERC power_in chosen for external battery source."
+        },
+        {
+          "number": "3",
+          "name": "~{PG}/GPO",
+          "type": "open_collector",
+          "datasheetFunction": "O",
+          "recommendedNet": "CHARGER_PG_N",
+          "note": "Open-drain, pull up to +3V0."
+        },
+        {
+          "number": "4",
+          "name": "~{CE}",
+          "type": "input",
+          "datasheetFunction": "I",
+          "recommendedNet": "CHARGER_CE_N",
+          "note": "Low OR open enables charge. External 10k pull-up to VSYS required; hardware gate may pull low only when permission and temperature allow."
+        },
+        {
+          "number": "5",
+          "name": "GND",
+          "type": "power_in",
+          "datasheetFunction": "G",
+          "recommendedNet": "GND",
+          "note": "Ground plane."
+        },
+        {
+          "number": "6",
+          "name": "TS/MR",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "BAT_TS",
+          "note": "NTC sense with current-source bias and manual-reset input; retain typed I/O. Thermistor circuit must be independently reviewed; no pushbutton wired across NTC."
+        },
+        {
+          "number": "7",
+          "name": "SDA",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "I2C_SDA",
+          "note": "I2C data, shared 4.7k pull-up to +3V0."
+        },
+        {
+          "number": "8",
+          "name": "SCL",
+          "type": "bidirectional",
+          "datasheetFunction": "I/O",
+          "recommendedNet": "I2C_SCL",
+          "note": "Manufacturer classifies I/O, retained even though controller supplies clock. Shared 4.7k pull-up to +3V0."
+        },
+        {
+          "number": "9",
+          "name": "~{INT}",
+          "type": "open_collector",
+          "datasheetFunction": "O",
+          "recommendedNet": "CHARGER_INT_N",
+          "note": "Open-drain 128us pulse; pull up to +3V0."
+        },
+        {
+          "number": "10",
+          "name": "IN",
+          "type": "power_in",
+          "datasheetFunction": "P",
+          "recommendedNet": "DOCK_5V_PROTECTED",
+          "note": "5V dock supply after protection, capacitor >=1uF effective."
+        },
+        {
+          "number": "11",
+          "name": "EP_GND",
+          "type": "power_in",
+          "datasheetFunction": "G",
+          "recommendedNet": "GND",
+          "note": "Thermal pad number11 from DLH0010A package drawing p54; ground tie explicitly required p48; must solder."
+        }
+      ]
+    }
+  ],
+  "recommendedNetAuthority": "schematic-contract.json"
+}

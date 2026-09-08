@@ -1,0 +1,3 @@
+PASS state size/alignment, bad profile/reinit invalidation, empty capture, 10/20ms chunking, repeated commit failure, exact retry, final-tail retry, trim and closed-input tests; opus=libopus 1.6.1-fixed state=15268
+{"frame_ms":10,"source_samples":120847,"encoded_samples":120960,"packets":756,"pre_skip":40,"end_trim":73,"encoded_bytes":27365,"max_packet_bytes":61,"state_bytes":15268}
+{"frame_ms":20,"source_samples":120847,"encoded_samples":120960,"packets":378,"pre_skip":40,"end_trim":73,"encoded_bytes":26998,"max_packet_bytes":118,"state_bytes":15268}

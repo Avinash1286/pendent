@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "scope": "Documentation consistency and conditional arithmetic only; no CAD or physical qualification.",
+  "inputSha256": {
+    "schematic-contract.json": "2d19466557f7803b5c52882f2dbfb2875d550afa8a8209dc23e6e211976abb50",
+    "pin-definitions.json": "8d23e2295521da88cc4ca1d45d73fc265e024dd0de512d23771bc45f6f2fbecd"
+  },
+  "contractConsistency": {
+    "status": "PASS",
+    "pcbReferences": 72,
+    "connectedPinEndpoints": 239,
+    "moduleConnectedPins": 29,
+    "moduleNoConnectPins": 32,
+    "totalNoConnectPins": 35
+  },
+  "thermalStatus": "CONDITIONAL ONLY: assembled sensor resistance, attachment, bias behavior and open fault require qualification.",
+  "sources": {
+    "charger": "https://www.ti.com/lit/ds/symlink/bq25186.pdf",
+    "comparator": "https://www.ti.com/lit/ds/symlink/tlv6700.pdf",
+    "sensor": "https://www.semitec-global.com/uploads/2022/01/P12-13-AT-Thermistor.pdf"
+  },
+  "assumptions": {
+    "seriesOhm": 3300.0,
+    "seriesTolerancePercent": 1,
+    "biasMinUa": 36.5,
+    "biasMaxUa": 39.5,
+    "comparatorLoadingWorstNa": 25,
+    "assemblyResistanceRequirementsOhm": {
+      "at0CMin": 26461.6,
+      "at25CMin": 9700.0,
+      "at40CMax": 6001.81
+    },
+    "attachmentLagIncluded": false
+  },
+  "conditionalCorners": [
+    {
+      "test": "cold_stop_by_0_C",
+      "voltageV": 1.084350685,
+      "thresholdV": 1.0575,
+      "marginV": 0.026850684999999874
+    },
+    {
+      "test": "hot_stop_by_40_C",
+      "voltageV": 0.36895836525000003,
+      "thresholdV": 0.387,
+      "marginV": 0.01804163474999998
+    },
+    {
+      "test": "room_temperature_enable",
+      "voltageV": 0.472971325,
+      "thresholdV": 0.404,
+      "marginV": 0.06897132499999997
+    },
+    {
+      "test": "shorted_sensor_denies_permission",
+      "voltageV": 0.131736825,
+      "thresholdV": 0.387,
+      "marginV": 0.255263175
+    }
+  ],
+  "nominalEstimates": {
+    "method": "Log interpolation between manufacturer R/T table points; estimates only.",
+    "hotEntryOhm": 7081.578947368422,
+    "hotEntryC": 34.512114115951476,
+    "coldEntryOhm": 23213.157894736843,
+    "coldEntryC": 3.8620083688558258,
+    "coldRecoveryOhm": 18278.94736842105,
+    "coldRecoveryC": 9.578884387320516
+  },
+  "dockLimiter": {
+    "mpn": "TPS2553DBVR",
+    "configuration": "ILIM pin 5 tied directly to IN pin 1, not a resistor.",
+    "dcCurrentLimitMa": {
+      "minimum": 50,
+      "typical": 75,
+      "maximum": 100
+    },
+    "limitDoesNotBoundTransientSurgeOrStoredCapacitorDischarge": true,
+    "source": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+    "sourcePages": [
+      7,
+      15,
+      20
+    ]
+  },
+  "batteryApproval": false
+}

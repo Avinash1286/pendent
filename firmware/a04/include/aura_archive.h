@@ -41,13 +41,23 @@ struct aura_archive_writer {
     uint16_t pending_bytes, pending_payload;
     uint64_t pending_bookmark;
     uint8_t pending_kind, status;
-    bool begun, closing;
+    bool begun, closing, staging;
 };
 
 void aura_archive_sha256(const uint8_t *data, size_t bytes, uint8_t digest[32]);
+uint32_t aura_archive_crc32(const uint8_t *data, size_t bytes);
 int aura_archive_begin(struct aura_archive_writer *writer,
                         const struct aura_archive_manifest *manifest,
                         aura_archive_commit commit, void *user);
+/* Callback zero is explicitly RAM acceptance here. This writer cannot issue
+ * receipts; a journal must independently verify and promote a committed view. */
+int aura_archive_begin_staged(struct aura_archive_writer *writer,
+                              const struct aura_archive_manifest *manifest,
+                              aura_archive_commit stage, void *user);
+/* Validate/replay one exact canonical record into an independent staged view.
+ * Start with a zero-initialized view. Failure leaves the previous view intact.
+ * Useful for journal page-end snapshots and recovery; never a durable ACK. */
+int aura_archive_replay(struct aura_archive_writer *view, const uint8_t *wire, size_t bytes);
 /* Attach directly as aura_opus_init's sink. Its retries MUST go through
  * aura_opus_retry, so both state machines observe the same completed packet. */
 int aura_archive_opus_commit(void *writer, const struct aura_opus_packet *packet);

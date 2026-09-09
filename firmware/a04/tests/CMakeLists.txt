@@ -18,3 +18,12 @@ add_executable(aura_archive_test host_archive.c ../src/aura_opus.c ../src/aura_a
 target_include_directories(aura_archive_test PRIVATE ../include)
 target_compile_options(aura_archive_test PRIVATE -Wall -Wextra -Werror)
 target_link_libraries(aura_archive_test PRIVATE opus)
+add_executable(aura_journal_test host_journal.c nand_model.c ../src/aura_opus.c ../src/aura_archive.c ../src/aura_journal.c)
+target_include_directories(aura_journal_test PRIVATE ../include)
+target_compile_options(aura_journal_test PRIVATE -Wall -Wextra -Werror)
+target_link_libraries(aura_journal_test PRIVATE opus)
+add_executable(aura_w25n01gv_host host_w25n01gv.c ../src/aura_w25n01gv.c
+    ../src/aura_journal.c ../src/aura_archive.c)
+target_include_directories(aura_w25n01gv_host PRIVATE ../include)
+target_compile_options(aura_w25n01gv_host PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_w25n01gv_host PRIVATE opus)

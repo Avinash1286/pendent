@@ -129,9 +129,9 @@
     }
   ],
   "code_source_sha256": {
-    "firmware/a04/src/aura_archive.c": "23f57ccc47f056c76c9e7dd4018bad781c784c3f5967accea3d4532792051fb6",
-    "firmware/a04/include/aura_archive.h": "95449878ad34135e91683c293f26038a00d3526c70b5ed9499f89b803e487fc3",
-    "firmware/a04/src/aura_opus.c": "b455e1e2a03a6dad8e2de110728c03e5d9bcf8dcfc9f71455404624ddd637956",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
     "firmware/a04/tests/host_archive.c": "ba0a7f2c7a33e5dfeda1f6cc76910f65dc6c0d2e51fd356e1f2da4291b59d9ed",
     "firmware/a04/scripts/verify_archives.py": "b4b2390832cfa6a17aded1b900af5bc3fad255f73a07d637c76d862b516053a9",
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d",

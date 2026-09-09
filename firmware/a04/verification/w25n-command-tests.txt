@@ -1,0 +1,3 @@
+Empty-chip startup: 12306 commands, 12383 received bytes, 2048 marker-page loads, 0 payload scans
+W25N01GV production command core: 20 groups PASS; no physical SPI test
+Portable driver context: 4432 bytes

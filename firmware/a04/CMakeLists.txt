@@ -5,6 +5,7 @@ include(cmake/opus-profile.cmake)
 target_link_libraries(opus PUBLIC zephyr_interface)
 target_compile_options(opus PRIVATE -ffunction-sections -fdata-sections -fstack-usage)
 target_include_directories(app PRIVATE include)
-target_sources(app PRIVATE src/aura_opus.c src/aura_archive.c src/zephyr_probe.c)
+target_sources(app PRIVATE src/aura_opus.c src/aura_archive.c src/aura_journal.c
+    src/aura_w25n01gv.c src/aura_w25n01gv_zephyr.c src/zephyr_probe.c)
 target_compile_options(app PRIVATE -fstack-usage)
 target_link_libraries(app PRIVATE opus)

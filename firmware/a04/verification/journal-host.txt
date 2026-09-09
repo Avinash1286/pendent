@@ -1,0 +1,7 @@
+MOUNT empty blocks=1024 metadata_reads=2048 read_bytes=524288 payload_reads=0
+MOUNT 128_short_captures blocks=129 metadata_reads=258 payload_reads=0 reads_bytes=66048
+PASS real_opus_journal mode=0 physical_programs=24 wire_bytes=37040 committed_bytes=37040 source_input_samples=120847 metadata_reads=22 payload_reads=180
+PASS real_opus_journal mode=1 physical_programs=22 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=22 payload_reads=180
+PASS real_opus_journal mode=2 physical_programs=23 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=22 payload_reads=180
+PASS real_opus_journal mode=3 physical_programs=23 wire_bytes=37011 committed_bytes=36891 source_input_samples=120847 metadata_reads=22 payload_reads=180
+PASS journal groups=11 journal_context=35920 model_is_host_only=666712

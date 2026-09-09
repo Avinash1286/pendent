@@ -38,13 +38,14 @@ struct aura_opus_capture {
     void *user;
     uint64_t source_samples;
     uint64_t encoded_samples;
-    uint32_t committed_packets;
+    uint32_t accepted_packets;
     uint16_t frame_samples;
     uint16_t buffered_samples;
     uint16_t lookahead;
     bool pending;
     bool closing;
     bool finished;
+    bool staging;
     int fault;
     int16_t pcm[AURA_OPUS_MAX_SAMPLES];
     struct aura_opus_packet packet;
@@ -55,6 +56,11 @@ size_t aura_opus_state_bytes(void);
  * The caller must finish/persist a live recording before reinitializing it. */
 int aura_opus_init(struct aura_opus_capture *capture, void *state, size_t state_bytes,
                    unsigned frame_ms, aura_opus_commit commit, void *user);
+/* Explicit speculative producer: callback zero means copied into a bounded
+ * staging owner, NOT durable. accepted_packets/finish seal are declarations;
+ * only the journal's independently committed snapshot can issue receipts. */
+int aura_opus_init_staged(struct aura_opus_capture *capture, void *state, size_t state_bytes,
+                          unsigned frame_ms, aura_opus_commit stage, void *user);
 /* *consumed counts samples copied into the protected capture buffer, even when
  * a later commit fails. Retry that pending commit, then submit only the remainder. */
 int aura_opus_push(struct aura_opus_capture *capture, const int16_t *pcm,

@@ -24,7 +24,7 @@ def main():
         symbol_values = {symbol.name: symbol["st_value"] for symbol in symbols.iter_symbols()}
         selected = {}
         for symbol in symbols.iter_symbols():
-            if symbol.name in ("encoder_state", "capture", "archive", "codec_stack", "input", "opus_encode", "opus_encoder_get_size"):
+            if symbol.name in ("encoder_state", "capture", "archive", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init"):
                 selected[symbol.name] = {"bytes": symbol["st_size"], "address": symbol["st_value"]}
         sections = [{"name": section.name, "bytes": section["sh_size"], "address": section["sh_addr"],
                      "type": section["sh_type"]} for section in elf.iter_sections()
@@ -68,7 +68,7 @@ def main():
     report = {
         "status": "ARM_cross_compiled_not_executed",
         "target": "nrf52840dk/nrf52840",
-        "purpose": "A04 codec and revision-3 archive MCU ABI/resource probe; not A04 wearable firmware",
+        "purpose": "A04 codec, AUR3, packed journal and retained SPI adapter MCU ABI/resource probe with volatile synthetic NAND; not wearable firmware",
         "zephyr": "4.2.0", "sdk": "0.17.2", "opus": "1.6.1",
         "memory_regions": {name: {"used_bytes": used, "capacity_bytes": capacities[name]}
                            for name, used in memories.items()},

@@ -22,8 +22,10 @@ if ($Mode -in @('all','host')) {
     $a04Zig = Join-Path $a04Tools 'venv/Lib/site-packages/ziglang/zig.exe'
     Invoke-A04Build 'cmake' @('-S',(Join-Path $a04App 'tests'),'-B',(Join-Path $a04Build 'host'),'-G','Ninja','-DCMAKE_BUILD_TYPE=Release',"-DCMAKE_C_COMPILER=$a04Zig",'-DCMAKE_C_COMPILER_ARG1=cc') 'host-configure.txt'
     Invoke-A04Build 'cmake' @('--build',(Join-Path $a04Build 'host'),'-j','6') 'host-build.txt'
+    Invoke-A04Build (Join-Path $a04Build 'host/aura_w25n01gv_host.exe') @() 'w25n-command-tests.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_fixtures.py')) 'host-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_archives.py')) 'archive-verification.txt'
+    Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_journal.py')) 'journal-verification.txt'
     $a04PreviousPythonPath = $env:PYTHONPATH
     $env:PYTHONPATH = Join-Path $a04Work 'companion/src'
     try {

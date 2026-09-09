@@ -1,1 +1,5 @@
-ninja: no work to do.
+[1/5] Building C object CMakeFiles/aura_w25n01gv_host.dir/F_/circuit/firmware/a04/src/aura_w25n01gv.c.obj
+[2/5] Building C object CMakeFiles/aura_w25n01gv_host.dir/F_/circuit/firmware/a04/src/aura_archive.c.obj
+[3/5] Building C object CMakeFiles/aura_w25n01gv_host.dir/host_w25n01gv.c.obj
+[4/5] Building C object CMakeFiles/aura_w25n01gv_host.dir/F_/circuit/firmware/a04/src/aura_journal.c.obj
+[5/5] Linking C executable aura_w25n01gv_host.exe

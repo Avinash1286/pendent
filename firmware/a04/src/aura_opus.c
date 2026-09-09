@@ -9,8 +9,8 @@ size_t aura_opus_state_bytes(void)
     return size > 0 ? (size_t)size : 0;
 }
 
-int aura_opus_init(struct aura_opus_capture *c, void *state, size_t bytes,
-                   unsigned frame_ms, aura_opus_commit commit, void *user)
+static int init(struct aura_opus_capture *c, void *state, size_t bytes,
+                unsigned frame_ms, aura_opus_commit commit, void *user, bool staging)
 {
     if (!c) return OPUS_BAD_ARG;
     memset(c, 0, sizeof(*c));
@@ -24,6 +24,7 @@ int aura_opus_init(struct aura_opus_capture *c, void *state, size_t bytes,
     c->frame_samples = (uint16_t)(frame_ms * 16);
     c->commit = commit;
     c->user = user;
+    c->staging = staging;
     int result = opus_encoder_init(c->encoder, AURA_OPUS_RATE, 1,
                                    OPUS_APPLICATION_RESTRICTED_LOWDELAY);
     if (result) return c->fault = result;
@@ -48,6 +49,18 @@ int aura_opus_init(struct aura_opus_capture *c, void *state, size_t bytes,
     return OPUS_OK;
 }
 
+int aura_opus_init(struct aura_opus_capture *c, void *state, size_t bytes,
+                   unsigned frame_ms, aura_opus_commit commit, void *user)
+{
+    return init(c, state, bytes, frame_ms, commit, user, false);
+}
+
+int aura_opus_init_staged(struct aura_opus_capture *c, void *state, size_t bytes,
+                          unsigned frame_ms, aura_opus_commit stage, void *user)
+{
+    return init(c, state, bytes, frame_ms, stage, user, true);
+}
+
 int aura_opus_retry(struct aura_opus_capture *c)
 {
     if (!c || !c->encoder || !c->commit) return OPUS_BAD_ARG;
@@ -56,19 +69,19 @@ int aura_opus_retry(struct aura_opus_capture *c)
     int result = c->commit(c->user, &c->packet);
     if (result) return result;
     c->pending = false;
-    ++c->committed_packets;
+    ++c->accepted_packets;
     return OPUS_OK;
 }
 
 static int encode_buffer(struct aura_opus_capture *c)
 {
     if (c->pending || c->buffered_samples != c->frame_samples ||
-        c->committed_packets == UINT32_MAX)
+        c->accepted_packets == UINT32_MAX)
         return c->fault = OPUS_INTERNAL_ERROR;
     int result = opus_encode(c->encoder, c->pcm, c->frame_samples,
                              c->packet.data, sizeof(c->packet.data));
     if (result <= 0) return c->fault = (result ? result : OPUS_INTERNAL_ERROR);
-    c->packet.sequence = c->committed_packets;
+    c->packet.sequence = c->accepted_packets;
     c->packet.sample_offset = c->encoded_samples;
     c->packet.sample_count = c->frame_samples;
     c->packet.bytes = (uint16_t)result;
@@ -122,7 +135,7 @@ int aura_opus_finish(struct aura_opus_capture *c, struct aura_opus_seal *seal)
     *seal = (struct aura_opus_seal){
         .source_samples = c->source_samples,
         .encoded_samples = c->encoded_samples,
-        .packets = c->committed_packets,
+        .packets = c->accepted_packets,
         .pre_skip = c->source_samples ? c->lookahead : 0,
         .end_trim = (uint16_t)(c->encoded_samples - target),
     };

@@ -1,106 +1,18 @@
-Loading Zephyr default modules (Zephyr base (cached)).
--- Application: F:/circuit/firmware/a04
--- CMake version: 3.31.6
--- Cache files will be written to: F:/circuit/.tools/zephyr/zephyr/.cache
--- Zephyr version: 4.2.0 (F:/circuit/.tools/zephyr/zephyr)
--- Found west (found suitable version "1.4.0", minimum required is "0.14.0")
--- Board: nrf52840dk, qualifiers: nrf52840
--- Found host-tools: zephyr 0.17.2 (F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2)
--- Found toolchain: zephyr 0.17.2 (F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2)
--- Could NOT find Dtc (missing: DTC) (Required is at least version "1.4.6")
-Hint: The project() command has not yet been called.  It sets up system-specific search paths.
--- Found BOARD.dts: F:/circuit/.tools/zephyr/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts
--- Generated zephyr.dts: F:/circuit/.tools/a04-opus/arm/zephyr/zephyr.dts
--- Generated pickled edt: F:/circuit/.tools/a04-opus/arm/zephyr/edt.pickle
--- Generated devicetree_generated.h: F:/circuit/.tools/a04-opus/arm/zephyr/include/generated/zephyr/devicetree_generated.h
-Parsing F:/circuit/.tools/zephyr/zephyr/Kconfig
-Loaded configuration 'F:/circuit/.tools/a04-opus/arm/zephyr/.config'
-No change to configuration in 'F:/circuit/.tools/a04-opus/arm/zephyr/.config'
-No change to Kconfig header in 'F:/circuit/.tools/a04-opus/arm/zephyr/include/generated/zephyr/autoconf.h'
--- Found gen_kobject_list: F:/circuit/.tools/zephyr/zephyr/scripts/build/gen_kobject_list.py
-CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:2240 (message):
-  __ASSERT() statements are globally ENABLED
-
-
-CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:2271 (message):
-
-
-        The CMake build type was set to 'Release', but the optimization flag was set to '-Os'.
-        This may be intentional and the warning can be turned off by setting the CMake variable 'NO_BUILD_TYPE_WARNING'
-
-
--- Opus package version from package_version file: 1.6.1
--- Opus project version: 1.6.1
--- Performing Test VLA_SUPPORTED -- failed to compile
--- The following features have been enabled:
-
- * OPUS_DISABLE_INTRINSICS, disable all intrinsics optimizations.
- * OPUS_FIXED_POINT, compile as fixed-point (for machines without a fast enough FPU).
- * OPUS_HARDENING, run-time checks that are cheap and safe for use in production.
- * OPUS_USE_ALLOCA, use alloca for stack arrays (on non-C99 compilers).
-
--- The following OPTIONAL packages have been found:
-
- * HostTools
- * TargetTools
- * Deprecated
- * Git
-
--- The following REQUIRED packages have been found:
-
- * Python3 (required version >= 3.10)
- * Zephyr-sdk (required version >= 0.16)
- * GnuLd
- * Zephyr
-
--- The following features have been disabled:
-
- * OPUS_BUILD_SHARED_LIBRARY, build shared library.
- * OPUS_BUILD_TESTING, build tests.
- * OPUS_CUSTOM_MODES, enable non-Opus modes, e.g. 44.1 kHz & 2^n frames.
- * OPUS_BUILD_PROGRAMS, build programs.
- * OPUS_ENABLE_FLOAT_API, compile with the floating point API (for machines with float library).
- * OPUS_FLOAT_APPROX, enable floating point approximations (Ensure your platform supports IEEE 754 before enabling).
- * OPUS_ASSERTIONS, additional software error checking.
- * OPUS_FUZZING, causes the encoder to make random decisions (do not use in production).
- * OPUS_CHECK_ASM, enable bit-exactness checks between optimized and c implementations.
- * OPUS_DNN_FLOAT_DEBUG, Run DNN computations as float for debugging purposes.
- * OPUS_INSTALL_PKG_CONFIG_MODULE, install pkg-config module.
- * OPUS_INSTALL_CMAKE_CONFIG_MODULE, install CMake package config module.
- * OPUS_DRED, enable DRED.
- * OPUS_OSCE, enable OSCE.
- * OPUS_FIXED_POINT_DEBUG, debug fixed-point implementation.
- * OPUS_VAR_ARRAYS, use variable length arrays for stack arrays.
- * OPUS_NONTHREADSAFE_PSEUDOSTACK, use a non threadsafe pseudostack when neither variable length arrays or alloca is supported.
- * OPUS_FAST_MATH, enable fast math (unsupported and discouraged use, as code is not well tested with this build option).
- * OPUS_STACK_PROTECTOR, use stack protection.
- * OPUS_FORTIFY_SOURCE, add protection against buffer overflows.
-
--- The following OPTIONAL packages have not been found:
-
- * Dtc (required version >= 1.4.6)
- * ScaTools
-
--- Configuring done (68.6s)
--- Generating done (1.5s)
--- Build files have been written to: F:/circuit/.tools/a04-opus/arm
-[0/1] Re-running CMake...
-[1/129] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
-[2/11] Generating linker_zephyr_pre0.cmd
-[3/11] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
-[4/11] Building C object CMakeFiles/app.dir/src/aura_opus.c.obj
-[5/11] Building C object CMakeFiles/app.dir/src/aura_archive.c.obj
-[6/11] Linking C static library app\libapp.a
-[7/11] Linking C executable zephyr\zephyr_pre0.elf
-[8/11] Generating linker.cmd
-[9/11] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
-[10/11] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
-[11/11] Linking C executable zephyr\zephyr.elf
+[1/10] Building C object CMakeFiles/app.dir/src/aura_w25n01gv.c.obj
+[2/10] Building C object CMakeFiles/app.dir/src/aura_w25n01gv_zephyr.c.obj
+[3/10] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
+[4/10] Building C object CMakeFiles/app.dir/src/aura_journal.c.obj
+[5/10] Linking C static library app\libapp.a
+[6/10] Linking C executable zephyr\zephyr_pre0.elf
+[7/10] Generating linker.cmd
+[8/10] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
+[9/10] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[10/10] Linking C executable zephyr\zephyr.elf
 Memory region         Used Size  Region Size  %age Used
 
-           FLASH:      173752 B         1 MB     16.57%
+           FLASH:      194356 B         1 MB     18.54%
 
-             RAM:       91776 B       256 KB     35.01%
+             RAM:      148864 B       256 KB     56.79%
 
         IDT_LIST:          0 GB        32 KB      0.00%
 

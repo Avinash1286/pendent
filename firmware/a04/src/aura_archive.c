@@ -64,12 +64,13 @@ static void chained(const uint8_t before[32],const uint8_t *wire,size_t n,uint8_
     struct hash_state s;hash_init(&s);hash_update(&s,before,32);hash_update(&s,wire,n);hash_finish(&s,out);
 }
 static void put(uint8_t *p,uint64_t v,unsigned n){for(unsigned i=0;i<n;++i)p[i]=(uint8_t)(v>>(8*i));}
-static void crc(uint8_t *wire,size_t n)
+uint32_t aura_archive_crc32(const uint8_t *wire,size_t n)
 {
     uint32_t v=0xffffffff;
     for(size_t i=0;i<n;++i){v^=wire[i];for(unsigned b=0;b<8;++b)v=(v>>1)^(0xedb88320u & (0u-(v&1)));}
-    put(wire+n,v^0xffffffff,4);
+    return v^0xffffffff;
 }
+static void crc(uint8_t *wire,size_t n){put(wire+n,aura_archive_crc32(wire,n),4);}
 static bool nonzero(const uint8_t *p){uint8_t v=0;for(unsigned i=0;i<16;++i)v|=p[i];return v!=0;}
 
 /* pending_kind: 1 audio, 2 bookmark, 3 manifest, 4 seal */
@@ -93,14 +94,14 @@ int aura_archive_retry(struct aura_archive_writer *w)
     if(w->pending_kind==1)return AURA_ARCHIVE_BUSY;
     return commit_pending(w);
 }
-int aura_archive_begin(struct aura_archive_writer *w,const struct aura_archive_manifest *m,aura_archive_commit cb,void *user)
+static int begin(struct aura_archive_writer *w,const struct aura_archive_manifest *m,aura_archive_commit cb,void *user,bool staging)
 {
     if(!w)return AURA_ARCHIVE_BAD_ARGUMENT;
     memset(w,0,sizeof(*w));
     if(!m||!cb||!nonzero(m->device_id)||!nonzero(m->capture_id)||m->pre_skip!=40||
        (m->frame_samples!=160&&m->frame_samples!=320)||m->started_at_ms>UINT64_C(4102444800000)||
        m->time_source>1||((m->started_at_ms==0)!=(m->time_source==0)))return AURA_ARCHIVE_BAD_ARGUMENT;
-    w->manifest=*m;w->commit=cb;w->user=user;
+    w->manifest=*m;w->commit=cb;w->user=user;w->staging=staging;
     uint8_t *p=w->wire;memcpy(p,"AUR3",4);p[4]=3;p[5]=2;p[6]=1;
     memcpy(p+8,m->device_id,16);memcpy(p+24,m->capture_id,16);
     put(p+40,16000,4);put(p+44,m->frame_samples,2);put(p+46,m->pre_skip,2);put(p+48,32000,4);
@@ -108,6 +109,10 @@ int aura_archive_begin(struct aura_archive_writer *w,const struct aura_archive_m
     aura_archive_sha256(p,68,w->pending_chain);w->pending_kind=3;w->pending_bytes=68;
     return commit_pending(w);
 }
+int aura_archive_begin(struct aura_archive_writer *w,const struct aura_archive_manifest *m,aura_archive_commit cb,void *user)
+{return begin(w,m,cb,user,false);}
+int aura_archive_begin_staged(struct aura_archive_writer *w,const struct aura_archive_manifest *m,aura_archive_commit cb,void *user)
+{return begin(w,m,cb,user,true);}
 static int ready(const struct aura_archive_writer *w)
 {
     if(!w||!w->commit||!w->begun)return AURA_ARCHIVE_BAD_ARGUMENT;
@@ -180,8 +185,49 @@ int aura_archive_interrupt(struct aura_archive_writer *w)
 }
 int aura_archive_receipt(const struct aura_archive_writer *w,uint8_t p[94])
 {
-    if(!w||!p||!w->begun||w->pending_bytes)return AURA_ARCHIVE_BUSY;
+    if(!w||!p||!w->begun||w->pending_bytes||w->staging)return AURA_ARCHIVE_BUSY;
     memcpy(p,"ACK3",4);p[4]=3;p[5]=w->status;memcpy(p+6,w->manifest.device_id,16);memcpy(p+22,w->manifest.capture_id,16);
     put(p+38,w->next_sequence,4);put(p+42,w->encoded_bytes,8);put(p+50,w->encoded_samples,8);memcpy(p+58,w->chain,32);crc(p,90);
     return 0;
+}
+
+static uint64_t get(const uint8_t *p,unsigned n)
+{uint64_t v=0;for(unsigned i=0;i<n;++i)v|=(uint64_t)p[i]<<(8*i);return v;}
+struct match_record { const uint8_t *wire; size_t bytes; uint64_t offset; };
+static int match(void *user,uint64_t offset,const uint8_t *wire,size_t bytes)
+{
+    const struct match_record *m=user;
+    return offset!=m->offset||bytes!=m->bytes||memcmp(wire,m->wire,bytes)?AURA_ARCHIVE_CONFLICT:0;
+}
+int aura_archive_replay(struct aura_archive_writer *view,const uint8_t *wire,size_t bytes)
+{
+    if(!view||!wire||view->status||bytes<26||bytes>1301||get(wire+bytes-4,4)!=aura_archive_crc32(wire,bytes-4))
+        return AURA_ARCHIVE_BAD_ARGUMENT;
+    struct aura_archive_writer next=*view;
+    struct match_record expected={wire,bytes,view->file_offset};
+    next.commit=match;next.user=&expected;next.staging=true;
+    int result=AURA_ARCHIVE_BAD_ARGUMENT;
+    if(!view->begun){
+        if(bytes!=68||memcmp(wire,"AUR3",4))return result;
+        struct aura_archive_manifest m={.frame_samples=(uint16_t)get(wire+44,2),
+            .pre_skip=(uint16_t)get(wire+46,2),.started_at_ms=get(wire+56,8),.time_source=wire[54]};
+        memcpy(m.device_id,wire+8,16);memcpy(m.capture_id,wire+24,16);
+        result=aura_archive_begin_staged(&next,&m,match,&expected);
+    }else if(!memcmp(wire,"AFR3",4)){
+        if(get(wire+6,4)!=view->next_sequence||get(wire+10,8)>INT64_MAX||get(wire+20,2)+26!=bytes)return result;
+        if(wire[5]==1){
+            struct aura_opus_packet packet={.sequence=view->audio_packets,.sample_offset=get(wire+10,8),
+                .sample_count=(uint16_t)get(wire+18,2),.bytes=(uint16_t)get(wire+20,2)};
+            memcpy(packet.data,wire+22,packet.bytes);
+            result=aura_archive_opus_commit(&next,&packet);
+        }else if(wire[5]==2)result=aura_archive_bookmark(&next,get(wire+10,8));
+    }else if(!memcmp(wire,"ASE3",4)&&bytes==120){
+        if(wire[5]==AURA_ARCHIVE_FINALIZED){
+            struct aura_opus_seal seal={.packets=(uint32_t)get(wire+44,4),.encoded_samples=get(wire+56,8),
+                .source_samples=get(wire+64,8),.pre_skip=(uint16_t)get(wire+80,2),.end_trim=(uint16_t)get(wire+82,2)};
+            result=aura_archive_finalize(&next,&seal);
+        }else if(wire[5]==AURA_ARCHIVE_INTERRUPTED)result=aura_archive_interrupt(&next);
+    }
+    if(!result){next.commit=NULL;next.user=NULL;*view=next;}
+    return result;
 }

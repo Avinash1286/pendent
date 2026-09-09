@@ -1,0 +1,103 @@
+{
+  "status": "host_NAND_model_real_Opus_Python_SQLite_FFmpeg_passed_device_unmeasured",
+  "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
+  "cases": [
+    {
+      "case": "finalized_reboot",
+      "file": "fixtures/journal-0.aura",
+      "file_sha256": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+      "status": "finalized",
+      "bytes": 37040,
+      "audio_packets": 378,
+      "decoded_samples": 120847,
+      "waveform_snr_db": 11.919,
+      "original_source_samples": 120847,
+      "physical_receipt_status": "terminal",
+      "physical_prefix_digest": "c892cf2f41849c6caa5a6d7a8558241e945f05e9fce76f7174991ad8173f14f5",
+      "export_terminal_digest": "c892cf2f41849c6caa5a6d7a8558241e945f05e9fce76f7174991ad8173f14f5"
+    },
+    {
+      "case": "staged_tail_lost",
+      "file": "fixtures/journal-1.aura",
+      "file_sha256": "ff0f8b24d53033e57e6bc674fb270b6071fa9be1e02c2a2cec497e1243bdfa8e",
+      "status": "interrupted",
+      "bytes": 36634,
+      "audio_packets": 364,
+      "decoded_samples": 116440,
+      "waveform_snr_db": 11.919,
+      "original_source_samples": null,
+      "physical_receipt_status": "open_prefix",
+      "physical_prefix_digest": "43ca1c576ae2dee0321536c0076b748224cb54d288afa400dd5956ddb3704d2a",
+      "export_terminal_digest": "01003f60e1961ec3107b4bd564af8a4d38b562d173db69ff82ab7a6a06bceb10"
+    },
+    {
+      "case": "partial_page_power_cut",
+      "file": "fixtures/journal-2.aura",
+      "file_sha256": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+      "status": "interrupted",
+      "bytes": 36634,
+      "audio_packets": 364,
+      "decoded_samples": 116440,
+      "waveform_snr_db": 11.919,
+      "original_source_samples": null,
+      "physical_receipt_status": "open_prefix",
+      "physical_prefix_digest": "692d2a258c7edd1b4cc25bdbeed8e153c8e417545b23a7b7d96a399706a70968",
+      "export_terminal_digest": "cb880b6f70a9a3b97456ff9242b6d2e8a4176d554b846557c1b18c863bab806c"
+    },
+    {
+      "case": "lost_program_completion",
+      "file": "fixtures/journal-3.aura",
+      "file_sha256": "5b6e28744eba80b287ce3691e39d64ab4944ef4c3cf8fa0eefd63128f890d4e3",
+      "status": "interrupted",
+      "bytes": 37011,
+      "audio_packets": 377,
+      "decoded_samples": 120600,
+      "waveform_snr_db": 11.919,
+      "original_source_samples": null,
+      "physical_receipt_status": "open_prefix",
+      "physical_prefix_digest": "563d80160f6c3145698e69c72822cdc5bd8e42e8c736b1598ad0da2da3772037",
+      "export_terminal_digest": "07661cdec7dc654a910b4d77e0f3995eb836a91f5a53e059d2ef0c24f449e60b"
+    }
+  ],
+  "code_source_sha256": {
+    "firmware/a04/src/aura_journal.c": "cbe336ec5db5a78b52bbb7f45d7fa6f7076e0061b7ac50c3be4907dd756384ce",
+    "firmware/a04/include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/tests/host_journal.c": "260c851a1ee7811f8ee93b4488d81c2a5f17f2ccd5562d718a433e5face4204c",
+    "firmware/a04/tests/CMakeLists.txt": "b26c80cea3866a0e35ff9dcf967b4e08ec55b12e831111ee2ff6e0bab9d0190e",
+    "firmware/a04/scripts/build.ps1": "6a1676e4b25dd9df4eedb959a0efcb21a15f9aa587965e6732ba07ec6c67440d",
+    "firmware/a04/src/aura_w25n01gv.c": "f3443bc6751086144e5022a1b58701cac2254d5b080562bfc28f730a498f1cc1",
+    "firmware/a04/include/aura_w25n01gv.h": "0bf679f16315fae257dcd12aa6a41012e155ac86e74f22d4488f3ed86773ea7b",
+    "firmware/a04/tests/host_w25n01gv.c": "1d3403a2aaa230ac70617673cb436390d9d2241b085d1c2a03c560c64440c3b1",
+    "firmware/a04/scripts/verify_journal.py": "208d036c61bf49f859ee48dc29999dcd599f283bf2c7e322c84ab2de5648eabe",
+    "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
+  },
+  "model_guarantees": [
+    "once per page across reset",
+    "ascending page order",
+    "1 to 0 only",
+    "all six factory markers",
+    "reserved BBM endpoints",
+    "corrected and uncorrectable ECC",
+    "partial and lost program completion",
+    "partial and lost erase completion",
+    "no populated erase",
+    "no receipt from staging or metadata",
+    "full scan beyond gaps and checkpoint declarations",
+    "128 capture and media-full bounds"
+  ],
+  "limitations": [
+    "physical SPI/NAND power failure unmeasured",
+    "marker and LUT reads are separate from portable mount counters",
+    "no populated block reclamation even after host acknowledgement",
+    "128 captures maximum until product reclamation exists",
+    "caller must service journal at a bounded cadence while paused",
+    "no board GPIO or PDM integration"
+  ]
+}

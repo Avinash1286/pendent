@@ -66,35 +66,75 @@ int aura_journal_mount(struct aura_journal *j,struct aura_nand_io io)
         if(index<0){
             if(j->count==128)return j->fault=AURA_JOURNAL_FULL;
             index=j->count++;struct aura_journal_capture *c=&j->captures[index];
-            memcpy(c->manifest,h+60,68);c->first_block=c->last_block=b;
+            memcpy(c->manifest,h+60,68);c->first_block=c->last_block=AURA_JOURNAL_NONE;
         }
         struct aura_journal_capture *c=&j->captures[index];
         uint32_t part=(uint32_t)get(h+16,4),previous=(uint32_t)get(h+12,4);
-        if(memcmp(c->manifest,h+60,68)||memcmp(h+28,c->manifest+8,32)||
-           part!=c->blocks||(part==0?(previous!=UINT32_MAX||get(h+20,8)!=0):previous!=c->last_block))
+        if(memcmp(c->manifest,h+60,68)||memcmp(h+28,c->manifest+8,32)||part>=io.blocks)
             c->metadata_fault=true;
-        if(c->blocks)j->next_block[c->last_block]=b;
-        c->last_block=b;++c->blocks;j->owner[b]=(uint16_t)index;j->block_state[b]=AURA_BLOCK_OWNED;
-        /* Checkpoint declarations are deliberately NOT copied into committed_receipt. */
-        r=read_at(j,b*64+63,j->scratch,256,true);
-        if(r<0)c->metadata_fault=true;
-        else if(!erased(j->scratch,256)&&checked(j->scratch,256)&&!meta(j->scratch,"A4NC",b))c->metadata_fault=true;
+        /* Physical discovery order is unrelated to archive order after the
+         * allocator wraps. Collect predecessor claims without sorting parts
+         * or allocating another per-block table. Conflicting claims invalidate
+         * both captures; no claimant can silently replace an existing link. */
+        if(!part){
+            if(previous!=UINT32_MAX||get(h+20,8)||c->first_block!=AURA_JOURNAL_NONE)
+                c->metadata_fault=true;
+            else c->first_block=b;
+        }else if(previous>=io.blocks||previous==b)c->metadata_fault=true;
+        else if(j->next_block[previous]!=AURA_JOURNAL_NONE){
+            c->metadata_fault=true;
+            uint16_t other=j->owner[j->next_block[previous]];
+            if(other<j->count)j->captures[other].metadata_fault=true;
+        }else j->next_block[previous]=b;
+        ++c->blocks;j->owner[b]=(uint16_t)index;j->block_state[b]=AURA_BLOCK_OWNED;
     }
-    /* A damaged continuation identity must not hide a valid checkpoint that
-     * declares additional committed audio. Do this after building the catalog
-     * so association does not depend on physical discovery order. */
+    /* A bounded second metadata walk establishes a unique contiguous chain.
+     * Count equality plus part/previous checks reject missing heads, orphan
+     * parts, branches, cycles and links into another capture. No payload or
+     * checkpoint declaration is accepted as a receipt during mount. */
+    for(unsigned index=0;index<j->count;++index){
+        struct aura_journal_capture *c=&j->captures[index];
+        if(c->metadata_fault)continue;
+        uint16_t b=c->first_block;uint32_t previous=UINT32_MAX;
+        for(unsigned part=0;part<c->blocks;++part){
+            if(b>=io.blocks||j->owner[b]!=index){c->metadata_fault=true;break;}
+            int r=read_at(j,b*64+2,j->scratch,256,true);
+            const uint8_t *h=j->scratch;
+            if(r||!meta(h,"A4NH",b)||!zero(h+222,30)||get(h+12,4)!=previous||
+               get(h+16,4)!=part||memcmp(h+60,c->manifest,68)||memcmp(h+28,c->manifest+8,32)){
+                c->metadata_fault=true;break;
+            }
+            c->last_block=b;previous=b;b=j->next_block[b];
+        }
+        if(b!=AURA_JOURNAL_NONE)c->metadata_fault=true;
+    }
+    /* Reconcile every checkpoint after catalog discovery. Even an OWNED block
+     * can carry a conflicting checkpoint: a damaged/reclassified identity must
+     * not hide evidence of additional committed audio for another capture.
+     * Checkpoint declarations are never copied into committed_receipt. */
     for(uint16_t b=0;b<io.blocks;++b){
-        if(j->block_state[b]!=AURA_BLOCK_FREE&&j->block_state[b]!=AURA_BLOCK_QUARANTINED)continue;
+        if(j->block_state[b]==AURA_BLOCK_EXCLUDED)continue;
+        bool owned=j->block_state[b]==AURA_BLOCK_OWNED;
         int r=read_at(j,b*64+63,j->scratch,256,true);
+        if(owned&&(r<0||(!erased(j->scratch,256)&&checked(j->scratch,256)&&!meta(j->scratch,"A4NC",b))))
+            j->captures[j->owner[b]].metadata_fault=true;
+        if(owned&&r<0)continue;
         if(j->block_state[b]==AURA_BLOCK_FREE&&!r&&erased(j->scratch,256))continue;
-        j->block_state[b]=AURA_BLOCK_QUARANTINED;bool associated=false;
+        if(!owned)j->block_state[b]=AURA_BLOCK_QUARANTINED;
+        bool associated=false;
         if(!r&&meta(j->scratch,"A4NC",b)&&!memcmp(j->scratch+28,"ACK3",4)&&
            j->scratch[32]==3&&checked(j->scratch+28,94)){
             for(unsigned i=0;i<j->count;++i)if(!memcmp(j->captures[i].manifest+8,j->scratch+34,32)){
-                j->captures[i].metadata_fault=true;j->owner[b]=(uint16_t)i;associated=true;break;
+                if(!owned||j->owner[b]!=i){
+                    j->captures[i].metadata_fault=true;
+                    if(owned)j->captures[j->owner[b]].metadata_fault=true;
+                    else j->owner[b]=(uint16_t)i;
+                }
+                associated=true;break;
             }
+            if(owned&&!associated){j->captures[j->owner[b]].metadata_fault=true;++j->unassociated_blocks;}
         }
-        if(!associated)++j->unassociated_blocks;
+        if(!owned&&!associated)++j->unassociated_blocks;
     }
     return 0;
 }
@@ -102,11 +142,16 @@ int aura_journal_mount(struct aura_journal *j,struct aura_nand_io io)
 int aura_journal_prepare(struct aura_journal *j)
 {
     if(!j||j->fault)return j?j->fault:AURA_NAND_BAD_ARGUMENT;
+    if(!j->io.blocks||j->io.blocks>1024||!j->io.read||!j->io.erase||!j->io.bad)
+        return AURA_NAND_BAD_ARGUMENT;
     if(j->prepared!=AURA_JOURNAL_NONE)return 0;
-    uint16_t b=j->allocation_cursor;
-    while(b<j->io.blocks&&j->block_state[b]!=AURA_BLOCK_FREE)++b;
-    j->allocation_cursor=b<j->io.blocks?(uint16_t)(b+1):b;
-    if(b>=j->io.blocks)return AURA_JOURNAL_FULL;
+    uint16_t b=(uint16_t)(j->allocation_cursor%j->io.blocks);
+    unsigned visited=0;
+    while(visited<j->io.blocks&&j->block_state[b]!=AURA_BLOCK_FREE){
+        b=(uint16_t)((b+1)%j->io.blocks);++visited;
+    }
+    if(visited==j->io.blocks)return AURA_JOURNAL_FULL;
+    j->allocation_cursor=(uint16_t)((b+1)%j->io.blocks);
     bool bad=false;int r=j->io.bad(j->io.user,b,&bad);
     if(r<0)return j->fault=r;
     if(bad){j->block_state[b]=AURA_BLOCK_EXCLUDED;return AURA_JOURNAL_RETRY_PREPARE;}
@@ -277,7 +322,8 @@ static int scan(struct aura_journal *j,uint16_t index,struct aura_archive_writer
         if(b>=j->io.blocks||j->owner[b]!=index)return AURA_JOURNAL_CORRUPT;
         uint8_t h[256];int r=read_at(j,b*64+2,h,256,true);if(r)return r;
         if(!meta(h,"A4NH",b)||!zero(h+222,30)||get(h+12,4)!=previous||get(h+16,4)!=part||
-           get(h+20,8)!=view->file_offset||memcmp(h+60,c->manifest,68)||hole)return AURA_JOURNAL_CORRUPT;
+           get(h+20,8)!=view->file_offset||memcmp(h+60,c->manifest,68)||
+           memcmp(h+28,c->manifest+8,32)||hole)return AURA_JOURNAL_CORRUPT;
         if(part){uint8_t ack[94];if(declaration(view,ack)||memcmp(ack,h+128,94))return AURA_JOURNAL_CORRUPT;}
         else if(!zero(h+128,94))return AURA_JOURNAL_CORRUPT;
         unsigned valid_pages=0;
@@ -321,6 +367,7 @@ static int scan(struct aura_journal *j,uint16_t index,struct aura_archive_writer
         }
         previous=b;b=j->next_block[b];
     }
+    if(b!=AURA_JOURNAL_NONE||previous!=c->last_block)return AURA_JOURNAL_CORRUPT;
     return view->begun?0:AURA_JOURNAL_NOT_COMMITTED;
 }
 

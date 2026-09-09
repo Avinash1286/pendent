@@ -1,0 +1,99 @@
+{
+  "status": "portable_authentication_tests_passed",
+  "c_passed_groups": 13,
+  "groups": [
+    "rfc4231_cases_1_to_4",
+    "rfc4231_cases_5_to_7",
+    "hmac_bounds_empty_and_maximum",
+    "terminal_roundtrip_unaligned_and_exact_bytes",
+    "every_wire_bit_and_full_tag_rejected_after_tampering",
+    "authenticated_noncanonical_headers_and_zero_sequence",
+    "wrong_key_device_incarnation_owner_and_generation",
+    "uninitialized_trusted_context_refused",
+    "terminal_ack_crc_identity_status_and_scalar_bounds",
+    "exact_committed_receipt_fields_and_terminal_status_match",
+    "null_lengths_truncation_extension_and_unchanged_outputs",
+    "freshness_replay_gap_overflow_and_no_implicit_persistence",
+    "domain_purpose_and_included_nul_required"
+  ],
+  "python_comparisons": [
+    "C_to_Python_exact_wire",
+    "Python_to_C_authentication",
+    "empty_HMAC",
+    "maximum_bounded_HMAC"
+  ],
+  "sources": {
+    "firmware/a04/src/aura_release_auth.c": {
+      "sha256": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
+      "lf_normalized_sha256": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3"
+    },
+    "firmware/a04/src/aura_archive.c": {
+      "sha256": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+      "lf_normalized_sha256": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f"
+    },
+    "firmware/a04/tests/host_release_auth.c": {
+      "sha256": "2620cfd9c4cba34ba944e6a8eb6537c701868df7fd184f13b1507552fdb6957a",
+      "lf_normalized_sha256": "2620cfd9c4cba34ba944e6a8eb6537c701868df7fd184f13b1507552fdb6957a"
+    },
+    "firmware/a04/include/aura_release_auth.h": {
+      "sha256": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
+      "lf_normalized_sha256": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01"
+    },
+    "firmware/a04/include/aura_archive.h": {
+      "sha256": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+      "lf_normalized_sha256": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f"
+    },
+    "firmware/a04/include/aura_opus.h": {
+      "sha256": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+      "lf_normalized_sha256": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d"
+    },
+    "firmware/a04/scripts/verify_release_auth.py": {
+      "sha256": "a19f1134879330282b5c2e778cd0c0e8ff5f1d9aff715a25372e1e4f1fc2f7bb",
+      "lf_normalized_sha256": "a19f1134879330282b5c2e778cd0c0e8ff5f1d9aff715a25372e1e4f1fc2f7bb"
+    },
+    "firmware/a04/RELEASE-AUTH.md": {
+      "sha256": "86c909940322160d20d1a11796ac08c1f32e623e11d4989c591ab90d01f82f7d",
+      "lf_normalized_sha256": "86c909940322160d20d1a11796ac08c1f32e623e11d4989c591ab90d01f82f7d"
+    },
+    "firmware/a04/third_party/opus-1.6.1/include/opus.h": {
+      "sha256": "036f6a6e83a20e943505743e113e90d6278cbe8240f7d5bb90b3f86261e783e3",
+      "lf_normalized_sha256": "036f6a6e83a20e943505743e113e90d6278cbe8240f7d5bb90b3f86261e783e3"
+    },
+    "firmware/a04/third_party/opus-1.6.1/include/opus_types.h": {
+      "sha256": "19cb301ea1eedbcbdbb5049363de061893bf11c20e505a657b69ce6ffa5b11fa",
+      "lf_normalized_sha256": "19cb301ea1eedbcbdbb5049363de061893bf11c20e505a657b69ce6ffa5b11fa"
+    },
+    "firmware/a04/third_party/opus-1.6.1/include/opus_defines.h": {
+      "sha256": "bbd4d4e3ba99f6982b1c8d8f5541814ad77d8e8babf3cc788cf23d517b2ca9d6",
+      "lf_normalized_sha256": "bbd4d4e3ba99f6982b1c8d8f5541814ad77d8e8babf3cc788cf23d517b2ca9d6"
+    }
+  },
+  "compiler": "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\ziglang\\zig.exe",
+  "compile_options": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-UNDEBUG",
+    "-O2"
+  ],
+  "executable": {
+    "sha256": "46c963642de6c5177896c298a30459f415df9d6cebc9eca63f5ce025212d7ea5",
+    "lf_normalized_sha256": "46c963642de6c5177896c298a30459f415df9d6cebc9eca63f5ce025212d7ea5"
+  },
+  "transcript": "PASS rfc4231_cases_1_to_4\nPASS rfc4231_cases_5_to_7\nEMPTY_HMAC b613679a0814d9ec772f95d778c35fc5ff1697c493715653c6c712144292c5ad\nMAX_HMAC 800ee807ba134d335313ab1d400d2e7e8d74ab367837ee786deda1d0288f5024\nPASS hmac_bounds_empty_and_maximum\nINTEROP_RLS1 524c53310101010033333333333333333333333333333333444444444444444444444444444444440807060504030201090000000000000041434b33030111111111111111111111111111111111222222222222222222222222222222220700000050000000000000004001000000000000606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f596cf06e20e36d1ca8f4d5cd74649390c99cbebffd49bdcce5d03ca664ecf00186b43c23\nPASS terminal_roundtrip_unaligned_and_exact_bytes\nPASS every_wire_bit_and_full_tag_rejected_after_tampering\nPASS authenticated_noncanonical_headers_and_zero_sequence\nPASS wrong_key_device_incarnation_owner_and_generation\nPASS uninitialized_trusted_context_refused\nPASS terminal_ack_crc_identity_status_and_scalar_bounds\nPASS exact_committed_receipt_fields_and_terminal_status_match\nPASS null_lengths_truncation_extension_and_unchanged_outputs\nPASS freshness_replay_gap_overflow_and_no_implicit_persistence\nPASS domain_purpose_and_included_nul_required\n13 release-auth test groups passed\n",
+  "synthetic_rls1_sha256": "f46121e75146cb2f98f7cefa80faa15c6cc335d17d0198a3c8af63b8dbaa3389",
+  "rls1_bytes": 182,
+  "mac_domain_hex": "415552412d4130342d4f574e45522d52454c454153452d763100",
+  "not_implemented_or_verified": [
+    "durable replay floor",
+    "reclamation controller",
+    "owner provisioning",
+    "physical device authentication",
+    "protected key storage",
+    "physical anti-rollback",
+    "BLE",
+    "physical deletion",
+    "constant-time measurements"
+  ]
+}

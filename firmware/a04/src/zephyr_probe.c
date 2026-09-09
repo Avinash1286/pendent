@@ -11,6 +11,8 @@
 #include "aura_w25n01gv_zephyr.h"
 #include "aura_audio_zephyr.h"
 #include "aura_dmic_health.h"
+#include "aura_release_auth.h"
+#include "aura_control.h"
 #include <string.h>
 
 #define CODEC_STACK_BYTES 49152
@@ -22,6 +24,10 @@ static struct aura_recorder recorder;
 static struct aura_journal journal;
 static struct aura_w25n01gv_zephyr nand_adapter;
 static struct aura_audio_zephyr audio_adapter;
+/* ABI/resource reservations only. There is no owner key, enrolled device,
+ * configured control-block pair or privileged physical erase callback. */
+static struct aura_release_auth_context release_context;
+static struct aura_control control_ledger;
 /* Eight sparse pages suffice for this short synthetic capture. */
 static uint8_t probe_pages[8][2048], probe_map[64], probe_used;
 static int probe_highest;
@@ -85,6 +91,13 @@ static void probe(void *one, void *two, void *three)
            (void *)aura_audio_zephyr_reader_step,(void *)aura_audio_zephyr_service,
            (void *)aura_audio_zephyr_init,(void *)aura_audio_zephyr_privacy_cutoff,
            (void *)aura_audio_zephyr_request_stop,(void *)&audio_adapter);
+    printk("UNPROVISIONED PRIMITIVES auth_context=%u at=%p authenticate=%p sign=%p freshness=%p "
+           "control_context=%u at=%p open=%p provision=%p load=%p store=%p; no authority or erase configured\n",
+           (unsigned)sizeof(release_context),(void *)&release_context,
+           (void *)aura_release_authenticate,(void *)aura_release_sign,(void *)aura_release_validate_next,
+           (unsigned)sizeof(control_ledger),(void *)&control_ledger,
+           (void *)aura_control_open,(void *)aura_control_provision,
+           (void *)aura_control_load,(void *)aura_control_store);
     uint32_t worst_us = 0, late_frames = 0;
     for (unsigned frame = 0; !status && frame < 50; ++frame) {
         for (unsigned i = 0; i < ARRAY_SIZE(input); ++i)

@@ -1,1 +1,2 @@
-ninja: no work to do.
+[1/2] Building C object CMakeFiles/aura_journal_test.dir/host_journal.c.obj
+[2/2] Linking C executable aura_journal_test.exe

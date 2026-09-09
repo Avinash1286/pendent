@@ -1,0 +1,98 @@
+{
+  "status": "isolated_control_ledger_host_fault_tests_and_independent_wire_hash_verification_passed",
+  "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
+  "host": {
+    "groups": 12,
+    "fault_and_rotation_cases": 712,
+    "context_bytes": 4272,
+    "guarded_erases": 1077
+  },
+  "control_block_ids": [
+    1,
+    6
+  ],
+  "max_snapshot_bytes": 49152,
+  "healthy_open_main_reads": 128,
+  "healthy_open_main_bytes": 262144,
+  "snapshots": [
+    {
+      "generation": 3,
+      "parent": 2,
+      "bytes": 1921,
+      "body_pages": 2,
+      "parent_sha256": "c98c63ecfc45928b852530266cb72670ebe35a1826838fc537f715cf0c3c40dd",
+      "commit_sha256": "6e50de8e0a02cd17d34ad07eb86d1c171edee15990f05f87b036ef6fa1fa50c6",
+      "payload_sha256": "fe919bcc0120b43ad934496c8721585216fdbd6b607c9635b348040644a99c20"
+    },
+    {
+      "generation": 2,
+      "parent": 1,
+      "bytes": 49152,
+      "body_pages": 26,
+      "parent_sha256": "43885717efb825bcecb778bf3fcf68ecf4fabe467dbc29c21c3c8ff4f73817f1",
+      "commit_sha256": "c98c63ecfc45928b852530266cb72670ebe35a1826838fc537f715cf0c3c40dd",
+      "payload_sha256": "f210336749e11f44aaa4aff461536f0721795c2269af33f20a9b28eb6fea8eb3"
+    }
+  ],
+  "fixture_sha256": "423b26ae452e8925c5209d2fd4adb61d2611193f0f352b9360b2dde2a020176f",
+  "build_command": [
+    "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\ziglang\\zig.exe",
+    "cc",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O1",
+    "-IF:\\circuit\\firmware\\a04\\include",
+    "-IF:\\circuit\\firmware\\a04\\tests",
+    "-IF:\\circuit\\firmware\\a04\\third_party\\opus-1.6.1\\include",
+    "F:\\circuit\\firmware\\a04\\src\\aura_control.c",
+    "F:\\circuit\\firmware\\a04\\src\\aura_archive.c",
+    "F:\\circuit\\firmware\\a04\\tests\\nand_model.c",
+    "F:\\circuit\\firmware\\a04\\tests\\host_control.c",
+    "-o",
+    "F:\\circuit\\.tools\\a04-control\\aura_control_test.exe"
+  ],
+  "executable_sha256": "0abaf03fcb5df5920ce5ff1f441e443df3b38efe665c0d8a93adebf65d0450b0",
+  "host_transcript_sha256": "16149f4b72308391f4bc24091d82f5be2569a7266d7bb38dbc65c072c8fc1c49",
+  "source_proven_by_this_run": true,
+  "compiled_source_sha256": {
+    "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
+    "firmware/a04/include/aura_control.h": "0e61d78ca8016f6b93b01ca09bce8ff8befd1e237f2ea14ed5867fd13734b8c8",
+    "firmware/a04/tests/host_control.c": "b06d6743801e8d7d169e4c93786a3ec158f387b3697fca23cd6df0e8f0758a22",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/third_party/opus-1.6.1/include/opus.h": "036f6a6e83a20e943505743e113e90d6278cbe8240f7d5bb90b3f86261e783e3",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_types.h": "19cb301ea1eedbcbdbb5049363de061893bf11c20e505a657b69ce6ffa5b11fa",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_defines.h": "bbd4d4e3ba99f6982b1c8d8f5541814ad77d8e8babf3cc788cf23d517b2ca9d6",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/scripts/verify_control.py": "adc80b55dfebdd5ef116f8c6d24a25f07b57dd8411a59d64584424b632cda130"
+  },
+  "observed_source_sha256": {
+    "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
+    "firmware/a04/include/aura_control.h": "0e61d78ca8016f6b93b01ca09bce8ff8befd1e237f2ea14ed5867fd13734b8c8",
+    "firmware/a04/tests/host_control.c": "b06d6743801e8d7d169e4c93786a3ec158f387b3697fca23cd6df0e8f0758a22",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/third_party/opus-1.6.1/include/opus.h": "036f6a6e83a20e943505743e113e90d6278cbe8240f7d5bb90b3f86261e783e3",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_types.h": "19cb301ea1eedbcbdbb5049363de061893bf11c20e505a657b69ce6ffa5b11fa",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_defines.h": "bbd4d4e3ba99f6982b1c8d8f5541814ad77d8e8babf3cc788cf23d517b2ca9d6",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/scripts/verify_control.py": "adc80b55dfebdd5ef116f8c6d24a25f07b57dd8411a59d64584424b632cda130"
+  },
+  "limitations": [
+    "strict cold failure after torn newer snapshot can deny authority availability",
+    "operators cannot recover authority by simply reformatting",
+    "control hashes are public, not a MAC or physical anti-rollback",
+    "production populated-control erase callback is absent",
+    "no audio erasure, release controller, capture-ID issuance or catalog eviction",
+    "two fixed control blocks have no wear migration or bad-block replacement",
+    "host model is not physical power-loss or real-time qualification"
+  ]
+}

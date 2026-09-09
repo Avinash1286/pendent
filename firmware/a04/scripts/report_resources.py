@@ -24,7 +24,7 @@ def main():
         symbol_values = {symbol.name: symbol["st_value"] for symbol in symbols.iter_symbols()}
         selected = {}
         for symbol in symbols.iter_symbols():
-            if symbol.name in ("encoder_state", "recorder", "audio_adapter", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init", "aura_dmic_health_get", "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service", "aura_recorder_consume"):
+            if symbol.name in ("encoder_state", "recorder", "audio_adapter", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init", "aura_dmic_health_get", "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service", "aura_recorder_consume", "release_context", "control_ledger", "aura_release_authenticate", "aura_release_sign", "aura_release_validate_next", "aura_control_open", "aura_control_provision", "aura_control_load", "aura_control_store"):
                 selected[symbol.name] = {"bytes": symbol["st_size"], "address": symbol["st_value"]}
         sections = [{"name": section.name, "bytes": section["sh_size"], "address": section["sh_addr"],
                      "type": section["sh_type"]} for section in elf.iter_sections()
@@ -72,7 +72,8 @@ def main():
     report = {
         "status": "ARM_cross_compiled_not_executed",
         "target": "nrf52840dk/nrf52840",
-        "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC integration compile with synthetic PCM and volatile NAND; not wearable firmware",
+        "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC integration compile plus unprovisioned authentication/control-ledger primitives; synthetic PCM and volatile NAND, not wearable firmware",
+        "authority_binding": "Function/ABI retention only; zero-initialized auth/control objects have no key enrollment, control-block configuration or privileged erase callback. No opaque control-snapshot caller buffer is reserved.",
         "peripheral_binding": "DK-only P0.30 CLK/P0.31 DIN pinctrl initializes at boot; probe never enables microphone power or starts a physical PDM stream",
         "devicetree_sha256": sha(BUILD / "zephyr/zephyr.dts"),
         "zephyr": "4.2.0", "sdk": "0.17.2", "opus": "1.6.1",

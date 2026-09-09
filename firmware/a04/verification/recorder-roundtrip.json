@@ -82,7 +82,7 @@
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
-    "firmware/a04/src/aura_journal.c": "cbe336ec5db5a78b52bbb7f45d7fa6f7076e0061b7ac50c3be4907dd756384ce",
+    "firmware/a04/src/aura_journal.c": "478970ef202e6c92d96eecbdacfebddc2fc77f2af590dff3477ac5dd2da3662d",
     "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
     "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
     "firmware/a04/scripts/verify_recorder.py": "27ab76c91a331225145041f6c53894e7ada99a83497cad13eb0a708607f4879f",

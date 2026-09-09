@@ -5,6 +5,7 @@ This proves the portable journal under the described model, not physical NAND.
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 import tempfile
@@ -27,14 +28,21 @@ def main():
     (ROOT / "verification/journal-host.txt").write_text(run.stdout + run.stderr, encoding="utf-8", newline="\n")
     if run.returncode:
         raise RuntimeError(run.stdout + run.stderr)
+    groups = re.search(r"^PASS journal groups=(\d+) journal_context=(\d+) model_is_host_only=(\d+)$", run.stdout, re.M)
+    wrapped = re.search(r"^PASS wrapped_chain 3->0->1 captures=2 metadata_reads=12 payload_reads_at_mount=0 export_bytes=(\d+) exact_digest_and_receipt=true$", run.stdout, re.M)
+    if (not groups or int(groups[1]) != 15 or not wrapped
+            or "PASS conflicting_chains cases=12 no_source_erase=true" not in run.stdout
+            or "PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true" not in run.stdout):
+        raise RuntimeError("Missing expected journal recovery coverage")
     results = []
-    for mode, description in enumerate(("finalized_reboot", "staged_tail_lost", "partial_page_power_cut", "lost_program_completion")):
+    for mode, description in enumerate(("finalized_reboot", "staged_tail_lost", "partial_page_power_cut", "lost_program_completion", "wrapped_finalized_reboot")):
+        case_source = source * 4 if mode == 4 else source
         path = ROOT / f"fixtures/journal-{mode}.aura"
         archive = read_archive(path, allow_interrupted=True)
         physical = Receipt.parse(path.with_suffix(".receipt").read_bytes())
-        if mode == 0:
+        if mode in (0, 4):
             assert archive.status == "finalized" and physical == archive.receipt
-            assert archive.original_source_samples == len(source)
+            assert archive.original_source_samples == len(case_source)
         else:
             assert archive.status == "interrupted" and archive.original_source_samples is None
             assert not physical.sealed and archive.receipt.sealed
@@ -56,12 +64,13 @@ def main():
                         "-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le", str(wav)], check=True)
         decoded = pcm(wav)
         assert len(decoded) == archive.source_samples
-        snr = signal_snr(source[:len(decoded)], decoded)
+        snr = signal_snr(case_source[:len(decoded)], decoded)
         assert snr >= 8
         results.append(dict(case=description, file=path.relative_to(ROOT).as_posix(),
             file_sha256=archive.sha256_hex, status=archive.status, bytes=path.stat().st_size,
             audio_packets=len(packets), decoded_samples=len(decoded), waveform_snr_db=snr,
             original_source_samples=archive.original_source_samples,
+            tested_physical_block_order=[7, 0] if mode == 4 else [0],
             physical_receipt_status="terminal" if physical.sealed else "open_prefix",
             physical_prefix_digest=physical.chain_sha256.hex(), export_terminal_digest=archive.receipt.chain_sha256.hex()))
     assert results[1]["decoded_samples"] == results[2]["decoded_samples"]
@@ -73,11 +82,19 @@ def main():
              ROOT / "src/aura_w25n01gv.c", ROOT / "include/aura_w25n01gv.h", ROOT / "tests/host_w25n01gv.c",
              Path(__file__), WORKSPACE / "companion/src/aura_companion/protocol_v2.py"]
     report = dict(status="host_NAND_model_real_Opus_Python_SQLite_FFmpeg_passed_device_unmeasured",
+        host_groups=int(groups[1]), journal_context_bytes=int(groups[2]), host_model_bytes=int(groups[3]),
+        host_executable_sha256=hashlib.sha256((tools / "host/aura_journal_test.exe").read_bytes()).hexdigest(),
+        host_transcript_sha256=hashlib.sha256((ROOT / "verification/journal-host.txt").read_bytes()).hexdigest(),
+        wrapped_chain=dict(physical_order=[3, 0, 1], unrelated_capture_block=2, exact_export_bytes=int(wrapped[1]),
+            identical_export_and_receipt=True, mount_metadata_reads=12, mount_payload_reads=0,
+            malformed_chain_cases=12, reclassified_checkpoint_ownership_orders=2, additional_programs_or_erases=0),
         python=sys.version, cases=results, code_source_sha256={p.relative_to(WORKSPACE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
         model_guarantees=["once per page across reset", "ascending page order", "1 to 0 only", "all six factory markers",
             "reserved BBM endpoints", "corrected and uncorrectable ECC", "partial and lost program completion",
             "partial and lost erase completion", "no populated erase", "no receipt from staging or metadata",
-            "full scan beyond gaps and checkpoint declarations", "128 capture and media-full bounds"],
+            "full scan beyond gaps and checkpoint declarations", "128 capture and media-full bounds",
+            "bounded wrapped allocation and order-independent continuation recovery",
+            "conflicting continuation chains preserve source and deny receipts"],
         limitations=["physical SPI/NAND power failure unmeasured", "marker and LUT reads are separate from portable mount counters",
             "no populated block reclamation even after host acknowledgement", "128 captures maximum until product reclamation exists",
             "caller must service journal at a bounded cadence while paused", "no board GPIO or PDM integration"])

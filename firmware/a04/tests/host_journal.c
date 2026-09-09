@@ -31,6 +31,7 @@ static int packet(unsigned bytes)
 static int finish(void){return aura_archive_interrupt(&writer);}
 static int blank_and_model(void)
 {
+    memset(&journal,0,sizeof(journal));CHECK(aura_journal_prepare(&journal)==AURA_NAND_BAD_ARGUMENT);
     CHECK(!reset(1024));CHECK(journal.metadata_reads==2048&&journal.payload_reads==0);
     CHECK(model.read_bytes==524288&&model.programs==0&&model.erases==0);
     printf("MOUNT empty blocks=1024 metadata_reads=%llu read_bytes=%llu payload_reads=0\n",
@@ -200,9 +201,120 @@ static int continuation_and_full(void)
     CHECK(model.erases==1&&model.programs==62);
     CHECK(!reset(129));
     for(unsigned id=1;id<=128;++id){CHECK(!begin(id));CHECK(!packet(80));CHECK(!finish());}
-    CHECK(begin(129)==AURA_JOURNAL_FULL);CHECK(model.erases==128);CHECK(!reopen());CHECK(journal.count==128);
+    CHECK(begin(129)==AURA_JOURNAL_FULL);CHECK(model.erases==128);
+    uint64_t reads_before=model.read_bytes;CHECK(!reopen());CHECK(journal.count==128);
+    CHECK(journal.metadata_reads==386&&journal.payload_reads==0&&model.read_bytes-reads_before==98816);
     printf("MOUNT 128_short_captures blocks=129 metadata_reads=%llu payload_reads=%llu reads_bytes=%llu\n",
-        (unsigned long long)journal.metadata_reads,(unsigned long long)journal.payload_reads,(unsigned long long)129*512);
+        (unsigned long long)journal.metadata_reads,(unsigned long long)journal.payload_reads,
+        (unsigned long long)(model.read_bytes-reads_before));
+    ++tests;return 0;
+}
+/* Use the real writer and NAND programming rules to fill 2, then create a
+ * three-block capture in 3 -> 0 -> 1. No successful-layout bytes are patched. */
+static int wrapped_layout(void)
+{
+    CHECK(!reset(4));journal.allocation_cursor=2;
+    CHECK(!begin(9));CHECK(!packet(80));CHECK(!finish());
+    CHECK(!begin(1));for(unsigned n=0;n<125;++n)CHECK(!packet(1275));CHECK(!finish());
+    CHECK(journal.captures[1].first_block==3&&journal.captures[1].last_block==1);
+    CHECK(journal.captures[1].blocks==3&&journal.next_block[3]==0&&journal.next_block[0]==1);
+    CHECK(journal.next_block[1]==AURA_JOURNAL_NONE&&model.erases==4);return 0;
+}
+static int catalog_id(unsigned id)
+{
+    for(unsigned i=0;i<journal.count;++i)if(journal.captures[i].manifest[24]==id)return (int)i;
+    return -1;
+}
+struct byte_digest{uint64_t bytes;uint8_t *data;size_t capacity;};
+static int digest_output(void *user,uint64_t offset,const uint8_t *p,size_t n)
+{
+    struct byte_digest *sink=user;
+    if(offset!=sink->bytes||n>sink->capacity-sink->bytes)return -901;
+    memcpy(sink->data+sink->bytes,p,n);sink->bytes+=n;return 0;
+}
+static int wrapped_recovery(void)
+{
+    CHECK(!wrapped_layout());uint8_t saved[94],ack[94],original_hash[32],recovered_hash[32];
+    CHECK(!aura_journal_receipt(&journal,1,saved));
+    struct byte_digest original={.data=malloc(200000),.capacity=200000};CHECK(original.data);
+    CHECK(!aura_journal_export(&journal,1,digest_output,&original));
+    aura_archive_sha256(original.data,(size_t)original.bytes,original_hash);
+    uint64_t reads_before=model.read_bytes,erases=model.erases,programs=model.programs;
+    CHECK(!reopen());CHECK(journal.count==2&&journal.metadata_reads==12&&journal.payload_reads==0);
+    CHECK(model.read_bytes-reads_before==3072&&model.erases==erases&&model.programs==programs);
+    int index=catalog_id(1);CHECK(index>=0&&!journal.captures[index].metadata_fault);
+    CHECK(journal.captures[index].first_block==3&&journal.captures[index].last_block==1);
+    CHECK(aura_journal_receipt(&journal,(uint16_t)index,ack)==AURA_JOURNAL_NOT_COMMITTED);
+    CHECK(!aura_journal_verify(&journal,(uint16_t)index));
+    CHECK(!aura_journal_receipt(&journal,(uint16_t)index,ack)&&!memcmp(saved,ack,94));
+    struct byte_digest recovered={.data=malloc(200000),.capacity=200000};CHECK(recovered.data);
+    CHECK(!aura_journal_export(&journal,(uint16_t)index,digest_output,&recovered));
+    aura_archive_sha256(recovered.data,(size_t)recovered.bytes,recovered_hash);
+    CHECK(original.bytes==recovered.bytes&&!memcmp(original_hash,recovered_hash,32));
+    CHECK(!aura_journal_verify(&journal,(uint16_t)catalog_id(9)));
+    CHECK(aura_journal_prepare(&journal)==AURA_JOURNAL_FULL);
+    CHECK(model.erases==erases&&model.programs==programs);
+    printf("PASS wrapped_chain 3->0->1 captures=2 metadata_reads=12 payload_reads_at_mount=0 export_bytes=%llu exact_digest_and_receipt=true\n",
+        (unsigned long long)recovered.bytes);
+    free(original.data);free(recovered.data);++tests;return 0;
+}
+static int conflicting_chains(void)
+{
+    for(unsigned mode=0;mode<12;++mode){
+        CHECK(!wrapped_layout());uint8_t *h=model.pages[2];
+        switch(mode){
+        case 0:put(h+16,2,4);break; /* missing part 1 */
+        case 1:h=model.pages[66];put(h+12,3,4);break; /* two successors of head */
+        case 2:put(h+12,2,4);break; /* predecessor belongs to capture 9 */
+        case 3:h=model.pages[194];put(h+12,0,4);break; /* noncanonical head */
+        case 4:put(h+12,0,4);break; /* self link */
+        case 5:h=model.pages[66];put(h+12,17,4);break; /* out of bounds */
+        case 6:put(h+16,0,4);put(h+12,UINT32_MAX,4);put(h+20,0,8);break; /* duplicate head */
+        case 7:h=model.pages[194];put(h+16,1,4);put(h+12,1,4);break; /* cycle / no head */
+        case 8:h=model.pages[66];put(h+16,1,4);break; /* duplicate part */
+        case 9:h[100]^=1;break; /* damaged header, valid identifying checkpoint */
+        case 10:h=model.pages[66];h[28]^=1;break; /* conflicting duplicate identity */
+        default:h=model.pages[66];put(h+12,UINT32_MAX,4);break;
+        }
+        if(mode!=9)fix(h,256);
+        uint64_t erases=model.erases,programs=model.programs;CHECK(!reopen());
+        int index=catalog_id(1);CHECK(index>=0&&journal.captures[index].metadata_fault);
+        CHECK(aura_journal_verify(&journal,(uint16_t)index)==AURA_JOURNAL_CORRUPT);
+        uint8_t ack[94];CHECK(aura_journal_receipt(&journal,(uint16_t)index,ack)==AURA_JOURNAL_NOT_COMMITTED);
+        int other=catalog_id(9);CHECK(other>=0);
+        CHECK(aura_journal_verify(&journal,(uint16_t)other)==(mode==2?AURA_JOURNAL_CORRUPT:0));
+        CHECK(aura_journal_prepare(&journal)==AURA_JOURNAL_FULL);
+        CHECK(model.erases==erases&&model.programs==programs);
+    }
+    printf("PASS conflicting_chains cases=12 no_source_erase=true\n");++tests;return 0;
+}
+static int reclassified_continuation(void)
+{
+    for(unsigned wrapped=0;wrapped<2;++wrapped){
+        CHECK(!reset(3));journal.allocation_cursor=wrapped?2:0;
+        CHECK(!begin(1));for(unsigned n=0;n<65;++n)CHECK(!packet(1275));CHECK(!finish());
+        uint16_t tail=wrapped?0:1;CHECK(journal.captures[0].last_block==tail);
+        /* The continuation now has a fully canonical head for another capture,
+         * but its unchanged checkpoint still identifies committed capture 1. */
+        uint8_t *h=model.pages[tail*64+2];
+        put(h+12,UINT32_MAX,4);put(h+16,0,4);put(h+20,0,8);
+        memset(h+44,2,16);memset(h+84,2,16);fix(h+60,68);
+        memset(h+128,0,94);fix(h,256);
+        uint64_t programs=model.programs,erases=model.erases;CHECK(!reopen());
+        CHECK(journal.count==2&&journal.unassociated_blocks==0&&journal.payload_reads==0);
+        for(unsigned id=1;id<=2;++id){
+            int index=catalog_id(id);CHECK(index>=0&&journal.captures[index].metadata_fault);
+            CHECK(aura_journal_verify(&journal,(uint16_t)index)==AURA_JOURNAL_CORRUPT);
+            uint8_t ack[94];CHECK(aura_journal_receipt(&journal,(uint16_t)index,ack)==AURA_JOURNAL_NOT_COMMITTED);
+        }
+        CHECK(model.programs==programs&&model.erases==erases);
+    }
+    CHECK(!reset(2));CHECK(!begin(1));CHECK(!packet(80));CHECK(!finish());
+    uint8_t *checkpoint=model.pages[63];memset(checkpoint+50,9,16);
+    fix(checkpoint+28,94);fix(checkpoint,256);
+    CHECK(!reopen());CHECK(journal.count==1&&journal.unassociated_blocks==1);
+    CHECK(journal.captures[0].metadata_fault&&aura_journal_verify(&journal,0)==AURA_JOURNAL_CORRUPT);
+    printf("PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true\n");
     ++tests;return 0;
 }
 struct export_sink{FILE *file;uint64_t bytes;};
@@ -227,6 +339,11 @@ static int fixture(const char *input_path,const char *prefix,unsigned mode)
     FILE *f=fopen(input_path,"rb");CHECK(f);CHECK(!fseek(f,0,SEEK_END));long bytes=ftell(f);rewind(f);
     CHECK(bytes>0&&bytes<2000000&&!(bytes%2));int16_t *pcm=malloc((size_t)bytes);CHECK(pcm);
     CHECK(fread(pcm,1,(size_t)bytes,f)==(size_t)bytes);fclose(f);CHECK(!reset(8));
+    if(mode==4){
+        int16_t *long_pcm=realloc(pcm,(size_t)bytes*4);CHECK(long_pcm);pcm=long_pcm;
+        for(unsigned repeat=1;repeat<4;++repeat)memcpy((uint8_t *)pcm+(size_t)bytes*repeat,pcm,(size_t)bytes);
+        bytes*=4;journal.allocation_cursor=7;
+    }
     struct aura_opus_capture capture;void *state=malloc(aura_opus_state_bytes());CHECK(state);
     CHECK(!aura_opus_init_staged(&capture,state,aura_opus_state_bytes(),20,aura_archive_opus_commit,&writer));
     CHECK(capture.staging);CHECK(!aura_journal_service(&journal,0));CHECK(!begin(50+mode));
@@ -236,8 +353,9 @@ static int fixture(const char *input_path,const char *prefix,unsigned mode)
         CHECK(!aura_journal_service(&journal,ms));
         if(at==32000)CHECK(!aura_archive_bookmark(&writer,at));
     }
-    if(mode==0){struct aura_opus_seal seal;CHECK(!aura_opus_finish(&capture,&seal));CHECK(!aura_archive_finalize(&writer,&seal));}
+    if(mode==0||mode==4){struct aura_opus_seal seal;CHECK(!aura_opus_finish(&capture,&seal));CHECK(!aura_archive_finalize(&writer,&seal));}
     else if(mode==2||mode==3){model.cut_program=model.programs+1;model.cut=mode==2?MODEL_CUT_PARTIAL:MODEL_CUT_AFTER;model.cut_bytes=700;CHECK(aura_journal_flush(&journal)<0);}
+    if(mode==4)CHECK(journal.captures[0].first_block==7&&journal.captures[0].last_block==0&&journal.captures[0].blocks==2);
     uint64_t programmed=model.programs;CHECK(!reopen());CHECK(journal.payload_reads==0);CHECK(!aura_journal_verify(&journal,0));
     char name[1024];CHECK(snprintf(name,sizeof(name),"%s-%u.aura",prefix,mode)>0);
     struct export_sink sink={.file=fopen(name,"wb")};CHECK(sink.file);CHECK(!aura_journal_export(&journal,0,export_file,&sink));CHECK(!fclose(sink.file));
@@ -252,8 +370,9 @@ static int fixture(const char *input_path,const char *prefix,unsigned mode)
 int main(int argc,char **argv)
 {
     CHECK(argc==3);CHECK(!blank_and_model());CHECK(!staging_and_replay());CHECK(!program_cuts());
-    CHECK(!erase_cuts());CHECK(!corruption());CHECK(!continuation_and_full());CHECK(!export_changes());
-    for(unsigned mode=0;mode<4;++mode)CHECK(!fixture(argv[1],argv[2],mode));
+    CHECK(!erase_cuts());CHECK(!corruption());CHECK(!continuation_and_full());
+    CHECK(!wrapped_recovery());CHECK(!conflicting_chains());CHECK(!reclassified_continuation());CHECK(!export_changes());
+    for(unsigned mode=0;mode<5;++mode)CHECK(!fixture(argv[1],argv[2],mode));
     printf("PASS journal groups=%u journal_context=%u model_is_host_only=%u\n",tests,(unsigned)sizeof(journal),(unsigned)sizeof(model));
     model_destroy(&model);return 0;
 }

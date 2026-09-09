@@ -1,7 +1,11 @@
 MOUNT empty blocks=1024 metadata_reads=2048 read_bytes=524288 payload_reads=0
-MOUNT 128_short_captures blocks=129 metadata_reads=258 payload_reads=0 reads_bytes=66048
-PASS real_opus_journal mode=0 physical_programs=24 wire_bytes=37040 committed_bytes=37040 source_input_samples=120847 metadata_reads=22 payload_reads=180
-PASS real_opus_journal mode=1 physical_programs=22 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=22 payload_reads=180
-PASS real_opus_journal mode=2 physical_programs=23 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=22 payload_reads=180
-PASS real_opus_journal mode=3 physical_programs=23 wire_bytes=37011 committed_bytes=36891 source_input_samples=120847 metadata_reads=22 payload_reads=180
-PASS journal groups=11 journal_context=35920 model_is_host_only=666712
+MOUNT 128_short_captures blocks=129 metadata_reads=386 payload_reads=0 reads_bytes=98816
+PASS wrapped_chain 3->0->1 captures=2 metadata_reads=12 payload_reads_at_mount=0 export_bytes=162813 exact_digest_and_receipt=true
+PASS conflicting_chains cases=12 no_source_erase=true
+PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true
+PASS real_opus_journal mode=0 physical_programs=24 wire_bytes=37040 committed_bytes=37040 source_input_samples=120847 metadata_reads=23 payload_reads=180
+PASS real_opus_journal mode=1 physical_programs=22 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=23 payload_reads=180
+PASS real_opus_journal mode=2 physical_programs=23 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=23 payload_reads=180
+PASS real_opus_journal mode=3 physical_programs=23 wire_bytes=37011 committed_bytes=36891 source_input_samples=120847 metadata_reads=23 payload_reads=180
+PASS real_opus_journal mode=4 physical_programs=88 wire_bytes=147504 committed_bytes=147504 source_input_samples=483388 metadata_reads=30 payload_reads=360
+PASS journal groups=15 journal_context=35920 model_is_host_only=666712

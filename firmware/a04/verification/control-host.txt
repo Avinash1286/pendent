@@ -1,0 +1,13 @@
+PASS 01 explicit provision, max/empty snapshots, alternating generations, bounded mount
+PASS 02 bounds, alias/capacity guards, read-only backend, no non-control erase
+PASS 03 all main pages checked before explicit provision; populated/dirty/ECC media never formatted
+PASS 04 provision header/body/commit power cuts preserve blank-or-incomplete state
+PASS 05 replacement header/body/commit power cuts preserve sole prior snapshot and fail closed
+PASS 06 before/every partial-page boundary/after control erases preserve current; fresh erase required
+PASS 07 lost program completion resolved once; PFAIL and lost/EFAIL/dirty erase never promoted
+PASS 08 six marker bytes/LUT reservations, corrected/uncorrectable ECC, hidden later material
+PASS 09 canonical page fields, body header124, generation/domain/parent conflicts and rollover bound
+PASS 10 stale-small load canaries, stale store, exact expected digest at final snapshot verification
+PASS 11 older-erasure exception requires intact bound commit and no contradictory newer candidate
+PASS 12 260 replacements/reopens preserve unrelated source; raw-pair rollback limitation explicit
+RESULT {"groups":12,"fault_and_rotation_cases":712,"context_bytes":4272,"guarded_erases":1077}

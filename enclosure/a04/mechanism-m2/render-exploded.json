@@ -1,0 +1,85 @@
+{
+  "view": "exploded",
+  "sourceSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
+  "rendererSha256": "311facf430a54c05e42f08ce0c4205a4043fcfd3ae9bc29f3889026839919186",
+  "image": "documented-pack/m2-exploded.png",
+  "imageSha256": "5e1d154869fc466a3b2056047f8cf41183ad38d8e76caeca91c2bdda020debbd",
+  "inspectionBlendSha256": "6e940fd2a87351fb6359f5ce35dd93b2c2b80cfeb8785e63bc9719c46c322d8c",
+  "bodyDiameterMm": 43,
+  "bodyDepthMm": 12.2,
+  "physicalQualification": false,
+  "visuallyInspected": false,
+  "visualReviewPolicy": "Only a separate human/model review of this exact PNG may set its hash-bound review record; rendering never self-certifies inspection.",
+  "offsetsMm": {
+    "01_FIXED_CUP": [
+      0,
+      0,
+      0
+    ],
+    "02_THREADED_BEZEL": [
+      0,
+      0,
+      40
+    ],
+    "03_PCB_CLAMP_AND_FACE_GUIDE": [
+      0,
+      0,
+      24
+    ],
+    "04_CAPTIVE_FACE": [
+      0,
+      0,
+      32
+    ],
+    "05_FLUSH_STATUS_WINDOW": [
+      28,
+      0,
+      36
+    ],
+    "06_FIXED_DIFFUSER": [
+      0,
+      0,
+      46
+    ],
+    "07_CARTRIDGE_KEEPER": [
+      -28,
+      -5,
+      28
+    ],
+    "08_MEASURED_PLUNGER_SHOE": [
+      -28,
+      -5,
+      35
+    ],
+    "09_PRIVACY_FORK": [
+      13,
+      0,
+      2
+    ],
+    "10_PRIVACY_KEEPER": [
+      25,
+      0,
+      9
+    ],
+    "11_CONTACT_ACCESS_CARRIER": [
+      -25,
+      -10,
+      3
+    ],
+    "12_SENSOR_RETAINER": [
+      24,
+      -14,
+      3
+    ],
+    "90_UNPOWERED_BOARD_GAUGE": [
+      0,
+      0,
+      15
+    ],
+    "91_UNPOWERED_PACK_GAUGE": [
+      0,
+      0,
+      7
+    ]
+  }
+}

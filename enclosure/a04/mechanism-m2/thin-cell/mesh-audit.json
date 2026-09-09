@@ -1,0 +1,746 @@
+{
+  "status": "DIGITAL MESH CHECK ONLY; NOT PHYSICAL QUALIFICATION",
+  "allPass": true,
+  "sourceBindings": {
+    "contractSha256": true,
+    "generatorSha256": true,
+    "blendSha256": true
+  },
+  "failures": [],
+  "specimenCount": 14,
+  "physicalQualification": false,
+  "nativeFitProven": false,
+  "method": "Current contract/generator/BLEND hashes against manifest; binary STL length/hash; vertices welded at0.00001mm; oriented edge incidence, connected solids, signed volume, triangle area and all XYZ bounds translated back to the recorded assembly frame. Does not establish printer accuracy or complete self-intersection freedom.",
+  "manifestSha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050",
+  "verifierSha256": "612342b47d9c5f2299c69a31c5f178873022140eff19d31d76bf46bfab54007f",
+  "parts": [
+    {
+      "triangles": 13350,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 3264.1463747553585,
+      "boundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          24.8,
+          10.4
+        ]
+      ],
+      "dimensionsMm": [
+        43.0,
+        46.3,
+        10.4
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          24.799999237060547,
+          10.40000057220459
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          24.8,
+          10.4
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "01_fixed_cup.stl"
+    },
+    {
+      "triangles": 12628,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 715.137196373258,
+      "boundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          21.5,
+          3.0
+        ]
+      ],
+      "dimensionsMm": [
+        43.0,
+        43.0,
+        3.0
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          21.5,
+          3.0
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          8.199999809265137
+        ],
+        [
+          21.5,
+          21.5,
+          11.199999809265137
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "02_threaded_bezel.stl"
+    },
+    {
+      "triangles": 9220,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 245.89933704914924,
+      "boundsMm": [
+        [
+          -20.1,
+          -19.4,
+          -0.0
+        ],
+        [
+          19.4,
+          19.4,
+          2.55
+        ]
+      ],
+      "dimensionsMm": [
+        39.5,
+        38.8,
+        2.55
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -20.100000381469727,
+          -19.399999618530273,
+          0.0
+        ],
+        [
+          19.399999618530273,
+          19.399999618530273,
+          2.549999237060547
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -20.1,
+          -19.4,
+          6.800000190734863
+        ],
+        [
+          19.4,
+          19.4,
+          9.350000190734864
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "03_pcb_clamp_and_face_guide.stl"
+    },
+    {
+      "triangles": 5914,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 1204.0934977402412,
+      "boundsMm": [
+        [
+          -18.35,
+          -18.35,
+          0.0
+        ],
+        [
+          18.35,
+          18.35,
+          3.24
+        ]
+      ],
+      "dimensionsMm": [
+        36.7,
+        36.7,
+        3.24
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -18.350000381469727,
+          -18.350000381469727,
+          0.0
+        ],
+        [
+          18.350000381469727,
+          18.350000381469727,
+          3.239999771118164
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -18.35,
+          -18.35,
+          7.909999847412109
+        ],
+        [
+          18.35,
+          18.35,
+          11.14999984741211
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "04_captive_face.stl"
+    },
+    {
+      "triangles": 28,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 2.954999236464502,
+      "boundsMm": [
+        [
+          -2.2,
+          -0.75,
+          -0.0
+        ],
+        [
+          2.2,
+          0.75,
+          0.95
+        ]
+      ],
+      "dimensionsMm": [
+        4.4,
+        1.5,
+        0.95
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -2.200000047683716,
+          -0.75,
+          0.0
+        ],
+        [
+          2.200000047683716,
+          0.75,
+          0.9499988555908203
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -2.2,
+          -0.75,
+          10.200000762939453
+        ],
+        [
+          2.2,
+          0.75,
+          11.150000762939452
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "05_flush_status_window.stl"
+    },
+    {
+      "triangles": 1024,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 48.228772766099205,
+      "boundsMm": [
+        [
+          -18.5,
+          -18.5,
+          -0.0
+        ],
+        [
+          18.5,
+          18.5,
+          0.65
+        ]
+      ],
+      "dimensionsMm": [
+        37.0,
+        37.0,
+        0.65
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -18.5,
+          -18.5,
+          0.0
+        ],
+        [
+          18.5,
+          18.5,
+          0.6499996185302734
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -18.5,
+          -18.5,
+          10.5
+        ],
+        [
+          18.5,
+          18.5,
+          11.15
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "06_fixed_diffuser.stl"
+    },
+    {
+      "triangles": 548,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 12.619924722228152,
+      "boundsMm": [
+        [
+          -10.7,
+          -7.7,
+          0.0
+        ],
+        [
+          -3.3,
+          -1.3,
+          0.6
+        ]
+      ],
+      "dimensionsMm": [
+        7.3999999999999995,
+        6.4,
+        0.6
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -10.699999809265137,
+          -7.699999809265137,
+          0.0
+        ],
+        [
+          -3.299999952316284,
+          -1.2999999523162842,
+          0.6000003814697266
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -10.7,
+          -7.7,
+          8.510000228881836
+        ],
+        [
+          -3.3,
+          -1.3,
+          9.110000228881836
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "07_cartridge_keeper.stl"
+    },
+    {
+      "triangles": 28,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 12.212401206207588,
+      "boundsMm": [
+        [
+          -10.1,
+          -7.6,
+          0.0
+        ],
+        [
+          -3.9,
+          -1.4,
+          0.51
+        ]
+      ],
+      "dimensionsMm": [
+        6.199999999999999,
+        6.199999999999999,
+        0.51
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -10.100000381469727,
+          -7.599999904632568,
+          0.0
+        ],
+        [
+          -3.9000000953674316,
+          -1.4000000953674316,
+          0.5100002288818359
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -10.1,
+          -7.6,
+          8.899999618530273
+        ],
+        [
+          -3.9,
+          -1.4,
+          9.409999618530273
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "08_measured_plunger_shoe.stl"
+    },
+    {
+      "triangles": 84,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 22.23149436187754,
+      "boundsMm": [
+        [
+          13.5,
+          -3.0,
+          -0.0
+        ],
+        [
+          22.9,
+          3.0,
+          1.1
+        ]
+      ],
+      "dimensionsMm": [
+        9.399999999999999,
+        6.0,
+        1.1
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          13.5,
+          -3.0,
+          0.0
+        ],
+        [
+          22.899999618530273,
+          3.0,
+          1.0999999046325684
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          13.5,
+          -3.0,
+          1.75
+        ],
+        [
+          22.9,
+          3.0,
+          2.85
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "09_privacy_fork.stl"
+    },
+    {
+      "triangles": 28,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 31.099999499320973,
+      "boundsMm": [
+        [
+          18.05,
+          -3.2,
+          0.0
+        ],
+        [
+          19.05,
+          3.2,
+          6.2
+        ]
+      ],
+      "dimensionsMm": [
+        1.0,
+        6.4,
+        6.2
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          18.049999237060547,
+          -3.200000047683716,
+          0.0
+        ],
+        [
+          19.049999237060547,
+          3.200000047683716,
+          6.199999809265137
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          18.05,
+          -3.2,
+          1.0
+        ],
+        [
+          19.05,
+          3.2,
+          7.2
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "10_privacy_keeper.stl"
+    },
+    {
+      "triangles": 1600,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 94.53929410922879,
+      "boundsMm": [
+        [
+          -5.3,
+          -17.45,
+          0.0
+        ],
+        [
+          5.3,
+          -14.35,
+          4.7
+        ]
+      ],
+      "dimensionsMm": [
+        10.6,
+        3.0999999999999996,
+        4.7
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -5.300000190734863,
+          -17.44999885559082,
+          0.0
+        ],
+        [
+          5.300000190734863,
+          -14.34999942779541,
+          4.699999809265137
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -5.3,
+          -17.45,
+          0.0
+        ],
+        [
+          5.3,
+          -14.35,
+          4.7
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "11_contact_access_carrier.stl"
+    },
+    {
+      "triangles": 12,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 14.475999995946797,
+      "boundsMm": [
+        [
+          9.9,
+          -9.35,
+          -0.0
+        ],
+        [
+          14.3,
+          -4.65,
+          0.7
+        ]
+      ],
+      "dimensionsMm": [
+        4.4,
+        4.699999999999999,
+        0.7
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          9.90000057220459,
+          -9.350000381469727,
+          0.0
+        ],
+        [
+          14.300000190734863,
+          -4.650000095367432,
+          0.6999998092651367
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          9.9,
+          -9.35,
+          4.200000286102295
+        ],
+        [
+          14.3,
+          -4.65,
+          4.900000286102295
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "12_sensor_retainer.stl"
+    },
+    {
+      "triangles": 2584,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 1550.1373226360374,
+      "boundsMm": [
+        [
+          -17.58527,
+          -17.6,
+          0.0
+        ],
+        [
+          17.6,
+          17.6,
+          1.6
+        ]
+      ],
+      "dimensionsMm": [
+        35.18527,
+        35.2,
+        1.6
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -17.58527183532715,
+          -17.600000381469727,
+          0.0
+        ],
+        [
+          17.600000381469727,
+          17.600000381469727,
+          1.6000003814697266
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -17.58527,
+          -17.6,
+          5.0
+        ],
+        [
+          17.6,
+          17.6,
+          6.6
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "90_unpowered_board_gauge.stl"
+    },
+    {
+      "triangles": 12,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 1801.8000400543206,
+      "boundsMm": [
+        [
+          -16.2,
+          -10.5,
+          0.0
+        ],
+        [
+          9.8,
+          10.5,
+          3.3
+        ]
+      ],
+      "dimensionsMm": [
+        26.0,
+        21.0,
+        3.3
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          0.0
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          3.2999998331069946
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -16.2,
+          -10.5,
+          1.149999976158142
+        ],
+        [
+          9.8,
+          10.5,
+          4.449999976158142
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "91_unpowered_pack_gauge.stl"
+    }
+  ]
+}

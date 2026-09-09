@@ -1,0 +1,820 @@
+{
+  "scenario": "documented-pack",
+  "status": "DIGITAL DEVELOPMENT AUDIT, NOT PRINT OR POWER RELEASE",
+  "sourceBindings": {
+    "contractSha256": true,
+    "generatorSha256": true,
+    "blendSha256": true
+  },
+  "staticFindings": [],
+  "intentionalSameComponentEnvelopeIntersections": [
+    {
+      "a": "BOUND_RADIO_MAX",
+      "b": "BOUND_RADIO_TERMINALS",
+      "intersectionMm3": 25.198515,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_ERM_TAB",
+      "b": "BOUND_MOTOR_LEAD_0",
+      "intersectionMm3": 0.296013,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_BODY",
+      "b": "BOUND_CUS_LOCATOR_0",
+      "intersectionMm3": 0.025123,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_BODY",
+      "b": "BOUND_CUS_LOCATOR_1",
+      "intersectionMm3": 0.025123,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_BODY",
+      "b": "BOUND_CUS_FULL_LEADS",
+      "intersectionMm3": 5.934012,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_LOCATOR_0",
+      "b": "BOUND_CUS_FULL_LEADS",
+      "intersectionMm3": 0.100491,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_LOCATOR_1",
+      "b": "BOUND_CUS_FULL_LEADS",
+      "intersectionMm3": 0.100491,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_1",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_2",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_3",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_4",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_5",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_PAD_6",
+      "intersectionMm3": 0.04375,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_ANCHOR_1",
+      "intersectionMm3": 0.04,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_ANCHOR_2",
+      "intersectionMm3": 0.04,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_ANCHOR_3",
+      "intersectionMm3": 0.04,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_CUS_FULL_LEADS",
+      "b": "BOUND_CUS_ANCHOR_4",
+      "intersectionMm3": 0.04,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_KMR_BODY",
+      "b": "BOUND_KMR_TERMINALS",
+      "intersectionMm3": 3.3,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_NTC_MAX",
+      "b": "BOUND_NTC_LEAD_0",
+      "intersectionMm3": 0.181573,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_NTC_LEAD_0",
+      "b": "BOUND_NTC_LEAD_1",
+      "intersectionMm3": 0.057029,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_NTC_LEAD_1",
+      "b": "BOUND_NTC_LEAD_2",
+      "intersectionMm3": 0.04247,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_BATTERY_LEAD_0",
+      "b": "BOUND_BATTERY_LEAD_1",
+      "intersectionMm3": 0.057029,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_BATTERY_LEAD_1",
+      "b": "BOUND_BATTERY_LEAD_2",
+      "intersectionMm3": 0.046901,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_MOTOR_LEAD_0",
+      "b": "BOUND_MOTOR_LEAD_1",
+      "intersectionMm3": 0.031579,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_MIC_BODY_-7.2",
+      "b": "BOUND_MIC_TERMINALS_-7.2",
+      "intersectionMm3": 1.9065,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    },
+    {
+      "a": "BOUND_MIC_BODY_7.2",
+      "b": "BOUND_MIC_TERMINALS_7.2",
+      "intersectionMm3": 1.9065,
+      "reason": "Same purchased component: intentionally overlapping conservative body/lead/pad route envelope"
+    }
+  ],
+  "thresholdMm3": 0.001,
+  "rigidSolidCount": 54,
+  "softSolidCount": 12,
+  "nativePlacementImported": false,
+  "physicalQualification": false,
+  "forceQualification": false,
+  "actuationQualification": false,
+  "continuousSweepProven": false,
+  "collisionMethod": "Blender MANIFOLD CSG intersection volume with AABB pruning; valid solids independently checked. Finite samples only.",
+  "all72NativeFeaturesPending": true,
+  "workingSoftAllocationStates": [
+    {
+      "faceStrokeMm": 0,
+      "findings": [],
+      "pass": true
+    },
+    {
+      "faceStrokeMm": 0.3,
+      "findings": [],
+      "pass": true
+    },
+    {
+      "faceStrokeMm": 0.6,
+      "findings": [],
+      "pass": true
+    }
+  ],
+  "operationPaths": [
+    {
+      "path": "Calibrated maximum-height capture,0.6face/0.25shoe/0.2actuator",
+      "samples": 25,
+      "stepMm": 0.025,
+      "findings": [],
+      "pass": true,
+      "forceAndElectricalTimingQualified": false
+    }
+  ],
+  "privacyTolerancePaths": [
+    {
+      "switchTravelMm": 1.3,
+      "leverWidthMm": 1.4,
+      "requiredExternalTravelMm": 1.9,
+      "requiredKeeperChannelMm": 4.1,
+      "nominalKeeperCase": false,
+      "actualReplacementKeeperGeometryTested": true,
+      "samples": 54,
+      "findings": [],
+      "pass": true
+    },
+    {
+      "switchTravelMm": 1.5,
+      "leverWidthMm": 1.3,
+      "requiredExternalTravelMm": 2.2,
+      "requiredKeeperChannelMm": 4.4,
+      "nominalKeeperCase": true,
+      "actualReplacementKeeperGeometryTested": true,
+      "samples": 54,
+      "findings": [],
+      "pass": true
+    },
+    {
+      "switchTravelMm": 1.7,
+      "leverWidthMm": 1.2,
+      "requiredExternalTravelMm": 2.5,
+      "requiredKeeperChannelMm": 4.7,
+      "nominalKeeperCase": false,
+      "actualReplacementKeeperGeometryTested": true,
+      "samples": 54,
+      "findings": [],
+      "pass": true
+    }
+  ],
+  "serviceToolBoundsMm": {
+    "TOOL_BEZEL_PIN_0": [
+      [
+        -20.950000762939453,
+        -20.049999237060547
+      ],
+      [
+        -0.44999998807907104,
+        0.44999998807907104
+      ],
+      [
+        11.649999618530273,
+        20.200000762939453
+      ]
+    ],
+    "TOOL_BEZEL_PIN_1": [
+      [
+        20.049999237060547,
+        20.950000762939453
+      ],
+      [
+        -0.44999998807907104,
+        0.44999998807907104
+      ],
+      [
+        11.649999618530273,
+        20.200000762939453
+      ]
+    ]
+  },
+  "assemblyPaths": [
+    {
+      "path": "00 preseat acoustic working gaskets",
+      "method": "Working compressed allocations, front loading; free thickness compression force pending",
+      "samples": 33,
+      "movingObjects": [
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "01 radial privacy insertion before electronics",
+      "method": "Reverse insertion route +X0..14 sampled0.5mm",
+      "samples": 29,
+      "movingObjects": [
+        "09_PRIVACY_FORK"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "02 privacy keeper front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "10_PRIVACY_KEEPER"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "03 contact carrier front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "11_CONTACT_ACCESS_CARRIER"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "04 sensor and routed lead insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "BOUND_NTC_MAX",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "SOFT_NTC_INTERFACE",
+        "12_SENSOR_RETAINER"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "05 pack growth and lead front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "SOFT_BATTERY_BACKING",
+        "SOFT_BATTERY_DIELECTRIC"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "BOUND_NTC_MAX",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "SOFT_NTC_INTERFACE",
+        "12_SENSOR_RETAINER"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "06 populated board proposal front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "90_UNPOWERED_BOARD_GAUGE",
+        "BOUND_RADIO_MAX",
+        "BOUND_RADIO_TERMINALS",
+        "BOUND_ERM_MAX",
+        "BOUND_ERM_TAB",
+        "BOUND_CUS_BODY",
+        "BOUND_CUS_LOCATOR_0",
+        "BOUND_CUS_LOCATOR_1",
+        "BOUND_CUS_FULL_LEADS",
+        "BOUND_CUS_PAD_1",
+        "BOUND_CUS_PAD_2",
+        "BOUND_CUS_PAD_3",
+        "BOUND_CUS_PAD_4",
+        "BOUND_CUS_PAD_5",
+        "BOUND_CUS_PAD_6",
+        "BOUND_CUS_ANCHOR_1",
+        "BOUND_CUS_ANCHOR_2",
+        "BOUND_CUS_ANCHOR_3",
+        "BOUND_CUS_ANCHOR_4",
+        "BOUND_KMR_BODY",
+        "BOUND_KMR_ACTUATOR_MAX",
+        "BOUND_KMR_TERMINALS",
+        "BOUND_DOCK_PAD_-3",
+        "BOUND_DOCK_PAD_0",
+        "BOUND_DOCK_PAD_3",
+        "BOUND_MOTOR_LEAD_0",
+        "BOUND_MOTOR_LEAD_1",
+        "BOUND_MIC_BODY_-7.2",
+        "BOUND_MIC_TERMINALS_-7.2",
+        "BOUND_MIC_BODY_7.2",
+        "BOUND_MIC_TERMINALS_7.2",
+        "BOUND_STATUS_LED"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "BOUND_NTC_MAX",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "SOFT_NTC_INTERFACE",
+        "12_SENSOR_RETAINER",
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "SOFT_BATTERY_BACKING",
+        "SOFT_BATTERY_DIELECTRIC"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "07 clamp carrier front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "SOFT_PCB_CLAMP_0",
+        "SOFT_PCB_CLAMP_1",
+        "SOFT_PCB_CLAMP_2",
+        "SOFT_FACE_RETURN_0",
+        "SOFT_FACE_RETURN_1",
+        "SOFT_FACE_RETURN_2"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "BOUND_NTC_MAX",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "SOFT_NTC_INTERFACE",
+        "12_SENSOR_RETAINER",
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "SOFT_BATTERY_BACKING",
+        "SOFT_BATTERY_DIELECTRIC",
+        "90_UNPOWERED_BOARD_GAUGE",
+        "BOUND_RADIO_MAX",
+        "BOUND_RADIO_TERMINALS",
+        "BOUND_ERM_MAX",
+        "BOUND_ERM_TAB",
+        "BOUND_CUS_BODY",
+        "BOUND_CUS_LOCATOR_0",
+        "BOUND_CUS_LOCATOR_1",
+        "BOUND_CUS_FULL_LEADS",
+        "BOUND_CUS_PAD_1",
+        "BOUND_CUS_PAD_2",
+        "BOUND_CUS_PAD_3",
+        "BOUND_CUS_PAD_4",
+        "BOUND_CUS_PAD_5",
+        "BOUND_CUS_PAD_6",
+        "BOUND_CUS_ANCHOR_1",
+        "BOUND_CUS_ANCHOR_2",
+        "BOUND_CUS_ANCHOR_3",
+        "BOUND_CUS_ANCHOR_4",
+        "BOUND_KMR_BODY",
+        "BOUND_KMR_ACTUATOR_MAX",
+        "BOUND_KMR_TERMINALS",
+        "BOUND_DOCK_PAD_-3",
+        "BOUND_DOCK_PAD_0",
+        "BOUND_DOCK_PAD_3",
+        "BOUND_MOTOR_LEAD_0",
+        "BOUND_MOTOR_LEAD_1",
+        "BOUND_MIC_BODY_-7.2",
+        "BOUND_MIC_TERMINALS_-7.2",
+        "BOUND_MIC_BODY_7.2",
+        "BOUND_MIC_TERMINALS_7.2",
+        "BOUND_STATUS_LED"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "08 preassembled face front insertion",
+      "method": "Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.",
+      "samples": 49,
+      "movingObjects": [
+        "04_CAPTIVE_FACE",
+        "05_FLUSH_STATUS_WINDOW",
+        "07_CARTRIDGE_KEEPER",
+        "08_MEASURED_PLUNGER_SHOE",
+        "SOFT_CAPTURE_FOAM"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "09_PRIVACY_FORK",
+        "SOFT_MIC_GASKET_-7.2",
+        "SOFT_MIC_GASKET_7.2",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "BOUND_NTC_MAX",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "SOFT_NTC_INTERFACE",
+        "12_SENSOR_RETAINER",
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "SOFT_BATTERY_BACKING",
+        "SOFT_BATTERY_DIELECTRIC",
+        "90_UNPOWERED_BOARD_GAUGE",
+        "BOUND_RADIO_MAX",
+        "BOUND_RADIO_TERMINALS",
+        "BOUND_ERM_MAX",
+        "BOUND_ERM_TAB",
+        "BOUND_CUS_BODY",
+        "BOUND_CUS_LOCATOR_0",
+        "BOUND_CUS_LOCATOR_1",
+        "BOUND_CUS_FULL_LEADS",
+        "BOUND_CUS_PAD_1",
+        "BOUND_CUS_PAD_2",
+        "BOUND_CUS_PAD_3",
+        "BOUND_CUS_PAD_4",
+        "BOUND_CUS_PAD_5",
+        "BOUND_CUS_PAD_6",
+        "BOUND_CUS_ANCHOR_1",
+        "BOUND_CUS_ANCHOR_2",
+        "BOUND_CUS_ANCHOR_3",
+        "BOUND_CUS_ANCHOR_4",
+        "BOUND_KMR_BODY",
+        "BOUND_KMR_ACTUATOR_MAX",
+        "BOUND_KMR_TERMINALS",
+        "BOUND_DOCK_PAD_-3",
+        "BOUND_DOCK_PAD_0",
+        "BOUND_DOCK_PAD_3",
+        "BOUND_MOTOR_LEAD_0",
+        "BOUND_MOTOR_LEAD_1",
+        "BOUND_MIC_BODY_-7.2",
+        "BOUND_MIC_TERMINALS_-7.2",
+        "BOUND_MIC_BODY_7.2",
+        "BOUND_MIC_TERMINALS_7.2",
+        "BOUND_STATUS_LED",
+        "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "SOFT_PCB_CLAMP_0",
+        "SOFT_PCB_CLAMP_1",
+        "SOFT_PCB_CLAMP_2",
+        "SOFT_FACE_RETURN_0",
+        "SOFT_FACE_RETURN_1",
+        "SOFT_FACE_RETURN_2"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "09 bezel unscrew and front removal",
+      "method": "Helical thread path3turns sampled15deg then axial removal0.5mm samples",
+      "samples": 117,
+      "movingObjects": [
+        "02_THREADED_BEZEL",
+        "06_FIXED_DIFFUSER"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "04_CAPTIVE_FACE",
+        "05_FLUSH_STATUS_WINDOW",
+        "07_CARTRIDGE_KEEPER",
+        "08_MEASURED_PLUNGER_SHOE",
+        "09_PRIVACY_FORK",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "12_SENSOR_RETAINER",
+        "90_UNPOWERED_BOARD_GAUGE",
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_RADIO_MAX",
+        "BOUND_RADIO_TERMINALS",
+        "BOUND_ERM_MAX",
+        "BOUND_ERM_TAB",
+        "BOUND_CUS_BODY",
+        "BOUND_CUS_LEVER",
+        "BOUND_CUS_LOCATOR_0",
+        "BOUND_CUS_LOCATOR_1",
+        "BOUND_CUS_FULL_LEADS",
+        "BOUND_CUS_PAD_1",
+        "BOUND_CUS_PAD_2",
+        "BOUND_CUS_PAD_3",
+        "BOUND_CUS_PAD_4",
+        "BOUND_CUS_PAD_5",
+        "BOUND_CUS_PAD_6",
+        "BOUND_CUS_ANCHOR_1",
+        "BOUND_CUS_ANCHOR_2",
+        "BOUND_CUS_ANCHOR_3",
+        "BOUND_CUS_ANCHOR_4",
+        "BOUND_KMR_BODY",
+        "BOUND_KMR_ACTUATOR_MAX",
+        "BOUND_KMR_TERMINALS",
+        "BOUND_NTC_MAX",
+        "BOUND_DOCK_PAD_-3",
+        "BOUND_DOCK_PAD_0",
+        "BOUND_DOCK_PAD_3",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "BOUND_MOTOR_LEAD_0",
+        "BOUND_MOTOR_LEAD_1",
+        "BOUND_MIC_BODY_-7.2",
+        "BOUND_MIC_TERMINALS_-7.2",
+        "BOUND_MIC_BODY_7.2",
+        "BOUND_MIC_TERMINALS_7.2",
+        "BOUND_STATUS_LED"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "09b fixed diffuser front insertion",
+      "method": "Separate diffuser inserts from front before bezel is threaded onto cup",
+      "samples": 33,
+      "movingObjects": [
+        "06_FIXED_DIFFUSER"
+      ],
+      "targetObjects": [
+        "02_THREADED_BEZEL"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "09c capture foam rear loading",
+      "method": "Local subassembly insertion sampled0.25mm",
+      "samples": 17,
+      "movingObjects": [
+        "SOFT_CAPTURE_FOAM"
+      ],
+      "targetObjects": [
+        "04_CAPTIVE_FACE"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "10 status insert rear loading",
+      "method": "Local subassembly insertion sampled0.25mm",
+      "samples": 17,
+      "movingObjects": [
+        "05_FLUSH_STATUS_WINDOW"
+      ],
+      "targetObjects": [
+        "04_CAPTIVE_FACE"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "11 shoe rear loading",
+      "method": "Local subassembly insertion sampled0.25mm",
+      "samples": 17,
+      "movingObjects": [
+        "08_MEASURED_PLUNGER_SHOE"
+      ],
+      "targetObjects": [
+        "04_CAPTIVE_FACE",
+        "SOFT_CAPTURE_FOAM"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "12 cartridge keeper dogleg insertion",
+      "method": "Reverse removal: slide5mm to clear positive rail ledges while staying inside flange; then lower5mm toward rear. Reverse order inserts the keeper before carrier/face assembly.",
+      "samples": 41,
+      "movingObjects": [
+        "07_CARTRIDGE_KEEPER"
+      ],
+      "targetObjects": [
+        "04_CAPTIVE_FACE",
+        "08_MEASURED_PLUNGER_SHOE",
+        "SOFT_CAPTURE_FOAM"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "15 front bezel-tool pin access",
+      "method": "0.9mm pins reach1.1mm front sockets; separate tool handle, torque and strength unqualified",
+      "samples": 21,
+      "movingObjects": [
+        "TOOL_BEZEL_PIN_0",
+        "TOOL_BEZEL_PIN_1"
+      ],
+      "targetObjects": [
+        "01_FIXED_CUP",
+        "02_THREADED_BEZEL",
+        "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "04_CAPTIVE_FACE",
+        "05_FLUSH_STATUS_WINDOW",
+        "06_FIXED_DIFFUSER",
+        "07_CARTRIDGE_KEEPER",
+        "08_MEASURED_PLUNGER_SHOE",
+        "09_PRIVACY_FORK",
+        "10_PRIVACY_KEEPER",
+        "11_CONTACT_ACCESS_CARRIER",
+        "12_SENSOR_RETAINER",
+        "90_UNPOWERED_BOARD_GAUGE",
+        "91_UNPOWERED_PACK_GAUGE",
+        "BOUND_CELL_GROWTH",
+        "BOUND_RADIO_MAX",
+        "BOUND_RADIO_TERMINALS",
+        "BOUND_ERM_MAX",
+        "BOUND_ERM_TAB",
+        "BOUND_CUS_BODY",
+        "BOUND_CUS_LEVER",
+        "BOUND_CUS_LOCATOR_0",
+        "BOUND_CUS_LOCATOR_1",
+        "BOUND_CUS_FULL_LEADS",
+        "BOUND_CUS_PAD_1",
+        "BOUND_CUS_PAD_2",
+        "BOUND_CUS_PAD_3",
+        "BOUND_CUS_PAD_4",
+        "BOUND_CUS_PAD_5",
+        "BOUND_CUS_PAD_6",
+        "BOUND_CUS_ANCHOR_1",
+        "BOUND_CUS_ANCHOR_2",
+        "BOUND_CUS_ANCHOR_3",
+        "BOUND_CUS_ANCHOR_4",
+        "BOUND_KMR_BODY",
+        "BOUND_KMR_ACTUATOR_MAX",
+        "BOUND_KMR_TERMINALS",
+        "BOUND_NTC_MAX",
+        "BOUND_DOCK_PAD_-3",
+        "BOUND_DOCK_PAD_0",
+        "BOUND_DOCK_PAD_3",
+        "BOUND_NTC_LEAD_0",
+        "BOUND_NTC_LEAD_1",
+        "BOUND_NTC_LEAD_2",
+        "BOUND_BATTERY_LEAD_0",
+        "BOUND_BATTERY_LEAD_1",
+        "BOUND_BATTERY_LEAD_2",
+        "BOUND_MOTOR_LEAD_0",
+        "BOUND_MOTOR_LEAD_1",
+        "BOUND_MIC_BODY_-7.2",
+        "BOUND_MIC_TERMINALS_-7.2",
+        "BOUND_MIC_BODY_7.2",
+        "BOUND_MIC_TERMINALS_7.2",
+        "BOUND_STATUS_LED"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    }
+  ],
+  "booleanEvaluations": 2630,
+  "allStaticRigidPass": true,
+  "allSampledOperatingPass": true,
+  "allSampledAssemblyPass": true,
+  "blendSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
+  "manifestSha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d",
+  "checkerSha256": "73bcca4e63a461cfd6c7fc494e5d622af7310826e5a89a89deb7bc46dd377ffe",
+  "exclusions": [
+    "No continuous proof: these are finite CSG pose samples, with narrow collisions possible between samples.",
+    "Capture sweep uses calibrated2.25mounted-height and0.20actuator-travel example; actual mounted height, first operation, allowed endpoint and foam force remain unqualified.",
+    "Privacy tolerance sweeps use actual virtual replacement keeper geometry for each case; correct per-part stop/contact calibration and detent behavior remain physical tests.",
+    "Compliant foam deformation and capture/contact force are calculations and allocations, not material simulations.",
+    "All72 native features, RF acceptance, cell/PCM/adhesive/lead control and actual component manufacture/placement remain pending."
+  ]
+}

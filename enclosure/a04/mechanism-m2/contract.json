@@ -1,0 +1,309 @@
+{
+  "revision": "A04 M2 development candidate",
+  "status": "PARAMETRIC MECHANISM; NOT PHYSICALLY QUALIFIED OR A NATIVE PCB RELEASE",
+  "units": "millimetres; Blender coordinates are mm with scale_length 0.001",
+  "bodyDiameterMm": 43.0,
+  "cavityRadiusMm": 20.0,
+  "scenarios": [
+    {
+      "id": "thin-cell",
+      "bodyDepthMm": 11.2,
+      "cellDepthMm": 3.3
+    },
+    {
+      "id": "documented-pack",
+      "bodyDepthMm": 12.2,
+      "cellDepthMm": 4.3
+    }
+  ],
+  "pcb": {
+    "diameterMm": 35.2,
+    "actualThicknessMm": 1.6,
+    "targetThicknessMm": 0.8,
+    "targetAuthored": false,
+    "keyNotchXYMm": [
+      -17.6,
+      0
+    ],
+    "keyConfinedToBoardBand": true,
+    "nativePlacementImported": false
+  },
+  "cell": {
+    "maximumXYMm": [
+      26,
+      21
+    ],
+    "centreXYMm": [
+      -3.2,
+      0
+    ],
+    "backingMm": 0.15,
+    "growthZMm": 0.4,
+    "growthIncludedAsSolid": true,
+    "postGrowthGapMm": 0.15,
+    "qualified": false
+  },
+  "pcbDatums": {
+    "centresXYMm": [
+      [
+        -11.6,
+        12.2
+      ],
+      [
+        11.6,
+        12.2
+      ],
+      [
+        0,
+        -13
+      ]
+    ],
+    "postRadiusMm": 1.1,
+    "upperFootRadiusMm": 0.95,
+    "nominalSoftClampGapMm": 0.2,
+    "freeClampPadMm": 0.25,
+    "measuredShimProcessRequired": true
+  },
+  "retainer": {
+    "outerRadiusMm": 19.4,
+    "innerRadiusMm": 17.9,
+    "thicknessMm": 1.0,
+    "structuralSeatAnglesDeg": [
+      45,
+      180,
+      300
+    ],
+    "structuralSeatRadiusMm": 19.0,
+    "guidePinAnglesDeg": [
+      30,
+      150,
+      270
+    ],
+    "guidePinRadiusFromOriginMm": 15.5,
+    "guidePinDiameterMm": 1.4,
+    "faceBoreDiameterMm": 1.9
+  },
+  "thread": {
+    "pitchMm": 1.0,
+    "maleRootRadiusMm": 19.85,
+    "helixCentreRadiusMm": 19.9,
+    "maleRidgeRadiusMm": 0.25,
+    "femaleGrooveRadiusMm": 0.4,
+    "femaleLandRadiusMm": 19.95,
+    "maleTurns": 1.8,
+    "removalTurnsTested": 3.0,
+    "minimumOuterWallMm": 1.2,
+    "closingLoadPath": "Bezel collar to stationary cup rim; carrier to three independent cup shoulders; moving face and cell are outside this load path",
+    "printedThreadQualified": false,
+    "looseningAndSealQualified": false
+  },
+  "face": {
+    "diameterMm": 35.2,
+    "skinMm": 1.0,
+    "flangeRadiusMm": 18.35,
+    "bezelLowerBoreRadiusMm": 18.65,
+    "bezelApertureRadiusMm": 17.85,
+    "strokeMm": 0.6,
+    "lightpipeBelowFaceBackMm": 0.0,
+    "returnPads": "Three discrete radius0.7mm, free1.1mm siliconefoam pads seated0.4mm below carrier stop; rest1.0mm / fullpress0.4mm working thickness, force/life pending",
+    "skirtNominalMm": 0.7,
+    "radioRelief": "Local11.3x16.3 relief below skin, upperZ=PCBtop+2.4radio+0.6stroke+0.15clearance; flange interrupted locally at upper radio corner.",
+    "returnBearingBossRadiusMm": 0.9,
+    "returnPadRadiusMm": 0.7,
+    "returnPadNominalBearingAreaEachMm2": 1.5393804002589986
+  },
+  "capture": {
+    "switch": "KMR211NGULCLFS",
+    "centreXYMm": [
+      -7,
+      -4.5
+    ],
+    "bodyMaximumXYMm": [
+      4.4,
+      3.0
+    ],
+    "actuatorMaximumHeightMm": 2.1,
+    "solderMaximumMm": 0.15,
+    "electricalTravelMm": [
+      0.1,
+      0.3
+    ],
+    "forceRangeN": [
+      0.9,
+      1.5
+    ],
+    "shoeRestGapNominalMm": 0.05,
+    "shoeRequiresMountedHeightMeasurement": true,
+    "complianceCandidate": "Rogers BISCO HT-800, nominal 0.79 mm sheet; exact thickness/force must be measured",
+    "complianceAreaMm": [
+      6.2,
+      6.2
+    ],
+    "safeOvertravelQualified": false,
+    "shoeStopTravelNominalMm": 0.25,
+    "nominalSwitchDepressionAtShoeStopMm": 0.2,
+    "stopCalibrationRequired": true,
+    "foamFreeMm": 0.79,
+    "foamAtRestMm": 0.74,
+    "foamAtFullFaceMm": 0.39,
+    "independentShoeStop": true,
+    "electricalActuationProven": false,
+    "calibratedMountedHeightMm": 2.25,
+    "shoePlateThicknessMm": 0.3,
+    "shoePrintabilityQualified": false,
+    "keeperRetention": "Stationary carrier post blocks lateral keeper withdrawal after front face insertion; keeper staged by hand before that",
+    "foamAtFullPressToleranceRangeMm": [
+      0.29,
+      0.49
+    ],
+    "shoeStopCalibrationRangeMm": [
+      0.15,
+      0.35
+    ],
+    "forceCriteria": "At38.44mm2 pad area, installed rest preload must remain below0.9N (23.4kPa), and operational force must exceed1.5N (39.0kPa) by measured actuation; no stress-strain/creep test exists."
+  },
+  "privacy": {
+    "nativePart": "JS202011JCQN",
+    "candidate": "Nidec CUS-22TB",
+    "nativeSubstitutionAccepted": false,
+    "centreXYMm": [
+      13.5,
+      0
+    ],
+    "sourceToCad": "CAD X=13.5+source Y; CAD Y=-source X",
+    "bodyMaximumMm": [
+      4.3,
+      6.9,
+      1.6
+    ],
+    "seatingMm": 0.15,
+    "inclusiveRearHeightMm": 3.3,
+    "actuatorCentreXYMm": [
+      14.85,
+      0
+    ],
+    "actuatorMaximumMm": [
+      0.9,
+      1.4,
+      1.7
+    ],
+    "nominalStrokeMm": 1.5,
+    "offDirection": "CAD -Y",
+    "enabledDirection": "CAD +Y",
+    "fullPadsAndTerminalsModeled": true,
+    "anchorElectricalIdentity": "Unresolved; mechanical copper modeled without assigning grounding",
+    "actuatorTransverseFullWithLocatorMm": [
+      13.95,
+      15.75
+    ],
+    "travelTolerancePreliminaryMm": [
+      1.3,
+      1.7
+    ],
+    "actuatorWidthRangeMm": [
+      1.2,
+      1.4
+    ],
+    "forkGapMm": 2.0,
+    "nominalExternalTravelMm": 2.2,
+    "calibration": "Measure T and w per switch. Total external stroke E=T+G-w; replace keeper with channel width2.2+E (4.1..4.7mm at stated component bounds). CAD uses4.4nominal. Measure electrical endpoint and allowed overtravel before setting stops; nominal model does not establish safe actual endpoint. Internal switch detents only; external grip has0.7mm nominal lostmotion and no independent detents.",
+    "qualification": false,
+    "replaceableKeeperStopChannelNominalMm": 4.4,
+    "measuredKeeperChannelRangeMm": [
+      4.1,
+      4.7
+    ],
+    "radialInsertionOpeningMm": [
+      6.4,
+      1.3
+    ],
+    "cupOpeningUnrestrictedTravelMm": 4.2,
+    "keeperCentreYMm": 0,
+    "perUnitAsymmetricStopCalibrationRequired": true
+  },
+  "radio": {
+    "centreXYMm": [
+      0,
+      8.6
+    ],
+    "maximumBodyMm": [
+      10.7,
+      15.7,
+      2.25
+    ],
+    "seatingMm": 0.15,
+    "antennaProposalXYMm": [
+      [
+        -8.5,
+        11.5
+      ],
+      [
+        8.5,
+        21.5
+      ]
+    ],
+    "nativeAntennaKeepoutImported": false
+  },
+  "motor": {
+    "centreXYMm": [
+      6,
+      -5
+    ],
+    "maximumDiameterMm": 10.1,
+    "mountedHeightMm": 2.45,
+    "tabReachMm": 6.6,
+    "tabAndLeadEnvelopeIsConservative": true
+  },
+  "sensor": {
+    "maximumBodyMm": [
+      4,
+      3.7,
+      2.4
+    ],
+    "centreXYMm": [
+      11.9,
+      -7
+    ],
+    "cellInterfaceGapMm": 0.1,
+    "thermalContactQualified": false
+  },
+  "dock": {
+    "centresXYMm": [
+      [
+        -3,
+        -15.9
+      ],
+      [
+        0,
+        -15.9
+      ],
+      [
+        3,
+        -15.9
+      ]
+    ],
+    "padDiameterMm": 1.7,
+    "carrierXYMm": [
+      9.4,
+      3.1
+    ],
+    "carrierToBottomSupportGapMm": 0.25,
+    "nativeAccepted": false
+  },
+  "acoustic": {
+    "portsXYMm": [
+      [
+        -6.5,
+        -13.8
+      ],
+      [
+        6.5,
+        -13.8
+      ]
+    ],
+    "boreDiameterMm": 1.3,
+    "nativeDatumConfirmed": false
+  },
+  "physicalQualification": false,
+  "nativePcbModified": false
+}

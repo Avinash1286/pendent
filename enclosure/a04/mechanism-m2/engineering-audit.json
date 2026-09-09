@@ -1,0 +1,184 @@
+{
+  "status": "ARITHMETIC AND SOURCE CONCORDANCE ONLY; NO NATIVE/PHYSICAL APPROVAL",
+  "allPass": true,
+  "errors": [],
+  "contractSha256": "b2a7ef53e0208f7a1b3e3a696e60d89673511480b6016624c69b6fad691cca07",
+  "authoritativeCusReview": "docs/a04/cus22-candidate-verification.json",
+  "authoritativeCusReviewSha256": "a7b625d50bbc5ae01c0e71a97dfc71aef71b6e38626cc88811d9d092b7bc57d9",
+  "cusNativeAssigned": false,
+  "nativePlacementImported": false,
+  "scenarios": [
+    {
+      "scenario": "thin-cell",
+      "bodyDiameterMm": 43,
+      "bodyDepthMm": 11.2,
+      "pcbPlaneMm": [
+        5.0,
+        6.6
+      ],
+      "cellBottomMm": 1.15,
+      "maximumCellTopMm": 4.449999999999999,
+      "growthTopMm": 4.85,
+      "dielectricTopMm": 4.95,
+      "cellCornerToCavityNominalMm": 0.6948193481645966,
+      "threeLowerPcbSeatsXYMm": [
+        [
+          -11.6,
+          12.2
+        ],
+        [
+          11.6,
+          12.2
+        ],
+        [
+          0,
+          -13
+        ]
+      ],
+      "padChecks": [
+        {
+          "pin": 1,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 2,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 3,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 4,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 5,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 6,
+          "matchesAuthoritativeCandidate": true
+        }
+      ],
+      "allObjectBoundsAndGeometryHashesPresent": true,
+      "manifestSha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050"
+    },
+    {
+      "scenario": "documented-pack",
+      "bodyDiameterMm": 43,
+      "bodyDepthMm": 12.2,
+      "pcbPlaneMm": [
+        6.0,
+        7.6
+      ],
+      "cellBottomMm": 1.15,
+      "maximumCellTopMm": 5.449999999999999,
+      "growthTopMm": 5.85,
+      "dielectricTopMm": 5.95,
+      "cellCornerToCavityNominalMm": 0.6948193481645966,
+      "threeLowerPcbSeatsXYMm": [
+        [
+          -11.6,
+          12.2
+        ],
+        [
+          11.6,
+          12.2
+        ],
+        [
+          0,
+          -13
+        ]
+      ],
+      "padChecks": [
+        {
+          "pin": 1,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 2,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 3,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 4,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 5,
+          "matchesAuthoritativeCandidate": true
+        },
+        {
+          "pin": 6,
+          "matchesAuthoritativeCandidate": true
+        }
+      ],
+      "allObjectBoundsAndGeometryHashesPresent": true,
+      "manifestSha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d"
+    }
+  ],
+  "capture": {
+    "freeFoamMm": 0.79,
+    "restFoamMm": 0.74,
+    "nominalFullFoamMm": 0.39,
+    "restCompressionPercent": 6.329113924050638,
+    "nominalFullCompressionPercent": 50.63291139240506,
+    "areaMm2": 38.440000000000005,
+    "releasePreloadStressMustBeBelowKPa": 23.413111342351712,
+    "operationStressMustExceedKPa": 39.02185223725286,
+    "datasheet25PercentDeflectionStressKPa": [
+      41,
+      97
+    ],
+    "calculated25PercentForceN": [
+      1.5760400000000003,
+      3.7286800000000007
+    ],
+    "forceMeasurementExists": false,
+    "safeSwitchEndpointKnown": false,
+    "installedThinSheetUseQualified": false,
+    "source": "https://www.rogerscorp.com/-/media/project/rogerscorp/documents/elastomeric-material-solutions/bisco/english/data-sheets/180-070-ht-800---medium-cellular-silicone.pdf"
+  },
+  "returnBearing": {
+    "padRadiusMm": 0.7,
+    "bossRadiusMm": 0.9,
+    "nominalFullBearingAreaEachMm2": 1.5393804002589984,
+    "nominalRadialAlignmentAllowanceMm": 0.2,
+    "workingRestThicknessMm": 1,
+    "workingFullThicknessMm": 0.4,
+    "forceCreepShearQualified": false
+  },
+  "privacy": {
+    "mapping": "CAD X=13.5+sourceY; CAD Y=-sourceX",
+    "nominalCentreX": 14.85,
+    "fullTransverseTolerancePlusLocatorMm": [
+      13.95,
+      15.75
+    ],
+    "externalTravelRule": "T+G-w",
+    "keeperChannelRule": "2.2+T+G-w",
+    "minimumNominalMaximumChannelMm": [
+      4.1,
+      4.4,
+      4.7
+    ],
+    "asymmetricLocatorAndEndpointCalibrationRequired": true,
+    "contactTimingQualified": false,
+    "anchorElectricalIdentityResolved": false
+  },
+  "structuralQualification": {
+    "proven": false,
+    "minimumTrialFeaturesMm": {
+      "shoePlate": 0.3,
+      "carrierSupportArmDiameter": 0.5,
+      "railLedge": 0.6
+    },
+    "required": "Print/process, load/deflection, off-axis pressing and cycle/creep tests or structural redesign before any print/powered release."
+  },
+  "physicalQualification": false,
+  "scriptSha256": "e8a2eaa50de70b2004d7d190810365b6e8986bec983bc04c1b75928af836a878"
+}

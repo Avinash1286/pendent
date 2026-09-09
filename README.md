@@ -8,24 +8,24 @@ An open product-development project for a compact necklace AI note-taking device
 
 ## A04 circular redesign — in progress
 
-[![AURA A04 circular packaging study: pale satin face, narrow champagne-looking rim and fine chain; provisional geometry, not a print release](enclosure/a04/study/aura-a04-study.png)](docs/a04/requirements.md)
+[![AURA A04 M2: actual 43 mm circular development mechanism, pale face and champagne-looking polymer finish; unqualified engineering candidate](enclosure/a04/mechanism-m2/documented-pack/m2-assembled.png)](enclosure/a04/mechanism-m2/README.md)
 
-A04 is a fresh circular design created through **KiCad MCP**, with a 40 mm exterior target, a physical microphone disconnect, recoverable update storage and a source-preserving audio protocol. The inspected packaging study is **10.8 mm deep with the actual 1.6 mm draft PCB**; a 10.0 mm body remains a target requiring a thinner board and verified component/pack clearances. The new schematic, placement, enclosure mechanisms and end-to-end software are still being developed. **A04 is not ready to fabricate, print as a complete device, wear or sell.**
+A04 is a fresh circular design created through **KiCad MCP**, with a physical microphone disconnect, separate update-storage hardware and a source-preserving audio protocol. The current M2 mechanism is **43 mm across and 12.2 mm deep**, accommodating the actual 1.6 mm draft PCB and a 4.3 mm pack allowance. An 11.2 mm variant requires an unselected thinner pack. The earlier 40 × 10 mm goal remains an aspiration, not the dimensions of these files. **A04 is not ready to fabricate, print as a complete device, wear or sell.**
 
 [Full objective and evidence gates](docs/a04/requirements.md) · [New KiCad project](hardware/a04/aura-a04.kicad_pro) · [Mechanical contract](docs/a04/industrial-design.md) · [Software contract and recovery tests](docs/a04/software-contract.md) · [Omi source review](docs/research/omi-review.md)
 
-The current checkpoint includes a **72-component schematic candidate**, a shared C/Python Opus archive that cross-builds for the nRF52840, **95 passing companion tests**, **24 portal tests**, and **nine printable unpowered fit specimens** with exported mesh/dimension checks. The schematic still has one ERC error, nine warnings and three net-name mismatches; the board is not placed or routed. [Native capture evidence](docs/a04/native-capture-verification.json) · [Opus build/audio evidence](firmware/a04/README.md) · [Printable fit coupon kit](enclosure/a04/coupon/README.md).
+The current checkpoint includes a **72-reference schematic candidate**, a shared C/Python Opus archive, a recoverable packed NAND journal and a production SPI command core. The isolated nRF52840 build uses **194,356 bytes flash and 148,864 bytes RAM**. Host verification passes **20 command/integration groups, 11 journal groups and 33 archive/receiver tests**, including real-Opus recovery through simulated power cuts. The broader companion and portal checkpoints retain 95 and 24 passing tests respectively. The schematic still has one ERC error, nine warnings and three net-name mismatches; the board is not placed or routed. [Native capture evidence](docs/a04/native-capture-verification.json) · [Firmware and audio evidence](firmware/a04/README.md).
 
 The working local software path now takes a **real C-generated audio archive through local Whisper transcription into Next.js/Convex**. It preserves the original capture, exact audio duration, bookmarks and transcript provenance. Interrupted captures remain explicit, and token rotation does not duplicate an existing source. These checks use synthetic speech; microphone, Bluetooth and worn-device behavior still need physical validation. [Try the archive importer](companion/README.md#a04-archive-import--040) · [Read the verification](companion/VERIFICATION.md) · [Portal provenance and recovery](docs/a04/portal-provenance.md).
 
-A separate **41 mm M1 mechanism trial** explores 10.8/11.8 mm depths for two battery allowances. Each set contains 14 digitally checked STL specimens, including two unpowered gauges. The audit records blocked straight face insertion, missing positive PCB support and a status-lightpipe collision during a full press. These are development specimens, **not a complete-body print release**; the native PCB and privacy switch have not been changed to match the proposals. [Mechanical source, inspection render and findings](enclosure/a04/mechanism/README.md).
+The **M2 mechanism** resolves the modeled M1 insertion, board-support and lightpipe-interference problems with a removable front bezel, supported PCB, separate face/shoe stops and a measured privacy keeper. Both depth variants contain **12 candidate part STLs plus two unpowered gauges**. Their mesh and sampled motion checks pass; forces, printing tolerances, all 72 native PCB features, the selected battery and real assembly remain unqualified. [Blender source, parts and checks](enclosure/a04/mechanism-m2/README.md) · [Earlier process coupon kit](enclosure/a04/coupon/README.md).
 
 <details>
-<summary>Inspect the A04 M1 experimental parts</summary>
+<summary>Inspect the A04 M2 experimental parts</summary>
 
-![Actual A04 M1 experimental part meshes; green board and ochre pack are unpowered fit gauges, and the assembly path remains unresolved](enclosure/a04/mechanism/thin-cell/mechanism-exploded.png)
+![Actual A04 M2 experimental part meshes; green board and ochre pack are unpowered fit gauges, not electronics](enclosure/a04/mechanism-m2/documented-pack/m2-exploded.png)
 
-The exploded offsets show the parts, not a verified assembly sequence. Read the [recorded failures and print-trial limits](enclosure/a04/mechanism/README.md#verification-and-known-failures) before using these files.
+The exploded offsets show individual parts; separate motion reports check sampled assembly paths. Read the [remaining assembly and release gates](enclosure/a04/mechanism-m2/README.md#assembly-and-release-gates) before using these files. The [M1 experiment and its failures](enclosure/a04/mechanism/README.md) and [original 40 mm appearance study](enclosure/a04/study/aura-a04-study.png) remain available as earlier work.
 
 </details>
 

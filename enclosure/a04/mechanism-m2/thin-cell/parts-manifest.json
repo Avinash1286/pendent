@@ -1,0 +1,1855 @@
+{
+  "allAssemblyObjects": [
+    {
+      "object": "01_FIXED_CUP",
+      "role": "part",
+      "group": "stationary",
+      "description": "Integral rear, three PCB seats, independent carrier shoulders, open front thread, integrated acoustic ducts and sensor pocket",
+      "assemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          24.799999237060547,
+          10.40000057220459
+        ]
+      ],
+      "worldGeometrySha256": "17ba5f0cc686f4b04656b8f30ab369a50bbd2b26f842d80c9096323ebfcb89a8",
+      "nativePlacement": false
+    },
+    {
+      "object": "02_THREADED_BEZEL",
+      "role": "part",
+      "group": "bezel",
+      "description": "Removable rounded-thread bezel; stationary collar stop bypasses moving face/cell",
+      "assemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          8.199999809265137
+        ],
+        [
+          21.5,
+          21.5,
+          11.199999809265137
+        ]
+      ],
+      "worldGeometrySha256": "8d6cf6b3ae39abc775b9a98dda447a23d457c9d9038897b8f47781997f224c90",
+      "nativePlacement": false
+    },
+    {
+      "object": "03_PCB_CLAMP_AND_FACE_GUIDE",
+      "role": "part",
+      "group": "stationary",
+      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6mm face stop",
+      "assemblyBoundsMm": [
+        [
+          -20.100000381469727,
+          -19.399999618530273,
+          6.800000190734863
+        ],
+        [
+          19.399999618530273,
+          19.399999618530273,
+          9.34999942779541
+        ]
+      ],
+      "worldGeometrySha256": "80d52ea726cedb1ba2d36541516f13cb33205bf706a2de920904a05a481880e8",
+      "nativePlacement": false
+    },
+    {
+      "object": "04_CAPTIVE_FACE",
+      "role": "part",
+      "group": "face",
+      "description": "Front-inserted full face; three blind guide sleeves, flush optical insert, lateral compliant cartridge",
+      "assemblyBoundsMm": [
+        [
+          -18.350000381469727,
+          -18.350000381469727,
+          7.909999847412109
+        ],
+        [
+          18.350000381469727,
+          18.350000381469727,
+          11.149999618530273
+        ]
+      ],
+      "worldGeometrySha256": "d5735a763b0692501a763316ce2c953abf6ca939439d7cb17d81e7e6c3d754a0",
+      "nativePlacement": false
+    },
+    {
+      "object": "05_FLUSH_STATUS_WINDOW",
+      "role": "part",
+      "group": "face",
+      "description": "No material below face-back plane; inserts from rear before front face installation",
+      "assemblyBoundsMm": [
+        [
+          -2.200000047683716,
+          -0.75,
+          10.200000762939453
+        ],
+        [
+          2.200000047683716,
+          0.75,
+          11.149999618530273
+        ]
+      ],
+      "worldGeometrySha256": "92b7e0d241a67c8bcd3c6ade5c87cd9d505192348f3c6beebbc361535b4417cd",
+      "nativePlacement": false
+    },
+    {
+      "object": "06_FIXED_DIFFUSER",
+      "role": "part",
+      "group": "bezel",
+      "description": "Separate clear ring seated in fixed bezel",
+      "assemblyBoundsMm": [
+        [
+          -18.5,
+          -18.5,
+          10.5
+        ],
+        [
+          18.5,
+          18.5,
+          11.149999618530273
+        ]
+      ],
+      "worldGeometrySha256": "5155292b19f9e7caa7b16f5be779640a0598f875967512b1e2fed0bf74343c5d",
+      "nativePlacement": false
+    },
+    {
+      "object": "07_CARTRIDGE_KEEPER",
+      "role": "part",
+      "group": "face",
+      "description": "Lateral keeper staged in face before front insertion; carrier post blocks withdrawal once face installed",
+      "assemblyBoundsMm": [
+        [
+          -10.699999809265137,
+          -7.699999809265137,
+          8.510000228881836
+        ],
+        [
+          -3.299999952316284,
+          -1.2999999523162842,
+          9.110000610351562
+        ]
+      ],
+      "worldGeometrySha256": "46a6f69dc4ac52216d18ef4fb9c804eb0c83ad9857364760d07cab6916a8f91f",
+      "nativePlacement": false
+    },
+    {
+      "object": "08_MEASURED_PLUNGER_SHOE",
+      "role": "part",
+      "group": "shoe",
+      "description": "Maximum mounted switch height2.25 plus0.05rest gap; re-size from physical measurement, not a qualified fixed actuator",
+      "assemblyBoundsMm": [
+        [
+          -10.100000381469727,
+          -7.599999904632568,
+          8.899999618530273
+        ],
+        [
+          -3.9000000953674316,
+          -1.4000000953674316,
+          9.40999984741211
+        ]
+      ],
+      "worldGeometrySha256": "bf6366628da646cf8db7c2efd728fa3cb2a10f11755e469a6a4d4a4f013a1497",
+      "nativePlacement": false
+    },
+    {
+      "object": "09_PRIVACY_FORK",
+      "role": "part",
+      "group": "privacy",
+      "description": "Corrected actuator centre14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
+      "assemblyBoundsMm": [
+        [
+          13.5,
+          -3.0,
+          1.75
+        ],
+        [
+          22.899999618530273,
+          3.0,
+          2.8499999046325684
+        ]
+      ],
+      "worldGeometrySha256": "2e364d884617afdf0f49259622dc40bb8a316d296d1996e40e9abbefa5af197e",
+      "nativePlacement": false
+    },
+    {
+      "object": "10_PRIVACY_KEEPER",
+      "role": "part",
+      "group": "stationary",
+      "description": "Open-bottom U keeper lowers over installed stem; integral measured4.4channel yields2.2travel and independent stops, carrier captures it",
+      "assemblyBoundsMm": [
+        [
+          18.049999237060547,
+          -3.200000047683716,
+          1.0
+        ],
+        [
+          19.049999237060547,
+          3.200000047683716,
+          7.199999809265137
+        ]
+      ],
+      "worldGeometrySha256": "5cfa8ff827aab72b828c229f916d818463c3e1378e63d299303e6e3ca929535d",
+      "nativePlacement": false
+    },
+    {
+      "object": "11_CONTACT_ACCESS_CARRIER",
+      "role": "part",
+      "group": "stationary",
+      "description": "Front-installed keyed access with positive side-wing seat; dock nose still separate",
+      "assemblyBoundsMm": [
+        [
+          -5.300000190734863,
+          -17.44999885559082,
+          0.0
+        ],
+        [
+          5.300000190734863,
+          -14.34999942779541,
+          4.699999809265137
+        ]
+      ],
+      "worldGeometrySha256": "ec6b46ed00343776c26149503c4bed54c4c6e0da970a9a43715b39276577befe",
+      "nativePlacement": false
+    },
+    {
+      "object": "12_SENSOR_RETAINER",
+      "role": "part",
+      "group": "stationary",
+      "description": "Front-inserted cap rests on sensor-pocket walls at4.2;0.1upward travel limited by PCB; thermal contact/force remains unqualified",
+      "assemblyBoundsMm": [
+        [
+          9.90000057220459,
+          -9.350000381469727,
+          4.200000286102295
+        ],
+        [
+          14.300000190734863,
+          -4.650000095367432,
+          4.900000095367432
+        ]
+      ],
+      "worldGeometrySha256": "9d7e72c5410fd8ef0f611a0872a125f83a63d9254fc3dc430f0a1225cd110e6e",
+      "nativePlacement": false
+    },
+    {
+      "object": "90_UNPOWERED_BOARD_GAUGE",
+      "role": "gauge",
+      "group": "pcb",
+      "description": "No old closure notches; only left key and proposed sound holes, not native geometry",
+      "assemblyBoundsMm": [
+        [
+          -17.58527183532715,
+          -17.600000381469727,
+          5.0
+        ],
+        [
+          17.600000381469727,
+          17.600000381469727,
+          6.600000381469727
+        ]
+      ],
+      "worldGeometrySha256": "be4c877fb70c8699bc95add56e7075234feff7de00db067d95d2b8dd10fdc542",
+      "nativePlacement": false
+    },
+    {
+      "object": "91_UNPOWERED_PACK_GAUGE",
+      "role": "gauge",
+      "group": "pack",
+      "description": "Maximum controlled unpowered pack gauge",
+      "assemblyBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          1.149999976158142
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          4.449999809265137
+        ]
+      ],
+      "worldGeometrySha256": "94afa22b29358551f47cb4532e4d82e6bcbdea7429daf9648890477a99478e76",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CELL_GROWTH",
+      "role": "bound",
+      "group": "pack",
+      "description": "Explicit0.4mm occupancy above maximum pack; cannot be used for hardware",
+      "assemblyBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          4.450000286102295
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          4.849999904632568
+        ]
+      ],
+      "worldGeometrySha256": "1ee7a79cb543246f804094b36e5b9282bca9aff51973b41babe1494dfd7cb081",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_RADIO_MAX",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Maximum module plus0.15mm seating",
+      "assemblyBoundsMm": [
+        [
+          -5.349999904632568,
+          0.7500004768371582,
+          6.600000381469727
+        ],
+        [
+          5.349999904632568,
+          16.450000762939453,
+          9.0
+        ]
+      ],
+      "worldGeometrySha256": "9f1393869d2e293a79c57ee1c21d5e9472674a315d9a4ed05a1df63b1b69ec5b",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_RADIO_TERMINALS",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative module mounting field overlaps its body envelope intentionally",
+      "assemblyBoundsMm": [
+        [
+          -5.349999904632568,
+          0.7500004768371582,
+          6.600000381469727
+        ],
+        [
+          5.349999904632568,
+          16.450000762939453,
+          6.75
+        ]
+      ],
+      "worldGeometrySha256": "d38735af9f061753c13787dac26b34cf31fc8b5b67ff03a3442d168797f6e9d9",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_ERM_MAX",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Maximum mounted motor",
+      "assemblyBoundsMm": [
+        [
+          0.9499998092651367,
+          -10.050000190734863,
+          6.599999904632568
+        ],
+        [
+          11.050000190734863,
+          0.05000019073486328,
+          9.050000190734863
+        ]
+      ],
+      "worldGeometrySha256": "e3016465bf4003b5fb3d42638b0127ddf9a367b719ec3abed6a46d91f58b2b2b",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_ERM_TAB",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative tab reaches6.9mm from centre including margin",
+      "assemblyBoundsMm": [
+        [
+          11.100000381469727,
+          -5.900000095367432,
+          6.75
+        ],
+        [
+          12.899999618530273,
+          -4.099999904632568,
+          7.449999809265137
+        ]
+      ],
+      "worldGeometrySha256": "1caff161a406c1dbdd3ccfdbc458eaf5c33bd7430adba36b40a245f69c5acecf",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_BODY",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Maximum underside CUS body plus separate seating",
+      "assemblyBoundsMm": [
+        [
+          11.350000381469727,
+          -3.450000047683716,
+          3.250000238418579
+        ],
+        [
+          15.649999618530273,
+          3.450000047683716,
+          4.850000381469727
+        ]
+      ],
+      "worldGeometrySha256": "5240b91f02e194e7948ef38516102437cfbbcc9ab641913924cb172dd42d4fa0",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_LEVER",
+      "role": "bound",
+      "group": "privacy",
+      "description": "Full transverse tolerance13.95..15.75 including0.15locator; calibrated nominal1.3width and maximum rearheight",
+      "assemblyBoundsMm": [
+        [
+          13.950000762939453,
+          -0.6499999761581421,
+          1.5500000715255737
+        ],
+        [
+          15.75,
+          0.6499999761581421,
+          3.25
+        ]
+      ],
+      "worldGeometrySha256": "c0801866bb0b8a9bdb1b907c34bf2016c81bc7e09ed5a78d7fab72ecc0043e75",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_LOCATOR_0",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Nominal0.9NPTH with conservative0.8pin x0.6protrusion proposal; supplier locator height pending",
+      "assemblyBoundsMm": [
+        [
+          13.100000381469727,
+          -1.899999976158142,
+          4.799999713897705
+        ],
+        [
+          13.899999618530273,
+          -1.100000023841858,
+          5.599999904632568
+        ]
+      ],
+      "worldGeometrySha256": "85917c4ecac4fb46d669e3a21c968e17ffffc293db4f3eb637a1e59e0d498f60",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_LOCATOR_1",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Nominal0.9NPTH with conservative0.8pin x0.6protrusion proposal; supplier locator height pending",
+      "assemblyBoundsMm": [
+        [
+          13.100000381469727,
+          1.100000023841858,
+          4.799999713897705
+        ],
+        [
+          13.899999618530273,
+          1.899999976158142,
+          5.599999904632568
+        ]
+      ],
+      "worldGeometrySha256": "f832bbeb5b50a341e87b3424fa95eacd862a8f0e37b5f87e69f752c999b63cb7",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_FULL_LEADS",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative max full lead/solder field; source bound inference clearly separate from body",
+      "assemblyBoundsMm": [
+        [
+          10.449999809265137,
+          -4.150000095367432,
+          4.649999618530273
+        ],
+        [
+          16.549999237060547,
+          4.150000095367432,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "5d09b1d5489c58c88954ed9be6387ffb974eee3636677004cf3ba712d1138a61",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_1",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          10.199999809265137,
+          1.899999976158142,
+          4.949999809265137
+        ],
+        [
+          11.699999809265137,
+          2.5999999046325684,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "0688760e58ac6b7be9ca9cc6d72096aaf96c80bd5d801798e7b47d1fbcf09411",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          10.199999809265137,
+          -1.100000023841858,
+          4.949999809265137
+        ],
+        [
+          11.699999809265137,
+          -0.4000000059604645,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "d3cc0f38e869ecb6231dd240ae7e6178ea8f674021a97eb915019fe9b037f5c6",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_3",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          10.199999809265137,
+          -2.5999999046325684,
+          4.949999809265137
+        ],
+        [
+          11.699999809265137,
+          -1.899999976158142,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "99be98f804492edda2494fc237de3b9edd6b6d1531fa3d35a56b5674aebb5e73",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_4",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          15.299999237060547,
+          1.899999976158142,
+          4.949999809265137
+        ],
+        [
+          16.799999237060547,
+          2.5999999046325684,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "d7c135910c16dc1826e4d5e5a1158de54cca4e96644c934679b17672ec013ffc",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_5",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          15.299999237060547,
+          -1.100000023841858,
+          4.949999809265137
+        ],
+        [
+          16.799999237060547,
+          -0.4000000059604645,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "e9fd6dba2b15353e4a3357f3beff88605fc767acfdb0a723290fcf872e03515c",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_PAD_6",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Exact nominal signal land with corrected backside reflection",
+      "assemblyBoundsMm": [
+        [
+          15.299999237060547,
+          -2.5999999046325684,
+          4.949999809265137
+        ],
+        [
+          16.799999237060547,
+          -1.899999976158142,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "95c0856c548974ba9543db179ac4ac42d3fe625ff33c2912d2b119376c3f7989",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_ANCHOR_1",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Unnumbered anchor copper; grounding unresolved",
+      "assemblyBoundsMm": [
+        [
+          11.300000190734863,
+          3.1500000953674316,
+          4.949999809265137
+        ],
+        [
+          12.09999942779541,
+          4.150000095367432,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "5fab2d873bb6db8e063f2f865071617d155c55f4654a59228d575699fbfc1d5c",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_ANCHOR_2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Unnumbered anchor copper; grounding unresolved",
+      "assemblyBoundsMm": [
+        [
+          14.90000057220459,
+          3.1500000953674316,
+          4.949999809265137
+        ],
+        [
+          15.699999809265137,
+          4.150000095367432,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "d8f860bb0d1203674b9c95a25a185472c24c46a12ee0d66aca022c2209993646",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_ANCHOR_3",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Unnumbered anchor copper; grounding unresolved",
+      "assemblyBoundsMm": [
+        [
+          11.300000190734863,
+          -4.150000095367432,
+          4.949999809265137
+        ],
+        [
+          12.09999942779541,
+          -3.1500000953674316,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "ed39b00d50be7029abe6294160c23f2add0208d336702c38d257146332775260",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_CUS_ANCHOR_4",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Unnumbered anchor copper; grounding unresolved",
+      "assemblyBoundsMm": [
+        [
+          14.90000057220459,
+          -4.150000095367432,
+          4.949999809265137
+        ],
+        [
+          15.699999809265137,
+          -3.1500000953674316,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "d1eadf514826d60a33f807a93773b0e06a7eca102b0b418e7a92ed878394eb82",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_KMR_BODY",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Maximum stationary body with0.15 seating; actuator modeled separately",
+      "assemblyBoundsMm": [
+        [
+          -9.199999809265137,
+          -6.0,
+          6.599999904632568
+        ],
+        [
+          -4.800000190734863,
+          -3.0,
+          8.300000190734863
+        ]
+      ],
+      "worldGeometrySha256": "55dc258e230453fb741a69cf4f7956a933f63f1c12c1e08630386364dbc525cc",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_KMR_ACTUATOR_MAX",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Maximum2.1mm height plus0.15 seating; not the calibrated nominal press state",
+      "assemblyBoundsMm": [
+        [
+          -7.5,
+          -5.0,
+          8.300000190734863
+        ],
+        [
+          -6.5,
+          -4.0,
+          8.84999942779541
+        ]
+      ],
+      "worldGeometrySha256": "48efc9c08b36796dd7fb8147fd4d8dde8262c910d2ec7a6314daac1fc2b4f1af",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_KMR_TERMINALS",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Complete conservative terminal field; exact source footprint still pending",
+      "assemblyBoundsMm": [
+        [
+          -9.5,
+          -6.099999904632568,
+          6.599999904632568
+        ],
+        [
+          -4.5,
+          -2.9000000953674316,
+          6.849999904632568
+        ]
+      ],
+      "worldGeometrySha256": "2023dad5a0220e2668374969624fb6f5ece25ae8b0058ba28140313a1a612946",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_NTC_MAX",
+      "role": "bound",
+      "group": "sensor",
+      "description": "Maximum selected sensor body; actual thermal contact still unqualified",
+      "assemblyBoundsMm": [
+        [
+          9.899999618530273,
+          -8.850000381469727,
+          1.7999999523162842
+        ],
+        [
+          13.899999618530273,
+          -5.150000095367432,
+          4.199999809265137
+        ]
+      ],
+      "worldGeometrySha256": "5a9c21b00d3e06a3988b700d9b1c1c70a63015cbe0590951161ce005fd2ec091",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_DOCK_PAD_-3",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Proposed underside copper target",
+      "assemblyBoundsMm": [
+        [
+          -3.8499999046325684,
+          -16.75,
+          4.965000152587891
+        ],
+        [
+          -2.1500000953674316,
+          -15.049999237060547,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "2aab83b2c8403302a334c1bab01b7bbe78cdbe1c1a1e5634affa15b53dab6001",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_DOCK_PAD_0",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Proposed underside copper target",
+      "assemblyBoundsMm": [
+        [
+          -0.8500000238418579,
+          -16.75,
+          4.965000152587891
+        ],
+        [
+          0.8500000238418579,
+          -15.049999237060547,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "9f3b386caee7b06b534ff4202ec078f2b4d9af86a462a086f179c1a06479fcfc",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_DOCK_PAD_3",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Proposed underside copper target",
+      "assemblyBoundsMm": [
+        [
+          2.1500000953674316,
+          -16.75,
+          4.965000152587891
+        ],
+        [
+          3.8499999046325684,
+          -15.049999237060547,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "24cd1d68dd441ef01fe2db83737bd9fde004cf68b30795182e150c48642dc760",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_NTC_LEAD_0",
+      "role": "bound",
+      "group": "sensor",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          13.100000381469727,
+          -5.549999713897705,
+          2.6499998569488525
+        ],
+        [
+          16.299999237060547,
+          -4.849999904632568,
+          3.3500001430511475
+        ]
+      ],
+      "worldGeometrySha256": "72cdca132543b30255ba9937499323265fc090cad5f2dc5591444ddb72757eb1",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_NTC_LEAD_1",
+      "role": "bound",
+      "group": "sensor",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          15.94999885559082,
+          -10.23482608795166,
+          2.6517367362976074
+        ],
+        [
+          16.649999618530273,
+          -5.165173530578613,
+          3.8482632637023926
+        ]
+      ],
+      "worldGeometrySha256": "5723a245ec2fd6e97c580260c7ad750c5254aa57aec95f5af2cab41d689d0cef",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_NTC_LEAD_2",
+      "role": "bound",
+      "group": "sensor",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          12.663172721862793,
+          -11.537638664245605,
+          3.164964199066162
+        ],
+        [
+          16.436826705932617,
+          -9.862360954284668,
+          4.9350361824035645
+        ]
+      ],
+      "worldGeometrySha256": "47cc38dbede093edcb01ff0152fa398234c1dc1912dde896b4371eb7d3cb5d3b",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_BATTERY_LEAD_0",
+      "role": "bound",
+      "group": "pack",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          -9.350000381469727,
+          -12.0,
+          2.049999952316284
+        ],
+        [
+          -8.649999618530273,
+          -10.5,
+          2.750000238418579
+        ]
+      ],
+      "worldGeometrySha256": "13d3275ffcd3837c6d1632b5ed7deead8a96ac12c60a7651a850e9c9c3609b74",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_BATTERY_LEAD_1",
+      "role": "bound",
+      "group": "pack",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          -12.06864070892334,
+          -12.350000381469727,
+          2.0567970275878906
+        ],
+        [
+          -8.93135929107666,
+          -11.649999618530273,
+          3.343203067779541
+        ]
+      ],
+      "worldGeometrySha256": "24cc3454910bd1daee66c48653993af752e551fe51e9dd302c9f33680acb6177",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_BATTERY_LEAD_2",
+      "role": "bound",
+      "group": "pack",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          -12.350000381469727,
+          -12.337231636047363,
+          2.906324625015259
+        ],
+        [
+          -11.649999618530273,
+          -11.162768363952637,
+          4.893675327301025
+        ]
+      ],
+      "worldGeometrySha256": "84b21742294fd951399b5fc18d566a695450414d5f0f3f256c0d4d80d6f98410",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MOTOR_LEAD_0",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          12.126694679260254,
+          -6.2186431884765625,
+          6.75
+        ],
+        [
+          13.47330379486084,
+          -4.7813568115234375,
+          7.449999809265137
+        ]
+      ],
+      "worldGeometrySha256": "650c671a152b7e3f4a216015429ea0a80cd2056e04cf23e7e1c6fdae2a54aa40",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MOTOR_LEAD_1",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative insulated lead route; solder termination/strain relief remain proposals",
+      "assemblyBoundsMm": [
+        [
+          12.169650077819824,
+          -8.115622520446777,
+          6.749999523162842
+        ],
+        [
+          13.530350685119629,
+          -5.884377479553223,
+          7.450000286102295
+        ]
+      ],
+      "worldGeometrySha256": "6d11c10a6e34e38eb264d40376c448ccafacf986d273709be0c4432960703dd1",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MIC_BODY_-7.2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative proposed bottom-port microphone body and seating; exact source datum pending",
+      "assemblyBoundsMm": [
+        [
+          -9.25,
+          -15.050000190734863,
+          6.599999904632568
+        ],
+        [
+          -5.149999618530273,
+          -11.949999809265137,
+          7.799999713897705
+        ]
+      ],
+      "worldGeometrySha256": "53e5616b0c25afc7ef3a041f8a3c7c171520656a621a91f313825360fac607a6",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MIC_TERMINALS_-7.2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Complete conservative land field; must be reconciled to actual native footprint",
+      "assemblyBoundsMm": [
+        [
+          -9.350000381469727,
+          -15.149999618530273,
+          6.600000381469727
+        ],
+        [
+          -5.049999713897705,
+          -11.850000381469727,
+          6.75
+        ]
+      ],
+      "worldGeometrySha256": "ef8d3fff70e501e84fd5d99fab2162fa1ee242534dfe40f61c17afb5f9fffb3a",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MIC_BODY_7.2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Conservative proposed bottom-port microphone body and seating; exact source datum pending",
+      "assemblyBoundsMm": [
+        [
+          5.149999618530273,
+          -15.050000190734863,
+          6.599999904632568
+        ],
+        [
+          9.25,
+          -11.949999809265137,
+          7.799999713897705
+        ]
+      ],
+      "worldGeometrySha256": "54d61b0fbb466df3cad87ec61d66633f3ad9bc334d979270d0b1db21566efdb9",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_MIC_TERMINALS_7.2",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Complete conservative land field; must be reconciled to actual native footprint",
+      "assemblyBoundsMm": [
+        [
+          5.049999713897705,
+          -15.149999618530273,
+          6.600000381469727
+        ],
+        [
+          9.350000381469727,
+          -11.850000381469727,
+          6.75
+        ]
+      ],
+      "worldGeometrySha256": "80c5a754cbabf178905e43cf43e394a7e8351384f67490022f1207ff96dcdb6e",
+      "nativePlacement": false
+    },
+    {
+      "object": "BOUND_STATUS_LED",
+      "role": "bound",
+      "group": "pcb",
+      "description": "Unselected low LED allocation with complete rectangular lead field; optical coupling not solved",
+      "assemblyBoundsMm": [
+        [
+          -0.949999988079071,
+          -0.6000000238418579,
+          6.600000381469727
+        ],
+        [
+          0.949999988079071,
+          0.6000000238418579,
+          7.75
+        ]
+      ],
+      "worldGeometrySha256": "d9ea3f5d0ec3eec601055b58110d69a18d51e916d17959f89d21bbb907fb92b0",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_MIC_GASKET_-7.2",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Working compressed seal; free thickness0.5 and force/sealing require test",
+      "assemblyBoundsMm": [
+        [
+          -8.699999809265137,
+          -15.0,
+          4.600000381469727
+        ],
+        [
+          -5.699999809265137,
+          -12.0,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "ea94c8e05a781c637175b7400084b1e58fa47298a2b10f3a6ded8fd048b738f6",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_MIC_GASKET_7.2",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Working compressed seal; free thickness0.5 and force/sealing require test",
+      "assemblyBoundsMm": [
+        [
+          5.699999809265137,
+          -15.0,
+          4.600000381469727
+        ],
+        [
+          8.699999809265137,
+          -12.0,
+          5.0
+        ]
+      ],
+      "worldGeometrySha256": "96781d7701ae7e2cdb18a936195ee70188f23c4ff6bb4923d2587777aaec6150",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_PCB_CLAMP_0",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "assemblyBoundsMm": [
+        [
+          -12.5,
+          11.300000190734863,
+          6.599999904632568
+        ],
+        [
+          -10.700000762939453,
+          13.09999942779541,
+          6.799999713897705
+        ]
+      ],
+      "worldGeometrySha256": "3074ee4a2d17a40340a805c582483a1e1a889fef9597c627d619ea3ba0102859",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_PCB_CLAMP_1",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "assemblyBoundsMm": [
+        [
+          10.700000762939453,
+          11.300000190734863,
+          6.599999904632568
+        ],
+        [
+          12.5,
+          13.09999942779541,
+          6.799999713897705
+        ]
+      ],
+      "worldGeometrySha256": "e5314f8e2c851dc273a19d90ad99bb6a717d726e88a1cbfb38e45958338dc7e1",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_PCB_CLAMP_2",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "assemblyBoundsMm": [
+        [
+          -0.8999999761581421,
+          -13.899999618530273,
+          6.599999904632568
+        ],
+        [
+          0.8999999761581421,
+          -12.100000381469727,
+          6.799999713897705
+        ]
+      ],
+      "worldGeometrySha256": "3d019f618ff5f990c9c4d30341842626b68b9785d41f65704c2cb365a420f38d",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_CAPTURE_FOAM",
+      "role": "soft",
+      "group": "face",
+      "description": "Free0.79 sheet modeled compressed0.74 at rest;0.39 at full press with calibrated0.25shoe stop; force/creep unqualified",
+      "assemblyBoundsMm": [
+        [
+          -10.100000381469727,
+          -7.599999904632568,
+          9.40999984741211
+        ],
+        [
+          -3.9000000953674316,
+          -1.4000000953674316,
+          10.149999618530273
+        ]
+      ],
+      "worldGeometrySha256": "046c14753868d1917caa56db7c2a1e5a2c0e2eba894ba216589138b54a17192c",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_FACE_RETURN_0",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "assemblyBoundsMm": [
+        [
+          9.222872734069824,
+          13.471330642700195,
+          7.800000190734863
+        ],
+        [
+          10.622872352600098,
+          14.871330261230469,
+          8.800000190734863
+        ]
+      ],
+      "worldGeometrySha256": "9e1ce8b873f4aec3e2431d063162dd1ad0edd73bbcf23f5bfc4c53b0fdf24f81",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_FACE_RETURN_1",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "assemblyBoundsMm": [
+        [
+          -17.4105167388916,
+          3.777569532394409,
+          7.800000190734863
+        ],
+        [
+          -16.010515213012695,
+          5.177569389343262,
+          8.800000190734863
+        ]
+      ],
+      "worldGeometrySha256": "6ba700ec492889bf1d640892fb6a1ae9410d34d6818d42d7497436eaf0b3b220",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_FACE_RETURN_2",
+      "role": "soft",
+      "group": "stationary",
+      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "assemblyBoundsMm": [
+        [
+          3.777569532394409,
+          -17.4105167388916,
+          7.800000190734863
+        ],
+        [
+          5.177569389343262,
+          -16.010515213012695,
+          8.800000190734863
+        ]
+      ],
+      "worldGeometrySha256": "d04d42ee6cd900ed827bf387903ecf6a53f5c87cba29864e6f91633c44fbd3ef",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_BATTERY_BACKING",
+      "role": "soft",
+      "group": "pack",
+      "description": "Unselected0.15backing/fixation layer; supplier adhesive and pouch compatibility pending",
+      "assemblyBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          1.0
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          1.1500000953674316
+        ]
+      ],
+      "worldGeometrySha256": "edec657e4592df489fa7585c95670789e5adbead310fc1e2dc21ce013b6f4598",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_BATTERY_DIELECTRIC",
+      "role": "soft",
+      "group": "pack",
+      "description": "0.10dielectric plus0.05free gap after solid growth allocation; material pending",
+      "assemblyBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          4.849999904632568
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          4.950000286102295
+        ]
+      ],
+      "worldGeometrySha256": "3b8824c23d6a0227c58121fd2396ae190f64b5031f080ee71fa7071275f96fd4",
+      "nativePlacement": false
+    },
+    {
+      "object": "SOFT_NTC_INTERFACE",
+      "role": "soft",
+      "group": "sensor",
+      "description": "0.1adhesive/interface at pack edge; conductivity and thermal tracking not qualified",
+      "assemblyBoundsMm": [
+        [
+          9.800000190734863,
+          -8.800000190734863,
+          1.7999999523162842
+        ],
+        [
+          9.90000057220459,
+          -5.199999809265137,
+          4.199999809265137
+        ]
+      ],
+      "worldGeometrySha256": "8de8d7cdf5ccd138a711ca8c99d2dfa8017a6be1771cb6339326dc2930c5db05",
+      "nativePlacement": false
+    }
+  ],
+  "revision": "A04 M2 development candidate",
+  "status": "PARAMETRIC MECHANISM; NOT PHYSICALLY QUALIFIED OR A NATIVE PCB RELEASE",
+  "scenario": "thin-cell",
+  "bodyDiameterMm": 43,
+  "bodyDepthMm": 11.2,
+  "pcbActualThicknessMm": 1.6,
+  "pcbBottomZMm": 5.0,
+  "pcbTopZMm": 6.6,
+  "faceBackZMm": 10.149999999999999,
+  "faceStopZMm": 8.2,
+  "carrierBottomZMm": 7.199999999999999,
+  "parts": [
+    {
+      "object": "01_FIXED_CUP",
+      "file": "01_fixed_cup.stl",
+      "role": "part",
+      "group": "stationary",
+      "description": "Integral rear, three PCB seats, independent carrier shoulders, open front thread, integrated acoustic ducts and sensor pocket",
+      "bytes": 667584,
+      "sha256": "a0a5fb60e727e6924750cd9fb064855d0a6ba43536adb36301aaa00daf51d0ce",
+      "assemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          0.0
+        ],
+        [
+          21.5,
+          24.799999237060547,
+          10.40000057220459
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "object": "02_THREADED_BEZEL",
+      "file": "02_threaded_bezel.stl",
+      "role": "part",
+      "group": "bezel",
+      "description": "Removable rounded-thread bezel; stationary collar stop bypasses moving face/cell",
+      "bytes": 631484,
+      "sha256": "e3d0766c40577e5e5c503a0b5d2a93202a7e8ae9aab57fe44006d7a154cbb9cc",
+      "assemblyBoundsMm": [
+        [
+          -21.5,
+          -21.5,
+          8.199999809265137
+        ],
+        [
+          21.5,
+          21.5,
+          11.199999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.199999809265137
+      ]
+    },
+    {
+      "object": "03_PCB_CLAMP_AND_FACE_GUIDE",
+      "file": "03_pcb_clamp_and_face_guide.stl",
+      "role": "part",
+      "group": "stationary",
+      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6mm face stop",
+      "bytes": 461084,
+      "sha256": "b3157eafacd621730cc697fc6898940be55efd15348c7c7bb8663dc0b4f92088",
+      "assemblyBoundsMm": [
+        [
+          -20.100000381469727,
+          -19.399999618530273,
+          6.800000190734863
+        ],
+        [
+          19.399999618530273,
+          19.399999618530273,
+          9.34999942779541
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -6.800000190734863
+      ]
+    },
+    {
+      "object": "04_CAPTIVE_FACE",
+      "file": "04_captive_face.stl",
+      "role": "part",
+      "group": "face",
+      "description": "Front-inserted full face; three blind guide sleeves, flush optical insert, lateral compliant cartridge",
+      "bytes": 295784,
+      "sha256": "a0af9f10a4bce746a8073a1eee29d62b4bb277d8789a00dd5346060568086489",
+      "assemblyBoundsMm": [
+        [
+          -18.350000381469727,
+          -18.350000381469727,
+          7.909999847412109
+        ],
+        [
+          18.350000381469727,
+          18.350000381469727,
+          11.149999618530273
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -7.909999847412109
+      ]
+    },
+    {
+      "object": "05_FLUSH_STATUS_WINDOW",
+      "file": "05_flush_status_window.stl",
+      "role": "part",
+      "group": "face",
+      "description": "No material below face-back plane; inserts from rear before front face installation",
+      "bytes": 1484,
+      "sha256": "a63308db73038d40a97c05bc3cbcadc084ddc8550d994700e3a955ac09509b00",
+      "assemblyBoundsMm": [
+        [
+          -2.200000047683716,
+          -0.75,
+          10.200000762939453
+        ],
+        [
+          2.200000047683716,
+          0.75,
+          11.149999618530273
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -10.200000762939453
+      ]
+    },
+    {
+      "object": "06_FIXED_DIFFUSER",
+      "file": "06_fixed_diffuser.stl",
+      "role": "part",
+      "group": "bezel",
+      "description": "Separate clear ring seated in fixed bezel",
+      "bytes": 51284,
+      "sha256": "71fdd1f1918812f2ede1036e213e4b334b455ae2ae795baba108b4dba4c44510",
+      "assemblyBoundsMm": [
+        [
+          -18.5,
+          -18.5,
+          10.5
+        ],
+        [
+          18.5,
+          18.5,
+          11.149999618530273
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -10.5
+      ]
+    },
+    {
+      "object": "07_CARTRIDGE_KEEPER",
+      "file": "07_cartridge_keeper.stl",
+      "role": "part",
+      "group": "face",
+      "description": "Lateral keeper staged in face before front insertion; carrier post blocks withdrawal once face installed",
+      "bytes": 27484,
+      "sha256": "a22951d5fddc3620db3694c4bf27dd8ef911e5667fa652c0ef0626ae4758374c",
+      "assemblyBoundsMm": [
+        [
+          -10.699999809265137,
+          -7.699999809265137,
+          8.510000228881836
+        ],
+        [
+          -3.299999952316284,
+          -1.2999999523162842,
+          9.110000610351562
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.510000228881836
+      ]
+    },
+    {
+      "object": "08_MEASURED_PLUNGER_SHOE",
+      "file": "08_measured_plunger_shoe.stl",
+      "role": "part",
+      "group": "shoe",
+      "description": "Maximum mounted switch height2.25 plus0.05rest gap; re-size from physical measurement, not a qualified fixed actuator",
+      "bytes": 1484,
+      "sha256": "1db11acc469127783ec29418ce19084b2ddaf278deb5c2786feb8f0f103164a5",
+      "assemblyBoundsMm": [
+        [
+          -10.100000381469727,
+          -7.599999904632568,
+          8.899999618530273
+        ],
+        [
+          -3.9000000953674316,
+          -1.4000000953674316,
+          9.40999984741211
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -8.899999618530273
+      ]
+    },
+    {
+      "object": "09_PRIVACY_FORK",
+      "file": "09_privacy_fork.stl",
+      "role": "part",
+      "group": "privacy",
+      "description": "Corrected actuator centre14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
+      "bytes": 4284,
+      "sha256": "ef3d5875fab2da7ada20d86559b4adf14dc3f8fc1958fac8001ed234646e6c78",
+      "assemblyBoundsMm": [
+        [
+          13.5,
+          -3.0,
+          1.75
+        ],
+        [
+          22.899999618530273,
+          3.0,
+          2.8499999046325684
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.75
+      ]
+    },
+    {
+      "object": "10_PRIVACY_KEEPER",
+      "file": "10_privacy_keeper.stl",
+      "role": "part",
+      "group": "stationary",
+      "description": "Open-bottom U keeper lowers over installed stem; integral measured4.4channel yields2.2travel and independent stops, carrier captures it",
+      "bytes": 1484,
+      "sha256": "1db3397080e255846253ebca6ab76d39945ce8152a5cded3d005aae4408ee317",
+      "assemblyBoundsMm": [
+        [
+          18.049999237060547,
+          -3.200000047683716,
+          1.0
+        ],
+        [
+          19.049999237060547,
+          3.200000047683716,
+          7.199999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.0
+      ]
+    },
+    {
+      "object": "11_CONTACT_ACCESS_CARRIER",
+      "file": "11_contact_access_carrier.stl",
+      "role": "part",
+      "group": "stationary",
+      "description": "Front-installed keyed access with positive side-wing seat; dock nose still separate",
+      "bytes": 80084,
+      "sha256": "48d576300d0a4b72f882d296b8529aea2e387e3cfc463b68456c1ee6225aca6e",
+      "assemblyBoundsMm": [
+        [
+          -5.300000190734863,
+          -17.44999885559082,
+          0.0
+        ],
+        [
+          5.300000190734863,
+          -14.34999942779541,
+          4.699999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "object": "12_SENSOR_RETAINER",
+      "file": "12_sensor_retainer.stl",
+      "role": "part",
+      "group": "stationary",
+      "description": "Front-inserted cap rests on sensor-pocket walls at4.2;0.1upward travel limited by PCB; thermal contact/force remains unqualified",
+      "bytes": 684,
+      "sha256": "22532e7f10618ef75d0ecdeac619e9e47ad6d3a224b428c1a906f6489d55818d",
+      "assemblyBoundsMm": [
+        [
+          9.90000057220459,
+          -9.350000381469727,
+          4.200000286102295
+        ],
+        [
+          14.300000190734863,
+          -4.650000095367432,
+          4.900000095367432
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -4.200000286102295
+      ]
+    },
+    {
+      "object": "90_UNPOWERED_BOARD_GAUGE",
+      "file": "90_unpowered_board_gauge.stl",
+      "role": "gauge",
+      "group": "pcb",
+      "description": "No old closure notches; only left key and proposed sound holes, not native geometry",
+      "bytes": 129284,
+      "sha256": "a7abbd1521a013621b2bfef48a6d3a54054c046571c99f8d9f46bf366b53a048",
+      "assemblyBoundsMm": [
+        [
+          -17.58527183532715,
+          -17.600000381469727,
+          5.0
+        ],
+        [
+          17.600000381469727,
+          17.600000381469727,
+          6.600000381469727
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -5.0
+      ]
+    },
+    {
+      "object": "91_UNPOWERED_PACK_GAUGE",
+      "file": "91_unpowered_pack_gauge.stl",
+      "role": "gauge",
+      "group": "pack",
+      "description": "Maximum controlled unpowered pack gauge",
+      "bytes": 684,
+      "sha256": "35aacdd90a195ba5256b13cfcc8b02ee17af5f7eeab00532ed5b99637e17a1ca",
+      "assemblyBoundsMm": [
+        [
+          -16.200000762939453,
+          -10.5,
+          1.149999976158142
+        ],
+        [
+          9.800000190734863,
+          10.5,
+          4.449999809265137
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -1.149999976158142
+      ]
+    }
+  ],
+  "partCount": 14,
+  "boundObjects": [
+    "BOUND_CELL_GROWTH",
+    "BOUND_RADIO_MAX",
+    "BOUND_RADIO_TERMINALS",
+    "BOUND_ERM_MAX",
+    "BOUND_ERM_TAB",
+    "BOUND_CUS_BODY",
+    "BOUND_CUS_LEVER",
+    "BOUND_CUS_LOCATOR_0",
+    "BOUND_CUS_LOCATOR_1",
+    "BOUND_CUS_FULL_LEADS",
+    "BOUND_CUS_PAD_1",
+    "BOUND_CUS_PAD_2",
+    "BOUND_CUS_PAD_3",
+    "BOUND_CUS_PAD_4",
+    "BOUND_CUS_PAD_5",
+    "BOUND_CUS_PAD_6",
+    "BOUND_CUS_ANCHOR_1",
+    "BOUND_CUS_ANCHOR_2",
+    "BOUND_CUS_ANCHOR_3",
+    "BOUND_CUS_ANCHOR_4",
+    "BOUND_KMR_BODY",
+    "BOUND_KMR_ACTUATOR_MAX",
+    "BOUND_KMR_TERMINALS",
+    "BOUND_NTC_MAX",
+    "BOUND_DOCK_PAD_-3",
+    "BOUND_DOCK_PAD_0",
+    "BOUND_DOCK_PAD_3",
+    "BOUND_NTC_LEAD_0",
+    "BOUND_NTC_LEAD_1",
+    "BOUND_NTC_LEAD_2",
+    "BOUND_BATTERY_LEAD_0",
+    "BOUND_BATTERY_LEAD_1",
+    "BOUND_BATTERY_LEAD_2",
+    "BOUND_MOTOR_LEAD_0",
+    "BOUND_MOTOR_LEAD_1",
+    "BOUND_MIC_BODY_-7.2",
+    "BOUND_MIC_TERMINALS_-7.2",
+    "BOUND_MIC_BODY_7.2",
+    "BOUND_MIC_TERMINALS_7.2",
+    "BOUND_STATUS_LED"
+  ],
+  "softObjects": [
+    "SOFT_MIC_GASKET_-7.2",
+    "SOFT_MIC_GASKET_7.2",
+    "SOFT_PCB_CLAMP_0",
+    "SOFT_PCB_CLAMP_1",
+    "SOFT_PCB_CLAMP_2",
+    "SOFT_CAPTURE_FOAM",
+    "SOFT_FACE_RETURN_0",
+    "SOFT_FACE_RETURN_1",
+    "SOFT_FACE_RETURN_2",
+    "SOFT_BATTERY_BACKING",
+    "SOFT_BATTERY_DIELECTRIC",
+    "SOFT_NTC_INTERFACE"
+  ],
+  "cusPadMap": [
+    {
+      "pin": 1,
+      "sourceXY": [
+        -2.25,
+        -2.55
+      ],
+      "cadXY": [
+        10.95,
+        2.25
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "pin": 2,
+      "sourceXY": [
+        0.75,
+        -2.55
+      ],
+      "cadXY": [
+        10.95,
+        -0.75
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "pin": 3,
+      "sourceXY": [
+        2.25,
+        -2.55
+      ],
+      "cadXY": [
+        10.95,
+        -2.25
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "pin": 4,
+      "sourceXY": [
+        -2.25,
+        2.55
+      ],
+      "cadXY": [
+        16.05,
+        2.25
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "pin": 5,
+      "sourceXY": [
+        0.75,
+        2.55
+      ],
+      "cadXY": [
+        16.05,
+        -0.75
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "pin": 6,
+      "sourceXY": [
+        2.25,
+        2.55
+      ],
+      "cadXY": [
+        16.05,
+        -2.25
+      ],
+      "cadSizeMm": [
+        1.5,
+        0.7
+      ]
+    }
+  ],
+  "contractSha256": "b2a7ef53e0208f7a1b3e3a696e60d89673511480b6016624c69b6fad691cca07",
+  "generatorSha256": "a78aec92bc9fb08c71c6aebd1a60ad11e1fecb44e32df409fa57809258499200",
+  "blendSha256": "5b5ac78963204668f5b157181aa4ab3e308ffc432fa7218489928c92837f2719",
+  "nativePlacementImported": false,
+  "physicalQualification": false
+}

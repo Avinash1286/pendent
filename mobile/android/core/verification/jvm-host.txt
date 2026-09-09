@@ -1,4 +1,4 @@
-Calculating task graph as configuration cache cannot be reused because environment variable 'JAVA_HOME' has changed.
+Reusing configuration cache.
 > Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:processResources NO-SOURCE
 > Task :core:processTestResources NO-SOURCE
@@ -12,12 +12,13 @@ Calculating task graph as configuration cache cannot be reused because environme
 > Task :core:test
 
 > Task :core:verifyCore
-PASS Kotlin core groups=24 checks=32728 C_fixtures=17 raw_prefix_rejected=1 audio_decode_claim=false
+PASS Kotlin core groups=30 checks=82213 C_fixtures=19 raw_prefix_rejected=1 audio_decode_claim=false
 PASS BLE response fragments groups=7 checks=32159 gatt_tested=false
 PASS transfer wire groups=7 checks=338 C_golden_responses=14 gatt_tested=false
+PASS incremental archive groups=6 checks=49471 C_fixtures=19 durable_storage_tested=false
 
 > Task :core:check
 
-BUILD SUCCESSFUL in 18s
+BUILD SUCCESSFUL in 8s
 5 actionable tasks: 5 executed
-Configuration cache entry stored.
+Configuration cache entry reused.

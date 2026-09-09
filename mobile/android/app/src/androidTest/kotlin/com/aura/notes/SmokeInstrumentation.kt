@@ -41,6 +41,7 @@ class SmokeInstrumentation : Instrumentation() {
     private lateinit var isolated: IsolatedContext
     private lateinit var fixtures: Map<String, Fixture>
     private lateinit var indexHash: String
+    private var downloadEvidence: JSONObject? = null
 
     override fun onCreate(arguments: Bundle?) {
         super.onCreate(arguments)
@@ -60,6 +61,7 @@ class SmokeInstrumentation : Instrumentation() {
             case("real platform Opus decode, EOS and exact WAV durations") { decoderChecks() }
             case("decoder destination preservation and incomplete input refusal") { decoderFailureChecks() }
             storeChecks()
+            downloadEvidence = runDownloadStoreChecks(context, isolated, ::case, ::expect)
             complete(true)
         } catch (error: Throwable) {
             complete(false, JSONObject().put("failure_type", error.javaClass.simpleName)
@@ -77,6 +79,7 @@ class SmokeInstrumentation : Instrumentation() {
             .put("android_sdk", Build.VERSION.SDK_INT).put("android_fingerprint", Build.FINGERPRINT)
             .put("decoder_results", decodeResults).put("physical_hardware_verified", false)
         if (::indexHash.isInitialized) extra.put("fixture_index_sha256", indexHash)
+        downloadEvidence?.let { extra.put("download_store", it) }
         val result = Bundle().apply {
             putString("resultdetailJSON", extra.toString())
             putString("stream", "AURA_SMOKE_${if (passed) "PASS" else "FAIL"} ${extra}\n")

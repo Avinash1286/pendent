@@ -1,14 +1,23 @@
 # Android verification — 2026-09-09
 
-The native A04 app at [the published local-import checkpoint](https://github.com/Avinash1286/pendent/tree/1a790597da5095423fdada9d86425f1ce4654a62/mobile/android) built successfully with **zero Android lint findings** and passed **9 Android runtime cases / 168 assertions** on an Android 10 / API 29 x86-64 emulator. Its archive core passed **10 JVM groups / 231 checks**, using 17 C-generated fixtures plus rejection of an unsealed prefix.
+The current native A04 app built with **zero Android lint findings** and passed
+**19 Android runtime cases / 366 assertions** on an Android 10 / API 29 x86-64
+emulator. The run took 22.846 seconds. It retains the original nine local-import
+cases and adds ten cases for the [durable download owner](DOWNLOADS.md), actual
+SQLite rollback/replay, ownership cleanup and decoded-library handoff.
 
-The current core additionally passes **7 response-fragment groups / 32,159
-checks** and **7 transfer-wire groups / 338 checks** (24 combined groups / 32,728
-checks). Coverage includes all logical lengths 1–512 at five MTUs, 14 actual
-C-generated replies and four C-generated SELECT fragment chains. These JVM checks
-do not replace the earlier APK's runtime evidence. The transport parsers are not
-integrated with GATT or app UI, and the published APK/build/runtime reports
-remain bound to the checkpoint above.
+The current Kotlin core passes **30 groups / 82,213 checks**, including six
+incremental-validator groups / 49,471 checks, seven response-fragment groups /
+32,159 checks, seven transfer-wire groups / 338 checks and the complete-archive
+checks. It uses 19 complete C-generated archives and rejects an additional raw
+prefix. Exact ACK3/Ogg comparisons and independent FFmpeg sample counts pass.
+Both file import and partial-download replay now use one canonical validator.
+
+The [earlier local-import checkpoint](https://github.com/Avinash1286/pendent/tree/1a790597da5095423fdada9d86425f1ce4654a62/mobile/android)
+and its `a04-android-local-dev` release remain available with their original
+nine-case evidence. The current development APK includes the new storage and
+protocol classes, but the Activity still exposes local file import. GATT,
+enrollment and the foreground download coordinator are not integrated.
 
 These results cover the source and development APKs identified below. They establish an exercised Android file-import, storage, recovery, and platform-decoding foundation. They do not establish a working physical pendant or a qualified release.
 
@@ -17,10 +26,10 @@ These results cover the source and development APKs identified below. They estab
 | Evidence | Observed result and scope |
 | --- | --- |
 | [Installed toolchain](verification/installed-toolchain.json) | Actual executable versions, SDK package metadata, archive/executable hashes, and usable WHPX acceleration; this installation snapshot alone does not claim app execution. |
-| [Initial emulator boot](verification/emulator-boot.json) and [final preserved-data restart](verification/emulator-boot-final.json) | `AuraApi29`, `emulator-5554`, API 29, `sys.boot_completed=1`, package service available, VM alive; the boot agent did not install or test the app. |
+| [Runtime emulator boot](verification/emulator-download-runtime-boot.json) | Preserved `AuraApi29`, `emulator-5554`, API 29, observed `sys.boot_completed=1` and framework ready before this run. The record separately retains eventual shutdown; boot alone is not a runtime test. |
 | [Build report](verification/android-build.json) and [build log](verification/build-output.txt) | Both debug APKs built; lint Fatal 0, Error 0, Warning 0, Information 0. Build inputs were unchanged during the build. |
-| [Final Android runtime report](verification/android-runtime.json) and [instrumentation output](verification/instrumentation-output.txt) | Both recorded APK installations reported success; 9 cases and 168 assertions passed. The report retains per-case and total execution time. Inputs were unchanged during the test. |
-| [Current JVM report](core/verification/kotlin-core.json) and [JVM transcript](core/verification/jvm-host.txt) | 231 archive, 32,159 fragment and 338 transfer-wire checks; C/Python/Kotlin byte-contract comparisons, actual C command/reply/fragments and independent FFmpeg sample-count validation. No Android decoding or GATT claim from this report. |
+| [Final Android runtime report](verification/android-runtime.json) and [instrumentation output](verification/instrumentation-output.txt) | Both APK installations reported success; 19 cases and 366 assertions passed. The report retains per-case and total execution time. Inputs were unchanged during the test. |
+| [Current JVM report](core/verification/kotlin-core.json) and [JVM transcript](core/verification/jvm-host.txt) | 30 groups / 82,213 checks: shared complete/incremental validation, C/Python/Kotlin byte-contract comparisons, actual C command/reply/fragments and independent FFmpeg sample-count validation. No Android decoding or GATT claim from this report. |
 
 The reports retain their exact UTC generation times. The instrumentation transcript contains both `resultdetailJSON.passed=true` and `INSTRUMENTATION_CODE: -1` (`Activity.RESULT_OK`). A zero `adb` process exit code by itself is not the success criterion.
 
@@ -38,11 +47,16 @@ Boot evidence records WHPX CPU acceleration, SwiftShader graphics, 1,536 MiB RAM
 
 ## Exact build and runtime binding
 
-The build and runtime reports contain the same **33 source/configuration/fixture hashes**. Those files were independently rechecked at the published local-import checkpoint. Both APK hashes matched the build report and the installation entries in the runtime report. The runtime's referenced build-report digest matched the actual JSON file. The newer core report separately binds its current Kotlin sources, including the response-fragment parser and tests; it must not be read as a rebuild of the released APK.
+The build and runtime reports contain the same **47 source/configuration/fixture
+hashes**, including the verification runner. Both APK hashes match the build
+report and runtime installation entries. The runtime's referenced build-report
+digest matches the actual JSON file. The core report separately binds 61 current
+source/fixture files before and after its JVM/FFmpeg run. Android's download
+fixture copies match the exact owned C archive/physical-receipt files.
 
 The [build report's `artifacts` entries](verification/android-build.json) give both APK byte lengths and SHA-256 values. The [runtime report](verification/android-runtime.json) repeats the installed APK digests and binds the exact build-report bytes through `build_report_sha256`. Use those machine-readable values when comparing a download; the development signing key on another machine can produce different APK bytes.
 
-The final fixture-index digest is `7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f`. Full source, WAV, log, and verification-script hashes are retained in the machine-readable reports; the table does not replace them.
+The retained local-import fixture-index digest is `7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f`; the new download fixture-index digest is `a160804c8090e09ecd2b13436e27d2ed334b65cdf819b12ad715b3d3882d96cd`. Full source, WAV, log, and verification-script hashes are retained in the machine-readable reports; the table does not replace them.
 
 These hashes bind the observed local build and test run. They are not publisher signatures, device attestation, or a claim that another machine's development signing key will produce identical APK bytes. The APKs use development debug signing, not production release signing.
 
@@ -50,7 +64,7 @@ These hashes bind the observed local build and test run. They are not publisher 
 
 The [instrumentation implementation](app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt) used actual Android `ContentResolver`, filesystem synchronization, SQLite, `MediaExtractor`, and `MediaCodec`. It did not substitute fake SQLite or a mocked decoder. A context wrapper redirected only the private files/database namespace to isolated test storage. The test-only content provider served fixed public synthetic fixtures and could not read the user's normal library.
 
-All nine recorded cases passed:
+The nine retained local-library cases passed:
 
 1. Immutable C fixture asset identities.
 2. Real platform Opus decoding through output EOS and exact WAV durations.
@@ -62,7 +76,21 @@ All nine recorded cases passed:
 8. Retention of corrupt sources, raw unsealed prefixes, and conflicting proof without publishing a new ready capture.
 9. Cold inventory rebuilding from a complete decoded bundle, including refusal to silently downgrade missing known provenance and retention of changed source bytes.
 
-The recovery cases construct concrete filesystem/database conditions in the isolated namespace. They are not process-kill, kernel-crash, flash-controller, or sudden-power-loss tests. Original export is checked through the store API; this instrumentation does not by itself prove every document-provider UI/export destination works.
+Ten additional download cases passed: exact owned C SELECT/FINISH metadata;
+complete-record resume and export; duplicate/conflicting READs; actual SQLite
+INSERT/metadata/FINISH ABORT rollback; retained corrupt metadata/records; split
+and concatenated row rejection; lifetime ownership and failed-open cleanup;
+separate immutable source revisions; premature/conflicting FINISH rejection;
+and finalized/OPEN handoff through the real library decoder. The process-owner
+guard rejects a second opener before creating another file channel. Tests also
+exercise failed file/database construction and stale double-close cleanup.
+
+The recovery cases construct concrete filesystem/database conditions in the
+isolated namespace. They are not cross-process contention, process-kill,
+kernel-crash, flash-controller or sudden-power-loss tests. Android READ replies
+are constructed from exact C exports and passed through `TransferWire`; the
+test does not run C firmware over Bluetooth. Original export is checked through
+the store API; this does not prove every document-provider UI destination works.
 
 ## Actual decoder and trim results
 
@@ -78,6 +106,13 @@ The finalized fixture exercises a recording that ends inside its last encoded fr
 
 These are generated test signals from the portable C fixture writer, not audio captured through an A04 microphone. Passing this specific platform decoder does not qualify every vendor codec, Android version, long recording, storage-pressure condition, or malformed future input.
 
+The new owned finalized and OPEN fixtures also passed `CaptureStore.importDownload`
+through `OMX.google.opus.decoder` at 48 kHz, preserving 120,847 and 116,440 source
+samples respectively. Both became playback-ready; duplicate imports retained a
+single library revision. The OPEN recording retained physical status OPEN,
+export status INTERRUPTED and unknown original duration. Its SQLite source
+remained byte-identical and exportable after library publication.
+
 ## Retained first failing attempt
 
 The [first runtime report](verification/android-runtime-attempt-01.json), [first instrumentation transcript](verification/instrumentation-attempt-01.txt), and [associated build report](verification/android-build-attempt-01.json) are retained. That attempt is explicitly **failed**. The direct decoder checks passed, but the real provider/store import case failed with `FileNotFoundException: No content provider` after 109 assertions.
@@ -86,9 +121,14 @@ The issue was in the test fixture provider's process/classloader: its Kotlin imp
 
 Both APKs were rebuilt and reinstalled, and the full suite was rerun. The passing report binds that final source set and those final APKs; the earlier partial pass is not counted as successful store validation.
 
-## UI smoke check
+## Earlier local-import UI smoke check
 
-The [UI smoke record](verification/ui-smoke.json) records seven observed checks through real Android screens, using only synthetic fixtures. The final APK preserved the local capture and manual context through an APK update and emulator restart, imported an exact retry through Android's document picker without duplicating it, played to the end, kept a long draft's Cancel/Save buttons above the keyboard, opened the correct share-sheet payload, exported byte-identical original audio, and handled API 29 system Back. Clipboard paste and share-sheet text matched exactly; no receiving application was selected.
+The [UI smoke record](verification/ui-smoke.json) belongs to the earlier
+local-import APK. It records seven real-screen checks with synthetic fixtures:
+update/restart preservation, document-picker retry, playback to completion,
+keyboard layout, share-sheet payload, exact original export and system Back.
+No receiving application was selected. The current change adds no download UI;
+that earlier visual record is not a new APK UI test.
 
 The first new import, saved title/context and clipboard copy occurred in the preceding passing build. A small-screen editor issue found during that UI check was then corrected with a scrollable body and resize behavior. The final APK was rebuilt, all nine instrumentation cases passed again, and the affected editor plus the flows above were checked. The [preceding passing runtime](verification/android-runtime-attempt-02.json) is retained alongside the earlier failing provider attempt. The UI record binds each screenshot to its actual APK, including the earlier empty-library image.
 

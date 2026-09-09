@@ -1,9 +1,6 @@
 package com.aura.capture
 
-import java.io.BufferedInputStream
 import java.io.File
-import java.io.FileInputStream
-import java.io.InputStream
 import java.security.MessageDigest
 import java.util.zip.CRC32
 
@@ -166,100 +163,11 @@ object AuraArchive {
         limits: ArchiveLimits,
         visitor: ((ArchivePacket) -> Unit)?,
     ): VerifiedArchive {
-        checkArchive(file.isFile, "Archive must be a regular file")
-        checkArchive(file.length() <= limits.maxFileBytes, "Archive exceeds file limit")
-        val physical = physicalAck?.let(::parseReceipt)
-        BufferedInputStream(FileInputStream(file), 65536).use { stream ->
-            val reader = Reader(stream, limits.maxFileBytes)
-            val capture = manifest(reader.exact(68))
-            var digest = sha(capture.encode())
-            var sequence = 0
-            var audioPackets = 0
-            var encodedBytes = 0L
-            var samples = 0L
-            var bookmarkCount = 0
-            var maxBookmark = 0L
-            var unavailableTailBookmarks = 0
-            while (true) {
-                val prefix = reader.exact(4)
-                when {
-                    magic(prefix, "AFR3") -> {
-                        val header = prefix + reader.exact(18)
-                        checkArchive(u8(header, 4) == 3 && u8(header, 5) in 1..2,
-                            "Unsupported packet header")
-                        val payloadSize = u16(header, 20)
-                        checkArchive(payloadSize <= 1275, "Packet exceeds payload bound")
-                        checkArchive(sequence < limits.maxRecords, "Archive exceeds record limit")
-                        val wire = header + reader.exact(payloadSize + 4)
-                        crc(wire)
-                        val packetSequence = u32Bound(header, 6, 999_999).toInt()
-                        val offset = u64Bound(header, 10, Long.MAX_VALUE)
-                        val count = u16(header, 18)
-                        checkArchive(packetSequence == sequence, "Packet sequence gap or replay")
-                        val kind = if (u8(header, 5) == 1) PacketKind.AUDIO else PacketKind.BOOKMARK
-                        val payload = wire.copyOfRange(22, 22 + payloadSize)
-                        if (kind == PacketKind.AUDIO) {
-                            checkArchive(offset == samples && count == capture.frameSamples,
-                                "Noncontiguous audio timeline or frame duration")
-                            validateAudio(capture, payload, count)
-                            audioPackets++
-                            // At most 1,000,000 records * 320 samples, so this cannot overflow Long.
-                            samples += count
-                            unavailableTailBookmarks = 0
-                        } else {
-                            checkArchive(count == 0 && payloadSize == 0 && offset <= samples,
-                                "Invalid bookmark timeline or payload")
-                            bookmarkCount++
-                            maxBookmark = maxOf(maxBookmark, offset)
-                            val retainedEnd = samples - if (samples == 0L) 0 else capture.preSkip
-                            if (offset > retainedEnd) unavailableTailBookmarks++
-                        }
-                        checkArchive(payloadSize.toLong() <= limits.maxPayloadBytes - encodedBytes,
-                            "Archive exceeds encoded payload limit")
-                        encodedBytes += payloadSize
-                        digest = sha(digest, wire)
-                        sequence++
-                        visitor?.invoke(ArchivePacket(kind, packetSequence, offset, count, payload, wire))
-                    }
-                    magic(prefix, "ASE3") -> {
-                        val wire = prefix + reader.exact(116)
-                        val seal = seal(wire)
-                        checkArchive(seal.deviceId == capture.deviceId && seal.captureId == capture.captureId &&
-                            seal.nextSequence == sequence && seal.audioPackets == audioPackets &&
-                            seal.encodedBytes == encodedBytes && seal.encodedSamples == samples &&
-                            seal.prefixSha256 == digest.hexString(), "Seal differs from verified packet prefix")
-                        val skip = if (samples == 0L) 0 else capture.preSkip
-                        checkArchive(seal.preSkip == skip && seal.endTrim < capture.frameSamples,
-                            "Invalid seal pre-skip or end trim")
-                        checkArchive(samples >= skip + seal.endTrim &&
-                            seal.sourceSamples == samples - skip - seal.endTrim,
-                            "Seal does not preserve exact retained source duration")
-                        if (seal.status == ReceiptStatus.FINALIZED) {
-                            checkArchive(seal.originalSourceSamples == seal.sourceSamples &&
-                                maxBookmark <= seal.sourceSamples, "Invalid final source length or bookmark")
-                        } else {
-                            checkArchive(seal.originalSourceSamples == null && seal.endTrim == 0,
-                                "Interrupted capture invents an original duration or final trim")
-                        }
-                        reader.eof()
-                        val open = receipt(capture, sequence, encodedBytes, samples, digest, ReceiptStatus.OPEN)
-                        val terminal = receipt(capture, sequence, encodedBytes, samples, sha(digest, wire), seal.status)
-                        if (physical != null) {
-                            if (physical.status == ReceiptStatus.OPEN) {
-                                checkArchive(seal.status == ReceiptStatus.INTERRUPTED &&
-                                    physical.encode().contentEquals(open.encode()),
-                                    "Physical OPEN receipt differs from exported pre-seal prefix")
-                            } else checkArchive(physical.encode().contentEquals(terminal.encode()),
-                                "Physical terminal receipt differs from verified archive")
-                        }
-                        return VerifiedArchive(file, capture, seal, terminal, physical, reader.digestHex(),
-                            reader.count, bookmarkCount,
-                            if (seal.status == ReceiptStatus.INTERRUPTED) unavailableTailBookmarks else 0, limits)
-                    }
-                    else -> throw ArchiveException("Unknown archive record; no resynchronization is permitted")
-                }
-            }
-        }
+        val stream = ArchiveStream.replayPrefix(file, physicalAck = physicalAck, limits = limits, visitor = visitor)
+        val result = stream.finish()
+        return VerifiedArchive(file, checkNotNull(result.manifest), checkNotNull(result.seal),
+            checkNotNull(result.receipt), result.physicalReceipt, checkNotNull(result.sha256),
+            result.validatedOffset, result.bookmarkCount, result.unavailableBookmarkCount, limits)
     }
 
     private fun manifest(wire: ByteArray): CaptureManifest {
@@ -290,7 +198,7 @@ object AuraArchive {
             skip, bitrate, profile, complexity, timeSource, startedAt, wire)
     }
 
-    private fun validateAudio(capture: CaptureManifest, payload: ByteArray, samples: Int) {
+    internal fun validateAudio(capture: CaptureManifest, payload: ByteArray, samples: Int) {
         checkArchive(payload.isNotEmpty(), "Audio packet has no payload")
         if (capture.codec == CaptureCodec.PCM16) {
             checkArchive(payload.size == samples * 2, "PCM payload length differs from sample count")
@@ -302,7 +210,8 @@ object AuraArchive {
         }
     }
 
-    private fun seal(wire: ByteArray): ArchiveSeal {
+    internal fun parseSeal(wire: ByteArray): ArchiveSeal {
+        checkArchive(wire.size == 120, "Invalid ASE3 seal length")
         crc(wire)
         checkArchive(magic(wire, "ASE3") && u8(wire, 4) == 3 && u16(wire, 6) == 0,
             "Unsupported ASE3 seal header")
@@ -316,7 +225,7 @@ object AuraArchive {
             wire.copyOfRange(84, 116).hexString(), status(u8(wire, 5), allowOpen = false), wire)
     }
 
-    private fun receipt(capture: CaptureManifest, sequence: Int, encoded: Long, samples: Long,
+    internal fun buildReceipt(capture: CaptureManifest, sequence: Int, encoded: Long, samples: Long,
                         digest: ByteArray, status: ReceiptStatus): ArchiveReceipt {
         val wire = ByteArray(94)
         "ACK3".toByteArray(Charsets.US_ASCII).copyInto(wire)
@@ -328,27 +237,6 @@ object AuraArchive {
         digest.copyInto(wire, 58)
         putLe(wire, 90, CRC32().apply { update(wire, 0, 90) }.value, 4)
         return parseReceipt(wire)
-    }
-
-    private class Reader(private val input: InputStream, private val maximum: Long) {
-        var count: Long = 0
-            private set
-        private val digest = MessageDigest.getInstance("SHA-256")
-        fun exact(size: Int): ByteArray {
-            checkArchive(size in 1..1301 && size.toLong() <= maximum - count, "Archive exceeds file limit")
-            val bytes = ByteArray(size)
-            var used = 0
-            while (used < size) {
-                val read = input.read(bytes, used, size - used)
-                checkArchive(read > 0, "Incomplete archive: complete terminal seal required")
-                used += read
-            }
-            count += size
-            digest.update(bytes)
-            return bytes
-        }
-        fun eof() { checkArchive(input.read() == -1, "Unexpected bytes after terminal seal") }
-        fun digestHex(): String = digest.digest().hexString()
     }
 }
 
@@ -384,9 +272,9 @@ internal fun putLe(bytes: ByteArray, offset: Int, value: Long, count: Int) {
 internal fun sha(vararg parts: ByteArray): ByteArray = MessageDigest.getInstance("SHA-256").run {
     parts.forEach { update(it) }; digest()
 }
-private fun magic(bytes: ByteArray, text: String): Boolean = bytes.size >= 4 &&
+internal fun magic(bytes: ByteArray, text: String): Boolean = bytes.size >= 4 &&
     (0..3).all { u8(bytes, it) == text[it].code }
-private fun crc(wire: ByteArray) {
+internal fun crc(wire: ByteArray) {
     checkArchive(wire.size >= 4, "Record is too short for a checksum")
     val actual = CRC32().apply { update(wire, 0, wire.size - 4) }.value
     checkArchive(actual == u32Bound(wire, wire.size - 4, 0xffff_ffffL), "Record checksum mismatch")

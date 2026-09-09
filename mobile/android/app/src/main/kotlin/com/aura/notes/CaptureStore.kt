@@ -132,6 +132,30 @@ class CaptureStore(context: Context) {
         renameNew(archiveInput ?: throw CaptureStoreException("No AURA archive was selected"), source)
         ackInput?.let { renameNew(it, File(staging, ACK_NAME)) }
         syncDirectory(staging)
+        publishStaging(db, staging)
+    }
+
+    /** Publish an already committed local download through the same independent
+     * archive/decode/bundle validation as a selected file. SQLite retains the
+     * original download even if copying, decoding or publication fails.
+     */
+    fun importDownload(session: DownloadSession): LocalCapture = locked { db ->
+        val progress = session.progress()
+        requireStore(progress.complete && progress.exportBytes <= MAX_SOURCE_BYTES,
+            "A completed download within the 128 MiB playback import limit is required")
+        val staging = File(pending, UUID.randomUUID().toString())
+        requireStore(staging.mkdir(), "Could not create a private download import directory")
+        syncDirectory(pending)
+        val source = session.export(File(staging, SOURCE_NAME))
+        val physical = source.physicalReceipt
+            ?: throw CaptureStoreException("Downloaded source is missing physical provenance")
+        writeNew(File(staging, ACK_NAME), physical.encode())
+        syncDirectory(staging)
+        publishStaging(db, staging)
+    }
+
+    private fun publishStaging(db: SQLiteDatabase, staging: File): LocalCapture {
+        val source = File(staging, SOURCE_NAME)
         val ack = optionalAck(staging)
         val verified = AuraArchive.verify(source, ack, LIMITS)
         requireStore(verified.capture.codec == CaptureCodec.OPUS,
@@ -161,7 +185,7 @@ class CaptureStore(context: Context) {
             }
             val finalBundle = loadBundle(destination)
             index(db, finalBundle)
-            return@locked row(db, key)!!
+            return row(db, key)!!
         }
 
         val metadata = JSONObject()
@@ -209,7 +233,7 @@ class CaptureStore(context: Context) {
         syncDirectory(complete)
         val published = loadBundle(destination)
         index(db, published)
-        row(db, key)!!
+        return row(db, key)!!
     }
 
     fun list(): List<LocalCapture> = locked { db ->

@@ -1,3 +1,5 @@
+FIXTURE finalized generation=42 export_bytes=37040 physical_bytes=37040 physical_status=1 export_status=1
+FIXTURE open generation=43 export_bytes=36634 physical_bytes=36514 physical_status=0 export_status=2
 CASE real_owned_Opus_finalized_and_OPEN_full_wire_roundtrip PASS
 CASE pending_join_immutable_cached_retry_and_response_sent_gate PASS
 CASE malformed_admission_does_not_consume_transaction_or_replace_cache PASS
@@ -10,4 +12,4 @@ CASE local_cancel_disconnect_reconnect_and_authorization_loss_drop_old_callbacks
 CASE checked_transaction_handle_and_revision_limits_test_only_injection PASS
 CASE private_and_overlapping_output_aliases_reject_before_any_write PASS
 CASE empty_catalog_empty_archives_and_ordered_CANCEL_preserve_source PASS
-PASS transfer cases=12 checks=50625 step_calls=4924 no_io_calls=4977 max_reads_per_step=1 transfer_bytes=4448 host_model_only=true
+PASS transfer cases=12 checks=50645 step_calls=4924 no_io_calls=4977 max_reads_per_step=1 transfer_bytes=4448 host_model_only=true

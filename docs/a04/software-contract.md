@@ -1,6 +1,6 @@
 # AURA A04 software and hardware contract
 
-Status: **active engineering specification with a host-tested Opus/NAND journal/recovery path and C archive → desktop transcription → local portal path**. Updated 2026-09-09. The current A03 firmware and its published binaries are unchanged. This document does not establish a working A04 device, a deployed mobile app, qualified battery behavior, or launch readiness.
+Status: **active engineering specification with a host-tested Opus/NAND journal/recovery path, C archive → desktop transcription → local portal path, and emulator-tested Android source storage/playback**. Updated 2026-09-09. The current A03 firmware and its published binaries are unchanged. This document does not establish a working A04 device, a deployed consumer mobile service, qualified battery behavior, or launch readiness.
 
 The target remains a premium circular pendant that reliably captures, preserves, understands, retrieves and uses the context its owner chooses to record. Offline use, optional continuous sessions, real-time assistance, memory, tasks, speech, and broad AI interoperability remain in scope. They are not removed because the initial source is incomplete. “Best in the category” needs measured comparative evidence; it cannot be established by a feature list or source review.
 
@@ -39,10 +39,23 @@ with exercised import, private storage, platform Opus playback and explicit
 context sharing. A portable [transfer command owner and Kotlin wire codec](transfer-wire-v1.md)
 now add exact-record resume, immutable replies, generation-bound capture
 selection and stale callback rejection above the bounded journal cursor. Twelve
-C groups and 24 combined Kotlin groups pass, including actual C-generated reply
-and fragment comparisons. This code is not yet connected to GATT, ownership
-enrollment or an Android durable download coordinator. The released local-import
-APK predates these transport components; host tests do not prove a phone link.
+C groups and **30 combined Kotlin groups / 82,213 checks** pass, including actual
+C-generated reply/fragment comparisons and **six incremental-validator groups /
+49,471 checks**. The complete-file and incremental paths use one canonical
+validator, with **19 complete C-generated archives**, exact Python ACK3/Ogg
+comparisons and independent FFmpeg sample-count checks.
+
+Android's [durable download store](../../mobile/android/DOWNLOADS.md) now commits
+exact source records and resume metadata in one SQLite transaction, replays
+saved prefixes after reopening, and preserves conflicting or corrupt evidence.
+Its `CaptureStore.importDownload` bridge exports the original archive and exact
+physical receipt through the existing platform-decoder and private-bundle
+publication path. The current development APK passed **19 Android runtime cases /
+366 assertions** on an API 29 emulator, including actual SQLite rollback/replay
+and decoded-library handoff, with zero lint findings. The Activity still exposes
+file import. GATT, ownership enrollment and a foreground recovery coordinator
+remain outstanding; these tests do not establish a live pendant-to-phone link or
+physical phone power-loss durability. [Android verification](../../mobile/android/VERIFICATION.md).
 
 ## Complete feature and evidence backlog
 
@@ -56,8 +69,8 @@ APK predates these transport components; host tests do not prove a phone link.
 | Multi-microphone audio | A04 stereo driver/adapter, first/second/mean selection, peak/clipping counters and explicit fault propagation host-tested; no physical audio qualification | Two appropriately spaced microphones; calibrated mono mix/selection; retain original capture format metadata | Channel polarity, phase, clipping, wind/clothing noise and speech intelligibility in the actual sealed case |
 | Bookmarks | Revision-3 C bookmarks survive verified local import, notes and real portal ingestion; A03 v1 still cannot export marks | Pendant gesture creates a sample-offset event; phone/portal jump to corresponding transcript/audio | Capture + bookmark + reconnect + export + playback round trip on real firmware |
 | Device identity | v1 filenames lack authenticated device identity; revision-3 archives and portal retain independent device/capture keys, but these are sender declarations | Stable private device identity plus persistent random capture identity; owner binding and physical re-pair/reset flow | Two devices, resets, reboots and credential rotations never merge captures; unauthorized identity claims rejected |
-| Reliable reconnection | A04 bounded cursor, ordered C command owner and Kotlin reply/fragment parsers host-tested; Android local import/recovery exercised separately | One mobile lifecycle/recovery owner; serial drain; durable inventory and retry state | iOS and Android foreground/background/process-death matrices, permissions off/on, bonds, out-of-range return |
-| Transfer retention and ACK | v1 explicit CRC-verified deletion; revision-3 journal committed-prefix/terminal receipts, C/Python agreement and durable desktop batch import tested; staged writers cannot issue receipts | End-to-end application receipt after durable publication, separate from RAM acceptance/BLE completion; authenticated acknowledged/deleted-segment reclaim | Kill receiver before/after commit, lose ACK, replay and verify exactly one source; physical MCU reclamation power-cut tests |
+| Reliable reconnection | A04 bounded cursor, ordered C command owner and Kotlin reply/fragment parsers host-tested; Android durable record/metadata commits, exact prefix replay and library handoff exercised on an emulator | Connect the durable store to one foreground GATT lifecycle/recovery owner, serial drain and retry state; then qualify background behavior | iOS and Android foreground/background/process-death matrices, permissions off/on, bonds, out-of-range return |
+| Transfer retention and ACK | v1 explicit CRC-verified deletion; revision-3 journal receipts, C/Python agreement, durable desktop batch import and Android SQLite download rollback/replay tested; physical OPEN remains distinct from an exported interrupted seal | End-to-end application receipt after durable publication, separate from RAM acceptance/BLE completion; authenticated acknowledged/deleted-segment reclaim | Kill receiver before/after commit, lose ACK, replay and verify exactly one source; physical MCU reclamation power-cut tests |
 | Searchable notes | Next.js/Convex owner-scoped notes/search and retained original source exercised locally; newly arrived unknown-time captures remain visible | Capture time confidence, editable title, transcript, summary, tags, filters and source playback | Deployed authenticated account flow; source remains accessible through edit/search/archive/delete |
 | Transcription and languages | Real C archive → desktop Whisper → local portal tested with synthetic English speech | Local/offline option plus explicit cloud choice; language detection/selection and accessible corrections | Representative accents/languages/noise, measured quality/cost/latency; disclosure when speaker attribution is uncertain |
 | Speaker attribution | Required | Phone/backend diarization with user-correctable labels; never infer a person's identity from a voice without an explicit enrollment feature | Overlap, short utterances, new speakers, corrections and source alignment tests |
@@ -76,7 +89,7 @@ Speech synthesis, LLM inference, semantic search and task execution belong on th
 
 ## Omi engineering practices to adopt
 
-1. **One capture truth and one recovery owner.** Omi's [product principles](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/PRODUCT.md) prioritize reliable capture/sync/retrieval. Its [transfer coordinator](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/app/lib/services/wals/recording_transfer_coordinator.dart) is a useful reference for coalesced recovery. AURA must implement one serial mobile owner, durable inventory and explicit phases: recording → preserved on pendant → preserved on phone → processing → note ready. Connection alone proves none of these.
+1. **One capture truth and one recovery owner.** Omi's [product principles](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/PRODUCT.md) prioritize reliable capture/sync/retrieval. Its [transfer coordinator](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/app/lib/services/wals/recording_transfer_coordinator.dart) is a useful reference for coalesced recovery. AURA's durable Android source store now exists; one serial GATT recovery coordinator must connect it to explicit phases: recording → preserved on pendant → preserved on phone → processing → note ready. Connection alone proves none of these.
 2. **Contracts plus real failure harnesses.** Preserve bounded regression cases: process exit before/after commit, full storage, dropped notifications, permissions, background restrictions, stale retrieval consent, and interrupted update. Generated checks must actually exercise the shared implementation and run locally/Vercel as applicable; no GitHub Actions.
 3. **Compression selected by measurement.** Omi's [dev-kit codec](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/omi/firmware/devkit/src/codec.c) reserves a 32,000-byte encoder stack and codec state. Its [configuration](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/omi/firmware/devkit/src/config.h) selects 160-sample, 32 kbps frames. AURA should port the approach with resource accounting; do not copy a static codec-state size without confirming the selected build's `opus_encoder_get_size()`.
 4. **Source-backed, revocable memory.** Omi's memory model and access gateway inspire provenance, revisions and fresh policy checks. AURA's canonical record is the owner-scoped capture/transcript and its reviewed derivatives. Search/vector indexes are derived candidates and must be rehydrated against current ownership/consent/revision/deletion.
@@ -117,7 +130,18 @@ The bounded port supports **128 captures**, never erases populated or unidentifi
 
 Real C-generated Opus archives now enter `aura import-capture`: the companion takes a bounded local snapshot, verifies the full archive, commits packets/terminal metadata to SQLite, exports Ogg Opus and exact-duration PCM WAV, and publishes source metadata last. A terminal-revision digest names each bundle. Interrupted recovery requires the explicit `--allow-interrupted` flag; it retains only complete verified records, marks the original total duration unknown, and labels bookmarks whose corresponding audio was lost in the encoder tail. A later completed source is preserved as a separate revision instead of overwriting that recovered prefix.
 
-Batch file import validates and commits the complete capture in one SQLite transaction, returning its receipt only after commit. This avoids the old per-packet quadratic scans for this import path. The live per-packet receive API still revalidates the complete prefix and is not a production-throughput claim. Durability depends on the operating system, filesystem and storage honoring flushes; desktop transaction tests do not prove physical NAND persistence, phone power loss, BLE transport or background mobile service. The separate journal/command tests establish the bounded modeled storage behavior described above.
+Desktop batch file import validates and commits the complete capture in one SQLite transaction, returning its receipt only after commit. This avoids the old per-packet quadratic scans for this import path. The Python live per-packet receive API still revalidates the complete prefix and is not a production-throughput claim. Durability depends on the operating system, filesystem and storage honoring flushes; desktop transaction tests do not prove physical NAND persistence, phone power loss, BLE transport or background mobile service. The separate journal/command tests establish the bounded modeled storage behavior described above.
+
+The separate [Android download path](../../mobile/android/DOWNLOADS.md) incrementally
+validates chunks of at most 256 bytes, retaining only an incomplete record of at
+most 1301 bytes. Exact complete records and their receipt/offset commit together;
+partial bytes stay in RAM. A storage or validation failure faults the session,
+and reopening revalidates the saved rows once before resuming. A seal alone does
+not complete a download: all selected bytes must be committed and the exact
+selected FINISH identity must match. The completed source can then enter the
+existing playback library through actual Opus decoding. Android emulator tests
+exercise these boundaries, while the GATT caller, enrollment, physical durability
+and background lifecycle remain separate work.
 
 A committed bundle is reused by checking its preserved archive, receipt, WAV hash/dimensions and source metadata; it is not decoded again just because a newer decoder is installed. New exports record PyAV and codec-library versions. Conflicting files are preserved and rejected. Missing final metadata after interrupted publication can be reconstructed by a verified reimport. A cooperative OS lock serializes imports into one output directory. Raw audio/archive/receipt files remain local unless the owner separately copies them.
 
@@ -138,7 +162,7 @@ External interfaces remain layered: clipboard/Markdown/JSON export for any chat,
 1. **Hardware contract:** exact KiCad MCP schematic/BOM/net/pin mapping, charger/dock/NTC choices, module/antenna keepout, serial NOR staging and assembly tolerances agreed by actual artifacts. Root owns these files.
 2. **A04 firmware bring-up:** new board target from the schematic, rails/storage/PDM/controls, truthful status, flash partitions, safe defaults and actual ARM build. A03 artifacts retain their identity. No charging or haptic qualification flag is enabled from a software test alone.
 3. **Codec, archive and storage:** shared revision-3 C/Python source, real Opus fixtures, packed NAND journal, W25N01GV command/SPI adapter and modeled recovery tests now exist and cross-build together. Remaining work includes physical timing/stack and electrical power cuts, representative listening/transcription comparisons, sustainable reclamation/capture rotation, recovery of unassociated material and concurrent PDM/capture/transfer integration.
-4. **Mobile loop:** native BLE recovery owner, durable source/receipt/outbox, foreground correctness then actual OS background qualification; local playback, timestamped transcript and bookmark navigation. A timer is not proof of background execution.
+4. **Mobile loop:** durable Android source/receipt storage, exact prefix replay and decoded-library handoff are implemented and emulator-tested. Connect them to native GATT, ownership enrollment and one foreground recovery coordinator; then qualify actual OS background behavior and any acknowledged outbox. Timestamped transcript and bookmark navigation remain required. A timer is not proof of background execution.
 5. **Portal/AI:** deployed Convex auth/recovery/deletion, immutable provenance, stable ingestion identity across token rotation, searchable current-consent context, reviewed tasks and tested client adapters. Required account/terms steps cannot be replaced by a local mock.
 6. **Security and updates:** authenticated ownership, protected storage, production signing/debug policy, rollback and update fault tests; export/delete/revoke/lost-device flows.
 7. **Physical qualification:** assembled A04 plus exact printed case/dock, real battery/charge thermal faults, power/audio/RF/comfort/runtime testing and documented first wear. CAD topology and zero ERC/DRC do not prove these.

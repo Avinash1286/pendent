@@ -39,22 +39,44 @@ def transfer_source_paths():
 
 
 def transfer_bindings():
-    return {path.relative_to(ROOT).as_posix(): digest(path) for path in transfer_source_paths()}
+    # Protect the actual bytes used by both complete and incremental checks,
+    # not only the transfer wire vectors. Never certify concurrently regenerated
+    # fixtures or changed canonical validator source under a later hash.
+    return {path.relative_to(ROOT).as_posix(): digest(path) for path in verification_source_paths()}
+
+
+def fixture_paths():
+    files = sorted((ROOT / "firmware/a04/fixtures").glob("*.aura"))
+    assert len(files) >= 10, "Actual C-generated source fixtures required"
+    owned = ROOT / "firmware/a04/verification/transfer-fixtures"
+    files += [owned / "finalized.aura", owned / "open.aura"]
+    paths = []
+    for file in files:
+        assert file.is_file(), f"Missing actual C archive: {file}"
+        receipts = [file.with_suffix(suffix) for suffix in (".physical.ack3", ".receipt", ".ack3")]
+        receipt = next((path for path in receipts if path.exists()), None)
+        assert receipt is not None, f"Missing exact paired C receipt: {file}"
+        paths.append((file, receipt))
+    return paths
+
+
+def verification_source_paths():
+    paths = list((CORE / "src").rglob("*.kt")) + [CORE / "build.gradle.kts", CORE / "README.md", Path(__file__)]
+    paths += [ROOT / "firmware/a04/ARCHIVE.md", ROOT / "companion/src/aura_companion/protocol_v2.py",
+              ROOT / "companion/src/aura_companion/archive_import.py"]
+    paths += transfer_source_paths()
+    paths += [path for pair in fixture_paths() for path in pair]
+    return sorted(set(paths))
 
 
 def fixture_rows():
-    fixture_dir = ROOT / "firmware/a04/fixtures"
     result = []
-    for file in sorted(fixture_dir.glob("*.aura")):
+    for file, receipt_file in fixture_paths():
         archive = read_archive(file, allow_interrupted=True)
-        receipt_file = file.with_suffix(".receipt")
-        if not receipt_file.exists():
-            receipt_file = file.with_suffix(".ack3")
-        physical = receipt_file.read_bytes() if receipt_file.exists() else None
-        if physical is not None:
-            Receipt.parse(physical)
+        physical = receipt_file.read_bytes()
+        Receipt.parse(physical)
         result.append((file, archive, physical))
-    assert len(result) >= 10, "Actual C-generated source fixtures required"
+    assert len({file.stem for file, _, _ in result}) == len(result), "Fixture output names must be unique"
     return result
 
 
@@ -110,10 +132,7 @@ def finish(build, ffmpeg, transfer_before):
                         decoded_pcm_sha256=hashlib.sha256(completed.stdout).hexdigest(), python_ogg_exact=True)
         evidence.append(item)
     assert not results, "Unexpected JVM fixture output"
-    source_paths = list((CORE / "src").rglob("*.kt")) + [CORE / "build.gradle.kts", CORE / "README.md", Path(__file__)]
-    source_paths += [ROOT / "firmware/a04/ARCHIVE.md", ROOT / "companion/src/aura_companion/protocol_v2.py",
-                     ROOT / "companion/src/aura_companion/archive_import.py"]
-    source_paths += transfer_source_paths()
+    source_paths = verification_source_paths()
     assert transfer_bindings() == transfer_before, "C transfer inputs changed during verification"
     sources = {path.relative_to(ROOT).as_posix(): digest(path) for path in sorted(source_paths)}
     assert all(sources[path] == expected for path, expected in transfer_before.items()), "Report source hashes differ from tested C transfer inputs"
@@ -121,7 +140,7 @@ def finish(build, ffmpeg, transfer_before):
     report = {"schema": "aura-kotlin-core-verification-v1", "physical_hardware_tested": False,
               "android_decoder_tested": False, "jvm_fixture_count": len(evidence),
               "transfer_wire_golden_sha256": transfer_before["firmware/a04/verification/transfer-wire-golden.tsv"],
-              "verification": "C archive bytes and receipts, independent Python mapping, JVM parser/mux, FFmpeg PCM length, actual C transfer wire and fragments",
+              "verification": "C archive bytes and receipts, independent Python mapping, shared complete/incremental JVM parser, strict prefix replay, JVM mux, FFmpeg PCM length, actual C transfer wire and fragments",
               "sources": sources,
               "fixtures": evidence}
     report_text = json.dumps(report, indent=2) + "\n"
@@ -152,6 +171,7 @@ def main():
     else:
         transfer_before = transfer_bindings()
     index = prepare(build) if not args.finish_only else build / "fixture-index.tsv"
+    assert transfer_bindings() == transfer_before, "Verification inputs changed during fixture preparation"
     if not args.finish_only:
         baseline.write_text(json.dumps(transfer_before, indent=2) + "\n", encoding="utf-8")
     if args.prepare_only:

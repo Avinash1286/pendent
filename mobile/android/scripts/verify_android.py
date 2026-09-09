@@ -38,7 +38,8 @@ def source_inputs() -> dict[str, str]:
     files = [p for base in ('app/src', 'core/src') for p in (APP / base).rglob('*') if p.is_file()]
     files += [p for p in APP.glob('*.gradle.kts')]
     files += [APP / name for name in ('app/build.gradle.kts', 'core/build.gradle.kts',
-                                    'gradle.properties', 'build.ps1', 'toolchain-lock.json')]
+                                    'gradle.properties', 'build.ps1', 'toolchain-lock.json',
+                                    'scripts/verify_android.py')]
     return {relative(p): sha(p) for p in sorted(set(files))}
 
 
@@ -126,8 +127,9 @@ def runtime(serial: str) -> None:
     marker = 'INSTRUMENTATION_RESULT: resultdetailJSON='
     lines = [line[len(marker):] for line in result.stdout.splitlines() if line.startswith(marker)]
     detail = json.loads(lines[0]) if len(lines) == 1 else {'passed': False, 'failure': 'Missing unique test result'}
+    terminal_codes = re.findall(r'^INSTRUMENTATION_CODE:\s*(-?\d+)\s*$', result.stdout, re.M)
     unchanged = prior['source_inputs'] == source_inputs()
-    passed = result.returncode == 0 and detail.get('passed') is True and unchanged
+    passed = result.returncode == 0 and detail.get('passed') is True and terminal_codes == ['-1'] and unchanged
     write_json('android-runtime.json', {
         'schema': 'aura.android.runtime.v1', 'created_utc': datetime.now(timezone.utc).isoformat(),
         'passed': passed, 'serial': serial, 'fingerprint': fingerprint,
@@ -135,6 +137,7 @@ def runtime(serial: str) -> None:
         'build_report_sha256': sha(build_report), 'source_inputs': prior['source_inputs'],
         'inputs_unchanged_during_test': unchanged, 'installation': installation,
         'instrumentation_exit_code': result.returncode, 'result': detail,
+        'instrumentation_terminal_codes': terminal_codes,
         'instrumentation_output_sha256': sha(log), 'verification_script_sha256': sha(Path(__file__)),
         'scope': 'Actual Android codec and SQLite with public synthetic C fixtures; no radio, microphone or wear test.'
     })

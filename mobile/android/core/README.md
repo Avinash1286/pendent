@@ -2,7 +2,7 @@
 
 This pure Kotlin/JVM module validates the existing experimental A04 **AUR3** archive and **ACK3** byte contract, response fragments, and the locked transfer command/response format. It uses Kotlin and the Java standard library, with no Android, networking, database, or decoder dependency. The native app owns private source copying, publication, playback, and lifecycle. No Omi source code is copied here.
 
-The authoritative definitions remain [ARCHIVE.md](../../../firmware/a04/ARCHIVE.md), the portable C writer, and the companion Python reader. This module accepts complete finalized and complete interrupted archives, including a complete bench export with a derived interrupted seal. It rejects raw unsealed prefixes, recognizable truncated records, malformed complete records, and trailing bytes. It never repairs or rewrites an input file.
+The authoritative definitions remain [ARCHIVE.md](../../../firmware/a04/ARCHIVE.md), the portable C writer, and the companion Python reader. Complete-file verification accepts finalized and interrupted archives, including a complete bench export with a derived interrupted seal. It rejects raw unsealed prefixes, recognizable truncated records, malformed complete records, and trailing bytes. Incremental validation can retain a strict complete-record prefix for later resume; it cannot mark that prefix complete. Neither API repairs or rewrites an input file.
 
 ## Application API
 
@@ -30,6 +30,57 @@ privateTemporaryOutput.use { output ->
 The parser bounds each record to 1301 bytes. Default file and encoded-payload limits are 320 MiB and 256 MiB, respectively, with at most 1,000,000 combined audio/bookmark records. `ArchiveLimits` can lower these limits. Values are validated before allocation or conversion. Unsigned 64-bit wire fields with their high bit set are rejected before conversion to signed `Long`, except the exact `UINT64_MAX` sentinel for unknown original duration. Duration validation uses checked subtraction instead of potentially overflowing addition. Sequence, identity, codec profile, time source, Opus TOC, CRC, chain hash, source trim, bookmarks, and terminal counts are checked against actual records.
 
 Bookmark locations are streamed rather than accumulated into an unbounded list. `unavailableBookmarkCount` preserves interrupted bookmarks inside the unavailable final lookahead: those offsets remain source evidence, but must not be shown as seekable retained audio. A later complete audio frame makes earlier lookahead bookmarks available. Finalized archives require every bookmark to lie within the exact final source duration.
+
+## Incremental validation and strict prefix replay
+
+`ArchiveStream` is the canonical validator behind both `AuraArchive.verify()` and
+`visitPackets()`. It accepts arbitrary chunks of 0–256 bytes through `feed()`,
+retains at most one incomplete 1301-byte record, and accumulates no packet list.
+An optional exact expected manifest binds every selected field, including its
+timestamp/profile. An optional physical ACK retains its independent scope.
+
+```kotlin
+val stream = ArchiveStream(
+    expectedManifest = selected.manifest.encode(),
+    physicalAck = selected.physicalReceipt.encode(),
+    recordVisitor = { recordStart, independentWireBytes ->
+        // Stage this exact validated record in the caller's transaction.
+        // The callback does not make that transaction durable.
+    },
+)
+val progress = stream.feed(nextChunkOfAtMost256Bytes)
+// progress.validatedOffset excludes progress.bufferedBytes.
+// receivedBytes = validatedOffset + bufferedBytes.
+// Declare exact EOF only after the caller has checked the selected source end:
+val finished = stream.finish()
+```
+
+`ArchiveProgress` exposes immutable manifest, current OPEN or terminal receipt,
+seal, physical receipt, bookmark counts, byte accounting and completion. Its
+`seal` becomes non-null after a valid terminal record, while `complete` and the
+whole-file `sha256` are available only after successful explicit `finish()`.
+The receipt and `validatedOffset` describe the same exact complete-record prefix.
+They do not imply an fsync, device acknowledgement, or committed database row.
+
+`recordVisitor` runs after validation for every manifest, packet and seal, with
+the exact start offset and independent bytes. The optional packet visitor follows
+it for audio/bookmarks. Snapshots may be read inside callbacks. A callback error,
+reentrant mutation, or validation failure poisons the instance; every later
+snapshot/feed/finish fails. The caller must handle its failed transaction and
+create a fresh parser from independently retained records. Earlier callback
+success cannot authorize publication after a later error.
+
+`ArchiveStream.replayPrefix(file, ...)` reads the stored prefix once and requires
+an actual manifest plus an exact complete-record boundary at EOF. It rejects an
+empty file or any partial tail, never discards bytes, and never synthesizes a seal.
+A sealed prefix returns complete; an OPEN prefix remains resumable. Replaying
+database records through `feed()` provides the same canonical checks. No serialized
+SHA state or receipt alone can substitute for revalidating the exact saved bytes.
+
+`finish()` requires a complete seal and checks the exact physical receipt. A
+physical OPEN receipt must match the computed pre-seal prefix of an interrupted
+export; it remains OPEN in the result. Successful finish is idempotent, but any
+nonempty bytes after a seal or declared EOF invalidate the stream.
 
 ## Physical provenance and receipt scope
 
@@ -139,8 +190,9 @@ uv run --project companion --locked python mobile/android/core/scripts/verify_co
 
 For separate build orchestration, run `--prepare-only`, invoke `:core:check` with `-PauraFixtureIndex=...` and `-PauraResultDirectory=...`, then run `--finish-only`. The script writes its generated index, JVM output, exact receipt/Ogg files, and source-bound report under the ignored `core/build/verification` directory, and publishes the compact report and JVM transcript in `core/verification`. It never accesses a serial device or personal recording.
 
-Preparation records the exact C golden TSV, wire specification, command-engine
-and generation-algorithm source hashes. They are checked after the JVM run and
+Preparation records the exact C archive/paired-receipt fixtures, golden TSV,
+canonical Kotlin/Python inputs, wire specification, command-engine and
+generation-algorithm source hashes. They are checked after the JVM run and
 again while finalizing the report. A change fails verification instead of binding
 a new fixture to an old run; the split prepare/finish flow retains the same
 baseline. Final evidence includes the golden TSV hash and all Kotlin source hashes.
@@ -157,6 +209,13 @@ generation boundaries, invalid headers/counts/echoes/flags, READ CRC and EOF,
 physical OPEN versus derived seals, FINISH identity conflicts, and defensive
 copies. The current C vectors supply 14 command/response pairs for finalized and
 OPEN captures, plus four complete fragment chains at MTUs 23 and 517. The actual
-JVM transcript records 338 transfer checks; the full core run records 32,728
-checks across 24 groups, 17 complete C archive fixtures and one rejected raw
-prefix, followed by independent FFmpeg sample-count checks.
+JVM transcript records 338 transfer checks. Incremental checks add strict prefix
+replay/resume, exact callback bytes and boundary offsets, all chunk widths 1–256
+for a maximum-size record, seal-before-EOF state, explicit failure poisoning,
+callback failures/reentrancy, quotas, immutable copies and bookmark availability.
+The owned finalized/OPEN C transfer archives and their paired physical ACKs also
+run through the independent Python/JVM/Ogg/FFmpeg path. The current full core run
+records 82,213 checks across 30 groups, including 49,471 incremental checks,
+19 complete C archive fixtures and one rejected raw prefix. These are host
+verification results; Android SQLite durability, GATT and physical recording are
+separate verification scopes.

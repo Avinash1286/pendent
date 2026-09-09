@@ -40,8 +40,11 @@ it with SELECT/READ/FINISH, ordered retries and bounded response copies. The
 matching Kotlin codec validates those logical replies. Their exact
 [wire contract](transfer-wire-v1.md) and C-generated fixtures are separate from
 the physical connection. The operation-count bound does not measure NAND/BLE
-latency. GATT integration, enrollment and an Android durable resume coordinator
-remain to be implemented before phone transport is enabled.
+latency. Android's [durable download owner](../../mobile/android/DOWNLOADS.md)
+now stores complete validated records and resume state in one SQLite transaction,
+then hands completed sources to the existing decoded library. GATT integration,
+enrollment and the foreground recovery coordinator remain to be implemented
+before phone transport is enabled.
 
 ## Proposed A04 BLE v1 surface
 
@@ -158,13 +161,17 @@ handles and RAM progress never survive reconnect as authority.
 
 At completion, independently validate the full archive, seal, EOF and digest,
 then commit the actual source to the phone's durable store before producing a
-phone ACK3 or presenting it as saved. The existing Python `DurableReceiver`
-demonstrates transaction ordering and revalidation; it is not an Android storage
-implementation. File-plus-database storage must flush file bytes before advancing
-durable metadata and reconcile the two after a crash, or store source records
-and receipt state in the same durable transaction. Avoid rescanning the entire
-prefix after every small BLE fragment; verify a resumed prefix once and batch
-complete records transactionally.
+phone ACK3 or presenting it as saved. The Python `DurableReceiver` demonstrates
+transaction ordering and revalidation. Android now has a separate `DownloadStore`
+using actual SQLite: exact complete records, count, offset and receipt commit in
+the same transaction. A failed transaction faults the live parser; reopening
+replays retained source once before publishing a resume offset. Partial records
+remain in RAM. The immutable selected descriptor excludes connection handles and
+transaction numbers. Completed source still passes through `CaptureStore`'s
+independent archive/Opus checks before playback publication. These implemented
+storage boundaries do not supply the GATT coordinator or establish physical
+power-loss durability. Avoid rescanning the entire prefix after every small BLE
+fragment; verify a resumed prefix once and batch complete records transactionally.
 
 Keep these receipts distinct:
 

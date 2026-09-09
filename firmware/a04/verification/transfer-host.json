@@ -1,8 +1,8 @@
 {
   "status": "host_transfer_engine_and_C_wire_vectors_passed_no_GATT_or_phone_claim",
-  "generated_at_utc": "2026-09-09T11:36:09.668148+00:00",
+  "generated_at_utc": "2026-09-09T11:52:09.967205+00:00",
   "host_cases": 12,
-  "assertions": 50625,
+  "assertions": 50645,
   "bounded_step_calls": 4924,
   "no_IO_API_calls": 4977,
   "max_NAND_reads_per_step": 1,
@@ -21,7 +21,7 @@
     "private_and_overlapping_output_aliases_reject_before_any_write",
     "empty_catalog_empty_archives_and_ordered_CANCEL_preserve_source"
   ],
-  "host_summary": "PASS transfer cases=12 checks=50625 step_calls=4924 no_io_calls=4977 max_reads_per_step=1 transfer_bytes=4448 host_model_only=true",
+  "host_summary": "PASS transfer cases=12 checks=50645 step_calls=4924 no_io_calls=4977 max_reads_per_step=1 transfer_bytes=4448 host_model_only=true",
   "golden_vectors": {
     "path": "firmware/a04/verification/transfer-wire-golden.tsv",
     "sha256": "92236fe92e39c4ad914267f5f9600e49f72b90dfe14b8c11d4236953c8c73659",
@@ -44,12 +44,74 @@
       "device_id": "11111111111111111111111111111111",
       "incarnation": "a402030405060708090a0b0c0d0e0f10"
     },
-    "format": "Comment header; name<TAB>kind<TAB>hex; same command/response names; fragment23/fragment517 share response name"
+    "format": "Comment header; name<TAB>kind<TAB>hex; same command/response names; fragment23/fragment517 share response name",
+    "unchanged_from_pre_run": true
+  },
+  "receiver_fixtures": {
+    "directory": "firmware/a04/verification/transfer-fixtures",
+    "fixtures": [
+      {
+        "name": "finalized",
+        "allocation_generation": 42,
+        "capture_id": "ff88b7f46b5c9f419b3f35d0515d8fa5",
+        "file": "firmware/a04/verification/transfer-fixtures/finalized.aura",
+        "file_sha256": "a68ad1d341fb1a3f98dcc0d8d15a7ed7d8ad7b472152b8ca690f48ada06b3406",
+        "export_bytes": 37040,
+        "physical_receipt_file": "firmware/a04/verification/transfer-fixtures/finalized.physical.ack3",
+        "physical_receipt_sha256": "3b426f1d45542ad20ef427a14d6b43151c656acdbfb286ca5a83036d600e14a9",
+        "physical_receipt_bytes": 94,
+        "physical_bytes": 37040,
+        "physical_status": 1,
+        "export_status": "finalized",
+        "derived_seal": false,
+        "source_fixture": "firmware/a04/fixtures/journal-0.aura",
+        "source_fixture_sha256": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+        "original_record_bytes_unchanged": true,
+        "audio_packets": 378,
+        "source_samples": 120847,
+        "original_source_samples": 120847,
+        "decoded_samples": 120847,
+        "waveform_snr_db": 11.919,
+        "matches_SELECT_and_FINISH_vectors": true,
+        "provenance": "Real existing C Opus packets rebound to generation-derived owned v2 NAND, remounted, cursor READ bytes compared to exact full export, FINISH verified before fixture write"
+      },
+      {
+        "name": "open",
+        "allocation_generation": 43,
+        "capture_id": "24d4008368e06638e90b89d68d221fbd",
+        "file": "firmware/a04/verification/transfer-fixtures/open.aura",
+        "file_sha256": "254d96d89ab8b3aedfdebfcef61b43f88a282bcacf469c08d373ef584caa505e",
+        "export_bytes": 36634,
+        "physical_receipt_file": "firmware/a04/verification/transfer-fixtures/open.physical.ack3",
+        "physical_receipt_sha256": "c4640af1a29d286a5ec87b258fdf5f4fdf3d51fad309d0dd68b475234f393405",
+        "physical_receipt_bytes": 94,
+        "physical_bytes": 36514,
+        "physical_status": 0,
+        "export_status": "interrupted",
+        "derived_seal": true,
+        "source_fixture": "firmware/a04/fixtures/journal-2.aura",
+        "source_fixture_sha256": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+        "original_record_bytes_unchanged": true,
+        "audio_packets": 364,
+        "source_samples": 116440,
+        "original_source_samples": null,
+        "decoded_samples": 116440,
+        "waveform_snr_db": 11.919,
+        "matches_SELECT_and_FINISH_vectors": true,
+        "provenance": "Real existing C Opus packets rebound to generation-derived owned v2 NAND, remounted, cursor READ bytes compared to exact full export, FINISH verified before fixture write"
+      }
+    ],
+    "independent_decoder": {
+      "path": "C:\\Users\\avina\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.EXE",
+      "sha256": "09948d4cdd0650da6ff5a87577469f2a218dc2615ae379f8f734d24c49de0f73",
+      "version": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+    },
+    "scope": "Deterministic public host-model test inputs; physical ACK3 remains distinct from export or phone durable receipt"
   },
   "code_source_sha256": {
     "firmware/a04/include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
     "firmware/a04/src/aura_transfer.c": "07db2c0944fb3bc76865e6cda2a1e9014fc2807288666aeac9041cff0a110e6e",
-    "firmware/a04/tests/host_transfer.c": "ac24a7eb9c263f4209dce731d4a2f2ff32b0d3f2e1e4419dec77a063dc130444",
+    "firmware/a04/tests/host_transfer.c": "328dd712c86a38cfe307ba8a499a047c804f319ac669d127625f3884dc603b32",
     "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
     "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
     "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
@@ -70,14 +132,18 @@
     "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
     "firmware/a04/scripts/build.ps1": "43a98704454146a78aad4a3a4a8388159c2b142dcd31b89ac8d87df48f34fc47",
     "firmware/a04/scripts/verify_cursor.py": "5a0b209c8eb598abd5ecfd672461c96f0a83d597c4777f9dc3b5cc0c3ba56387",
-    "firmware/a04/scripts/verify_transfer.py": "16cba74a4ac4d7d3ae1104a0b0c0028fe47a0f24197633c86517be91179e9ffc",
+    "firmware/a04/scripts/verify_transfer.py": "c4d36e562a0ec88e53ae0f0cbb3e7094b23d0dd15ad47b8a94d86ef33bc713f5",
+    "firmware/a04/scripts/verify_fixtures.py": "a39972f6065f78d9c70b550a963c95f660e46bc4e67f2404117347cf7f71689e",
     "firmware/a04/fixtures/journal-0.aura": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
     "firmware/a04/fixtures/journal-2.aura": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
-    "docs/a04/transfer-wire-v1.md": "6dac92751a90c279fc948a4cd9782efbc290e5f9640a2ce9d8252f079f60073b"
+    "firmware/a04/fixtures/source-speech-16k.wav": "845096068f1fb6a944ba1aecdb7cc6a1f27d0096a5a78b60b09011c310dbe46e",
+    "docs/a04/transfer-wire-v1.md": "6dac92751a90c279fc948a4cd9782efbc290e5f9640a2ce9d8252f079f60073b",
+    "companion/src/aura_companion/protocol.py": "0f3a3d8f70186c9a537272acbf393ca9fa9e406dcb3ff95f66b3dc17f44a1f33",
+    "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
   },
-  "executable_sha256": "7efd69bfae035f7688096433e853713297cdfad6e04b4c82ec19395a38bf02f8",
+  "executable_sha256": "86597deddaa5fa623e3c1dd1bc4ea86489a0577ae4ed7d7e9dc9664759635c33",
   "linked_Opus_library_sha256": "e4cec8ded62711377bd5189e5d22121e17d7da6924169d0870e9ff59f21fb6a4",
-  "transcript_sha256": "56eef23b859161040bbc21ef406747c0fcc059cb1286011ada67d7166db883c9",
+  "transcript_sha256": "aec53bca02ac56db69df493936410613130e494103f3d4499e5705b3b8c59c4a",
   "build_command": [
     "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\cmake\\data\\bin\\cmake.exe",
     "--build",
@@ -94,7 +160,8 @@
     "F:\\circuit\\.tools\\a04-opus\\host\\aura_transfer_test.exe",
     "F:\\circuit\\firmware\\a04\\fixtures\\journal-0.aura",
     "F:\\circuit\\firmware\\a04\\fixtures\\journal-2.aura",
-    "F:\\circuit\\firmware\\a04\\verification\\transfer-wire-golden.tsv"
+    "F:\\circuit\\firmware\\a04\\verification\\transfer-wire-golden.tsv",
+    "F:\\circuit\\firmware\\a04\\verification\\transfer-fixtures"
   ],
   "compiler": {
     "command": [
@@ -126,6 +193,8 @@
   "verified": [
     "real journal/cursor/NAND model with owned generation-derived captures",
     "unchanged existing real Opus payloads reserialized under deterministic public owners",
+    "saved owned finalized and physical-OPEN archives/ACK3 match full transfers and independent Python validation",
+    "independent FFmpeg decode of saved fixtures preserves exact source duration and speech regression SNR",
     "exact HELLO/LIST/SELECT/READ/FINISH/CANCEL layouts and physical receipt provenance",
     "at most one NAND read per step; no NAND programs or erases by transport APIs",
     "pending joins and completed cached retries do not repeat NAND I/O",

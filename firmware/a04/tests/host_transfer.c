@@ -20,7 +20,7 @@ static uint32_t revision,handle;
 static unsigned checks,cases,max_reads;
 static const char *case_name;
 static FILE *golden;
-static const char *final_fixture,*open_fixture;
+static const char *final_fixture,*open_fixture,*fixture_output;
 #define CHECK(x) do{++checks;if(!(x)){fprintf(stderr,"FAIL transfer %s line=%d: %s\n",case_name,__LINE__,#x);exit(1);}}while(0)
 #define START(x) do{case_name=(x);}while(0)
 #define PASS() do{++cases;printf("CASE %s PASS\n",case_name);}while(0)
@@ -237,6 +237,24 @@ static void fragments(uint16_t txn,const char *prefix)
     for(size_t n=0;n<sizeof(part);++n)CHECK(part[n]==0xA5);
     CHECK(copy_at(session,part,logical_bytes-1,&bytes)==AURA_TRANSFER_BUFFER_SMALL&&bytes==0);
 }
+static void save_fixture_file(const char *name,const uint8_t *data,size_t bytes)
+{
+    char path[1024];int length=snprintf(path,sizeof(path),"%s/%s",fixture_output,name);
+    CHECK(length>0&&(size_t)length<sizeof(path));FILE *file=fopen(path,"wb");CHECK(file);
+    CHECK(fwrite(data,1,bytes,file)==bytes);CHECK(!fclose(file));
+}
+static void save_receiver_fixture(bool opened)
+{
+    if(!fixture_output)return;
+    /* These bytes were just compared against every successful READ and the
+     * final physical FINISH receipt. Do not turn OPEN into a terminal ACK. */
+    CHECK(expected_bytes==physical_bytes+(opened?120u:0u));
+    CHECK(receipt[5]==(opened?0:AURA_ARCHIVE_FINALIZED));
+    save_fixture_file(opened?"open.aura":"finalized.aura",expected,expected_bytes);
+    save_fixture_file(opened?"open.physical.ack3":"finalized.physical.ack3",receipt,sizeof(receipt));
+    printf("FIXTURE %s generation=%u export_bytes=%zu physical_bytes=%zu physical_status=%u export_status=%u\n",
+        opened?"open":"finalized",opened?43u:42u,expected_bytes,physical_bytes,receipt[5],expected[expected_bytes-115]);
+}
 static void real_roundtrips(void)
 {
     START("real_owned_Opus_finalized_and_OPEN_full_wire_roundtrip");
@@ -255,6 +273,7 @@ static void real_roundtrips(void)
             CHECK(count>0);offset+=count;CHECK(++txn<2000);}
         finish_response(txn++,mode!=0,mode?"open.finish":"final.finish");
         CHECK(medium.reads-reads<=2u*62u*journal.captures[0].blocks+8u);
+        save_receiver_fixture(mode!=0);
         CHECK(!read_response(txn++,offset,256,mode?"open.read-eof":"final.read-eof"));
         cmdbytes=command(cmd,AURA_TRANSFER_CANCEL,txn,handle,0,0);bytes=exchange(cmd,cmdbytes,out);
         CHECK(bytes==8&&out[0]==0&&get(out+4,4)==handle);golden_pair(mode?"open.cancel":"final.cancel",cmd,cmdbytes,out,bytes);
@@ -508,7 +527,10 @@ static void empty_and_cancelled(void)
 }
 int main(int argc,char **argv)
 {
-    START("arguments");CHECK(argc==4);final_fixture=argv[1];open_fixture=argv[2];golden=fopen(argv[3],"wb");CHECK(golden);
+    START("arguments");CHECK(argc==4||argc==5);final_fixture=argv[1];open_fixture=argv[2];
+    /* Optional directory is explicit and must already exist; no implicit
+     * fixtures/ root writes or directory creation by the portable C harness. */
+    fixture_output=argc==5?argv[4]:NULL;golden=fopen(argv[3],"wb");CHECK(golden);
     CHECK(fprintf(golden,"# name\tkind\thex\n")>0);
     real_roundtrips();retries_and_gate();malformed_and_contextual();boundary_resume();ownership_and_catalog();
     source_failure();lifecycle();counter_limits();output_aliases();empty_and_cancelled();

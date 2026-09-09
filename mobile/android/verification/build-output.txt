@@ -12,14 +12,14 @@ Reusing configuration cache.
 > Task :app:parseDebugLocalResources UP-TO-DATE
 > Task :core:compileKotlin UP-TO-DATE
 > Task :app:generateDebugRFile UP-TO-DATE
-> Task :app:javaPreCompileDebug UP-TO-DATE
-> Task :app:generateDebugAssets UP-TO-DATE
 > Task :core:compileJava NO-SOURCE
 > Task :core:classes UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets UP-TO-DATE
 > Task :app:compressDebugAssets UP-TO-DATE
-> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
 > Task :core:jar UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
 > Task :app:checkDebugDuplicateClasses UP-TO-DATE
 > Task :app:desugarDebugFileDependencies UP-TO-DATE
 > Task :app:mergeExtDexDebug UP-TO-DATE
@@ -68,37 +68,34 @@ Reusing configuration cache.
 > Task :app:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
 > Task :app:extractProguardFiles UP-TO-DATE
 > Task :app:preDebugUnitTestBuild UP-TO-DATE
-
 > Task :app:compileDebugKotlin
-w: file:///F:/circuit/mobile/android/app/src/main/kotlin/com/aura/notes/MainActivity.kt:341:68 'static field SOFT_INPUT_ADJUST_RESIZE: Int' is deprecated. Deprecated in Java.
-
 > Task :app:compileDebugJavaWithJavac NO-SOURCE
 > Task :app:processDebugJavaRes UP-TO-DATE
 > Task :app:mergeDebugJavaResource UP-TO-DATE
 > Task :app:bundleDebugClassesToCompileJar
-> Task :app:compileDebugAndroidTestKotlin UP-TO-DATE
-> Task :app:compileDebugAndroidTestJavaWithJavac UP-TO-DATE
-> Task :app:processDebugAndroidTestJavaRes UP-TO-DATE
-> Task :app:mergeDebugAndroidTestJavaResource UP-TO-DATE
-> Task :app:dexBuilderDebugAndroidTest UP-TO-DATE
-> Task :app:mergeProjectDexDebugAndroidTest UP-TO-DATE
-> Task :app:packageDebugAndroidTest UP-TO-DATE
-> Task :app:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
-> Task :app:assembleDebugAndroidTest UP-TO-DATE
-> Task :app:generateDebugAndroidTestLintModel
-> Task :app:generateDebugLintReportModel
-> Task :app:generateDebugUnitTestLintModel
 > Task :app:dexBuilderDebug
 > Task :app:mergeProjectDexDebug
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect UP-TO-DATE
 > Task :app:assembleDebug
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:compileDebugAndroidTestKotlin
+> Task :app:compileDebugAndroidTestJavaWithJavac UP-TO-DATE
+> Task :app:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:dexBuilderDebugAndroidTest
+> Task :app:mergeProjectDexDebugAndroidTest
+> Task :app:packageDebugAndroidTest
+> Task :app:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebugAndroidTest
+> Task :app:lintAnalyzeDebug
 > Task :app:lintAnalyzeDebugAndroidTest
 > Task :app:lintAnalyzeDebugUnitTest
-> Task :app:lintAnalyzeDebug
 > Task :app:lintReportDebug
 > Task :app:lintDebug
 
-BUILD SUCCESSFUL in 1m 9s
-76 actionable tasks: 13 executed, 63 up-to-date
+BUILD SUCCESSFUL in 1m 42s
+76 actionable tasks: 17 executed, 59 up-to-date
 Configuration cache entry reused.

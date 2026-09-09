@@ -166,8 +166,8 @@
     }
   ],
   "thresholdMm3": 0.001,
-  "rigidSolidCount": 54,
-  "softSolidCount": 12,
+  "rigidSolidCount": 57,
+  "softSolidCount": 13,
   "nativePlacementImported": false,
   "physicalQualification": false,
   "forceQualification": false,
@@ -456,6 +456,8 @@
       "samples": 49,
       "movingObjects": [
         "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "13_LOWER_STEEL_STIFFENER",
+        "SOFT_STIFFENER_DIELECTRIC",
         "SOFT_PCB_CLAMP_0",
         "SOFT_PCB_CLAMP_1",
         "SOFT_PCB_CLAMP_2",
@@ -527,8 +529,10 @@
       "movingObjects": [
         "04_CAPTIVE_FACE",
         "05_FLUSH_STATUS_WINDOW",
-        "07_CARTRIDGE_KEEPER",
+        "07_CARTRIDGE_KEEPER_LEFT",
+        "15_CARTRIDGE_KEEPER_RIGHT",
         "08_MEASURED_PLUNGER_SHOE",
+        "14_INSULATING_CONTACT_PAD",
         "SOFT_CAPTURE_FOAM"
       ],
       "targetObjects": [
@@ -584,12 +588,29 @@
         "BOUND_MIC_TERMINALS_7.2",
         "BOUND_STATUS_LED",
         "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "13_LOWER_STEEL_STIFFENER",
+        "SOFT_STIFFENER_DIELECTRIC",
         "SOFT_PCB_CLAMP_0",
         "SOFT_PCB_CLAMP_1",
         "SOFT_PCB_CLAMP_2",
         "SOFT_FACE_RETURN_0",
         "SOFT_FACE_RETURN_1",
         "SOFT_FACE_RETURN_2"
+      ],
+      "findings": [],
+      "intentionalEnvelopeContacts": [],
+      "pass": true
+    },
+    {
+      "path": "07a steel and liner into carrier underside",
+      "method": "Before front insertion, seat the lined steel from the carrier underside. Hold this unfastened subassembly on a fixture until the closure captures its root; bonding and measured shims remain process work.",
+      "samples": 17,
+      "movingObjects": [
+        "13_LOWER_STEEL_STIFFENER",
+        "SOFT_STIFFENER_DIELECTRIC"
+      ],
+      "targetObjects": [
+        "03_PCB_CLAMP_AND_FACE_GUIDE"
       ],
       "findings": [],
       "intentionalEnvelopeContacts": [],
@@ -606,10 +627,13 @@
       "targetObjects": [
         "01_FIXED_CUP",
         "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "13_LOWER_STEEL_STIFFENER",
         "04_CAPTIVE_FACE",
         "05_FLUSH_STATUS_WINDOW",
-        "07_CARTRIDGE_KEEPER",
+        "07_CARTRIDGE_KEEPER_LEFT",
+        "15_CARTRIDGE_KEEPER_RIGHT",
         "08_MEASURED_PLUNGER_SHOE",
+        "14_INSULATING_CONTACT_PAD",
         "09_PRIVACY_FORK",
         "10_PRIVACY_KEEPER",
         "11_CONTACT_ACCESS_CARRIER",
@@ -708,7 +732,8 @@
       "method": "Local subassembly insertion sampled0.25mm",
       "samples": 17,
       "movingObjects": [
-        "08_MEASURED_PLUNGER_SHOE"
+        "08_MEASURED_PLUNGER_SHOE",
+        "14_INSULATING_CONTACT_PAD"
       ],
       "targetObjects": [
         "04_CAPTIVE_FACE",
@@ -720,14 +745,16 @@
     },
     {
       "path": "12 cartridge keeper dogleg insertion",
-      "method": "Reverse removal: slide5mm to clear positive rail ledges while staying inside flange; then lower5mm toward rear. Reverse order inserts the keeper before carrier/face assembly.",
-      "samples": 41,
+      "method": "Reverse removal: slide3.5mm to clear positive rail ledges while staying inside flange; then lower5mm toward rear. Reverse order inserts the keeper before carrier/face assembly.",
+      "samples": 35,
       "movingObjects": [
-        "07_CARTRIDGE_KEEPER"
+        "07_CARTRIDGE_KEEPER_LEFT",
+        "15_CARTRIDGE_KEEPER_RIGHT"
       ],
       "targetObjects": [
         "04_CAPTIVE_FACE",
         "08_MEASURED_PLUNGER_SHOE",
+        "14_INSULATING_CONTACT_PAD",
         "SOFT_CAPTURE_FOAM"
       ],
       "findings": [],
@@ -746,11 +773,14 @@
         "01_FIXED_CUP",
         "02_THREADED_BEZEL",
         "03_PCB_CLAMP_AND_FACE_GUIDE",
+        "13_LOWER_STEEL_STIFFENER",
         "04_CAPTIVE_FACE",
         "05_FLUSH_STATUS_WINDOW",
         "06_FIXED_DIFFUSER",
-        "07_CARTRIDGE_KEEPER",
+        "07_CARTRIDGE_KEEPER_LEFT",
+        "15_CARTRIDGE_KEEPER_RIGHT",
         "08_MEASURED_PLUNGER_SHOE",
+        "14_INSULATING_CONTACT_PAD",
         "09_PRIVACY_FORK",
         "10_PRIVACY_KEEPER",
         "11_CONTACT_ACCESS_CARRIER",
@@ -803,13 +833,13 @@
       "pass": true
     }
   ],
-  "booleanEvaluations": 2630,
+  "booleanEvaluations": 2905,
   "allStaticRigidPass": true,
   "allSampledOperatingPass": true,
   "allSampledAssemblyPass": true,
-  "blendSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
-  "manifestSha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d",
-  "checkerSha256": "73bcca4e63a461cfd6c7fc494e5d622af7310826e5a89a89deb7bc46dd377ffe",
+  "blendSha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9",
+  "manifestSha256": "93140436d709666562f97995b759652fd92a6ab2564f4bbc3c6fea50cbbcd60d",
+  "checkerSha256": "2a7110b58eb848e0549f637d890b9044c74b62b0547a5c110086b53c5c5c1966",
   "exclusions": [
     "No continuous proof: these are finite CSG pose samples, with narrow collisions possible between samples.",
     "Capture sweep uses calibrated2.25mounted-height and0.20actuator-travel example; actual mounted height, first operation, allowed endpoint and foam force remain unqualified.",

@@ -8,7 +8,7 @@ An open product-development project for a compact necklace AI note-taking device
 
 ## A04 circular redesign — in progress
 
-[![AURA A04 M2: actual 43 mm circular development mechanism, pale face and champagne-looking polymer finish; unqualified engineering candidate](enclosure/a04/mechanism-m2/documented-pack/m2-assembled.png)](enclosure/a04/mechanism-m2/README.md)
+[![AURA A04 M2 S1: actual 43 mm circular development mechanism, pale face and champagne-looking polymer finish; unqualified engineering candidate](enclosure/a04/mechanism-m2/documented-pack/m2-assembled.png)](enclosure/a04/mechanism-m2/README.md)
 
 A04 is a fresh circular design created through **KiCad MCP**, with a physical microphone disconnect, separate update-storage hardware and a source-preserving audio protocol. The current M2 mechanism is **43 mm across and 12.2 mm deep**, accommodating the actual 1.6 mm draft PCB and a 4.3 mm pack allowance. An 11.2 mm variant requires an unselected thinner pack. The earlier 40 × 10 mm goal remains an aspiration, not the dimensions of these files. **A04 is not ready to fabricate, print as a complete device, wear or sell.**
 
@@ -18,12 +18,12 @@ The current checkpoint includes a **72-reference schematic candidate**, monitore
 
 The working local software path now takes a **real C-generated audio archive through local Whisper transcription into Next.js/Convex**. It preserves the original capture, exact audio duration, bookmarks and transcript provenance. Interrupted captures remain explicit, and token rotation does not duplicate an existing source. These checks use synthetic speech; microphone, Bluetooth and worn-device behavior still need physical validation. [Try the archive importer](companion/README.md#a04-archive-import--040) · [Read the verification](companion/VERIFICATION.md) · [Portal provenance and recovery](docs/a04/portal-provenance.md).
 
-The **M2 mechanism** resolves the modeled M1 insertion, board-support and lightpipe-interference problems with a removable front bezel, supported PCB, separate face/shoe stops and a measured privacy keeper. Both depth variants contain **12 candidate part STLs plus two unpowered gauges**. Their mesh and sampled motion checks pass; forces, printing tolerances, all 72 native PCB features, the selected battery and real assembly remain unqualified. [Blender source, parts and checks](enclosure/a04/mechanism-m2/README.md) · [Earlier process coupon kit](enclosure/a04/coupon/README.md).
+The **M2 S1 mechanism** keeps the removable bezel and supported PCB, replacing inadequate resin bending links with a separate steel shoe/support and insulating contact pad. Each depth variant contains **12 polymer part models, three hardware form models and two unpowered gauges**. The metal/film forms are not functional resin-print instructions. Mesh and sampled motion checks cover the revised assembly; analytical force screening supports further unpowered joint testing. Materials, tolerances, switch endpoints, all 72 native PCB features, the battery and real assembly remain unqualified. [Blender source, parts and checks](enclosure/a04/mechanism-m2/README.md) · [Earlier process coupon kit](enclosure/a04/coupon/README.md).
 
 <details>
 <summary>Inspect the A04 M2 experimental parts</summary>
 
-![Actual A04 M2 experimental part meshes; green board and ochre pack are unpowered fit gauges, not electronics](enclosure/a04/mechanism-m2/documented-pack/m2-exploded.png)
+![Actual A04 M2 S1 experimental part meshes; green board and ochre pack are unpowered fit gauges, not electronics](enclosure/a04/mechanism-m2/documented-pack/m2-exploded.png)
 
 The exploded offsets show individual parts; separate motion reports check sampled assembly paths. Read the [remaining assembly and release gates](enclosure/a04/mechanism-m2/README.md#assembly-and-release-gates) before using these files. The [M1 experiment and its failures](enclosure/a04/mechanism/README.md) and [original 40 mm appearance study](enclosure/a04/study/aura-a04-study.png) remain available as earlier work.
 

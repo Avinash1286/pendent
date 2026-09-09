@@ -1,10 +1,10 @@
 {
   "view": "exploded",
-  "sourceSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
-  "rendererSha256": "311facf430a54c05e42f08ce0c4205a4043fcfd3ae9bc29f3889026839919186",
+  "sourceSha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9",
+  "rendererSha256": "e56fd67febc81132c4d831142a5493aa944cb191dc55f703881b63671512da53",
   "image": "documented-pack/m2-exploded.png",
-  "imageSha256": "5e1d154869fc466a3b2056047f8cf41183ad38d8e76caeca91c2bdda020debbd",
-  "inspectionBlendSha256": "6e940fd2a87351fb6359f5ce35dd93b2c2b80cfeb8785e63bc9719c46c322d8c",
+  "imageSha256": "81cbe7242c9375e97eb50afb946c38df50f2ad75c4194efadc65df22a3c85c88",
+  "inspectionBlendSha256": "b7c96cd523db3366a49187d953cf837a73c2662023c77a6307fa6d7b9fdf18b0",
   "bodyDiameterMm": 43,
   "bodyDepthMm": 12.2,
   "physicalQualification": false,
@@ -41,10 +41,25 @@
       0,
       46
     ],
-    "07_CARTRIDGE_KEEPER": [
+    "07_CARTRIDGE_KEEPER_LEFT": [
       -28,
       -5,
       28
+    ],
+    "15_CARTRIDGE_KEEPER_RIGHT": [
+      -28,
+      3,
+      28
+    ],
+    "13_LOWER_STEEL_STIFFENER": [
+      0,
+      0,
+      19
+    ],
+    "14_INSULATING_CONTACT_PAD": [
+      -36,
+      -9,
+      39
     ],
     "08_MEASURED_PLUNGER_SHOE": [
       -28,

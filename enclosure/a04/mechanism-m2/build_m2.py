@@ -17,7 +17,7 @@ bpy.data.orphans_purge(do_local_ids=True,do_linked_ids=True,do_recursive=True)
 sc=bpy.context.scene;sc.unit_settings.system='METRIC';sc.unit_settings.length_unit='MILLIMETERS';sc.unit_settings.scale_length=.001
 def mat(n,c):
  m=bpy.data.materials.new(n);m.use_nodes=True;m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*c,1);return m
-mats={'part':mat('Trial polymer',(.5,.47,.4)),'gauge':mat('Unpowered gauge',(.05,.2,.15)),'bound':mat('PROPOSED maximum',(.2,.23,.25)),'soft':mat('Measured soft interface',(.25,.1,.05))}
+mats={'part':mat('Trial polymer',(.5,.47,.4)),'gauge':mat('Unpowered gauge',(.05,.2,.15)),'bound':mat('PROPOSED maximum',(.2,.23,.25)),'soft':mat('Measured soft interface',(.25,.1,.05)),'hardware':mat('Separate metal or dielectric stock',(.46,.50,.52))}
 def box(n,d,c):
  bpy.ops.mesh.primitive_cube_add(size=1,location=c);o=bpy.context.object;o.name=n;o.dimensions=d;bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);return o
 def cyl(n,r,z0,z1,xy=(0,0),vertices=128):
@@ -33,7 +33,7 @@ def radial(n,r0,r1,w,z0,z1,ang):
  o=box(n,(r1-r0,w,z1-z0),(*polar((r0+r1)/2,ang),(z0+z1)/2));o.rotation_euler.z=math.radians(ang);bpy.ops.object.transform_apply(location=False,rotation=True,scale=True);return o
 def tag(o,n,desc,role='part',group='stationary'):
  o.name=n;o.data.materials.clear();o.data.materials.append(mats[role]);o['role']=role;o['description']=desc;o['group']=group;o['native_placement']=False
- (parts if role in ('part','gauge') else soft if role=='soft' else bounds).append(o);return o
+ (parts if role in ('part','gauge','hardware') else soft if role=='soft' else bounds).append(o);return o
 def helix(n,r,t0,t1,zbase,section):
  count=math.ceil((t1-t0)*192);q=16;vs=[];fs=[]
  for i in range(count+1):
@@ -82,6 +82,8 @@ boolean(cup,box('Sensor floor',(4.8,5.3,.7),(12.3,-7,1.35)))
 boolean(cup,box('Sensor outer wall',(.7,5.3,2.8),(14.35,-7,2.8)))
 for y in (-9.3,-4.7):boolean(cup,box('Sensor guide wall',(4.8,.7,2.8),(12.3,y,2.8)))
 boolean(cup,box('Open sensor lead relief',(2.2,1.4,4),(14.1,-5.2,3.6)),'DIFFERENCE')
+boolean(cup,cyl('Direct lower stiffener cup shoulder',.9,.9,PT+.1,(-13.364318,-13.364318)))
+boolean(cup,radial('Wall-tied stiffener root bed',18.0,20.2,1.8,.9,PT+.1,225))
 tag(cup,'01_FIXED_CUP','Integral rear, three PCB seats, independent carrier shoulders, open front thread, integrated acoustic ducts and sensor pocket')
 
 bezel=ring('Male sleeve',19.85,18.65,D-3,D-.8)
@@ -109,16 +111,36 @@ for ang in (55,165,285):
 # Perimeter key fits a notch in cup shoulder and is below the rotating bezel.
 boolean(carrier,box('Carrier orientation key',(1.2,1.0,.8),(-19.5,0,RB+.4)))
 boolean(cup,box('Carrier key channel',(1.6,1.4,D+2-RB),(-19.5,0,(D+2+RB)/2)),'DIFFERENCE')
-# Independent shoe stop: overload flows into carrier/cup, bypassing switch.
-SHOE_Z=FB-.74-.3
-bridge=box('Capture stop bridge',(math.hypot(6.6,6.4),1.2,.6),(-10.3,-10.4,RB+.3));bridge.rotation_euler.z=math.atan2(6.4,6.6);bpy.ops.object.transform_apply(location=False,rotation=True,scale=True);boolean(carrier,bridge)
-boolean(carrier,box('Capture stop crossbar',(6.4,1.2,.6),(-7,-7,RB+.3)))
-boolean(carrier,box('Stationary keeper withdrawal stop',(.6,.6,SHOE_Z-.15-RB),(-10.1,-8.3,(SHOE_Z-.15+RB)/2)))
-boolean(carrier,box('Keeper stop foot',(.6,2.0,.6),(-10.1,-7.7,RB+.3)))
-for xx,startx in ((-9.5,-10.0),(-4.5,-4.0)):
- boolean(carrier,tube('Shoe support side arm',.25,(startx,-7,RB+.3),(xx,-2,RB+.3)))
- boolean(carrier,cyl('Independent calibrated shoe stop',.4,RB,SHOE_Z-cfg['capture']['shoeStopTravelNominalMm'],(xx,-2)))
-tag(carrier,'03_PCB_CLAMP_AND_FACE_GUIDE','Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6mm face stop')
+# S1: lower steel insert carries bending; printed cap/posts bear directly on it.
+SHOE_Z=FB-.74-.3;METAL_BOT=PT+.2;METAL_TOP=METAL_BOT+1.0;CAP_TOP=METAL_TOP+.6
+
+def beam(n,u,v,width,z0,z1):
+ dx,dy=v[0]-u[0],v[1]-u[1];o=box(n,(math.hypot(dx,dy),width,z1-z0),((u[0]+v[0])/2,(u[1]+v[1])/2,(z0+z1)/2));o.rotation_euler.z=math.atan2(dy,dx);bpy.ops.object.transform_apply(location=False,rotation=True,scale=True);return o
+
+def support_shape(n,z0,z1,outer=(-13.6,-13.6)):
+ o=beam(n,outer,(-12,-9.8),3.2,z0,z1)
+ boolean(o,beam('Knee to stop crossbar',(-12,-9.8),(-7,-9.8),3.2,z0,z1))
+ boolean(o,box('Lower support crossbar',(8.2,1.2,z1-z0),(-7,-9.8,(z0+z1)/2)))
+ for x in (-10.3,-3.7):boolean(o,box('Full-width support arm',(1.2,9.0,z1-z0),(x,-5.9,(z0+z1)/2)))
+ return o
+stiff=support_shape('Lower structural steel',METAL_BOT,METAL_TOP)
+boolean(stiff,cyl('Positive round metal seat',.9,METAL_BOT,METAL_TOP,(-13.364318,-13.364318)))
+# Exact mating contact, with actual manufactured packet requiring measured seating/shims.
+cut=stiff.copy();cut.data=stiff.data.copy();sc.collection.objects.link(cut);boolean(carrier,cut,'DIFFERENCE')
+cap=support_shape('Supported polymer cap',METAL_TOP,CAP_TOP,(-12.9,-12.9));boolean(cap,box('Rear guide tongue full-press clearance',(3.6,1.0,2),(-7,-8.1,METAL_TOP+1)),'DIFFERENCE');boolean(cap,ring('Root cover below moving flange',30,16.7,STOP-.05,CAP_TOP+.1),'DIFFERENCE');boolean(carrier,cap)
+# Keeper withdrawal stop is supported at its lower end by a full-width crossbar.
+boolean(carrier,box('Keeper withdrawal stop',(.8,.8,SHOE_Z-.15-METAL_TOP),(-11.65,-8.3,(SHOE_Z-.15+METAL_TOP)/2)))
+boolean(carrier,box('Keeper stop connecting foot',(1.8,1.2,.6),(-11.0,-8.6,METAL_TOP+.3)))
+boolean(carrier,box('Right keeper withdrawal stop',(.8,.8,SHOE_Z-.15-METAL_TOP),(-2.35,-8.3,(SHOE_Z-.15+METAL_TOP)/2)))
+boolean(carrier,box('Right keeper stop connecting foot',(1.8,1.2,.6),(-3.0,-8.6,METAL_TOP+.3)))
+for xx in (-10.3,-3.7):
+ for yy in (-6.5,-2):boolean(carrier,cyl('Four-point calibrated shoe stop',.65,METAL_TOP,SHOE_Z-cfg['capture']['shoeStopTravelNominalMm'],(xx,yy)))
+tag(stiff,'13_LOWER_STEEL_STIFFENER','Separate 1.00 mm certified 301 half-hard candidate lower plate; carries bending to direct cup shoulder; not a printed resin part','hardware','carrier')
+liner=support_shape('Insulating liner',METAL_BOT-.1,METAL_BOT)
+boolean(liner,cyl('Liner positive seat',.9,METAL_BOT-.1,METAL_BOT,(-13.364318,-13.364318)))
+tag(liner,'SOFT_STIFFENER_DIELECTRIC','0.10 mm dielectric liner allocation; actual insulation, bonding, thickness and creep pending','soft','carrier')
+
+tag(carrier,'03_PCB_CLAMP_AND_FACE_GUIDE','Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6 mm face stop')
 
 face=cyl('Pale face',17.6,FB,D-.05)
 boolean(face,ring('Edge skirt',17.6,16.9,D-2.4,FB+.05))
@@ -132,15 +154,17 @@ boolean(face,box('Status aperture',(3.2,.7,2),(0,0,D-.5)),'DIFFERENCE')
 boolean(face,box('Recessed flush window flange',(4.6,1.7,.4),(0,0,FB+.2)),'DIFFERENCE')
 # Captured compliant cartridge; keeper slides laterally before face installation.
 sx,sy=cfg['capture']['centreXYMm'];KZ=FB-.74-.3
-boolean(face,box('Cartridge sidewalls',(8.8,8.4,1.95),(sx,sy,FB-.575)))
-boolean(face,box('Open cartridge pocket',(6.8,6.8,2.3),(sx,sy,FB-1.15)),'DIFFERENCE')
-boolean(face,box('Keeper rail slot',(7.7,11,.9),(sx,sy-2,KZ-.15)),'DIFFERENCE')
+boolean(face,box('Cartridge sidewalls',(12.4,8.4,1.95),(sx,sy,FB-.575)))
+boolean(face,box('Open cartridge pocket',(9.4,6.8,2.3),(sx,sy,FB-1.15)),'DIFFERENCE')
+for side in (-1,1):boolean(face,box('Separate keeper rail slot',(1.5,11,.9),(sx+side*4.65,sy-2,KZ-.15)),'DIFFERENCE')
 for side in (-1,1):
- boolean(face,box('Positive cartridge rail ledge',(.8,5,.6),(sx+side*3.6,sy+1,KZ-.9)))
- boolean(face,box('Cartridge rail outer web',(.6,5,1.9),(sx+side*4.1,sy+1,KZ-.25)))
-boolean(face,box('Stationary keeper stop entry',(1.4,1.4,3),(sx-3.1,sy-3.8,FB-1.6)),'DIFFERENCE')
+ boolean(face,box('Positive cartridge rail ledge',(.8,3.5,.6),(sx+side*5.1,sy+1.7,KZ-.9)))
+ boolean(face,box('Cartridge rail outer web',(.8,3.5,1.9),(sx+side*5.8,sy+1.7,KZ-.25)))
+for side in (-1,1):boolean(face,box('Stationary keeper stop entry',(1.4,1.4,3),(sx+side*4.65,sy-3.8,FB-1.6)),'DIFFERENCE')
+boolean(face,box('Lower bridge motion opening',(9.0,3.8,4),(sx,sy-4.2,CAP_TOP+.6-2+.2)),'DIFFERENCE')
+boolean(face,box('Positive shoe rear guide tongue',(3.2,.6,FB-(KZ-.45)),(sx,sy-3.6,(FB+KZ-.45)/2)))
 boolean(face,box('Local fullpress radio clearance',(11.3,16.3,PT+2.4+.6+.15-(D-4)),(0,8.6,(PT+2.4+.6+.15+D-4)/2)),'DIFFERENCE')
-boolean(face,box('Final unobstructed flange rebate',(4.6,1.7,.6),(0,0,FB+.2)),'DIFFERENCE')
+boolean(face,box('Final unobstructed flange rebate',(4.6,1.7,3.4),(0,0,FB-1.3)),'DIFFERENCE')
 tag(face,'04_CAPTIVE_FACE','Front-inserted full face; three blind guide sleeves, flush optical insert, lateral compliant cartridge','part','face')
 window=box('Window',(3,.5,D-.05-(FB+.1)),(0,0,(D-.05+FB+.1)/2))
 boolean(window,box('Recessed flange',(4.4,1.5,.3),(0,0,FB+.2)))
@@ -148,29 +172,29 @@ tag(window,'05_FLUSH_STATUS_WINDOW','No material below face-back plane; inserts 
 diff=ring('Diffuser',18.5,17.85,D-.7,D-.05)
 tag(diff,'06_FIXED_DIFFUSER','Separate clear ring seated in fixed bezel','part','bezel')
 # Captured keeper and removable shoe. Exact shoe height is a measured setting.
-keeper=box('Sliding keeper',(7.4,6.4,.6),(sx,sy,KZ-.3))
-boolean(keeper,box('Stem passage',(5.0,7.6,2),(sx,sy+2,KZ-.4)),'DIFFERENCE')
-for xx in (-9.5,-4.5):boolean(keeper,cyl('Stationary shoe-stop passage',.65,KZ-1,KZ+1,(xx,-2)),'DIFFERENCE')
-tag(keeper,'07_CARTRIDGE_KEEPER','Lateral keeper staged in face before front insertion; carrier post blocks withdrawal once face installed','part','face')
-shoe=box('Shoe plate',(6.2,6.2,.3),(sx,sy,KZ+.15))
+for side,num in ((-1,'07'),(1,'15')):
+ keeper=box('Separate sliding edge keeper',(1.1,6.4,.6),(sx+side*4.65,sy,KZ-.3))
+ tag(keeper,num+'_CARTRIDGE_KEEPER_'+('LEFT' if side<0 else 'RIGHT'),'Separate edge strip with positive lower ledge; individual carrier post blocks withdrawal after face installation','part','face')
+shoe=box('Metal shoe plate',(9.0,6.2,.3),(sx,sy,KZ+.15))
 TIP=PT+cfg['capture']['calibratedMountedHeightMm']+cfg['capture']['shoeRestGapNominalMm']
-boolean(shoe,box('Replaceable measured stem',(1.8,1.8,KZ-TIP+.05),(sx,sy,(KZ+TIP+.05)/2)))
-tag(shoe,'08_MEASURED_PLUNGER_SHOE','Maximum mounted switch height2.25 plus0.05rest gap; re-size from physical measurement, not a qualified fixed actuator','part','shoe')
+tag(shoe,'08_MEASURED_PLUNGER_SHOE','Separate 0.30 mm certified 301 half-hard candidate stock; minimum 0.28 for screening, deburred; not a resin print part','hardware','shoe')
+contactpad=box('Measured insulating contact pad',(1.8,1.8,KZ-TIP),(sx,sy,(KZ+TIP)/2))
+tag(contactpad,'14_INSULATING_CONTACT_PAD','Separate stiff dielectric contact pad;0.21 nominal includes adhesive, measured/finished per switch; supplier not selected','hardware','shoe')
 
 fork=box('Privacy grip',(1.2,2.8,1.1),(22.3,0,SZ))
 boolean(fork,box('Guided stem',(5.2,2.2,.9),(19.7,0,SZ)))
 boolean(fork,box('Internal bridge',(.85,6,.9),(17.3,0,SZ)))
 for y in (-1.5,1.5):boolean(fork,box('CUS fork finger',(3.4,1,.9),(15.2,y,SZ)))
-tag(fork,'09_PRIVACY_FORK','Corrected actuator centre14.85; radial install before battery; nominal OFF=-Y, enabled=+Y','part','privacy')
+tag(fork,'09_PRIVACY_FORK','Corrected actuator centre 14.85; radial install before battery; nominal OFF=-Y, enabled=+Y','part','privacy')
 keep=box('Front-inserted keeper',(1.0,6.4,RB-1.0),(18.55,0,(RB+1.0)/2))
 boolean(keep,box('Open-bottom stem channel',(2,4.4,SZ+.65),(18.55,0,(SZ+.65)/2)),'DIFFERENCE')
-tag(keep,'10_PRIVACY_KEEPER','Open-bottom U keeper lowers over installed stem; integral measured4.4channel yields2.2travel and independent stops, carrier captures it')
+tag(keep,'10_PRIVACY_KEEPER','Open-bottom U keeper lowers over installed stem; integral measured 4.4 channel yields 2.2 travel and independent stops, carrier captures it')
 contact=box('Contact access carrier',(9.4,3.1,P-.3),(0,-15.9,(P-.3)/2))
 boolean(contact,box('Positive side-wing seat',(10.6,3.1,.5),(0,-15.9,1.25)))
 for x in (-3,0,3):boolean(contact,cyl('Contact access',1,-1,P+1,(x,-15.9)),'DIFFERENCE')
 tag(contact,'11_CONTACT_ACCESS_CARRIER','Front-installed keyed access with positive side-wing seat; dock nose still separate')
 ntccap=box('Sensor cap',(4.4,4.7,P-.1-4.2),(12.1,-7,(P-.1+4.2)/2))
-tag(ntccap,'12_SENSOR_RETAINER','Front-inserted cap rests on sensor-pocket walls at4.2;0.1upward travel limited by PCB; thermal contact/force remains unqualified')
+tag(ntccap,'12_SENSOR_RETAINER','Front-inserted cap rests on sensor-pocket walls at 4.2;0.1 upward travel limited by PCB; thermal contact/force remains unqualified')
 
 board=cyl('Unpowered board gauge',17.6,P,PT)
 boolean(board,box('Only proposed board key notch',(1.5,1.2,3),(-17.45,0,P+.8)),'DIFFERENCE')
@@ -180,16 +204,16 @@ tag(board,'90_UNPOWERED_BOARD_GAUGE','No old closure notches; only left key and 
 pack=box('Max cell gauge',(26,21,CD),(-3.2,0,1.15+CD/2))
 tag(pack,'91_UNPOWERED_PACK_GAUGE','Maximum controlled unpowered pack gauge','gauge','pack')
 growth=box('Full maximum pouch growth allocation',(26,21,.4),(-3.2,0,1.15+CD+.2))
-tag(growth,'BOUND_CELL_GROWTH','Explicit0.4mm occupancy above maximum pack; cannot be used for hardware','bound','pack')
+tag(growth,'BOUND_CELL_GROWTH','Explicit 0.4 mm occupancy above maximum pack; cannot be used for hardware','bound','pack')
 
 # Purchased body, full terminal/solder fields and connector occupancies. Not native placement.
-tag(box('Radio',(10.7,15.7,2.4),(0,8.6,PT+1.2)),'BOUND_RADIO_MAX','Maximum module plus0.15mm seating','bound','pcb')
+tag(box('Radio',(10.7,15.7,2.4),(0,8.6,PT+1.2)),'BOUND_RADIO_MAX','Maximum module plus 0.15 mm seating','bound','pcb')
 tag(box('Radio pad/lead field',(10.7,15.7,.15),(0,8.6,PT+.075)),'BOUND_RADIO_TERMINALS','Conservative module mounting field overlaps its body envelope intentionally','bound','pcb')
 tag(cyl('ERM',5.05,PT,PT+2.45,(6,-5)),'BOUND_ERM_MAX','Maximum mounted motor','bound','pcb')
-tag(box('ERM tab',(1.8,1.8,.7),(12,-5,PT+.5)),'BOUND_ERM_TAB','Conservative tab reaches6.9mm from centre including margin','bound','pcb')
+tag(box('ERM tab',(1.8,1.8,.7),(12,-5,PT+.5)),'BOUND_ERM_TAB','Conservative tab reaches 6.9 mm from centre including margin','bound','pcb')
 tag(box('CUS body',(4.3,6.9,1.6),(13.5,0,P-.95)),'BOUND_CUS_BODY','Maximum underside CUS body plus separate seating','bound','pcb')
-tag(box('CUS lever',(1.8,1.3,1.7),(14.85,0,P-2.6)),'BOUND_CUS_LEVER','Full transverse tolerance13.95..15.75 including0.15locator; calibrated nominal1.3width and maximum rearheight','bound','privacy')
-for i,y in enumerate((-1.5,1.5)):tag(cyl('CUS locator occupancy',.4,P-.2,P+.6,(13.5,y)),f'BOUND_CUS_LOCATOR_{i}','Nominal0.9NPTH with conservative0.8pin x0.6protrusion proposal; supplier locator height pending','bound','pcb')
+tag(box('CUS lever',(1.8,1.3,1.7),(14.85,0,P-2.6)),'BOUND_CUS_LEVER','Full transverse tolerance 13.95..15.75 including 0.15 locator; calibrated nominal 1.3 width and maximum rearheight','bound','privacy')
+for i,y in enumerate((-1.5,1.5)):tag(cyl('CUS locator occupancy',.4,P-.2,P+.6,(13.5,y)),f'BOUND_CUS_LOCATOR_{i}','Nominal 0.9 NPTH with conservative 0.8 pin x 0.6 protrusion proposal; supplier locator height pending','bound','pcb')
 # A maximum rear-terminal field is kept above body actuator volume; actual metal is a subset.
 tag(box('CUS full leads',(6.1,8.3,.35),(13.5,0,P-.175)),'BOUND_CUS_FULL_LEADS','Conservative max full lead/solder field; source bound inference clearly separate from body','bound','pcb')
 padmap=[]
@@ -199,21 +223,21 @@ for pin,x,y in [(1,-2.25,-2.55),(2,.75,-2.55),(3,2.25,-2.55),(4,-2.25,2.55),(5,.
  padmap.append({'pin':pin,'sourceXY':[x,y],'cadXY':[cx,cy],'cadSizeMm':[1.5,.7]})
 for i,(x,y) in enumerate((x,y) for x in (-3.65,3.65) for y in (-1.8,1.8)):
  tag(box('CUS anchor',(.8,1,.05),(13.5+y,-x,P-.025)),f'BOUND_CUS_ANCHOR_{i+1}','Unnumbered anchor copper; grounding unresolved','bound','pcb')
-tag(box('KMR stationary body',(4.4,3.0,1.7),(sx,sy,PT+.85)),'BOUND_KMR_BODY','Maximum stationary body with0.15 seating; actuator modeled separately','bound','pcb')
-tag(box('KMR actuator',(1,1,.55),(sx,sy,PT+1.975)),'BOUND_KMR_ACTUATOR_MAX','Maximum2.1mm height plus0.15 seating; not the calibrated nominal press state','bound','pcb')
+tag(box('KMR stationary body',(4.4,3.0,1.7),(sx,sy,PT+.85)),'BOUND_KMR_BODY','Maximum stationary body with 0.15 seating; actuator modeled separately','bound','pcb')
+tag(box('KMR actuator',(1,1,.55),(sx,sy,PT+1.975)),'BOUND_KMR_ACTUATOR_MAX','Maximum 2.1 mm height plus 0.15 seating; not the calibrated nominal press state','bound','pcb')
 tag(box('KMR terminal field',(5,3.2,.25),(sx,sy,PT+.125)),'BOUND_KMR_TERMINALS','Complete conservative terminal field; exact source footprint still pending','bound','pcb')
 tag(box('Semitec',(4,3.7,2.4),(11.9,-7,3.0)),'BOUND_NTC_MAX','Maximum selected sensor body; actual thermal contact still unqualified','bound','sensor')
 for x in (-3,0,3):tag(cyl('Dock pad',.85,P-.035,P,(x,-15.9)),f'BOUND_DOCK_PAD_{x}','Proposed underside copper target','bound','pcb')
 for x in (-7.2,7.2):
- tag(ring('Compressed acoustic seal',1.5,.6,P-.4,P,(x,-13.5)),f'SOFT_MIC_GASKET_{x}','Working compressed seal; free thickness0.5 and force/sealing require test','soft','stationary')
-for i,xy in enumerate(cfg['pcbDatums']['centresXYMm']):tag(cyl('Compressed clamp pad',.9,PT,PT+.2,xy),f'SOFT_PCB_CLAMP_{i}','Measured foam/shim interface at positive datum; nominal0.25free,0.20working','soft','stationary')
-tag(box('Cartridge foam',(6.2,6.2,.74),(sx,sy,KZ+.3+.37)),'SOFT_CAPTURE_FOAM','Free0.79 sheet modeled compressed0.74 at rest;0.39 at full press with calibrated0.25shoe stop; force/creep unqualified','soft','face')
+ tag(ring('Compressed acoustic seal',1.5,.6,P-.4,P,(x,-13.5)),f'SOFT_MIC_GASKET_{x}','Working compressed seal; free thickness 0.5 and force/sealing require test','soft','stationary')
+for i,xy in enumerate(cfg['pcbDatums']['centresXYMm']):tag(cyl('Compressed clamp pad',.9,PT,PT+.2,xy),f'SOFT_PCB_CLAMP_{i}','Measured foam/shim interface at positive datum; nominal 0.25 free, 0.20 working','soft','stationary')
+tag(box('Cartridge foam',(6.2,6.2,.74),(sx,sy,KZ+.3+.37)),'SOFT_CAPTURE_FOAM','Free 0.79 sheet modeled compressed 0.74 at rest;0.39 at full press with calibrated 0.25 shoe stop; force/creep unqualified','soft','face')
 for i,ang in enumerate((55,165,285)):
  xy=polar(17.3,ang)
- tag(cyl('Working face return foam',.7,STOP-.4,D-2.4,xy),f'SOFT_FACE_RETURN_{i}','Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified','soft','stationary')
-tag(box('Battery backing',(26,21,.15),(-3.2,0,1.075)),'SOFT_BATTERY_BACKING','Unselected0.15backing/fixation layer; supplier adhesive and pouch compatibility pending','soft','pack')
-tag(box('Battery dielectric',(26,21,.1),(-3.2,0,P-.1)),'SOFT_BATTERY_DIELECTRIC','0.10dielectric plus0.05free gap after solid growth allocation; material pending','soft','pack')
-tag(box('Sensor thermal interface',(.1,3.6,2.4),(9.85,-7,3.0)),'SOFT_NTC_INTERFACE','0.1adhesive/interface at pack edge; conductivity and thermal tracking not qualified','soft','sensor')
+ tag(cyl('Working face return foam',.7,STOP-.4,D-2.4,xy),f'SOFT_FACE_RETURN_{i}','Free 1.1 mm foam disk, 1.0 working rest and 0.4 working full press; compression/force/life must be qualified','soft','stationary')
+tag(box('Battery backing',(26,21,.15),(-3.2,0,1.075)),'SOFT_BATTERY_BACKING','Unselected 0.15 backing/fixation layer; supplier adhesive and pouch compatibility pending','soft','pack')
+tag(box('Battery dielectric',(26,21,.1),(-3.2,0,P-.1)),'SOFT_BATTERY_DIELECTRIC','0.10 dielectric plus 0.05 free gap after solid growth allocation; material pending','soft','pack')
+tag(box('Sensor thermal interface',(.1,3.6,2.4),(9.85,-7,3.0)),'SOFT_NTC_INTERFACE','0.1 adhesive/interface at pack edge; conductivity and thermal tracking not qualified','soft','sensor')
 # Conservative explicit insulated lead routes; leads terminate at proposed points only.
 routes={
  'NTC':[(13.1,-5.2,3),(16.3,-5.2,3),(16.3,-10.2,3.5),(12.8,-11.2,P-.4)],

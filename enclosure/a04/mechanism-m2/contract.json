@@ -1,6 +1,6 @@
 {
-  "revision": "A04 M2 development candidate",
-  "status": "PARAMETRIC MECHANISM; NOT PHYSICALLY QUALIFIED OR A NATIVE PCB RELEASE",
+  "revision": "A04 M2 structural revision S1",
+  "status": "HYBRID STRUCTURAL CANDIDATE; CALCULATION SCREENING ONLY; NOT PHYSICALLY QUALIFIED OR NATIVE PCB RELEASE",
   "units": "millimetres; Blender coordinates are mm with scale_length 0.001",
   "bodyDiameterMm": 43.0,
   "cavityRadiusMm": 20.0,
@@ -105,9 +105,9 @@
     "bezelApertureRadiusMm": 17.85,
     "strokeMm": 0.6,
     "lightpipeBelowFaceBackMm": 0.0,
-    "returnPads": "Three discrete radius0.7mm, free1.1mm siliconefoam pads seated0.4mm below carrier stop; rest1.0mm / fullpress0.4mm working thickness, force/life pending",
+    "returnPads": "Three discrete radius 0.7 mm, free 1.1 mm silicone foam pads seated 0.4 mm below carrier stop; rest 1.0 mm / full press 0.4 mm working thickness, force/life pending",
     "skirtNominalMm": 0.7,
-    "radioRelief": "Local11.3x16.3 relief below skin, upperZ=PCBtop+2.4radio+0.6stroke+0.15clearance; flange interrupted locally at upper radio corner.",
+    "radioRelief": "Local 11.3 x 16.3 relief below skin, upperZ=PCBtop+2.4 radio+0.6 stroke+0.15 clearance; flange interrupted locally at upper radio corner.",
     "returnBearingBossRadiusMm": 0.9,
     "returnPadRadiusMm": 0.7,
     "returnPadNominalBearingAreaEachMm2": 1.5393804002589986
@@ -151,7 +151,7 @@
     "calibratedMountedHeightMm": 2.25,
     "shoePlateThicknessMm": 0.3,
     "shoePrintabilityQualified": false,
-    "keeperRetention": "Stationary carrier post blocks lateral keeper withdrawal after front face insertion; keeper staged by hand before that",
+    "keeperRetention": "A separate stationary carrier post blocks each lateral keeper strip after front face insertion; strips are staged by hand before that",
     "foamAtFullPressToleranceRangeMm": [
       0.29,
       0.49
@@ -160,7 +160,28 @@
       0.15,
       0.35
     ],
-    "forceCriteria": "At38.44mm2 pad area, installed rest preload must remain below0.9N (23.4kPa), and operational force must exceed1.5N (39.0kPa) by measured actuation; no stress-strain/creep test exists."
+    "forceCriteria": "At 38.44 mm 2 pad area, installed rest preload must remain below 0.9 N (23.4 kPa), and operational force must exceed 1.5 N (39.0 kPa) by measured actuation; no stress-strain/creep test exists.",
+    "shoeManufacturing": "Purchased/machined metal shoe with separate insulating contact pad; STL is a form gauge, not a resin print part",
+    "stationaryStopCentresXYMm": [
+      [
+        -10.3,
+        -6.5
+      ],
+      [
+        -3.7,
+        -6.5
+      ],
+      [
+        -10.3,
+        -2
+      ],
+      [
+        -3.7,
+        -2
+      ]
+    ],
+    "rigidPlaneStopBound": "Four stationary coplanar contacts surround actuator center (-7, -4.5). Positive convex weights bound that rigid-plane point; shoe/support flex, joint slip, contact-height and coplanarity error remain excluded and unqualified.",
+    "shoeRearCapture": "Central 3.2 x 0.6 mm rear tongue, bottom KZ minus 0.45 mm, and independent keeper edge slots preserve positive rear capture. Roof-limited pitch section is screened separately; actual tolerances, coplanarity and lateral guiding remain unqualified."
   },
   "privacy": {
     "nativePart": "JS202011JCQN",
@@ -206,7 +227,7 @@
     ],
     "forkGapMm": 2.0,
     "nominalExternalTravelMm": 2.2,
-    "calibration": "Measure T and w per switch. Total external stroke E=T+G-w; replace keeper with channel width2.2+E (4.1..4.7mm at stated component bounds). CAD uses4.4nominal. Measure electrical endpoint and allowed overtravel before setting stops; nominal model does not establish safe actual endpoint. Internal switch detents only; external grip has0.7mm nominal lostmotion and no independent detents.",
+    "calibration": "Measure T and w per switch. Total external stroke E=T+G-w; replace keeper with channel width 2.2+E (4.1..4.7 mm at stated component bounds). CAD uses 4.4 nominal. Measure electrical endpoint and allowed overtravel before setting stops; nominal model does not establish safe actual endpoint. Internal switch detents only; external grip has 0.7 mm nominal lost motion and no independent detents.",
     "qualification": false,
     "replaceableKeeperStopChannelNominalMm": 4.4,
     "measuredKeeperChannelRangeMm": [
@@ -305,5 +326,38 @@
     "nativeDatumConfirmed": false
   },
   "physicalQualification": false,
-  "nativePcbModified": false
+  "nativePcbModified": false,
+  "structuralRevision": {
+    "replaces": "M2 checkpoint at main 94 caaf 9; resin 0.30 shoe and 0.50 round carrier arms rejected by stress/deflection screening",
+    "shoeMaterial": "Candidate ASTM A666 Type 301 half-hard strip; certified 0.2% yield minimum 110 ksi / 758 MPa; incoming thickness, flatness and edge quality acceptance required",
+    "shoeNominalMm": [
+      9.0,
+      6.2,
+      0.3
+    ],
+    "shoeMaximumThicknessMm": 0.32,
+    "shoeMinimumScreenedThicknessMm": 0.28,
+    "contactPad": "Separate insulating G10/FR4 or equivalent stiff dielectric pad, 1.8 square;0.21 nominal height includes adhesive and must be measured/finished to mounted switch",
+    "stiffenerMaterial": "Same certified Type 301 half-hard candidate, 1.00 mm CAD maximum, 0.95 mm minimum for screening; separately cut, deburred and insulated below",
+    "stiffenerPlateThicknessMm": 1.0,
+    "stiffenerBridgeWidthMm": 3.2,
+    "stiffenerArmWidthMm": 1.2,
+    "stiffenerCupSeatXYMm": [
+      -13.364318,
+      -13.364318
+    ],
+    "stiffenerCupSeatRadiusMm": 0.9,
+    "stiffenerBottomAbovePcbTopMm": 0.2,
+    "stiffenerInsulatingLinerMm": 0.1,
+    "polymerOverStiffenerMm": 0.6,
+    "keeperWidthMm": 10.4,
+    "keeperOpeningWidthMm": 8.2,
+    "printLoadRelease": false,
+    "materialAndSupplierSelected": false,
+    "rfMetalAcceptance": false,
+    "keeperRevision": "Two independent 1.1 x 6.4 x 0.6 mm edge strips; no U crossbar across stationary stop arms; each positively blocked after face installation",
+    "rootJoint": "Wall-tied cup bed and closure-captured carrier roof clamp steel root; measured packet seating and joint compliance remain unqualified",
+    "steelModulusScreenMPa": 193000,
+    "steelMinimumCertificateYieldMPa": 758
+  }
 }

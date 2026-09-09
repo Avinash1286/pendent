@@ -17,7 +17,7 @@
           11.40000057220459
         ]
       ],
-      "worldGeometrySha256": "b34b972b43430928037790078211bd01a54d775209aedf2959db182c7c46d9ac",
+      "worldGeometrySha256": "dadff9311fd21336c6114b6a29a57dff6434b7deba6e34ff4951c9f12cada21a",
       "nativePlacement": false
     },
     {
@@ -41,10 +41,30 @@
       "nativePlacement": false
     },
     {
+      "object": "13_LOWER_STEEL_STIFFENER",
+      "role": "hardware",
+      "group": "carrier",
+      "description": "Separate 1.00 mm certified 301 half-hard candidate lower plate; carries bending to direct cup shoulder; not a printed resin part",
+      "assemblyBoundsMm": [
+        [
+          -15.074617385864258,
+          -14.264318466186523,
+          7.800000190734863
+        ],
+        [
+          -2.90000057220459,
+          -1.4000005722045898,
+          8.800000190734863
+        ]
+      ],
+      "worldGeometrySha256": "13f47c6637adc6d987214e3e7de4405da4fabf47c7fed7029b286bca8343c213",
+      "nativePlacement": false
+    },
+    {
       "object": "03_PCB_CLAMP_AND_FACE_GUIDE",
       "role": "part",
       "group": "stationary",
-      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6mm face stop",
+      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6 mm face stop",
       "assemblyBoundsMm": [
         [
           -20.100000381469727,
@@ -57,7 +77,7 @@
           10.34999942779541
         ]
       ],
-      "worldGeometrySha256": "318dca207db6971aa95f7197a58c92d0a6bdba0b961b09a1854eb192dd28d880",
+      "worldGeometrySha256": "3dc765a242f7bebaa5fbf87e6b2b03b9e1c9076fe4562fd8b16d03252333de08",
       "nativePlacement": false
     },
     {
@@ -77,7 +97,7 @@
           12.149999618530273
         ]
       ],
-      "worldGeometrySha256": "c1d6fa36af318c6040186f5e7849d89e4ccf97618de087b1155f610956656a28",
+      "worldGeometrySha256": "d060dcc80bd49a0db364841d72abab717a90a85de51e756eb524e31c6be1c0bf",
       "nativePlacement": false
     },
     {
@@ -121,50 +141,90 @@
       "nativePlacement": false
     },
     {
-      "object": "07_CARTRIDGE_KEEPER",
+      "object": "07_CARTRIDGE_KEEPER_LEFT",
       "role": "part",
       "group": "face",
-      "description": "Lateral keeper staged in face before front insertion; carrier post blocks withdrawal once face installed",
+      "description": "Separate edge strip with positive lower ledge; individual carrier post blocks withdrawal after face installation",
       "assemblyBoundsMm": [
         [
-          -10.699999809265137,
+          -12.199999809265137,
           -7.699999809265137,
           9.510000228881836
         ],
         [
-          -3.299999952316284,
+          -11.09999942779541,
           -1.2999999523162842,
           10.110000610351562
         ]
       ],
-      "worldGeometrySha256": "b382ee7de79166ccca55ab3593828ff530b78915dd9aef377820fe1ae0baf896",
+      "worldGeometrySha256": "f3a9bcbb9d0e12d1534681aadfd08caecd7a71b1e789ba9c8350b61359f775ac",
+      "nativePlacement": false
+    },
+    {
+      "object": "15_CARTRIDGE_KEEPER_RIGHT",
+      "role": "part",
+      "group": "face",
+      "description": "Separate edge strip with positive lower ledge; individual carrier post blocks withdrawal after face installation",
+      "assemblyBoundsMm": [
+        [
+          -2.8999998569488525,
+          -7.699999809265137,
+          9.510000228881836
+        ],
+        [
+          -1.7999999523162842,
+          -1.2999999523162842,
+          10.110000610351562
+        ]
+      ],
+      "worldGeometrySha256": "c84fffb022ee62357cadae216952084b5dd2c938cee6b2bb9d09bb1f80412447",
       "nativePlacement": false
     },
     {
       "object": "08_MEASURED_PLUNGER_SHOE",
-      "role": "part",
+      "role": "hardware",
       "group": "shoe",
-      "description": "Maximum mounted switch height2.25 plus0.05rest gap; re-size from physical measurement, not a qualified fixed actuator",
+      "description": "Separate 0.30 mm certified 301 half-hard candidate stock; minimum 0.28 for screening, deburred; not a resin print part",
       "assemblyBoundsMm": [
         [
-          -10.100000381469727,
+          -11.5,
           -7.599999904632568,
-          9.899999618530273
+          10.110000610351562
         ],
         [
-          -3.9000000953674316,
+          -2.5,
           -1.4000000953674316,
           10.40999984741211
         ]
       ],
-      "worldGeometrySha256": "a8177796de0243db3c03b1308dbbb5f9ec9c2966690e2ac250db806b9bae3636",
+      "worldGeometrySha256": "127d6aec8061c1a01d747265c739b17b84c115d5b2a294b74dbe26d543ee0d93",
+      "nativePlacement": false
+    },
+    {
+      "object": "14_INSULATING_CONTACT_PAD",
+      "role": "hardware",
+      "group": "shoe",
+      "description": "Separate stiff dielectric contact pad;0.21 nominal includes adhesive, measured/finished per switch; supplier not selected",
+      "assemblyBoundsMm": [
+        [
+          -7.900000095367432,
+          -5.400000095367432,
+          9.90000057220459
+        ],
+        [
+          -6.099999904632568,
+          -3.5999999046325684,
+          10.109999656677246
+        ]
+      ],
+      "worldGeometrySha256": "d01f08e3a1bcc61ad24d7a85ff1133eb5bb491e21c5c8cb6263803a7c32f9b19",
       "nativePlacement": false
     },
     {
       "object": "09_PRIVACY_FORK",
       "role": "part",
       "group": "privacy",
-      "description": "Corrected actuator centre14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
+      "description": "Corrected actuator centre 14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
       "assemblyBoundsMm": [
         [
           13.5,
@@ -184,7 +244,7 @@
       "object": "10_PRIVACY_KEEPER",
       "role": "part",
       "group": "stationary",
-      "description": "Open-bottom U keeper lowers over installed stem; integral measured4.4channel yields2.2travel and independent stops, carrier captures it",
+      "description": "Open-bottom U keeper lowers over installed stem; integral measured 4.4 channel yields 2.2 travel and independent stops, carrier captures it",
       "assemblyBoundsMm": [
         [
           18.049999237060547,
@@ -224,7 +284,7 @@
       "object": "12_SENSOR_RETAINER",
       "role": "part",
       "group": "stationary",
-      "description": "Front-inserted cap rests on sensor-pocket walls at4.2;0.1upward travel limited by PCB; thermal contact/force remains unqualified",
+      "description": "Front-inserted cap rests on sensor-pocket walls at 4.2;0.1 upward travel limited by PCB; thermal contact/force remains unqualified",
       "assemblyBoundsMm": [
         [
           9.90000057220459,
@@ -284,7 +344,7 @@
       "object": "BOUND_CELL_GROWTH",
       "role": "bound",
       "group": "pack",
-      "description": "Explicit0.4mm occupancy above maximum pack; cannot be used for hardware",
+      "description": "Explicit 0.4 mm occupancy above maximum pack; cannot be used for hardware",
       "assemblyBoundsMm": [
         [
           -16.200000762939453,
@@ -304,7 +364,7 @@
       "object": "BOUND_RADIO_MAX",
       "role": "bound",
       "group": "pcb",
-      "description": "Maximum module plus0.15mm seating",
+      "description": "Maximum module plus 0.15 mm seating",
       "assemblyBoundsMm": [
         [
           -5.349999904632568,
@@ -364,7 +424,7 @@
       "object": "BOUND_ERM_TAB",
       "role": "bound",
       "group": "pcb",
-      "description": "Conservative tab reaches6.9mm from centre including margin",
+      "description": "Conservative tab reaches 6.9 mm from centre including margin",
       "assemblyBoundsMm": [
         [
           11.100000381469727,
@@ -404,7 +464,7 @@
       "object": "BOUND_CUS_LEVER",
       "role": "bound",
       "group": "privacy",
-      "description": "Full transverse tolerance13.95..15.75 including0.15locator; calibrated nominal1.3width and maximum rearheight",
+      "description": "Full transverse tolerance 13.95..15.75 including 0.15 locator; calibrated nominal 1.3 width and maximum rearheight",
       "assemblyBoundsMm": [
         [
           13.950000762939453,
@@ -424,7 +484,7 @@
       "object": "BOUND_CUS_LOCATOR_0",
       "role": "bound",
       "group": "pcb",
-      "description": "Nominal0.9NPTH with conservative0.8pin x0.6protrusion proposal; supplier locator height pending",
+      "description": "Nominal 0.9 NPTH with conservative 0.8 pin x 0.6 protrusion proposal; supplier locator height pending",
       "assemblyBoundsMm": [
         [
           13.100000381469727,
@@ -444,7 +504,7 @@
       "object": "BOUND_CUS_LOCATOR_1",
       "role": "bound",
       "group": "pcb",
-      "description": "Nominal0.9NPTH with conservative0.8pin x0.6protrusion proposal; supplier locator height pending",
+      "description": "Nominal 0.9 NPTH with conservative 0.8 pin x 0.6 protrusion proposal; supplier locator height pending",
       "assemblyBoundsMm": [
         [
           13.100000381469727,
@@ -684,7 +744,7 @@
       "object": "BOUND_KMR_BODY",
       "role": "bound",
       "group": "pcb",
-      "description": "Maximum stationary body with0.15 seating; actuator modeled separately",
+      "description": "Maximum stationary body with 0.15 seating; actuator modeled separately",
       "assemblyBoundsMm": [
         [
           -9.199999809265137,
@@ -704,7 +764,7 @@
       "object": "BOUND_KMR_ACTUATOR_MAX",
       "role": "bound",
       "group": "pcb",
-      "description": "Maximum2.1mm height plus0.15 seating; not the calibrated nominal press state",
+      "description": "Maximum 2.1 mm height plus 0.15 seating; not the calibrated nominal press state",
       "assemblyBoundsMm": [
         [
           -7.5,
@@ -1081,10 +1141,30 @@
       "nativePlacement": false
     },
     {
+      "object": "SOFT_STIFFENER_DIELECTRIC",
+      "role": "soft",
+      "group": "carrier",
+      "description": "0.10 mm dielectric liner allocation; actual insulation, bonding, thickness and creep pending",
+      "assemblyBoundsMm": [
+        [
+          -15.074617385864258,
+          -14.264318466186523,
+          7.699999809265137
+        ],
+        [
+          -2.90000057220459,
+          -1.4000005722045898,
+          7.800000190734863
+        ]
+      ],
+      "worldGeometrySha256": "4eacbdc0a5c4bb724652368a33ffbf2659fd14edbb135ba418fb16c2ffed81fe",
+      "nativePlacement": false
+    },
+    {
       "object": "SOFT_MIC_GASKET_-7.2",
       "role": "soft",
       "group": "stationary",
-      "description": "Working compressed seal; free thickness0.5 and force/sealing require test",
+      "description": "Working compressed seal; free thickness 0.5 and force/sealing require test",
       "assemblyBoundsMm": [
         [
           -8.699999809265137,
@@ -1104,7 +1184,7 @@
       "object": "SOFT_MIC_GASKET_7.2",
       "role": "soft",
       "group": "stationary",
-      "description": "Working compressed seal; free thickness0.5 and force/sealing require test",
+      "description": "Working compressed seal; free thickness 0.5 and force/sealing require test",
       "assemblyBoundsMm": [
         [
           5.699999809265137,
@@ -1124,7 +1204,7 @@
       "object": "SOFT_PCB_CLAMP_0",
       "role": "soft",
       "group": "stationary",
-      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "description": "Measured foam/shim interface at positive datum; nominal 0.25 free, 0.20 working",
       "assemblyBoundsMm": [
         [
           -12.5,
@@ -1144,7 +1224,7 @@
       "object": "SOFT_PCB_CLAMP_1",
       "role": "soft",
       "group": "stationary",
-      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "description": "Measured foam/shim interface at positive datum; nominal 0.25 free, 0.20 working",
       "assemblyBoundsMm": [
         [
           10.700000762939453,
@@ -1164,7 +1244,7 @@
       "object": "SOFT_PCB_CLAMP_2",
       "role": "soft",
       "group": "stationary",
-      "description": "Measured foam/shim interface at positive datum; nominal0.25free,0.20working",
+      "description": "Measured foam/shim interface at positive datum; nominal 0.25 free, 0.20 working",
       "assemblyBoundsMm": [
         [
           -0.8999999761581421,
@@ -1184,7 +1264,7 @@
       "object": "SOFT_CAPTURE_FOAM",
       "role": "soft",
       "group": "face",
-      "description": "Free0.79 sheet modeled compressed0.74 at rest;0.39 at full press with calibrated0.25shoe stop; force/creep unqualified",
+      "description": "Free 0.79 sheet modeled compressed 0.74 at rest;0.39 at full press with calibrated 0.25 shoe stop; force/creep unqualified",
       "assemblyBoundsMm": [
         [
           -10.100000381469727,
@@ -1204,7 +1284,7 @@
       "object": "SOFT_FACE_RETURN_0",
       "role": "soft",
       "group": "stationary",
-      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "description": "Free 1.1 mm foam disk, 1.0 working rest and 0.4 working full press; compression/force/life must be qualified",
       "assemblyBoundsMm": [
         [
           9.222872734069824,
@@ -1224,7 +1304,7 @@
       "object": "SOFT_FACE_RETURN_1",
       "role": "soft",
       "group": "stationary",
-      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "description": "Free 1.1 mm foam disk, 1.0 working rest and 0.4 working full press; compression/force/life must be qualified",
       "assemblyBoundsMm": [
         [
           -17.4105167388916,
@@ -1244,7 +1324,7 @@
       "object": "SOFT_FACE_RETURN_2",
       "role": "soft",
       "group": "stationary",
-      "description": "Free1.1mm foam disk,1.0working rest and0.4working fullpress; compression/force/life must be qualified",
+      "description": "Free 1.1 mm foam disk, 1.0 working rest and 0.4 working full press; compression/force/life must be qualified",
       "assemblyBoundsMm": [
         [
           3.777569532394409,
@@ -1264,7 +1344,7 @@
       "object": "SOFT_BATTERY_BACKING",
       "role": "soft",
       "group": "pack",
-      "description": "Unselected0.15backing/fixation layer; supplier adhesive and pouch compatibility pending",
+      "description": "Unselected 0.15 backing/fixation layer; supplier adhesive and pouch compatibility pending",
       "assemblyBoundsMm": [
         [
           -16.200000762939453,
@@ -1284,7 +1364,7 @@
       "object": "SOFT_BATTERY_DIELECTRIC",
       "role": "soft",
       "group": "pack",
-      "description": "0.10dielectric plus0.05free gap after solid growth allocation; material pending",
+      "description": "0.10 dielectric plus 0.05 free gap after solid growth allocation; material pending",
       "assemblyBoundsMm": [
         [
           -16.200000762939453,
@@ -1304,7 +1384,7 @@
       "object": "SOFT_NTC_INTERFACE",
       "role": "soft",
       "group": "sensor",
-      "description": "0.1adhesive/interface at pack edge; conductivity and thermal tracking not qualified",
+      "description": "0.1 adhesive/interface at pack edge; conductivity and thermal tracking not qualified",
       "assemblyBoundsMm": [
         [
           9.800000190734863,
@@ -1321,8 +1401,8 @@
       "nativePlacement": false
     }
   ],
-  "revision": "A04 M2 development candidate",
-  "status": "PARAMETRIC MECHANISM; NOT PHYSICALLY QUALIFIED OR A NATIVE PCB RELEASE",
+  "revision": "A04 M2 structural revision S1",
+  "status": "HYBRID STRUCTURAL CANDIDATE; CALCULATION SCREENING ONLY; NOT PHYSICALLY QUALIFIED OR NATIVE PCB RELEASE",
   "scenario": "documented-pack",
   "bodyDiameterMm": 43,
   "bodyDepthMm": 12.2,
@@ -1339,8 +1419,8 @@
       "role": "part",
       "group": "stationary",
       "description": "Integral rear, three PCB seats, independent carrier shoulders, open front thread, integrated acoustic ducts and sensor pocket",
-      "bytes": 668684,
-      "sha256": "815da05b668b1ef7f913a37bf37d90e59611a1d498d4cb9fb1184ea7f3c37a35",
+      "bytes": 671384,
+      "sha256": "d9962c47a586c4acb8261cb5d4a9837aa73a999fc90ff195d4cfb9e59de607c8",
       "assemblyBoundsMm": [
         [
           -21.5,
@@ -1386,13 +1466,39 @@
       ]
     },
     {
+      "object": "13_LOWER_STEEL_STIFFENER",
+      "file": "13_lower_steel_stiffener.stl",
+      "role": "hardware",
+      "group": "carrier",
+      "description": "Separate 1.00 mm certified 301 half-hard candidate lower plate; carries bending to direct cup shoulder; not a printed resin part",
+      "bytes": 16084,
+      "sha256": "edb38e1976a82014c4dab35e4a782e4fba2a934ba28a4bb6991ecae48f5dd413",
+      "assemblyBoundsMm": [
+        [
+          -15.074617385864258,
+          -14.264318466186523,
+          7.800000190734863
+        ],
+        [
+          -2.90000057220459,
+          -1.4000005722045898,
+          8.800000190734863
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -7.800000190734863
+      ]
+    },
+    {
       "object": "03_PCB_CLAMP_AND_FACE_GUIDE",
       "file": "03_pcb_clamp_and_face_guide.stl",
       "role": "part",
       "group": "stationary",
-      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6mm face stop",
-      "bytes": 461084,
-      "sha256": "b716bee847a9b8840a9c1642c55f5661b3708b5e2e3d616b46c9517089389cb7",
+      "description": "Three matching clamp feet and rigid frame on independent shoulders; guide pins and 0.6 mm face stop",
+      "bytes": 521584,
+      "sha256": "199df9c274cc62c48aabafe18bdd17796fde9815a85839c7c574789a247bf259",
       "assemblyBoundsMm": [
         [
           -20.100000381469727,
@@ -1417,8 +1523,8 @@
       "role": "part",
       "group": "face",
       "description": "Front-inserted full face; three blind guide sleeves, flush optical insert, lateral compliant cartridge",
-      "bytes": 295784,
-      "sha256": "a0af9f10a4bce746a8073a1eee29d62b4bb277d8789a00dd5346060568086489",
+      "bytes": 300284,
+      "sha256": "683dce707feb3617786ec5de6cfa4bc42b16000381c3a533548a7cbce0a1311a",
       "assemblyBoundsMm": [
         [
           -18.350000381469727,
@@ -1490,21 +1596,47 @@
       ]
     },
     {
-      "object": "07_CARTRIDGE_KEEPER",
-      "file": "07_cartridge_keeper.stl",
+      "object": "07_CARTRIDGE_KEEPER_LEFT",
+      "file": "07_cartridge_keeper_left.stl",
       "role": "part",
       "group": "face",
-      "description": "Lateral keeper staged in face before front insertion; carrier post blocks withdrawal once face installed",
-      "bytes": 27484,
-      "sha256": "a22951d5fddc3620db3694c4bf27dd8ef911e5667fa652c0ef0626ae4758374c",
+      "description": "Separate edge strip with positive lower ledge; individual carrier post blocks withdrawal after face installation",
+      "bytes": 684,
+      "sha256": "c7767cbb0998035716d9f2869799a4a0e1cca6db1d28470d19b8d8aaf30cdb04",
       "assemblyBoundsMm": [
         [
-          -10.699999809265137,
+          -12.199999809265137,
           -7.699999809265137,
           9.510000228881836
         ],
         [
-          -3.299999952316284,
+          -11.09999942779541,
+          -1.2999999523162842,
+          10.110000610351562
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -9.510000228881836
+      ]
+    },
+    {
+      "object": "15_CARTRIDGE_KEEPER_RIGHT",
+      "file": "15_cartridge_keeper_right.stl",
+      "role": "part",
+      "group": "face",
+      "description": "Separate edge strip with positive lower ledge; individual carrier post blocks withdrawal after face installation",
+      "bytes": 684,
+      "sha256": "7989c38947c843502ce9dd0e66e1ea6e35f6485fa7d020f39c419b3b1fbc19f4",
+      "assemblyBoundsMm": [
+        [
+          -2.8999998569488525,
+          -7.699999809265137,
+          9.510000228881836
+        ],
+        [
+          -1.7999999523162842,
           -1.2999999523162842,
           10.110000610351562
         ]
@@ -1518,19 +1650,19 @@
     {
       "object": "08_MEASURED_PLUNGER_SHOE",
       "file": "08_measured_plunger_shoe.stl",
-      "role": "part",
+      "role": "hardware",
       "group": "shoe",
-      "description": "Maximum mounted switch height2.25 plus0.05rest gap; re-size from physical measurement, not a qualified fixed actuator",
-      "bytes": 1484,
-      "sha256": "1db11acc469127783ec29418ce19084b2ddaf278deb5c2786feb8f0f103164a5",
+      "description": "Separate 0.30 mm certified 301 half-hard candidate stock; minimum 0.28 for screening, deburred; not a resin print part",
+      "bytes": 684,
+      "sha256": "8a98bbfa1dc62a9cdb3f628768257bc004e55903d793d83ce4e18a1b324c343f",
       "assemblyBoundsMm": [
         [
-          -10.100000381469727,
+          -11.5,
           -7.599999904632568,
-          9.899999618530273
+          10.110000610351562
         ],
         [
-          -3.9000000953674316,
+          -2.5,
           -1.4000000953674316,
           10.40999984741211
         ]
@@ -1538,7 +1670,33 @@
       "printTranslationMm": [
         0,
         0,
-        -9.899999618530273
+        -10.110000610351562
+      ]
+    },
+    {
+      "object": "14_INSULATING_CONTACT_PAD",
+      "file": "14_insulating_contact_pad.stl",
+      "role": "hardware",
+      "group": "shoe",
+      "description": "Separate stiff dielectric contact pad;0.21 nominal includes adhesive, measured/finished per switch; supplier not selected",
+      "bytes": 684,
+      "sha256": "438d2b83624e897ae7b0a196e9961d9d6dc8343e95bce48a791d5432ebb5f9cf",
+      "assemblyBoundsMm": [
+        [
+          -7.900000095367432,
+          -5.400000095367432,
+          9.90000057220459
+        ],
+        [
+          -6.099999904632568,
+          -3.5999999046325684,
+          10.109999656677246
+        ]
+      ],
+      "printTranslationMm": [
+        0,
+        0,
+        -9.90000057220459
       ]
     },
     {
@@ -1546,7 +1704,7 @@
       "file": "09_privacy_fork.stl",
       "role": "part",
       "group": "privacy",
-      "description": "Corrected actuator centre14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
+      "description": "Corrected actuator centre 14.85; radial install before battery; nominal OFF=-Y, enabled=+Y",
       "bytes": 4284,
       "sha256": "ef3d5875fab2da7ada20d86559b4adf14dc3f8fc1958fac8001ed234646e6c78",
       "assemblyBoundsMm": [
@@ -1572,7 +1730,7 @@
       "file": "10_privacy_keeper.stl",
       "role": "part",
       "group": "stationary",
-      "description": "Open-bottom U keeper lowers over installed stem; integral measured4.4channel yields2.2travel and independent stops, carrier captures it",
+      "description": "Open-bottom U keeper lowers over installed stem; integral measured 4.4 channel yields 2.2 travel and independent stops, carrier captures it",
       "bytes": 1484,
       "sha256": "986ed464da4d71e92bb47308855882c00de0351795554c894ccac14942a83228",
       "assemblyBoundsMm": [
@@ -1624,7 +1782,7 @@
       "file": "12_sensor_retainer.stl",
       "role": "part",
       "group": "stationary",
-      "description": "Front-inserted cap rests on sensor-pocket walls at4.2;0.1upward travel limited by PCB; thermal contact/force remains unqualified",
+      "description": "Front-inserted cap rests on sensor-pocket walls at 4.2;0.1 upward travel limited by PCB; thermal contact/force remains unqualified",
       "bytes": 684,
       "sha256": "f62973301da1cd44a50343d99631ccbfb7fa4a669a42c8560cce1320906382dd",
       "assemblyBoundsMm": [
@@ -1698,7 +1856,7 @@
       ]
     }
   ],
-  "partCount": 14,
+  "partCount": 17,
   "boundObjects": [
     "BOUND_CELL_GROWTH",
     "BOUND_RADIO_MAX",
@@ -1742,6 +1900,7 @@
     "BOUND_STATUS_LED"
   ],
   "softObjects": [
+    "SOFT_STIFFENER_DIELECTRIC",
     "SOFT_MIC_GASKET_-7.2",
     "SOFT_MIC_GASKET_7.2",
     "SOFT_PCB_CLAMP_0",
@@ -1847,9 +2006,9 @@
       ]
     }
   ],
-  "contractSha256": "b2a7ef53e0208f7a1b3e3a696e60d89673511480b6016624c69b6fad691cca07",
-  "generatorSha256": "a78aec92bc9fb08c71c6aebd1a60ad11e1fecb44e32df409fa57809258499200",
-  "blendSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
+  "contractSha256": "ca31d285918a25fb4e7c1b13316ef1daa3e01435cc64aa20bd68e3671dc95f08",
+  "generatorSha256": "75e0166344e41a2e792535c903a76ccd314f8113e8b49add027d114e3245ebdd",
+  "blendSha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9",
   "nativePlacementImported": false,
   "physicalQualification": false
 }

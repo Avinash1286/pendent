@@ -1,5 +1,5 @@
 {
-  "revision": "A04 M2 front-loaded development checkpoint",
+  "revision": "A04 M2 S1 hybrid structural candidate",
   "status": "SCOPED DIGITAL CHECKS ONLY; NOT A PRINT, POWERED, WEARABLE OR NATIVE PCB RELEASE",
   "digitalScopePass": true,
   "sourceAndArtifactBindingsPass": true,
@@ -19,21 +19,21 @@
         "checker": true,
         "meshVerifier": true
       },
-      "stlSpecimens": 14,
+      "stlSpecimens": 17,
       "meshPass": true,
-      "rigidSolids": 54,
-      "softSolids": 12,
+      "rigidSolids": 57,
+      "softSolids": 13,
       "staticPass": true,
       "operatingPass": true,
       "assemblyPass": true,
-      "assemblyPaths": 16,
-      "assemblyPoseSamples": 668,
+      "assemblyPaths": 17,
+      "assemblyPoseSamples": 679,
       "capturePoseSamples": 25,
       "privacyPoseSamples": 162,
       "softWorkingStates": 3,
       "continuousProof": false,
-      "sourceBlendSha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e",
-      "manifestSha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d"
+      "sourceBlendSha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9",
+      "manifestSha256": "93140436d709666562f97995b759652fd92a6ab2564f4bbc3c6fea50cbbcd60d"
     },
     {
       "scenario": "thin-cell",
@@ -49,28 +49,28 @@
         "checker": true,
         "meshVerifier": true
       },
-      "stlSpecimens": 14,
+      "stlSpecimens": 17,
       "meshPass": true,
-      "rigidSolids": 54,
-      "softSolids": 12,
+      "rigidSolids": 57,
+      "softSolids": 13,
       "staticPass": true,
       "operatingPass": true,
       "assemblyPass": true,
-      "assemblyPaths": 16,
-      "assemblyPoseSamples": 668,
+      "assemblyPaths": 17,
+      "assemblyPoseSamples": 679,
       "capturePoseSamples": 25,
       "privacyPoseSamples": 162,
       "softWorkingStates": 3,
       "continuousProof": false,
-      "sourceBlendSha256": "5b5ac78963204668f5b157181aa4ab3e308ffc432fa7218489928c92837f2719",
-      "manifestSha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050"
+      "sourceBlendSha256": "ba2cbba13d1349ff6c292f442211c9e0210d88cb4e87b6204434b34ee623abbd",
+      "manifestSha256": "8ce547670aceed5c2411d6eca08714bdb763ba3686ff5e29871d4a3d1c60389d"
     }
   ],
   "renders": [
     {
       "view": "assembled",
       "image": "documented-pack/m2-assembled.png",
-      "imageSha256": "22ab48e8cff0f3301592a713e94ce78ae6ce9a6be7307150202597184a8aea4e",
+      "imageSha256": "2405097197946278e68ad5bce9699196eb37382f7bb28da22508648f20938b70",
       "sourceAndReviewBindingPass": true,
       "rootActuallyReviewed": true,
       "physicalOrNativeApproval": false
@@ -78,7 +78,7 @@
     {
       "view": "exploded",
       "image": "documented-pack/m2-exploded.png",
-      "imageSha256": "5e1d154869fc466a3b2056047f8cf41183ad38d8e76caeca91c2bdda020debbd",
+      "imageSha256": "81cbe7242c9375e97eb50afb946c38df50f2ad75c4194efadc65df22a3c85c88",
       "sourceAndReviewBindingPass": true,
       "rootActuallyReviewed": true,
       "physicalOrNativeApproval": false
@@ -88,27 +88,27 @@
     "file": "docs/a04/cus22-candidate-verification.json",
     "sha256": "a7b625d50bbc5ae01c0e71a97dfc71aef71b6e38626cc88811d9d092b7bc57d9"
   },
-  "industrialDesignM2SectionSha256": "ca7c800226272d1d97b55a28344c29ce3d259a50c5786ad86d9a29d24fead044",
+  "industrialDesignM2SectionSha256": "dcef77c2398fa4619ac6b639eb81f3c39ea0083102e075382184fee67afd8e28",
   "files": [
     {
       "file": "build_m2.py",
-      "bytes": 22552,
-      "sha256": "a78aec92bc9fb08c71c6aebd1a60ad11e1fecb44e32df409fa57809258499200"
+      "bytes": 25033,
+      "sha256": "75e0166344e41a2e792535c903a76ccd314f8113e8b49add027d114e3245ebdd"
     },
     {
       "file": "check_m2.py",
-      "bytes": 14126,
-      "sha256": "73bcca4e63a461cfd6c7fc494e5d622af7310826e5a89a89deb7bc46dd377ffe"
+      "bytes": 14625,
+      "sha256": "2a7110b58eb848e0549f637d890b9044c74b62b0547a5c110086b53c5c5c1966"
     },
     {
       "file": "contract.json",
-      "bytes": 7674,
-      "sha256": "b2a7ef53e0208f7a1b3e3a696e60d89673511480b6016624c69b6fad691cca07"
+      "bytes": 10431,
+      "sha256": "ca31d285918a25fb4e7c1b13316ef1daa3e01435cc64aa20bd68e3671dc95f08"
     },
     {
       "file": "documented-pack/01_fixed_cup.stl",
-      "bytes": 668684,
-      "sha256": "815da05b668b1ef7f913a37bf37d90e59611a1d498d4cb9fb1184ea7f3c37a35"
+      "bytes": 671384,
+      "sha256": "d9962c47a586c4acb8261cb5d4a9837aa73a999fc90ff195d4cfb9e59de607c8"
     },
     {
       "file": "documented-pack/02_threaded_bezel.stl",
@@ -117,13 +117,13 @@
     },
     {
       "file": "documented-pack/03_pcb_clamp_and_face_guide.stl",
-      "bytes": 461084,
-      "sha256": "b716bee847a9b8840a9c1642c55f5661b3708b5e2e3d616b46c9517089389cb7"
+      "bytes": 521584,
+      "sha256": "199df9c274cc62c48aabafe18bdd17796fde9815a85839c7c574789a247bf259"
     },
     {
       "file": "documented-pack/04_captive_face.stl",
-      "bytes": 295784,
-      "sha256": "a0af9f10a4bce746a8073a1eee29d62b4bb277d8789a00dd5346060568086489"
+      "bytes": 300284,
+      "sha256": "683dce707feb3617786ec5de6cfa4bc42b16000381c3a533548a7cbce0a1311a"
     },
     {
       "file": "documented-pack/05_flush_status_window.stl",
@@ -136,14 +136,14 @@
       "sha256": "71fdd1f1918812f2ede1036e213e4b334b455ae2ae795baba108b4dba4c44510"
     },
     {
-      "file": "documented-pack/07_cartridge_keeper.stl",
-      "bytes": 27484,
-      "sha256": "a22951d5fddc3620db3694c4bf27dd8ef911e5667fa652c0ef0626ae4758374c"
+      "file": "documented-pack/07_cartridge_keeper_left.stl",
+      "bytes": 684,
+      "sha256": "c7767cbb0998035716d9f2869799a4a0e1cca6db1d28470d19b8d8aaf30cdb04"
     },
     {
       "file": "documented-pack/08_measured_plunger_shoe.stl",
-      "bytes": 1484,
-      "sha256": "1db11acc469127783ec29418ce19084b2ddaf278deb5c2786feb8f0f103164a5"
+      "bytes": 684,
+      "sha256": "8a98bbfa1dc62a9cdb3f628768257bc004e55903d793d83ce4e18a1b324c343f"
     },
     {
       "file": "documented-pack/09_privacy_fork.stl",
@@ -166,6 +166,21 @@
       "sha256": "f62973301da1cd44a50343d99631ccbfb7fa4a669a42c8560cce1320906382dd"
     },
     {
+      "file": "documented-pack/13_lower_steel_stiffener.stl",
+      "bytes": 16084,
+      "sha256": "edb38e1976a82014c4dab35e4a782e4fba2a934ba28a4bb6991ecae48f5dd413"
+    },
+    {
+      "file": "documented-pack/14_insulating_contact_pad.stl",
+      "bytes": 684,
+      "sha256": "438d2b83624e897ae7b0a196e9961d9d6dc8343e95bce48a791d5432ebb5f9cf"
+    },
+    {
+      "file": "documented-pack/15_cartridge_keeper_right.stl",
+      "bytes": 684,
+      "sha256": "7989c38947c843502ce9dd0e66e1ea6e35f6485fa7d020f39c419b3b1fbc19f4"
+    },
+    {
       "file": "documented-pack/90_unpowered_board_gauge.stl",
       "bytes": 129284,
       "sha256": "a7abbd1521a013621b2bfef48a6d3a54054c046571c99f8d9f46bf366b53a048"
@@ -177,83 +192,93 @@
     },
     {
       "file": "documented-pack/aura-a04-m2.blend",
-      "bytes": 1287013,
-      "sha256": "f44f933a8db2a6f555841c5fceef8736d6d144620659696b90616f18d1c44d8e"
+      "bytes": 1300076,
+      "sha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9"
     },
     {
       "file": "documented-pack/m2-assembled-inspection.blend",
-      "bytes": 1307575,
-      "sha256": "0b1c415170aee02552fae6f0d28e340875eba015ddc834964230a4f919cb7bc2"
+      "bytes": 1326650,
+      "sha256": "d318a8d69a5356125c1fe1d4f7f21d13bee9850f868c96fc1ea1b595661fff3c"
     },
     {
       "file": "documented-pack/m2-assembled.png",
-      "bytes": 2304344,
-      "sha256": "22ab48e8cff0f3301592a713e94ce78ae6ce9a6be7307150202597184a8aea4e"
+      "bytes": 2305166,
+      "sha256": "2405097197946278e68ad5bce9699196eb37382f7bb28da22508648f20938b70"
     },
     {
       "file": "documented-pack/m2-exploded-inspection.blend",
-      "bytes": 1307505,
-      "sha256": "6e940fd2a87351fb6359f5ce35dd93b2c2b80cfeb8785e63bc9719c46c322d8c"
+      "bytes": 1326222,
+      "sha256": "b7c96cd523db3366a49187d953cf837a73c2662023c77a6307fa6d7b9fdf18b0"
     },
     {
       "file": "documented-pack/m2-exploded.png",
-      "bytes": 2527407,
-      "sha256": "5e1d154869fc466a3b2056047f8cf41183ad38d8e76caeca91c2bdda020debbd"
+      "bytes": 2531691,
+      "sha256": "81cbe7242c9375e97eb50afb946c38df50f2ad75c4194efadc65df22a3c85c88"
     },
     {
       "file": "documented-pack/mesh-audit.json",
-      "bytes": 15355,
-      "sha256": "7328caafd5481ea7bda4d9917de77d5d6109fae3ff8e3a71319bb1405106184a"
+      "bytes": 18569,
+      "sha256": "a90da4ef728847c1e4f5dbb9f1416aad8a5a2ba59e1b18c581bafa1ff55ca713"
     },
     {
       "file": "documented-pack/motion-audit.json",
-      "bytes": 26303,
-      "sha256": "903739b459422df09ec978128a107c956d0a2e2175d66195cb5aada2455f6080"
+      "bytes": 27483,
+      "sha256": "0f2fc695b2bf359b70b886c2c6f772f34588e95e40460e3468fe3380a5d2a410"
     },
     {
       "file": "documented-pack/parts-manifest.json",
-      "bytes": 52049,
-      "sha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d"
+      "bytes": 57099,
+      "sha256": "93140436d709666562f97995b759652fd92a6ab2564f4bbc3c6fea50cbbcd60d"
     },
     {
       "file": "engineering-audit.json",
-      "bytes": 5191,
-      "sha256": "715f8ce9168769a68a6c37ee0f02a5d23b253b5815b86c7d172070443ae0289d"
+      "bytes": 5378,
+      "sha256": "edfdc9fb5e98977cf2f1cb0241f871698f01b0390a3bd4eecd02b03701de73b0"
     },
     {
       "file": "engineering_audit.py",
-      "bytes": 3715,
-      "sha256": "e8a2eaa50de70b2004d7d190810365b6e8986bec983bc04c1b75928af836a878"
+      "bytes": 3913,
+      "sha256": "b7b3316f1819ace771dadf3bbf399c45ed6b1b720c0f6be92b66eb4d77594544"
     },
     {
       "file": "package_m2.py",
-      "bytes": 6160,
-      "sha256": "f84abdee92d7c50223db2c2e666c4858d810f023200a77a49cadcc89cd8a354c"
+      "bytes": 7193,
+      "sha256": "cff7f6e36e34f956f93c8a521288fc3c7787c896a5beb438eb82d0c234c13632"
     },
     {
       "file": "README.md",
-      "bytes": 10661,
-      "sha256": "912a193d03c21062de05fa9ff091bc68d782a7caa7a037e0d83c67d9a6147578"
+      "bytes": 18588,
+      "sha256": "11d6266189edc5edb9b1f8e60f5f273e12173c8c2210cb5fb819007533bfb207"
     },
     {
       "file": "render-assembled.json",
       "bytes": 732,
-      "sha256": "e0012fbc17d41b5f5b7adaa333105d5c4fa9f664e171fa262e36d790b6eafa20"
+      "sha256": "aeadc99ea6ffc26451ba38cc705bc5695f0c0172b0fb74a7f0f54db0906d0796"
     },
     {
       "file": "render-exploded.json",
-      "bytes": 1704,
-      "sha256": "87dbec3b88671306bc6e0106bedc62c7a6bd0a29bcb3dc8904946a891196afe1"
+      "bytes": 1935,
+      "sha256": "3c2dd6a939469a27006cc3d7cd06e1f6c38a42aeb6a44bd3d971ff015639a4e7"
     },
     {
       "file": "render_m2.py",
-      "bytes": 5372,
-      "sha256": "311facf430a54c05e42f08ce0c4205a4043fcfd3ae9bc29f3889026839919186"
+      "bytes": 5788,
+      "sha256": "e56fd67febc81132c4d831142a5493aa944cb191dc55f703881b63671512da53"
+    },
+    {
+      "file": "structural-screen.json",
+      "bytes": 14965,
+      "sha256": "e14bf5fc5b1aad3048e1366ed24eb6fd5c33483d545e177981a151a72956b880"
+    },
+    {
+      "file": "structural_screen.py",
+      "bytes": 12383,
+      "sha256": "c1e182a4728f3543a6a757f1edbbd072caeb29b5ad9d4508a2563f4913603fe3"
     },
     {
       "file": "thin-cell/01_fixed_cup.stl",
-      "bytes": 667584,
-      "sha256": "a0a5fb60e727e6924750cd9fb064855d0a6ba43536adb36301aaa00daf51d0ce"
+      "bytes": 670284,
+      "sha256": "6cdb6242f2ea7ad02307165dcfcc992f29d05ec878de6a41eae27d7df331866e"
     },
     {
       "file": "thin-cell/02_threaded_bezel.stl",
@@ -262,13 +287,13 @@
     },
     {
       "file": "thin-cell/03_pcb_clamp_and_face_guide.stl",
-      "bytes": 461084,
-      "sha256": "b3157eafacd621730cc697fc6898940be55efd15348c7c7bb8663dc0b4f92088"
+      "bytes": 521584,
+      "sha256": "bc312b5ea69b6064462747278c325ccdc3a0874314766560483056473c87124c"
     },
     {
       "file": "thin-cell/04_captive_face.stl",
-      "bytes": 295784,
-      "sha256": "a0af9f10a4bce746a8073a1eee29d62b4bb277d8789a00dd5346060568086489"
+      "bytes": 300284,
+      "sha256": "683dce707feb3617786ec5de6cfa4bc42b16000381c3a533548a7cbce0a1311a"
     },
     {
       "file": "thin-cell/05_flush_status_window.stl",
@@ -281,14 +306,14 @@
       "sha256": "71fdd1f1918812f2ede1036e213e4b334b455ae2ae795baba108b4dba4c44510"
     },
     {
-      "file": "thin-cell/07_cartridge_keeper.stl",
-      "bytes": 27484,
-      "sha256": "a22951d5fddc3620db3694c4bf27dd8ef911e5667fa652c0ef0626ae4758374c"
+      "file": "thin-cell/07_cartridge_keeper_left.stl",
+      "bytes": 684,
+      "sha256": "c7767cbb0998035716d9f2869799a4a0e1cca6db1d28470d19b8d8aaf30cdb04"
     },
     {
       "file": "thin-cell/08_measured_plunger_shoe.stl",
-      "bytes": 1484,
-      "sha256": "1db11acc469127783ec29418ce19084b2ddaf278deb5c2786feb8f0f103164a5"
+      "bytes": 684,
+      "sha256": "8a98bbfa1dc62a9cdb3f628768257bc004e55903d793d83ce4e18a1b324c343f"
     },
     {
       "file": "thin-cell/09_privacy_fork.stl",
@@ -311,6 +336,21 @@
       "sha256": "22532e7f10618ef75d0ecdeac619e9e47ad6d3a224b428c1a906f6489d55818d"
     },
     {
+      "file": "thin-cell/13_lower_steel_stiffener.stl",
+      "bytes": 16084,
+      "sha256": "edb38e1976a82014c4dab35e4a782e4fba2a934ba28a4bb6991ecae48f5dd413"
+    },
+    {
+      "file": "thin-cell/14_insulating_contact_pad.stl",
+      "bytes": 684,
+      "sha256": "438d2b83624e897ae7b0a196e9961d9d6dc8343e95bce48a791d5432ebb5f9cf"
+    },
+    {
+      "file": "thin-cell/15_cartridge_keeper_right.stl",
+      "bytes": 684,
+      "sha256": "7989c38947c843502ce9dd0e66e1ea6e35f6485fa7d020f39c419b3b1fbc19f4"
+    },
+    {
       "file": "thin-cell/90_unpowered_board_gauge.stl",
       "bytes": 129284,
       "sha256": "a7abbd1521a013621b2bfef48a6d3a54054c046571c99f8d9f46bf366b53a048"
@@ -322,23 +362,23 @@
     },
     {
       "file": "thin-cell/aura-a04-m2.blend",
-      "bytes": 1287264,
-      "sha256": "5b5ac78963204668f5b157181aa4ab3e308ffc432fa7218489928c92837f2719"
+      "bytes": 1300441,
+      "sha256": "ba2cbba13d1349ff6c292f442211c9e0210d88cb4e87b6204434b34ee623abbd"
     },
     {
       "file": "thin-cell/mesh-audit.json",
-      "bytes": 15357,
-      "sha256": "e1a6b290a3de85d3160b97ebf95dd8bdf6a48ccfbd460bc0268b546075756861"
+      "bytes": 18568,
+      "sha256": "9ad9f328f5767de61c0d0fdb7ce987b457c76df1e1576784337497d8166a4d1b"
     },
     {
       "file": "thin-cell/motion-audit.json",
-      "bytes": 26298,
-      "sha256": "d7d95e86a33b22cd8acf8592fa0e143ccedcf414043c9ca30b27de2fdb71000f"
+      "bytes": 27478,
+      "sha256": "f119c6ad6a1870aaf5f25f4a21fa9b265953648beddfc0fb40f5dae06e8e411a"
     },
     {
       "file": "thin-cell/parts-manifest.json",
-      "bytes": 52049,
-      "sha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050"
+      "bytes": 57092,
+      "sha256": "8ce547670aceed5c2411d6eca08714bdb763ba3686ff5e29871d4a3d1c60389d"
     },
     {
       "file": "verify_meshes.py",
@@ -347,8 +387,8 @@
     },
     {
       "file": "visual-review.json",
-      "bytes": 2241,
-      "sha256": "176c1eda84154bbb581074f243d2cb52843a7e504f925c0909fce07e4fcdf20f"
+      "bytes": 2626,
+      "sha256": "06e3de68448d4af013e3a4c203e50466f20b8f9cc6f4b90a79649639dcece739"
     }
   ],
   "printRelease": false,
@@ -359,6 +399,17 @@
   "purchasedPcbReferencesPending": 68,
   "safeSwitchEndpointQualified": false,
   "forceAndStructuralStrengthQualified": false,
+  "structuralScreening": {
+    "report": "structural-screen.json",
+    "candidate": "ASTM A666 Type 301 half-hard; explicitly lot-certified yield at least 110 ksi / 758 MPa",
+    "supplierLotOrFinishedPartQualified": false,
+    "rejectedAnnealed304OneArm5NScreenPass": false,
+    "candidate301CalculatedMetalScreenPass": true,
+    "candidateOneArm5NFactoredStressMPa": 373.96121883656514,
+    "oneArm5NMaxSupportDeflectionSurrogateMm": 0.1988217503531673,
+    "jointAndEndpointQualified": false,
+    "nominalCaptureSectionIsToleranceProof": false
+  },
   "supplierPackQualified": false,
   "rfAccepted": false,
   "bail": {
@@ -373,7 +424,7 @@
     "Supplier-controlled pack/PCM/tab/lead/growth, dielectric, adhesive and thermal-sensor approval.",
     "Actual switch mounted height, first operation, allowed endpoints, asymmetric privacy stops and safe overtravel calibration.",
     "Foam rest preload, working force, alignment, creep, temperature and life; CAD soft allocation is not a material simulation.",
-    "Print/process and structural design/load testing of0.30mm shoe plate,0.50mm support arms,0.60mm rails, thread and thin running details before print release.",
+    "Hybrid stock certificate/thickness and dielectric qualification; measured root seating, clamp preload, bearing, liner/cover creep and force-displacement; printed strips/ledges/thread and off-axis/cycle tests before print release.",
     "Off-axis presses, repeated assembly/closure, torque, sealing, bail/chain strength, comfort and breakaway behavior.",
     "Actual dock hardware, acoustic seals/response, thermal behavior, RF/finish/chain/body interaction and powered/worn testing."
   ],

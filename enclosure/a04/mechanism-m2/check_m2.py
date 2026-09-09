@@ -63,7 +63,7 @@ def sweep(label,movers,targets,poses,method):
  reset();print('PATH',label,len(out),'/',len(poses),flush=True)
  return {'path':label,'method':method,'samples':len(poses),'movingObjects':movers,'targetObjects':targets,'findings':out,'intentionalEnvelopeContacts':ignored,'pass':not out}
 if not a.static_only:
- ops=[];face=[n for n,o in rigid.items() if o.get('group')=='face'];shoe=['08_MEASURED_PLUNGER_SHOE'];act=['BOUND_KMR_ACTUATOR_MAX'];moving=face+shoe+act;station=[n for n in rigid if n not in moving]
+ ops=[];face=[n for n,o in rigid.items() if o.get('group')=='face'];shoe=[n for n,o in rigid.items() if o.get('group')=='shoe'];act=['BOUND_KMR_ACTUATOR_MAX'];moving=face+shoe+act;station=[n for n in rigid if n not in moving]
  states=[]
  for i in range(25):
   f=.6*i/24;sh=min(f,.25);ac=max(0,sh-.05);reset();pose(face,dz=-f);pose(shoe,dz=-sh);pose(act,dz=-ac)
@@ -107,12 +107,13 @@ if not a.static_only:
   privacy.append({'switchTravelMm':t,'leverWidthMm':w,'requiredExternalTravelMm':ext,'requiredKeeperChannelMm':2.2+ext,'nominalKeeperCase':t==1.5,'actualReplacementKeeperGeometryTested':True,'samples':54,'findings':states,'pass':not states})
  keeper_obj.data=keeper_original.copy();reset();result['operationPaths']=ops;result['privacyTolerancePaths']=privacy
  # Ordered removal/assembly paths: mating counterparts are stationary only when already installed.
- paths=[];cup=['01_FIXED_CUP'];fork=[slider];keeper=['10_PRIVACY_KEEPER'];contact=['11_CONTACT_ACCESS_CARRIER'];sensor=[n for n,o in solid.items() if o.get('group')=='sensor']+['12_SENSOR_RETAINER'];pack=[n for n,o in solid.items() if o.get('group')=='pack'];pcb=[n for n,o in rigid.items() if o.get('group')=='pcb'];carrier=['03_PCB_CLAMP_AND_FACE_GUIDE']+[n for n in soft if n.startswith(('SOFT_PCB_CLAMP_','SOFT_FACE_RETURN_'))];face_assembly=face+shoe+['SOFT_CAPTURE_FOAM'];gaskets=[n for n in soft if n.startswith('SOFT_MIC_GASKET_')];bezel=[n for n,o in rigid.items() if o.get('group')=='bezel']
+ paths=[];cup=['01_FIXED_CUP'];fork=[slider];keeper=['10_PRIVACY_KEEPER'];contact=['11_CONTACT_ACCESS_CARRIER'];sensor=[n for n,o in solid.items() if o.get('group')=='sensor']+['12_SENSOR_RETAINER'];pack=[n for n,o in solid.items() if o.get('group')=='pack'];pcb=[n for n,o in rigid.items() if o.get('group')=='pcb'];carrier=['03_PCB_CLAMP_AND_FACE_GUIDE']+[n for n,o in solid.items() if o.get('group')=='carrier']+[n for n in soft if n.startswith(('SOFT_PCB_CLAMP_','SOFT_FACE_RETURN_'))];face_assembly=face+shoe+['SOFT_CAPTURE_FOAM'];gaskets=[n for n in soft if n.startswith('SOFT_MIC_GASKET_')];bezel=[n for n,o in rigid.items() if o.get('group')=='bezel']
  paths.append(sweep('00 preseat acoustic working gaskets',[n for n in soft if n.startswith('SOFT_MIC_GASKET_')],cup,[{'dz':i*.25} for i in range(33)],'Working compressed allocations, front loading; free thickness compression force pending'))
  paths.append(sweep('01 radial privacy insertion before electronics',fork,cup,[{'dx':i*.5} for i in range(29)],'Reverse insertion route +X0..14 sampled0.5mm'))
  installed=cup+fork+gaskets
  for label,group,targets in [('02 privacy keeper front insertion',keeper,installed),('03 contact carrier front insertion',contact,installed+keeper),('04 sensor and routed lead insertion',sensor,installed+keeper+contact),('05 pack growth and lead front insertion',pack,installed+keeper+contact+sensor),('06 populated board proposal front insertion',pcb,installed+keeper+contact+sensor+pack),('07 clamp carrier front insertion',carrier,installed+keeper+contact+sensor+pack+pcb),('08 preassembled face front insertion',face_assembly,installed+keeper+contact+sensor+pack+pcb+carrier)]:
   paths.append(sweep(label,group,targets,[{'dz':i*.5} for i in range(49)],'Reverse front insertion +Z0..24 sampled0.5mm; flexible routes held as conservative rigid proxies, deformation not assumed.'))
+ paths.append(sweep('07a steel and liner into carrier underside',['13_LOWER_STEEL_STIFFENER','SOFT_STIFFENER_DIELECTRIC'],['03_PCB_CLAMP_AND_FACE_GUIDE'],[{'dz':-.25*i} for i in range(17)],'Before front insertion, seat the lined steel from the carrier underside. Hold this unfastened subassembly on a fixture until the closure captures its root; bonding and measured shims remain process work.'))
  paths.append(sweep('09 bezel unscrew and front removal',bezel,[n for n in rigid if n not in bezel],[{'dz':3*i/72,'rot':6*math.pi*i/72} for i in range(73)]+[{'dz':3+i*.5,'rot':6*math.pi} for i in range(1,45)],'Helical thread path3turns sampled15deg then axial removal0.5mm samples'))
  paths.append(sweep('09b fixed diffuser front insertion',['06_FIXED_DIFFUSER'],['02_THREADED_BEZEL'],[{'dz':i*.25} for i in range(33)],'Separate diffuser inserts from front before bezel is threaded onto cup'))
  # Face component assembly in isolation, with carrier/cup absent.
@@ -122,7 +123,7 @@ if not a.static_only:
   if 'shoe' in label:target+=['SOFT_CAPTURE_FOAM']
   if 'screw' in label:target+=['07_CARTRIDGE_KEEPER','BOUND_CARTRIDGE_NUT']
   paths.append(sweep(label,group,target,[{axis:k} for k in steps],'Local subassembly insertion sampled0.25mm'))
- paths.append(sweep('12 cartridge keeper dogleg insertion',['07_CARTRIDGE_KEEPER'],['04_CAPTIVE_FACE','08_MEASURED_PLUNGER_SHOE','SOFT_CAPTURE_FOAM'],[{'dy':-.25*i} for i in range(21)]+[{'dy':-5,'dz':-.25*i} for i in range(1,21)],'Reverse removal: slide5mm to clear positive rail ledges while staying inside flange; then lower5mm toward rear. Reverse order inserts the keeper before carrier/face assembly.'))
+ paths.append(sweep('12 cartridge keeper dogleg insertion',['07_CARTRIDGE_KEEPER_LEFT','15_CARTRIDGE_KEEPER_RIGHT'],['04_CAPTIVE_FACE']+shoe+['SOFT_CAPTURE_FOAM'],[{'dy':-.25*i} for i in range(15)]+[{'dy':-3.5,'dz':-.25*i} for i in range(1,21)],'Reverse removal: slide3.5mm to clear positive rail ledges while staying inside flange; then lower5mm toward rear. Reverse order inserts the keeper before carrier/face assembly.'))
  # Two front service-tool pins approach exposed blind rim sockets. They are tooling, not assembled product solids.
  tool_names=[]
  for i,x in enumerate((-20.5,20.5)):

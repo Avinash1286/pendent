@@ -2,7 +2,7 @@
   "status": "ARITHMETIC AND SOURCE CONCORDANCE ONLY; NO NATIVE/PHYSICAL APPROVAL",
   "allPass": true,
   "errors": [],
-  "contractSha256": "b2a7ef53e0208f7a1b3e3a696e60d89673511480b6016624c69b6fad691cca07",
+  "contractSha256": "ca31d285918a25fb4e7c1b13316ef1daa3e01435cc64aa20bd68e3671dc95f08",
   "authoritativeCusReview": "docs/a04/cus22-candidate-verification.json",
   "authoritativeCusReviewSha256": "a7b625d50bbc5ae01c0e71a97dfc71aef71b6e38626cc88811d9d092b7bc57d9",
   "cusNativeAssigned": false,
@@ -62,7 +62,7 @@
         }
       ],
       "allObjectBoundsAndGeometryHashesPresent": true,
-      "manifestSha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050"
+      "manifestSha256": "8ce547670aceed5c2411d6eca08714bdb763ba3686ff5e29871d4a3d1c60389d"
     },
     {
       "scenario": "documented-pack",
@@ -118,7 +118,7 @@
         }
       ],
       "allObjectBoundsAndGeometryHashesPresent": true,
-      "manifestSha256": "845a8f4ea41cd5965c69d197ff804430075950804aeaf22a3df976342087d50d"
+      "manifestSha256": "93140436d709666562f97995b759652fd92a6ab2564f4bbc3c6fea50cbbcd60d"
     }
   ],
   "capture": {
@@ -172,13 +172,15 @@
   },
   "structuralQualification": {
     "proven": false,
-    "minimumTrialFeaturesMm": {
-      "shoePlate": 0.3,
-      "carrierSupportArmDiameter": 0.5,
-      "railLedge": 0.6
-    },
-    "required": "Print/process, load/deflection, off-axis pressing and cycle/creep tests or structural redesign before any print/powered release."
+    "revision": "S1 hybrid candidate",
+    "separateHardware": [
+      "0.30 mm candidate steel shoe",
+      "1.00 mm CAD maximum lower steel plate",
+      "Measured insulating contact pad"
+    ],
+    "screenReport": "structural-screen.json",
+    "required": "Incoming stock certificate/thickness, measured root joint/liner/closure force-displacement, print process, off-axis load, cycle/creep and switch endpoint tests before any print or powered release."
   },
   "physicalQualification": false,
-  "scriptSha256": "e8a2eaa50de70b2004d7d190810365b6e8986bec983bc04c1b75928af836a878"
+  "scriptSha256": "b7b3316f1819ace771dadf3bbf399c45ed6b1b720c0f6be92b66eb4d77594544"
 }

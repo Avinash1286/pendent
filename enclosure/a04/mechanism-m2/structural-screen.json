@@ -1,0 +1,339 @@
+{
+  "revision": "S1 hybrid structural screening",
+  "status": "CALCULATED SCREENING ONLY; NO MEASURED LOAD, MATERIAL, JOINT, FATIGUE OR SWITCH-ENDPOINT QUALIFICATION",
+  "sourceBindings": {
+    "contractSha256": "ca31d285918a25fb4e7c1b13316ef1daa3e01435cc64aa20bd68e3671dc95f08",
+    "generatorSha256": "75e0166344e41a2e792535c903a76ccd314f8113e8b49add027d114e3245ebdd",
+    "scriptSha256": "c1e182a4728f3543a6a757f1edbbd072caeb29b5ad9d4508a2563f4913603fe3"
+  },
+  "catalogReferences": [
+    {
+      "url": "https://www.elgiloy.com/wp-content/uploads/2024/06/301-Alloy-Stainless-Steel-Data-Sheet-06042024.pdf",
+      "used": "ASTM A666 Type 301 / UNS S30100 half-hard: minimum 0.2% yield 110 ksi / 758 MPa, modulus 193 GPa at 20 C. Yield must be explicitly ordered and lot-certified; standard production guarantees tensile OR yield OR hardness. Stock lot and finished-part process remain unselected."
+    },
+    {
+      "url": "https://formlabs-media.formlabs.com/datasheets/251013-MS-TDS-Tough_2000_V2.pdf",
+      "used": "Post-cured Tough 2000 V2 flexural modulus 1701 MPa and tensile strength 40.4 MPa are comparative catalog test values, not printed M2 data."
+    }
+  ],
+  "oldResinRejected": {
+    "loadN": 1.5,
+    "roundArmEach": {
+      "stressMPa": 307.10157745154333,
+      "linearDeflectionMm": 6.078240118088551
+    },
+    "bridge": {
+      "stressMPa": 191.5307489093534,
+      "deflectionMm": 10.574288913592367
+    },
+    "shoe": {
+      "stressMPa": 25.000000000000004,
+      "deflectionMm": 0.313867659546672
+    },
+    "interpretation": "Reject old resin links. Predicted arm/bridge displacement exceeds the small-deflection regime; the numerical displacement is not a prediction of the failed shape."
+  },
+  "steelAssumptions": {
+    "modulusMPa": 193000.0,
+    "minimumCertificateProofStrengthMPa": 758.0,
+    "shoeMinimumThicknessMm": 0.28,
+    "stiffenerMinimumThicknessMm": 0.95,
+    "armWidthMm": 1.2,
+    "armLengthScreenMm": 9,
+    "rootBridgeWidthMm": 3.2,
+    "assumedConcentrationFactor": 1.5,
+    "concentrationFactorIsValidated": false,
+    "rootToLoadLeverMm": 13.025063040547943,
+    "rootReactionCoupleSpacingAssumedMm": 1.4
+  },
+  "loadCases": [
+    {
+      "loadN": 1.5,
+      "loadMeaning": "Centered switch-force screening example",
+      "shoe": {
+        "stressMPa": 41.659809084924284,
+        "deflectionMm": 0.010407243202192409
+      },
+      "rootBendingMPa": 40.33631603273137,
+      "rootTorsionApproxMPa": 2.948451565564965,
+      "kneeBendingMPa": 15.581717451523547,
+      "kneeTorsionApproxMPa": 15.799861495844876,
+      "armEach": {
+        "stressMPa": 37.39612188365651,
+        "deflectionMm": 0.011013856458780755
+      },
+      "maximumNominalEquivalentStressMPa": 41.659809084924284,
+      "stressWithAssumed1p5ConcentrationFactorMPa": 62.48971362738642,
+      "catalogYieldToFactoredStressRatio": 12.129996378600826,
+      "serialBeamDeflectionSurrogateMm": 0.036052606749258365,
+      "rootHoldDownReactionN": 13.955424686301368,
+      "rootUpperCompressionStressMPa": 5.8147602859589025,
+      "rootLowerCompressionStressMPa": 6.133105034246575
+    },
+    {
+      "loadN": 5,
+      "loadMeaning": "Centered unpowered structural-fixture screen, not a rated finger load or approved switch load",
+      "shoe": {
+        "stressMPa": 138.86603028308093,
+        "deflectionMm": 0.0346908106739747
+      },
+      "rootBendingMPa": 134.45438677577124,
+      "rootTorsionApproxMPa": 9.828171885216552,
+      "kneeBendingMPa": 51.93905817174515,
+      "kneeTorsionApproxMPa": 52.66620498614959,
+      "armEach": {
+        "stressMPa": 124.65373961218837,
+        "deflectionMm": 0.03671285486260252
+      },
+      "maximumNominalEquivalentStressMPa": 138.86603028308093,
+      "stressWithAssumed1p5ConcentrationFactorMPa": 208.2990454246214,
+      "catalogYieldToFactoredStressRatio": 3.638998913580248,
+      "serialBeamDeflectionSurrogateMm": 0.12017535583086121,
+      "rootHoldDownReactionN": 46.51808228767123,
+      "rootUpperCompressionStressMPa": 19.382534286529676,
+      "rootLowerCompressionStressMPa": 20.44368344748858
+    }
+  ],
+  "screeningSupportsNextUnpoweredJointTest": true,
+  "notProof": "Linear beam/rectangular torsion approximations omit joint compliance, local warping, cut-edge flaws, fatigue, off-axis presses, adhesive and liner creep. Assumed stress factor and load sharing need analysis/measurement. Root reaction values explicitly prevent mistaking a seated sheet for a perfectly fixed beam. No 10 N or life rating is claimed.",
+  "stack": {
+    "uniformAvailableAboveActuatorMm": 0.51,
+    "rejectedPoint5StockRemainingMm": 0.01,
+    "shoePlateProposedMm": [
+      0.28,
+      0.32
+    ],
+    "remainingNominalInsulatingPadIncludingAdhesiveMm": [
+      0.19,
+      0.23
+    ],
+    "padDrawingNominalMm": 0.21,
+    "padIsPerAssemblyMeasuredAndFinished": true,
+    "mountedHeightAndPrintedDatumsTolerancePass": false,
+    "shoeToleranceProcess": "Fixture the shoe plane and measure actual steel thickness/flatness, printed roof and mounted actuator height. Finish or remake the insulating pad to the measured rest gap; then measure foam preload and first/last operation. The 0.19..0.23 mm interval excludes printed/mounted uncertainty and is not a worst-case fit approval. Reject stacks outside the validated finishing range.",
+    "lowerSteelIncomingAcceptanceProposalMm": [
+      0.95,
+      1.0
+    ],
+    "lowerDielectricIncomingAcceptanceProposalMm": [
+      0.08,
+      0.1
+    ],
+    "nominalRootPacketSpaceMm": 1.1,
+    "nominalPacketShimAllocationMm": [
+      0,
+      0.07
+    ],
+    "rootProcess": "The 1.00 mm CAD plate is the proposed maximum acceptance gauge, not a promise that nominal 1 mm stock fits. Measure both packet and printed root gap; finish the wall-tied cup bed and add a controlled root shim as needed to achieve positive closure capture without distortion. Reject oversized stock. Verify remaining board clearance and the actual joint compliance.",
+    "steelToBoardNominalMm": 0.2,
+    "linerToBoardNominalMm": 0.1,
+    "actualBoardWarpPlacementClearanceAccepted": false,
+    "newMetalMaximumYMm": -1.4,
+    "inheritedAntennaAllocationMinimumYMm": 11.5,
+    "geometricGapToAntennaAllocationMm": 12.9,
+    "rfAcceptance": false
+  },
+  "printFeatures": {
+    "primaryShoeAndBendingPlateAreMetal": true,
+    "printedStopDiameterMm": 1.3,
+    "printedArmCapWidthMm": 1.2,
+    "printedArmCapDepthMm": 0.6,
+    "printedRootCoverMinimumMm": 0.35,
+    "rootCoverIsSupportedInCompression": true,
+    "keeperStripWidthMm": 1.1,
+    "keeperStripDepthMm": 0.6,
+    "ledgeDepthMm": 0.6,
+    "process": "Use a characterized engineering-resin process for short supported details, with measured coupons, cleaning and post-cure. Flat deburred steel forms require controlled cutting/grinding and dielectric bonding. STL files for hardware are form/fit gauges, not resin print instructions.",
+    "physicalPrintProcessQualified": false
+  },
+  "requiredNextMeasurements": [
+    "Unpowered cup/closure/root-packet force-displacement test, with a rigid switch-height gauge. Measure joint slip/rotation and support deflection at 1.5 N; characterize up to the proposed 5 N fixture load only if initial behavior is stable.",
+    "Incoming thickness, flatness, edge quality and certificate; root seating, closure preload, liner insulation and creep.",
+    "Exact ordered switch mounted height, first operation, safe endpoint and force; contact pad and stops adjusted with measured structural displacement included.",
+    "Printed ledge/strip retention, repeated service, off-axis load, life and temperature tests."
+  ],
+  "physicalQualification": false,
+  "printRelease": false,
+  "nativeFitQualified": false,
+  "unequalOneArmScreens": [
+    {
+      "loadN": 1.5,
+      "loadedArmX": -10.3,
+      "frontmostReactionY": -2,
+      "arm": {
+        "stressMPa": 74.79224376731302,
+        "deflectionMm": 0.02202771291756151
+      },
+      "factoredMaximumEquivalentMPa": 112.18836565096953,
+      "candidate301CertificateRatio": 6.756493827160494,
+      "rejected304ReferenceRatio": 2.0501234567901236,
+      "serialDeflectionSurrogateMm": 0.0405044563687897,
+      "rootHoldDownN": 12.610935870591545,
+      "rootUpperBearingMPa": 5.254556612746478,
+      "rootLowerBearingMPa": 5.599577726425216
+    },
+    {
+      "loadN": 1.5,
+      "loadedArmX": -3.7,
+      "frontmostReactionY": -2,
+      "arm": {
+        "stressMPa": 74.79224376731302,
+        "deflectionMm": 0.02202771291756151
+      },
+      "factoredMaximumEquivalentMPa": 112.18836565096953,
+      "candidate301CertificateRatio": 6.756493827160494,
+      "rejected304ReferenceRatio": 2.0501234567901236,
+      "serialDeflectionSurrogateMm": 0.059646525105950185,
+      "rootHoldDownN": 15.983572937184444,
+      "rootUpperBearingMPa": 6.659822057160185,
+      "rootLowerBearingMPa": 6.937925768723986
+    },
+    {
+      "loadN": 5,
+      "loadedArmX": -10.3,
+      "frontmostReactionY": -2,
+      "arm": {
+        "stressMPa": 249.30747922437675,
+        "deflectionMm": 0.07342570972520504
+      },
+      "factoredMaximumEquivalentMPa": 373.96121883656514,
+      "candidate301CertificateRatio": 2.026948148148148,
+      "rejected304ReferenceRatio": 0.6150370370370369,
+      "serialDeflectionSurrogateMm": 0.13501485456263235,
+      "rootHoldDownN": 42.03645290197181,
+      "rootUpperBearingMPa": 17.515188709154923,
+      "rootLowerBearingMPa": 18.665259088084053
+    },
+    {
+      "loadN": 5,
+      "loadedArmX": -3.7,
+      "frontmostReactionY": -2,
+      "arm": {
+        "stressMPa": 249.30747922437675,
+        "deflectionMm": 0.07342570972520504
+      },
+      "factoredMaximumEquivalentMPa": 373.96121883656514,
+      "candidate301CertificateRatio": 2.026948148148148,
+      "rejected304ReferenceRatio": 0.6150370370370369,
+      "serialDeflectionSurrogateMm": 0.1988217503531673,
+      "rootHoldDownN": 53.27857645728148,
+      "rootUpperBearingMPa": 22.199406857200618,
+      "rootLowerBearingMPa": 23.126419229079954
+    }
+  ],
+  "rejected304Comparison": {
+    "minimumReferenceYieldMPa": 230,
+    "oneArm5NNominalStressMPa": 249.30747922437675,
+    "oneArm5NFactoredStressMPa": 373.96121883656514,
+    "passes": false,
+    "source": "https://www.outokumpu.com/en/products/product-ranges/-/media/files/products/core/outokumpu-core-range-datasheet.pdf?modified=20251117111909&revision=025e9931-a1d5-4c8f-8ff5-f881d38916da",
+    "reason": "Annealed 304 reference is withdrawn for this proposed 5 N unequal-load metal screen. Higher-strength 301 does not make the polymer root or switch endpoint qualified."
+  },
+  "candidate301ScreenPass": true,
+  "screenScope": "Candidate metal calculations only; centered and one-arm static cases. No arbitrary finger-press, finished-part, root joint, fatigue or switch endpoint rating.",
+  "materialProcess": {
+    "candidate": "Cold-rolled ASTM A666 Type 301 / UNS S30100 half-hard",
+    "yieldMustBeExplicitlyOrderedAndLotCertified": true,
+    "minimumYieldKsi": 110,
+    "minimumYieldMPa": 758,
+    "capabilityThicknessMm": [
+      0.02,
+      1.57
+    ],
+    "capabilityIsStockAvailability": false,
+    "lotMoqAvailabilityConfirmed": false,
+    "capabilitySource": "https://www.elgiloy.com/wp-content/uploads/2024/05/ESM-Stainless-Strip-LineCard-DIGITAL-5.30.2024-compressed-1.pdf",
+    "process": "Preserve the supplied cold-worked temper. No anneal, weld or hot straightening is credited. Controlled cold blanking or cool machining and deburring are proposed engineering process choices, with section and flatness inspection. Laser/EDM cutting needs finished-edge/property qualification; parent-stock certification alone does not qualify a heat-affected edge. Finish all metal processing before dielectric and adhesive assembly. No universal cutting settings were supplied by the primary sources.",
+    "processSources": [
+      "https://www.ulbrich.com/blog/understanding-the-difference-between-annealing-and-tempering/",
+      "https://www.alleima.com/en/technical-center/material-datasheets/strip-steel/alleima-12r11/",
+      "https://www.ulbrich.com/toll-processing/"
+    ],
+    "modulusDeflectionIncreaseVersus200GPaPercent": 3.626943005181338,
+    "finishedPartMaterialQualified": false
+  },
+  "captureKinematicScreen": {
+    "stationaryStopXYMm": [
+      [
+        -10.3,
+        -6.5
+      ],
+      [
+        -3.7,
+        -6.5
+      ],
+      [
+        -10.3,
+        -2
+      ],
+      [
+        -3.7,
+        -2
+      ]
+    ],
+    "centerXYMm": [
+      -7,
+      -4.5
+    ],
+    "centerConvexWeights": [
+      0.2777777777777778,
+      0.2777777777777778,
+      0.2222222222222222,
+      0.2222222222222222
+    ],
+    "rigidPlaneBound": "Positive weights sum to one: a rigid plane nonpenetrating the four coplanar stops cannot lower the enclosed actuator point beneath their common plane. The full contact pad, including the nominal slot translation allowance, lies inside the stop-center rectangle.",
+    "contactPadSizeMm": [
+      1.8,
+      1.8
+    ],
+    "nominalTranslationAllowanceXYMm": [
+      [
+        -0.9,
+        0.9
+      ],
+      [
+        -0.2,
+        0.3
+      ]
+    ],
+    "padProjectionBoundsIncludingTranslationMm": [
+      [
+        -8.8,
+        -5.6
+      ],
+      [
+        -5.2,
+        -3.3
+      ]
+    ],
+    "rearGuideTongueSizeXYMm": [
+      3.2,
+      0.6
+    ],
+    "rearGuideTongueCenterXYMm": [
+      -7,
+      -8.1
+    ],
+    "tongueBottomBelowShoeRestBottomMm": 0.45,
+    "tongueFullPressToSteelNominalGapMm": 0.26,
+    "nominalPitchSection": {
+      "rearStopPlaneZMm": 9.86,
+      "roofZMm": 11.15,
+      "minimumShoeMm": 0.28,
+      "rearOverhangMm": 1.3,
+      "frontSpanMm": 5.3,
+      "derivedRearUpperMinimumZMm": 9.892264150943396,
+      "tongueBottomZMm": 9.66,
+      "derivedVerticalRetentionMarginMm": 0.23226415094339536,
+      "sameRelativeStackInThinVariant": true,
+      "method": "At minimum rear-stop height, the intact roof limits the rising front edge. Extrapolating that limiting plane to the rear overhang gives the lowest rear upper edge in this nominal section. This is not a full continuous 3D tilt/tolerance proof."
+    },
+    "foamFootprintInsideStopPolygon": false,
+    "stableFourContactReactionForAllOffAxisPressesProven": false,
+    "exclusions": [
+      "Shoe/support bending, joint and liner movement, stop height and coplanarity error.",
+      "Actual lateral guiding, yaw and tilted assembly, tolerance accumulation, edge radii and wear.",
+      "Foam resultant can lie outside the stop polygon; unequal reactions are screened separately, and physical pressing remains unqualified."
+    ],
+    "actualActuatorEndpointQualified": false
+  }
+}

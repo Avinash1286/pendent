@@ -7,20 +7,20 @@
     "blendSha256": true
   },
   "failures": [],
-  "specimenCount": 14,
+  "specimenCount": 17,
   "physicalQualification": false,
   "nativeFitProven": false,
   "method": "Current contract/generator/BLEND hashes against manifest; binary STL length/hash; vertices welded at0.00001mm; oriented edge incidence, connected solids, signed volume, triangle area and all XYZ bounds translated back to the recorded assembly frame. Does not establish printer accuracy or complete self-intersection freedom.",
-  "manifestSha256": "0a7dc486990b5114517ee667b33c9d0813db1677b45c37f6bb597f4883371050",
+  "manifestSha256": "8ce547670aceed5c2411d6eca08714bdb763ba3686ff5e29871d4a3d1c60389d",
   "verifierSha256": "612342b47d9c5f2299c69a31c5f178873022140eff19d31d76bf46bfab54007f",
   "parts": [
     {
-      "triangles": 13350,
+      "triangles": 13404,
       "connectedSolids": 1,
       "nonmanifoldEdges": 0,
       "inconsistentWindingEdges": 0,
       "degenerateTriangles": 0,
-      "signedVolumeMm3": 3264.1463747553585,
+      "signedVolumeMm3": 3284.5530312766273,
       "boundsMm": [
         [
           -21.5,
@@ -119,12 +119,64 @@
       "file": "02_threaded_bezel.stl"
     },
     {
-      "triangles": 9220,
+      "triangles": 320,
       "connectedSolids": 1,
       "nonmanifoldEdges": 0,
       "inconsistentWindingEdges": 0,
       "degenerateTriangles": 0,
-      "signedVolumeMm3": 245.89933704914924,
+      "signedVolumeMm3": 50.6615979284825,
+      "boundsMm": [
+        [
+          -15.07462,
+          -14.26432,
+          0.0
+        ],
+        [
+          -2.9,
+          -1.4,
+          1.0
+        ]
+      ],
+      "dimensionsMm": [
+        12.174619999999999,
+        12.86432,
+        1.0
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -15.074617385864258,
+          -14.264318466186523,
+          0.0
+        ],
+        [
+          -2.90000057220459,
+          -1.4000005722045898,
+          1.0
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -15.07462,
+          -14.26432,
+          6.800000190734863
+        ],
+        [
+          -2.9,
+          -1.4,
+          7.800000190734863
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "13_lower_steel_stiffener.stl"
+    },
+    {
+      "triangles": 10430,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 258.98113950544905,
       "boundsMm": [
         [
           -20.1,
@@ -171,12 +223,12 @@
       "file": "03_pcb_clamp_and_face_guide.stl"
     },
     {
-      "triangles": 5914,
+      "triangles": 6004,
       "connectedSolids": 1,
       "nonmanifoldEdges": 0,
       "inconsistentWindingEdges": 0,
       "degenerateTriangles": 0,
-      "signedVolumeMm3": 1204.0934977402412,
+      "signedVolumeMm3": 1218.7998531265894,
       "boundsMm": [
         [
           -18.35,
@@ -327,108 +379,212 @@
       "file": "06_fixed_diffuser.stl"
     },
     {
-      "triangles": 548,
+      "triangles": 12,
       "connectedSolids": 1,
       "nonmanifoldEdges": 0,
       "inconsistentWindingEdges": 0,
       "degenerateTriangles": 0,
-      "signedVolumeMm3": 12.619924722228152,
+      "signedVolumeMm3": 4.224001538276694,
       "boundsMm": [
         [
-          -10.7,
+          -12.2,
           -7.7,
           0.0
         ],
         [
-          -3.3,
+          -11.1,
           -1.3,
           0.6
         ]
       ],
       "dimensionsMm": [
-        7.3999999999999995,
+        1.0999999999999996,
         6.4,
         0.6
       ],
       "topologyPass": true,
       "expectedPrintBoundsMm": [
         [
-          -10.699999809265137,
+          -12.199999809265137,
           -7.699999809265137,
           0.0
         ],
         [
-          -3.299999952316284,
+          -11.09999942779541,
           -1.2999999523162842,
           0.6000003814697266
         ]
       ],
       "reconstructedAssemblyBoundsMm": [
         [
-          -10.7,
+          -12.2,
           -7.7,
           8.510000228881836
         ],
         [
-          -3.3,
+          -11.1,
           -1.3,
           9.110000228881836
         ]
       ],
       "boundsMatchManifest": true,
-      "file": "07_cartridge_keeper.stl"
+      "file": "07_cartridge_keeper_left.stl"
     },
     {
-      "triangles": 28,
+      "triangles": 12,
       "connectedSolids": 1,
       "nonmanifoldEdges": 0,
       "inconsistentWindingEdges": 0,
       "degenerateTriangles": 0,
-      "signedVolumeMm3": 12.212401206207588,
+      "signedVolumeMm3": 4.223999707221974,
       "boundsMm": [
         [
-          -10.1,
-          -7.6,
+          -2.9,
+          -7.7,
           0.0
         ],
         [
-          -3.9,
-          -1.4,
-          0.51
+          -1.8,
+          -1.3,
+          0.6
         ]
       ],
       "dimensionsMm": [
-        6.199999999999999,
-        6.199999999999999,
-        0.51
+        1.0999999999999999,
+        6.4,
+        0.6
       ],
       "topologyPass": true,
       "expectedPrintBoundsMm": [
         [
-          -10.100000381469727,
-          -7.599999904632568,
+          -2.8999998569488525,
+          -7.699999809265137,
           0.0
         ],
         [
-          -3.9000000953674316,
-          -1.4000000953674316,
-          0.5100002288818359
+          -1.7999999523162842,
+          -1.2999999523162842,
+          0.6000003814697266
         ]
       ],
       "reconstructedAssemblyBoundsMm": [
         [
-          -10.1,
-          -7.6,
-          8.899999618530273
+          -2.9,
+          -7.7,
+          8.510000228881836
         ],
         [
-          -3.9,
+          -1.8,
+          -1.3,
+          9.110000228881836
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "15_cartridge_keeper_right.stl"
+    },
+    {
+      "triangles": 12,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 16.740000150203684,
+      "boundsMm": [
+        [
+          -11.5,
+          -7.6,
+          -0.0
+        ],
+        [
+          -2.5,
           -1.4,
-          9.409999618530273
+          0.3
+        ]
+      ],
+      "dimensionsMm": [
+        9.0,
+        6.199999999999999,
+        0.3
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -11.5,
+          -7.599999904632568,
+          0.0
+        ],
+        [
+          -2.5,
+          -1.4000000953674316,
+          0.2999992370605469
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -11.5,
+          -7.6,
+          9.110000610351562
+        ],
+        [
+          -2.5,
+          -1.4,
+          9.410000610351563
         ]
       ],
       "boundsMatchManifest": true,
       "file": "08_measured_plunger_shoe.stl"
+    },
+    {
+      "triangles": 12,
+      "connectedSolids": 1,
+      "nonmanifoldEdges": 0,
+      "inconsistentWindingEdges": 0,
+      "degenerateTriangles": 0,
+      "signedVolumeMm3": 0.6804000988125772,
+      "boundsMm": [
+        [
+          -7.9,
+          -5.4,
+          -0.0
+        ],
+        [
+          -6.1,
+          -3.6,
+          0.21
+        ]
+      ],
+      "dimensionsMm": [
+        1.8000000000000007,
+        1.8000000000000003,
+        0.21
+      ],
+      "topologyPass": true,
+      "expectedPrintBoundsMm": [
+        [
+          -7.900000095367432,
+          -5.400000095367432,
+          0.0
+        ],
+        [
+          -6.099999904632568,
+          -3.5999999046325684,
+          0.20999908447265625
+        ]
+      ],
+      "reconstructedAssemblyBoundsMm": [
+        [
+          -7.9,
+          -5.4,
+          8.90000057220459
+        ],
+        [
+          -6.1,
+          -3.6,
+          9.11000057220459
+        ]
+      ],
+      "boundsMatchManifest": true,
+      "file": "14_insulating_contact_pad.stl"
     },
     {
       "triangles": 84,

@@ -1,5 +1,6 @@
 /* SPDX-License-Identifier: MIT */
 #include "aura_storage.h"
+#include "aura_journal_cursor.h"
 #include "nand_model.h"
 #include <assert.h>
 #include <stdio.h>
@@ -325,10 +326,100 @@ static void changed_residual_identities(void)
     }
     group("foreign surviving checkpoints/data defeat stale grants despite original, erased or damaged headers and page gaps");
 }
+static void select_buffered_cursor(struct aura_journal_cursor *cursor,const uint8_t ack[94])
+{
+    uint64_t reads=model.reads,programs=model.programs,erases=model.erases;
+    assert(!aura_journal_cursor_open(cursor,&journal,ack+6));assert(model.reads==reads);
+    int r=AURA_CURSOR_PENDING;unsigned steps=0;
+    while(r==AURA_CURSOR_PENDING&&steps++<128)r=aura_journal_cursor_verify_step(cursor);
+    assert(r==AURA_CURSOR_READY);
+    struct aura_journal_cursor_info info;assert(!aura_journal_cursor_get_info(cursor,&info));
+    assert(!memcmp(info.physical_receipt,ack,94)&&!info.derived_seal);
+    assert(!aura_journal_cursor_seek(cursor,0));
+    uint8_t first=0;uint64_t offset=UINT64_MAX;size_t bytes=0;r=AURA_CURSOR_PENDING;steps=0;
+    while(r==AURA_CURSOR_PENDING&&steps++<128)r=aura_journal_cursor_read(cursor,&first,1,&offset,&bytes);
+    assert(r==AURA_CURSOR_DATA&&offset==0&&bytes==1&&first=='A');
+    /* Deliberately leave bytes buffered: invalidation must run before even a
+     * NAND-free DATA response, not merely prevent the next physical read. */
+    assert(cursor->buffer_at<cursor->buffer_bytes);
+    assert(model.programs==programs&&model.erases==erases);
+}
+static void assert_cursor_stale(struct aura_journal_cursor *cursor)
+{
+    uint64_t reads=model.reads,programs=model.programs,erases=model.erases,bad=model.bad_queries;
+    uint8_t out[16],untouched[16];memset(out,0xa5,sizeof(out));memcpy(untouched,out,sizeof(out));
+    uint64_t offset=UINT64_MAX;size_t bytes=SIZE_MAX;
+    assert(aura_journal_cursor_read(cursor,out,sizeof(out),&offset,&bytes)==AURA_CURSOR_STALE);
+    assert(!bytes&&offset==UINT64_MAX&&!memcmp(out,untouched,sizeof(out)));
+    struct aura_journal_cursor_info info;
+    assert(aura_journal_cursor_get_info(cursor,&info)==AURA_CURSOR_STALE);
+    assert(aura_journal_cursor_verify_step(cursor)==AURA_CURSOR_STALE);
+    assert(aura_journal_cursor_seek(cursor,0)==AURA_CURSOR_STALE);
+    assert(model.reads==reads&&model.programs==programs&&model.erases==erases&&model.bad_queries==bad);
+}
+static void cursor_owner_transitions(void)
+{
+    /* A host NAND model regression, not device concurrency or power evidence.
+     * Every transition below runs on the same serialized storage owner. */
+    for(unsigned scenario=0;scenario<5;++scenario){
+        fresh(6);uint8_t ack[94];capture(2,true,ack);
+        uint16_t retained=journal.captures[0].first_block;
+        uint8_t original[64][32],blank[2048];memset(blank,255,sizeof(blank));
+        for(unsigned i=0;i<64;++i){
+            const uint8_t *page=model.pages[retained*64+i];
+            aura_archive_sha256(page?page:blank,2048,original[i]);
+        }
+        struct aura_journal_cursor cursor;select_buffered_cursor(&cursor,ack);
+        uint64_t epoch=journal.export_epoch,programs=model.programs,erases=model.erases;
+        struct aura_archive_manifest settings={.frame_samples=320,.pre_skip=40},next;
+        if(scenario==0){
+            /* Reserving the next capture preempts export before its first
+             * audio page exists, while the retained capture remains intact. */
+            assert(!aura_storage_prepare_capture(&storage,&settings,&next));
+            assert(journal.binding_pending&&storage.ready);
+        }else if(scenario==1){
+            /* The counter store reaches its first program attempt but fails
+             * before any header bits change. The old authority can reopen. */
+            model.cut_program=model.programs+1;model.cut=MODEL_CUT_BEFORE;model.lose_completion_only=true;
+            assert(aura_storage_prepare_capture(&storage,&settings,&next)==AURA_NAND_UNCERTAIN);
+            assert(model.programs==programs+1&&!storage.ready&&!journal.binding_pending);
+        }else if(scenario==2||scenario==3){
+            /* Test both context replacement during open and an early failed
+             * control reload before prepare reaches counter reservation. */
+            assert(control.current<2);unsigned page=config.blocks[control.current]*64+2;
+            model.ecc[page]=2;
+            int r=scenario==2?
+                aura_storage_open(&storage,storage_io(),&config,&authority,&journal,&control,state,sizeof(state)):
+                aura_storage_prepare_capture(&storage,&settings,&next);
+            assert(r<0&&!storage.ready);model.ecc[page]=0;
+            assert(model.programs==programs&&model.erases==erases);
+        }else{
+            assert(aura_storage_provision(&storage,storage_io(),&config,&authority,
+                &journal,&control,state,sizeof(state))==AURA_STORAGE_CHANGED);
+            assert(!storage.ready&&model.programs==programs&&model.erases==erases);
+        }
+        assert(journal.export_epoch!=epoch);assert_cursor_stale(&cursor);
+        assert(!reopen());assert(journal.count==1&&!released);
+        int index=index_for(ack);assert(index>=0&&!aura_journal_verify(&journal,(uint16_t)index));
+        uint8_t checked[94];assert(!aura_journal_receipt(&journal,(uint16_t)index,checked));
+        assert(!memcmp(checked,ack,94));
+        for(unsigned i=0;i<64;++i){
+            const uint8_t *page=model.pages[retained*64+i];
+            uint8_t hash[32];aura_archive_sha256(page?page:blank,2048,hash);
+            assert(!memcmp(hash,original[i],32));
+        }
+        /* Reopening never revives the old cursor or invalidates a newly
+         * reverified replacement catalog entry when its stale call arrives. */
+        assert_cursor_stale(&cursor);
+        assert(!aura_journal_receipt(&journal,(uint16_t)index,checked)&&!memcmp(checked,ack,94));
+        aura_journal_cursor_cancel(&cursor);++cases;
+    }
+    group("prepared capture and failed counter/reopen/reload/provision transitions invalidate buffered export without changing retained source");
+}
 int main(void)
 {
     ordinary();reservation();rejected();cycling();wrapped();grant_cuts();release_cuts();completion_cuts();changed_allocation();
-    input_output_aliases();provision_authority_alias();changed_residual_identities();
+    input_output_aliases();provision_authority_alias();changed_residual_identities();cursor_owner_transitions();
     printf("RESULT storage groups=%u cases=%u owner_context=%zu journal_context=%zu snapshot_bytes=%u\n",
         groups,cases,sizeof(storage),sizeof(journal),(unsigned)sizeof(state));
     model_destroy(&model);return 0;

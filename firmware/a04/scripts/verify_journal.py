@@ -109,7 +109,7 @@ def main():
             physical_prefix_digest=physical.chain_sha256.hex(), export_terminal_digest=archive.receipt.chain_sha256.hex()))
     assert results[1]["decoded_samples"] == results[2]["decoded_samples"]
     assert results[3]["decoded_samples"] > results[2]["decoded_samples"]
-    files = [ROOT / "src/aura_journal.c", ROOT / "include/aura_journal.h", ROOT / "include/aura_nand.h",
+    files = [ROOT / "src/aura_journal.c", ROOT / "include/aura_journal.h", ROOT / "include/aura_journal_cursor.h", ROOT / "include/aura_nand.h",
              ROOT / "src/aura_archive.c", ROOT / "include/aura_archive.h", ROOT / "src/aura_opus.c",
              ROOT / "include/aura_opus.h", ROOT / "tests/nand_model.c", ROOT / "tests/nand_model.h",
              ROOT / "tests/host_journal.c", ROOT / "tests/CMakeLists.txt", ROOT / "scripts/build.ps1",

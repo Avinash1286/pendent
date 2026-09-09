@@ -338,9 +338,23 @@ static int changing_output(void *user,uint64_t offset,const uint8_t *p,size_t n)
     if(!offset)model.pages[4][100]^=1;
     return 0;
 }
+struct rejected_output { int result; unsigned calls; };
+static int reject_output(void *user,uint64_t offset,const uint8_t *p,size_t n)
+{
+    (void)offset;(void)p;(void)n;struct rejected_output *state=user;
+    ++state->calls;return state->result;
+}
 static int export_changes(void)
 {
     CHECK(!reset(2));CHECK(!begin(1));CHECK(!packet(80));CHECK(!finish());CHECK(!reopen());
+    /* A legacy sink's positive nonzero result must not be mistaken for the
+     * incremental walker's PENDING status or invoke its callback again. */
+    const int rejected[]={1,2,-901};
+    for(unsigned i=0;i<sizeof(rejected)/sizeof(rejected[0]);++i){
+        struct rejected_output state={.result=rejected[i]};
+        CHECK(aura_journal_export(&journal,0,reject_output,&state)==rejected[i]);
+        CHECK(state.calls==1);
+    }
     size_t bytes=0;CHECK(aura_journal_export(&journal,0,changing_output,&bytes)==AURA_JOURNAL_CORRUPT);
     CHECK(bytes>0&&journal.captures[0].verification==AURA_JOURNAL_INVALID);
     uint8_t ack[94];CHECK(aura_journal_receipt(&journal,0,ack)==AURA_JOURNAL_NOT_COMMITTED);

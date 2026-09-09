@@ -10,6 +10,7 @@
 #include "aura_audio_zephyr.h"
 #include "aura_w25n01gv_zephyr.h"
 #include "aura_storage.h"
+#include "aura_journal_cursor.h"
 #include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -28,6 +29,7 @@ static struct aura_w25n01gv_zephyr nand;
 static struct aura_storage storage;
 static struct aura_control control;
 static struct aura_journal journal = {.active=-1};
+static struct aura_journal_cursor export_cursor;
 static struct aura_recorder recorder;
 static struct aura_audio_zephyr audio;
 static uint8_t snapshot[AURA_STORAGE_STATE_BYTES], device_id[16], capture_id[16];
@@ -255,16 +257,46 @@ static int send_data(void *user, uint64_t offset, const uint8_t *bytes, size_t s
 }
 static int export_capture(uint32_t id, const char *argument)
 {
-    uint8_t selected[16]; int result=unhex(argument,selected,16); if(result)return result;
-    unsigned index=0;
-    for(;index<journal.count;++index)if(!memcmp(journal.captures[index].manifest+24,selected,16))break;
-    if(index==journal.count)return -ENOENT;
+    uint8_t identity[32], bytes[128];
+    int result=unhex(argument,identity+16,16);
+    if(result)goto done;
+    memcpy(identity,device_id,16);
     struct export state={.request_id=id};
-    result=aura_journal_export(&journal,(uint16_t)index,send_data,&state);
-    uint8_t receipt[94];
-    if(!result)result=aura_journal_receipt(&journal,(uint16_t)index,receipt);
-    if(!result){char encoded[189];hex(receipt,94,encoded);
+    result=aura_journal_cursor_open(&export_cursor,&journal,identity);
+    if(result)goto done;
+    do {
+        result=aura_journal_cursor_verify_step(&export_cursor);
+        if(result==AURA_CURSOR_PENDING)k_yield();
+    } while(result==AURA_CURSOR_PENDING);
+    if(result!=AURA_CURSOR_READY){if(result>=0)result=-EIO;goto done;}
+    result=aura_journal_cursor_seek(&export_cursor,0);
+    if(result)goto done;
+    for(;;){
+        uint64_t offset=0; size_t size=0;
+        result=aura_journal_cursor_read(&export_cursor,bytes,sizeof(bytes),&offset,&size);
+        if(result==AURA_CURSOR_PENDING){
+            if(size){result=-EIO;goto done;}
+            k_yield();continue;
+        }
+        if(result==AURA_CURSOR_DATA){
+            if(!size||size>sizeof(bytes)){result=-EIO;goto done;}
+            result=send_data(&state,offset,bytes,size);
+            if(result)goto done;
+            k_yield();continue;
+        }
+        if(result){if(result>0)result=-EIO;goto done;}
+        if(size){result=-EIO;goto done;}
+        break;
+    }
+    /* Zero from read means EOF and final physical revalidation, not merely
+     * that the final DATA line was sent. Keep the wire receipt gated on that. */
+    struct aura_journal_cursor_info selected;
+    result=aura_journal_cursor_get_info(&export_cursor,&selected);
+    if(!result&&(selected.export_bytes!=state.offset||memcmp(selected.manifest+8,identity,32)))result=-EIO;
+    if(!result){char encoded[189];hex(selected.physical_receipt,94,encoded);
         reply(id,"END EXPORT %016llx %s",(unsigned long long)state.offset,encoded);}
+done:
+    aura_journal_cursor_cancel(&export_cursor);
     return result;
 }
 static void dispatch(struct request *request)

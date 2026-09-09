@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: MIT
  * Actual bench orchestration + actual audio adapter; deterministic doubles for
- * OS, devices, recorder, storage and journal export. No hardware evidence.
+ * OS, devices, recorder, storage and journal cursor. No hardware evidence.
  */
 #include <assert.h>
 #include <setjmp.h>
@@ -12,12 +12,21 @@
 
 #define REQUIRE(x) do{if(!(x)){fprintf(stderr,"bench control assertion %d: %s\n",__LINE__,#x);exit(2);}}while(0)
 struct device bench_devices[6];
+enum export_failure { EXPORT_OK, FAIL_OPEN, FAIL_VERIFY, FAIL_SEEK, FAIL_READ,
+    FAIL_RECHECK, FAIL_INFO, BAD_OFFSET, BAD_TOTAL, BAD_IDENTITY, EMPTY_DATA,
+    BIG_DATA, PENDING_DATA, DONE_DATA, UNEXPECTED_VERIFY, UNEXPECTED_READ,
+    EXPORT_FAILURE_COUNT };
 static struct {
     char output[32768]; size_t used;
     const uint8_t *input; size_t input_bytes,input_offset;
-    int uart_error,privacy,power,led,prepare_error,recorder_retries,seal_error,export_error,receipt_error;
+    int uart_error,privacy,power,led,prepare_error,recorder_retries,seal_error;
     unsigned powerups,prepare_calls,cancel_calls,start_calls,stop_calls,interrupt_calls;
-    unsigned provision_calls,open_calls,export_calls,receipt_calls,init_calls;
+    unsigned provision_calls,open_calls,init_calls;
+    unsigned cursor_open_calls,cursor_verify_calls,cursor_seek_calls,cursor_read_calls;
+    unsigned cursor_info_calls,cursor_cancel_calls,cursor_phase,recheck_steps,yield_calls;
+    enum export_failure export_failure;
+    size_t cursor_offset;
+    uint8_t physical_status;
     unsigned raw_count,raw_head,irq_depth,groups,cases;
     uint64_t ms,sequence;
     struct {void *data;uint64_t sequence;} raw[8];
@@ -52,6 +61,8 @@ void k_msleep(int32_t ms)
 {REQUIRE(ms>=0);sim.ms+=(unsigned)ms;
  if(sim.sleep_hook){void (*f)(void)=sim.sleep_hook;sim.sleep_hook=NULL;f();}
  if(sim.owner_running&&!--sim.owner_iterations)longjmp(owner_exit,1);}
+void k_yield(void)
+{++sim.yield_calls;REQUIRE(!strstr(sim.output,"END EXPORT"));}
 uint32_t k_cycle_get_32(void){return (uint32_t)(sim.ms*1000);}
 uint32_t k_cyc_to_us_floor32(uint32_t n){return n;}
 struct k_thread *k_thread_create(struct k_thread *t,char *stack,size_t n,k_thread_entry_t fn,
@@ -149,21 +160,69 @@ int aura_storage_cancel_prepared(struct aura_storage *s)
 {(void)s;REQUIRE(journal.active<0&&journal.binding_pending);journal.binding_pending=false;++sim.cancel_calls;return 0;}
 int aura_journal_verify(struct aura_journal *j,uint16_t index)
 {REQUIRE(index<j->count);j->captures[index].verification=AURA_JOURNAL_VERIFIED_FINAL;return 0;}
-int aura_journal_export(struct aura_journal *j,uint16_t index,aura_archive_commit output,void *user)
-{REQUIRE(index<j->count);++sim.export_calls;uint8_t bytes[300];for(unsigned i=0;i<sizeof(bytes);++i)bytes[i]=(uint8_t)i;
- int r=output(user,0,bytes,68);if(r)return r;r=output(user,68,bytes+68,232);if(r)return r;
- if(sim.export_error)return sim.export_error;sim.exported=true;return 0;}
-int aura_journal_receipt(const struct aura_journal *j,uint16_t index,uint8_t out[94])
-{(void)j;(void)index;++sim.receipt_calls;REQUIRE(sim.exported);if(sim.receipt_error)return sim.receipt_error;
- memset(out,0x51,94);return 0;}
+static void physical_receipt(uint8_t out[94])
+{memset(out,0x51,94);memcpy(out,"ACK3",4);out[4]=3;out[5]=sim.physical_status;
+ memcpy(out+6,journal.captures[0].manifest+8,32);
+ uint32_t crc=aura_archive_crc32(out,90);
+ for(unsigned i=0;i<4;++i)out[90+i]=(uint8_t)(crc>>(8*i));}
+/* Explicit phase double checks orchestration, not the actual cursor's NAND
+ * verification. The separate host_journal_cursor target tests that mechanism. */
+int aura_journal_cursor_open(struct aura_journal_cursor *c,struct aura_journal *j,const uint8_t identity[32])
+{REQUIRE(c==&export_cursor&&j==&journal&&!sim.cursor_phase);++sim.cursor_open_calls;
+ if(sim.export_failure==FAIL_OPEN)return -910;
+ if(!j->count||memcmp(j->captures[0].manifest+8,identity,32))return AURA_JOURNAL_NOT_COMMITTED;
+ sim.cursor_phase=1;return 0;}
+int aura_journal_cursor_verify_step(struct aura_journal_cursor *c)
+{REQUIRE(c==&export_cursor&&sim.cursor_phase==1&&!sim.used);++sim.cursor_verify_calls;
+ if(sim.cursor_verify_calls==1)return AURA_CURSOR_PENDING;
+ if(sim.export_failure==FAIL_VERIFY)return -911;
+ if(sim.export_failure==UNEXPECTED_VERIFY)return 0;
+ sim.cursor_phase=2;return AURA_CURSOR_READY;}
+int aura_journal_cursor_seek(struct aura_journal_cursor *c,uint64_t offset)
+{REQUIRE(c==&export_cursor&&sim.cursor_phase==2&&offset==0&&!sim.used);++sim.cursor_seek_calls;
+ if(sim.export_failure==FAIL_SEEK)return -912;
+ sim.cursor_phase=3;return 0;}
+int aura_journal_cursor_read(struct aura_journal_cursor *c,uint8_t *out,size_t capacity,uint64_t *offset,size_t *bytes)
+{REQUIRE(c==&export_cursor&&capacity==128&&sim.cursor_phase>=3&&sim.cursor_phase<=4);
+ REQUIRE(!strstr(sim.output,"END EXPORT")&&!sim.cursor_info_calls);++sim.cursor_read_calls;*bytes=0;
+ if(sim.cursor_phase==4){
+     ++sim.recheck_steps;if(sim.recheck_steps==1)return AURA_CURSOR_PENDING;
+     if(sim.export_failure==FAIL_RECHECK)return -914;
+     sim.cursor_phase=5;sim.exported=true;if(sim.export_failure==DONE_DATA)*bytes=1;return 0;
+ }
+ if(sim.cursor_read_calls==1){if(sim.export_failure==PENDING_DATA)*bytes=1;return AURA_CURSOR_PENDING;}
+ if(sim.export_failure==FAIL_READ&&sim.cursor_offset==128)return -913;
+ if(sim.export_failure==UNEXPECTED_READ)return AURA_CURSOR_READY;
+ size_t take=MIN(capacity,300-sim.cursor_offset);
+ *offset=sim.cursor_offset+(sim.export_failure==BAD_OFFSET?1:0);
+ for(size_t i=0;i<take;++i)out[i]=(uint8_t)(sim.cursor_offset+i);
+ *bytes=take;
+ if(sim.export_failure==EMPTY_DATA)*bytes=0;
+ if(sim.export_failure==BIG_DATA)*bytes=capacity+1;
+ sim.cursor_offset+=take;if(sim.cursor_offset==300)sim.cursor_phase=4;
+ return AURA_CURSOR_DATA;}
+int aura_journal_cursor_get_info(struct aura_journal_cursor *c,struct aura_journal_cursor_info *out)
+{REQUIRE(c==&export_cursor&&sim.cursor_phase==5&&sim.exported&&sim.recheck_steps==2);
+ REQUIRE(!strstr(sim.output,"END EXPORT"));++sim.cursor_info_calls;
+ if(sim.export_failure==FAIL_INFO)return -915;
+ memset(out,0,sizeof(*out));memcpy(out->manifest,journal.captures[0].manifest,68);
+ physical_receipt(out->physical_receipt);out->export_bytes=300;out->physical_bytes=sim.physical_status?300:180;
+ out->derived_seal=!sim.physical_status;
+ if(sim.export_failure==BAD_TOTAL)++out->export_bytes;
+ if(sim.export_failure==BAD_IDENTITY)out->manifest[8]^=1;
+ return 0;}
+void aura_journal_cursor_cancel(struct aura_journal_cursor *c)
+{REQUIRE(c==&export_cursor);++sim.cursor_cancel_calls;sim.cursor_phase=0;memset(c,0,sizeof(*c));}
 
 static void reset_sim(void)
 {
     unsigned groups=sim.groups,cases=sim.cases;memset(&sim,0,sizeof(sim));sim.groups=groups;sim.cases=cases;
     sim.privacy=1;sim.auto_quiesce=true;sim.health.stopped=sim.health.drained=true;
+    sim.physical_status=AURA_ARCHIVE_FINALIZED;
     for(unsigned i=0;i<6;++i)bench_devices[i].ready=true;
     memset(&nand,0,sizeof(nand));memset(&storage,0,sizeof(storage));memset(&control,0,sizeof(control));
     memset(&journal,0,sizeof(journal));journal.active=-1;storage.ready=true;journal.io.blocks=1024;
+    memset(&export_cursor,0,sizeof(export_cursor));
     memset(snapshot,0,sizeof(snapshot));memset(device_id,0x17,16);memset(capture_id,0,16);
     k_msgq_init(&requests,requests_memory,sizeof(struct request),2);memset(&rx,0,sizeof(rx));
     rx_size=0;discard_line=false;cancellation=session_generation=startup_pending=capture_gate=initialized=rx_fault=0;
@@ -272,19 +331,51 @@ static void framing_and_enrollment(void)
 }
 static void export_ordering(void)
 {
-    for(unsigned failure=0;failure<3;++failure){
-        reset_sim();journal.count=1;memset(journal.captures[0].manifest+24,0x31,16);
-        if(failure==1)sim.export_error=-902;if(failure==2)sim.receipt_error=-903;
+    for(unsigned failure=0;failure<EXPORT_FAILURE_COUNT;++failure){
+        reset_sim();journal.count=1;memcpy(journal.captures[0].manifest+8,device_id,16);
+        memset(journal.captures[0].manifest+24,0x31,16);sim.export_failure=(enum export_failure)failure;
         command("A04B 00000020 EXPORT 31313131313131313131313131313131\n");
-        REQUIRE(sim.export_calls==1&&strstr(sim.output,"DATA 0000000000000000 "));
-        REQUIRE(strstr(sim.output,"DATA 0000000000000044 ")&&strstr(sim.output,"DATA 00000000000000c4 "));
-        if(!failure)REQUIRE(sim.receipt_calls==1&&strstr(sim.output,"END EXPORT 000000000000012c "));
-        else REQUIRE(!strstr(sim.output,"END EXPORT")&&strstr(sim.output,"ERROR")&&sim.receipt_calls==(failure==2));
+        REQUIRE(sim.cursor_open_calls==1&&sim.cursor_cancel_calls==1&&!sim.cursor_phase);
+        if(!failure){
+            REQUIRE(sim.cursor_info_calls==1&&sim.exported&&sim.yield_calls==6);
+            REQUIRE(strstr(sim.output,"DATA 0000000000000000 ")&&strstr(sim.output,"DATA 0000000000000080 "));
+            REQUIRE(strstr(sim.output,"DATA 0000000000000100 ")&&strstr(sim.output,"END EXPORT 000000000000012c "));
+            uint8_t ack[94];char encoded[189];physical_receipt(ack);hex(ack,94,encoded);REQUIRE(strstr(sim.output,encoded));
+            const char *line=sim.output;size_t expected=0;
+            while(line&&!strncmp(line,"A04B 00000020 DATA ",19)){
+                unsigned request,crc;unsigned long long offset;char payload[257];
+                REQUIRE(sscanf(line,"A04B %8x DATA %16llx %256s %8x",&request,&offset,payload,&crc)==4);
+                size_t n=strlen(payload)/2;uint8_t decoded[128];
+                REQUIRE(request==0x20&&offset==expected&&n==MIN(128u,300-expected));
+                REQUIRE(!unhex(payload,decoded,n)&&crc==aura_archive_crc32(decoded,n));
+                for(size_t i=0;i<n;++i)REQUIRE(decoded[i]==(uint8_t)(expected+i));
+                expected+=n;line=strchr(line,'\n');if(line)++line;
+            }
+            REQUIRE(expected==300);
+        }else{
+            REQUIRE(!strstr(sim.output,"END EXPORT")&&strstr(sim.output,"ERROR"));
+            REQUIRE(sim.cursor_info_calls==(failure==FAIL_INFO||failure==BAD_TOTAL||failure==BAD_IDENTITY));
+            if(failure==FAIL_VERIFY||failure==FAIL_SEEK)REQUIRE(!strstr(sim.output,"DATA "));
+            if(failure==FAIL_READ)REQUIRE(strstr(sim.output,"DATA 0000000000000000 ")&&!strstr(sim.output,"DATA 0000000000000080 "));
+            if(failure==FAIL_RECHECK)REQUIRE(strstr(sim.output,"DATA 0000000000000100 ")&&!sim.exported);
+        }
         size_t length=0;for(size_t i=0;i<sim.used;++i){++length;if(sim.output[i]=='\n'){REQUIRE(length<=384);length=0;}}
     }
+    reset_sim();journal.count=1;memcpy(journal.captures[0].manifest+8,device_id,16);
+    memset(journal.captures[0].manifest+24,0x31,16);sim.physical_status=0;
+    command("A04B 00000020 EXPORT 31313131313131313131313131313131\n");
+    uint8_t ack[94];char encoded[189];physical_receipt(ack);hex(ack,94,encoded);
+    REQUIRE(sim.cursor_info_calls==1&&sim.cursor_cancel_calls==1&&strstr(sim.output,encoded));
+    REQUIRE(ack[5]==0&&strstr(sim.output,"END EXPORT 000000000000012c "));
+    reset_sim();journal.count=1;memset(journal.captures[0].manifest+24,0x31,16);
+    command("A04B 00000020 EXPORT 31313131313131313131313131313131\n");
+    REQUIRE(sim.cursor_open_calls==1&&!sim.cursor_verify_calls&&sim.cursor_cancel_calls==1);
+    REQUIRE(strstr(sim.output,"ERROR")&&!strstr(sim.output,"DATA"));
+    reset_sim();command("A04B 00000020 EXPORT invalid\n");
+    REQUIRE(!sim.cursor_open_calls&&sim.cursor_cancel_calls==1&&strstr(sim.output,"ERROR"));
     reset_sim();struct export state={.request_id=3};uint8_t byte=7;
     REQUIRE(send_data(&state,1,&byte,1)==-EIO&&!sim.used&&state.offset==0);
-    pass_group("export chunks and receipt only after success; no END after failures",4);
+    pass_group("cursor export gates END on final recheck; faults cancel, physical OPEN and DATA offsets preserved",EXPORT_FAILURE_COUNT+4);
 }
 int main(void)
 {

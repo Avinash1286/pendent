@@ -55,6 +55,8 @@ struct aura_journal {
     uint64_t page_start_offset, staged_since_ms, last_service_ms;
     bool service_clock_started;
     uint64_t metadata_reads, payload_reads, corrected_reads, committed_pages;
+    /* Volatile process-unique cursor generation. Not a persistent capture ID. */
+    uint64_t export_epoch;
     /* One namespace and one next-capture binding, never per-block/capture RAM.
      * Durable reservation/nonreuse remains the external owner's obligation. */
     uint8_t owned_incarnation[16], bound_manifest[68];
@@ -67,6 +69,10 @@ struct aura_journal {
 };
 
 int aura_journal_mount(struct aura_journal *journal, struct aura_nand_io io);
+/* Serialized owner only. Invalidate BEFORE external media/ownership changes;
+ * mount and journal mutations also invalidate automatically. Never authorizes
+ * deletion. Epoch exhaustion fails closed until a real process restart. */
+int aura_journal_invalidate_exports(struct aura_journal *journal);
 /* Opt into v2 writes after mount. Nonzero incarnation; cannot switch or disable
  * it without remounting. Conservatively observes existing matching v2 metadata
  * to raise the volatile generation floor. This does not replace a durable ID

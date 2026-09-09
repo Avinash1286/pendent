@@ -50,3 +50,8 @@ add_executable(aura_storage_roundtrip host_storage_roundtrip.c nand_model.c
 target_include_directories(aura_storage_roundtrip PRIVATE ../include)
 target_compile_options(aura_storage_roundtrip PRIVATE -Wall -Wextra -Werror -UNDEBUG)
 target_link_libraries(aura_storage_roundtrip PRIVATE opus)
+add_executable(aura_journal_cursor_test host_journal_cursor.c nand_model.c
+    ../src/aura_archive.c ../src/aura_journal.c)
+target_include_directories(aura_journal_cursor_test PRIVATE ../include)
+target_compile_options(aura_journal_cursor_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_journal_cursor_test PRIVATE opus)

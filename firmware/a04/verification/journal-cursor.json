@@ -1,0 +1,159 @@
+{
+  "status": "host_bounded_cursor_source_integrity_passed_device_unmeasured",
+  "generated_at_utc": "2026-09-09T11:07:38.371801+00:00",
+  "host_cases": 18,
+  "assertions": 27057379,
+  "verify_step_calls": 54594,
+  "read_calls": 188117,
+  "max_NAND_reads_per_verify_or_read_call": 1,
+  "cursor_context_bytes": 3808,
+  "case_names": [
+    "all_chunk_capacities_final_interrupted_open",
+    "record_boundary_resume_and_single_linear_replay",
+    "wrapped_three_block_chain_maximum_AFR_and_bookmark",
+    "exact_device_and_capture_identity_copied_at_open",
+    "corrected_ECC_and_every_selected_unreadable_slot",
+    "torn_tail_prefix_and_torn_checkpoint_policy",
+    "valid_CRC_bad_framing_padding_and_holes",
+    "global_unassociated_source_denies_selection_without_read",
+    "source_mutation_between_verify_and_export_rejected",
+    "third_verify_detects_mutation_of_already_emitted_source",
+    "active_capture_epoch_remount_profile_and_binding_preempt",
+    "cancel_all_phases_and_argument_bounds_no_NAND_writes",
+    "coherent_v2_allocation_mutation_before_replay_and_after_DATA",
+    "cancel_and_epoch_preempt_during_third_verify_and_after_DONE",
+    "empty_interrupted_and_manifest_only_derived_archives",
+    "OPEN_physical_manifest_bound_to_full_header_catalog_manifest",
+    "real_Opus_fixture_finalized_export",
+    "real_Opus_fixture_physical_OPEN_derived_export"
+  ],
+  "host_summary": "PASS cursor cases=18 checks=27057379 verify_calls=54594 read_calls=188117 max_reads_per_call=1 cursor_bytes=3808 host_model_only=true",
+  "real_Opus_fixtures": [
+    {
+      "file": "firmware/a04/fixtures/journal-0.aura",
+      "sha256": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+      "physical_receipt_sha256": "8732ac01938564ac48fc06f6d5ff054430c34068ce3d94935e16e02f73f1b8b9",
+      "export_bytes": 37040,
+      "physical_bytes": 37040,
+      "audio_packets": 378,
+      "derived_seal": false,
+      "exact_file_and_physical_receipt": true,
+      "chunk_capacities": [
+        1,
+        128,
+        256
+      ],
+      "reconstruction": "Exact existing canonical records staged into host NAND, omit export-only ASE for OPEN, flush, reboot"
+    },
+    {
+      "file": "firmware/a04/fixtures/journal-2.aura",
+      "sha256": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+      "physical_receipt_sha256": "e6a145f038f2500c56eca66ef5c431b317a67fa0e44106f518e0bc0466341568",
+      "export_bytes": 36634,
+      "physical_bytes": 36514,
+      "audio_packets": 364,
+      "derived_seal": true,
+      "exact_file_and_physical_receipt": true,
+      "chunk_capacities": [
+        1,
+        128,
+        256
+      ],
+      "reconstruction": "Exact existing canonical records staged into host NAND, omit export-only ASE for OPEN, flush, reboot"
+    }
+  ],
+  "code_source_sha256": {
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/tests/host_journal_cursor.c": "0a8f4e22464a55dbfbee3481472ed677b67f77672aade38f4493af66c2bf0e99",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/CMakeLists.txt": "2080f4bc6df408d3530c7261f472b58a2925cee1118d1f750600e0d9a15f0ef8",
+    "firmware/a04/cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "firmware/a04/scripts/build.ps1": "039d27f554897f8a8a0e904846bd4e4769df28d85816827585c7219306ec9a3f",
+    "firmware/a04/scripts/verify_cursor.py": "5a0b209c8eb598abd5ecfd672461c96f0a83d597c4777f9dc3b5cc0c3ba56387",
+    "firmware/a04/fixtures/journal-0.aura": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+    "firmware/a04/fixtures/journal-0.receipt": "8732ac01938564ac48fc06f6d5ff054430c34068ce3d94935e16e02f73f1b8b9",
+    "firmware/a04/fixtures/journal-2.aura": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+    "firmware/a04/fixtures/journal-2.receipt": "e6a145f038f2500c56eca66ef5c431b317a67fa0e44106f518e0bc0466341568"
+  },
+  "executable_sha256": "690851d8019337cb4355b2e728893143dd6df50e9c46643be704abb2bb2865c8",
+  "linked_Opus_library_sha256": "e4cec8ded62711377bd5189e5d22121e17d7da6924169d0870e9ff59f21fb6a4",
+  "transcript_sha256": "f19e57e1d0ff6f8ec66e66ee9fc23bc0b46b71dd3de261136c300964cc6a5888",
+  "build_command": [
+    "F:\\circuit\\.tools\\zephyr\\venv\\Scripts\\cmake.EXE",
+    "--build",
+    "F:\\circuit\\.tools\\a04-opus\\host",
+    "--target",
+    "aura_journal_cursor_test",
+    "-j",
+    "2"
+  ],
+  "build_output": [
+    "ninja: no work to do."
+  ],
+  "run_command": [
+    "F:\\circuit\\.tools\\a04-opus\\host\\aura_journal_cursor_test.exe",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-0.aura",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-0.receipt",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-2.aura",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-2.receipt"
+  ],
+  "compiler": {
+    "command": [
+      "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\ziglang\\zig.exe",
+      "cc"
+    ],
+    "version": [
+      "clang version 19.1.7 (https://github.com/ziglang/zig-bootstrap de1b01a8c1dddf75a560123ac1c2ab182b4830da)",
+      "Target: x86_64-unknown-windows-gnu",
+      "Thread model: posix",
+      "InstalledDir: F:/circuit/.tools/zephyr/venv/Lib/site-packages/ziglang"
+    ],
+    "executable_sha256": "1ddf230367e07738c4a769eae66c1db7469e37bd520e81c86356453d0db2b9fd"
+  },
+  "cmake": {
+    "command": "F:\\circuit\\.tools\\zephyr\\venv\\Scripts\\cmake.EXE",
+    "version": [
+      "cmake version 3.31.6",
+      "",
+      "CMake suite maintained and supported by Kitware (kitware.com/cmake)."
+    ]
+  },
+  "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
+  "Opus_dependency": {
+    "version": "1.6.1",
+    "locked_archive_sha256": "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1",
+    "files_verified_before_and_after": 482
+  },
+  "verified": [
+    "open/seek/cancel do not read NAND; verify/read each use at most one NAND read",
+    "no NAND programs or erases during export/cancel operations",
+    "capacities 1 through 256 for finalized/interrupted/open-derived synthetic captures",
+    "exact record-boundary resume, manifest/physical/export EOF, non-boundary and UINT64_MAX rejection",
+    "single linear replay plus mandatory third verification, including zero-DATA EOF resumes",
+    "copied caller buffers remain immutable despite scratch overwrite and subsequent reads",
+    "maximum AFR records, bookmarks and wrapped three-block chain with unrelated capture",
+    "corrected ECC accepted; every inspected selected-chain unreadable slot fails closed",
+    "conservative torn tail handling, malformed framing/padding/hole rejection, unassociated-source denial",
+    "canonical first manifest must match full catalog/header manifest",
+    "source payload and coherent allocation-identity changes fail before FINISHED",
+    "source failure invalidates cached receipt; boundary/cancel/epoch cancellation preserves healthy cache",
+    "cancel/epoch preemption during third verification and after DONE",
+    "empty interrupted and manifest-only open-derived exports",
+    "existing C-generated real Opus fixture files and physical receipts remain byte-identical"
+  ],
+  "not_verified": [
+    "physical NAND/SPI reads or power failures",
+    "MCU wall-time/stack/power budget",
+    "concurrent owners or raw-media mutations without invalidation",
+    "BLE transaction retries, mobile durable acknowledgement, source reclamation",
+    "fresh audio encode/decode in this cursor suite; existing speech fixture bytes are replayed"
+  ]
+}

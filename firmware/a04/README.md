@@ -44,7 +44,7 @@ The ARM target is `nrf52840dk/nrf52840`. It checks the MCU ABI and linker budget
 
 ## Verification and inspectable audio
 
-The integrated verification covers **25 SPI command/integration groups, 19 journal groups, 12 storage-owner groups (740 cases), 10 recorder groups, 10 audio-adapter groups, 20 monitored-driver groups and 33 Python archive/receiver tests**. Six real-Opus journal recovery cases and five recorder cases pass export, SQLite restart/replay and independent FFmpeg decode. The additional [storage round trip](verification/storage-roundtrip.json) sends real C-encoded audio through a committed Python receiver and persisted release outbox back to C, proving exact authorization, cold recovery, reclaimed-block reuse and byte-identical retained audio. The complete [companion suite](../../companion/verification/release.json) passes 131 tests, including 36 release tests. The [adapter report](verification/audio-host.json) and [driver report](drivers/tests/verification.json) bind their tested sources. These are host tests with simulated boundaries; none establishes physical flash or microphone operation.
+The integrated verification covers **25 SPI command/integration groups, 19 journal groups, 13 storage-owner groups (745 cases), 10 recorder groups, 10 audio-adapter groups, 20 monitored-driver groups and 33 Python archive/receiver tests**. Six real-Opus journal recovery cases and five recorder cases pass export, SQLite restart/replay and independent FFmpeg decode. The additional [storage round trip](verification/storage-roundtrip.json) sends real C-encoded audio through a committed Python receiver and persisted release outbox back to C, proving exact authorization, cold recovery, reclaimed-block reuse and byte-identical retained audio. The complete [companion suite](../../companion/verification/release.json) passes 131 tests, including 36 release tests. The [adapter report](verification/audio-host.json) and [driver report](drivers/tests/verification.json) bind their tested sources. These are host tests with simulated boundaries; none establishes physical flash or microphone operation.
 
 The host test covers state size/alignment, unsupported profiles, missing sink, empty capture, arbitrary chunk boundaries, repeated sink failure, byte-identical retry, failure while flushing a final partial frame, exact duration and rejection of input after closing. The speech fixture is encoded using the real fixed-point encoder, decoded by the linked libopus decoder, then independently decoded by FFmpeg through standards-compatible Ogg Opus files.
 
@@ -55,7 +55,24 @@ The host test covers state size/alignment, unsupported profiles, missing sink, e
 
 Both use 40 samples of pre-skip and 73 samples of final trim at 16 kHz for this 7.553-second synthetic speech input. Constrained VBR is not a constant packet-size guarantee. Waveform SNR is only a regression check for this exact fixture; it does not establish perceptual quality or transcription accuracy. FFmpeg outputs have the same exact duration. Full metrics, hashes and exclusions are in [host-roundtrip.json](verification/host-roundtrip.json).
 
-The actual nRF52840 cross-build uses **221,432 bytes of flash (21.12%)** and **220,288 bytes of RAM (84.03%)**. It now retains the actual 208-byte storage owner, **45,408-byte maximum AST1 snapshot**, 36,000-byte journal and separate W25N control-interface functions. It also includes the 32,768-byte encoder arena, 49,216-byte guarded thread stack (48 KiB usable), 3,568-byte recorder, 21,064-byte audio adapter, 4,464-byte Zephyr NAND adapter, 4,240-byte control context, 88-byte authentication context, 16,384 bytes of synthetic RAM NAND and 640-byte input buffer. There are **41,856 bytes of linker RAM remaining** in this probe; Bluetooth, the final scheduler and physical workload must be budgeted and measured before product integration. Control/storage/authentication are unprovisioned, and no privileged physical audio-erase callback is configured. These are linked DK reservations, not the complete product budget. [arm-resources.json](verification/arm-resources.json) records ELF symbols, source/config/devicetree hashes, artifact identities and compiler stack reports. The explicit DK binding applies P0.30/P0.31 pinctrl at boot; the probe never starts a physical audio stream or powers a microphone. No Cortex-M4 runtime timings or stack high-water measurements are claimed.
+The earlier synthetic nRF52840 probe checkpoint used **221,432 bytes of flash
+(21.12%)** and **220,288 bytes of RAM (84.03%)**. Its historical
+[resource report](verification/arm-resources.json) binds that probe's sources,
+including its 36,000-byte journal and synthetic RAM NAND. It predates the new
+cursor and volatile journal epoch; those numbers are not the current firmware
+budget. Use the separate [wired bench resource report](bench/verification/arm-resources.json)
+for current linked journal/cursor objects and actual peripheral-driver code.
+Neither report measures physical runtime timing or stack high-water, and neither
+is a complete wearable firmware budget. Production Bluetooth, enrollment,
+audio-release capability, signed updates and real workload measurements remain
+outstanding.
+
+The [bounded export cursor](JOURNAL-CURSOR.md) adds exact-record resume, an owned
+page buffer and at most one NAND read per step. It independently verifies source
+before streaming and again before completion. Its host tests check source
+mutation, interrupted tails, chunk sizes, exact resume boundaries and volatile
+cancellation. The wired bench uses it for EXPORT; its UART protocol still has
+no resumable command or concurrent command preemption.
 
 Listen or inspect: [input WAV](fixtures/source-speech-16k.wav), [20 ms Opus](fixtures/speech-20ms.opus), [20 ms independent decode](fixtures/speech-20ms-ffmpeg.wav), [10 ms Opus](fixtures/speech-10ms.opus). Host-generated `.aoc` files retain individual packets for debugging. Ogg files use 48 kHz granule units and encode both pre-skip and exact final length.
 

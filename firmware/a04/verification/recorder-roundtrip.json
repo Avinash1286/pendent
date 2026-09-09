@@ -81,11 +81,12 @@
     "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
-    "firmware/a04/include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
-    "firmware/a04/src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
     "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
     "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
-    "firmware/a04/scripts/verify_recorder.py": "27ab76c91a331225145041f6c53894e7ada99a83497cad13eb0a708607f4879f",
+    "firmware/a04/scripts/verify_recorder.py": "531ec0ed7c82548acf002fe17cd2f2e95d3d01ec44e697606a90afa7a0033cc8",
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
   },
   "guarantees_exercised": [

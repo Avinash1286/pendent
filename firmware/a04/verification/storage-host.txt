@@ -10,4 +10,5 @@ PASS storage 9 a coherent newer allocation at an old grant block is never erased
 PASS storage 10 private output aliases fail before IO; overwritten input scratch and caller in-place manifests are copied safely
 PASS storage 11 provision copies trusted authority before blank-media scans overwrite journal scratch
 PASS storage 12 foreign surviving checkpoints/data defeat stale grants despite original, erased or damaged headers and page gaps
-RESULT storage groups=12 cases=740 owner_context=288 journal_context=36040 snapshot_bytes=45408
+PASS storage 13 prepared capture and failed counter/reopen/reload/provision transitions invalidate buffered export without changing retained source
+RESULT storage groups=13 cases=745 owner_context=288 journal_context=36048 snapshot_bytes=45408

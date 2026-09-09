@@ -114,6 +114,15 @@ The current journal suite passes **19 groups**, including 13 v2 metadata/cross-o
 | Finalized across blocks 7 → 0, then reboot | 483388 | Exact | Physical terminal |
 | V2 owned allocation across blocks 7 → 0, then reboot | 483388 | Exact | Physical terminal |
 
-The four original cases have 11.919 dB waveform SNR against the available source prefix; both longer wrapped recordings have 12.003 dB. The v2 fixture also exports its two header/checkpoint pairs for independent Python CRC, exact namespace, 64-bit generation, continuation declaration and receipt checks. This is a deterministic regression metric, not perceptual/acoustic qualification. The portable host journal context is **36040 bytes**; the test-only sparse NAND model is 666712 bytes and is never part of embedded firmware. [Actual ARM ELF resources](verification/arm-resources.json) measure the version-2 journal at **36000 bytes**, alongside the integrated storage owner and its snapshot reservation. The command-level simulator additionally passes **25 groups**, including combined driver/journal and restricted control-pair cases; see [its transcript](verification/w25n-command-tests.txt) and [adapter details](W25N-ADAPTER.md). The 48 KiB codec stack reservation has not been measured on silicon.
+The four original cases have 11.919 dB waveform SNR against the available source prefix; both longer wrapped recordings have 12.003 dB. The v2 fixture also exports its two header/checkpoint pairs for independent Python CRC, exact namespace, 64-bit generation, continuation declaration and receipt checks. This is a deterministic regression metric, not perceptual/acoustic qualification. The portable host journal context is **36048 bytes**, including the new volatile export epoch; the test-only sparse NAND model is 666712 bytes and is never part of embedded firmware. The current [wired bench ARM ELF](bench/verification/arm-resources.json) measures the journal at **36008 bytes** and its separate export cursor at **3800 bytes**. The command-level simulator additionally passes **25 groups**, including combined driver/journal and restricted control-pair cases; see [its transcript](verification/w25n-command-tests.txt) and [adapter details](W25N-ADAPTER.md). The 48 KiB codec stack reservation has not been measured on silicon.
+
+The [bounded cursor](JOURNAL-CURSOR.md) shares the same page walker and adds
+strict unreadable/unassociated-source rejection, exact-record resume and a third
+source-verification pass before completion. Its separate host suite passes
+**18 groups**, including byte-identical real Opus exports, all chunk capacities
+1–256, allocation/source mutation, canonical manifest binding and late
+cancellation. The shared walker now explicitly requires the first physical AUR3
+to equal the complete catalog/header manifest. A legacy sink's nonzero callback
+result is also tested to propagate exactly, including positive values.
 
 Physical PDM/SPI integration, electrical NAND power failures, encode/storage deadlines, concurrent BLE, mobile lifecycle, authenticated ownership, signed OTA, current/battery measurements, and the complete live/offline context workflows remain unverified. No host file, sparse RAM model, cross-build or command simulator is described as a physically functioning wearable.

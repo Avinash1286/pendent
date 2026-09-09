@@ -26,7 +26,11 @@ static uint16_t count(const struct aura_storage *s)
 static uint8_t *extent(struct aura_storage *s,unsigned i)
 {return s->snapshot+AURA_STORAGE_HEADER_BYTES+i*AURA_STORAGE_EXTENT_BYTES;}
 static int fail(struct aura_storage *s,int error)
-{s->ready=false;return s->fault=error;}
+{
+    s->ready=false;
+    if(s->journal)(void)aura_journal_invalidate_exports(s->journal);
+    return s->fault=error;
+}
 
 int aura_storage_capture_id(const uint8_t device[16],const uint8_t incarnation[16],
                             uint64_t generation,uint8_t capture[16])
@@ -138,6 +142,7 @@ static int initialize(struct aura_storage *s,struct aura_storage_io io,
        overlap(snapshot,capacity,s,sizeof(*s))||overlap(snapshot,capacity,journal,sizeof(*journal))||
        overlap(snapshot,capacity,control,sizeof(*control))||overlap(snapshot,capacity,authority,sizeof(*authority))||
        overlap(snapshot,capacity,config,sizeof(*config)))return AURA_STORAGE_ARGUMENT;
+    int r=aura_journal_invalidate_exports(journal);if(r)return r;
     memset(s,0,sizeof(*s));s->authority=trusted;s->config=selected;s->io=io;
     s->journal=journal;s->control=control;s->snapshot=snapshot;s->capacity=capacity;return 0;
 }
@@ -191,6 +196,7 @@ int aura_storage_prepare_capture(struct aura_storage *s,
     r=aura_storage_capture_id(next.device_id,s->authority.storage_incarnation,generation,next.capture_id);if(r)return r;
     struct aura_archive_writer writer;
     r=aura_archive_begin(&writer,&next,collect_manifest,wire);if(r)return r;
+    r=aura_journal_invalidate_exports(s->journal);if(r)return fail(s,r);
     put(s->snapshot+COUNTER_AT,generation,8);
     r=aura_control_store(s->control,s->snapshot,s->bytes);if(r)return fail(s,r);
     r=aura_journal_bind_capture(s->journal,wire,generation);if(r)return fail(s,r);
@@ -217,6 +223,7 @@ int aura_storage_request_release(struct aura_storage *s,const uint8_t *wire,size
     if(s->snapshot[5]!=PHASE_IDLE||s->journal->active>=0||s->journal->fault||s->journal->binding_pending)return AURA_STORAGE_BUSY;
     r=aura_release_validate_next(authorization.release_sequence,floor);if(r)return r;
     if(!s->io.erase_released)return AURA_STORAGE_UNSUPPORTED;
+    r=aura_journal_invalidate_exports(s->journal);if(r)return fail(s,r);
     unsigned index=0;
     for(;index<s->journal->count;++index)
         if(!memcmp(s->journal->captures[index].manifest+8,authorization.receipt+6,32))break;
@@ -304,6 +311,7 @@ int aura_storage_release_step(struct aura_storage *s)
     if(s->snapshot[5]!=PHASE_GRANTED)return AURA_STORAGE_ALREADY_DONE;
     if(!s->io.erase_released)return AURA_STORAGE_UNSUPPORTED;
     if(s->journal->active>=0||s->progress>=count(s))return fail(s,AURA_STORAGE_STATE);
+    r=aura_journal_invalidate_exports(s->journal);if(r)return fail(s,r);
     const uint8_t *e=extent(s,s->progress);uint16_t b=(uint16_t)get(e,2);
     bool bad=false;r=s->io.data.bad(s->io.data.user,b,&bad);if(r||bad)return fail(s,r?r:AURA_NAND_BAD_BLOCK);
     r=check_released_extent(s,e);if(r)return fail(s,r);

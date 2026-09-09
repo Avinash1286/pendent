@@ -45,6 +45,29 @@ The result's receipt describes expected validated bytes. This module does not im
 
 This is a container muxer, not an entropy/audio decoder. A packet can satisfy profile/CRC checks and still fail decoding. `audioDecoded` therefore remains false. The Android app must validate with an actual supported platform decoder before marking derived media ready; JVM tests use independent FFmpeg decoding only for their test fixtures. PCM source archives validate, but this Opus muxer refuses them. Empty captures also validate but have no playable Opus packets; no synthetic audio is invented for them.
 
+## Response-fragment foundation
+
+`BleResponseFragments` implements only the 8-byte response-fragment header in
+[the A04 transport proposal](../../../docs/a04/mobile-transport.md). It is not
+connected to Android GATT, an enrollment flow, a command parser or archive import.
+The published local-import APK predates this unused transport component.
+
+Begin with a nonzero u16 transaction and the actual negotiated ATT MTU (23 by
+default). Keep the returned generation token with callbacks. `accept()` copies
+bounded input and returns pending, exact duplicate, complete or stale. A complete
+result owns an independent byte copy; its logical contents still need validation.
+Reset/begin invalidate older tokens. A current-generation framing error clears
+the response; stale callbacks cannot poison the current one. The caller remains
+responsible for GATT identity, subscriptions, transaction reuse, deadlines and
+copying platform callback bytes before queuing them.
+
+One logical response is at most 512 bytes. A fragment carries at most `MTU - 11`
+data bytes (12 at MTU 23). Only a previously accepted fragment with the exact
+offset, length, total and bytes may repeat; gaps and other overlaps fail. Storage
+is bounded to a 512-byte payload buffer and 512 u16 boundary entries, plus bounded
+input/result copies. A 1024-delivery budget bounds duplicate floods. This parser
+provides neither authentication nor a durable acknowledgement.
+
 ## Reproduce verification
 
 The `verifyCore` task is a dependency-free JVM executable, and `check` depends on it. It requires an explicit fixture index and result directory; a plain compile does not silently count as protocol verification. The default JUnit task explicitly allows empty discovery because this module's checks run through that executable, rather than a JUnit dependency. The Python runner prepares expectations using the existing C-generated fixture files and independent Python parser, executes Kotlin, compares exact ACK3 and Ogg bytes, then runs FFmpeg and checks the decoded PCM sample count.
@@ -58,3 +81,8 @@ After configuring the repository's Android JDK/Gradle environment:
 For separate build orchestration, run `--prepare-only`, invoke `:core:check` with `-PauraFixtureIndex=...` and `-PauraResultDirectory=...`, then run `--finish-only`. The script writes its generated index, JVM output, exact receipt/Ogg files, and source-bound report under the ignored `core/build/verification` directory, and publishes the compact report and JVM transcript in `core/verification`. It never accesses a serial device or personal recording.
 
 The JVM harness includes semantic mutations with recomputed CRCs, truncation and trailing-byte rejection, unsigned boundary rejection, payload/record quotas, empty and PCM sources, bookmark availability, physical receipt mismatches, immutable metadata access, and source changes before derived publication. Passing these tests is not a claim of Android runtime execution, hardware recording, entropy validation for arbitrary future input, battery safety, or a launch-ready device.
+
+Fragment checks cover each logical length 1–512 at MTUs 23, 24, 185, 247 and 517,
+a literal little-endian wire example, malformed headers/ranges, exact retries,
+conflicting overlaps, changed totals, buffer ownership, delivery limits and stale
+generations. These are JVM parser checks; no radio or Android GATT is exercised.

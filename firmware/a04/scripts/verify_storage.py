@@ -30,7 +30,7 @@ def source_hashes():
     files = [ROOT / name for name in (
         "include/aura_storage.h", "src/aura_storage.c", "include/aura_control.h", "src/aura_control.c",
         "include/aura_release_auth.h", "src/aura_release_auth.c", "include/aura_recorder.h", "src/aura_recorder.c",
-        "include/aura_journal.h", "src/aura_journal.c", "include/aura_archive.h", "src/aura_archive.c",
+        "include/aura_journal.h", "include/aura_journal_cursor.h", "src/aura_journal.c", "include/aura_archive.h", "src/aura_archive.c",
         "include/aura_opus.h", "src/aura_opus.c", "include/aura_nand.h", "tests/nand_model.h",
         "tests/nand_model.c", "tests/host_storage.c", "tests/host_storage_roundtrip.c", "tests/CMakeLists.txt",
         "scripts/verify_storage.py", "scripts/verify_fixtures.py", "cmake/opus-profile.cmake",
@@ -57,7 +57,7 @@ def main():
     if fault_run.returncode:
         raise RuntimeError(fault_text)
     groups = len(re.findall(r"^PASS storage \d+ ", fault_text, re.M))
-    if groups != 12 or "cases=" not in fault_text:
+    if groups != 13 or "cases=745 " not in fault_text:
         raise ValueError("Storage fault suite did not report expected coverage")
 
     source = pcm(ROOT / "fixtures/source-speech-16k.wav")

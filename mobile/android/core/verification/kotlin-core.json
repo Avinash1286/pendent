@@ -9,11 +9,13 @@
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d",
     "firmware/a04/ARCHIVE.md": "e964fb45d89b469859af5fb774159dde047884411f925805f0bf18eadc5b8db4",
     "mobile/android/core/build.gradle.kts": "e17484dc6167ae27525498cb54b49a897b2f70e533c011c164ef3096c059faff",
-    "mobile/android/core/README.md": "1577eddb7b26e2149d3448e2f4c937d0892332e96e6ec8e1596745c37f374d32",
+    "mobile/android/core/README.md": "dd5755f2b05e0c1d93c2eb62451c7681ff58f3e9bbf529d34952ccb045e2fb07",
     "mobile/android/core/scripts/verify_core.py": "904b4bb843efad5b0f845c8ab12844624982417ffe7ba1694bdec28d58e0de11",
     "mobile/android/core/src/main/kotlin/com/aura/capture/AuraArchive.kt": "12bcd143fe5ebabc0f715458398a4048abd73f4c8cf23aa6069395ecc9a5a337",
     "mobile/android/core/src/main/kotlin/com/aura/capture/AuraOgg.kt": "43c390478d8a91f89fb32ed4ae8507bd176393ca74f5f11fd98d5300bd4c3da3",
-    "mobile/android/core/src/test/kotlin/com/aura/capture/CoreChecks.kt": "11134382a95aad0d01e4fdd6e58cda6507e7a37d4314cf2de600c1c1b4477576"
+    "mobile/android/core/src/main/kotlin/com/aura/capture/BleResponseFragments.kt": "0efd706ae5497e24091524c752f83c118f58ab4856e998173834b1b0e02cd885",
+    "mobile/android/core/src/test/kotlin/com/aura/capture/BleFragmentChecks.kt": "0d34f0e3b7d71f2eaee1b4c55df494c9095cee7da97d65cbc48092253120bc88",
+    "mobile/android/core/src/test/kotlin/com/aura/capture/CoreChecks.kt": "8a918b714cb94b030a7bccdd595d0d30e90478afe9cf51829419ed0d8c50bc2f"
   },
   "fixtures": [
     {

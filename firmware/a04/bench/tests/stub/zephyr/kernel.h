@@ -28,4 +28,5 @@ struct k_thread *k_thread_create(struct k_thread *,char *,size_t,k_thread_entry_
 int k_thread_stack_space_get(const struct k_thread *,size_t *);
 uint32_t k_cycle_get_32(void);
 uint32_t k_cyc_to_us_floor32(uint32_t);
+void k_yield(void);
 #endif

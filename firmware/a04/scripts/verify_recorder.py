@@ -69,7 +69,7 @@ def main():
     assert cases[3]["decoded_samples"] < cases[1]["decoded_samples"]
     files = [ROOT / p for p in ("include/aura_recorder.h", "src/aura_recorder.c", "tests/host_recorder.c",
         "include/aura_opus.h", "src/aura_opus.c", "include/aura_archive.h", "src/aura_archive.c",
-        "include/aura_journal.h", "src/aura_journal.c", "tests/nand_model.h", "tests/nand_model.c")]
+        "include/aura_journal.h", "include/aura_journal_cursor.h", "src/aura_journal.c", "tests/nand_model.h", "tests/nand_model.c")]
     files += [Path(__file__), WORKSPACE / "companion/src/aura_companion/protocol_v2.py"]
     report = dict(status="portable_recorder_real_Opus_NAND_model_Python_FFmpeg_passed_physical_ingress_unmeasured",
         python=sys.version, cases=cases,

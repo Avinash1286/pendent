@@ -31,6 +31,6 @@ test_timeout_and_partial_line_do_not_succeed (__main__.ProtocolTests.test_timeou
 test_wrong_identity_prevents_enrollment (__main__.ProtocolTests.test_wrong_identity_prevents_enrollment) ... ok
 
 ----------------------------------------------------------------------
-Ran 31 tests in 3.326s
+Ran 31 tests in 3.699s
 
 OK

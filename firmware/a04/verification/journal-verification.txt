@@ -12,7 +12,7 @@ PASS real_opus_journal mode=2 physical_programs=23 wire_bytes=36634 committed_by
 PASS real_opus_journal mode=3 physical_programs=23 wire_bytes=37011 committed_bytes=36891 source_input_samples=120847 metadata_reads=23 payload_reads=180
 PASS real_opus_journal mode=4 physical_programs=88 wire_bytes=147504 committed_bytes=147504 source_input_samples=483388 metadata_reads=30 payload_reads=360
 PASS real_opus_journal mode=5 physical_programs=88 wire_bytes=147504 committed_bytes=147504 source_input_samples=483388 metadata_reads=38 payload_reads=480
-PASS journal groups=19 journal_context=36040 model_is_host_only=666712
+PASS journal groups=19 journal_context=36048 model_is_host_only=666712
 PASS finalized_reboot: 120847 decoded samples, SNR 11.919 dB
 PASS staged_tail_lost: 116440 decoded samples, SNR 11.919 dB
 PASS partial_page_power_cut: 116440 decoded samples, SNR 11.919 dB

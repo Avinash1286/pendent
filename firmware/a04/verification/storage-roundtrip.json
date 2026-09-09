@@ -1,7 +1,7 @@
 {
   "status": "host_storage_owner_durable_python_outbox_real_Opus_roundtrip_passed",
-  "fault_test_groups": 12,
-  "fault_test_summary": "RESULT storage groups=12 cases=740 owner_context=288 journal_context=36040 snapshot_bytes=45408",
+  "fault_test_groups": 13,
+  "fault_test_summary": "RESULT storage groups=13 cases=745 owner_context=288 journal_context=36048 snapshot_bytes=45408",
   "real_roundtrip": [
     "READY durable receiver authorization required",
     "PASS real storage roundtrip samples=120847 erased_blocks=1 reused_block=1 retained_catalog=2"
@@ -39,20 +39,21 @@
   "release_sequence": 1,
   "authorization_sha256": "13cb2e3ff01a717a7d96af6b136bc2b21907a773775ac399ec503b84e2b90220",
   "executable_sha256": {
-    "test": "e9b87defb453982839381266295c36bdd3d1d507b320e99e8c1132699c010962",
-    "roundtrip": "1bbd7a54bdf7491d162d0371787398e213a1a82f7bc38ab26fbd09c55f36a55f"
+    "test": "87af936ff77d78a8222b4f56807398546e000ad4ab1c0f74b9614f8f339f5187",
+    "roundtrip": "df3e772c13f9c9c28075269f5b900493688992ca95dc358393c95966c74e38e9"
   },
   "code_source_sha256": {
     "firmware/a04/include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
-    "firmware/a04/src/aura_storage.c": "6aa1f8c89d8cbef17a07c29667a5fbffc5ddaf6d40e04a6126a4aa441683042f",
+    "firmware/a04/src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
     "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
     "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
     "firmware/a04/include/aura_release_auth.h": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
     "firmware/a04/src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
     "firmware/a04/include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
     "firmware/a04/src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
-    "firmware/a04/include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
-    "firmware/a04/src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
@@ -60,10 +61,10 @@
     "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
     "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
     "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
-    "firmware/a04/tests/host_storage.c": "4d37345944a22a6d8486202b2d8a739ca94249f0e528a69607067a072bbd19df",
+    "firmware/a04/tests/host_storage.c": "722a0210533d15955e0b4524915a6b6ef1b3d6f8d6ee95f62e520419168ff1e9",
     "firmware/a04/tests/host_storage_roundtrip.c": "21036051333876bfed00642d25279bab8b75d73a1696e6ab426e1345ed9dd968",
-    "firmware/a04/tests/CMakeLists.txt": "ccfbe465b745a738f4052425124c0b2e9c79aae692410894f81d53d4d0cc6c3c",
-    "firmware/a04/scripts/verify_storage.py": "1a8fefc40dd71b7e697ac840474912db1b60df267b9e81602fb3e6d9c59ae5a0",
+    "firmware/a04/tests/CMakeLists.txt": "2080f4bc6df408d3530c7261f472b58a2925cee1118d1f750600e0d9a15f0ef8",
+    "firmware/a04/scripts/verify_storage.py": "85e4a674244dbce1703d737f2a40a6ca54a1c5e81f254609b25c3f07c64e5b6e",
     "firmware/a04/scripts/verify_fixtures.py": "a39972f6065f78d9c70b550a963c95f660e46bc4e67f2404117347cf7f71689e",
     "firmware/a04/cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
     "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
@@ -74,7 +75,7 @@
     "companion/src/aura_companion/files.py": "1604a5804c8f55cea530f31892ca12ada963ba4f4f4e4ffdf7a9ba7da780494a"
   },
   "build_command": [
-    "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\cmake\\data\\bin\\cmake.exe",
+    "F:\\circuit\\.tools\\zephyr\\venv\\Scripts\\cmake.EXE",
     "--build",
     "F:\\circuit\\.tools\\a04-opus\\host",
     "--target",
@@ -84,8 +85,7 @@
     "6"
   ],
   "build_output": [
-    "[1/2] Building C object CMakeFiles/aura_storage_roundtrip.dir/host_storage_roundtrip.c.obj",
-    "[2/2] Linking C executable aura_storage_roundtrip.exe"
+    "ninja: no work to do."
   ],
   "verified": [
     "real C recorder/Opus/owned NAND journal",

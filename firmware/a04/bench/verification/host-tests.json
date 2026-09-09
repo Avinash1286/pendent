@@ -36,7 +36,7 @@
     "firmware/a04/fixtures/journal-5.receipt": "6aac6b9c9f06aadf8add3714c1018021265bf1dc706e7502901de19f197ea549",
     "firmware/a04/fixtures/capture-20ms-open.aura": "bfc4df73c0631f49adc584f4e431454f8b054867fb695d843d26a6daf68d37ce"
   },
-  "transcript_sha256": "a2bbe700087d5fb3a0c0e1619f9df5ca1503ba71b5b753b80b1cecd86ed27abc",
+  "transcript_sha256": "5dee5b25ab85f7b8865c0368c20f83c1a5e0dad920b28d852d16480a0a3752d3",
   "limits": [
     "No physical UART or NAND",
     "No hostile local writer test",

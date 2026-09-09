@@ -6,7 +6,7 @@ wearable release. Local Android archive import, verification and playback are
 the first phone foundation. They do not replace the required pendant-to-phone
 capture download, reconnect recovery, ownership enrollment or physical testing.
 
-## Reuse and the missing prerequisite
+## Reuse and the implemented storage prerequisite
 
 Reuse the exact [AUR3/AFR3/ASE3/ACK3 bytes](../../firmware/a04/ARCHIVE.md), the
 serialized [journal](../../firmware/a04/include/aura_journal.h), capture identities
@@ -17,11 +17,11 @@ IDs, DELETE or FORMAT operations. A04 needs a distinct service/version.
 
 The current `aura_journal_export()` first verifies the complete capture, then
 replays it again to its synchronous callback and checks the resulting receipt.
-It exposes neither a resumable cursor nor bounded `read-next` operation. Calling
-it afresh for every BLE chunk would repeatedly scan the whole capture. A new
-serialized **export cursor is a prerequisite**, not an optimization to defer.
-The cursor must preserve all existing metadata, cross-owner, continuation,
-payload and final-receipt checks. Its interface needs:
+Calling it afresh for every BLE chunk would repeatedly scan the whole capture.
+The separate [bounded export cursor](../../firmware/a04/JOURNAL-CURSOR.md) now
+supplies verification, exact-boundary seek, sequential chunks and final source
+revalidation. It shares the legacy validator and adds stricter unreadable and
+unassociated-source rejection. Its implemented storage interface provides:
 
 - Open one inactive capture by its full device/capture identity; obtain an exact
   manifest and verified physical ACK3, and bind them to one volatile handle.
@@ -34,9 +34,10 @@ payload and final-receipt checks. Its interface needs:
 - Cancel only volatile work. Disconnect, expiry, a new capture request or a media
   transition invalidates the handle and cached response; no source is deleted.
 
-This cursor has not been implemented by this review. Its source coverage,
-preemption, stack/RAM cost and real NAND/BLE timing need verification before the
-phone transport is enabled.
+The cursor is exercised by portable host checks and the wired bench EXPORT path.
+Its operation-count bound does not measure physical NAND/BLE latency or establish
+a phone connection. The GATT command owner, enrollment and Android durable
+resume coordinator remain to be implemented before phone transport is enabled.
 
 ## Proposed A04 BLE v1 surface
 
@@ -98,6 +99,13 @@ duplicate fragment is harmless; overlapping different bytes, gaps, changed
 totals, excess fragments or queue overflow fail the response. A missing fragment
 can trigger an exact-command retry of the cached response. No GATT notification,
 controller transmit completion or fragment counter is a durable receipt.
+
+The independent Kotlin `BleResponseFragments` component now implements this
+fragment subset with a generation token, exact prior-fragment duplicate checks,
+512-byte payload bound and 1024-delivery limit. Its JVM tests cover MTUs 23–517,
+malformed overlaps/totals, stale generations and defensive copies. It is not
+wired to GATT or the logical command protocol, and the earlier published
+local-import APK does not contain this new component.
 
 Serialize Android GATT operations, including discovery, MTU request, CCCD writes
 and command writes. Wait for successful subscription before accepting the service
@@ -223,8 +231,10 @@ foundation alone closes none of those physical/BLE gates.
 
 ## Review source identities
 
-SHA256 values bind the exact local files inspected for this proposal. They are
-review inputs, not a build/test certificate. Omi paths below are relative to its
+SHA256 values below bind the **initial review inputs**, before cursor integration
+changed the journal header/source and bench protocol. They are historical review
+identities, not current build/test certificates. Current cursor and bench
+verification reports bind their implemented sources. Omi paths below are relative to its
 pinned checkout at `f42089f53c8010dd971b3702ece05a231c9c0c66`.
 
 | Source | SHA256 |

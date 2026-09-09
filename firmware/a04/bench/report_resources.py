@@ -21,7 +21,7 @@ BUILD = ROOT / ".tools/a04-bench/arm"
 ZEPHYR = ROOT / ".tools/zephyr/zephyr"
 OUTPUT = BENCH / "verification/arm-resources.json"
 EXPECTED_OBJECTS = {
-    "snapshot": 45408, "journal": 36000, "storage": 208, "nand": 4464,
+    "snapshot": 45408, "journal": 36008, "export_cursor": 3800, "storage": 208, "nand": 4464,
     "encoder": 32768, "recorder": 3568, "audio": 21064, "control": 4240,
     "reader_stack": 4160, "storage_stack": 49216,
 }
@@ -32,7 +32,9 @@ REQUIRED_FUNCTIONS = (
     "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service",
     "aura_audio_zephyr_request_stop", "aura_audio_zephyr_privacy_cutoff",
     "aura_recorder_start", "aura_recorder_consume", "aura_recorder_stop", "aura_recorder_interrupt",
-    "aura_journal_mount", "aura_journal_export", "aura_journal_receipt",
+    "aura_journal_mount", "aura_journal_invalidate_exports",
+    "aura_journal_cursor_open", "aura_journal_cursor_verify_step", "aura_journal_cursor_seek",
+    "aura_journal_cursor_read", "aura_journal_cursor_get_info", "aura_journal_cursor_cancel",
     "aura_w25n01gv_zephyr_init", "aura_w25n01gv_zephyr_io",
     "aura_w25n01gv_zephyr_configure_control", "aura_w25n01gv_zephyr_control_io",
     "aura_w25n01gv_init", "aura_w25n01gv_control_io",
@@ -293,6 +295,11 @@ def main():
         "command_scope": {"verbs": verbs, "reserved_control_blocks": [1022, 1023],
                           "audio_erase_callback": "NULL in reviewed source", "absent_elf_entry_points": absent,
                           "limitation": "Source vocabulary and linked-symbol checks establish this bench build's intended API scope. They are not a proof of authenticated transport, physical tamper resistance, secure key storage or general impossibility of flash erasure. Explicit provisioning/capture may erase verified blank audio blocks and recycle control blocks."},
+        "export_scope": {"cursor_object_bytes": symbols["export_cursor"]["bytes"],
+                         "journal_object_bytes": symbols["journal"]["bytes"],
+                         "uart_data_max_bytes": 128, "cursor_seek_offset": 0,
+                         "completion": "END EXPORT follows cursor EOF and final physical revalidation; DATA remains temporary until then.",
+                         "limitation": "UART dispatch is still synchronous. Yielding between cursor steps does not implement command preemption, wire resume, Bluetooth, or measured physical latency."},
         "peripheral_behavior": "Cold boot probes/resets/configures NAND and scans factory/LUT markers. Explicit OPEN/PROVISION and START gate recording. UART uses the DK interface MCU; no nRF USB stack or Bluetooth is enabled.",
         "build_currentness": {"ninja_dry_run": dry_run, "input_and_output_hashes_stable_across_inspection": True,
                               "limitation": "Current local Ninja dependency state plus source/output hashes; not a reproducible-build or malicious-toolchain attestation."},

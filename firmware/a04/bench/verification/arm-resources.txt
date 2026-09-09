@@ -2,14 +2,14 @@
   "status": "ARM_cross_compiled_not_executed",
   "memory_regions": {
     "FLASH": {
-      "used_bytes": 255748,
+      "used_bytes": 257468,
       "capacity_bytes": 1048576,
-      "remaining_bytes": 792828
+      "remaining_bytes": 791108
     },
     "RAM": {
-      "used_bytes": 208264,
+      "used_bytes": 212104,
       "capacity_bytes": 262144,
-      "remaining_bytes": 53880
+      "remaining_bytes": 50040
     }
   },
   "thread_stacks": {
@@ -24,7 +24,7 @@
       "guard_alignment_overhead_bytes": 64
     }
   },
-  "source_identities": 69,
+  "source_identities": 70,
   "generated_identities": 154,
   "report": "firmware/a04/bench/verification/arm-resources.json"
 }

@@ -26,6 +26,7 @@ if ($Mode -in @('all','host')) {
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_fixtures.py')) 'host-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_archives.py')) 'archive-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_journal.py')) 'journal-verification.txt'
+    Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_cursor.py')) 'journal-cursor-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_recorder.py')) 'recorder-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_audio.py')) 'audio-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_release_auth.py')) 'release-auth.json'

@@ -10,6 +10,7 @@ This is the executable software for [the first wearable plan's audio/storage gat
 - Reads two PDM channels into the monitored, bounded audio queue; averages them to mono; encodes 16 kHz audio with the existing 20 ms Opus profile; stores complete records in real W25N01GV through the serialized storage owner.
 - Stops at the host's requested 1–60 second duration, with an autonomous 60-second limit. Ordinary STOP finalizes only after healthy producer quiescence and FIFO drain. Privacy cutoff, lost audio, and uncertain storage remain explicit failures or interruptions.
 - Recovers an existing journal after the host supplies the same saved enrollment context. Exports exact audio with its physical receipt. The host independently checks the archive and commits its local receiver before publishing a complete bundle.
+- Uses a statically allocated cursor to verify, replay and finally revalidate an export in bounded storage steps. UART DATA remains at 128 bytes per line, and END waits for final source revalidation. The UART operation still runs synchronously and restarts from zero after an interrupted attempt; yielding between steps does not add command preemption or wire resume.
 - Reports capture service time, FIFO occupancy, unused thread stack, NAND operation counters and per-channel peaks/clipping. These become measurements only when the image runs on hardware.
 
 There is no Bluetooth, battery/charger integration, automatic formatting, audio-release command, signed update, or secret persisted in MCU flash. UART enrollment is plaintext and requires an explicitly selected local device. The [protocol](PROTOCOL.md) and [host guide](HOST.md) define these boundaries.
@@ -26,6 +27,8 @@ Run from the repository root. The existing installer supplies the pinned Windows
 Use `-Mode host` for the UART and C orchestration suites, or `-Mode arm` for the target build and ELF/devicetree report. Neither command opens a serial port or flashes hardware. Outputs are under `.tools/a04-bench/arm/zephyr/`; do not confuse them with the parent integration probe under `.tools/a04-opus/arm/zephyr/` or the A03 firmware.
 
 The new bench command/controller source (`src/main.c`) compiles with warnings treated as errors. Shared legacy source and the unmodified Opus dependency still produce compiler diagnostics recorded in the initial build transcript; a successful link is not a warning-free or runtime qualification claim. The [ARM report](verification/arm-resources.json) records actual linked reservations, memory use, configuration, pins and source hashes. Per-function compiler stack reports are lower bounds; Opus uses dynamic stack allocation and needs runtime measurement.
+
+The resource verifier requires the cursor functions to be linked and checks the actual static `export_cursor` reservation of 3,800 bytes and journal reservation of 36,008 bytes, including its additional 8-byte generation field. These allocations are accounted for in the linked RAM total; the cursor buffer is not hidden on the owner thread's stack. Its 128-byte outgoing chunk is copied into the existing UART formatter rather than retaining a NAND scratch pointer. The report lists the complete flash/RAM totals and remaining capacity; remaining RAM is not measured runtime stack headroom.
 
 ## Assemble and connect the fixture
 

@@ -1,1 +1,3 @@
 * text=auto eol=lf
+verification/** -text whitespace=cr-at-eol,-blank-at-eol
+tests/control-report.json -text whitespace=cr-at-eol

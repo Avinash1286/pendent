@@ -1,10 +1,10 @@
 {
   "status": "host_NAND_model_real_Opus_Python_SQLite_FFmpeg_passed_device_unmeasured",
   "host_groups": 19,
-  "journal_context_bytes": 36040,
+  "journal_context_bytes": 36048,
   "host_model_bytes": 666712,
-  "host_executable_sha256": "ce04ac34a310648a9ffbdafdbe0fc70c3fc1b64be4109f1b0c1a555346a846db",
-  "host_transcript_sha256": "75964add130e5ec897aebf85e8467bb0991e37925f91c5200f35a9d579608a17",
+  "host_executable_sha256": "fd05ad64c08d4a3ddcba02d7d20db2363cf1c931a1d06d6ba160096137f58a29",
+  "host_transcript_sha256": "c6470625cf079d7d55c05831309720719c9c730656d889bbfa5218613d63957e",
   "wrapped_chain": {
     "physical_order": [
       3,
@@ -168,8 +168,9 @@
     }
   ],
   "code_source_sha256": {
-    "firmware/a04/src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
-    "firmware/a04/include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
     "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
@@ -177,13 +178,13 @@
     "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
     "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
     "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
-    "firmware/a04/tests/host_journal.c": "82480f58197c931bd66a1d0071d4ca90812e3611af148b6003a2683902b65d54",
-    "firmware/a04/tests/CMakeLists.txt": "ccfbe465b745a738f4052425124c0b2e9c79aae692410894f81d53d4d0cc6c3c",
-    "firmware/a04/scripts/build.ps1": "6bb8acf8afd5357f7808e6fff3854724ba2ff80f743f5b9be3965e38d4876bf5",
+    "firmware/a04/tests/host_journal.c": "f209bde98422e27f8c8ef2f644153ae34ab98a3eca617a7c02597029d68f96f0",
+    "firmware/a04/tests/CMakeLists.txt": "2080f4bc6df408d3530c7261f472b58a2925cee1118d1f750600e0d9a15f0ef8",
+    "firmware/a04/scripts/build.ps1": "039d27f554897f8a8a0e904846bd4e4769df28d85816827585c7219306ec9a3f",
     "firmware/a04/src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
     "firmware/a04/include/aura_w25n01gv.h": "6248c59c7e9c54eb343e0958b09ccdb31eb8411080e796f7587a373a2254357b",
     "firmware/a04/tests/host_w25n01gv.c": "9716af59ed311306d9e0f48ca13d006e0c530e8a4c899bc12e38d09edec507a9",
-    "firmware/a04/scripts/verify_journal.py": "bdf76eb6e9520efe60100a552684699296ca9435a06235f1b13dfcf76c5ec179",
+    "firmware/a04/scripts/verify_journal.py": "fa00c161af4183902f07d4aaf92c8e1a6de474228f0c77fd519d0b41a3e16ed3",
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
   },
   "model_guarantees": [

@@ -261,6 +261,10 @@ fun main(args: Array<String>) {
     }
     groups++
     synthetic(output)
+    val fragments = verifyBleFragments()
+    groups += fragments.groups
+    checks += fragments.checks
     File(output, "results.tsv").writeText(results.toString())
     println("PASS Kotlin core groups=$groups checks=$checks C_fixtures=$fixtures raw_prefix_rejected=$rejected audio_decode_claim=false")
+    println("PASS BLE response fragments groups=${fragments.groups} checks=${fragments.checks} gatt_tested=false")
 }

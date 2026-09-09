@@ -12,6 +12,14 @@ On real W25N integration, configure its immutable control pair immediately after
 
 `aura_storage_provision` requires every readable, nonbad data/control main page to be blank. It cannot reset an existing layout or repair uncertain authority. The authority is copied before scratch reads. `aura_storage_open` loads and validates the control state before mounting the journal; pending release extents are excluded before catalog discovery. Any observed owned allocation generation above the persisted reservation floor stops opening.
 
+The [bounded export cursor](JOURNAL-CURSOR.md) shares this owner. Preparing a
+capture invalidates existing export epochs before attempting the durable counter
+write. Open/provision invalidate before replacing their owner context; failures
+invalidate again instead of leaving an older buffered transfer usable. Release
+reservation and each release step also invalidate before changing authority or
+media. The caller must still serialize operations and cancel connection handles
+and cached responses. This adds no radio or release permission to a download.
+
 ## Capture and release sequence
 
 1. `prepare_capture` copies and validates settings, rejects output buffers overlapping private contexts, increments the durable reservation floor, derives the capture ID and binds the exact manifest to the next journal start. IDs supplied in settings are replaced with trusted IDs. The generation is reserved **before** any journal header is programmed. Cancellation, a failed start and reboot burn that reservation rather than reuse it.
@@ -48,5 +56,10 @@ IDLE is exactly 352 bytes. GRANTED is exactly `352 + count*44`, with unique in-r
 Run `./firmware/a04/scripts/build.ps1 -Mode all`. [storage-roundtrip.json](verification/storage-roundtrip.json) binds the actual tested code, executable hashes and results; [storage-host.txt](verification/storage-host.txt) records the fault cases. The integration harness encodes real speech through the C recorder/Opus/journal, hands the archive to a reopened Python SQLite receiver and persisted release outbox, then sends those exact command bytes back to C. It checks recovery, completed retry, reuse with a fresh generation, another capture's byte identity before/after reuse, and independent FFmpeg decoding. Public deterministic fixture keys are used only by tests.
 
 Fault cases cover grant/erase/completion interruption, invalid commands, reservation cancellation, more than 128 successive release cycles with an unacknowledged recording retained, wrapped extents, changed allocations, surviving foreign identities and caller-buffer aliasing. They model operations and power cuts; no physical microphone, NAND, radio or phone lifecycle was exercised by this harness.
+
+The cursor transition regression additionally checks successful next-capture
+reservation and failed counter writes, control reloads, reopening and provisioning.
+An old buffered cursor must return stale without reading NAND or exposing data;
+reopening must retain all source-block pages and the exact verified receipt.
 
 An ambiguous newer control write can deliberately block further work even while older bytes survive. No trusted recovery protocol, control-block wear rotation or replacement of failed control blocks is implemented. Full raw-media rollback or an entirely unidentifiable replacement is outside the guarantees of the serialized operation model. Secure enrollment, key custody, encryption, authenticated device completion, BLE/mobile integration and measured latency/endurance remain required. The 128-live-capture catalog limit remains; modeled authorized release now permits successive reuse beyond that many lifetime captures. Unacknowledged recordings are preserved and full storage stops new capture.

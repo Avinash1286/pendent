@@ -7,116 +7,121 @@
   "purpose": "Separate USB-powered DK + external PDM/NAND wired bench application, not AURA wearable firmware.",
   "memory_regions": {
     "FLASH": {
-      "used_bytes": 255748,
+      "used_bytes": 257468,
       "capacity_bytes": 1048576,
-      "remaining_bytes": 792828
+      "remaining_bytes": 791108
     },
     "RAM": {
-      "used_bytes": 208264,
+      "used_bytes": 212104,
       "capacity_bytes": 262144,
-      "remaining_bytes": 53880
+      "remaining_bytes": 50040
     }
   },
   "memory_evidence": "Actual ELF _flash_used/_image_ram_size symbols checked against configured capacities.",
   "symbols": {
     "snapshot": {
       "bytes": 45408,
-      "address": 536975178,
+      "address": 536978994,
       "type": "STT_OBJECT"
     },
     "journal": {
-      "bytes": 36000,
+      "bytes": 36008,
       "address": 536870912,
+      "type": "STT_OBJECT"
+    },
+    "export_cursor": {
+      "bytes": 3800,
+      "address": 536965160,
       "type": "STT_OBJECT"
     },
     "storage": {
       "bytes": 208,
-      "address": 536969392,
+      "address": 536973200,
       "type": "STT_OBJECT"
     },
     "nand": {
       "bytes": 4464,
-      "address": 536969600,
+      "address": 536973408,
       "type": "STT_OBJECT"
     },
     "encoder": {
       "bytes": 32768,
-      "address": 536907752,
+      "address": 536907760,
       "type": "STT_OBJECT"
     },
     "recorder": {
       "bytes": 3568,
-      "address": 536961584,
+      "address": 536961592,
       "type": "STT_OBJECT"
     },
     "audio": {
       "bytes": 21064,
-      "address": 536940520,
+      "address": 536940528,
       "type": "STT_OBJECT"
     },
     "control": {
       "bytes": 4240,
-      "address": 536965152,
+      "address": 536968960,
       "type": "STT_OBJECT"
     },
     "reader_stack": {
       "bytes": 4160,
-      "address": 537069888,
+      "address": 537073728,
       "type": "STT_OBJECT"
     },
     "storage_stack": {
       "bytes": 49216,
-      "address": 537020672,
+      "address": 537024512,
       "type": "STT_OBJECT"
     },
     "main": {
       "bytes": 552,
-      "address": 6649,
+      "address": 6781,
       "type": "STT_FUNC"
     },
     "owner": {
-      "bytes": 2040,
-      "address": 4609,
+      "bytes": 2272,
+      "address": 4509,
       "type": "STT_FUNC"
     },
     "reader": {
       "bytes": 48,
-      "address": 4177,
+      "address": 4077,
       "type": "STT_FUNC"
     },
     "uart_input": {
       "bytes": 352,
-      "address": 4225,
+      "address": 4125,
       "type": "STT_FUNC"
     },
     "privacy_changed": {
       "bytes": 32,
-      "address": 4577,
+      "address": 4477,
       "type": "STT_FUNC"
     },
     "opus_encode": {
       "bytes": 80,
-      "address": 67309,
+      "address": 68665,
       "type": "STT_FUNC"
     },
     "aura_opus_state_bytes": {
       "bytes": 14,
-      "address": 151523,
+      "address": 152845,
       "type": "STT_FUNC"
     },
     "aura_opus_init_staged": {
       "bytes": 22,
-      "address": 151865,
+      "address": 153187,
       "type": "STT_FUNC"
     },
     "aura_opus_push": {
       "bytes": 186,
-      "address": 152061,
+      "address": 153383,
       "type": "STT_FUNC"
     },
     "aura_opus_finish": {
       "bytes": 166,
-      "address": 152247,
+      "address": 153569,
       "type": "STT_FUNC"
     },
     "aura_dmic_health_get": {
@@ -131,152 +136,177 @@
     },
     "aura_audio_zephyr_init": {
       "bytes": 444,
-      "address": 18701,
+      "address": 20009,
       "type": "STT_FUNC"
     },
     "aura_audio_zephyr_begin": {
       "bytes": 796,
-      "address": 19145,
+      "address": 20453,
       "type": "STT_FUNC"
     },
     "aura_audio_zephyr_reader_step": {
       "bytes": 360,
-      "address": 19941,
+      "address": 21249,
       "type": "STT_FUNC"
     },
     "aura_audio_zephyr_service": {
       "bytes": 474,
-      "address": 154507,
+      "address": 156191,
       "type": "STT_FUNC"
     },
     "aura_audio_zephyr_request_stop": {
       "bytes": 54,
-      "address": 154345,
+      "address": 156029,
       "type": "STT_FUNC"
     },
     "aura_audio_zephyr_privacy_cutoff": {
       "bytes": 108,
-      "address": 154399,
+      "address": 156083,
       "type": "STT_FUNC"
     },
     "aura_recorder_start": {
       "bytes": 308,
-      "address": 16361,
+      "address": 17669,
       "type": "STT_FUNC"
     },
     "aura_recorder_consume": {
       "bytes": 272,
-      "address": 16873,
+      "address": 18181,
       "type": "STT_FUNC"
     },
     "aura_recorder_stop": {
       "bytes": 188,
-      "address": 17145,
+      "address": 18453,
       "type": "STT_FUNC"
     },
     "aura_recorder_interrupt": {
       "bytes": 140,
-      "address": 16669,
+      "address": 17977,
       "type": "STT_FUNC"
     },
     "aura_journal_mount": {
-      "bytes": 1704,
-      "address": 11785,
+      "bytes": 1724,
+      "address": 12409,
       "type": "STT_FUNC"
     },
-    "aura_journal_export": {
-      "bytes": 140,
-      "address": 16141,
+    "aura_journal_invalidate_exports": {
+      "bytes": 80,
+      "address": 11945,
       "type": "STT_FUNC"
     },
-    "aura_journal_receipt": {
-      "bytes": 76,
-      "address": 16065,
+    "aura_journal_cursor_open": {
+      "bytes": 304,
+      "address": 16717,
+      "type": "STT_FUNC"
+    },
+    "aura_journal_cursor_verify_step": {
+      "bytes": 162,
+      "address": 155667,
+      "type": "STT_FUNC"
+    },
+    "aura_journal_cursor_seek": {
+      "bytes": 84,
+      "address": 17077,
+      "type": "STT_FUNC"
+    },
+    "aura_journal_cursor_read": {
+      "bytes": 428,
+      "address": 17161,
+      "type": "STT_FUNC"
+    },
+    "aura_journal_cursor_get_info": {
+      "bytes": 56,
+      "address": 17021,
+      "type": "STT_FUNC"
+    },
+    "aura_journal_cursor_cancel": {
+      "bytes": 14,
+      "address": 155829,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_zephyr_init": {
       "bytes": 212,
-      "address": 22361,
+      "address": 23669,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_zephyr_io": {
       "bytes": 56,
-      "address": 22573,
+      "address": 23881,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_zephyr_configure_control": {
       "bytes": 42,
-      "address": 156367,
+      "address": 158051,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_zephyr_control_io": {
       "bytes": 68,
-      "address": 22629,
+      "address": 23937,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_init": {
       "bytes": 616,
-      "address": 21429,
+      "address": 22737,
       "type": "STT_FUNC"
     },
     "aura_w25n01gv_control_io": {
       "bytes": 68,
-      "address": 22229,
+      "address": 23537,
       "type": "STT_FUNC"
     },
     "aura_storage_open": {
-      "bytes": 152,
-      "address": 157497,
+      "bytes": 156,
+      "address": 159211,
       "type": "STT_FUNC"
     },
     "aura_storage_provision": {
-      "bytes": 408,
-      "address": 29517,
+      "bytes": 420,
+      "address": 30845,
       "type": "STT_FUNC"
     },
     "aura_storage_prepare_capture": {
-      "bytes": 432,
-      "address": 29925,
+      "bytes": 448,
+      "address": 31265,
       "type": "STT_FUNC"
     },
     "aura_storage_cancel_prepared": {
       "bytes": 40,
-      "address": 30357,
+      "address": 31713,
       "type": "STT_FUNC"
     },
     "aura_storage_capture_id": {
       "bytes": 204,
-      "address": 28565,
+      "address": 29889,
       "type": "STT_FUNC"
     },
     "aura_control_open": {
       "bytes": 460,
-      "address": 25261,
+      "address": 26569,
       "type": "STT_FUNC"
     },
     "aura_control_provision": {
       "bytes": 244,
-      "address": 25969,
+      "address": 27277,
       "type": "STT_FUNC"
     },
     "aura_control_load": {
       "bytes": 260,
-      "address": 26213,
+      "address": 27521,
       "type": "STT_FUNC"
     },
     "aura_control_store": {
       "bytes": 240,
-      "address": 26473,
+      "address": 27781,
       "type": "STT_FUNC"
     },
     "_flash_used": {
       "bytes": 0,
-      "address": 255748,
+      "address": 257468,
       "type": "STT_NOTYPE"
     },
     "_image_ram_size": {
       "bytes": 0,
-      "address": 208264,
+      "address": 212104,
       "type": "STT_NOTYPE"
     }
   },
@@ -289,104 +319,104 @@
     },
     {
       "name": "text",
-      "bytes": 178944,
+      "bytes": 180660,
       "address": 256,
       "type": "SHT_PROGBITS"
     },
     {
       "name": ".ARM.exidx",
       "bytes": 8,
-      "address": 179200,
+      "address": 180916,
       "type": "SHT_ARM_EXIDX"
     },
     {
       "name": "initlevel",
       "bytes": 96,
-      "address": 179208,
+      "address": 180924,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "device_area",
       "bytes": 192,
-      "address": 179304,
+      "address": 181020,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "sw_isr_table",
       "bytes": 384,
-      "address": 179496,
+      "address": 181212,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "gpio_driver_api_area",
       "bytes": 36,
-      "address": 179880,
+      "address": 181596,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "spi_driver_api_area",
       "bytes": 8,
-      "address": 179916,
+      "address": 181632,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "clock_control_driver_api_area",
       "bytes": 28,
-      "address": 179924,
+      "address": 181640,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "uart_driver_api_area",
       "bytes": 68,
-      "address": 179952,
+      "address": 181668,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "tbss",
       "bytes": 8,
-      "address": 180020,
+      "address": 181736,
       "type": "SHT_NOBITS"
     },
     {
       "name": "rodata",
       "bytes": 39348,
-      "address": 180032,
+      "address": 181744,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "datas",
-      "bytes": 36308,
+      "bytes": 36316,
       "address": 536870912,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "device_states",
       "bytes": 12,
-      "address": 536907220,
+      "address": 536907228,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "k_msgq_area",
       "bytes": 44,
-      "address": 536907232,
+      "address": 536907240,
       "type": "SHT_PROGBITS"
     },
     {
       "name": ".last_section",
       "bytes": 4,
-      "address": 255744,
+      "address": 257464,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "bss",
-      "bytes": 113359,
-      "address": 536907280,
+      "bytes": 117167,
+      "address": 536907288,
       "type": "SHT_NOBITS"
     },
     {
       "name": "noinit",
       "bytes": 58504,
-      "address": 537020672,
+      "address": 537024512,
       "type": "SHT_NOBITS"
     }
   ],
@@ -553,12 +583,12 @@
       },
       {
         "function": "aura_journal_export",
-        "compiler_reported_bytes": 1624,
+        "compiler_reported_bytes": 1640,
         "classification": "static"
       },
       {
         "function": "verify_capture",
-        "compiler_reported_bytes": 1568,
+        "compiler_reported_bytes": 1616,
         "classification": "static"
       },
       {
@@ -577,6 +607,11 @@
         "classification": "static"
       },
       {
+        "function": "owner",
+        "compiler_reported_bytes": 1016,
+        "classification": "static"
+      },
+      {
         "function": "opus_encode_native",
         "compiler_reported_bytes": 984,
         "classification": "dynamic"
@@ -589,11 +624,6 @@
       {
         "function": "silk_pitch_analysis_core",
         "compiler_reported_bytes": 840,
-        "classification": "dynamic"
-      },
-      {
-        "function": "opus_packet_pad_impl",
-        "compiler_reported_bytes": 784,
         "classification": "dynamic"
       }
     ],
@@ -622,6 +652,14 @@
     ],
     "limitation": "Source vocabulary and linked-symbol checks establish this bench build's intended API scope. They are not a proof of authenticated transport, physical tamper resistance, secure key storage or general impossibility of flash erasure. Explicit provisioning/capture may erase verified blank audio blocks and recycle control blocks."
   },
+  "export_scope": {
+    "cursor_object_bytes": 3800,
+    "journal_object_bytes": 36008,
+    "uart_data_max_bytes": 128,
+    "cursor_seek_offset": 0,
+    "completion": "END EXPORT follows cursor EOF and final physical revalidation; DATA remains temporary until then.",
+    "limitation": "UART dispatch is still synchronous. Yielding between cursor steps does not implement command preemption, wire resume, Bluetooth, or measured physical latency."
+  },
   "peripheral_behavior": "Cold boot probes/resets/configures NAND and scans factory/LUT markers. Explicit OPEN/PROVISION and START gate recording. UART uses the DK interface MCU; no nRF USB stack or Bluetooth is enabled.",
   "build_currentness": {
     "ninja_dry_run": "ninja: Entering directory `F:\\circuit\\.tools\\a04-bench\\arm'\nninja: no work to do.",
@@ -644,20 +682,20 @@
     "firmware/a04/bench/host.py": "f67edf165d353e92e88dfcc0ee8f7a47782c333266e7e28a52f0b1390fbcb5b6",
     "firmware/a04/bench/Kconfig": "72196d60f469a92e781cb91daf304e7f40f822373e0eab13fb0b610ad064cf65",
     "firmware/a04/bench/prj.conf": "ee3181dab4ea7e88f99211b86c270a1db296a13dd0d3c466cbb04e864de49d2b",
-    "firmware/a04/bench/PROTOCOL.md": "7fcdd0fcf285b7866f881fdc61d6d9b980fe585faed4a5f12ef258deb29731cf",
-    "firmware/a04/bench/README.md": "9febb8dd02e07af3e92d14002861fe9a7aa8e9a01600342e28d1dea9ca2b6dd1",
-    "firmware/a04/bench/report_resources.py": "e8ecceba220a59e19d0eeebf74a826f7ac09e6fe019f23ccd491ca1dbb2e7c31",
+    "firmware/a04/bench/PROTOCOL.md": "dc4c45963d200766bda5a271d1118b5e897e020f429fb48875cfc746b7ca2c97",
+    "firmware/a04/bench/README.md": "1b98f5565e2b227ffdcb35103aa34361bd8f53984ced977d13efdeaf5981e03a",
+    "firmware/a04/bench/report_resources.py": "a9936d1c34234e8ca2169f9462c32f14c4d8556610e8a9f2ccff001b4834c8ba",
     "firmware/a04/bench/requirements.txt": "182561a8b17fe2b1fcb179af071d19bc34a4618ab06822c73d43b0cb6d79c93e",
-    "firmware/a04/bench/src/main.c": "c9ade81c09e948ff8f57d7fdefc5634f15282ee77afc1c691a84b9c8c3ba1183",
+    "firmware/a04/bench/src/main.c": "1be68ab73d022ff5edb05ed8955ffb9b8871c5e750c9079297b57dddd08c962f",
     "firmware/a04/bench/test_control.py": "e2e9649bfd8e38ec88132cb49ddf853b07b2747289537d6df21f88a271d27b60",
     "firmware/a04/bench/test_host.py": "16880323e8804f78dbc24d918fdf257d170733d78be9fdacccfaac90829f5a84",
-    "firmware/a04/bench/tests/control.c": "7f00887067755fef74304d9f06ead0d87e7e3fc0f38b7de4067c2a5d58cd29eb",
-    "firmware/a04/bench/tests/README.md": "5f4c05247dfc13b639b2576548260b789d2ff038bc13495af8cd8ef28cfd10a7",
+    "firmware/a04/bench/tests/control.c": "3b6010c13942e10118bc09d1523fce0176d6e9ee3309d47beaa503b894b83bc7",
+    "firmware/a04/bench/tests/README.md": "1d395f8080ba6c6972820d820e9151941fc15bd086f866ae647d01e64352b2df",
     "firmware/a04/bench/tests/stub/zephyr/drivers/gpio.h": "aba129ddf0a7a524c29925fec7fbed3f3f28c55a4e49dfffcf64f2d57c0a3cfd",
     "firmware/a04/bench/tests/stub/zephyr/drivers/hwinfo.h": "ad746ef262e5f147abaccf9485cd5441ce6d1ce8fa79b30617b1c80a546fdec0",
     "firmware/a04/bench/tests/stub/zephyr/drivers/spi.h": "15991618937c0b6ffe110221931d3b3b2317f85aea81b1627807fc0402ab60f6",
     "firmware/a04/bench/tests/stub/zephyr/drivers/uart.h": "63280735198fbb94c9061bf59f82f19adfccd7dae1a66f82225fc7968fbe8459",
-    "firmware/a04/bench/tests/stub/zephyr/kernel.h": "f015c8067b3b26be474331efc9d269a80717abc0ae1a3cf75a13655773ec066b",
+    "firmware/a04/bench/tests/stub/zephyr/kernel.h": "dc454fb1c9e00107d9acefe02dc631b338ceed2ad10f493334ee2a385bc4d6eb",
     "firmware/a04/bench/tests/stub/zephyr/sys/byteorder.h": "b7b237d084433210a20fb3850ed96de74e98491fe9ae08beed884aa4e3abb7b8",
     "firmware/a04/bench/tests/stub/zephyr/sys/printk.h": "3ebb12c343740701e6c7d4c7424fd7ddc8fba7a2da372509bf473dcee6a4f981",
     "firmware/a04/bench/verify_host.py": "1c83b28c50db0a22302c4da90e77c5089c0bb23c21339a4a7bbbb5d0a6bb2599",
@@ -679,7 +717,8 @@
     "firmware/a04/include/aura_audio_zephyr.h": "2387676c9c27b51aa6bb7f94a3c07fccd2a74337782e6396b4e143a14692db63",
     "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
     "firmware/a04/include/aura_dmic_health.h": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
-    "firmware/a04/include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
     "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
     "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
     "firmware/a04/include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
@@ -690,11 +729,11 @@
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/src/aura_audio_zephyr.c": "e42fd97920caebcfa455cd832b217b58cc9fe54254aa919f1624ca4f230f1c2c",
     "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
-    "firmware/a04/src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
     "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
     "firmware/a04/src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
     "firmware/a04/src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
-    "firmware/a04/src/aura_storage.c": "6aa1f8c89d8cbef17a07c29667a5fbffc5ddaf6d40e04a6126a4aa441683042f",
+    "firmware/a04/src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
     "firmware/a04/src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
     "firmware/a04/src/aura_w25n01gv_zephyr.c": "3b86abdf3313e9315b196726713dd9ee1561baa418ac3edc42a0e6db8fa7724f",
     "firmware/a04/src/zephyr_probe.c": "b438ac58fda6c64dd4412d92e58bf14b617ca8d974ec3d7c9ba67e8ac052835f"
@@ -706,14 +745,14 @@
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_archive.c.su": "8f5419ff4c638a0153c2c833cfea90759fa13a460614bd20aca605abf6da6955",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_audio_zephyr.c.su": "1cc5655a3c6cc52fead30c5f695ecee0eeebc2717f3283ea09d0558b7b3534a9",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_control.c.su": "e7c6d745d12a79178c6b225e6264059c1bae9ac5ed275918c89dcce0c556f51b",
-    ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_journal.c.su": "5cd805f25ccc671a3e78b3527412b281675da935250b0228431bae6dcddd4d6b",
+    ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_journal.c.su": "efd109901a48601ba6e357ec57d2ce675fcd62c164000e76ba4f15d18ddd1f0c",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_opus.c.su": "e87aa7b9a8860f435d7c9b2f7b50258c4c6c2e3248992e606b85424beac66706",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_recorder.c.su": "a08b4db5659635d8ec465ed75a6c12348bbc65f2002b8283ec87344453acddbe",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_release_auth.c.su": "612956f206348db938b25e82348be82b4ce141efa4aee410bcc118b597bd51b7",
-    ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_storage.c.su": "c244e0fc24a027cc0b762a8525001062fe37127bd9dbf172f9326382bc25f2e1",
+    ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_storage.c.su": "83a9db289099e112dd50d451f8325669adc394d3107b5c5576773a6f07d4dc97",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_w25n01gv.c.su": "55b350b22a2bd6a58155857ff45728827c7ed745acad375bb70982f16a4467b8",
     ".tools/a04-bench/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_w25n01gv_zephyr.c.su": "f3ea4e32cdaee596d998af36ea7b9ea4d3b6ebc1be49ae5743c4548ee009bd40",
-    ".tools/a04-bench/arm/CMakeFiles/app.dir/src/main.c.su": "2eaeb031d6b2f846ae8445fc8cbfd17f192a4e08b5cacf3d5e929ba3d5e748ee",
+    ".tools/a04-bench/arm/CMakeFiles/app.dir/src/main.c.su": "90e85bea20acbe15ea8f60a49043771c3af3574bf7fafa9197d80ab596057e53",
     ".tools/a04-bench/arm/compile_commands.json": "4fef90ecfcb5407af088d8af6dc4bd2490884eeabedb9801971440a15251c62d",
     ".tools/a04-bench/arm/opus/CMakeFiles/opus.dir/celt/bands.c.su": "e6a59f44199af44b05991b4f9cc7514d1f237810210471edde213edb5b045d32",
     ".tools/a04-bench/arm/opus/CMakeFiles/opus.dir/celt/celt.c.su": "62c37108a323085c153254ddcb726082275e22b2eb5b162a84024d57c07d56d3",
@@ -849,11 +888,11 @@
     ".tools/a04-bench/arm/opus/CMakeFiles/opus.dir/src/repacketizer.c.su": "cbf51e4443a7b85241c92391b987592315b43be789230e48b929abd1ba77212e",
     ".tools/a04-bench/arm/zephyr/.config": "9eae53797f3b3297f15d468309b952a401803e866c4cd13e2c23e354120bc875",
     ".tools/a04-bench/arm/zephyr/edt.pickle": "0a4be0d18e9e764bda4a25e71d552f183b9fe5ba3222356d8bb166a4e996c0e7",
-    ".tools/a04-bench/arm/zephyr/zephyr.bin": "b57ae31a304eeeb3b2814836a5b585945c3f40c22d6b7836616b711f651baef3",
+    ".tools/a04-bench/arm/zephyr/zephyr.bin": "1d122aae2ae7a0262cb98784556dce746f1ed657b5789c0d36e5ff066cb710f8",
     ".tools/a04-bench/arm/zephyr/zephyr.dts": "deca403d3b17048315d8468790f3d327b8978163cd93a8c5122870793603d9be",
-    ".tools/a04-bench/arm/zephyr/zephyr.elf": "68bb55901c8b84fbb9cdf02f1d9878064ed9137aebcb22ce832e9bdcc041cf35",
-    ".tools/a04-bench/arm/zephyr/zephyr.hex": "c3a1c7ac25d9b656c52b6af30561ddecd252c664b95d59149bbfb31e09ef6cf3",
-    ".tools/a04-bench/arm/zephyr/zephyr.map": "cec8f93e2ecb550f434c60634eb399e62a1665a6bedf198d514cca8e52aeab32"
+    ".tools/a04-bench/arm/zephyr/zephyr.elf": "e8f183a5feb25ca1e5d84529bbaba60075c24a4c35b8f4ada82371d53eb573f3",
+    ".tools/a04-bench/arm/zephyr/zephyr.hex": "28f8d05b600b99a8f0a9bdab000df0a2f56a341569b0d1acbc3d6bcb977a0c4d",
+    ".tools/a04-bench/arm/zephyr/zephyr.map": "f95f2eec89c8bd20377b2a03d48297adfd3d4ff89c18a33ef79fe8f335ef4ff5"
   },
   "opus_dependency": {
     "version": "1.6.1",
@@ -863,20 +902,20 @@
   },
   "artifacts": {
     "zephyr.elf": {
-      "bytes": 2419732,
-      "sha256": "68bb55901c8b84fbb9cdf02f1d9878064ed9137aebcb22ce832e9bdcc041cf35"
+      "bytes": 2433960,
+      "sha256": "e8f183a5feb25ca1e5d84529bbaba60075c24a4c35b8f4ada82371d53eb573f3"
     },
     "zephyr.hex": {
-      "bytes": 719414,
-      "sha256": "c3a1c7ac25d9b656c52b6af30561ddecd252c664b95d59149bbfb31e09ef6cf3"
+      "bytes": 724266,
+      "sha256": "28f8d05b600b99a8f0a9bdab000df0a2f56a341569b0d1acbc3d6bcb977a0c4d"
     },
     "zephyr.bin": {
-      "bytes": 255748,
-      "sha256": "b57ae31a304eeeb3b2814836a5b585945c3f40c22d6b7836616b711f651baef3"
+      "bytes": 257468,
+      "sha256": "1d122aae2ae7a0262cb98784556dce746f1ed657b5789c0d36e5ff066cb710f8"
     },
     "zephyr.map": {
-      "bytes": 674675,
-      "sha256": "cec8f93e2ecb550f434c60634eb399e62a1665a6bedf198d514cca8e52aeab32"
+      "bytes": 676368,
+      "sha256": "f95f2eec89c8bd20377b2a03d48297adfd3d4ff89c18a33ef79fe8f335ef4ff5"
     }
   },
   "not_verified": [

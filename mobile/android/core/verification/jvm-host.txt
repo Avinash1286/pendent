@@ -1,21 +1,23 @@
-Calculating task graph as configuration cache cannot be reused because file 'core\build.gradle.kts' has changed.
+Starting a Gradle Daemon, 1 stopped Daemon could not be reused, use --status for details
+Calculating task graph as configuration cache cannot be reused because file 'app\build.gradle.kts' has changed.
 > Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:processResources NO-SOURCE
 > Task :core:processTestResources NO-SOURCE
-> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileKotlin
 > Task :core:compileJava NO-SOURCE
 > Task :core:classes UP-TO-DATE
-> Task :core:jar UP-TO-DATE
-> Task :core:compileTestKotlin UP-TO-DATE
+> Task :core:jar
+> Task :core:compileTestKotlin
 > Task :core:compileTestJava NO-SOURCE
 > Task :core:testClasses UP-TO-DATE
 > Task :core:test
 
 > Task :core:verifyCore
-PASS Kotlin core groups=10 checks=231 C_fixtures=17 raw_prefix_rejected=1 audio_decode_claim=false
+PASS Kotlin core groups=17 checks=32390 C_fixtures=17 raw_prefix_rejected=1 audio_decode_claim=false
+PASS BLE response fragments groups=7 checks=32159 gatt_tested=false
 
 > Task :core:check
 
-BUILD SUCCESSFUL in 4s
-5 actionable tasks: 2 executed, 3 up-to-date
+BUILD SUCCESSFUL in 37s
+5 actionable tasks: 5 executed
 Configuration cache entry stored.

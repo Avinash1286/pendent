@@ -1,0 +1,194 @@
+{
+  "schema": "aura.android.installed-toolchain-evidence.v1",
+  "capturedAt": "2026-09-09T15:48:47.9872279+05:45",
+  "evidenceKind": "actual-local-commands-and-installed-files",
+  "hostVirtualizationSettingsChanged": false,
+  "runtimeBootTestPerformed": false,
+  "java": {
+    "executable": "F:\\circuit\\.tools\\android\\jdk17\\jdk-17.0.20.1+1\\bin\\java.exe",
+    "arguments": [
+      "-version"
+    ],
+    "exitCode": 0,
+    "output": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+    "executableSha256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406"
+  },
+  "javac": {
+    "executable": "F:\\circuit\\.tools\\android\\jdk17\\jdk-17.0.20.1+1\\bin\\javac.exe",
+    "arguments": [
+      "-version"
+    ],
+    "exitCode": 0,
+    "output": "javac 17.0.20.1",
+    "executableSha256": "9c71eee841aeebb723bfc2cceca7d72c6c1988fb679402f4123aa4d0e86aa549"
+  },
+  "gradle": {
+    "executable": "F:\\circuit\\.tools\\android\\gradle\\gradle-9.4.1\\bin\\gradle.bat",
+    "arguments": [
+      "--version"
+    ],
+    "exitCode": 0,
+    "output": "------------------------------------------------------------\nGradle 9.4.1\n------------------------------------------------------------\n\nBuild time:    2026-03-19 08:46:28 UTC\nRevision:      2d6327017519d23b96af35865dc997fcb544fb40\n\nKotlin:        2.3.0\nGroovy:        4.0.29\nAnt:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024\nLauncher JVM:  17.0.20.1 (Eclipse Adoptium 17.0.20.1+1)\nDaemon JVM:    F:\\circuit\\.tools\\android\\jdk17\\jdk-17.0.20.1+1 (no Daemon JVM specified, using current Java home)\nOS:            Windows 11 10.0 amd64",
+    "executableSha256": "db3e99d1a3fd5bce03fa9914725aaa402141835f00985523d9e6affdfe9b3b5a"
+  },
+  "adb": {
+    "executable": "F:\\circuit\\.tools\\android\\sdk\\platform-tools\\adb.exe",
+    "arguments": [
+      "version"
+    ],
+    "exitCode": 0,
+    "output": "Android Debug Bridge version 1.0.41\nVersion 37.0.1-15733141\nInstalled as F:\\circuit\\.tools\\android\\sdk\\platform-tools\\adb.exe\nRunning on Windows 10.0.26200",
+    "executableSha256": "b4a6b455702684652cccf7b46258b29e653538904359a58fd4931cf3ef286b3f"
+  },
+  "emulator": {
+    "executable": "F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe",
+    "arguments": [
+      "-version"
+    ],
+    "exitCode": 0,
+    "output": "Android emulator version 37.1.11.0 (build_id 15917651) (CL:N/A)\nCopyright (C) 2006-2024 The Android Open Source Project and many others.\nThis program is a derivative of the QEMU CPU emulator (www.qemu.org).\n\n  This software is licensed under the terms of the GNU General Public\n  License version 2, as published by the Free Software Foundation, and\n  may be copied, distributed, and modified under those terms.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\nINFO         | Android emulator version 37.1.11.0 (build_id 15917651) (CL:N/A)\nINFO         | Graphics backend: gfxstream",
+    "executableSha256": "dede05844d17902a7c74f2cee2bbe97ec9afaaf22ebc35a7cdc6d7c1eaa0b9dd"
+  },
+  "accelerationCheck": {
+    "executable": "F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe",
+    "arguments": [
+      "-accel-check"
+    ],
+    "exitCode": 0,
+    "output": "accel:\n0\nWHPX(10.0.26200) is installed and usable.\naccel",
+    "executableSha256": "dede05844d17902a7c74f2cee2bbe97ec9afaaf22ebc35a7cdc6d7c1eaa0b9dd"
+  },
+  "sdkPackages": [
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\platforms\\android-37.0",
+      "sourceProperties": {
+        "Pkg.Desc": "Android SDK Platform 17",
+        "Pkg.UserSrc": "false",
+        "Platform.Version": "17",
+        "Platform.CodeName": "",
+        "Pkg.Revision": "2",
+        "AndroidVersion.ApiLevel": "37.0",
+        "AndroidVersion.CodeName": "",
+        "AndroidVersion.ExtensionLevel": "22",
+        "AndroidVersion.IsBaseSdk": "true",
+        "AndroidVersion.PreviewSdkInt": "0",
+        "AndroidVersion.BetaVersion": "",
+        "Layoutlib.Api": "15",
+        "Layoutlib.Revision": "1",
+        "Platform.MinToolsRev": "22"
+      },
+      "sourcePropertiesSha256": "fa89029fc0cee414cb5e44a37cd3033771217eeecb5086577bb6d9b1b03b5b5f",
+      "packageXml": {
+        "packagePath": "platforms;android-37.0",
+        "revision": "2"
+      },
+      "packageXmlSha256": "bdfcb4979ce2bad0768f44afb5f876acbcc5359ee43ed492fe2a0a197932e70d"
+    },
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\build-tools\\36.0.0",
+      "sourceProperties": {
+        "Pkg.UserSrc": "false",
+        "Pkg.Revision": "36.0.0"
+      },
+      "sourcePropertiesSha256": "7dee6632e9ad6cb111da2bb99d747211e27927061b1276d040bb1d71fded5ebb",
+      "packageXml": {
+        "packagePath": "build-tools;36.0.0",
+        "revision": "36.0.0"
+      },
+      "packageXmlSha256": "737904dbcee0845bc18385d3627cd6238bf5f1395f07c7300f88db717b7303b7"
+    },
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\platform-tools",
+      "sourceProperties": {
+        "Pkg.UserSrc": "false",
+        "Pkg.Revision": "37.0.1"
+      },
+      "sourcePropertiesSha256": "2dccd788c0234d8cf7f7457377e57f57527a86a629c6ed54feb8af0f549dac38",
+      "packageXml": {
+        "packagePath": "platform-tools",
+        "revision": "37.0.1"
+      },
+      "packageXmlSha256": "55d46ccebf3bba4ad4349d3747643bb0ed38aac843ce6c87782b009328f73e1e"
+    },
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\cmdline-tools\\22.0",
+      "sourceProperties": {
+        "Pkg.Revision": "22.0",
+        "Pkg.Path": "cmdline-tools;22.0",
+        "Pkg.Desc": "Android SDK Command-line Tools"
+      },
+      "sourcePropertiesSha256": "166bcdfe54f73296b09e5e6aa6d96b9a752b78b418c56e9f3f3a13c15fac74e5",
+      "packageXml": null,
+      "packageXmlSha256": null
+    },
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\emulator",
+      "sourceProperties": {
+        "Pkg.UserSrc": "false",
+        "Pkg.Revision": "37.1.11",
+        "Pkg.Path": "emulator",
+        "Pkg.Desc": "Android Emulator",
+        "Pkg.BuildId": "15917651"
+      },
+      "sourcePropertiesSha256": "ee589ca350515c29dc3bad30dd5ebe8efb11d1a50c17c8815125d3c4bd12a3a8",
+      "packageXml": {
+        "packagePath": "emulator",
+        "revision": "37.1.11"
+      },
+      "packageXmlSha256": "3e750b5f361806c2c246a9bc1c37830ebde5efe6fdda673e54874334cb620245"
+    },
+    {
+      "directory": "F:\\circuit\\.tools\\android\\sdk\\system-images\\android-29\\default\\x86_64",
+      "sourceProperties": {
+        "Pkg.Desc": "Android SDK System Image",
+        "Pkg.UserSrc": "false",
+        "Pkg.Revision": "8",
+        "Pkg.Dependencies": "emulator#28.1.9",
+        "AndroidVersion.ApiLevel": "29",
+        "SystemImage.Abi": "x86_64",
+        "SystemImage.GpuSupport": "true",
+        "SystemImage.TagId": "default",
+        "SystemImage.TagDisplay": "Default Android System Image"
+      },
+      "sourcePropertiesSha256": "9db370b96467c9a94a68843aeb1a699bec44d4d05ef52a6774d8f6174418a847",
+      "packageXml": {
+        "packagePath": "system-images;android-29;default;x86_64",
+        "revision": "8"
+      },
+      "packageXmlSha256": "4246a9600ee0cb5ab2b2e0ed2f071b9827d74e7e337aeec5c1325a80167a994e"
+    }
+  ],
+  "archives": [
+    {
+      "path": "F:\\circuit\\.tools\\android\\jdk17.zip",
+      "sizeBytes": 190817615,
+      "sha256": "e53a79c3c3d86865bd7e787903884331068e71321714ffd44f145785affc7cb0"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\gradle-9.4.1-bin.zip",
+      "sizeBytes": 137878901,
+      "sha256": "2ab2958f2a1e51120c326cad6f385153bb11ee93b3c216c5fccebfdfbb7ec6cb"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\commandlinetools-22.zip",
+      "sizeBytes": 155655386,
+      "sha256": "90ae805d20434428bffcb699c290860f19bb5f66a67e6b330067e3de801fb04a"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\emulator-setup\\emulator-windows_x64-15917651.zip",
+      "sizeBytes": 441926448,
+      "sha256": "5ff441f3b12ace9b13e9cf96fb0007d233967718652a8110705e995ac47bfeb7"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\emulator-setup\\x86_64-29_r08-windows.zip",
+      "sizeBytes": 689676765,
+      "sha256": "b5c3fda1f4b4931c30518d342e4ad5f7464945e0cdced3538d4ff2e12f7bf201"
+    }
+  ],
+  "checksumMeaning": "Local SHA256 receipts; publisher archive comparisons are in installation-receipt.json and prior setup evidence",
+  "privateAvd": {
+    "name": "AuraApi29",
+    "path": "F:\\circuit\\.tools\\android\\avd\\AuraApi29.avd",
+    "configSha256": "5ec4eb7ebbb51857d5a77ca768b3041da75e896c99ef88fe5e1cdaea5d3de656"
+  }
+}

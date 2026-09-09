@@ -1,0 +1,129 @@
+{
+  "schema": "aura.android.runtime.v1",
+  "created_utc": "2026-09-09T10:09:38.386477+00:00",
+  "passed": false,
+  "serial": "emulator-5554",
+  "fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:10/QSR1.210820.001/7663313:userdebug/test-keys",
+  "emulator": true,
+  "physical_hardware_verified": false,
+  "build_report_sha256": "85733bac227104f825adac4bad7a4f165a3537b9de7be8f97103893f4c20128d",
+  "source_inputs": {
+    "mobile/android/app/build.gradle.kts": "f01c8b7606854c0751a28bf0b4deb04df4e5ae4f72efe7c06df43eef555ef619",
+    "mobile/android/app/src/androidTest/.gitattributes": "c20aa740fabfc2c187a5a405c87147216662fedf6aa12ec153dd8e76f7207b09",
+    "mobile/android/app/src/androidTest/AndroidManifest.xml": "3d8401f71cbe03e9e4eba618e0833f7fa25995f9f12b4d3af1d83a12b3d01f94",
+    "mobile/android/app/src/androidTest/assets/fixtures/capture-20ms-open.aura": "bfc4df73c0631f49adc584f4e431454f8b054867fb695d843d26a6daf68d37ce",
+    "mobile/android/app/src/androidTest/assets/fixtures/index.json": "7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f",
+    "mobile/android/app/src/androidTest/assets/fixtures/journal-0.aura": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+    "mobile/android/app/src/androidTest/assets/fixtures/journal-0.physical.ack3": "8732ac01938564ac48fc06f6d5ff054430c34068ce3d94935e16e02f73f1b8b9",
+    "mobile/android/app/src/androidTest/assets/fixtures/journal-2.aura": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+    "mobile/android/app/src/androidTest/assets/fixtures/journal-2.physical.ack3": "e6a145f038f2500c56eca66ef5c431b317a67fa0e44106f518e0bc0466341568",
+    "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.aura": "5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71",
+    "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.physical.ack3": "25a864cc657f581408952aff82b6535e3ea548b9f2de89c9a1b4cf3429fa9242",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/FixtureProvider.kt": "e2ffdc433a7bebbb9fa0cce61a894cb58f7f3cd3ee6ecdd28b8f87284be33e2f",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt": "6f8e5e992df75f425e8be7501f3a41a8290684645002c7710dec9b7cee12e9b8",
+    "mobile/android/app/src/androidTest/prepare_assets.py": "acabbaa267ccbfbff5303671aeecf497ad9771d88594420a7391a55338c79e68",
+    "mobile/android/app/src/androidTest/README.md": "e8157ff333c759c8a2680ab4a8b3bbc81cd13e0d6fe86ce1164e4b5b4a72dbfa",
+    "mobile/android/app/src/main/AndroidManifest.xml": "efcedfe958582ebed6c49d7f8beee5c2b4ce54606e0e492684a48f4f7d5077fc",
+    "mobile/android/app/src/main/kotlin/com/aura/notes/AudioDecoder.kt": "0c09abf2012a7eddcfe723b4a57f5b5c4dc03edbca57af1862123f457cf39c16",
+    "mobile/android/app/src/main/kotlin/com/aura/notes/AuraApp.kt": "631aecc8cb7e3ce448eb3763ccba537b2604946aaa9d0fd10b895395d1395244",
+    "mobile/android/app/src/main/kotlin/com/aura/notes/CaptureStore.kt": "e670f12b1ec059a96caff3f37c3e14f10ed95fe947e6f68b8065d61b60a06a1f",
+    "mobile/android/app/src/main/kotlin/com/aura/notes/MainActivity.kt": "b1ee17de333b08906df787d4a92643bfd072ebef136e35028220aad2785fbdd0",
+    "mobile/android/app/src/main/res/drawable/ic_aura.xml": "f5d4767ae1092bd3dad0156344f7fa7459604692507f6d411649bf9cf2cc243f",
+    "mobile/android/app/src/main/res/values/strings.xml": "07296f53de8f5049dd6c32a43351d70e6630c8dd13080b5e680d8761cd50d3b9",
+    "mobile/android/app/src/main/res/values/styles.xml": "aff5b9239ede3133725eac37178ec88a71c93024992af446b7af9d988ee9485a",
+    "mobile/android/app/src/main/res/xml/data_extraction_rules.xml": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8",
+    "mobile/android/build.gradle.kts": "ca6e35420f610ab7aab47e83f450da34538b864e1d950c675501bcc33be2d3e8",
+    "mobile/android/build.ps1": "f8b0ea1142d0a940927b68a6ad1231899b630cbecca36e82e7c91ddd93c87797",
+    "mobile/android/core/build.gradle.kts": "e17484dc6167ae27525498cb54b49a897b2f70e533c011c164ef3096c059faff",
+    "mobile/android/core/src/main/kotlin/com/aura/capture/AuraArchive.kt": "12bcd143fe5ebabc0f715458398a4048abd73f4c8cf23aa6069395ecc9a5a337",
+    "mobile/android/core/src/main/kotlin/com/aura/capture/AuraOgg.kt": "43c390478d8a91f89fb32ed4ae8507bd176393ca74f5f11fd98d5300bd4c3da3",
+    "mobile/android/core/src/test/kotlin/com/aura/capture/CoreChecks.kt": "11134382a95aad0d01e4fdd6e58cda6507e7a37d4314cf2de600c1c1b4477576",
+    "mobile/android/gradle.properties": "db339f8e54bbcf55bcb09c039bac7f1350c8a4bba4e13e32d25dc77d11e44b88",
+    "mobile/android/settings.gradle.kts": "441f0630e611a470528d782b6669801739831cb44f6b030ca62b014873dfb2c2",
+    "mobile/android/toolchain-lock.json": "61a0cd458e74307000cd041f8b99fde1fd7ced3b79fb94a450fbe90119144ac6"
+  },
+  "inputs_unchanged_during_test": true,
+  "installation": [
+    {
+      "apk_sha256": "399ad018ee59e40318432feb3641cab8a859f2281dd3db8c1311430f5adcfb60",
+      "output": "Performing Streamed Install\nSuccess"
+    },
+    {
+      "apk_sha256": "76dd06c75b9588280cb1c4ce173fb9673f09b979dd1e5e0e1c55d96d3e64375a",
+      "output": "Performing Streamed Install\nSuccess"
+    }
+  ],
+  "instrumentation_exit_code": 0,
+  "result": {
+    "failure_type": "FileNotFoundException",
+    "failure": "No content provider: content://com.aura.notes.tests.fixtures/journal-0.aura",
+    "schema": "aura-android-smoke-v1",
+    "passed": false,
+    "cases": [
+      {
+        "name": "immutable C fixture assets",
+        "passed": true,
+        "elapsed_ms": 92
+      },
+      {
+        "name": "real platform Opus decode, EOS and exact WAV durations",
+        "passed": true,
+        "elapsed_ms": 1421
+      },
+      {
+        "name": "decoder destination preservation and incomplete input refusal",
+        "passed": true,
+        "elapsed_ms": 210
+      },
+      {
+        "name": "real content provider and SQLite source import",
+        "passed": false,
+        "elapsed_ms": 226
+      }
+    ],
+    "assertions": 109,
+    "elapsed_ms": 1963,
+    "android_sdk": 29,
+    "android_fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:10/QSR1.210820.001/7663313:userdebug/test-keys",
+    "decoder_results": [
+      {
+        "fixture": "journal-0",
+        "decoder": "OMX.google.opus.decoder",
+        "sample_rate": 48000,
+        "frames": 362541,
+        "raw_frames": 362760,
+        "end_trim_applied": true,
+        "wav_sha256": "52e5a3e6d200c8eb3eb2da9a944bf0f5519d603d4c4a67dc19d70797e5e78e38",
+        "source_sha256": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+        "physical_status": "FINALIZED"
+      },
+      {
+        "fixture": "journal-2",
+        "decoder": "OMX.google.opus.decoder",
+        "sample_rate": 48000,
+        "frames": 349320,
+        "raw_frames": 349320,
+        "end_trim_applied": false,
+        "wav_sha256": "b70f5ec457a3b3e324d72d948a7ffd4bf16aadbcc077996a53bce461ca7c468c",
+        "source_sha256": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+        "physical_status": "OPEN"
+      },
+      {
+        "fixture": "recorder-1",
+        "decoder": "OMX.google.opus.decoder",
+        "sample_rate": 48000,
+        "frames": 143880,
+        "raw_frames": 143880,
+        "end_trim_applied": false,
+        "wav_sha256": "46e56a992d08ca8910329e5bf486d25597385104e9f0bbdaa7e52b73670b9a79",
+        "source_sha256": "5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71",
+        "physical_status": "INTERRUPTED"
+      }
+    ],
+    "physical_hardware_verified": false,
+    "fixture_index_sha256": "7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f"
+  },
+  "instrumentation_output_sha256": "724bcf3dc0da6497863ea84f5fcc35347a72a410e46b4b0c84fe356ee6f84f43",
+  "verification_script_sha256": "209a0622f2ea473cb6e5d66962e9deb95d090750890d42d4fc5ab3dca25b7b87",
+  "scope": "Actual Android codec and SQLite with public synthetic C fixtures; no radio, microphone or wear test."
+}

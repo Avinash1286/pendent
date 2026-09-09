@@ -1,0 +1,31 @@
+INSTRUMENTATION_STATUS: stream=PASS immutable C fixture assets
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS real platform Opus decode, EOS and exact WAV durations
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS decoder destination preservation and incomplete input refusal
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS real content provider and SQLite source import
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS idempotent import and fresh store instance reopen
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS manual context survives reopen without changing source evidence
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS late physical OPEN proof remains distinct from the derived export seal
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS corrupt source and conflicting proof are retained without publication
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=PASS cold inventory rebuild from a complete real decoded bundle
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: resultdetailJSON={"schema":"aura-android-smoke-v1","passed":true,"cases":[{"name":"immutable C fixture assets","passed":true,"elapsed_ms":91},{"name":"real platform Opus decode, EOS and exact WAV durations","passed":true,"elapsed_ms":1423},{"name":"decoder destination preservation and incomplete input refusal","passed":true,"elapsed_ms":121},{"name":"real content provider and SQLite source import","passed":true,"elapsed_ms":551},{"name":"idempotent import and fresh store instance reopen","passed":true,"elapsed_ms":271},{"name":"manual context survives reopen without changing source evidence","passed":true,"elapsed_ms":269},{"name":"late physical OPEN proof remains distinct from the derived export seal","passed":true,"elapsed_ms":592},{"name":"corrupt source and conflicting proof are retained without publication","passed":true,"elapsed_ms":179},{"name":"cold inventory rebuild from a complete real decoded bundle","passed":true,"elapsed_ms":132}],"assertions":168,"elapsed_ms":3661,"android_sdk":29,"android_fingerprint":"Android\/sdk_phone_x86_64\/generic_x86_64:10\/QSR1.210820.001\/7663313:userdebug\/test-keys","decoder_results":[{"fixture":"journal-0","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":362541,"raw_frames":362760,"end_trim_applied":true,"wav_sha256":"52e5a3e6d200c8eb3eb2da9a944bf0f5519d603d4c4a67dc19d70797e5e78e38","source_sha256":"36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e","physical_status":"FINALIZED"},{"fixture":"journal-2","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":349320,"raw_frames":349320,"end_trim_applied":false,"wav_sha256":"b70f5ec457a3b3e324d72d948a7ffd4bf16aadbcc077996a53bce461ca7c468c","source_sha256":"5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe","physical_status":"OPEN"},{"fixture":"recorder-1","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":143880,"raw_frames":143880,"end_trim_applied":false,"wav_sha256":"46e56a992d08ca8910329e5bf486d25597385104e9f0bbdaa7e52b73670b9a79","source_sha256":"5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71","physical_status":"INTERRUPTED"}],"physical_hardware_verified":false,"fixture_index_sha256":"7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f"}
+INSTRUMENTATION_RESULT: stream=AURA_SMOKE_PASS {"schema":"aura-android-smoke-v1","passed":true,"cases":[{"name":"immutable C fixture assets","passed":true,"elapsed_ms":91},{"name":"real platform Opus decode, EOS and exact WAV durations","passed":true,"elapsed_ms":1423},{"name":"decoder destination preservation and incomplete input refusal","passed":true,"elapsed_ms":121},{"name":"real content provider and SQLite source import","passed":true,"elapsed_ms":551},{"name":"idempotent import and fresh store instance reopen","passed":true,"elapsed_ms":271},{"name":"manual context survives reopen without changing source evidence","passed":true,"elapsed_ms":269},{"name":"late physical OPEN proof remains distinct from the derived export seal","passed":true,"elapsed_ms":592},{"name":"corrupt source and conflicting proof are retained without publication","passed":true,"elapsed_ms":179},{"name":"cold inventory rebuild from a complete real decoded bundle","passed":true,"elapsed_ms":132}],"assertions":168,"elapsed_ms":3661,"android_sdk":29,"android_fingerprint":"Android\/sdk_phone_x86_64\/generic_x86_64:10\/QSR1.210820.001\/7663313:userdebug\/test-keys","decoder_results":[{"fixture":"journal-0","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":362541,"raw_frames":362760,"end_trim_applied":true,"wav_sha256":"52e5a3e6d200c8eb3eb2da9a944bf0f5519d603d4c4a67dc19d70797e5e78e38","source_sha256":"36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e","physical_status":"FINALIZED"},{"fixture":"journal-2","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":349320,"raw_frames":349320,"end_trim_applied":false,"wav_sha256":"b70f5ec457a3b3e324d72d948a7ffd4bf16aadbcc077996a53bce461ca7c468c","source_sha256":"5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe","physical_status":"OPEN"},{"fixture":"recorder-1","decoder":"OMX.google.opus.decoder","sample_rate":48000,"frames":143880,"raw_frames":143880,"end_trim_applied":false,"wav_sha256":"46e56a992d08ca8910329e5bf486d25597385104e9f0bbdaa7e52b73670b9a79","source_sha256":"5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71","physical_status":"INTERRUPTED"}],"physical_hardware_verified":false,"fixture_index_sha256":"7c089eaaeb7ad233e36c93138f6c7fd21a93d9adc1592085925dbddf29d7617f"}
+
+INSTRUMENTATION_CODE: -1

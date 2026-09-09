@@ -23,6 +23,8 @@ For this first unit, keep Wi-Fi, extra sensors, autonomous tasks and a large mem
 - **Mechanics:** the primary M2 study is **43 mm diameter × 12.2 mm depth**, using the actual 1.6 mm draft PCB thickness. The thinner pack is unselected. The 17 models per variant include polymer parts, separate hardware forms and gauges; they are digitally checked development specimens, not a qualified printed assembly. Steel parts require real metal and insulation. [M2 package](../../enclosure/a04/mechanism-m2/README.md), [steel drawings](../../enclosure/a04/mechanism-m2-manufacturing/README.md).
 - **Product:** the existing deployed showcase and film represent A03. They do not demonstrate a working circular A04. No A04 battery, charging dock, assembled radio, physical microphone path or wear trial has been qualified.
 
+The [native Android app](../../mobile/android/README.md) now implements Gate 2's local archive-import, audio-validation, playback and manually written context foundation. A complete Kotlin archive verifier and Ogg muxer agree with the C/Python fixtures; the app uses real Android storage and audio APIs. It still needs the [proposed foreground BLE transport](../a04/mobile-transport.md), enrollment and a hardware-to-phone recovery trial. A file import does not acknowledge or release a pendant recording.
+
 ## Build and acceptance route
 
 These are proposed first-unit engineering gates, not completed tests or product certification.

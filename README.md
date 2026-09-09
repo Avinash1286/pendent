@@ -20,6 +20,8 @@ The working local software path now takes a **real C-generated audio archive thr
 
 The new [first spoken-note bench](firmware/a04/bench/README.md) provides a separate nRF52840 DK application, reviewed microphone/NAND wiring and a UART capture/export tool. It connects the actual drivers and storage code, with explicit recording permission and verified local publication. The image cross-builds; 31 host-client tests and five C orchestration groups cover its software behavior. **No physical audio has been recorded or board flashed.** This prepares the hardware experiment needed before the custom PCB and wearable can be qualified.
 
+The [native Android companion](mobile/android/README.md) adds a local recording library: select an A04 archive, validate its original bytes and Opus audio, listen back, write context, and explicitly copy/share that context with an AI chat. It preserves interrupted-capture provenance and the original recording. The Kotlin core passes 231 checks; nine real Android emulator cases pass 168 assertions using C-generated fixtures. Both APKs build with zero Android lint findings. This is the phone storage/playback foundation; Bluetooth enrollment, resumable device transfer and phone transcription are still required. [Verification](mobile/android/VERIFICATION.md) · [Transport integration plan](docs/a04/mobile-transport.md).
+
 The **M2 S1 mechanism** keeps the removable bezel and supported PCB, replacing inadequate resin bending links with a separate steel shoe/support and insulating contact pad. Each depth variant contains **12 polymer part models, three hardware form models and two unpowered gauges**. The metal/film forms are not functional resin-print instructions. Mesh and sampled motion checks cover the revised assembly; analytical force screening supports further unpowered joint testing. Materials, tolerances, switch endpoints, all 72 native PCB features, the battery and real assembly remain unqualified. [Blender source, parts and checks](enclosure/a04/mechanism-m2/README.md) · [Steel development drawings and 1:1 DXF profiles](enclosure/a04/mechanism-m2-manufacturing/README.md) · [Earlier process coupon kit](enclosure/a04/coupon/README.md).
 
 <details>
@@ -75,6 +77,7 @@ New: [Omi codebase review and AURA first-wear plan](docs/research/omi-review.md)
 | `enclosure/` | Blender source, editable generator, printable enclosure meshes, GLB and product renders |
 | `firmware/` | Zephyr nRF52840 firmware, reproducible tool setup, flashable build artifacts and native tests |
 | `companion/` | Bluetooth sync, CRC verification, local Whisper transcription and optional portal upload |
+| `mobile/android/` | Native Kotlin local archive import, verified playback, private context and explicit sharing; A04 wireless integration pending |
 | `portal/` | Next.js / Convex private notes, profiles, Context Pack and read-only MCP endpoint |
 | `website/` | Interactive React / Three.js product presentation, deployed directly to Vercel |
 | `film/` | Hyperframes composition, original soundtrack and rendered launch video |
@@ -86,7 +89,7 @@ New: [Omi codebase review and AURA first-wear plan](docs/research/omi-review.md)
 - A glossy black recording paddle in a satin polymer surround, a bookmark gesture, visible microphone-power indication and a physical privacy slider.
 - A physical microphone power disconnect, offline local audio storage and Bluetooth transfer to the companion.
 - Dual digital microphones, a protected rechargeable-cell candidate and rear contacts for a magnetic charging dock; the complete dock remains to be designed and qualified.
-- Local computer transcription and optional notes upload are implemented. A mobile companion remains future work.
+- Local computer transcription and optional notes upload are implemented. The A04 Android source-import foundation is available; device-to-phone wireless integration remains future work.
 - 16 kHz mono PCM storage has an ideal capacity of about 66 minutes before bad blocks and metadata; battery runtime is unmeasured.
 
 ## Start exploring

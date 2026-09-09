@@ -1,0 +1,81 @@
+{
+  "schema": "aura.android.ui-smoke.v1",
+  "created_utc": "2026-09-09T10:36:43.680517+00:00",
+  "passed": true,
+  "method": "Agent-driven adb input, Android UIAutomator hierarchy, actual screencap, and byte comparison; this JSON summarizes observed checks, not an unexecuted test script.",
+  "serial": "emulator-5554",
+  "android_sdk": 29,
+  "synthetic_data_only": true,
+  "physical_hardware_verified": false,
+  "app_sha256": "f80172ffb4c42f76ffa2ab2acd858143137a795e1ba378f4ce69950930678f53",
+  "build_report_sha256": "f7c85d856bb3be8f47585e9e16dd408fa00bad70d3edcd6a1aa2791ad3373003",
+  "runtime_report_sha256": "6f3e13c5af3539bbed6eb5a58437e25c3eab6c4e0bbaf6786bd6d811683b449e",
+  "checks": [
+    {
+      "name": "Android document-picker import and exact retry",
+      "passed": true,
+      "observation": "Selected journal-0.aura and its receipt through Downloads. Final APK retry kept one capture and preserved the edited title."
+    },
+    {
+      "name": "Private note survives restart and update",
+      "passed": true,
+      "observation": "The original and edited title/context remained after process exit, preserved-data emulator restart and replacement APK installation."
+    },
+    {
+      "name": "Actual MediaPlayer playback",
+      "passed": true,
+      "observation": "Final APK displayed advancing playback, reached 0:08, and returned to Play recording. Host audio was disabled; this is not an audible-output quality test."
+    },
+    {
+      "name": "Small-screen context editor",
+      "passed": true,
+      "observation": "Long unsaved draft scrolled while Cancel and Save stayed above the open keyboard; tapping Cancel retained the exact saved manual context."
+    },
+    {
+      "name": "Explicit context copy and share",
+      "passed": true,
+      "observation": "Clipboard paste and the actual share-sheet preview matched exactly, including manual-context qualification and original source SHA-256. No receiving app was selected."
+    },
+    {
+      "name": "Original export via document picker",
+      "passed": true,
+      "observation": "Final APK wrote the selected Downloads destination; independently read exported bytes match the original archive exactly.",
+      "bytes": 37040,
+      "sha256": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e"
+    },
+    {
+      "name": "System Back",
+      "passed": true,
+      "observation": "Final APK API29 Back returned from recording detail to the library."
+    }
+  ],
+  "context_pack_sha256": "fd7de226db33d60946884f50b13ed324516ef8d8b14b1544b771354070200531",
+  "screenshots": [
+    {
+      "path": "android-library-empty.png",
+      "sha256": "4daeb9056c73c8cb1c3fb265aad887abeaaa515e0574ac8305707725d743db11",
+      "app_sha256": "f39fcd3ce52f1e7fe1c67c0c159a12b049fe35e38e82cd9e6b78712f92aa2004"
+    },
+    {
+      "path": "android-library.png",
+      "sha256": "16949db70e6921c4febf1727f617a88f7c5a3883e13730c5d3d85c0f3268bf76",
+      "app_sha256": "f80172ffb4c42f76ffa2ab2acd858143137a795e1ba378f4ce69950930678f53"
+    },
+    {
+      "path": "android-context-editor.png",
+      "sha256": "99b19b55e0567bb4eee62a52288d183bdaad8c736f2c7e07c463f634a6293b18",
+      "app_sha256": "f80172ffb4c42f76ffa2ab2acd858143137a795e1ba378f4ce69950930678f53"
+    },
+    {
+      "path": "android-playback.png",
+      "sha256": "e97c061b73f12b82b0983e90eec02be8187ded5d2b9aa7726a0a9eac7d0d9118",
+      "app_sha256": "f80172ffb4c42f76ffa2ab2acd858143137a795e1ba378f4ce69950930678f53"
+    }
+  ],
+  "prior_ui_build_app_sha256": "f39fcd3ce52f1e7fe1c67c0c159a12b049fe35e38e82cd9e6b78712f92aa2004",
+  "limits": [
+    "The first new import, saved title/context and clipboard copy were exercised before the final keyboard-layout correction; final APK checked retained data, import retry, long-draft cancellation, share payload, playback and byte-exact export.",
+    "No sudden-power-loss trial, physical phone, headset route, other-app audio focus, modern predictive Back, Bluetooth transfer or vendor document-provider matrix.",
+    "Returning from another activity can reset the current detail scroll position."
+  ]
+}

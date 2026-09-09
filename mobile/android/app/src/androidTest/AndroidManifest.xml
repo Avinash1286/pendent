@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- This provider exists only in the test APK and serves a fixed set of
+             public synthetic C fixtures. It cannot access the user's library. -->
+        <provider
+            android:name="com.aura.notes.FixtureProvider"
+            android:authorities="com.aura.notes.tests.fixtures"
+            android:exported="true"
+            android:grantUriPermissions="false" />
+    </application>
+</manifest>

@@ -1,0 +1,21 @@
+Calculating task graph as configuration cache cannot be reused because file 'core\build.gradle.kts' has changed.
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:processResources NO-SOURCE
+> Task :core:processTestResources NO-SOURCE
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :core:compileTestKotlin UP-TO-DATE
+> Task :core:compileTestJava NO-SOURCE
+> Task :core:testClasses UP-TO-DATE
+> Task :core:test
+
+> Task :core:verifyCore
+PASS Kotlin core groups=10 checks=231 C_fixtures=17 raw_prefix_rejected=1 audio_decode_claim=false
+
+> Task :core:check
+
+BUILD SUCCESSFUL in 4s
+5 actionable tasks: 2 executed, 3 up-to-date
+Configuration cache entry stored.

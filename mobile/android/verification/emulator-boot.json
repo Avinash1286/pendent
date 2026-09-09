@@ -1,0 +1,41 @@
+{
+  "schema": "aura.android.emulator-boot-evidence.v1",
+  "observedAt": "2026-09-09T15:54:50.0010063+05:45",
+  "firstObservedReadyAt": "2026-09-09T15:53:54.9500796+05:45",
+  "firstReadinessObservedAfterSeconds": 58,
+  "state": "booted-package-service-ready",
+  "serial": "emulator-5554",
+  "avdConsoleName": "AuraApi29\r\n\r\nOK",
+  "api": 29,
+  "fingerprint": "Android/sdk_phone_x86_64/generic_x86_64:10/QSR1.210820.001/7663313:userdebug/test-keys",
+  "sysBootCompleted": "1",
+  "frameworkPackagePath": "package:/system/framework/framework-res.apk",
+  "displaySize": "Physical size: 480x800",
+  "displayDensity": "Physical density: 240",
+  "launcherPid": 17656,
+  "vmPid": 4352,
+  "launcherAlive": true,
+  "vmAlive": true,
+  "cpuAcceleration": "WHPX: -accel on, operational in runtime log",
+  "graphics": "SwiftShader",
+  "ramMiB": 1536,
+  "cores": 1,
+  "headless": true,
+  "hostAudioDisabled": true,
+  "hostVirtualizationSettingsChanged": false,
+  "apkInstalledByThisAgent": false,
+  "appTestsPerformedByThisAgent": false,
+  "leftRunningForParentTests": true,
+  "freeRamKiB": 972228,
+  "snapshotHashes": [
+    {
+      "path": "F:\\circuit\\.tools\\android\\emulator-setup\\boot-01\\stdout-at-boot.log",
+      "sha256": "42b91fdc1c7d7fc83391a22cf60b714497ab35c7577ad48b44f28bced8e4d3c9"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\emulator-setup\\boot-01\\stderr-at-boot.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "launchRecord": "F:\\circuit\\.tools\\android\\emulator-setup\\boot-01\\launch.json"
+}

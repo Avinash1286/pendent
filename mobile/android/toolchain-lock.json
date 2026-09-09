@@ -1,0 +1,135 @@
+{
+  "schema": "aura.android.toolchain-review.v1",
+  "reviewedAt": "2026-09-09",
+  "status": "metadata-checked-installation-proposed",
+  "installedOrBuiltByThisReview": false,
+  "host": {
+    "os": "Windows",
+    "architecture": "x64",
+    "workspace": "F:\\circuit",
+    "javaObserved": "Temurin JRE 25.0.3+9",
+    "javaHomeObserved": "C:\\Program Files\\Eclipse Adoptium\\jre-25.0.3.9-hotspot",
+    "jdkFound": false,
+    "androidSdkFound": false,
+    "toolsAbsentFromPath": ["javac", "adb", "sdkmanager", "avdmanager", "emulator", "gradle"],
+    "freeDiskBytes": {"F": 42421866496, "C": 25512497152},
+    "ramBytes": 12658675712,
+    "cpu": "Intel Core i5-10210U",
+    "hypervisorPresent": true,
+    "virtualMachinePlatformEnabled": true,
+    "windowsHypervisorPlatformEnabled": false,
+    "emulatorAccelerationVerified": false
+  },
+  "proposal": {
+    "minSdk": 29,
+    "compileSdk": 37,
+    "targetSdk": 37,
+    "sdkPlatformPackage": "platforms;android-37.0",
+    "agp": "9.2.1",
+    "agpMaximumSupportedApi": "37.0",
+    "gradle": "9.4.1",
+    "jdk": "17.0.20.1+1",
+    "javaTarget": 17,
+    "kotlin": "2.3.10",
+    "kotlinMode": "AGP-built-in-no-org.jetbrains.kotlin.android-plugin",
+    "commandLineTools": "22.0",
+    "buildTools": "36.0.0",
+    "platformTools": "37.0.1",
+    "ndkRequired": false,
+    "androidStudioRequired": false
+  },
+  "downloads": [
+    {
+      "id": "temurin-jdk-windows-x64",
+      "version": "17.0.20.1+1",
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_windows_hotspot_17.0.20.1_1.zip",
+      "sizeBytes": 190817615,
+      "sha256": "e53a79c3c3d86865bd7e787903884331068e71321714ffd44f145785affc7cb0",
+      "checksumUrl": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_windows_hotspot_17.0.20.1_1.zip.sha256.txt",
+      "metadataSource": "https://api.adoptium.net/v3/assets/latest/17/hotspot?architecture=x64&heap_size=normal&image_type=jdk&jvm_impl=hotspot&os=windows&vendor=eclipse"
+    },
+    {
+      "id": "gradle-bin",
+      "version": "9.4.1",
+      "url": "https://services.gradle.org/distributions/gradle-9.4.1-bin.zip",
+      "sha256": "2ab2958f2a1e51120c326cad6f385153bb11ee93b3c216c5fccebfdfbb7ec6cb",
+      "checksumUrl": "https://services.gradle.org/distributions/gradle-9.4.1-bin.zip.sha256"
+    },
+    {
+      "id": "android-command-line-tools-windows",
+      "package": "cmdline-tools;22.0",
+      "version": "22.0",
+      "archiveBuild": "15859902",
+      "url": "https://dl.google.com/android/repository/commandlinetools-win-15859902_latest.zip",
+      "sizeBytes": 155655386,
+      "sha256": "90ae805d20434428bffcb699c290860f19bb5f66a67e6b330067e3de801fb04a",
+      "sha1": "b9862337a13e2809a5159dc3a08d058091bd59f6",
+      "sha256Source": "https://developer.android.com/studio",
+      "metadataSource": "https://dl.google.com/android/repository/repository2-3.xml"
+    },
+    {
+      "id": "android-platform",
+      "package": "platforms;android-37.0",
+      "api": "37.0",
+      "revision": 2,
+      "codename": "",
+      "channel": "channel-0",
+      "url": "https://dl.google.com/android/repository/platform-37.0_r02.zip",
+      "sizeBytes": 67281901,
+      "sha1": "ed8ebf7f8822a4de5686d427f237d2fa30ff7410",
+      "metadataSource": "https://dl.google.com/android/repository/repository2-3.xml"
+    },
+    {
+      "id": "android-build-tools-windows",
+      "package": "build-tools;36.0.0",
+      "version": "36.0.0",
+      "channel": "channel-0",
+      "url": "https://dl.google.com/android/repository/build-tools_r36_windows.zip",
+      "sizeBytes": 58699878,
+      "sha1": "f16ccffd34de8790dede813a6c7d8e2c11a27b50",
+      "metadataSource": "https://dl.google.com/android/repository/repository2-3.xml"
+    },
+    {
+      "id": "android-platform-tools-windows",
+      "package": "platform-tools",
+      "version": "37.0.1",
+      "channel": "channel-0",
+      "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-win.zip",
+      "sizeBytes": 8044989,
+      "sha1": "e03e78b1d80b396f1c3358e31251cb31740e1110",
+      "metadataSource": "https://dl.google.com/android/repository/repository2-3.xml",
+      "note": "sdkmanager package ID is rolling; compare resolved installed version with this pin"
+    }
+  ],
+  "integrityPolicy": {
+    "beforeExecution": "Verify publisher SHA-256 for JDK, Gradle and command-line archives",
+    "sdkPackages": "Use sdkmanager repository integrity checks; direct ZIPs require published SHA-1 and size verification",
+    "additionalLocalSha256": "Record after download; do not describe locally computed SDK ZIP hashes as separately publisher authenticated",
+    "gradleWrapper": "Set distributionSha256Sum to the Gradle binary ZIP SHA-256",
+    "installationEvidenceRequired": ["java -version", "javac -version", "sdkmanager --list_installed", "gradlew --version", "resolved SDK package.xml/source.properties"]
+  },
+  "playbackReview": {
+    "opusDecodeMinimumApi": 21,
+    "oggExtractorDocumented": true,
+    "runtimeTested": false,
+    "validation": "Full MediaExtractor plus MediaCodec decode through output EOS and independent container/count/duration validation before playback-ready",
+    "sampleRate": "Read actual decoder output format; inspected Android16 AOSP Opus decoder uses 48000Hz",
+    "preskip": "Preserve extractor csd-1 nanosecond delay; decoder may already discard it; never trim twice",
+    "endTrim": "Do not assume ordinary Java MediaCodec queueInputBuffer carries native extractor valid-sample metadata; account independently for final Ogg granule",
+    "publicEncoderDelayPaddingConstantsMinimumApi": 30,
+    "sources": [
+      "https://developer.android.com/media/platform/supported-formats",
+      "https://developer.android.com/reference/android/media/MediaCodec",
+      "https://developer.android.com/reference/android/media/MediaFormat#KEY_ENCODER_DELAY",
+      "https://android.googlesource.com/platform/frameworks/av/+/refs/tags/android-16.0.0_r1/media/codec2/components/opus/C2SoftOpusDec.cpp",
+      "https://android.googlesource.com/platform/frameworks/av/+/refs/tags/android-16.0.0_r1/media/module/extractors/ogg/OggExtractor.cpp"
+    ]
+  },
+  "recipeSources": [
+    "https://developer.android.com/build/releases/agp-9-2-0-release-notes",
+    "https://developer.android.com/build/migrate-to-built-in-kotlin",
+    "https://developer.android.com/about/versions/17/setup-sdk",
+    "https://developer.android.com/tools/sdkmanager",
+    "https://developer.android.com/studio/run/emulator-acceleration"
+  ]
+}

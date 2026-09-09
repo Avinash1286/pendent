@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.jar binary
+*.png binary
+# Evidence logs and fixture indexes are hashed as exact bytes, including line endings.
+verification/*.json -text whitespace=cr-at-eol
+verification/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+core/verification/*.json -text whitespace=cr-at-eol
+core/verification/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+app/src/androidTest/assets/fixtures/index.json -text whitespace=cr-at-eol

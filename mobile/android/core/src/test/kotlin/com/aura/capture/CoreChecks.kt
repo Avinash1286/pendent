@@ -264,7 +264,11 @@ fun main(args: Array<String>) {
     val fragments = verifyBleFragments()
     groups += fragments.groups
     checks += fragments.checks
+    val transfer = verifyTransferWire(index)
+    groups += transfer.groups
+    checks += transfer.checks
     File(output, "results.tsv").writeText(results.toString())
     println("PASS Kotlin core groups=$groups checks=$checks C_fixtures=$fixtures raw_prefix_rejected=$rejected audio_decode_claim=false")
     println("PASS BLE response fragments groups=${fragments.groups} checks=${fragments.checks} gatt_tested=false")
+    println("PASS transfer wire groups=${transfer.groups} checks=${transfer.checks} C_golden_responses=${transfer.goldenResponses} gatt_tested=false")
 }

@@ -55,3 +55,9 @@ add_executable(aura_journal_cursor_test host_journal_cursor.c nand_model.c
 target_include_directories(aura_journal_cursor_test PRIVATE ../include)
 target_compile_options(aura_journal_cursor_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
 target_link_libraries(aura_journal_cursor_test PRIVATE opus)
+add_executable(aura_transfer_test host_transfer.c nand_model.c
+    ../src/aura_transfer.c ../src/aura_journal.c ../src/aura_archive.c
+    ../src/aura_storage.c ../src/aura_control.c ../src/aura_release_auth.c)
+target_include_directories(aura_transfer_test PRIVATE ../include)
+target_compile_options(aura_transfer_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_transfer_test PRIVATE opus)

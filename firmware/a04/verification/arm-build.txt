@@ -89,59 +89,48 @@ CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:2271 (message):
  * Dtc (required version >= 1.4.6)
  * ScaTools
 
--- Configuring done (123.8s)
--- Generating done (3.1s)
+-- Configuring done (15.9s)
+-- Generating done (0.9s)
 -- Build files have been written to: F:/circuit/.tools/a04-opus/arm
 -- west build: building application
-[1/142] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
-[2/16] Generating linker_zephyr_pre0.cmd
-[3/16] Building C object CMakeFiles/app.dir/src/aura_w25n01gv_zephyr.c.obj
-[4/16] Building C object CMakeFiles/app.dir/src/aura_control.c.obj
-F:/circuit/firmware/a04/src/aura_control.c: In function 'scan':
-F:/circuit/firmware/a04/src/aura_control.c:104:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-  104 |     if(r)return r;if(bad)return AURA_NAND_BAD_BLOCK;
-      |     ^~
-F:/circuit/firmware/a04/src/aura_control.c:104:19: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-  104 |     if(r)return r;if(bad)return AURA_NAND_BAD_BLOCK;
-      |                   ^~
-F:/circuit/firmware/a04/src/aura_control.c: In function 'erase_inactive':
-F:/circuit/firmware/a04/src/aura_control.c:209:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-  209 |     if(r)return r;if(bad)return AURA_NAND_BAD_BLOCK;
-      |     ^~
-F:/circuit/firmware/a04/src/aura_control.c:209:19: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-  209 |     if(r)return r;if(bad)return AURA_NAND_BAD_BLOCK;
-      |                   ^~
-[5/16] Building C object CMakeFiles/app.dir/src/aura_audio_zephyr.c.obj
-[6/16] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
-[7/16] Building C object CMakeFiles/app.dir/src/aura_recorder.c.obj
-[8/16] Building C object CMakeFiles/app.dir/src/aura_storage.c.obj
-F:/circuit/firmware/a04/src/aura_storage.c: In function 'reload':
-F:/circuit/firmware/a04/src/aura_storage.c:81:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-   81 |     if(r)return fail(s,r);s->bytes=bytes;
-      |     ^~
-F:/circuit/firmware/a04/src/aura_storage.c:81:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-   81 |     if(r)return fail(s,r);s->bytes=bytes;
-      |                           ^
-[9/16] Building C object CMakeFiles/app.dir/src/aura_w25n01gv.c.obj
-[10/16] Building C object CMakeFiles/app.dir/src/aura_journal.c.obj
+[1/141] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[2/14] Building C object CMakeFiles/app.dir/src/aura_recorder.c.obj
+[3/14] Building C object CMakeFiles/app.dir/src/aura_journal.c.obj
 F:/circuit/firmware/a04/src/aura_journal.c: In function 'allocation':
-F:/circuit/firmware/a04/src/aura_journal.c:31:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-   31 |     if(out)*out=id;return true;
+F:/circuit/firmware/a04/src/aura_journal.c:43:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   43 |     if(out)*out=id;return true;
       |     ^~
-F:/circuit/firmware/a04/src/aura_journal.c:31:20: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-   31 |     if(out)*out=id;return true;
+F:/circuit/firmware/a04/src/aura_journal.c:43:20: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   43 |     if(out)*out=id;return true;
       |                    ^~~~~~
-[11/16] Linking C static library app\libapp.a
-[12/16] Linking C executable zephyr\zephyr_pre0.elf
-[13/16] Generating linker.cmd
-[14/16] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
-[15/16] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
-[16/16] Linking C executable zephyr\zephyr.elf
+F:/circuit/firmware/a04/src/aura_journal.c: In function 'scan':
+F:/circuit/firmware/a04/src/aura_journal.c:506:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  506 |     if(!r&&identity)*identity=walk.identity;return r;
+      |     ^~
+F:/circuit/firmware/a04/src/aura_journal.c:506:45: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  506 |     if(!r&&identity)*identity=walk.identity;return r;
+      |                                             ^~~~~~
+[4/14] Building C object CMakeFiles/app.dir/src/aura_storage.c.obj
+F:/circuit/firmware/a04/src/aura_storage.c: In function 'reload':
+F:/circuit/firmware/a04/src/aura_storage.c:85:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   85 |     if(r)return fail(s,r);s->bytes=bytes;
+      |     ^~
+F:/circuit/firmware/a04/src/aura_storage.c:85:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   85 |     if(r)return fail(s,r);s->bytes=bytes;
+      |                           ^
+[5/14] Building C object CMakeFiles/app.dir/src/aura_audio_zephyr.c.obj
+[6/14] Building C object CMakeFiles/app.dir/src/aura_transfer.c.obj
+[7/14] Building C object CMakeFiles/app.dir/src/zephyr_probe.c.obj
+[8/14] Generating linker_zephyr_pre0.cmd
+[9/14] Linking C static library app\libapp.a
+[10/14] Linking C executable zephyr\zephyr_pre0.elf
+[11/14] Generating linker.cmd
+[12/14] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
+[13/14] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[14/14] Linking C executable zephyr\zephyr.elf
 Memory region         Used Size  Region Size  %age Used
-           FLASH:      221432 B         1 MB     21.12%
-
-             RAM:      220288 B       256 KB     84.03%
-
+           FLASH:      227488 B         1 MB     21.69%
+             RAM:      224768 B       256 KB     85.74%
         IDT_LIST:          0 GB        32 KB      0.00%
 
 Generating files from F:/circuit/.tools/a04-opus/arm/zephyr/zephyr.elf for board: nrf52840dk

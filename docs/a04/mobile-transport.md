@@ -35,9 +35,13 @@ unassociated-source rejection. Its implemented storage interface provides:
   transition invalidates the handle and cached response; no source is deleted.
 
 The cursor is exercised by portable host checks and the wired bench EXPORT path.
-Its operation-count bound does not measure physical NAND/BLE latency or establish
-a phone connection. The GATT command owner, enrollment and Android durable
-resume coordinator remain to be implemented before phone transport is enabled.
+The portable [command owner](../../firmware/a04/include/aura_transfer.h) now wraps
+it with SELECT/READ/FINISH, ordered retries and bounded response copies. The
+matching Kotlin codec validates those logical replies. Their exact
+[wire contract](transfer-wire-v1.md) and C-generated fixtures are separate from
+the physical connection. The operation-count bound does not measure NAND/BLE
+latency. GATT integration, enrollment and an Android durable resume coordinator
+remain to be implemented before phone transport is enabled.
 
 ## Proposed A04 BLE v1 surface
 
@@ -58,17 +62,18 @@ handle per connection, and one storage operation owner globally.
 | ---: | --- | --- |
 | 1 HELLO | Empty | Return device ID[16], storage incarnation[16], catalog revision u32/count u16, and supported response/chunk limits. Status comes from an owner-published snapshot. |
 | 2 LIST | Catalog revision u32, index u16 | Return exact manifest[68], verification state and source-fault state. A stale revision fails; an index is never a persistent recording identity. Metadata listing does not issue a receipt. |
-| 3 SELECT | Capture ID[16] | Verify the inactive source and create a nonzero connection-scoped export handle. Return handle u32, manifest[68], physical ACK3[94], physical/export byte lengths u64, and whether export adds a derived seal. |
+| 3 SELECT | Capture ID[16] | Verify the inactive source and create a nonzero connection-scoped export handle. Return handle u32, manifest[68], physical ACK3[94], physical/export byte lengths u64, whether export adds a derived seal, and allocation generation u64. |
 | 4 READ | Handle u32, absolute export offset u64, requested bytes u16 | Return the matching handle/offset, actual byte count, exact bytes and IEEE CRC32 over those bytes. Cap data at 256 bytes and the negotiated advertised limit. A source offset is not an Opus payload offset. |
-| 5 FINISH | Handle u32, expected exported bytes u64 | Succeed only after cursor EOF and final source revalidation; return exact physical ACK3[94], export byte length and derived-seal flag. Receipt identity must equal SELECT. |
+| 5 FINISH | Handle u32, expected exported bytes u64 | Succeed only after cursor EOF and final source revalidation; return exact physical ACK3[94], export byte length, derived-seal flag and allocation generation. These must equal SELECT. |
 | 6 CANCEL | Handle u32 | Release volatile transfer state only; preserve journal source and phone's committed prefix. |
 
-Logical responses begin `status:u8, opcode:u8, transaction:u16`. Proposed status
+Logical responses begin `status:u8, opcode:u8, transaction:u16`. Status
 values are 0 OK, 1 BUSY, 2 INVALID, 3 NOT_FOUND, 4 IO_ERROR, 5 FORBIDDEN,
 6 END_OF_LIST, 7 STALE and 8 CONFLICT. Error responses have no success payload.
-The complete byte layouts, bounds and golden cross-language fixtures must be
-locked before implementation is treated as interoperable; this table is the
-reviewed behavioral contract, not evidence of an existing parser.
+The [version-1 wire specification](transfer-wire-v1.md) locks the complete byte
+layouts, bounds and admission rules. Portable C and Kotlin tests exercise this
+contract with actual C-generated replies and MTU fragments. This is byte-level
+interoperability evidence, not an exercised GATT connection.
 
 An ATT write completion means command transport acceptance, not operation
 completion or saved audio. The device sends the terminal logical response only
@@ -78,6 +83,11 @@ An identical retry while that command is still running joins the existing work;
 it cannot restart verification or create another cursor. Changing bytes under
 the same transaction fails. A new command cannot replace
 an in-flight response. Renew the connection before transaction-space exhaustion.
+Retries while transmission is pending join that delivery. A retry after delivery
+completion receives a fresh internal token; the egress owner passes connection,
+transaction and token to fragment-copy and completion calls. Late callbacks
+cannot finish a newer retry. Source-epoch changes invalidate the handle and
+cached reply without rewriting an already transmitted prefix.
 Operation deadlines must account for exposed source length and measured scan
 throughput; do not copy A03's fixed 30-second assumption for full-capture checking.
 Timeout causes retry/reconciliation, never inferred success or media repair.
@@ -104,8 +114,11 @@ The independent Kotlin `BleResponseFragments` component now implements this
 fragment subset with a generation token, exact prior-fragment duplicate checks,
 512-byte payload bound and 1024-delivery limit. Its JVM tests cover MTUs 23–517,
 malformed overlaps/totals, stale generations and defensive copies. It is not
-wired to GATT or the logical command protocol, and the earlier published
-local-import APK does not contain this new component.
+wired to GATT. The separate `TransferWire` codec validates logical replies after
+reassembly, including trusted identity, allocation-derived capture IDs, exact
+framing lengths, READ CRCs and FINISH equality with SELECT. Both parsers are
+exercised together on C-generated fragment chains. The earlier published
+local-import APK contains neither new transport component.
 
 Serialize Android GATT operations, including discovery, MTU request, CCCD writes
 and command writes. Wait for successful subscription before accepting the service

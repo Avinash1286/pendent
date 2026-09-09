@@ -1,0 +1,150 @@
+{
+  "status": "host_transfer_engine_and_C_wire_vectors_passed_no_GATT_or_phone_claim",
+  "generated_at_utc": "2026-09-09T11:36:09.668148+00:00",
+  "host_cases": 12,
+  "assertions": 50625,
+  "bounded_step_calls": 4924,
+  "no_IO_API_calls": 4977,
+  "max_NAND_reads_per_step": 1,
+  "transfer_context_bytes": 4448,
+  "case_names": [
+    "real_owned_Opus_finalized_and_OPEN_full_wire_roundtrip",
+    "pending_join_immutable_cached_retry_and_response_sent_gate",
+    "malformed_admission_does_not_consume_transaction_or_replace_cache",
+    "immediate_and_late_contextual_errors_are_exact_cached_four_bytes",
+    "first_READ_boundary_resume_followed_by_arbitrary_chunk_offsets_and_EOF",
+    "privileged_catalog_flags_and_owned_generation_identity_enforcement",
+    "source_corruption_fails_SELECT_READ_and_final_third_verification",
+    "epoch_change_invalidates_pending_work_cached_response_and_handle",
+    "local_cancel_disconnect_reconnect_and_authorization_loss_drop_old_callbacks",
+    "checked_transaction_handle_and_revision_limits_test_only_injection",
+    "private_and_overlapping_output_aliases_reject_before_any_write",
+    "empty_catalog_empty_archives_and_ordered_CANCEL_preserve_source"
+  ],
+  "host_summary": "PASS transfer cases=12 checks=50625 step_calls=4924 no_io_calls=4977 max_reads_per_step=1 transfer_bytes=4448 host_model_only=true",
+  "golden_vectors": {
+    "path": "firmware/a04/verification/transfer-wire-golden.tsv",
+    "sha256": "92236fe92e39c4ad914267f5f9600e49f72b90dfe14b8c11d4236953c8c73659",
+    "rows": 66,
+    "command_response_pairs": 14,
+    "completed_fragment_chains": 4,
+    "opcodes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "actual_ATT_MTUs": [
+      23,
+      517
+    ],
+    "contexts": {
+      "device_id": "11111111111111111111111111111111",
+      "incarnation": "a402030405060708090a0b0c0d0e0f10"
+    },
+    "format": "Comment header; name<TAB>kind<TAB>hex; same command/response names; fragment23/fragment517 share response name"
+  },
+  "code_source_sha256": {
+    "firmware/a04/include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
+    "firmware/a04/src/aura_transfer.c": "07db2c0944fb3bc76865e6cda2a1e9014fc2807288666aeac9041cff0a110e6e",
+    "firmware/a04/tests/host_transfer.c": "ac24a7eb9c263f4209dce731d4a2f2ff32b0d3f2e1e4419dec77a063dc130444",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
+    "firmware/a04/src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
+    "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
+    "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
+    "firmware/a04/include/aura_release_auth.h": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
+    "firmware/a04/src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/CMakeLists.txt": "7f0837a7c7a15110cf00fb3dd45a3c53576fdbf15ea2f7d549412ce066be7950",
+    "firmware/a04/cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "firmware/a04/scripts/build.ps1": "43a98704454146a78aad4a3a4a8388159c2b142dcd31b89ac8d87df48f34fc47",
+    "firmware/a04/scripts/verify_cursor.py": "5a0b209c8eb598abd5ecfd672461c96f0a83d597c4777f9dc3b5cc0c3ba56387",
+    "firmware/a04/scripts/verify_transfer.py": "16cba74a4ac4d7d3ae1104a0b0c0028fe47a0f24197633c86517be91179e9ffc",
+    "firmware/a04/fixtures/journal-0.aura": "36512b02cc6f5218160e5cc6eea808830355260c248ec9df99ed95bf0630b32e",
+    "firmware/a04/fixtures/journal-2.aura": "5d1b46117373d99148561700153c8bd74003f54f8cc104e306b2c14b7087fffe",
+    "docs/a04/transfer-wire-v1.md": "6dac92751a90c279fc948a4cd9782efbc290e5f9640a2ce9d8252f079f60073b"
+  },
+  "executable_sha256": "7efd69bfae035f7688096433e853713297cdfad6e04b4c82ec19395a38bf02f8",
+  "linked_Opus_library_sha256": "e4cec8ded62711377bd5189e5d22121e17d7da6924169d0870e9ff59f21fb6a4",
+  "transcript_sha256": "56eef23b859161040bbc21ef406747c0fcc059cb1286011ada67d7166db883c9",
+  "build_command": [
+    "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\cmake\\data\\bin\\cmake.exe",
+    "--build",
+    "F:\\circuit\\.tools\\a04-opus\\host",
+    "--target",
+    "aura_transfer_test",
+    "-j",
+    "2"
+  ],
+  "build_output": [
+    "ninja: no work to do."
+  ],
+  "run_command": [
+    "F:\\circuit\\.tools\\a04-opus\\host\\aura_transfer_test.exe",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-0.aura",
+    "F:\\circuit\\firmware\\a04\\fixtures\\journal-2.aura",
+    "F:\\circuit\\firmware\\a04\\verification\\transfer-wire-golden.tsv"
+  ],
+  "compiler": {
+    "command": [
+      "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\ziglang\\zig.exe",
+      "cc"
+    ],
+    "version": [
+      "clang version 19.1.7 (https://github.com/ziglang/zig-bootstrap de1b01a8c1dddf75a560123ac1c2ab182b4830da)",
+      "Target: x86_64-unknown-windows-gnu",
+      "Thread model: posix",
+      "InstalledDir: F:/circuit/.tools/zephyr/venv/Lib/site-packages/ziglang"
+    ],
+    "executable_sha256": "1ddf230367e07738c4a769eae66c1db7469e37bd520e81c86356453d0db2b9fd"
+  },
+  "cmake": {
+    "command": "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\cmake\\data\\bin\\cmake.exe",
+    "version": [
+      "cmake version 3.31.6",
+      "",
+      "CMake suite maintained and supported by Kitware (kitware.com/cmake)."
+    ]
+  },
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "Opus_dependency": {
+    "version": "1.6.1",
+    "locked_archive_sha256": "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1",
+    "files_verified_before_and_after": 482
+  },
+  "verified": [
+    "real journal/cursor/NAND model with owned generation-derived captures",
+    "unchanged existing real Opus payloads reserialized under deterministic public owners",
+    "exact HELLO/LIST/SELECT/READ/FINISH/CANCEL layouts and physical receipt provenance",
+    "at most one NAND read per step; no NAND programs or erases by transport APIs",
+    "pending joins and completed cached retries do not repeat NAND I/O",
+    "delivery token changes after completed retry; old fragment/completion cannot release newer gate",
+    "first-READ complete-record resume then arbitrary sequential byte offsets and full EOF verification",
+    "admission busy, malformed, changed/older transactions preserve work and transaction high-water",
+    "contextual four-byte errors and late source failure before successful FINISH",
+    "source epoch, owner profile, authorization and connection generation invalidate publication",
+    "test-only near-limit transaction/handle/revision/delivery injection fails closed",
+    "private and overlapping output aliases rejected before any output/state write",
+    "empty catalog, empty interrupted/OPEN captures and ordered cancellation",
+    "MTU23/517 fragments reconstruct exact immutable logical responses"
+  ],
+  "not_verified": [
+    "physical radio, GATT callbacks or actual phone download",
+    "ownership enrollment or authentication implementation",
+    "physical NAND/MCU timing, power failure or concurrent callers",
+    "source deletion or storage release",
+    "global connection-counter exhaustion injection; production counter is not exported",
+    "Kotlin cross-language execution (reported separately by the Android core verifier)"
+  ]
+}

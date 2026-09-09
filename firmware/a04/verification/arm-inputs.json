@@ -1,0 +1,80 @@
+{
+  "captured_at_utc": "2026-09-09T11:42:45.906969+00:00",
+  "source_sha256": {
+    "src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "src/aura_audio_zephyr.c": "e42fd97920caebcfa455cd832b217b58cc9fe54254aa919f1624ca4f230f1c2c",
+    "src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
+    "src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
+    "src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
+    "src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
+    "src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
+    "src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
+    "src/aura_transfer.c": "07db2c0944fb3bc76865e6cda2a1e9014fc2807288666aeac9041cff0a110e6e",
+    "src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
+    "src/aura_w25n01gv_zephyr.c": "3b86abdf3313e9315b196726713dd9ee1561baa418ac3edc42a0e6db8fa7724f",
+    "src/zephyr_probe.c": "b87a0b94b2d0138afb6e34199bee91d1b18087652102e09b8cef1bbc5140eaaa",
+    "include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "include/aura_audio_zephyr.h": "2387676c9c27b51aa6bb7f94a3c07fccd2a74337782e6396b4e143a14692db63",
+    "include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
+    "include/aura_dmic_health.h": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
+    "include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
+    "include/aura_release_auth.h": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
+    "include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
+    "include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
+    "include/aura_w25n01gv.h": "6248c59c7e9c54eb343e0958b09ccdb31eb8411080e796f7587a373a2254357b",
+    "include/aura_w25n01gv_zephyr.h": "0ebd36b4e5d890f6bc1e5569f6b834a50992b9cb85804da3e9e022cb12d094dc",
+    "cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "drivers/aura_dmic_nrfx_pdm.c": "585bd34f1063dadd85adb781d17891f3f4d2df8ac37c427372e099d70ac65361",
+    "drivers/CMakeLists.txt": "6674f60b50e796efc73d54da1d74d23cd0ef8d2b29542be47e44de75a5724a74",
+    "drivers/Kconfig": "02bbc5ffbc995592ad55b70e72c6d3e32990c0ca9e5f255b6f66707328756bad",
+    "drivers/README.md": "04b4d55f8be1cb0f4087e305643019a7e69f20fc00c7523edfbd5e7f679c7948",
+    "drivers/probe/nrf52840dk_nrf52840.overlay": "b1a749dce8e8f0d116bffee967d7208b0e98a9a7031b2e9855de5a7608437b5d",
+    "drivers/tests/.gitignore": "8ab18a1dc7dbb19fee956af58b8a473360cf7526bdd667c3dd9ba5af0bab5492",
+    "drivers/tests/driver_shim.h": "530578d76cd4da60e67ba1afe2c9048cb478f3d84f0c74b20ab72d1ce0bb111d",
+    "drivers/tests/host-tests.txt": "6221126b7e75968269d0d146ba30927a9c8b30649a993b6b025ff2ba45219266",
+    "drivers/tests/host_driver.c": "15818d06a8a341f6d0ad8a8d58eea512085cdabc149f90361a1e16359623b9e9",
+    "drivers/tests/run.py": "3e73ecedbc85efc2fef7aed513b4fa563f95cad56160baee879fd5c04e5d0700",
+    "drivers/tests/verification.json": "f5796d68a84a3a6371aa25fbd3a9a2bdebc71aceaafadcc188d1d1040afdc636",
+    "drivers/dts/bindings/vendor-prefixes.txt": "51671cced8046e1d9ea37f1b3730653f077ee47af45b51c07fa66764204e135c",
+    "drivers/dts/bindings/audio/aura,nrf-pdm.yaml": "643b5267ad88268a543b853f9a1ac31f51c7bf5b0f1ec11eee4f9dec80570f7c",
+    "CMakeLists.txt": "9b342d20994a498ff45fb753904fdfdbe87d8dc12b474eb4b27e380f1645eabf",
+    "Kconfig": "46f43fd718de1a5d2d405df3ee6f16ff04ef93b15f053cb7c397f8eabaab3a2f",
+    "prj.conf": "99f77d1b4416ffd3044aaa42acb168ebcc55568d7a1beb545606a7260def268c",
+    "scripts/build.ps1": "43a98704454146a78aad4a3a4a8388159c2b142dcd31b89ac8d87df48f34fc47",
+    "scripts/report_resources.py": "5712ece40d53733f2a4c2efa938f671c99af6d5e3dc21527e4cce3a9a3477d7a",
+    "dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852"
+  },
+  "compiler": {
+    "path": ".tools/zephyr/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe",
+    "sha256": "02017850fcb45f3f5b7f948ba088f4d7a37b3d1c43f3eff62c36d2eefb069cf5",
+    "version": [
+      "arm-zephyr-eabi-gcc.exe (Zephyr SDK 0.17.2) 12.2.0",
+      "Copyright (C) 2022 Free Software Foundation, Inc.",
+      "This is free software; see the source for copying conditions.  There is NO",
+      "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      ""
+    ]
+  },
+  "Opus_dependency": {
+    "version": "1.6.1",
+    "archive_sha256": "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1",
+    "lock_sha256": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "checked_files": 482
+  },
+  "build_command": [
+    "pwsh.exe",
+    "-NoProfile",
+    "-File",
+    "firmware/a04/scripts/build.ps1",
+    "-Mode",
+    "arm"
+  ],
+  "build_environment": {
+    "CMAKE_BUILD_PARALLEL_LEVEL": "2"
+  },
+  "scope": "Before ARM-only DK resource build; no host/golden regeneration, flashing or physical execution"
+}

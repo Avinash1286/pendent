@@ -142,6 +142,12 @@ object AuraArchive {
         )
     }
 
+    /** Parse one exact canonical manifest without implying any source was saved. */
+    fun parseManifest(wire: ByteArray): CaptureManifest {
+        checkArchive(wire.size == 68, "Invalid AUR3 manifest length")
+        return manifest(wire.copyOf())
+    }
+
     fun parseReceipt(wire: ByteArray): ArchiveReceipt {
         checkArchive(wire.size == 94, "Invalid ACK3 length")
         crc(wire)

@@ -27,6 +27,21 @@ def digest(path):
     return result.hexdigest()
 
 
+def transfer_source_paths():
+    paths = [ROOT / name for name in (
+        "firmware/a04/verification/transfer-wire-golden.tsv",
+        "docs/a04/transfer-wire-v1.md",
+        "firmware/a04/src/aura_transfer.c", "firmware/a04/include/aura_transfer.h",
+        "firmware/a04/src/aura_storage.c", "firmware/a04/include/aura_storage.h",
+    )]
+    assert all(path.is_file() for path in paths), "Actual C transfer goldens and their contract/source inputs are required"
+    return paths
+
+
+def transfer_bindings():
+    return {path.relative_to(ROOT).as_posix(): digest(path) for path in transfer_source_paths()}
+
+
 def fixture_rows():
     fixture_dir = ROOT / "firmware/a04/fixtures"
     result = []
@@ -57,7 +72,8 @@ def prepare(build):
     return index
 
 
-def finish(build, ffmpeg):
+def finish(build, ffmpeg, transfer_before):
+    assert transfer_bindings() == transfer_before, "C transfer inputs changed after JVM fixture preparation"
     output = build / "jvm"
     lines = (output / "results.tsv").read_text(encoding="utf-8").splitlines()
     results = {fields[0]: fields for fields in (line.split("\t") for line in lines[1:])}
@@ -97,10 +113,16 @@ def finish(build, ffmpeg):
     source_paths = list((CORE / "src").rglob("*.kt")) + [CORE / "build.gradle.kts", CORE / "README.md", Path(__file__)]
     source_paths += [ROOT / "firmware/a04/ARCHIVE.md", ROOT / "companion/src/aura_companion/protocol_v2.py",
                      ROOT / "companion/src/aura_companion/archive_import.py"]
+    source_paths += transfer_source_paths()
+    assert transfer_bindings() == transfer_before, "C transfer inputs changed during verification"
+    sources = {path.relative_to(ROOT).as_posix(): digest(path) for path in sorted(source_paths)}
+    assert all(sources[path] == expected for path, expected in transfer_before.items()), "Report source hashes differ from tested C transfer inputs"
+    assert transfer_bindings() == transfer_before, "C transfer inputs changed while binding report sources"
     report = {"schema": "aura-kotlin-core-verification-v1", "physical_hardware_tested": False,
               "android_decoder_tested": False, "jvm_fixture_count": len(evidence),
-              "verification": "C archive bytes and receipts, independent Python mapping, JVM parser/mux, FFmpeg PCM length",
-              "sources": {path.relative_to(ROOT).as_posix(): digest(path) for path in sorted(source_paths)},
+              "transfer_wire_golden_sha256": transfer_before["firmware/a04/verification/transfer-wire-golden.tsv"],
+              "verification": "C archive bytes and receipts, independent Python mapping, JVM parser/mux, FFmpeg PCM length, actual C transfer wire and fragments",
+              "sources": sources,
               "fixtures": evidence}
     report_text = json.dumps(report, indent=2) + "\n"
     (build / "verification.json").write_text(report_text, encoding="utf-8")
@@ -123,7 +145,15 @@ def main():
     args = parser.parse_args()
     assert not (args.prepare_only and args.finish_only)
     build = CORE / "build/verification"
+    baseline = build / "transfer-inputs.json"
+    if args.finish_only:
+        transfer_before = json.loads(baseline.read_text(encoding="utf-8"))
+        assert transfer_before == transfer_bindings(), "C transfer inputs differ from prepared JVM inputs"
+    else:
+        transfer_before = transfer_bindings()
     index = prepare(build) if not args.finish_only else build / "fixture-index.tsv"
+    if not args.finish_only:
+        baseline.write_text(json.dumps(transfer_before, indent=2) + "\n", encoding="utf-8")
     if args.prepare_only:
         return
     if not args.finish_only:
@@ -139,8 +169,9 @@ def main():
         print(completed.stdout, end="")
         print(completed.stderr, end="", file=sys.stderr)
         completed.check_returncode()
+        assert transfer_bindings() == transfer_before, "C transfer inputs changed while JVM verification ran"
     assert args.ffmpeg, "Actual FFmpeg required for independent decoder verification"
-    finish(build, args.ffmpeg)
+    finish(build, args.ffmpeg, transfer_before)
 
 
 if __name__ == "__main__":

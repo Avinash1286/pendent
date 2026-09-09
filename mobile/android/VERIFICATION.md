@@ -3,10 +3,12 @@
 The native A04 app at [the published local-import checkpoint](https://github.com/Avinash1286/pendent/tree/1a790597da5095423fdada9d86425f1ce4654a62/mobile/android) built successfully with **zero Android lint findings** and passed **9 Android runtime cases / 168 assertions** on an Android 10 / API 29 x86-64 emulator. Its archive core passed **10 JVM groups / 231 checks**, using 17 C-generated fixtures plus rejection of an unsealed prefix.
 
 The current core additionally passes **7 response-fragment groups / 32,159
-checks** (17 combined groups / 32,390 checks), including all logical lengths
-1–512 at five MTUs. These new JVM checks do not replace the earlier APK's runtime
-evidence. The fragment parser is not integrated with GATT or app UI, and the
-published APK/build/runtime reports remain bound to the checkpoint above.
+checks** and **7 transfer-wire groups / 338 checks** (24 combined groups / 32,728
+checks). Coverage includes all logical lengths 1–512 at five MTUs, 14 actual
+C-generated replies and four C-generated SELECT fragment chains. These JVM checks
+do not replace the earlier APK's runtime evidence. The transport parsers are not
+integrated with GATT or app UI, and the published APK/build/runtime reports
+remain bound to the checkpoint above.
 
 These results cover the source and development APKs identified below. They establish an exercised Android file-import, storage, recovery, and platform-decoding foundation. They do not establish a working physical pendant or a qualified release.
 
@@ -18,7 +20,7 @@ These results cover the source and development APKs identified below. They estab
 | [Initial emulator boot](verification/emulator-boot.json) and [final preserved-data restart](verification/emulator-boot-final.json) | `AuraApi29`, `emulator-5554`, API 29, `sys.boot_completed=1`, package service available, VM alive; the boot agent did not install or test the app. |
 | [Build report](verification/android-build.json) and [build log](verification/build-output.txt) | Both debug APKs built; lint Fatal 0, Error 0, Warning 0, Information 0. Build inputs were unchanged during the build. |
 | [Final Android runtime report](verification/android-runtime.json) and [instrumentation output](verification/instrumentation-output.txt) | Both recorded APK installations reported success; 9 cases and 168 assertions passed. The report retains per-case and total execution time. Inputs were unchanged during the test. |
-| [Current JVM report](core/verification/kotlin-core.json) and [JVM transcript](core/verification/jvm-host.txt) | 231 archive checks plus 32,159 fragment checks; C/Python/Kotlin byte-contract comparisons and independent FFmpeg sample-count validation. No Android decoding or GATT claim from this report. |
+| [Current JVM report](core/verification/kotlin-core.json) and [JVM transcript](core/verification/jvm-host.txt) | 231 archive, 32,159 fragment and 338 transfer-wire checks; C/Python/Kotlin byte-contract comparisons, actual C command/reply/fragments and independent FFmpeg sample-count validation. No Android decoding or GATT claim from this report. |
 
 The reports retain their exact UTC generation times. The instrumentation transcript contains both `resultdetailJSON.passed=true` and `INSTRUMENTATION_CODE: -1` (`Activity.RESULT_OK`). A zero `adb` process exit code by itself is not the success criterion.
 

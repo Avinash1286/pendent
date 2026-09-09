@@ -55,17 +55,22 @@ The host test covers state size/alignment, unsupported profiles, missing sink, e
 
 Both use 40 samples of pre-skip and 73 samples of final trim at 16 kHz for this 7.553-second synthetic speech input. Constrained VBR is not a constant packet-size guarantee. Waveform SNR is only a regression check for this exact fixture; it does not establish perceptual quality or transcription accuracy. FFmpeg outputs have the same exact duration. Full metrics, hashes and exclusions are in [host-roundtrip.json](verification/host-roundtrip.json).
 
-The earlier synthetic nRF52840 probe checkpoint used **221,432 bytes of flash
-(21.12%)** and **220,288 bytes of RAM (84.03%)**. Its historical
-[resource report](verification/arm-resources.json) binds that probe's sources,
-including its 36,000-byte journal and synthetic RAM NAND. It predates the new
-cursor and volatile journal epoch; those numbers are not the current firmware
-budget. Use the separate [wired bench resource report](bench/verification/arm-resources.json)
-for current linked journal/cursor objects and actual peripheral-driver code.
-Neither report measures physical runtime timing or stack high-water, and neither
-is a complete wearable firmware budget. Production Bluetooth, enrollment,
-audio-release capability, signed updates and real workload measurements remain
-outstanding.
+The current synthetic nRF52840 probe links the new transfer owner and all nine
+of its APIs: **227,488 bytes of flash (21.70%)** and **224,768 bytes of RAM
+(85.74%)**, leaving 37,376 bytes unallocated in this specific configuration.
+The [resource report](verification/arm-resources.json) binds the actual ARM ELF
+and [unchanged build inputs](verification/arm-inputs.json). The owner occupies
+**4,440 bytes** on ARM, including its cursor and response buffer, and remains
+uninitialized in this probe. This establishes compilation and allocation, not
+transfer execution or production Bluetooth headroom. The probe also contains
+synthetic RAM NAND and a maximum control snapshot reservation.
+
+The separate [wired bench report](bench/verification/arm-resources.json) covers
+actual peripheral-driver code and cursor-based UART EXPORT; it does not include
+the new command owner. Neither report measures physical runtime timing or stack
+high-water, and neither is a complete wearable firmware budget. Production
+Bluetooth, enrollment, audio-release capability, signed updates and real
+workload measurements remain outstanding.
 
 The [bounded export cursor](JOURNAL-CURSOR.md) adds exact-record resume, an owned
 page buffer and at most one NAND read per step. It independently verifies source
@@ -73,6 +78,21 @@ before streaming and again before completion. Its host tests check source
 mutation, interrupted tails, chunk sizes, exact resume boundaries and volatile
 cancellation. The wired bench uses it for EXPORT; its UART protocol still has
 no resumable command or concurrent command preemption.
+
+The portable [transfer command owner](include/aura_transfer.h) adds HELLO, LIST,
+SELECT, READ, FINISH and CANCEL above that cursor. Its
+[exact wire contract](../../docs/a04/transfer-wire-v1.md) separates immutable
+response delivery from durable phone storage, binds exports to owned allocation
+identities and rejects stale connection/source/delivery callbacks. Its
+[12 host test groups](verification/transfer-host.json) exercise real journal and
+cursor code with modeled NAND, unchanged Opus packets and generation-derived
+identities. Tests generate [exact replies and fragments](verification/transfer-wire-golden.tsv)
+for the matching Android codec. Reproduce with
+`python firmware/a04/scripts/verify_transfer.py` after configuring the host build;
+the normal `scripts/build.ps1 -Mode host` loop includes it. This new owner is
+linked only as a resource reservation in the synthetic ARM probe, not into the
+wired bench or a GATT image. Enrollment, radio scheduling and durable phone
+download remain outstanding.
 
 Listen or inspect: [input WAV](fixtures/source-speech-16k.wav), [20 ms Opus](fixtures/speech-20ms.opus), [20 ms independent decode](fixtures/speech-20ms-ffmpeg.wav), [10 ms Opus](fixtures/speech-10ms.opus). Host-generated `.aoc` files retain individual packets for debugging. Ogg files use 48 kHz granule units and encode both pre-skip and exact final length.
 

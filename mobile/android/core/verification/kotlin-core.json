@@ -3,19 +3,28 @@
   "physical_hardware_tested": false,
   "android_decoder_tested": false,
   "jvm_fixture_count": 17,
-  "verification": "C archive bytes and receipts, independent Python mapping, JVM parser/mux, FFmpeg PCM length",
+  "transfer_wire_golden_sha256": "92236fe92e39c4ad914267f5f9600e49f72b90dfe14b8c11d4236953c8c73659",
+  "verification": "C archive bytes and receipts, independent Python mapping, JVM parser/mux, FFmpeg PCM length, actual C transfer wire and fragments",
   "sources": {
     "companion/src/aura_companion/archive_import.py": "91e0d7842a660f5a5bbd5411a37e3fa9f528131303107f8323d21498ac308d73",
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d",
+    "docs/a04/transfer-wire-v1.md": "6dac92751a90c279fc948a4cd9782efbc290e5f9640a2ce9d8252f079f60073b",
     "firmware/a04/ARCHIVE.md": "e964fb45d89b469859af5fb774159dde047884411f925805f0bf18eadc5b8db4",
+    "firmware/a04/include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
+    "firmware/a04/include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
+    "firmware/a04/src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
+    "firmware/a04/src/aura_transfer.c": "07db2c0944fb3bc76865e6cda2a1e9014fc2807288666aeac9041cff0a110e6e",
+    "firmware/a04/verification/transfer-wire-golden.tsv": "92236fe92e39c4ad914267f5f9600e49f72b90dfe14b8c11d4236953c8c73659",
     "mobile/android/core/build.gradle.kts": "e17484dc6167ae27525498cb54b49a897b2f70e533c011c164ef3096c059faff",
-    "mobile/android/core/README.md": "dd5755f2b05e0c1d93c2eb62451c7681ff58f3e9bbf529d34952ccb045e2fb07",
-    "mobile/android/core/scripts/verify_core.py": "904b4bb843efad5b0f845c8ab12844624982417ffe7ba1694bdec28d58e0de11",
-    "mobile/android/core/src/main/kotlin/com/aura/capture/AuraArchive.kt": "12bcd143fe5ebabc0f715458398a4048abd73f4c8cf23aa6069395ecc9a5a337",
+    "mobile/android/core/README.md": "93f5c29d61663c8ada03025377135a018396c6de81b4e3b5a8da4d365a520628",
+    "mobile/android/core/scripts/verify_core.py": "06fefbd806034d4a450efed842f38266ff507d2baf785c51a8e72a338db317f9",
+    "mobile/android/core/src/main/kotlin/com/aura/capture/AuraArchive.kt": "ae7cff81c5ba92aeeaa5abc28c36a8c2726b02cebecb640a7a0efc7ef991a4dd",
     "mobile/android/core/src/main/kotlin/com/aura/capture/AuraOgg.kt": "43c390478d8a91f89fb32ed4ae8507bd176393ca74f5f11fd98d5300bd4c3da3",
     "mobile/android/core/src/main/kotlin/com/aura/capture/BleResponseFragments.kt": "0efd706ae5497e24091524c752f83c118f58ab4856e998173834b1b0e02cd885",
+    "mobile/android/core/src/main/kotlin/com/aura/capture/TransferWire.kt": "24b364c885489b896c31a921f62b28d344757102c29461a4e6d138e5a822baca",
     "mobile/android/core/src/test/kotlin/com/aura/capture/BleFragmentChecks.kt": "0d34f0e3b7d71f2eaee1b4c55df494c9095cee7da97d65cbc48092253120bc88",
-    "mobile/android/core/src/test/kotlin/com/aura/capture/CoreChecks.kt": "8a918b714cb94b030a7bccdd595d0d30e90478afe9cf51829419ed0d8c50bc2f"
+    "mobile/android/core/src/test/kotlin/com/aura/capture/CoreChecks.kt": "5797e77cc74f6d5d477258c35088564daf1159a90291141fd2a5b095ee97a16b",
+    "mobile/android/core/src/test/kotlin/com/aura/capture/TransferWireChecks.kt": "2c283feb79aa68038b5614a33b7740d965c9a62060bd583734442a254325a32a"
   },
   "fixtures": [
     {

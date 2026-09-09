@@ -14,6 +14,7 @@
 #include "aura_release_auth.h"
 #include "aura_control.h"
 #include "aura_storage.h"
+#include "aura_transfer.h"
 #include <string.h>
 
 #define CODEC_STACK_BYTES 49152
@@ -31,6 +32,9 @@ static struct aura_release_auth_context release_context;
 static struct aura_control control_ledger;
 static struct aura_storage storage_owner;
 static uint8_t storage_snapshot[AURA_STORAGE_STATE_BYTES];
+/* Reserve the actual command owner/cursor/cache ABI. This object stays
+ * uninitialized: no trusted session, authentication, GATT or radio is started. */
+static struct aura_transfer transfer_owner;
 /* Eight sparse pages suffice for this short synthetic capture. */
 static uint8_t probe_pages[8][2048], probe_map[64], probe_used;
 static int probe_highest;
@@ -111,6 +115,14 @@ static void probe(void *one, void *two, void *three)
            (void *)aura_storage_request_release,(void *)aura_storage_release_step,
            (void *)aura_storage_capture_id,(void *)aura_w25n01gv_zephyr_configure_control,
            (void *)aura_w25n01gv_zephyr_control_io);
+    printk("UNINITIALIZED TRANSFER ABI owner=%u at=%p init=%p begin=%p end=%p cancel=%p "
+           "submit=%p step=%p copy=%p fragment=%p sent=%p; no authentication, session or radio configured\n",
+           (unsigned)sizeof(transfer_owner),(void *)&transfer_owner,
+           (void *)aura_transfer_init,(void *)aura_transfer_session_begin,
+           (void *)aura_transfer_session_end,(void *)aura_transfer_cancel_work,
+           (void *)aura_transfer_submit,(void *)aura_transfer_step,
+           (void *)aura_transfer_copy_response,(void *)aura_transfer_copy_fragment,
+           (void *)aura_transfer_response_sent);
     uint32_t worst_us = 0, late_frames = 0;
     for (unsigned frame = 0; !status && frame < 50; ++frame) {
         for (unsigned i = 0; i < ARRAY_SIZE(input); ++i)

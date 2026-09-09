@@ -38,17 +38,25 @@ class SmokeInstrumentation : Instrumentation() {
     private val decodeResults = JSONArray()
     private var assertions = 0
     private var started = 0L
+    private var suiteArguments = Bundle()
     private lateinit var isolated: IsolatedContext
     private lateinit var fixtures: Map<String, Fixture>
     private lateinit var indexHash: String
     private var downloadEvidence: JSONObject? = null
+    private var recoveryEvidence: JSONObject? = null
 
     override fun onCreate(arguments: Bundle?) {
         super.onCreate(arguments)
+        suiteArguments = arguments?.let(::Bundle) ?: Bundle()
         start()
     }
 
     override fun onStart() {
+        if (suiteArguments.getString("suite") == "virtualBle") {
+            watchdog.shutdownNow()
+            BleInstrumentation(this, suiteArguments).run()
+            return
+        }
         started = SystemClock.elapsedRealtime()
         watchdog.schedule({
             complete(false, JSONObject().put("failure", "Instrumentation exceeded its 240-second bound"))
@@ -62,6 +70,7 @@ class SmokeInstrumentation : Instrumentation() {
             case("decoder destination preservation and incomplete input refusal") { decoderFailureChecks() }
             storeChecks()
             downloadEvidence = runDownloadStoreChecks(context, isolated, ::case, ::expect)
+            recoveryEvidence = runCaptureRecoveryChecks(context, isolated, ::case, ::expect)
             complete(true)
         } catch (error: Throwable) {
             complete(false, JSONObject().put("failure_type", error.javaClass.simpleName)
@@ -80,6 +89,7 @@ class SmokeInstrumentation : Instrumentation() {
             .put("decoder_results", decodeResults).put("physical_hardware_verified", false)
         if (::indexHash.isInitialized) extra.put("fixture_index_sha256", indexHash)
         downloadEvidence?.let { extra.put("download_store", it) }
+        recoveryEvidence?.let { extra.put("capture_recovery", it) }
         val result = Bundle().apply {
             putString("resultdetailJSON", extra.toString())
             putString("stream", "AURA_SMOKE_${if (passed) "PASS" else "FAIL"} ${extra}\n")

@@ -42,9 +42,12 @@ matching Kotlin codec validates those logical replies. Their exact
 the physical connection. The operation-count bound does not measure NAND/BLE
 latency. Android's [durable download owner](../../mobile/android/DOWNLOADS.md)
 now stores complete validated records and resume state in one SQLite transaction,
-then hands completed sources to the existing decoded library. GATT integration,
-enrollment and the foreground recovery coordinator remain to be implemented
-before phone transport is enabled.
+then hands completed sources to the existing decoded library. The Android
+[foreground recovery owner and GATT client](../../mobile/android/RECOVERY.md)
+now implement that integration boundary. They remain disconnected from consumer
+access pending ownership enrollment, the actual device radio service and UI
+integration. Their verification scope is recorded separately from a physical
+pendant-to-phone test.
 
 ## Proposed A04 BLE v1 surface
 
@@ -116,12 +119,14 @@ controller transmit completion or fragment counter is a durable receipt.
 The independent Kotlin `BleResponseFragments` component now implements this
 fragment subset with a generation token, exact prior-fragment duplicate checks,
 512-byte payload bound and 1024-delivery limit. Its JVM tests cover MTUs 23–517,
-malformed overlaps/totals, stale generations and defensive copies. It is not
-wired to GATT. The separate `TransferWire` codec validates logical replies after
+malformed overlaps/totals, stale generations and defensive copies. It is now
+wired into the new `AndroidGattConnection`. The separate `TransferWire` codec
+validates logical replies after
 reassembly, including trusted identity, allocation-derived capture IDs, exact
 framing lengths, READ CRCs and FINISH equality with SELECT. Both parsers are
 exercised together on C-generated fragment chains. The earlier published
-local-import APK contains neither new transport component.
+local-import APK predates these transport components; use the current Android
+source and its matching verification record when assessing the new integration.
 
 Serialize Android GATT operations, including discovery, MTU request, CCCD writes
 and command writes. Wait for successful subscription before accepting the service
@@ -169,7 +174,9 @@ replays retained source once before publishing a resume offset. Partial records
 remain in RAM. The immutable selected descriptor excludes connection handles and
 transaction numbers. Completed source still passes through `CaptureStore`'s
 independent archive/Opus checks before playback publication. These implemented
-storage boundaries do not supply the GATT coordinator or establish physical
+storage boundaries now feed `CaptureRecovery`, which validates source identity
+across reconnects, renews exhausted transaction space and distinguishes source
+preservation from decoded playback. This does not establish physical
 power-loss durability. Avoid rescanning the entire prefix after every small BLE
 fragment; verify a resumed prefix once and batch complete records transactionally.
 
@@ -205,6 +212,13 @@ timers on backgrounding and reject stale timer generations; persistent work is
 revisited on foreground/startup/device reconnect. Network availability must not
 gate local BLE download or playback. A cloud failure remains separate from a
 device transfer failure.
+
+The new Android recovery owner implements these bounded foreground scheduling
+and cancellation rules. Its raw GATT client serializes setup/writes, waits for
+subscription, copies callback values and ends obsolete connection lineages.
+Neither class supplies consumer enrollment. The device-side
+[radio integration plan](radio-integration.md) specifies the remaining Zephyr
+owner/mailbox and notification-lifetime boundary.
 
 This follows useful boundaries in Omi's pinned
 [recording-transfer coordinator](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/app/lib/services/wals/recording_transfer_coordinator.dart)

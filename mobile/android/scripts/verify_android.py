@@ -35,11 +35,12 @@ def relative(path: Path) -> str:
 
 
 def source_inputs() -> dict[str, str]:
-    files = [p for base in ('app/src', 'core/src') for p in (APP / base).rglob('*') if p.is_file()]
+    files = [p for base in ('app/src', 'core/src', 'ble-fixture') for p in (APP / base).rglob('*')
+             if p.is_file() and '__pycache__' not in p.parts]
     files += [p for p in APP.glob('*.gradle.kts')]
     files += [APP / name for name in ('app/build.gradle.kts', 'core/build.gradle.kts',
                                     'gradle.properties', 'build.ps1', 'toolchain-lock.json',
-                                    'scripts/verify_android.py')]
+                                    'scripts/verify_android.py', 'scripts/verify_ble.py')]
     return {relative(p): sha(p) for p in sorted(set(files))}
 
 

@@ -4,6 +4,12 @@
 # Evidence logs and fixture indexes are hashed as exact bytes, including line endings.
 verification/*.json -text whitespace=cr-at-eol
 verification/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+verification/**/*.json -text whitespace=cr-at-eol
+verification/**/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+verification/**/stop-request -text whitespace=cr-at-eol
 core/verification/*.json -text whitespace=cr-at-eol
 core/verification/*.txt -text whitespace=cr-at-eol,-blank-at-eol
 app/src/androidTest/assets/fixtures/index.json -text whitespace=cr-at-eol
+# Preserve the exact mixed/CRLF inputs bound by this development build.
+app/src/main/kotlin/com/aura/notes/AndroidGattConnection.kt -text whitespace=cr-at-eol
+ble-fixture/requirements-hashed.txt -text whitespace=cr-at-eol

@@ -1,16 +1,16 @@
 {
   "schema": "aura.android.runtime.v1",
-  "created_utc": "2026-09-09T13:23:18.140794+00:00",
+  "created_utc": "2026-09-09T13:10:52.426073+00:00",
   "passed": true,
   "serial": "emulator-5556",
   "fingerprint": "Android/sdk_phone64_x86_64/emu64x:14/UE1A.230829.036.A1/11228894:userdebug/test-keys",
   "emulator": true,
   "physical_hardware_verified": false,
-  "build_report_sha256": "f91836bd3a0f7992997f7b547e2f1b4fc37cef7f96c152309607f1e7e1f7fc75",
+  "build_report_sha256": "3b3147f6cabe1dac2fe78eb7b8ce7b0c7e644e1ada86d090eebcb24774bd50bf",
   "source_inputs": {
     "mobile/android/app/build.gradle.kts": "d35619c148b999b3170d487782141bd0dfcaee0e65b85cbd17bde4ffdfb96c9f",
     "mobile/android/app/src/androidTest/.gitattributes": "c20aa740fabfc2c187a5a405c87147216662fedf6aa12ec153dd8e76f7207b09",
-    "mobile/android/app/src/androidTest/AndroidManifest.xml": "3d8401f71cbe03e9e4eba618e0833f7fa25995f9f12b4d3af1d83a12b3d01f94",
+    "mobile/android/app/src/androidTest/AndroidManifest.xml": "da185eec8d3d0a1cc22e15b188359485d499e250f73e39611ab6d96314c67d5b",
     "mobile/android/app/src/androidTest/assets/downloads/finalized.aura": "a68ad1d341fb1a3f98dcc0d8d15a7ed7d8ad7b472152b8ca690f48ada06b3406",
     "mobile/android/app/src/androidTest/assets/downloads/finalized.physical.ack3": "3b426f1d45542ad20ef427a14d6b43151c656acdbfb286ca5a83036d600e14a9",
     "mobile/android/app/src/androidTest/assets/downloads/index.json": "a160804c8090e09ecd2b13436e27d2ed334b65cdf819b12ad715b3d3882d96cd",
@@ -25,10 +25,10 @@
     "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.aura": "5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71",
     "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.physical.ack3": "25a864cc657f581408952aff82b6535e3ea548b9f2de89c9a1b4cf3429fa9242",
     "mobile/android/app/src/androidTest/java/com/aura/notes/FixtureProvider.java": "1cfed7db7c237644013ed02b59831fcf1586ad50d5bc6b24bc8d326b68cd7273",
-    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/BleInstrumentation.kt": "6ed0e83d837a2d2367565a0a26c30e3a60e18ea0f499349f19a63e80b6de9020",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/BleInstrumentation.kt": "c622c2ad8306abfe2e64d2b0a02f6d466e94b5ae720705d7322be0727655861b",
     "mobile/android/app/src/androidTest/kotlin/com/aura/notes/CaptureRecoveryChecks.kt": "d652e5aa475d7099534e702982b41f392bbe9e99f3f12d11a376d52460929ab0",
     "mobile/android/app/src/androidTest/kotlin/com/aura/notes/DownloadStoreChecks.kt": "3e014342b3a1fae212a1b4e929b500e5934e915a498ae74c332099e958235d69",
-    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt": "2cba977f314571b4dc29f920260dadb2ec321acb276b08cc1e96fc9d09ece978",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt": "911535d9cd59e9f14722b55648b1a4039f1c25356e750319e44c9f3ea6da5fe3",
     "mobile/android/app/src/androidTest/prepare_assets.py": "acabbaa267ccbfbff5303671aeecf497ad9771d88594420a7391a55338c79e68",
     "mobile/android/app/src/androidTest/README.md": "b7679d2eea2783aee64063ffbaf589b150d81c805c98c8710e9042fa671bc3ef",
     "mobile/android/app/src/debug/AndroidManifest.xml": "d9d1fbe1fa4565914e2748799b3a17ac63b384ae8479c7a5450fbe61dd90c1e2",
@@ -46,7 +46,7 @@
     "mobile/android/app/src/main/res/values/styles.xml": "aff5b9239ede3133725eac37178ec88a71c93024992af446b7af9d988ee9485a",
     "mobile/android/app/src/main/res/xml/data_extraction_rules.xml": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8",
     "mobile/android/ble-fixture/peripheral.py": "aedac1a9868bff079bb5515fe89a34411363b12a46dc0953c75f9fb7bf86867e",
-    "mobile/android/ble-fixture/README.md": "fc6cb5f85d30c4d35f9d3794e29e6a420ebf1840dbb950c628922ee30ed685d3",
+    "mobile/android/ble-fixture/README.md": "46e791d7d8fed90136af47b2d11069a563175ef1cea44a8e609ea0234d5877e6",
     "mobile/android/ble-fixture/requirements-hashed.txt": "71f20b8413e05f6f720748e5242fe765af2cb5da7b7ae082de2c8bdc9f2c4298",
     "mobile/android/build.gradle.kts": "ca6e35420f610ab7aab47e83f450da34538b864e1d950c675501bcc33be2d3e8",
     "mobile/android/build.ps1": "f8b0ea1142d0a940927b68a6ad1231899b630cbecca36e82e7c91ddd93c87797",
@@ -62,7 +62,7 @@
     "mobile/android/core/src/test/kotlin/com/aura/capture/TransferWireChecks.kt": "2c283feb79aa68038b5614a33b7740d965c9a62060bd583734442a254325a32a",
     "mobile/android/gradle.properties": "db339f8e54bbcf55bcb09c039bac7f1350c8a4bba4e13e32d25dc77d11e44b88",
     "mobile/android/scripts/verify_android.py": "317a01fb8bff8b0094f48b0f1e1dbfd6dfa1b45a8cfd5f61b0c7117bdf8c7596",
-    "mobile/android/scripts/verify_ble.py": "41a6ad6f7f796af1a17746ecf054bee5158e187c4bf9cef5b5c4ead14e6c6f18",
+    "mobile/android/scripts/verify_ble.py": "ca52721b11fac94c2afeafab6cf48aa82c379650552d5db8ff4df1e4f70beb01",
     "mobile/android/settings.gradle.kts": "441f0630e611a470528d782b6669801739831cb44f6b030ca62b014873dfb2c2",
     "mobile/android/toolchain-lock.json": "61a0cd458e74307000cd041f8b99fde1fd7ced3b79fb94a450fbe90119144ac6"
   },
@@ -73,7 +73,7 @@
       "output": "Performing Streamed Install\nSuccess"
     },
     {
-      "apk_sha256": "7f0c3a508789dc815fd0952709076cd01a95005b5ec42e556317a6d055931241",
+      "apk_sha256": "1058252fef7290970262f0dc329143d383018f2f1a73b10e96a77e96f8ca797f",
       "output": "Performing Streamed Install\nSuccess"
     }
   ],
@@ -85,151 +85,151 @@
       {
         "name": "immutable C fixture assets",
         "passed": true,
-        "elapsed_ms": 98
+        "elapsed_ms": 73
       },
       {
         "name": "real platform Opus decode, EOS and exact WAV durations",
         "passed": true,
-        "elapsed_ms": 1957
+        "elapsed_ms": 1567
       },
       {
         "name": "decoder destination preservation and incomplete input refusal",
         "passed": true,
-        "elapsed_ms": 303
+        "elapsed_ms": 369
       },
       {
         "name": "real content provider and SQLite source import",
         "passed": true,
-        "elapsed_ms": 1033
+        "elapsed_ms": 1021
       },
       {
         "name": "idempotent import and fresh store instance reopen",
         "passed": true,
-        "elapsed_ms": 586
+        "elapsed_ms": 466
       },
       {
         "name": "manual context survives reopen without changing source evidence",
         "passed": true,
-        "elapsed_ms": 527
+        "elapsed_ms": 413
       },
       {
         "name": "late physical OPEN proof remains distinct from the derived export seal",
         "passed": true,
-        "elapsed_ms": 1278
+        "elapsed_ms": 1499
       },
       {
         "name": "corrupt source and conflicting proof are retained without publication",
         "passed": true,
-        "elapsed_ms": 676
+        "elapsed_ms": 570
       },
       {
         "name": "cold inventory rebuild from a complete real decoded bundle",
         "passed": true,
-        "elapsed_ms": 345
+        "elapsed_ms": 601
       },
       {
         "name": "download owned C source and logical SELECT/FINISH identity",
         "passed": true,
-        "elapsed_ms": 118
+        "elapsed_ms": 121
       },
       {
         "name": "download complete-record durability, reconnect and exact source export",
         "passed": true,
-        "elapsed_ms": 6066
+        "elapsed_ms": 6730
       },
       {
         "name": "download exact READ retry and poisoned conflicting input",
         "passed": true,
-        "elapsed_ms": 723
+        "elapsed_ms": 643
       },
       {
         "name": "download real SQLite record/metadata/FINISH transaction rollback",
         "passed": true,
-        "elapsed_ms": 6907
+        "elapsed_ms": 7448
       },
       {
         "name": "download retained corrupt metadata and source rows refuse recovery",
         "passed": true,
-        "elapsed_ms": 1050
+        "elapsed_ms": 1177
       },
       {
         "name": "download split or concatenated saved records refuse recovery",
         "passed": true,
-        "elapsed_ms": 295
+        "elapsed_ms": 304
       },
       {
         "name": "download lifetime owner lock, closed sessions and failed-open cleanup",
         "passed": true,
-        "elapsed_ms": 211
+        "elapsed_ms": 441
       },
       {
         "name": "download immutable revisions retain conflicting selected receipts",
         "passed": true,
-        "elapsed_ms": 83
+        "elapsed_ms": 180
       },
       {
         "name": "download incomplete and conflicting FINISH cannot publish",
         "passed": true,
-        "elapsed_ms": 372
+        "elapsed_ms": 329
       },
       {
         "name": "download finalized and OPEN source bridge into real decoded library",
         "passed": true,
-        "elapsed_ms": 10709
+        "elapsed_ms": 10813
       },
       {
         "name": "recovery real C finalized and OPEN sources reach independently decoded library",
         "passed": true,
-        "elapsed_ms": 7055
+        "elapsed_ms": 7367
       },
       {
         "name": "recovery transaction rollover reselects exact source and resumes committed boundary",
         "passed": true,
-        "elapsed_ms": 3927
+        "elapsed_ms": 3583
       },
       {
         "name": "recovery background cancellation rejects late replies and foreground replay resumes",
         "passed": true,
-        "elapsed_ms": 3594
+        "elapsed_ms": 3816
       },
       {
         "name": "recovery repeated wakes coalesce into one serialized follow-up",
         "passed": true,
-        "elapsed_ms": 8
+        "elapsed_ms": 13
       },
       {
         "name": "recovery mismatched identity and FINISH cannot mark source saved",
         "passed": true,
-        "elapsed_ms": 2604
+        "elapsed_ms": 2739
       },
       {
         "name": "recovery connection retry and stale catalog refresh have finite budgets",
         "passed": true,
-        "elapsed_ms": 72
+        "elapsed_ms": 76
       },
       {
         "name": "recovery unavailable catalog entries and busy selections never become saved",
         "passed": true,
-        "elapsed_ms": 47
+        "elapsed_ms": 51
       },
       {
         "name": "recovery source pin survives reconnect and revoked access stops the pass",
         "passed": true,
-        "elapsed_ms": 3150
+        "elapsed_ms": 3545
       },
       {
         "name": "recovery repeated failed source is counted once and later success resolves it",
         "passed": true,
-        "elapsed_ms": 10823
+        "elapsed_ms": 9077
       },
       {
         "name": "recovery tiny READ rollover without record progress fails within a fixed bound",
         "passed": true,
-        "elapsed_ms": 674
+        "elapsed_ms": 634
       }
     ],
     "assertions": 428,
-    "elapsed_ms": 65355,
+    "elapsed_ms": 65746,
     "android_sdk": 34,
     "android_fingerprint": "Android/sdk_phone64_x86_64/emu64x:14/UE1A.230829.036.A1/11228894:userdebug/test-keys",
     "decoder_results": [
@@ -356,7 +356,7 @@
   "instrumentation_terminal_codes": [
     "-1"
   ],
-  "instrumentation_output_sha256": "c602fcc8a93d5d241d2fc3c98dd89e7e6b963b02ad41e7c12051e6eed94a568a",
+  "instrumentation_output_sha256": "37a13a174c6132261b951e8f43ad9a4ceb049b8c04df6cf7c1800638d8ebf42e",
   "verification_script_sha256": "317a01fb8bff8b0094f48b0f1e1dbfd6dfa1b45a8cfd5f61b0c7117bdf8c7596",
   "scope": "Actual Android codec and SQLite with public synthetic C fixtures; no radio, microphone or wear test."
 }

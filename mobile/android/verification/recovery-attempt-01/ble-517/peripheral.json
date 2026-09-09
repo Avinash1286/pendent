@@ -1,0 +1,26 @@
+{
+  "schema": "aura.android.netsim.peripheral.v1",
+  "state": "stopped",
+  "observed_utc": "2026-09-09T13:11:05.630810+00:00",
+  "fixture_only": true,
+  "zephyr_firmware_executed": false,
+  "physical_radio_tested": false,
+  "ownership_authenticated": false,
+  "address": "F0:F1:F2:F3:F4:F5",
+  "name": "AURA-test-only",
+  "configured_att_mtu": 517,
+  "read_chunk_limit": 256,
+  "source_sha256": {
+    "mobile/android/app/src/androidTest/assets/downloads/index.json": "a160804c8090e09ecd2b13436e27d2ed334b65cdf819b12ad715b3d3882d96cd",
+    "firmware/a04/verification/transfer-wire-golden.tsv": "92236fe92e39c4ad914267f5f9600e49f72b90dfe14b8c11d4236953c8c73659",
+    "firmware/a04/verification/transfer-fixtures/finalized.aura": "a68ad1d341fb1a3f98dcc0d8d15a7ed7d8ad7b472152b8ca690f48ada06b3406",
+    "firmware/a04/verification/transfer-fixtures/finalized.physical.ack3": "3b426f1d45542ad20ef427a14d6b43151c656acdbfb286ca5a83036d600e14a9",
+    "firmware/a04/verification/transfer-fixtures/open.aura": "254d96d89ab8b3aedfdebfcef61b43f88a282bcacf469c08d373ef584caa505e",
+    "firmware/a04/verification/transfer-fixtures/open.physical.ack3": "c4640af1a29d286a5ec87b258fdf5f4fdf3d51fad309d0dd68b475234f393405",
+    "mobile/android/ble-fixture/peripheral.py": "aedac1a9868bff079bb5515fe89a34411363b12a46dc0953c75f9fb7bf86867e"
+  },
+  "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
+  "bumble_version": "0.0.234",
+  "errors": [],
+  "connections": []
+}

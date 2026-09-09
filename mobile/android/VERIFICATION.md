@@ -1,10 +1,20 @@
 # Android verification — 2026-09-09
 
-The current native A04 app built with **zero Android lint findings** and passed
-**19 Android runtime cases / 366 assertions** on an Android 10 / API 29 x86-64
-emulator. The run took 22.846 seconds. It retains the original nine local-import
-cases and adds ten cases for the [durable download owner](DOWNLOADS.md), actual
-SQLite rollback/replay, ownership cleanup and decoded-library handoff.
+The current native A04 app built with **zero Android lint findings**. Its source
+storage, playback and foreground recovery suite passed **29 Android runtime
+cases / 428 assertions** on an Android 14 / API 34 x86-64 emulator. The nine
+local-import and ten durable-download cases are retained; ten new recovery
+cases exercise the actual coordinator with scripted logical replies, real
+SQLite and the platform decoder.
+
+The final smoke run took 65.355 seconds and binds the same final APKs as both
+virtual-link runs below.
+
+The separate virtual Bluetooth suite passed **4 cases / 33 assertions at each of MTU
+23 and MTU 517** using the real Android GATT stack and a Python Bumble peripheral through
+Netsim. It recovered both original C-generated recordings, decoded them into the
+library, and revalidated them on a second connection without duplicate entries.
+See the virtual-link evidence below for the exact scope and retained first failure.
 
 The current Kotlin core passes **30 groups / 82,213 checks**, including six
 incremental-validator groups / 49,471 checks, seven response-fragment groups /
@@ -16,8 +26,7 @@ Both file import and partial-download replay now use one canonical validator.
 The [earlier local-import checkpoint](https://github.com/Avinash1286/pendent/tree/1a790597da5095423fdada9d86425f1ce4654a62/mobile/android)
 and its `a04-android-local-dev` release remain available with their original
 nine-case evidence. The current development APK includes the new storage and
-protocol classes, but the Activity still exposes local file import. GATT,
-enrollment and the foreground download coordinator are not integrated.
+protocol classes, [foreground recovery coordinator and Android GATT client](RECOVERY.md). The Activity still exposes local file import. Consumer access requires ownership enrollment, a matching device radio service and Activity integration.
 
 These results cover the source and development APKs identified below. They establish an exercised Android file-import, storage, recovery, and platform-decoding foundation. They do not establish a working physical pendant or a qualified release.
 
@@ -26,28 +35,28 @@ These results cover the source and development APKs identified below. They estab
 | Evidence | Observed result and scope |
 | --- | --- |
 | [Installed toolchain](verification/installed-toolchain.json) | Actual executable versions, SDK package metadata, archive/executable hashes, and usable WHPX acceleration; this installation snapshot alone does not claim app execution. |
-| [Runtime emulator boot](verification/emulator-download-runtime-boot.json) | Preserved `AuraApi29`, `emulator-5554`, API 29, observed `sys.boot_completed=1` and framework ready before this run. The record separately retains eventual shutdown; boot alone is not a runtime test. |
+| [Runtime emulator boot](verification/emulator-ble-runtime-boot.json) | Separate preserved `AuraApi34Ble`, `emulator-5556`, API 34, observed boot completion and Bluetooth ON. Exact Netsim/VM identity and terminal observations are retained; boot alone is not a test. |
 | [Build report](verification/android-build.json) and [build log](verification/build-output.txt) | Both debug APKs built; lint Fatal 0, Error 0, Warning 0, Information 0. Build inputs were unchanged during the build. |
-| [Final Android runtime report](verification/android-runtime.json) and [instrumentation output](verification/instrumentation-output.txt) | Both APK installations reported success; 19 cases and 366 assertions passed. The report retains per-case and total execution time. Inputs were unchanged during the test. |
+| [Final Android runtime report](verification/android-runtime.json) and [instrumentation output](verification/instrumentation-output.txt) | Both APK installations reported success; 29 cases and 428 assertions passed. The report retains per-case and total execution time. Inputs were unchanged during the test. |
 | [Current JVM report](core/verification/kotlin-core.json) and [JVM transcript](core/verification/jvm-host.txt) | 30 groups / 82,213 checks: shared complete/incremental validation, C/Python/Kotlin byte-contract comparisons, actual C command/reply/fragments and independent FFmpeg sample-count validation. No Android decoding or GATT claim from this report. |
 
 The reports retain their exact UTC generation times. The instrumentation transcript contains both `resultdetailJSON.passed=true` and `INSTRUMENTATION_CODE: -1` (`Activity.RESULT_OK`). A zero `adb` process exit code by itself is not the success criterion.
 
 ## Environment actually used
 
-The installed environment records Temurin **JDK/Javac 17.0.20.1**, **Gradle 9.4.1**, SDK platform **37.0 revision 2**, build tools **36.0.0**, platform tools **37.0.1**, and emulator **37.1.11**. The app compiles/targets API 37 and has minimum API 29; execution in this report used the **API 29 default x86-64 system image, revision 8**.
+The installed environment records Temurin **JDK/Javac 17.0.20.1**, **Gradle 9.4.1**, SDK platform **37.0 revision 2**, build tools **36.0.0**, platform tools **37.0.1**, and emulator **37.1.11**. The app compiles/targets API 37 and has minimum API 29; execution in the current report used the **API 34 default x86-64 system image**. Its official r04 archive advertises revision 4, while its shipped `source.properties` and installed SDK metadata identify revision 2; [the setup record](verification/ble-toolchain.json) preserves that discrepancy and exact archive hashes.
 
 The emulator fingerprint was:
 
 ```text
-Android/sdk_phone_x86_64/generic_x86_64:10/QSR1.210820.001/7663313:userdebug/test-keys
+Android/sdk_phone64_x86_64/emu64x:14/UE1A.230829.036.A1/11228894:userdebug/test-keys
 ```
 
 Boot evidence records WHPX CPU acceleration, SwiftShader graphics, 1,536 MiB RAM, one virtual CPU, and a 480×800 display at 240 dpi. The emulator ran headless with host audio disabled. Windows virtualization settings were not changed by this setup. Successful PCM decoding here is therefore not evidence of audible playback through a phone speaker or headphones.
 
 ## Exact build and runtime binding
 
-The build and runtime reports contain the same **47 source/configuration/fixture
+The build and runtime reports contain the same **57 source/configuration/fixture
 hashes**, including the verification runner. Both APK hashes match the build
 report and runtime installation entries. The runtime's referenced build-report
 digest matches the actual JSON file. The core report separately binds 61 current
@@ -94,7 +103,7 @@ the store API; this does not prove every document-provider UI destination works.
 
 ## Actual decoder and trim results
 
-All three audio fixtures used **`OMX.google.opus.decoder`**, which returned mono PCM16 at **48,000 Hz**. The source archives use a 16,000 Hz source clock; retained PCM frame counts were compared at the actual decoder rate. The decoder's applied pre-skip was not removed a second time.
+All three current audio fixtures used **`c2.android.opus.decoder`**, which returned mono PCM16 at **48,000 Hz**. The source archives use a 16,000 Hz source clock; retained PCM frame counts were compared at the actual decoder rate. The decoder's applied pre-skip was not removed a second time.
 
 | Fixture | Physical receipt | Raw output frames | Retained frames | App applied remaining end trim |
 | --- | --- | ---: | ---: | --- |
@@ -107,11 +116,71 @@ The finalized fixture exercises a recording that ends inside its last encoded fr
 These are generated test signals from the portable C fixture writer, not audio captured through an A04 microphone. Passing this specific platform decoder does not qualify every vendor codec, Android version, long recording, storage-pressure condition, or malformed future input.
 
 The new owned finalized and OPEN fixtures also passed `CaptureStore.importDownload`
-through `OMX.google.opus.decoder` at 48 kHz, preserving 120,847 and 116,440 source
+through `c2.android.opus.decoder` at 48 kHz, preserving 120,847 and 116,440 source
 samples respectively. Both became playback-ready; duplicate imports retained a
 single library revision. The OPEN recording retained physical status OPEN,
 export status INTERRUPTED and unknown original duration. Its SQLite source
 remained byte-identical and exportable after library publication.
+
+## Foreground recovery and virtual Bluetooth
+
+The ten coordinator cases cover exact finalized/OPEN recovery, transaction-space
+rollover, background cancellation and foreground resume, coalesced wakes,
+identity/FINISH mismatch, finite reconnect/catalog budgets, unavailable sources,
+source pinning across reconnect and revoked access, resolved failure counts,
+and bounded failure when tiny READs cannot advance a complete record. They use
+scripted connections; their timings are not radio performance measurements.
+
+The [MTU 517 report](verification/ble-517/verification.json),
+[Android transcript](verification/ble-517/instrumentation-output.txt) and
+[peripheral report](verification/ble-517/peripheral.json) record four real-GATT
+cases / 33 assertions in 36.540 seconds. The first connection transferred
+73,674 original bytes using 298 notifications; the second used nine notifications
+and no source payload bytes to repeat SELECT, explicit EOF READ and FINISH.
+Both source receipts remained exact, including physical OPEN / export INTERRUPTED.
+Both connections negotiated MTU 517; the peripheral reported no errors or retries.
+Elapsed time includes virtual connection, SQLite and decoding work, and is not a
+physical-radio throughput claim.
+
+The [MTU 23 report](verification/ble-23/verification.json),
+[Android transcript](verification/ble-23/instrumentation-output.txt) and
+[peripheral report](verification/ble-23/peripheral.json) passed the same four
+cases / 33 assertions in 36.538 seconds. Both connections negotiated MTU 23.
+The first delivered the same 73,674 bytes across 6,985 notifications; the second
+revalidated completed sources across 76 notifications without payload reread.
+No peripheral errors or exact command retries were observed. These success
+runs do not exercise deliberate packet loss, authentication or physical RF.
+
+The Android client did encounter transient setup failures during the second
+pass: MTU 517 recorded a command-write failure and a missing-service result;
+MTU 23 recorded one command-write failure. Its bounded recovery created four
+and three client connection attempts respectively, entered `RETRY_WAIT`, and
+then completed both passes. Each peripheral report contains two established
+connections. These client reconnects are distinct from exact-command retries
+within a connection, whose peripheral counters remained zero. Their cause is
+not established by this evidence; the successful recovery does not mean every
+connection attempt succeeded.
+
+
+The virtual peripheral is **Python protocol fixture code**, not the Zephyr
+firmware or a real microphone/NAND recording. It permits only the fixed public
+synthetic fixture address. It does not implement encrypted ownership enrollment.
+The production caller still needs separately trusted enrollment credentials;
+HELLO, addresses and bonds are not ownership proof. The runner installs only on
+an explicitly selected API33+ emulator, owns its Bumble child, stops it at the
+end, and binds the build report, APKs, fixture source and output logs. The
+[pinned setup evidence](verification/ble-toolchain.json),
+[fixture procedure](ble-fixture/README.md) and [recovery contract](RECOVERY.md)
+provide reproduction details.
+
+The [first virtual attempt](verification/recovery-attempt-01/ble-517/verification.json)
+failed **before test execution**: Android could not find a separately declared
+instrumentation component because the Gradle manifest pipeline replaced its
+registration with the configured smoke runner. The associated passing smoke run,
+build report and transcripts are retained in that directory. The fixed test APK
+uses the registered `SmokeInstrumentation` with explicit `suite=virtualBle`,
+delegating to the same Bluetooth checks with the runner's attached context.
+The failed attempt is not counted as a transport test or pass.
 
 ## Retained first failing attempt
 
@@ -136,9 +205,21 @@ These are agent-driven UI observations and byte comparisons, not a claim that a 
 
 ## Limits of this result
 
-No physical pendant, microphone/PDM input, NAND hardware, battery, charging, radio, BLE enrollment/download/reconnection, privacy-switch timing, PCB fabrication, enclosure fit, or wear test is covered. The app currently imports selected local archives; it does not implement the proposed phone BLE transport, automatic transcription, web-portal synchronization, or an Android background capture service.
+No physical pendant, microphone/PDM input, NAND hardware, battery, charging,
+privacy-switch timing, PCB fabrication, enclosure fit or wear test is covered.
+Virtual GATT uses Android 14 and a Python peripheral; it does not execute the
+Zephyr adapter, prove physical-radio reliability or authenticate device ownership.
+The Activity still imports selected local archives and does not expose consumer
+Bluetooth downloads, automatic transcription, portal sync or background capture.
 
-Runtime coverage is API 29 only. Android 33+ callback/receiver branches, modern predictive Back behavior, audio focus with other applications, actual headset/Bluetooth route changes, OEM document providers, and newer platform codecs remain to be exercised on their target systems. No accessibility certification, store-release readiness, broad device compatibility, or physical power-loss durability is claimed by the zero-lint result.
+The earlier API29 storage/playback checkpoint remains available in the
+[a04-android-download-dev release](https://github.com/Avinash1286/pendent/releases/tag/a04-android-download-dev).
+Current runtime coverage is API34. The new GATT client's API29–32 callback branches,
+real app process death, permission/bond transitions, physical out-of-range return,
+OEM codecs, long recordings, storage pressure, audio-focus/route changes and broad
+phone compatibility remain unqualified. Scripted cancellation tests do not
+replace physical disconnect or OS process-kill evidence. Zero lint findings are
+not a certification or store-release approval.
 
 ## Reproduce and extend
 

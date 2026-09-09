@@ -1,11 +1,16 @@
 {
-  "schema": "aura.android.build.v1",
-  "created_utc": "2026-09-09T13:15:48.812132+00:00",
-  "passed": true,
+  "schema": "aura.android.virtual-ble.v1",
+  "created_utc": "2026-09-09T13:11:05.872512+00:00",
+  "passed": false,
+  "failure": "RuntimeError: Missing or repeated Android result detail",
+  "serial": "emulator-5556",
+  "android_sdk": 34,
+  "fingerprint": "Android/sdk_phone64_x86_64/emu64x:14/UE1A.230829.036.A1/11228894:userdebug/test-keys",
+  "configured_att_mtu": 517,
   "source_inputs": {
     "mobile/android/app/build.gradle.kts": "d35619c148b999b3170d487782141bd0dfcaee0e65b85cbd17bde4ffdfb96c9f",
     "mobile/android/app/src/androidTest/.gitattributes": "c20aa740fabfc2c187a5a405c87147216662fedf6aa12ec153dd8e76f7207b09",
-    "mobile/android/app/src/androidTest/AndroidManifest.xml": "3d8401f71cbe03e9e4eba618e0833f7fa25995f9f12b4d3af1d83a12b3d01f94",
+    "mobile/android/app/src/androidTest/AndroidManifest.xml": "da185eec8d3d0a1cc22e15b188359485d499e250f73e39611ab6d96314c67d5b",
     "mobile/android/app/src/androidTest/assets/downloads/finalized.aura": "a68ad1d341fb1a3f98dcc0d8d15a7ed7d8ad7b472152b8ca690f48ada06b3406",
     "mobile/android/app/src/androidTest/assets/downloads/finalized.physical.ack3": "3b426f1d45542ad20ef427a14d6b43151c656acdbfb286ca5a83036d600e14a9",
     "mobile/android/app/src/androidTest/assets/downloads/index.json": "a160804c8090e09ecd2b13436e27d2ed334b65cdf819b12ad715b3d3882d96cd",
@@ -20,10 +25,10 @@
     "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.aura": "5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71",
     "mobile/android/app/src/androidTest/assets/fixtures/recorder-1.physical.ack3": "25a864cc657f581408952aff82b6535e3ea548b9f2de89c9a1b4cf3429fa9242",
     "mobile/android/app/src/androidTest/java/com/aura/notes/FixtureProvider.java": "1cfed7db7c237644013ed02b59831fcf1586ad50d5bc6b24bc8d326b68cd7273",
-    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/BleInstrumentation.kt": "6ed0e83d837a2d2367565a0a26c30e3a60e18ea0f499349f19a63e80b6de9020",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/BleInstrumentation.kt": "c622c2ad8306abfe2e64d2b0a02f6d466e94b5ae720705d7322be0727655861b",
     "mobile/android/app/src/androidTest/kotlin/com/aura/notes/CaptureRecoveryChecks.kt": "d652e5aa475d7099534e702982b41f392bbe9e99f3f12d11a376d52460929ab0",
     "mobile/android/app/src/androidTest/kotlin/com/aura/notes/DownloadStoreChecks.kt": "3e014342b3a1fae212a1b4e929b500e5934e915a498ae74c332099e958235d69",
-    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt": "2cba977f314571b4dc29f920260dadb2ec321acb276b08cc1e96fc9d09ece978",
+    "mobile/android/app/src/androidTest/kotlin/com/aura/notes/SmokeInstrumentation.kt": "911535d9cd59e9f14722b55648b1a4039f1c25356e750319e44c9f3ea6da5fe3",
     "mobile/android/app/src/androidTest/prepare_assets.py": "acabbaa267ccbfbff5303671aeecf497ad9771d88594420a7391a55338c79e68",
     "mobile/android/app/src/androidTest/README.md": "b7679d2eea2783aee64063ffbaf589b150d81c805c98c8710e9042fa671bc3ef",
     "mobile/android/app/src/debug/AndroidManifest.xml": "d9d1fbe1fa4565914e2748799b3a17ac63b384ae8479c7a5450fbe61dd90c1e2",
@@ -41,7 +46,7 @@
     "mobile/android/app/src/main/res/values/styles.xml": "aff5b9239ede3133725eac37178ec88a71c93024992af446b7af9d988ee9485a",
     "mobile/android/app/src/main/res/xml/data_extraction_rules.xml": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8",
     "mobile/android/ble-fixture/peripheral.py": "aedac1a9868bff079bb5515fe89a34411363b12a46dc0953c75f9fb7bf86867e",
-    "mobile/android/ble-fixture/README.md": "fc6cb5f85d30c4d35f9d3794e29e6a420ebf1840dbb950c628922ee30ed685d3",
+    "mobile/android/ble-fixture/README.md": "46e791d7d8fed90136af47b2d11069a563175ef1cea44a8e609ea0234d5877e6",
     "mobile/android/ble-fixture/requirements-hashed.txt": "71f20b8413e05f6f720748e5242fe765af2cb5da7b7ae082de2c8bdc9f2c4298",
     "mobile/android/build.gradle.kts": "ca6e35420f610ab7aab47e83f450da34538b864e1d950c675501bcc33be2d3e8",
     "mobile/android/build.ps1": "f8b0ea1142d0a940927b68a6ad1231899b630cbecca36e82e7c91ddd93c87797",
@@ -57,36 +62,54 @@
     "mobile/android/core/src/test/kotlin/com/aura/capture/TransferWireChecks.kt": "2c283feb79aa68038b5614a33b7740d965c9a62060bd583734442a254325a32a",
     "mobile/android/gradle.properties": "db339f8e54bbcf55bcb09c039bac7f1350c8a4bba4e13e32d25dc77d11e44b88",
     "mobile/android/scripts/verify_android.py": "317a01fb8bff8b0094f48b0f1e1dbfd6dfa1b45a8cfd5f61b0c7117bdf8c7596",
-    "mobile/android/scripts/verify_ble.py": "41a6ad6f7f796af1a17746ecf054bee5158e187c4bf9cef5b5c4ead14e6c6f18",
+    "mobile/android/scripts/verify_ble.py": "ca52721b11fac94c2afeafab6cf48aa82c379650552d5db8ff4df1e4f70beb01",
     "mobile/android/settings.gradle.kts": "441f0630e611a470528d782b6669801739831cb44f6b030ca62b014873dfb2c2",
     "mobile/android/toolchain-lock.json": "61a0cd458e74307000cd041f8b99fde1fd7ced3b79fb94a450fbe90119144ac6"
   },
-  "inputs_unchanged_during_build": true,
-  "artifacts": {
-    "mobile/android/app/build/outputs/apk/debug/app-debug.apk": {
+  "inputs_unchanged_during_test": true,
+  "build_report_sha256": "3b3147f6cabe1dac2fe78eb7b8ce7b0c7e644e1ada86d090eebcb24774bd50bf",
+  "build_report_unchanged_during_test": true,
+  "artifacts_unchanged_during_test": true,
+  "cleanup_errors": [],
+  "installation": [
+    {
+      "apk": "mobile/android/app/build/outputs/apk/debug/app-debug.apk",
       "sha256": "40b5d93267131c7da0bc193d302c45efea76024205535e89829d8e7d897b2ce5",
-      "bytes": 2967098
+      "result": "Performing Streamed Install\nSuccess"
     },
-    "mobile/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
-      "sha256": "7f0c3a508789dc815fd0952709076cd01a95005b5ec42e556317a6d055931241",
-      "bytes": 616858
+    {
+      "apk": "mobile/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "sha256": "1058252fef7290970262f0dc329143d383018f2f1a73b10e96a77e96f8ca797f",
+      "result": "Performing Streamed Install\nSuccess"
     }
+  ],
+  "instrumentation_exit_code": 1,
+  "instrumentation_terminal_codes": [],
+  "result": null,
+  "peripheral_child_pid": 14620,
+  "peripheral_exit_code": 0,
+  "bumble_python_sha256": "183ada44d1027a49f8c7ab920a0dc9f0818b4b4854d95b83b9ed1561964f25e4",
+  "server_command": [
+    "F:\\circuit\\.tools\\android\\bumble-venv\\Scripts\\python.exe",
+    "F:\\circuit\\mobile\\android\\ble-fixture\\peripheral.py",
+    "--netsim-port",
+    "62857",
+    "--mtu",
+    "517",
+    "--duration-seconds",
+    "450",
+    "--report",
+    "F:\\circuit\\.tools\\android\\ble-run-517\\peripheral.json",
+    "--stop-file",
+    "F:\\circuit\\.tools\\android\\ble-run-517\\stop-request"
+  ],
+  "output_sha256": {
+    "instrumentation-output.txt": "7c999ff506cd93f844dc66f7cb38ec5db5aa25f78a3254330e6c304080fed9c8",
+    "peripheral-output.txt": "6b3baf582519890784d4ac7998683789891df5f9c49d757be4cb9c332ec8aec2",
+    "peripheral.json": "29af7fea8e4e4fdb7904aa4b6c517b9d63221c75aa94e9ba856bb08f13b1a2fd",
+    "stop-request": "590807a200ee23689a1f18e4950079449ce4ff2a14adb2790524d2c89e49efc2"
   },
-  "lint": {
-    "counts": {
-      "Fatal": 0,
-      "Error": 0,
-      "Warning": 0,
-      "Information": 0
-    },
-    "issues": []
-  },
-  "build_output_sha256": "1890a439c1c28fffc10197adb71ee933954116531bb8a8de20172492ef3697d0",
-  "java": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
-  "javac": "javac 17.0.20.1",
-  "adb": "Android Debug Bridge version 1.0.41\nVersion 37.0.1-15733141\nInstalled as F:\\circuit\\.tools\\android\\sdk\\platform-tools\\adb.exe\nRunning on Windows 10.0.26200",
-  "verification_script_sha256": "317a01fb8bff8b0094f48b0f1e1dbfd6dfa1b45a8cfd5f61b0c7117bdf8c7596",
-  "runtime_tested_by_this_build": false,
-  "physical_hardware_verified": false,
-  "note": "Development debug signature; not a production-signed or Play Store release."
+  "physical_radio_tested": false,
+  "zephyr_firmware_executed": false,
+  "ownership_enrollment_tested": false
 }

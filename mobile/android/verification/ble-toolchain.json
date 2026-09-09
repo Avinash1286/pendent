@@ -1,0 +1,291 @@
+{
+  "schema": "aura.virtual-ble-setup.v1",
+  "observedAt": "2026-09-09T12:53:56.614420+00:00",
+  "state": "installed-and-import-checked-not-booted",
+  "runtimeTested": false,
+  "physicalRadioTested": false,
+  "ownershipAuthenticationImplemented": false,
+  "python": {
+    "version": "3.12.13",
+    "executable": "F:\\circuit\\.tools\\android\\bumble-venv\\Scripts\\python.exe",
+    "executableIdentity": {
+      "path": "F:\\circuit\\.tools\\android\\bumble-venv\\Scripts\\python.exe",
+      "bytes": 262144,
+      "sha256": "183ada44d1027a49f8c7ab920a0dc9f0818b4b4854d95b83b9ed1561964f25e4"
+    }
+  },
+  "dependencies": [
+    {
+      "name": "bumble",
+      "version": "0.0.234",
+      "url": "https://files.pythonhosted.org/packages/6f/28/d27b8c18dc1e76b3d35a4c23ad21d883b9253fdcc6ce9296d6c617677235/bumble-0.0.234-py3-none-any.whl",
+      "sha256": "08c1d8dc65af70baf377d1a593438e736ab8f8e9ff7b7cfdf54dd9c629a5dd82"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "url": "https://files.pythonhosted.org/packages/d9/79/615cc094e2fb508cade7de88d3b4f6c4ec2bab695c97bce9153dc65aadf5/cffi-2.1.1-cp312-cp312-win_amd64.whl",
+      "sha256": "f53e442b08449d42821fa4a4fba000095af9f62742a500f978a9f557ec44339a"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.1",
+      "url": "https://files.pythonhosted.org/packages/42/8b/cb12b1b60c91b074ca6bf0fdd59aa8f10d8bc5f73af8faece86ef0421b37/cryptography-50.0.1-cp311-abi3-win_amd64.whl",
+      "sha256": "aed8db4f6d71c51efb89530e12d9464e7bf2923d46c3205dc794a2a93f8c0648"
+    },
+    {
+      "name": "grpcio",
+      "version": "1.83.1",
+      "url": "https://files.pythonhosted.org/packages/e9/37/8c2f7cc16089e36a3fbacaacc7a3d043912aa0d2dfae5556f6450414ea6e/grpcio-1.83.1-cp312-cp312-win_amd64.whl",
+      "sha256": "583bf2e8255040a4a312f9572dfe62a05271437b149550e1a536d5c47d2d1e8a"
+    },
+    {
+      "name": "importlib_resources",
+      "version": "7.1.0",
+      "url": "https://files.pythonhosted.org/packages/8a/db/55a262f3606bebcae07cc14095338471ad7c0bbcaa37707e6f0ee49725b7/importlib_resources-7.1.0-py3-none-any.whl",
+      "sha256": "1bd7b48b4088eddb2cd16382150bb515af0bd2c70128194392725f82ad2c96a1"
+    },
+    {
+      "name": "libusb-package",
+      "version": "1.0.26.4",
+      "url": "https://files.pythonhosted.org/packages/ea/fc/8c42060a9acf016a6dcb0ca352c9c0d6a993e64eecb1c9869fb59bbb4702/libusb_package-1.0.26.4-py3-none-win_amd64.whl",
+      "sha256": "cd8c1f5df3906444ba6eff82ef44a75515b0444b76bba8abf21cc8569637af63"
+    },
+    {
+      "name": "libusb1",
+      "version": "3.4.0",
+      "url": "https://files.pythonhosted.org/packages/5f/08/02aecf6dad627534a5835244ece14d7f187ef430354d9b8551199934d059/libusb1-3.4.0-py3-none-win_amd64.whl",
+      "sha256": "b7dcc1f324a895af6aac708bc5513a17373f97349cc2ab8a277519c788bd18ca"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.11.8",
+      "url": "https://files.pythonhosted.org/packages/f4/e1/5b7b8bbb55084d1425bcb9bc823ff519e1b2be05f6ebb0089e2eacc38413/platformdirs-4.11.8-py3-none-any.whl",
+      "sha256": "52f2f181bbfde907966932cc8312d967d02976422d66d537ea16092b8e291081"
+    },
+    {
+      "name": "prompt_toolkit",
+      "version": "3.0.53",
+      "url": "https://files.pythonhosted.org/packages/54/6f/84908cad2d6aa5144abcf7b42709fe4fdb459bc640ec7ac5786e7693dabc/prompt_toolkit-3.0.53-py3-none-any.whl",
+      "sha256": "01c0891d7f9237d5e339f7d3e42cdae80b7534abb1c7c0e3352efba6231492f2"
+    },
+    {
+      "name": "protobuf",
+      "version": "7.36.1",
+      "url": "https://files.pythonhosted.org/packages/db/37/155788a0d8daded960375af604202805308169f9b859419ea0aa370946e2/protobuf-7.36.1-cp310-abi3-win_amd64.whl",
+      "sha256": "51139351435d9b43d88a55eaa49fb6f737fbb478fb0cbf2cf694d1a04a9d3363"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.0",
+      "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
+    },
+    {
+      "name": "pyee",
+      "version": "14.0.0",
+      "url": "https://files.pythonhosted.org/packages/81/12/5347938b1f9a6453f0dbdfcc3e2388a1320ef9b9ec17fbefbc4ab647ea98/pyee-14.0.0-py3-none-any.whl",
+      "sha256": "3ac2d3229a9677f7de2c33d7f52fe25b638a46b19c413fea2edc8c6d0a644e4d"
+    },
+    {
+      "name": "pyserial",
+      "version": "3.5",
+      "url": "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl",
+      "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"
+    },
+    {
+      "name": "pyserial-asyncio",
+      "version": "0.6",
+      "url": "https://files.pythonhosted.org/packages/27/24/c820cf15f87f7b164e83710c1852d4f900d9793961579e5ef64189bc0c10/pyserial_asyncio-0.6-py3-none-any.whl",
+      "sha256": "de9337922619421b62b9b1a84048634b3ac520e1d690a674ed246a2af7ce1fc5"
+    },
+    {
+      "name": "pyusb",
+      "version": "1.3.1",
+      "url": "https://files.pythonhosted.org/packages/28/b8/27e6312e86408a44fe16bd28ee12dd98608b39f7e7e57884a24e8f29b573/pyusb-1.3.1-py3-none-any.whl",
+      "sha256": "bf9b754557af4717fe80c2b07cc2b923a9151f5c08d17bdb5345dac09d6a0430"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.8.3",
+      "url": "https://files.pythonhosted.org/packages/c4/0e/57f6bb3024a597b2e8ec4aee710ffe62ddc95af2e2bb1ee7a7abdc22c68c/wcwidth-0.8.3-py3-none-any.whl",
+      "sha256": "d5b73dba6158a595ec9370350e7f2637bcac8d6c5e4fde34f30fcffb6103a5e4"
+    },
+    {
+      "name": "websockets",
+      "version": "17.1",
+      "url": "https://files.pythonhosted.org/packages/50/23/493ecfdaf32898e5ea24dc900e33e5e317f9662d5d9ab2d44b2e111b4e1c/websockets-17.1-cp312-cp312-win_amd64.whl",
+      "sha256": "617243e19a0992095956f406ee9cd3bc4ba92862d83cb1d83bb59ce574412bec"
+    }
+  ],
+  "checks": [
+    "bumble.transport.android_netsim import passed",
+    "pip check: No broken requirements found"
+  ],
+  "emulator": {
+    "version": "37.1.11",
+    "buildId": "15917651",
+    "netsimVersion": "0.3.114"
+  },
+  "systemImage": {
+    "package": "system-images;android-34;default;x86_64",
+    "api": 34,
+    "url": "https://dl.google.com/android/repository/sys-img/android/x86_64-34_r04.zip",
+    "repositoryUrl": "https://dl.google.com/android/repository/sys-img/android/sys-img2-3.xml",
+    "repositoryRevision": 4,
+    "actualSourcePropertiesRevision": 2,
+    "sdkManagerRegisteredRevision": 2,
+    "revisionDiscrepancy": "Official r04 archive metadata advertises4, but its source.properties is2; preserved without relabeling vendor bytes.",
+    "archiveCheck": {
+      "bytes": 720747116,
+      "sha1": "5f6a249f9bc3b1b4c459b13ce2eb646c9680bed1",
+      "sha256": "b57f6386af25b0fe5488e77196b43c03778c6760e6f4311611d090391b9cb2b3"
+    },
+    "bluetoothFeature": "BluetoothEmulation = on in installed advancedFeatures.ini"
+  },
+  "avd": {
+    "name": "AuraApi34Ble",
+    "directory": "F:\\circuit\\.tools\\android\\ble-avd\\AuraApi34Ble.avd",
+    "expectedSerial": "emulator-5556",
+    "ramMiB": 1536,
+    "cores": 1,
+    "display": "480x800@240dpi",
+    "booted": false,
+    "creationObservation": "avdmanager exited0 and emulator -list-avds finds AuraApi34Ble; avdmanager logged missing optional devices.xml for both installed default images.",
+    "api29Preserved": "No API29 config/userdata edits or VM start in this setup."
+  },
+  "proposedStart": {
+    "requiresRootMemoryGo": true,
+    "executable": "F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe",
+    "arguments": [
+      "-avd",
+      "AuraApi34Ble",
+      "-accel",
+      "on",
+      "-gpu",
+      "swiftshader",
+      "-feature",
+      "-Vulkan",
+      "-no-window",
+      "-no-audio",
+      "-no-snapshot",
+      "-no-boot-anim",
+      "-memory",
+      "1536",
+      "-cores",
+      "1",
+      "-port",
+      "5556",
+      "-camera-front",
+      "none",
+      "-camera-back",
+      "none",
+      "-packet-streamer-endpoint",
+      "default",
+      "-netsim-args",
+      "--pcap --logtostderr --no-web-ui --no-test-beacons --debug-no-network"
+    ],
+    "hiddenWindow": true,
+    "environment": {
+      "ANDROID_HOME": "F:\\circuit\\.tools\\android\\sdk",
+      "ANDROID_AVD_HOME": "F:\\circuit\\.tools\\android\\ble-avd",
+      "ANDROID_USER_HOME": "F:\\circuit\\.tools\\android\\ble-setup\\user",
+      "ANDROID_TMP": "F:\\circuit\\.tools\\android\\ble-setup\\runtime"
+    }
+  },
+  "virtualPeripheralInterface": {
+    "transport": "android-netsim:localhost:<fresh-grpc.port>,name=AuraVirtual",
+    "mode": "host (Bumble host stack, Netsim virtual controller)",
+    "discovery": "Bumble0.0.234 on Windows reads grpc.port from LOCALAPPDATA/Temp/netsim.ini; use fresh owned daemon/port evidence rather than trusting a stale file.",
+    "portWarning": "Netsim grpc.port is not its raw --hci-port.",
+    "prerequisites": [
+      "boot complete and Bluetooth adapter enabled in this virtual Android guest",
+      "test app has runtime Bluetooth permissions",
+      "virtual peripheral has a name and connectable advertising, exact A04 service/write/notify/CCCD",
+      "direct connection to test peripheral address; no physical scan or USB/HCI bridge",
+      "verify real discovery, MTU, CCCD, write and notification callbacks before claiming runtime coverage"
+    ],
+    "limitations": "Virtual Android GATT integration only; no physical RF, DK firmware, NAND or owner enrollment proof."
+  },
+  "sources": [
+    "https://developer.android.com/studio/run/emulator-networking",
+    "https://developer.android.com/studio/run/emulator-networking-advanced",
+    "https://google.github.io/bumble/platforms/android.html",
+    "https://google.github.io/bumble/transports/android_emulator.html",
+    "https://pypi.org/pypi/bumble/0.0.234/json"
+  ],
+  "identities": [
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe",
+      "bytes": 22423192,
+      "sha256": "dede05844d17902a7c74f2cee2bbe97ec9afaaf22ebc35a7cdc6d7c1eaa0b9dd"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\emulator\\netsimd.exe",
+      "bytes": 17805464,
+      "sha256": "9ff28601770a65a11e501e7982f32f87f3ba72a1028c6cc17e8596f562e66a40"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\emulator\\source.properties",
+      "bytes": 103,
+      "sha256": "ee589ca350515c29dc3bad30dd5ebe8efb11d1a50c17c8815125d3c4bd12a3a8"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\system-images\\android-34\\default\\x86_64\\source.properties",
+      "bytes": 319,
+      "sha256": "6190262d3fc559151f9bb28977c4e69166e60ad6f10935b03d7296fc36af5d65"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\system-images\\android-34\\default\\x86_64\\package.xml",
+      "bytes": 1853,
+      "sha256": "333e080f065b8f8c2a1d07ece9abca8df72fd11e86686501e5a7967916d0ec6f"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\system-images\\android-34\\default\\x86_64\\advancedFeatures.ini",
+      "bytes": 689,
+      "sha256": "8a5d3f844f527a28d15d1af56ad3e2abdec57c771e81ff7a0322a03d5cf69883"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\sdk\\system-images\\android-34\\default\\x86_64\\build.prop",
+      "bytes": 4687,
+      "sha256": "56ca44caa8c9bdfd6f624a4ddde2d53b71c9ac8794a1f4e340afbe27abc451fb"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-avd\\AuraApi34Ble.avd\\config.ini",
+      "bytes": 3770,
+      "sha256": "52b968d8fcd042636918e47351c57e233bba4f3deead5879745286626eb8bf07"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-avd\\AuraApi34Ble.ini",
+      "bytes": 97,
+      "sha256": "62bc19ecf28ebbc0cf518a2d22a38594a178b6d222b7ecb7cabce86a0e1870a5"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\bumble-venv\\Lib\\site-packages\\bumble\\transport\\android_netsim.py",
+      "bytes": 18072,
+      "sha256": "4053563e55ecebb504fe8e8a73cc1367660b75de84b6273432e05a6911a19aa0"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-image\\repository.xml",
+      "bytes": 186852,
+      "sha256": "ab70efed53b5c289035fb6b3b552b22ad6e04eeab2d58e0e6edcc9ce3640bfad"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\bumble-install-report.json",
+      "bytes": 147848,
+      "sha256": "e4364434a9c58796b893292ccfc6d4fafeab7a409e5d0f74301556ccbe6073f1"
+    }
+  ]
+}

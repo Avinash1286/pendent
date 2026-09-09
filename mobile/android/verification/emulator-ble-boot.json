@@ -1,0 +1,181 @@
+{
+  "schema": "aura.android.virtual-ble-boot.v1",
+  "observedAt": "2026-09-09T13:13:10.4293160Z",
+  "startedAt": "2026-09-09T13:04:46.2041052Z",
+  "state": "stopped-for-runner-rebuild-userdata-preserved",
+  "serial": "emulator-5556",
+  "avd": "AuraApi34Ble",
+  "api": 34,
+  "sysBootCompleted": null,
+  "adbDevices": "List of devices attached",
+  "avdConsoleResponse": "AuraApi34Ble\r\n\r\nOK",
+  "buildFingerprint": "Android/sdk_phone64_x86_64/emu64x:14/UE1A.230829.036.A1/11228894:userdebug/test-keys",
+  "frameworkPackage": "package:/system/framework/framework-res.apk",
+  "launcherPid": 20892,
+  "vmPid": 18200,
+  "netsimPid": 8264,
+  "launcherAlive": false,
+  "vmAlive": false,
+  "netsimAlive": false,
+  "ownedProcesses": [
+    {
+      "ProcessId": 20892,
+      "ParentProcessId": 22128,
+      "Name": "emulator.exe",
+      "CommandLine": "\"F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe\" \"-avd\" \"AuraApi34Ble\" \"-accel\" \"on\" \"-gpu\" \"swiftshader\" \"-feature\" \"-Vulkan\" \"-no-window\" \"-no-audio\" \"-no-snapshot\" \"-no-boot-anim\" \"-memory\" \"1536\" \"-cores\" \"1\" \"-port\" \"5556\" \"-camera-front\" \"none\" \"-camera-back\" \"none\" \"-packet-streamer-endpoint\" \"default\" \"-netsim-args\" \"--pcap --logtostderr --no-web-ui --no-test-beacons --debug-no-network\""
+    },
+    {
+      "ProcessId": 18200,
+      "ParentProcessId": 20892,
+      "Name": "qemu-system-x86_64-headless.exe",
+      "CommandLine": "F:\\circuit\\.tools\\android\\sdk\\emulator\\qemu\\windows-x86_64\\qemu-system-x86_64-headless.exe -avd AuraApi34Ble -accel on -gpu swiftshader -feature -Vulkan -no-window -no-audio -no-snapshot -no-boot-anim -memory 1536 -cores 1 -port 5556 -camera-front none -camera-back none -packet-streamer-endpoint default -netsim-args \"--pcap --logtostderr --no-web-ui --no-test-beacons --debug-no-network\""
+    },
+    {
+      "ProcessId": 8264,
+      "ParentProcessId": 18200,
+      "Name": "netsimd.exe",
+      "CommandLine": "F:\\circuit\\.tools\\android\\sdk\\emulator\\netsimd.exe --host-dns=100.127.255.165 --pcap --logtostderr --no-web-ui --no-test-beacons --debug-no-network"
+    }
+  ],
+  "executable": "F:\\circuit\\.tools\\android\\sdk\\emulator\\emulator.exe",
+  "arguments": [
+    "-avd",
+    "AuraApi34Ble",
+    "-accel",
+    "on",
+    "-gpu",
+    "swiftshader",
+    "-feature",
+    "-Vulkan",
+    "-no-window",
+    "-no-audio",
+    "-no-snapshot",
+    "-no-boot-anim",
+    "-memory",
+    "1536",
+    "-cores",
+    "1",
+    "-port",
+    "5556",
+    "-camera-front",
+    "none",
+    "-camera-back",
+    "none",
+    "-packet-streamer-endpoint",
+    "default",
+    "-netsim-args",
+    "--pcap --logtostderr --no-web-ui --no-test-beacons --debug-no-network"
+  ],
+  "environment": {
+    "ANDROID_HOME": "F:\\circuit\\.tools\\android\\sdk",
+    "ANDROID_AVD_HOME": "F:\\circuit\\.tools\\android\\ble-avd",
+    "ANDROID_USER_HOME": "F:\\circuit\\.tools\\android\\ble-setup\\user",
+    "ANDROID_TMP": "F:\\circuit\\.tools\\android\\ble-setup\\runtime"
+  },
+  "bluetooth": {
+    "enableCommand": "adb -s emulator-5556 shell cmd bluetooth_manager enable",
+    "discovering": false,
+    "state": "ON",
+    "dumpPath": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\bluetooth-ready.txt",
+    "enabled": true,
+    "gattServicePresent": true,
+    "enableCommandObserved": "BluetoothShellCommand: Exec enable / enable: Success"
+  },
+  "netsim": {
+    "transport": "android-netsim:localhost:62857,name=AuraVirtual",
+    "iniModifiedAt": "2026-09-09T13:04:54.1281609Z",
+    "listeners": [
+      {
+        "LocalAddress": "::1",
+        "LocalPort": 62857,
+        "OwningProcess": 8264
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 62857,
+        "OwningProcess": 8264
+      }
+    ],
+    "iniPath": "C:\\Users\\avina\\AppData\\Local\\Temp\\netsim.ini",
+    "grpcPort": 62857,
+    "active": false
+  },
+  "ramMiB": 1536,
+  "cores": 1,
+  "freePhysicalMemoryKiB": 3561792,
+  "hostAudioDisabled": true,
+  "snapshotsDisabled": true,
+  "vulkanEnabled": false,
+  "graphics": "swiftshader",
+  "api29Preserved": true,
+  "apkInstalledByBootTask": false,
+  "gattRuntimeTestsRunByBootTask": false,
+  "physicalRadioUsed": false,
+  "ownershipAuthenticated": false,
+  "runDirectory": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z",
+  "toolchainEvidenceSha256": "73ced257e9a1d6650d19a9c51e024ce2bc5b42948481fa6c94700ebb8172f3ec",
+  "configBeforeBootSha256": "52b968d8fcd042636918e47351c57e233bba4f3deead5879745286626eb8bf07",
+  "readyArtifacts": [
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\bluetooth-ready.txt",
+      "bytes": 24063,
+      "sha256": "b42a8d8146316cbe0284991929e7aadb05d06062c18d8f29757343cb976a45ba"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\launch.json",
+      "bytes": 1310,
+      "sha256": "b7588c8b74fd75ff7c5508a5633abf06c59f744a04bd5c498d65d432b669ad0b"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\netsim-ready.ini",
+      "bytes": 16,
+      "sha256": "0573847857a135c8e81d428c294a67a3f5ee2e51e82c2467cbc16e2540c218bf"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stderr-ready.log",
+      "bytes": 972,
+      "sha256": "cffbcb60501a0270b8503ff61f0e511a8a25eec54226c684aa69f91a2d3f3c36"
+    },
+    {
+      "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stdout-ready.log",
+      "bytes": 29138,
+      "sha256": "ad0e8a1528d1441588560626b46780f8fcbbff785161a84e868ebeb8a53da539"
+    }
+  ],
+  "limitations": "Observed Android14 virtual adapter/Netsim readiness only; no app GATT exchange, physical RF/MCU or ownership enrollment proof.",
+  "bootObservedAt": "2026-09-09T13:07:46.3961889Z",
+  "bootState": "booted-bluetooth-ready-at-observation",
+  "bootSysBootCompleted": "1",
+  "bootAdbDevices": "List of devices attached\r\nemulator-5556          device product:sdk_phone64_x86_64 model:Android_SDK_built_for_x86_64 device:emu64x transport_id:8",
+  "terminalObservation": {
+    "observedAt": "2026-09-09T13:13:10.4293160Z",
+    "action": "adb -s emulator-5556 emu kill",
+    "requestReceipt": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stop-request.json",
+    "launcherPid20892Absent": true,
+    "vmPid18200Absent": true,
+    "netsimPid8264Absent": true,
+    "adbSerialAbsent": true,
+    "adbDevices": "List of devices attached",
+    "freePhysicalMemoryKiB": 3561792,
+    "userdataPreserved": true,
+    "wipeRequested": false,
+    "gradleOrJavaProcessesChanged": false,
+    "artifacts": [
+      {
+        "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stderr-stopped.log",
+        "bytes": 2101,
+        "sha256": "0eb6bc1cc725cb6744ed52c6d3ca2d0b02375aa699439b9047ad6fe35e5c8f8a"
+      },
+      {
+        "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stdout-stopped.log",
+        "bytes": 45597,
+        "sha256": "e81b7a0491ce5751c83cb7f35baa48fa21d40fc752d9e2d916c8c450bd9b7296"
+      },
+      {
+        "path": "F:\\circuit\\.tools\\android\\ble-setup\\boot-20260909T130446Z\\stop-request.json",
+        "bytes": 1780,
+        "sha256": "2b1840d5c902ea0522ef41f44540065a7ddc03c11e55d24f31bed742d081444e"
+      }
+    ]
+  }
+}

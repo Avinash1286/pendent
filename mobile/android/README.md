@@ -2,13 +2,13 @@
 
 A native, local library for experimental A04 recordings: import an original archive, listen to its verified audio, add your own context, and choose what to copy or share with an AI chat. Android 10 / API 29 or newer is required.
 
-[Download the development APK](https://github.com/Avinash1286/pendent/releases/download/a04-android-download-dev/aura-a04-android-debug.apk) · [Release files and checksums](https://github.com/Avinash1286/pendent/releases/tag/a04-android-download-dev) · [Verification](VERIFICATION.md)
+[Download the development APK](https://github.com/Avinash1286/pendent/releases/download/a04-android-recovery-dev/aura-a04-android-debug.apk) · [Release files and checksums](https://github.com/Avinash1286/pendent/releases/tag/a04-android-recovery-dev) · [Verification](VERIFICATION.md)
 
 <img src="verification/android-library.png" width="240" alt="Actual Android local library with a clearly labeled synthetic demo recording"> <img src="verification/android-playback.png" width="240" alt="Actual playback of the synthetic demo recording on Android">
 
 This is the phone-side file-import foundation for A04. It does **not** yet connect to a pendant over BLE, enroll a device, download recordings over the air, transcribe speech, sync with the web portal, or record in the background. The proposed next transport is documented in [mobile-transport.md](../../docs/a04/mobile-transport.md). This app is not evidence that a fabricated wearable is ready to use.
 
-The current APK also contains the [durable download store](DOWNLOADS.md): validated transfer records and resume metadata commit together in SQLite, and a completed source can enter this same playable library. Its storage and decoding paths have passed Android runtime checks. GATT, enrollment and the foreground recovery coordinator still need integration before downloads become a user-facing capability. The screenshots above show the earlier local-import UI, which this change does not replace.
+The current APK also contains the [durable download store](DOWNLOADS.md): validated transfer records and resume metadata commit together in SQLite, and a completed source can enter this same playable library. Its storage and decoding paths have passed Android runtime checks. The new [foreground recovery owner and Android GATT client](RECOVERY.md) connect that storage foundation to a serialized transport lifecycle. Consumer downloads still require ownership enrollment, the matching device radio service and Activity integration. See the [verification record](VERIFICATION.md) for the executed scripted-link and virtual-radio scope. The screenshots above show the earlier local-import UI, which this change does not replace.
 
 ## Use the local library
 

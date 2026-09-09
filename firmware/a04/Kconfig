@@ -1,0 +1,3 @@
+mainmenu "AURA A04 DK integration probe"
+source "Kconfig.zephyr"
+rsource "drivers/Kconfig"

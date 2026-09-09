@@ -1,0 +1,70 @@
+{
+  "scope": "Production callback/lifecycle/read/health code; host kernel/HAL fault-injection boundaries",
+  "physical_capture_tested": false,
+  "clock_selection_configuration_and_devicetree": "Not host-tested; use actual Zephyr ARM compile",
+  "passed_groups": 20,
+  "compiler": "0.14.1",
+  "compile_flags": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "sources": {
+    "firmware/a04/drivers/aura_dmic_nrfx_pdm.c": {
+      "sha256": "585bd34f1063dadd85adb781d17891f3f4d2df8ac37c427372e099d70ac65361",
+      "lf_normalized_sha256": "585bd34f1063dadd85adb781d17891f3f4d2df8ac37c427372e099d70ac65361"
+    },
+    "firmware/a04/include/aura_dmic_health.h": {
+      "sha256": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
+      "lf_normalized_sha256": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488"
+    },
+    "firmware/a04/drivers/tests/driver_shim.h": {
+      "sha256": "530578d76cd4da60e67ba1afe2c9048cb478f3d84f0c74b20ab72d1ce0bb111d",
+      "lf_normalized_sha256": "530578d76cd4da60e67ba1afe2c9048cb478f3d84f0c74b20ab72d1ce0bb111d"
+    },
+    "firmware/a04/drivers/tests/host_driver.c": {
+      "sha256": "15818d06a8a341f6d0ad8a8d58eea512085cdabc149f90361a1e16359623b9e9",
+      "lf_normalized_sha256": "15818d06a8a341f6d0ad8a8d58eea512085cdabc149f90361a1e16359623b9e9"
+    },
+    "firmware/a04/drivers/tests/run.py": {
+      "sha256": "3e73ecedbc85efc2fef7aed513b4fa563f95cad56160baee879fd5c04e5d0700",
+      "lf_normalized_sha256": "3e73ecedbc85efc2fef7aed513b4fa563f95cad56160baee879fd5c04e5d0700"
+    },
+    "firmware/a04/drivers/CMakeLists.txt": {
+      "sha256": "6674f60b50e796efc73d54da1d74d23cd0ef8d2b29542be47e44de75a5724a74",
+      "lf_normalized_sha256": "6674f60b50e796efc73d54da1d74d23cd0ef8d2b29542be47e44de75a5724a74"
+    },
+    "firmware/a04/drivers/Kconfig": {
+      "sha256": "02bbc5ffbc995592ad55b70e72c6d3e32990c0ca9e5f255b6f66707328756bad",
+      "lf_normalized_sha256": "02bbc5ffbc995592ad55b70e72c6d3e32990c0ca9e5f255b6f66707328756bad"
+    },
+    "firmware/a04/drivers/dts/bindings/audio/aura,nrf-pdm.yaml": {
+      "sha256": "643b5267ad88268a543b853f9a1ac31f51c7bf5b0f1ec11eee4f9dec80570f7c",
+      "lf_normalized_sha256": "643b5267ad88268a543b853f9a1ac31f51c7bf5b0f1ec11eee4f9dec80570f7c"
+    },
+    "firmware/a04/drivers/dts/bindings/vendor-prefixes.txt": {
+      "sha256": "51671cced8046e1d9ea37f1b3730653f077ee47af45b51c07fa66764204e135c",
+      "lf_normalized_sha256": "51671cced8046e1d9ea37f1b3730653f077ee47af45b51c07fa66764204e135c"
+    },
+    "firmware/a04/drivers/probe/nrf52840dk_nrf52840.overlay": {
+      "sha256": "b1a749dce8e8f0d116bffee967d7208b0e98a9a7031b2e9855de5a7608437b5d",
+      "lf_normalized_sha256": "b1a749dce8e8f0d116bffee967d7208b0e98a9a7031b2e9855de5a7608437b5d"
+    }
+  },
+  "pinned_upstream_sources": {
+    ".tools/zephyr/zephyr/drivers/audio/dmic_nrfx_pdm.c": {
+      "sha256": "8c411687eae8f83377452d797da036bbc5d049297dc34e53c6fcb5c71fe53518",
+      "lf_normalized_sha256": "bde45b056da22e0ae305d2229dbe300fd6126fe04fcc5c62f24db05d3ce4c517"
+    },
+    ".tools/zephyr/modules/hal/nordic/nrfx/drivers/src/nrfx_pdm.c": {
+      "sha256": "0e720b164ae210bc3fe375e76f2f7f4867dbfa86de24e6f194556cef9a6bea5c",
+      "lf_normalized_sha256": "0feda5609c0187c8f1ec6db4bd10dfb433d28b46a86e6e20ba061cae681143cc"
+    }
+  },
+  "output": {
+    "path": "firmware/a04/drivers/tests/host-tests.txt",
+    "sha256": "6221126b7e75968269d0d146ba30927a9c8b30649a993b6b025ff2ba45219266",
+    "lf_normalized_sha256": "6221126b7e75968269d0d146ba30927a9c8b30649a993b6b025ff2ba45219266"
+  }
+}

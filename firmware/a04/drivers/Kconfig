@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+config AURA_DMIC_NRFX_PDM
+	bool "AURA monitored nRF52840 PDM driver"
+	depends on AUDIO_DMIC && SOC_NRF52840 && !SMP
+	depends on DT_HAS_AURA_NRF_PDM_ENABLED
+	depends on !AUDIO_DMIC_NRFX_PDM
+	select NRFX_PDM0
+	select PINCTRL
+	help
+	  Pinned Zephyr 4.2 PDM driver with sticky transfer faults, source release
+	  sequencing and explicit asynchronous shutdown ownership. Use compatible
+	  aura,nrf-pdm; the stock DMIC driver must not own this peripheral.

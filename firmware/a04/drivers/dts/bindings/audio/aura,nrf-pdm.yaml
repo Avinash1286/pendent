@@ -1,0 +1,23 @@
+# Copyright (c) 2019 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+description: AURA monitored nRF52840 PDM interface
+compatible: "aura,nrf-pdm"
+include: ["base.yaml", "pinctrl-device.yaml", "memory-region.yaml", "nordic-clockpin.yaml"]
+properties:
+  reg:
+    required: true
+  interrupts:
+    required: true
+  pinctrl-0:
+    required: true
+  pinctrl-names:
+    required: true
+  clock-source:
+    type: string
+    default: "PCLK32M_HFXO"
+    enum: ["PCLK32M", "PCLK32M_HFXO"]
+    description: PCLK32M from the peripheral clock or requested HFXO.
+  queue-size:
+    type: int
+    default: 4
+    description: Number of completed blocks retained pending application read.

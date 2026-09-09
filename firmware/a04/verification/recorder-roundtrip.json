@@ -1,0 +1,112 @@
+{
+  "status": "portable_recorder_real_Opus_NAND_model_Python_FFmpeg_passed_physical_ingress_unmeasured",
+  "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
+  "cases": [
+    {
+      "case": "clean_stop",
+      "file": "fixtures/recorder-0.aura",
+      "sha256": "9d93e46f45bd14cd51c63b243d0b715020a417c3d53a7a5fe20a20384c58429e",
+      "status": "finalized",
+      "audio_packets": 378,
+      "decoded_samples": 120847,
+      "original_source_samples": 120847,
+      "waveform_snr_db": 11.919,
+      "capture_time": "unknown",
+      "physical_receipt": "terminal",
+      "physical_digest": "d064d5aec0d76370669813dc2409682908a50b9571f0a7402e40c13921752946",
+      "export_digest": "d064d5aec0d76370669813dc2409682908a50b9571f0a7402e40c13921752946"
+    },
+    {
+      "case": "queue_overflow",
+      "file": "fixtures/recorder-1.aura",
+      "sha256": "5250d2f0e0ee63ac3565b8fbe934e3cdecf0e639d596064fb5715ee602d8ba71",
+      "status": "interrupted",
+      "audio_packets": 150,
+      "decoded_samples": 47960,
+      "original_source_samples": null,
+      "waveform_snr_db": 12.258,
+      "capture_time": "unknown",
+      "physical_receipt": "terminal",
+      "physical_digest": "eb57168e13838ebcb7e0d8669175e4e10299d61a4cd83a14c7a1439ef62e3e83",
+      "export_digest": "eb57168e13838ebcb7e0d8669175e4e10299d61a4cd83a14c7a1439ef62e3e83"
+    },
+    {
+      "case": "block_gap",
+      "file": "fixtures/recorder-2.aura",
+      "sha256": "a8f16bf7ad93535ac095ddcf8a66953793cea58b2b3f86b9aa880025d914a2a5",
+      "status": "interrupted",
+      "audio_packets": 150,
+      "decoded_samples": 47960,
+      "original_source_samples": null,
+      "waveform_snr_db": 12.258,
+      "capture_time": "unknown",
+      "physical_receipt": "terminal",
+      "physical_digest": "1960ac343aaf09231ffea663e4559f9e057da7af2b90af5e7971e7afff210238",
+      "export_digest": "1960ac343aaf09231ffea663e4559f9e057da7af2b90af5e7971e7afff210238"
+    },
+    {
+      "case": "source_fault_and_seal_power_cut",
+      "file": "fixtures/recorder-3.aura",
+      "sha256": "13a456bea962493b17fafa09504d4a1f54d7566baff8125a86f6118067f98e99",
+      "status": "interrupted",
+      "audio_packets": 145,
+      "decoded_samples": 46360,
+      "original_source_samples": null,
+      "waveform_snr_db": 12.267,
+      "capture_time": "unknown",
+      "physical_receipt": "open_prefix",
+      "physical_digest": "1d6364f593e69f6286f41c29f1dd6ab9811796883dd1f20d68e4100cb22312b0",
+      "export_digest": "4d625e2715fd1de04a5bf273b6a81566082dcec66332e72981377004d056aa8a"
+    },
+    {
+      "case": "missing_final_block",
+      "file": "fixtures/recorder-4.aura",
+      "sha256": "e2e1838f560e9c29d7d641ecb8641c4ff728c99729992c9757459025fd238045",
+      "status": "interrupted",
+      "audio_packets": 150,
+      "decoded_samples": 47960,
+      "original_source_samples": null,
+      "waveform_snr_db": 12.258,
+      "capture_time": "unknown",
+      "physical_receipt": "terminal",
+      "physical_digest": "2307f8df97886ebe3451a806a6fc41fc8a8d272ee4e5179091467a79d8d16e07",
+      "export_digest": "2307f8df97886ebe3451a806a6fc41fc8a8d272ee4e5179091467a79d8d16e07"
+    }
+  ],
+  "code_source_sha256": {
+    "firmware/a04/include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
+    "firmware/a04/src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
+    "firmware/a04/tests/host_recorder.c": "644759cd0414d7eb0a5021b6dcb37a984b67c4a942bf7e9bac58f87fa1de8c06",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
+    "firmware/a04/src/aura_journal.c": "cbe336ec5db5a78b52bbb7f45d7fa6f7076e0061b7ac50c3be4907dd756384ce",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/scripts/verify_recorder.py": "27ab76c91a331225145041f6c53894e7ada99a83497cad13eb0a708607f4879f",
+    "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
+  },
+  "guarantees_exercised": [
+    "prepare/service before microphone start permission",
+    "startup failure and immediate cancellation without PCM",
+    "zero-sample clean stop",
+    "stale epoch isolation",
+    "block sequence/source offset and final watermark checks",
+    "exact 2-of-320 consumed on program failure, no double feed",
+    "overflow/gap explicit interrupted seal",
+    "separate source failure and close I/O error",
+    "unknown capture time through startup",
+    "real encode/reopen/import/decode"
+  ],
+  "not_verified": [
+    "physical PDM continuity or exact sample clock",
+    "upstream driver error/STOP quiescence",
+    "actual queue concurrency and overflow signaling",
+    "microphone warmup/privacy electrical behavior",
+    "physical NAND power failure",
+    "real-time CPU/storage deadlines",
+    "BLE/OTA/reclamation"
+  ]
+}

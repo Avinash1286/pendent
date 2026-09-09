@@ -1,13 +1,16 @@
 /* SPDX-License-Identifier: MIT */
-/* MCU ABI/resource probe only. Synthetic audio and volatile sparse RAM NAND.
- * No physical NAND, radio, charger or mic is initialized. This application is
- * cross-built, not executed on the wearable or described as durable storage. */
+/* DK-only ABI/resource integration probe: synthetic PCM and volatile RAM NAND.
+ * The custom DMIC device binds DK test pins at boot, but no PDM stream,
+ * microphone power, physical NAND, radio or charger is started by this probe.
+ * Cross-built, not executed on AURA; never flash this image onto the wearable. */
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include "aura_opus.h"
 #include "aura_archive.h"
 #include "aura_journal.h"
 #include "aura_w25n01gv_zephyr.h"
+#include "aura_audio_zephyr.h"
+#include "aura_dmic_health.h"
 #include <string.h>
 
 #define CODEC_STACK_BYTES 49152
@@ -15,10 +18,10 @@ static union {
     max_align_t alignment;
     uint8_t bytes[AURA_OPUS_STATE_LIMIT];
 } encoder_state;
-static struct aura_opus_capture capture;
-static struct aura_archive_writer archive;
+static struct aura_recorder recorder;
 static struct aura_journal journal;
 static struct aura_w25n01gv_zephyr nand_adapter;
+static struct aura_audio_zephyr audio_adapter;
 /* Eight sparse pages suffice for this short synthetic capture. */
 static uint8_t probe_pages[8][2048], probe_map[64], probe_used;
 static int probe_highest;
@@ -61,39 +64,46 @@ static void probe(void *one, void *two, void *three)
     memset(probe_map,255,sizeof(probe_map));probe_highest=-1;
     struct aura_nand_io ram={NULL,1,ram_read,ram_program,ram_erase,ram_bad};
     int status=aura_journal_mount(&journal,ram);
-    if(!status)status=aura_journal_service(&journal,(uint64_t)k_uptime_get());
-    if(!status)status = aura_opus_init_staged(&capture, encoder_state.bytes, sizeof(encoder_state.bytes),
-                                20, aura_archive_opus_commit, &archive);
-    struct aura_archive_manifest manifest = {.frame_samples = 320, .pre_skip = capture.lookahead};
+    if(!status)status=aura_recorder_init(&recorder,&journal,encoder_state.bytes,sizeof(encoder_state.bytes));
+    struct aura_archive_manifest manifest = {.frame_samples = 320, .pre_skip = 40};
     memset(manifest.device_id, 0x11, 16);
     memset(manifest.capture_id, 0x22, 16);
-    if (!status) status = aura_archive_begin_staged(&archive, &manifest, aura_journal_stage, &journal);
+    if (!status) status = aura_recorder_start(&recorder, &manifest, 1, (uint64_t)k_uptime_get());
     /* Retain the real adapter and its RAM footprint in the linked image without
      * choosing a devicetree node or invoking any physical SPI operation. */
     struct aura_nand_io physical=aura_w25n01gv_zephyr_io(&nand_adapter);
-    printk("A04 EXPERIMENTAL codec=%s state=%u reserved=%u context=%u archive=%u journal=%u init=%d "
+    printk("A04 EXPERIMENTAL codec=%s state=%u reserved=%u recorder=%u journal=%u init=%d "
            "uninitialized_spi_blocks=%u spi_init_symbol=%p\n",
            opus_get_version_string(), (unsigned)aura_opus_state_bytes(),
-           (unsigned)sizeof(encoder_state.bytes), (unsigned)sizeof(capture), (unsigned)sizeof(archive),
+           (unsigned)sizeof(encoder_state.bytes), (unsigned)sizeof(recorder),
            (unsigned)sizeof(journal), status,physical.blocks,(void *)aura_w25n01gv_zephyr_init);
+    struct aura_dmic_health health;
+    int health_status=aura_dmic_health_get(DEVICE_DT_GET(DT_NODELABEL(pdm0)),&health);
+    printk("DK PIN BINDING ONLY audio_context=%u health=%d begin=%p read=%p service=%p init=%p "
+           "privacy=%p stop=%p context_address=%p; no physical audio stream started\n",
+           (unsigned)sizeof(audio_adapter),health_status,(void *)aura_audio_zephyr_begin,
+           (void *)aura_audio_zephyr_reader_step,(void *)aura_audio_zephyr_service,
+           (void *)aura_audio_zephyr_init,(void *)aura_audio_zephyr_privacy_cutoff,
+           (void *)aura_audio_zephyr_request_stop,(void *)&audio_adapter);
     uint32_t worst_us = 0, late_frames = 0;
     for (unsigned frame = 0; !status && frame < 50; ++frame) {
         for (unsigned i = 0; i < ARRAY_SIZE(input); ++i)
             input[i] = (int16_t)((int)((i + frame * 320) % 80) * 250 - 10000);
         size_t consumed = 0;
         uint32_t begin = k_cycle_get_32();
-        status = aura_opus_push(&capture, input, ARRAY_SIZE(input), &consumed);
+        struct aura_recorder_block block={.epoch=1,.sequence=frame,.source_offset=frame*320u,
+            .pcm=input,.samples=ARRAY_SIZE(input)};
+        status = aura_recorder_consume(&recorder, &block, (uint64_t)k_uptime_get(), &consumed);
         uint32_t usec = k_cyc_to_us_floor32(k_cycle_get_32() - begin);
         if (usec > worst_us) worst_us = usec;
         if (usec > 20000) ++late_frames;
         if (!status && consumed != ARRAY_SIZE(input)) status = -1;
-        if (!status && frame == 24) status = aura_archive_bookmark(&archive, 8000);
-        if (!status) status = aura_journal_service(&journal,(uint64_t)k_uptime_get());
+        if (!status && frame == 24) status = aura_archive_bookmark(&recorder.archive, 8000);
+        if (!status) status = aura_recorder_service(&recorder,(uint64_t)k_uptime_get());
         k_yield();
     }
-    struct aura_opus_seal seal = {0};
-    if (!status) status = aura_opus_finish(&capture, &seal);
-    if (!status) status = aura_archive_finalize(&archive, &seal);
+    if (!status) status = aura_recorder_stop(&recorder,1,16000,(uint64_t)k_uptime_get());
+    struct aura_opus_seal seal = recorder.seal;
     uint8_t receipt[AURA_ARCHIVE_ACK_BYTES];
     if (!status) status = aura_journal_receipt(&journal, 0, receipt);
     if (!status) status = aura_journal_mount(&journal,ram);
@@ -102,7 +112,7 @@ static void probe(void *one, void *two, void *three)
     int stack_status = k_thread_stack_space_get(k_current_get(), &free_stack);
     printk("A04 VOLATILE RAM PROBE ONLY result=%d packets=%u wire_bytes=%u source=%u preskip=%u tail=%u "
            "worst_encode_us=%u late_frames=%u stack_free=%u stack_check=%d\n",
-           status, archive.audio_packets, (unsigned)sink_bytes, (unsigned)seal.source_samples,
+           status, recorder.archive.audio_packets, (unsigned)sink_bytes, (unsigned)seal.source_samples,
            seal.pre_skip, seal.end_trim, worst_us, late_frames,
            (unsigned)free_stack, stack_status);
 }

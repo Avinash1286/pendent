@@ -27,3 +27,14 @@ add_executable(aura_w25n01gv_host host_w25n01gv.c ../src/aura_w25n01gv.c
 target_include_directories(aura_w25n01gv_host PRIVATE ../include)
 target_compile_options(aura_w25n01gv_host PRIVATE -Wall -Wextra -Werror -UNDEBUG)
 target_link_libraries(aura_w25n01gv_host PRIVATE opus)
+add_executable(aura_recorder_test host_recorder.c nand_model.c
+    ../src/aura_recorder.c ../src/aura_opus.c ../src/aura_archive.c ../src/aura_journal.c)
+target_include_directories(aura_recorder_test PRIVATE ../include)
+target_compile_options(aura_recorder_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_recorder_test PRIVATE opus)
+add_executable(aura_audio_test host_audio.c nand_model.c
+    ../src/aura_audio_zephyr.c ../src/aura_recorder.c ../src/aura_opus.c
+    ../src/aura_archive.c ../src/aura_journal.c)
+target_include_directories(aura_audio_test PRIVATE audio_stub ../include)
+target_compile_options(aura_audio_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_audio_test PRIVATE opus)

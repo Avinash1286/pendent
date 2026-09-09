@@ -24,18 +24,21 @@ def main():
         symbol_values = {symbol.name: symbol["st_value"] for symbol in symbols.iter_symbols()}
         selected = {}
         for symbol in symbols.iter_symbols():
-            if symbol.name in ("encoder_state", "capture", "archive", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init"):
+            if symbol.name in ("encoder_state", "recorder", "audio_adapter", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init", "aura_dmic_health_get", "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service", "aura_recorder_consume"):
                 selected[symbol.name] = {"bytes": symbol["st_size"], "address": symbol["st_value"]}
         sections = [{"name": section.name, "bytes": section["sh_size"], "address": section["sh_addr"],
                      "type": section["sh_type"]} for section in elf.iter_sections()
                     if section["sh_flags"] & 2]
     config_path = BUILD / "zephyr/.config"
     config = config_path.read_text()
-    for required in ("CONFIG_SOC_NRF52840", "CONFIG_MPU_STACK_GUARD", "CONFIG_INIT_STACKS", "CONFIG_THREAD_STACK_INFO"):
+    for required in ("CONFIG_SOC_NRF52840", "CONFIG_MPU_STACK_GUARD", "CONFIG_INIT_STACKS", "CONFIG_THREAD_STACK_INFO", "CONFIG_AURA_DMIC_NRFX_PDM", "CONFIG_AUDIO_DMIC"):
         if required + "=y" not in config:
             raise ValueError("Missing ARM probe configuration: " + required)
-    if "CONFIG_BT=y" in config or "CONFIG_AUDIO_DMIC=y" in config:
-        raise ValueError("Synthetic probe unexpectedly enables radio or microphone")
+    if "CONFIG_BT=y" in config or "CONFIG_AUDIO_DMIC_NRFX_PDM=y" in config:
+        raise ValueError("DK integration probe unexpectedly enables radio or the competing stock DMIC")
+    dts = (BUILD / "zephyr/zephyr.dts").read_text()
+    if 'compatible = "aura,nrf-pdm"' not in dts or 'aura_dk_pdm_default' not in dts:
+        raise ValueError("Missing explicit custom-driver DK test binding")
     compile_commands = (BUILD / "build.ninja").read_text()
     for required in ("-DFIXED_POINT=1", "-DDISABLE_FLOAT_API", "-DUSE_ALLOCA", "-DENABLE_HARDENING"):
         if required not in compile_commands:
@@ -48,11 +51,12 @@ def main():
                 stack_entries.append({"function": fields[0].rsplit(":", 1)[-1],
                                       "compiler_reported_bytes": int(fields[1]), "classification": fields[2]})
     source_hashes = {}
-    for folder in ("src", "include", "cmake"):
+    for folder in ("src", "include", "cmake", "drivers"):
         for path in (ROOT / folder).rglob("*"):
-            if path.is_file():
+            if (path.is_file() and path.suffix not in (".pyc", ".log") and
+                    "__pycache__" not in path.parts and "out" not in path.parts):
                 source_hashes[path.relative_to(ROOT).as_posix()] = sha(path)
-    for name in ("CMakeLists.txt", "prj.conf", "dependencies/opus-1.6.1.json"):
+    for name in ("CMakeLists.txt", "Kconfig", "prj.conf", "scripts/build.ps1", "scripts/report_resources.py", "dependencies/opus-1.6.1.json"):
         source_hashes[name] = sha(ROOT / name)
     # ELF linker symbols remain valid on a no-op rebuild where the linker does
     # not print a new memory table. They agree with the full build's table.
@@ -68,7 +72,9 @@ def main():
     report = {
         "status": "ARM_cross_compiled_not_executed",
         "target": "nrf52840dk/nrf52840",
-        "purpose": "A04 codec, AUR3, packed journal and retained SPI adapter MCU ABI/resource probe with volatile synthetic NAND; not wearable firmware",
+        "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC integration compile with synthetic PCM and volatile NAND; not wearable firmware",
+        "peripheral_binding": "DK-only P0.30 CLK/P0.31 DIN pinctrl initializes at boot; probe never enables microphone power or starts a physical PDM stream",
+        "devicetree_sha256": sha(BUILD / "zephyr/zephyr.dts"),
         "zephyr": "4.2.0", "sdk": "0.17.2", "opus": "1.6.1",
         "memory_regions": {name: {"used_bytes": used, "capacity_bytes": capacities[name]}
                            for name, used in memories.items()},

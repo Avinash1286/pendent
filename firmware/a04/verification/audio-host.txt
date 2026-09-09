@@ -1,0 +1,2 @@
+Audio adapter deterministic host interleavings: 10 groups PASS, 0 failed; context=21080 bytes
+Actual adapter/recorder/Opus/journal code; no physical PDM, DMA or concurrent-thread proof

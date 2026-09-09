@@ -1,0 +1,62 @@
+{
+  "status": "deterministic_host_interleavings_passed",
+  "passed_groups": 10,
+  "host_adapter_context_bytes": 21080,
+  "scope": "Actual audio adapter, recorder, Opus, archive and journal; kernel/GPIO/DMIC boundaries are test doubles",
+  "groups": [
+    "mixing",
+    "fifo_stop",
+    "overflow_and_driver",
+    "privacy_and_start_failure",
+    "quarantine_and_restart",
+    "storage_failure",
+    "startup_races",
+    "negative_driver_results",
+    "publication_interleavings",
+    "init_live_ownership"
+  ],
+  "code_source_sha256": {
+    "firmware/a04/cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/include/aura_audio_zephyr.h": "2387676c9c27b51aa6bb7f94a3c07fccd2a74337782e6396b4e143a14692db63",
+    "firmware/a04/include/aura_dmic_health.h": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
+    "firmware/a04/include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
+    "firmware/a04/include/aura_w25n01gv.h": "0bf679f16315fae257dcd12aa6a41012e155ac86e74f22d4488f3ed86773ea7b",
+    "firmware/a04/include/aura_w25n01gv_zephyr.h": "8f0af7cfc1581afc9e08228811f1afa8a121c39e1cc3a1eae2c58bd09bcbab77",
+    "firmware/a04/scripts/verify_audio.py": "60a303aa05027d2534560f21d8f85a3b3f50c77022cb42e0c0c513f154b96f96",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/src/aura_audio_zephyr.c": "e42fd97920caebcfa455cd832b217b58cc9fe54254aa919f1624ca4f230f1c2c",
+    "firmware/a04/src/aura_journal.c": "cbe336ec5db5a78b52bbb7f45d7fa6f7076e0061b7ac50c3be4907dd756384ce",
+    "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
+    "firmware/a04/src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
+    "firmware/a04/tests/audio_stub/zephyr/audio/dmic.h": "a6b42c7ad3e4bc679329a8a3277f1dd07fd3c8716d23c515d9aa3366e3410939",
+    "firmware/a04/tests/audio_stub/zephyr/drivers/gpio.h": "d674c6b4434ded79d9c686d78e90ff77ce4fca0ba0ec5ba96f66e941ceef417a",
+    "firmware/a04/tests/audio_stub/zephyr/irq.h": "133b7652394f0a9d4a71a9b4e2a754e07b1ad4849123d24be8e85dbc4edc038f",
+    "firmware/a04/tests/audio_stub/zephyr/kernel.h": "2c44371f6f5cfd04ae126e71363e33068f1339b6fc17613cd11457a67feb0f2e",
+    "firmware/a04/tests/audio_stub/zephyr/sys/atomic.h": "a76087e4a99b4ccf3c8b65a940e420d10cabfbea4d05b4a60eb817df8a005e18",
+    "firmware/a04/tests/CMakeLists.txt": "0b8c0cddac4455ad3040ffbbcef7baaf28385c5db13406649d7119dd3b8054ee",
+    "firmware/a04/tests/host_audio.c": "17574fd85ea245ad5b63849a990e0a1a88d706decbde25d34a367bdf53273742",
+    "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
+    "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3"
+  },
+  "executable_sha256": "ed12a1fda42de55ff7a392f6f8ec2ec999fb92f40bd401ce3264989c257b6455",
+  "transcript_sha256": "7cb93933cdcd7e5fa5e5b4bfe7f8e08a20aba58488586cd7ac08f34d1b0100b4",
+  "compile_options": [
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-UNDEBUG"
+  ],
+  "not_verified": [
+    "physical PDM/DMA",
+    "real concurrent execution",
+    "interrupt latency",
+    "electrical privacy cutoff",
+    "real storage/CPU deadlines",
+    "wearable operation"
+  ]
+}

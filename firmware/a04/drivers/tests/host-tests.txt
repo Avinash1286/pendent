@@ -1,0 +1,21 @@
+PASS reject foreign API before data access
+PASS normal sequence and caller-owned buffer reset/restart guard
+PASS queued full blocks survive STOP; partial returns excluded
+PASS standalone nrfx overflow latched; preceding queue remains drainable
+PASS slab exhaustion is a terminal transfer fault
+PASS prepare failure releases unowned slab allocation
+PASS buffer_set failure returns prepared but unsubmitted allocation
+PASS RX overflow counts observed completion and stops without leaking it
+PASS foreign release never frees or steals a registered allocation
+PASS uncertain DMM release preserves ownership and blocks reset
+PASS STOP while clock starts cannot start late or allocate from late IRQ
+PASS clock request rejection has no owned reference
+PASS asynchronous clock failure prevents start
+PASS synchronous clock callback preserves nrfx start failure
+PASS clock release failure cannot claim quiescence
+PASS STOP before first software buffer request ignores late request
+PASS STOP after DMA arm waits STARTED before nrfx stop and returns partial buffer
+PASS stop error remains latched after a later successful shutdown
+PASS sticky faults accumulate while preserving first error
+PASS read validates stream/output pointers and clears outputs on empty queue
+20 production-driver callback/lifecycle test groups passed

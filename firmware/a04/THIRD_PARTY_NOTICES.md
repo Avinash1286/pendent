@@ -1,6 +1,8 @@
-# A04 codec experiment notices
+# A04 recording firmware notices
 
 The authored wrapper, probe, test harness and scripts are MIT under the repository license. They do not contain copied Omi implementation code.
+
+The project-local [monitored DMIC driver](drivers/aura_dmic_nrfx_pdm.c) is a modified derivative of Zephyr v4.2.0's `drivers/audio/dmic_nrfx_pdm.c`, Copyright (c) 2021 Nordic Semiconductor ASA, licensed Apache-2.0. Its original notice is retained in the source. AURA's changes add sticky faults, explicit buffer/clock ownership, release sequencing, guarded reset and asynchronous start/stop cleanup; [the driver record](drivers/README.md) identifies provenance and differences. Redistribute the retained [Apache-2.0 license](../licenses/Zephyr-Apache-2.0.txt) with this source. The accompanying binding and DK pin configuration derive from the same pinned Zephyr tree. This integration does not modify the installed upstream checkout.
 
 The experiment statically links **libopus 1.6.1** from the [official Xiph release archive](https://downloads.xiph.org/releases/opus/opus-1.6.1.tar.gz). The complete upstream notice is retained unchanged in [licenses/Opus-COPYING.txt](licenses/Opus-COPYING.txt). Preserve it when redistributing source or binaries. Opus uses a BSD-style license; its [official licensing page](https://opus-codec.org/license/) also describes the patent licenses and conditions. The build does not enable the optional deep-learning enhancements.
 

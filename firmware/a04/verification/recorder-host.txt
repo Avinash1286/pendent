@@ -1,0 +1,6 @@
+PASS real_recorder mode=0 accepted_source_samples=120847 wire_bytes=37014 state=2 reason=0 close_error=0
+PASS real_recorder mode=1 accepted_source_samples=48017 wire_bytes=16082 state=3 reason=-504 close_error=0
+PASS real_recorder mode=2 accepted_source_samples=48017 wire_bytes=16082 state=3 reason=-503 close_error=0
+PASS real_recorder mode=3 accepted_source_samples=48017 wire_bytes=15627 state=4 reason=-505 close_error=-305
+PASS real_recorder mode=4 accepted_source_samples=48017 wire_bytes=16082 state=3 reason=-503 close_error=0
+PASS recorder groups=10 recorder_context=3600 external_encoder_arena=32768

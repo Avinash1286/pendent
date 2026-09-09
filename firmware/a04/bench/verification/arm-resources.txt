@@ -1,0 +1,30 @@
+{
+  "status": "ARM_cross_compiled_not_executed",
+  "memory_regions": {
+    "FLASH": {
+      "used_bytes": 255748,
+      "capacity_bytes": 1048576,
+      "remaining_bytes": 792828
+    },
+    "RAM": {
+      "used_bytes": 208264,
+      "capacity_bytes": 262144,
+      "remaining_bytes": 53880
+    }
+  },
+  "thread_stacks": {
+    "reader_stack": {
+      "requested_usable_bytes": 4096,
+      "elf_reserved_bytes": 4160,
+      "guard_alignment_overhead_bytes": 64
+    },
+    "storage_stack": {
+      "requested_usable_bytes": 49152,
+      "elf_reserved_bytes": 49216,
+      "guard_alignment_overhead_bytes": 64
+    }
+  },
+  "source_identities": 69,
+  "generated_identities": 154,
+  "report": "firmware/a04/bench/verification/arm-resources.json"
+}

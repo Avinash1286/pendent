@@ -1,0 +1,3 @@
+mainmenu "AURA A04 separate wired hardware bench"
+source "Kconfig.zephyr"
+rsource "../drivers/Kconfig"

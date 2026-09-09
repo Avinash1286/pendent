@@ -1,0 +1,12 @@
+description: Explicit external wired-bench power enable and privacy sense
+compatible: "aura,bench-controls"
+include: base.yaml
+properties:
+  mic-enable-gpios:
+    type: phandle-array
+    required: true
+    description: Native active-high GPIO driving an external load switch enable
+  privacy-gpios:
+    type: phandle-array
+    required: true
+    description: Native active-low pulled-up sense, contact closed to ground permits capture

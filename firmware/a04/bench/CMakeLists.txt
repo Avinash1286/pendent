@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.20.0)
+list(APPEND DTS_ROOT ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../drivers)
+set(DTC_OVERLAY_FILE "${CMAKE_CURRENT_SOURCE_DIR}/boards/nrf52840dk_nrf52840.overlay")
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+project(aura_a04_hardware_bench)
+if(NOT CONFIG_SOC_NRF52840 OR NOT CONFIG_BOARD_NRF52840DK OR CONFIG_BT)
+    message(FATAL_ERROR "Separate wired bench application requires nrf52840dk/nrf52840 and no Bluetooth")
+endif()
+add_subdirectory(../drivers ${CMAKE_CURRENT_BINARY_DIR}/aura-drivers)
+include(../cmake/opus-profile.cmake)
+target_link_libraries(opus PUBLIC zephyr_interface)
+target_compile_options(opus PRIVATE -ffunction-sections -fdata-sections -fstack-usage)
+target_include_directories(app PRIVATE ../include)
+target_sources(app PRIVATE src/main.c ../src/aura_opus.c ../src/aura_archive.c
+    ../src/aura_journal.c ../src/aura_recorder.c ../src/aura_audio_zephyr.c
+    ../src/aura_w25n01gv.c ../src/aura_w25n01gv_zephyr.c ../src/aura_control.c
+    ../src/aura_release_auth.c ../src/aura_storage.c)
+target_compile_options(app PRIVATE -fstack-usage -Wall -Wextra)
+set_source_files_properties(src/main.c PROPERTIES COMPILE_OPTIONS "-Werror")
+target_link_libraries(app PRIVATE opus)

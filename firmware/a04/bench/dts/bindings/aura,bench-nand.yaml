@@ -1,0 +1,3 @@
+description: A04 bench W25N01GV accessed only by the explicit application adapter
+compatible: "aura,bench-nand"
+include: spi-device.yaml

@@ -1,0 +1,36 @@
+test_archive_fsync_failure_never_imports_or_publishes (__main__.PersistenceTests.test_archive_fsync_failure_never_imports_or_publishes) ... ok
+test_conflicting_existing_bundle_is_preserved (__main__.PersistenceTests.test_conflicting_existing_bundle_is_preserved) ... ok
+test_context_corrupt_oversized_nonprivate_repository_refused (__main__.PersistenceTests.test_context_corrupt_oversized_nonprivate_repository_refused) ... ok
+test_context_exact_restart_private_no_overwrite (__main__.PersistenceTests.test_context_exact_restart_private_no_overwrite) ... ok
+test_context_fsync_failure_sends_no_provision_and_retains_file (__main__.PersistenceTests.test_context_fsync_failure_sends_no_provision_and_retains_file) ... ok
+test_explicit_resume_reuses_exact_saved_authority_after_restart (__main__.PersistenceTests.test_explicit_resume_reuses_exact_saved_authority_after_restart) ... ok
+test_failed_download_never_publishes_or_imports (__main__.PersistenceTests.test_failed_download_never_publishes_or_imports) ... ok
+test_finalized_export_published_after_receiver_and_idempotent_retry (__main__.PersistenceTests.test_finalized_export_published_after_receiver_and_idempotent_retry) ... ok
+test_invalid_archive_or_receipt_never_imported (__main__.PersistenceTests.test_invalid_archive_or_receipt_never_imported) ... ok
+test_open_source_bundle_explicitly_distinguishes_derived_seal (__main__.PersistenceTests.test_open_source_bundle_explicitly_distinguishes_derived_seal) ... ok
+test_real_process_exit_before_and_after_publication_recovers (__main__.PersistenceTests.test_real_process_exit_before_and_after_publication_recovers) ... ok
+test_receiver_commit_failure_never_publishes (__main__.PersistenceTests.test_receiver_commit_failure_never_publishes) ... ok
+test_sync_failure_after_rename_is_uncertain_and_exact_retry_recovers (__main__.PersistenceTests.test_sync_failure_after_rename_is_uncertain_and_exact_retry_recovers) ... ok
+test_catalog_count_duplicates_and_foreign_ids (__main__.ProtocolTests.test_catalog_count_duplicates_and_foreign_ids) ... ok
+test_ctrl_c_after_start_sends_exactly_one_stop (__main__.ProtocolTests.test_ctrl_c_after_start_sends_exactly_one_stop) ... ok
+test_device_error_is_numeric_and_no_arguments_echoed (__main__.ProtocolTests.test_device_error_is_numeric_and_no_arguments_echoed) ... ok
+test_exact_real_c_export_bytes_and_ack (__main__.ProtocolTests.test_exact_real_c_export_bytes_and_ack) ... ok
+test_export_crc_order_missing_end_and_bounds (__main__.ProtocolTests.test_export_crc_order_missing_end_and_bounds) ... ok
+test_export_total_deadline_is_not_extended_by_valid_chunks (__main__.ProtocolTests.test_export_total_deadline_is_not_extended_by_valid_chunks) ... ok
+test_line_noise_and_non_ascii_bounds (__main__.ProtocolTests.test_line_noise_and_non_ascii_bounds) ... ok
+test_physical_open_is_verified_against_pre_seal_prefix (__main__.ProtocolTests.test_physical_open_is_verified_against_pre_seal_prefix) ... ok
+test_physically_sealed_interrupted_and_torn_export (__main__.ProtocolTests.test_physically_sealed_interrupted_and_torn_export) ... ok
+test_public_info_discovery_cannot_authorize_context (__main__.ProtocolTests.test_public_info_discovery_cannot_authorize_context) ... ok
+test_record_and_stats_are_status_not_host_acknowledgement (__main__.ProtocolTests.test_record_and_stats_are_status_not_host_acknowledgement) ... ok
+test_record_limits_and_mismatched_stop (__main__.ProtocolTests.test_record_limits_and_mismatched_stop) ... ok
+test_reused_request_id_is_not_transmitted (__main__.ProtocolTests.test_reused_request_id_is_not_transmitted) ... ok
+test_session_verifies_id_then_opens_exact_context (__main__.ProtocolTests.test_session_verifies_id_then_opens_exact_context) ... ok
+test_short_write_and_secret_bearing_transport_error_sanitized (__main__.ProtocolTests.test_short_write_and_secret_bearing_transport_error_sanitized) ... ok
+test_stale_request_id_rejected_and_session_locked (__main__.ProtocolTests.test_stale_request_id_rejected_and_session_locked) ... ok
+test_timeout_and_partial_line_do_not_succeed (__main__.ProtocolTests.test_timeout_and_partial_line_do_not_succeed) ... ok
+test_wrong_identity_prevents_enrollment (__main__.ProtocolTests.test_wrong_identity_prevents_enrollment) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 3.326s
+
+OK

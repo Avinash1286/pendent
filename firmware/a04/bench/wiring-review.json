@@ -1,0 +1,105 @@
+{
+  "schema": "aura-a04-bench-wiring-review-v1",
+  "reviewed_on": "2026-09-09",
+  "target": "nrf52840dk/nrf52840",
+  "status": "unpowered-design-review-only",
+  "physical_board_revision": null,
+  "physical_tests_performed": false,
+  "fabrication_release": false,
+  "wearable_release": false,
+  "pins": {
+    "pdm_clk": { "port": 0, "pin": 30, "arduino": "A4", "route": "switched-rail Ioff buffer then both microphone CLK" },
+    "pdm_din": { "port": 0, "pin": 31, "arduino": "A5", "route": "shared stereo DAT; high-impedance MCU input" },
+    "nand_sck": { "port": 1, "pin": 15, "arduino": "D13" },
+    "nand_mosi": { "port": 1, "pin": 13, "arduino": "D11" },
+    "nand_miso": { "port": 1, "pin": 14, "arduino": "D12" },
+    "nand_cs": { "port": 1, "pin": 12, "arduino": "D10", "active_low": true },
+    "mic_power_command": { "port": 1, "pin": 3, "arduino": "D2", "active_high": true },
+    "physical_permission": { "port": 1, "pin": 4, "arduino": "D3", "pull": "up", "low": "allow", "high": "privacy-or-open-circuit" },
+    "status_led": { "port": 0, "pin": 13, "board_alias": "led0", "active_low": true }
+  },
+  "console": { "uart": 0, "baud": 115200, "tx": "P0.06", "rx": "P0.08", "rts": "P0.05", "cts": "P0.07" },
+  "required_disabled_nodes": ["spi1", "pwm0", "i2c1", "uart1"],
+  "nand_bus": { "node": "spi3", "mode": 0, "initial_characterization_hz": 1000000, "data_lines": 1 },
+  "bench_supply": {
+    "source": "USB-powered DK VDD with SoC source set to VDD",
+    "nominal_volts": 3.0,
+    "project_measurement_window_volts": [2.85, 3.15],
+    "manufacturer_tolerance_claim": false,
+    "battery": false,
+    "gpio_supplies_microphone_current": false,
+    "common_ground_required": true
+  },
+  "components": {
+    "microphones": {
+      "quantity": 2,
+      "part": "SPH0641LU4H-1",
+      "route": "one KAS-700-0164 two-pack of assembled microphone flexes and two KCA2733 assembled adapters",
+      "matches_a04_schematic_and_architecture": true,
+      "supply_volts": [1.62, 3.6],
+      "select_straps": ["GND", "MIC_VDD"],
+      "adapter_six_contact_map": { "1": "P power MIC_VDD", "2": "O DATA shared P0.31", "3": "G common GND", "4": "LR SELECT", "5": "unused PDM", "6": "K isolated clock" },
+      "normal_clock_hz": [1024000, 2475000],
+      "power_up_allowance_ms": 50,
+      "maximum_clock_edge_ns": 3,
+      "data_voh_min": "MIC_VDD - 0.45 V at2mA",
+      "data_vol_max_volts": 0.45,
+      "data_output_limit_current_ma": 2,
+      "adapter_local_bypass_nf": 100,
+      "availability_snapshot": { "date": "2026-09-09", "supplier": "DigiKey", "kit_packs_listed": 32, "adapters_listed": 194, "reserved_or_ordered": false }
+    },
+    "nand": { "part": "W25N01GVSFIG", "package": "SF SOIC16", "supply_volts": [2.7, 3.6], "pins": { "hold": 1, "vcc": 2, "cs": 7, "do": 8, "wp": 9, "gnd": 10, "di": 15, "clk": 16 }, "nc_pins": [3, 4, 5, 6, 11, 12, 13, 14] },
+    "load_switch": { "part": "TPS22918DBVR", "on_external_pulldown_ohms": 100000, "qod": "VOUT", "ct": "unconnected", "maximum_switched_capacitance_for_direct_qod_microfarads": 200 },
+    "clock_buffer": { "part": "SN74LVC1G125DBVR", "vcc": "MIC_VDD", "oe_n": "GND", "input_external_pulldown_ohms": 100000, "output_external_pulldown_ohms": 100000, "partial_rail_decay_isolation_verified": false },
+    "privacy_switch": { "type": "mechanically linked two-pole maintained switch", "allow": "both contacts closed", "privacy": "both contacts open", "pole_a": "mic power command to load-switch ON", "pole_b": "physical permission input to GND" }
+  },
+  "review_findings": {
+    "pin_ownership": "reviewed against exact local Zephyr4.2.0 DK DTS, pinctrl and DMIC sample; final built DTS must be checked separately",
+    "supply_range_overlap": "reviewed; unmeasured",
+    "microphone_dat_logic_margin": "positive static limit budget for selected SPH0641LU4H-1; not physically measured or full-temperature qualification",
+    "privacy_cutoff": "unmeasured; clock buffer Ioff applies at VCC0, rail decay and switch faults not qualified; direct DAT input can backpower mic if MCU pin is wrongly driven or pulled up",
+    "audio_nand_recording": "not physically executed",
+    "power_fault_recovery": "not physically executed"
+  },
+  "data_margin_calculation": {
+    "minimum_dk_vdd_volts": 2.85,
+    "maximum_mic_rail_drop_from_dk_vdd_volts": 0.05,
+    "nordic_vih_factor": 0.7,
+    "nordic_vil_factor": 0.3,
+    "equal_rail_high_margin_volts": 0.405,
+    "equal_rail_low_margin_volts": 0.405,
+    "high_margin_after_allowed_rail_drop_volts": 0.355,
+    "remaining_consumers_of_margin": ["ground shift", "noise", "actual load current", "dynamic transitions"],
+    "measurement_required": true
+  },
+  "rejected_microphone_route": { "part": "MP34DT01-M / Adafruit3492", "reason": "combined0.65xVDD/0.35xVDD I/O table did not prove positive margin to Nordic0.7xVDD/0.3xVDD inputs; not an approved substitution" },
+  "a04_microphone_identity_sources": ["docs/a04/electrical-architecture.md", "hardware/a04/a04-audio-controls.kicad_sch"],
+  "local_sources": [
+    { "path": ".tools/zephyr/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts", "sha256": "732db62d55ed204c65c2a6254c08e041f819aeaafb28dbc6bd034bfabd77dab3" },
+    { "path": ".tools/zephyr/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840-pinctrl.dtsi", "sha256": "7a936b0f8c7361f85d3c3160880688761fdaca5ba41122aedd5c22cdbfcae467" },
+    { "path": ".tools/zephyr/zephyr/samples/drivers/audio/dmic/boards/nrf52840dk_nrf52840.overlay", "sha256": "8f925ce0091fab7a1ed5d154bd91756955a7242ea768a3d48c34c4b633dca6d6" }
+  ],
+  "primary_sources": [
+    "https://docs.nordicsemi.com/r/bundle/ug_nrf52840_dk/page/ug/dk/connector_if.html",
+    "https://docs.nordicsemi.com/r/bundle/ug_nrf52840_dk/page/ug/dk/hw_external_memory.html",
+    "https://infocenter.nordicsemi.com/pdf/nRF52840_DK_User_Guide_v1.4.1.pdf",
+    "https://docs-be.nordicsemi.com/bundle/nRF52-Series-PS/raw/resource/enus/nRF52840_PS_v1.0.pdf?save_local=true",
+    "https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.2.0/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts",
+    "https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.2.0/boards/nordic/nrf52840dk/nrf52840dk_nrf52840-pinctrl.dtsi",
+    "https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.2.0/samples/drivers/audio/dmic/boards/nrf52840dk_nrf52840.overlay",
+    "https://www.knowles.com/docs/default-source/default-document-library/an18-knowles-flex-circuit-and-coupons-for-testing_updated.pdf",
+    "https://www.knowles.com/docs/default-source/default-document-library/mic-selection-guide-v121222.pdf",
+    "https://www.mouser.com/catalog/specsheets/knowles%20corp_06052019_KAS-33100-0004%20Muskie%20Users%20Guide%20rev29may19.pdf",
+    "https://www.mouser.com/datasheet/2/218/sph0641lu4h_1_revb-3313002.pdf",
+    "https://www.syntiant.com/platform/sensors-and-microphones/mems/",
+    "https://pub-6bab7784affa4e918cecdeaf9b754429.r2.dev/syntiant.com/products/sensors/mems/SPH0641LU4H-1_More_Rev_B-1.pdf",
+    "https://www.st.com/resource/en/datasheet/mp34dt01-m.pdf",
+    "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+    "https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf",
+    "https://www.mouser.com/datasheet/2/949/Winbond_Electronics_09072023_W25N01GV_Rev_R_070323-3313374.pdf"
+  ],
+  "supplier_availability_sources": [
+    "https://www.digikey.com/en/products/detail/syntiant/KAS-700-0164/17878612",
+    "https://www.digikey.com/en/products/detail/syntiant/KCA2733/16644481"
+  ]
+}

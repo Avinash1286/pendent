@@ -1,0 +1,6 @@
+PASS actual adapter ordinary STOP finalizes; physical cutoff interrupts (2 cases)
+PASS cancellation across prepare/begin/reset and exact preparation retries (4 cases)
+PASS terminal seal failure replies while journal locked; quarantine stays locked (2 cases)
+PASS bounded RX framing, recovery, queue overflow and no enrollment key echo (17 cases)
+PASS export chunks and receipt only after success; no END after failures (4 cases)
+BENCH_CONTROL_OK groups=5 cases=29 hardware_tested=false

@@ -1,0 +1,2 @@
+# Serial transport only; tests and archive verification use the standard library.
+pyserial==3.5

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "status": "arm_link_passed_resource_report_failed",
+  "command": "pwsh.exe -NoProfile -File firmware/a04/radio/build.ps1 -Mode arm -Jobs 2",
+  "failure": "Reporter incorrectly reused wired-bench audio object size21064; Bluetooth selects CONFIG_POLL, adding8bytes to embedded k_msgq and making actual audio object21072",
+  "flash_bytes": 432020,
+  "ram_bytes": 243652,
+  "elf_sha256": "791a520d07ac7fe32a650815f8027fbab52d1e9c6bef388f45d13b3f1617d5c2",
+  "no_device_access": true,
+  "preserved_at_utc": "2026-09-09T14:11:25.8214707Z"
+}

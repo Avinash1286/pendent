@@ -1,0 +1,2 @@
+# Keep the exact bytes bound by host and ARM verification across checkouts.
+* -text whitespace=cr-at-eol

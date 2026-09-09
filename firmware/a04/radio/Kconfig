@@ -1,0 +1,3 @@
+mainmenu "AURA A04 separate Bluetooth DK bench"
+source "Kconfig.zephyr"
+rsource "../drivers/Kconfig"

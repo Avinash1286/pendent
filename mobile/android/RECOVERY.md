@@ -2,8 +2,10 @@
 
 `CaptureRecovery` joins the validated transfer protocol, durable Android source
 store and playable library. `AndroidGattConnection` supplies the Android GATT
-transport beneath it. These classes do not implement ownership enrollment and
-are not activated by the consumer Activity. That Activity still offers local
+transport beneath it. These classes do not yet exchange
+[ASC1 owner proof](../../docs/a04/session-auth-v1.md) with the implemented
+[radio DK service](../../firmware/a04/radio/README.md), supply trusted owner-context
+custody/enrollment, or activate recovery from the consumer Activity. That Activity still offers local
 file import. A public device ID, advertised name, Bluetooth address, bond or
 successful HELLO must never become an ownership credential.
 
@@ -34,8 +36,10 @@ recovery. This is an integration contract, not a completed Bluetooth screen.
 
 ## Exact recovery across connections
 
-Every connection starts with HELLO against separately trusted device/incarnation
-identities. LIST supplies a bounded catalog; invalid or faulted sources are not
+The current transfer coordinator starts with HELLO against separately trusted
+device/incarnation identities. The radio DK target additionally requires L4 and
+ASC1 before HELLO; implementing that prerequisite in the Android connection is
+still work. LIST supplies a bounded catalog; invalid or faulted sources are not
 marked saved. SELECT verifies the requested manifest, physical receipt and
 allocation identity. The selected source is pinned for the whole pass, including
 reconnects: changed receipts/lengths remain a source conflict rather than silently
@@ -61,6 +65,10 @@ source verification/seek. Defaults allow 30 seconds for ordinary operations and
 measured throughput or acceptable consumer latency. Physical NAND/radio timing
 must determine production deadlines. Foreground cancellation remains available
 during a long operation.
+
+The radio DK's ASC1 grant has its own ten-minute absolute lifetime. The phone's
+longer command budget does not renew that grant. Matching proof renewal and
+large-source recovery still need Android integration and measured device timing.
 
 ## Android GATT ownership
 
@@ -91,9 +99,15 @@ with the fixed C fixtures. The separate [Netsim/Bumble fixture](ble-fixture/READ
 exercises real Android GATT callbacks against a Python virtual peripheral; it is
 not the Zephyr transfer engine, authenticated enrollment or physical radio.
 
-Consumer access still requires reviewed enrollment/key custody, a matching
-[Zephyr radio adapter](../../docs/a04/radio-integration.md), application lifecycle
-and UI wiring, and an actual microphone/NAND-to-phone recovery trial. Android's
+The [Zephyr radio DK adapter](../../firmware/a04/radio/README.md) now implements
+the matching archive service plus a separate ASC1 characteristic. Its bounded
+owner/mailbox, immutable notification slot and independent authorization expiry
+are described in [radio integration](../../docs/a04/radio-integration.md).
+Its source/host checks do not establish executed Zephyr SMP or physical pairing.
+
+Consumer access still requires the Android ASC1 proof exchange, trusted
+owner-context custody and reviewed enrollment, application lifecycle/UI wiring,
+and an actual microphone/NAND-to-phone recovery trial. Android's
 foreground/background restrictions and hardware tests remain independent of a
 successful emulator run. Original source storage and playback publication are
 documented in [DOWNLOADS.md](DOWNLOADS.md).

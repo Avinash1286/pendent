@@ -1,0 +1,19 @@
+PASS encrypted authorization, bounded mailbox, envelopes and real HELLO
+PASS immutable long auth read, one auth inbox, CCC revokes exact generation
+PASS MTU23 retained fragments and fresh retry token
+PASS MTU247 actual negotiated fragment sizing
+PASS MTU517 actual negotiated fragment sizing
+PASS inline completion cannot reclaim slot before notify call returns
+PASS notification resource exhaustion is bounded and closes without fabricated response
+PASS timeout quarantines callback slot and ref until actual completion
+PASS capture preemption cancels unsent copies and retains transaction high-water
+PASS stale connection completion cannot clear a new delivery
+PASS real engine admission rejection disconnects without competing logical response
+PASS source epoch change propagates real engine rejection
+PASS L4 without 128-bit key is denied and invalidates generation
+PASS owner security request uses workqueue and invalid MTU revokes readiness
+PASS auth watchdog expires without owner ticks and rejects late credential renewal
+PASS RX independently revokes an expired generation before watchdog dispatch
+PASS CCC loss retains submitted slot while revoking grant and stale completion
+PASS preemption during notification call failure retains authenticated session
+18 production GATT adapter / real transfer groups passed

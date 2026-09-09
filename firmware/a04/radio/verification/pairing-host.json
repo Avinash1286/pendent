@@ -1,0 +1,51 @@
+{
+  "schema": "aura.pairing-policy.host.v1",
+  "passed": true,
+  "c_groups": 9,
+  "c_checks": 513,
+  "groups": [
+    "registration_errors_fail_closed_and_boot_has_no_window",
+    "absolute_window_deadline_cancels_SMP_without_owner_tick",
+    "one_attempt_at_a_time_and_three_attempt_window_budget",
+    "dynamic_passkey_and_real_L4_completion_consume_window",
+    "SC_features_Just_Works_L3_and_short_keys_cannot_complete",
+    "old_connection_callbacks_cannot_relabel_or_cancel_new_attempt",
+    "stale_queued_keys_and_event_overflow_never_leak_display",
+    "late_completion_and_obsolete_timer_cannot_extend_or_consume_new_window",
+    "disconnect_releases_only_own_reference_and_overflow_fails_closed"
+  ],
+  "source_sha256": {
+    "firmware/a04/radio/src/aura_pairing_zephyr.c": "140fe733353e09a507c01f633ef96f2b5f0d504e750d6687eeda8c47d229486e",
+    "firmware/a04/radio/include/aura_pairing_zephyr.h": "ebfdc02d1defe8b6e07d603c746e836f9f2ccdbfc4eee879110ea2cadc4bb4ef",
+    "firmware/a04/radio/include/aura_gatt_zephyr.h": "83216f64b144d69dc4ea4333af2e25b93e46755cd415147cd0ee1e1e8e262513",
+    "firmware/a04/include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/radio/tests/pairing_stub/test.c": "be5aad3f7462d638b8fc43d30a6ed9f849cfdb1cb0d6e6bd1c93f7edf372e7e3",
+    "firmware/a04/radio/tests/pairing_stub/verify.py": "c9f4240f24061cb0a6e899476bd216bafb5840f867f901e4f952522066c0ea41",
+    "firmware/a04/radio/tests/pairing_stub/zephyr/bluetooth/conn.h": "e31c9ebe1e37f9dfaa51e22b8c51aecf0427e7a4966f4a2957f8089bf3ef681c",
+    "firmware/a04/radio/tests/pairing_stub/zephyr/kernel.h": "253dbe3df64aeee4915e8c073ff6f195a39ae43d6d2fe46270bd95a5f162f1a3",
+    "firmware/a04/third_party/opus-1.6.1/include/opus.h": "036f6a6e83a20e943505743e113e90d6278cbe8240f7d5bb90b3f86261e783e3",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_types.h": "19cb301ea1eedbcbdbb5049363de061893bf11c20e505a657b69ce6ffa5b11fa",
+    "firmware/a04/third_party/opus-1.6.1/include/opus_defines.h": "bbd4d4e3ba99f6982b1c8d8f5541814ad77d8e8babf3cc788cf23d517b2ca9d6"
+  },
+  "inputs_unchanged": true,
+  "compiler": "F:\\circuit\\.tools\\zephyr\\venv\\Lib\\site-packages\\ziglang\\zig.exe",
+  "compile_options": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-UNDEBUG",
+    "-O2"
+  ],
+  "compiler_output": "",
+  "executable_sha256": "4949e440cac408dbaf16701414d19a1048113105a18ce6f27e2b9db34525ce4a",
+  "transcript": "PASS registration_errors_fail_closed_and_boot_has_no_window\nPASS absolute_window_deadline_cancels_SMP_without_owner_tick\nPASS one_attempt_at_a_time_and_three_attempt_window_budget\nPASS dynamic_passkey_and_real_L4_completion_consume_window\nPASS SC_features_Just_Works_L3_and_short_keys_cannot_complete\nPASS old_connection_callbacks_cannot_relabel_or_cancel_new_attempt\nPASS stale_queued_keys_and_event_overflow_never_leak_display\nPASS late_completion_and_obsolete_timer_cannot_extend_or_consume_new_window\nPASS disconnect_releases_only_own_reference_and_overflow_fails_closed\nPASS pairing groups=9 checks=513 mocked_callbacks=true SMP_tested=false\n",
+  "transcript_sha256": "2d0f867b97b5f1ac9b1821eba77f893f1f984a5c2685feeefb7e24b3f49a4842",
+  "SMP_tested": false,
+  "physical_hardware_tested": false,
+  "scope": "Actual policy callbacks with mocked Zephyr callback registration, monotonic clock, connection generations/refs and work scheduling. No real SMP/controller/passkey exchange or physical interaction."
+}

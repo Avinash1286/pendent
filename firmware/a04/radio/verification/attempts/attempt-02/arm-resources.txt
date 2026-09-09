@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "F:\circuit\firmware\a04\radio\report_resources.py", line 284, in <module>
+    main()
+  File "F:\circuit\firmware\a04\radio\report_resources.py", line 227, in main
+    symbols, auth, sections, absent = inspect_elf()
+                                      ^^^^^^^^^^^^^
+  File "F:\circuit\firmware\a04\radio\report_resources.py", line 133, in inspect_elf
+    require(symbol['st_size'] == EXPECTED_OBJECTS[name] and symbol['st_info']['type'] == 'STT_OBJECT',
+  File "F:\circuit\firmware\a04\radio\report_resources.py", line 44, in require
+    raise ValueError(message)
+ValueError: Unexpected actual object size: audio

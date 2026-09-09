@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "status": "compile_failed",
+  "command": "pwsh.exe -NoProfile -File firmware/a04/radio/build.ps1 -Mode arm -Jobs 2",
+  "failure": "main.c function-local static advertising initializer used block-scope compound literals; GCC rejected non-constant initializer",
+  "no_device_access": true,
+  "preserved_at_utc": "2026-09-09T14:07:03.5370171Z"
+}

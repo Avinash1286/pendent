@@ -1,16 +1,18 @@
-# A04 Zephyr radio integration plan
+# A04 Zephyr radio integration
 
 Reviewed 2026-09-09 against the local Zephyr 4.2.0 sources and the
-[pinned Omi snapshot](../research/omi-source-snapshot.json). This is a proposed
-adapter, not an implemented firmware GATT service, enrollment scheme or tested
-radio link. The portable [transfer owner](../../firmware/a04/include/aura_transfer.h),
-[wire contract](transfer-wire-v1.md) and bounded cursor already exist. Their
-host/ARM checks do not demonstrate radio operation.
+[pinned Omi snapshot](../research/omi-source-snapshot.json). The separate
+[DK radio application](../../firmware/a04/radio/README.md), GATT adapter,
+bounded physical pairing policy and [ASC1 owner proof](session-auth-v1.md) are
+now implemented. Actual-source host checks exercise their separate software
+boundaries. This is not an executed physical radio link or consumer enrollment.
+The portable [transfer owner](../../firmware/a04/include/aura_transfer.h),
+[wire contract](transfer-wire-v1.md) and bounded cursor remain the source contract.
 
 ## Smallest application boundary
 
-Add a separate `firmware/a04/radio/` DK application and a small proposed
-`aura_gatt_zephyr.c` adapter. Keep the wired
+The separate `firmware/a04/radio/` DK application contains
+`aura_gatt_zephyr.c`. It preserves the wired
 [bench build](../../firmware/a04/bench/CMakeLists.txt) and its Bluetooth prohibition.
 Reuse the bench's [storage/audio owner loop](../../firmware/a04/bench/src/main.c),
 NAND configuration and local capture controls. Replace the synchronous EXPORT
@@ -30,7 +32,7 @@ The storage thread owns **every** `aura_transfer_*` call, including the function
 that perform no NAND I/O. Bluetooth callbacks never access journal scratch,
 perform a scan, execute capture work or wait indefinitely for that owner.
 
-| Entry point | Proposed responsibility |
+| Entry point | Implemented responsibility |
 | --- | --- |
 | GATT command write callback | Check connection authorization, offset/flags and the 4–20 byte envelope; copy the command and transport generation into a bounded mailbox using `K_NO_WAIT`. Reject unavailable admission capacity immediately. |
 | Connection, security and CCC callbacks | Close the admission gate immediately when required, publish a bounded lifecycle event, and schedule connection/advertising work. No storage API calls. |
@@ -84,12 +86,16 @@ must not be lost behind a full command queue. Already submitted radio bytes
 cannot be recalled; cancellation does not retract them. Notification completion
 and FINISH never authorize source deletion.
 
-Require an encrypted LE Secure Connections link and a physically bounded pairing
-window, plus a reviewed ownership enrollment/session-proof provider. Bonds,
-public IDs, hashes and the plaintext wired A04B context are not owner proof.
-Only that trusted provider may authorize `session_begin(true)`; until implemented,
-the radio service denies archive/catalog access. Never expose the bench's raw
-key-bearing `PROVISION`/`OPEN` commands over BLE. No developer bypass is proposed.
+The adapter requires authenticated LE Secure Connections L4 with a 16-byte link
+key. A separate pairing policy bounds the locally opened window, pins callback
+connection identity and displays a fresh passkey only through trusted UART.
+The implemented ASC1 provider then verifies a fresh owner proof on every
+connection, using the explicitly loaded local owner context. Its grant is
+read-only; protected persistent keys and consumer enrollment remain missing.
+Bonds, public IDs, hashes and an ATT success are not owner proof. A separate
+absolute-deadline watchdog revokes the adapter even if the storage owner is
+blocked. ASOK becomes visible only after actual transfer-session activation.
+The bench's raw key-bearing `PROVISION`/`OPEN` commands are not exposed over BLE.
 
 Omi's pinned implementation offers useful subscription checks, connection
 references and TX throttling. Its consumer pusher also dequeues before deciding
@@ -101,18 +107,28 @@ durable-receipt boundary instead. Sources:
 
 ## Resource and verification gates
 
+The separate radio target now has its own successful
+[source-bound ARM report](../../firmware/a04/radio/verification/arm-resources.json):
+432,020 bytes FLASH and 243,652 bytes RAM, leaving 18,492 bytes RAM unallocated.
+The original 48 KiB storage/codec and 4 KiB reader stack reservations remain.
+This proves static fit with the actual Bluetooth/security configuration; runtime
+stack high-water, radio/audio timing and physical pairing remain unmeasured.
+
 The existing [wired ARM report](../../firmware/a04/bench/verification/arm-resources.json)
 shows 212,104 bytes RAM used and 50,040 free. The separate
 [synthetic ARM probe](../../firmware/a04/verification/arm-resources.json) measures
 the transfer owner at 4,440 bytes, including its cursor. Replacing the wired
 3,800-byte export cursor would add roughly 640 object bytes before other changes;
-this is not a Bluetooth memory-fit result. Account separately for host/controller,
+that estimate was not a Bluetooth memory-fit result. Account separately for host/controller,
 SMP/settings, ACL pools, mailbox/TX slots and stacks. Do not reduce audio/Opus
 stacks without evidence.
 
-Before enabling product access, require adapter tests for queue exhaustion,
-retries, timeout, CCC changes, stale connection/delivery callbacks, close races,
-capture preemption and denied authorization; a source-bound BT-enabled ARM link
-and stack/resource report; and actual DK-to-Android capture/download/reconnect
-tests at negotiated MTUs including 23. Until then, report portable interoperability,
-cross-compilation and proposed radio behavior separately.
+The [adapter host report](../../firmware/a04/radio/tests/gatt-host-tests.json)
+now passes 18 groups using actual transfer/journal code with modeled radio and
+kernel boundaries: queue exhaustion, retries, timeout, CCC changes, stale
+callbacks, inline completion, capture preemption and independent authorization
+expiry. Provider HMAC and pairing callbacks have separate runners in the radio
+subtree. Preserve these scopes separately from an actual ARM build and from
+runtime measurements. Product acceptance still requires the matching Android
+authentication path and physical DK-to-phone capture/download/reconnect tests,
+including MTU 23, workload timing and runtime stack observations.

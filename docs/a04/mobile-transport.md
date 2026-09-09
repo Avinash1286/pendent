@@ -1,10 +1,12 @@
-# A04 first Android transport proposal
+# A04 Android transport contract
 
-Design review: **2026-09-09**. This specifies the next integration boundary; it is
-not an implemented GATT service, enrolled consumer device, tested phone link or
-wearable release. Local Android archive import, verification and playback are
-the first phone foundation. They do not replace the required pendant-to-phone
-capture download, reconnect recovery, ownership enrollment or physical testing.
+Updated **2026-09-09**. The portable transfer engine, Android recovery/GATT client
+and separate [Zephyr radio DK service](../../firmware/a04/radio/README.md) are
+implemented. The DK service adds [ASC1 owner proof](session-auth-v1.md), which the
+Android client does not yet exchange. Trusted owner-context custody, consumer
+enrollment/UI integration and physical DK-to-phone validation remain required.
+Host checks and Android virtual-peripheral results do not establish executed
+Zephyr pairing, a fabricated wearable or physical recording recovery.
 
 ## Reuse and the implemented storage prerequisite
 
@@ -44,19 +46,23 @@ latency. Android's [durable download owner](../../mobile/android/DOWNLOADS.md)
 now stores complete validated records and resume state in one SQLite transaction,
 then hands completed sources to the existing decoded library. The Android
 [foreground recovery owner and GATT client](../../mobile/android/RECOVERY.md)
-now implement that integration boundary. They remain disconnected from consumer
-access pending ownership enrollment, the actual device radio service and UI
-integration. Their verification scope is recorded separately from a physical
-pendant-to-phone test.
+now implement that integration boundary. The matching
+[radio DK source](../../firmware/a04/radio/src/aura_gatt_zephyr.c) also exists.
+Consumer access remains disconnected pending the Android ASC1 proof exchange,
+trusted owner-context custody, enrollment and UI integration. Their verification
+scope is recorded separately from a physical pendant-to-phone test.
 
-## Proposed A04 BLE v1 surface
+## Implemented A04 BLE v1 surface
 
 Use a separate private service `7f520000-1b15-4f0d-8fe5-3f942170a004`, command
 characteristic `7f520001-1b15-4f0d-8fe5-3f942170a004` (write with response), and
-response characteristic `7f520002-1b15-4f0d-8fe5-3f942170a004` (notify). These are
-project-proposed identifiers, not an existing firmware capability. Both
-characteristics require an encrypted link; consumer access additionally needs
-the reviewed ownership enrollment described below.
+response characteristic `7f520002-1b15-4f0d-8fe5-3f942170a004` (notify). The
+separate radio DK application implements these identifiers and an authentication
+READ/WRITE characteristic `7f520003-1b15-4f0d-8fe5-3f942170a004`. It requires
+authenticated LE Secure Connections at L4, a 16-byte link key, response
+subscription and the trusted provider's generation-bound ASC1 grant before
+archive access. This firmware source is separate from the earlier Android/Bumble
+fixture, which does not implement ASC1. Consumer enrollment remains unfinished.
 
 All integers are unsigned little-endian. Commands start with
 `version:u8=1, opcode:u8, transaction:u16`. A transaction is nonzero and not
@@ -157,7 +163,8 @@ ASE3 is actually present in the relevant file/physical stream. Use checked u64
 arithmetic and verify the computed position against actual canonical records.
 `encoded_bytes` alone is never a download offset.
 
-After reconnect, rediscover the service and subscriptions, check HELLO identity
+After reconnect, rediscover the service and subscriptions, establish L4 and
+complete ASC1 for the radio DK target, then check HELLO identity
 and incarnation, SELECT by capture ID, and compare the exact manifest and bound
 physical receipt. A changed identity or receipt creates a conflict/revision for
 review, not an overwrite. Then replay to the retained boundary once and continue.
@@ -216,9 +223,13 @@ device transfer failure.
 The new Android recovery owner implements these bounded foreground scheduling
 and cancellation rules. Its raw GATT client serializes setup/writes, waits for
 subscription, copies callback values and ends obsolete connection lineages.
-Neither class supplies consumer enrollment. The device-side
-[radio integration plan](radio-integration.md) specifies the remaining Zephyr
-owner/mailbox and notification-lifetime boundary.
+Neither class supplies the Android ASC1 exchange or consumer enrollment. The
+device-side [radio adapter](../../firmware/a04/radio/src/aura_gatt_zephyr.c) now
+implements the owner/mailbox and notification-lifetime boundary described in
+[radio integration](radio-integration.md). Its callbacks copy bounded events;
+the storage owner alone calls the transfer engine. Independent deadline work and
+callback admission checks revoke expired authorization even while NAND work
+delays the owner. Physical timing and radio behavior remain unqualified.
 
 This follows useful boundaries in Omi's pinned
 [recording-transfer coordinator](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/app/lib/services/wals/recording_transfer_coordinator.dart)
@@ -235,8 +246,11 @@ documented `connectedDevice` foreground-service/companion lifecycle and its
 launch restrictions; do not imply a foreground Activity automatically supplies
 background execution. [Android BLE background guidance](https://developer.android.com/develop/connectivity/bluetooth/ble/background)
 
-Pairing requires a bounded physical action. Encrypted Just Works pairing does
-not authenticate a displayless peer against MITM. The 88-byte A04B bench context
+The radio DK source implements a bounded local pairing window with a fresh
+passkey displayed on trusted UART, followed by per-connection
+[ASC1 mutual owner proof](session-auth-v1.md). This is a development arrangement;
+SMP and physical pairing have not been executed. Encrypted Just Works pairing
+does not authenticate a displayless peer against MITM. The 88-byte A04B bench context
 contains the raw owner key and must **not** be copied onto BLE. Consumer enrollment
 needs a separately reviewed physical/out-of-band ownership binding, fresh
 per-device secrets, nonce/challenge freshness, protected key custody and explicit
@@ -253,8 +267,9 @@ ownership replacement is a recovery action.
 
 ## Required integration evidence
 
-Before claiming pendant-to-phone operation: implement and test the bounded
-cursor; fragment/MTU 23 and larger transfers; reconnect at each fragment/record/
+Existing cursor, adapter and Android tests cover separate software boundaries.
+Before claiming pendant-to-phone operation, integrate the Android proof exchange
+and validate the complete path: fragment/MTU 23 and larger transfers; reconnect at each fragment/record/
 terminal boundary; stale GATT callbacks; duplicate/conflicting transactions;
 process exit before/after source commit; filesystem exhaustion; exact physical
 versus synthesized receipts; microphone-priority preemption; and preservation of

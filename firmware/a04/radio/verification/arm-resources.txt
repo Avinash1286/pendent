@@ -1,0 +1,18 @@
+{
+  "status": "ARM_cross_compiled_not_executed",
+  "memory_regions": {
+    "FLASH": {
+      "used_bytes": 432020,
+      "capacity_bytes": 1015808,
+      "remaining_bytes": 583788
+    },
+    "RAM": {
+      "used_bytes": 243652,
+      "capacity_bytes": 262144,
+      "remaining_bytes": 18492
+    }
+  },
+  "gatt_state_bytes": 1768,
+  "source_identities": 61,
+  "report": "F:\\circuit\\firmware\\a04\\radio\\verification\\arm-resources.json"
+}

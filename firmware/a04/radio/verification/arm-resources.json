@@ -1,0 +1,1289 @@
+{
+  "schema": 1,
+  "status": "ARM_cross_compiled_not_executed",
+  "hardware_tested": false,
+  "target": "nrf52840dk/nrf52840",
+  "application": "firmware/a04/radio",
+  "purpose": "Separate DK PDM/NAND/Opus storage owner plus actual Zephyr GATT/security integration; not wearable firmware.",
+  "memory_regions": {
+    "FLASH": {
+      "used_bytes": 432020,
+      "capacity_bytes": 1015808,
+      "remaining_bytes": 583788
+    },
+    "RAM": {
+      "used_bytes": 243652,
+      "capacity_bytes": 262144,
+      "remaining_bytes": 18492
+    }
+  },
+  "internal_settings_partition": {
+    "offset": 1015808,
+    "bytes": 32768,
+    "nvs_sectors": 8,
+    "purpose": "Bluetooth identity/bond/CCC state only; not storage-owner key provisioning"
+  },
+  "symbols": {
+    "snapshot": {
+      "bytes": 45408,
+      "address": 536994820,
+      "type": "STT_OBJECT"
+    },
+    "journal": {
+      "bytes": 36008,
+      "address": 536870960,
+      "type": "STT_OBJECT"
+    },
+    "storage": {
+      "bytes": 208,
+      "address": 536976240,
+      "type": "STT_OBJECT"
+    },
+    "nand": {
+      "bytes": 4464,
+      "address": 536976448,
+      "type": "STT_OBJECT"
+    },
+    "encoder": {
+      "bytes": 32768,
+      "address": 536909736,
+      "type": "STT_OBJECT"
+    },
+    "recorder": {
+      "bytes": 3568,
+      "address": 536963576,
+      "type": "STT_OBJECT"
+    },
+    "audio": {
+      "bytes": 21072,
+      "address": 536942504,
+      "type": "STT_OBJECT"
+    },
+    "control": {
+      "bytes": 4240,
+      "address": 536972000,
+      "type": "STT_OBJECT"
+    },
+    "reader_stack": {
+      "bytes": 4160,
+      "address": 537089728,
+      "type": "STT_OBJECT"
+    },
+    "storage_stack": {
+      "bytes": 49216,
+      "address": 537040512,
+      "type": "STT_OBJECT"
+    },
+    "transfer": {
+      "bytes": 4440,
+      "address": 536967560,
+      "type": "STT_OBJECT"
+    },
+    "aura_transfer_init": {
+      "bytes": 212,
+      "address": 28449,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_session_begin": {
+      "bytes": 212,
+      "address": 28661,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_session_end": {
+      "bytes": 58,
+      "address": 289115,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_cancel_work": {
+      "bytes": 22,
+      "address": 289173,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_submit": {
+      "bytes": 508,
+      "address": 28873,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_step": {
+      "bytes": 1312,
+      "address": 29381,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_copy_response": {
+      "bytes": 220,
+      "address": 30693,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_copy_fragment": {
+      "bytes": 324,
+      "address": 30913,
+      "type": "STT_FUNC"
+    },
+    "aura_transfer_response_sent": {
+      "bytes": 88,
+      "address": 31237,
+      "type": "STT_FUNC"
+    },
+    "main": {
+      "bytes": 592,
+      "address": 14801,
+      "type": "STT_FUNC"
+    },
+    "opus_encode": {
+      "bytes": 80,
+      "address": 203973,
+      "type": "STT_FUNC"
+    },
+    "aura_audio_zephyr_begin": {
+      "bytes": 788,
+      "address": 44217,
+      "type": "STT_FUNC"
+    },
+    "aura_audio_zephyr_reader_step": {
+      "bytes": 360,
+      "address": 45005,
+      "type": "STT_FUNC"
+    },
+    "aura_audio_zephyr_service": {
+      "bytes": 472,
+      "address": 292539,
+      "type": "STT_FUNC"
+    },
+    "aura_audio_zephyr_privacy_cutoff": {
+      "bytes": 110,
+      "address": 292429,
+      "type": "STT_FUNC"
+    },
+    "aura_w25n01gv_zephyr_init": {
+      "bytes": 212,
+      "address": 47425,
+      "type": "STT_FUNC"
+    },
+    "aura_storage_open": {
+      "bytes": 156,
+      "address": 295557,
+      "type": "STT_FUNC"
+    },
+    "aura_storage_prepare_capture": {
+      "bytes": 448,
+      "address": 55021,
+      "type": "STT_FUNC"
+    },
+    "aura_gatt_owner_tick": {
+      "bytes": 1768,
+      "address": 21493,
+      "type": "STT_FUNC"
+    },
+    "aura_gatt_init": {
+      "bytes": 80,
+      "address": 21413,
+      "type": "STT_FUNC"
+    },
+    "aura_pairing_init": {
+      "bytes": 80,
+      "address": 25929,
+      "type": "STT_FUNC"
+    },
+    "aura_pairing_open": {
+      "bytes": 396,
+      "address": 25349,
+      "type": "STT_FUNC"
+    },
+    "aura_pairing_close": {
+      "bytes": 184,
+      "address": 25745,
+      "type": "STT_FUNC"
+    },
+    "aura_pairing_take": {
+      "bytes": 524,
+      "address": 26009,
+      "type": "STT_FUNC"
+    },
+    "z_impl_sys_csrand_get": {
+      "bytes": 18,
+      "address": 299645,
+      "type": "STT_FUNC"
+    },
+    "entropy_nrf5_get_entropy": {
+      "bytes": 128,
+      "address": 155325,
+      "type": "STT_FUNC"
+    },
+    "bt_enable": {
+      "bytes": 184,
+      "address": 68941,
+      "type": "STT_FUNC"
+    },
+    "bt_conn_set_security": {
+      "bytes": 108,
+      "address": 303597,
+      "type": "STT_FUNC"
+    },
+    "bt_gatt_notify_cb": {
+      "bytes": 324,
+      "address": 86689,
+      "type": "STT_FUNC"
+    },
+    "settings_load": {
+      "bytes": 6,
+      "address": 298717,
+      "type": "STT_FUNC"
+    },
+    "aura_gatt_state": {
+      "bytes": 1768,
+      "address": 536980912,
+      "type": "STT_OBJECT"
+    },
+    "session_auth": {
+      "bytes": 376,
+      "address": 536967184,
+      "type": "STT_OBJECT"
+    },
+    "pairing": {
+      "bytes": 168,
+      "address": 536982680,
+      "type": "STT_OBJECT",
+      "source": "firmware/a04/radio/src/aura_pairing_zephyr.c",
+      "defining_object": ".tools/a04-radio/arm/CMakeFiles/app.dir/src/aura_pairing_zephyr.c.obj",
+      "defining_object_sha256": "c3f0c4c28c0d357c3b87196c0d8cd6743b5b2f71245c063117d43d0ab7b61361"
+    },
+    "_flash_used": {
+      "bytes": 0,
+      "address": 432020,
+      "type": "STT_NOTYPE"
+    },
+    "_image_ram_size": {
+      "bytes": 0,
+      "address": 243652,
+      "type": "STT_NOTYPE"
+    }
+  },
+  "linked_session_authentication_symbols": {
+    "aura_session_auth.c": [
+      {
+        "bytes": 0,
+        "type": "STT_FILE"
+      }
+    ],
+    "aura_session_auth_forget": [
+      {
+        "bytes": 12,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_snapshot": [
+      {
+        "bytes": 176,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_init": [
+      {
+        "bytes": 132,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_receive": [
+      {
+        "bytes": 848,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_bind": [
+      {
+        "bytes": 128,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_granted": [
+      {
+        "bytes": 42,
+        "type": "STT_FUNC"
+      }
+    ],
+    "aura_session_auth_end": [
+      {
+        "bytes": 68,
+        "type": "STT_FUNC"
+      }
+    ]
+  },
+  "allocated_sections": [
+    {
+      "name": "rom_start",
+      "bytes": 256,
+      "address": 0
+    },
+    {
+      "name": "text",
+      "bytes": 337324,
+      "address": 256
+    },
+    {
+      "name": ".ARM.exidx",
+      "bytes": 8,
+      "address": 337580
+    },
+    {
+      "name": "initlevel",
+      "bytes": 152,
+      "address": 337588
+    },
+    {
+      "name": "device_area",
+      "bytes": 320,
+      "address": 337740
+    },
+    {
+      "name": "sw_isr_table",
+      "bytes": 384,
+      "address": 338060
+    },
+    {
+      "name": "entropy_driver_api_area",
+      "bytes": 8,
+      "address": 338444
+    },
+    {
+      "name": "flash_driver_api_area",
+      "bytes": 48,
+      "address": 338452
+    },
+    {
+      "name": "gpio_driver_api_area",
+      "bytes": 36,
+      "address": 338500
+    },
+    {
+      "name": "spi_driver_api_area",
+      "bytes": 8,
+      "address": 338536
+    },
+    {
+      "name": "bt_hci_driver_api_area",
+      "bytes": 12,
+      "address": 338544
+    },
+    {
+      "name": "clock_control_driver_api_area",
+      "bytes": 28,
+      "address": 338556
+    },
+    {
+      "name": "uart_driver_api_area",
+      "bytes": 68,
+      "address": 338584
+    },
+    {
+      "name": "bt_l2cap_fixed_chan_area",
+      "bytes": 36,
+      "address": 338652
+    },
+    {
+      "name": "bt_conn_cb_area",
+      "bytes": 64,
+      "address": 338688
+    },
+    {
+      "name": "bt_gatt_service_static_area",
+      "bytes": 24,
+      "address": 338752
+    },
+    {
+      "name": "settings_handler_static_area",
+      "bytes": 96,
+      "address": 338776
+    },
+    {
+      "name": "tbss",
+      "bytes": 8,
+      "address": 338872
+    },
+    {
+      "name": "rodata",
+      "bytes": 54796,
+      "address": 338880
+    },
+    {
+      "name": "datas",
+      "bytes": 37733,
+      "address": 536870912
+    },
+    {
+      "name": "device_states",
+      "bytes": 23,
+      "address": 536908645
+    },
+    {
+      "name": "k_mem_slab_area",
+      "bytes": 96,
+      "address": 536908668
+    },
+    {
+      "name": "k_mutex_area",
+      "bytes": 20,
+      "address": 536908764
+    },
+    {
+      "name": "k_msgq_area",
+      "bytes": 52,
+      "address": 536908784
+    },
+    {
+      "name": "k_sem_area",
+      "bytes": 24,
+      "address": 536908836
+    },
+    {
+      "name": "k_fifo_area",
+      "bytes": 28,
+      "address": 536908860
+    },
+    {
+      "name": "net_buf_pool_area",
+      "bytes": 364,
+      "address": 536908888
+    },
+    {
+      "name": ".last_section",
+      "bytes": 4,
+      "address": 432016
+    },
+    {
+      "name": "bss",
+      "bytes": 131217,
+      "address": 536909256
+    },
+    {
+      "name": "noinit",
+      "bytes": 74052,
+      "address": 537040512
+    }
+  ],
+  "audio_object_abi": {
+    "actual_dwarf_layouts": {
+      "k_msgq": {
+        "bytes": 52,
+        "member_offsets": {
+          "wait_q": 0,
+          "lock": 8,
+          "msg_size": 12,
+          "max_msgs": 16,
+          "buffer_start": 20,
+          "buffer_end": 24,
+          "read_ptr": 28,
+          "write_ptr": 32,
+          "used_msgs": 36,
+          "poll_events": 40,
+          "flags": 48
+        }
+      },
+      "k_mem_slab": {
+        "bytes": 32,
+        "member_offsets": {
+          "wait_q": 0,
+          "lock": 8,
+          "buffer": 12,
+          "free_list": 16,
+          "info": 20
+        }
+      },
+      "aura_audio_zephyr": {
+        "bytes": 21072,
+        "member_offsets": {
+          "dmic": 0,
+          "mic_enable": 4,
+          "permitted": 12,
+          "permission_user": 16,
+          "recorder": 20,
+          "mix": 24,
+          "slab": 28,
+          "queue": 60,
+          "dma_memory": 112,
+          "queue_memory": 10352,
+          "state": 20976,
+          "stop_kind": 20980,
+          "fault": 20984,
+          "reader_enabled": 20988,
+          "reader_done": 20992,
+          "driver_quiescent": 20996,
+          "stop_generation": 21000,
+          "privacy_generation": 21004,
+          "epoch": 21008,
+          "expected_driver_sequence": 21016,
+          "published_samples": 21024,
+          "stop_started_ms": 21032,
+          "published_blocks": 21040,
+          "warmup_remaining": 21044,
+          "peak": 21048,
+          "clipped": 21056,
+          "initialized": 21064,
+          "ending": 21065
+        }
+      }
+    },
+    "cause": "BT_HCI_HOST selects CONFIG_POLL. Z_DECL_POLL_EVENT inserts an 8-byte sys_dlist_t poll_events at k_msgq offset 40; k_msgq is 52 bytes instead of 44, so the unchanged audio object is 21,072 bytes instead of the wired bench 21,064 bytes.",
+    "audio_buffers_changed": false,
+    "sources": [
+      ".tools/zephyr/zephyr/subsys/bluetooth/host/Kconfig",
+      ".tools/zephyr/zephyr/include/zephyr/kernel.h",
+      "firmware/a04/include/aura_audio_zephyr.h"
+    ]
+  },
+  "memory_limitation": "Remaining RAM is linker-unreserved static capacity after all linked allocations and reserved stacks. It is not measured runtime stack headroom; no stack high-water, call-chain bound, or hardware timing has been established.",
+  "configuration": {
+    "enabled_checks": [
+      "CONFIG_SOC_NRF52840",
+      "CONFIG_BOARD_NRF52840DK",
+      "CONFIG_BT",
+      "CONFIG_BT_PERIPHERAL",
+      "CONFIG_BT_SMP",
+      "CONFIG_BT_SMP_SC_ONLY",
+      "CONFIG_BT_SMP_SC_PAIR_ONLY",
+      "CONFIG_BT_SMP_APP_PAIRING_ACCEPT",
+      "CONFIG_BT_SMP_ENFORCE_MITM",
+      "CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION",
+      "CONFIG_BT_SETTINGS",
+      "CONFIG_SETTINGS_NVS",
+      "CONFIG_NVS",
+      "CONFIG_USE_DT_CODE_PARTITION",
+      "CONFIG_BT_RECV_WORKQ_BT",
+      "CONFIG_BT_HCI_HOST",
+      "CONFIG_POLL",
+      "CONFIG_MPU_STACK_GUARD",
+      "CONFIG_INIT_STACKS",
+      "CONFIG_THREAD_STACK_INFO",
+      "CONFIG_AURA_DMIC_NRFX_PDM",
+      "CONFIG_AUDIO_DMIC",
+      "CONFIG_SPI",
+      "CONFIG_GPIO",
+      "CONFIG_ENTROPY_GENERATOR",
+      "CONFIG_ENTROPY_NRF5_RNG",
+      "CONFIG_ENTROPY_NRF5_BIAS_CORRECTION",
+      "CONFIG_ENTROPY_DEVICE_RANDOM_GENERATOR",
+      "CONFIG_CSPRNG_ENABLED",
+      "CONFIG_HARDWARE_DEVICE_CS_GENERATOR"
+    ],
+    "disabled_checks": [
+      "CONFIG_AUDIO_DMIC_NRFX_PDM",
+      "CONFIG_BT_FIXED_PASSKEY",
+      "CONFIG_BT_USE_DEBUG_KEYS",
+      "CONFIG_BT_STORE_DEBUG_KEYS",
+      "CONFIG_BT_KEYS_OVERWRITE_OLDEST",
+      "CONFIG_BT_BONDABLE",
+      "CONFIG_BT_GATT_DYNAMIC_DB",
+      "CONFIG_BT_EATT",
+      "CONFIG_BOOTLOADER_MCUBOOT",
+      "CONFIG_USB_DEVICE_STACK",
+      "CONFIG_USB_DEVICE_STACK_NEXT",
+      "CONFIG_TEST_RANDOM_GENERATOR",
+      "CONFIG_TEST_CSPRNG_GENERATOR",
+      "CONFIG_TIMER_RANDOM_GENERATOR",
+      "CONFIG_XOSHIRO_RANDOM_GENERATOR",
+      "CONFIG_CTR_DRBG_CSPRNG_GENERATOR"
+    ],
+    "fixed": {
+      "CONFIG_BT_MAX_CONN": 1,
+      "CONFIG_BT_MAX_PAIRED": 1,
+      "CONFIG_BT_ID_MAX": 1,
+      "CONFIG_BT_L2CAP_TX_MTU": 247,
+      "CONFIG_BT_BUF_ACL_TX_SIZE": 251,
+      "CONFIG_BT_BUF_ACL_RX_SIZE": 251,
+      "CONFIG_BT_ATT_TX_COUNT": 3,
+      "CONFIG_BT_BUF_ACL_TX_COUNT": 3,
+      "CONFIG_BT_ATT_PREPARE_COUNT": 0,
+      "CONFIG_BT_RX_STACK_SIZE": 2048,
+      "CONFIG_MAIN_STACK_SIZE": 2048,
+      "CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE": 4096,
+      "CONFIG_HEAP_MEM_POOL_SIZE": 0,
+      "CONFIG_SETTINGS_NVS_SECTOR_COUNT": 8,
+      "CONFIG_SETTINGS_NVS_SECTOR_SIZE_MULT": 1,
+      "CONFIG_FLASH_LOAD_OFFSET": 0,
+      "CONFIG_FLASH_LOAD_SIZE": 1015808
+    },
+    "actual": {
+      "CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE": "4096",
+      "CONFIG_BT_LONG_WQ_STACK_SIZE": "1400",
+      "CONFIG_MAIN_STACK_SIZE": "2048",
+      "CONFIG_BT_HCI_VS": "y",
+      "CONFIG_FLASH_SIZE": "1024",
+      "CONFIG_FLASH_BASE_ADDRESS": "0x0",
+      "CONFIG_BT_AUTO_PHY_UPDATE": "y",
+      "CONFIG_BT_AUTO_DATA_LEN_UPDATE": "y",
+      "CONFIG_FLASH_LOAD_OFFSET": "0x0",
+      "CONFIG_FLASH_FILL_BUFFER_SIZE": "32",
+      "CONFIG_BT_BUF_EVT_RX_COUNT": "10",
+      "CONFIG_BT_BUF_ACL_TX_COUNT": "3",
+      "CONFIG_FLASH_INIT_PRIORITY": "50",
+      "CONFIG_BT_BUF_CMD_TX_COUNT": "1",
+      "CONFIG_BT_BUF_CMD_TX_SIZE": "65",
+      "CONFIG_BT_BUF_EVT_RX_SIZE": "68",
+      "CONFIG_BT_BUF_ACL_TX_SIZE": "251",
+      "CONFIG_BT_BUF_ACL_RX_SIZE": "251",
+      "CONFIG_BT_L2CAP_TX_MTU": "247",
+      "CONFIG_PSA_CRYPTO_CLIENT": "y",
+      "CONFIG_PSA_WANT_ALG_CMAC": "y",
+      "CONFIG_PSA_WANT_ALG_ECB_NO_PADDING": "y",
+      "CONFIG_PSA_WANT_ALG_ECDH": "y",
+      "CONFIG_PSA_WANT_ALG_SHA_256": "y",
+      "CONFIG_PSA_WANT_ECC_SECP_R1_256": "y",
+      "CONFIG_PSA_WANT_KEY_TYPE_AES": "y",
+      "CONFIG_PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_IMPORT": "y",
+      "CONFIG_PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_EXPORT": "y",
+      "CONFIG_PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_GENERATE": "y",
+      "CONFIG_PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_BASIC": "y",
+      "CONFIG_MBEDTLS_BUILTIN": "y",
+      "CONFIG_MBEDTLS_CFG_FILE": "\"config-mbedtls.h\"",
+      "CONFIG_MBEDTLS_PSK_MAX_LEN": "32",
+      "CONFIG_MBEDTLS_SOME_AEAD_CIPHER_ENABLED": "y",
+      "CONFIG_MBEDTLS_SOME_CIPHER_ENABLED": "y",
+      "CONFIG_MBEDTLS_CIPHER_AES_ENABLED": "y",
+      "CONFIG_MBEDTLS_AES_ROM_TABLES": "y",
+      "CONFIG_MBEDTLS_AES_FEWER_TABLES": "y",
+      "CONFIG_MBEDTLS_CIPHER_MODE_CBC_ENABLED": "y",
+      "CONFIG_MBEDTLS_SHA256": "y",
+      "CONFIG_MBEDTLS_SHA256_SMALLER": "y",
+      "CONFIG_MBEDTLS_CTR_DRBG_ENABLED": "y",
+      "CONFIG_MBEDTLS_CIPHER": "y",
+      "CONFIG_MBEDTLS_PSA_CRYPTO_EXTERNAL_RNG": "y",
+      "CONFIG_MBEDTLS_PSA_CRYPTO_C": "y",
+      "CONFIG_MBEDTLS_USE_PSA_CRYPTO": "y",
+      "CONFIG_MBEDTLS_PSA_CRYPTO_CLIENT": "y",
+      "CONFIG_MBEDTLS_PSA_P256M_DRIVER_ENABLED": "y",
+      "CONFIG_MBEDTLS_PSA_STATIC_KEY_SLOTS": "y",
+      "CONFIG_MBEDTLS_PSA_KEY_SLOT_COUNT": "16",
+      "CONFIG_MBEDTLS_SSL_MAX_CONTENT_LEN": "1500",
+      "CONFIG_MBEDTLS_INIT": "y",
+      "CONFIG_HEAP_MEM_POOL_SIZE": "0",
+      "CONFIG_BT_DRIVERS": "y",
+      "CONFIG_BT_HCI_INIT_PRIORITY": "50",
+      "CONFIG_BT_BUF_EVT_DISCARDABLE_SIZE": "43",
+      "CONFIG_BT_DRV_TX_STACK_SIZE": "256",
+      "CONFIG_BT_DRV_RX_STACK_SIZE": "512",
+      "CONFIG_ENTROPY_GENERATOR": "y",
+      "CONFIG_ENTROPY_INIT_PRIORITY": "50",
+      "CONFIG_ENTROPY_NRF5_RNG": "y",
+      "CONFIG_ENTROPY_NRF5_BIAS_CORRECTION": "y",
+      "CONFIG_ENTROPY_NRF5_THR_POOL_SIZE": "8",
+      "CONFIG_ENTROPY_NRF5_THR_THRESHOLD": "4",
+      "CONFIG_ENTROPY_NRF5_ISR_POOL_SIZE": "16",
+      "CONFIG_ENTROPY_NRF5_ISR_THRESHOLD": "12",
+      "CONFIG_ENTROPY_HAS_DRIVER": "y",
+      "CONFIG_FLASH_HAS_DRIVER_ENABLED": "y",
+      "CONFIG_FLASH_HAS_EXPLICIT_ERASE": "y",
+      "CONFIG_FLASH_HAS_PAGE_LAYOUT": "y",
+      "CONFIG_FLASH_JESD216": "y",
+      "CONFIG_FLASH_PAGE_LAYOUT": "y",
+      "CONFIG_SOC_FLASH_NRF_RADIO_SYNC_TICKER": "y",
+      "CONFIG_SOC_FLASH_NRF_TIMEOUT_MULTIPLIER": "10",
+      "CONFIG_BT_HCI": "y",
+      "CONFIG_BT_PERIPHERAL": "y",
+      "CONFIG_BT_BROADCASTER": "y",
+      "CONFIG_BT_CONN": "y",
+      "CONFIG_BT_MAX_CONN": "1",
+      "CONFIG_BT_CONN_TX": "y",
+      "CONFIG_BT_PHY_UPDATE": "y",
+      "CONFIG_BT_DATA_LEN_UPDATE": "y",
+      "CONFIG_BT_BUF_ACL_RX_COUNT_EXTRA": "1",
+      "CONFIG_BT_BUF_ACL_RX_COUNT": "0",
+      "CONFIG_BT_BUF_EVT_DISCARDABLE_COUNT": "3",
+      "CONFIG_BT_HAS_HCI_VS": "y",
+      "CONFIG_BT_RPA": "y",
+      "CONFIG_BT_ASSERT": "y",
+      "CONFIG_BT_ASSERT_VERBOSE": "y",
+      "CONFIG_BT_DEBUG_NONE": "y",
+      "CONFIG_BT_LONG_WQ": "y",
+      "CONFIG_BT_LONG_WQ_PRIO": "10",
+      "CONFIG_BT_LONG_WQ_INIT_PRIO": "50",
+      "CONFIG_BT_HCI_HOST": "y",
+      "CONFIG_BT_HCI_TX_STACK_SIZE": "768",
+      "CONFIG_BT_HCI_TX_PRIO": "7",
+      "CONFIG_BT_RECV_WORKQ_BT": "y",
+      "CONFIG_BT_RX_STACK_SIZE": "2048",
+      "CONFIG_BT_RX_PRIO": "8",
+      "CONFIG_BT_DRIVER_RX_HIGH_PRIO": "6",
+      "CONFIG_BT_SETTINGS": "y",
+      "CONFIG_BT_SETTINGS_CCC_LAZY_LOADING": "y",
+      "CONFIG_BT_SETTINGS_DELAYED_STORE": "y",
+      "CONFIG_BT_SETTINGS_DELAYED_STORE_MS": "1000",
+      "CONFIG_BT_SETTINGS_CCC_STORE_ON_WRITE": "y",
+      "CONFIG_BT_SETTINGS_USE_PRINTK": "y",
+      "CONFIG_BT_SETTINGS_CCC_STORE_MAX": "4",
+      "CONFIG_BT_FILTER_ACCEPT_LIST": "y",
+      "CONFIG_BT_LIM_ADV_TIMEOUT": "30",
+      "CONFIG_BT_CONN_TX_USER_DATA_SIZE": "16",
+      "CONFIG_BT_CONN_FRAG_COUNT": "1",
+      "CONFIG_BT_CONN_TX_MAX": "3",
+      "CONFIG_BT_SMP": "y",
+      "CONFIG_BT_SMP_APP_PAIRING_ACCEPT": "y",
+      "CONFIG_BT_SMP_SC_PAIR_ONLY": "y",
+      "CONFIG_BT_SMP_SC_ONLY": "y",
+      "CONFIG_BT_SMP_ENFORCE_MITM": "y",
+      "CONFIG_BT_SMP_MIN_ENC_KEY_SIZE": "16",
+      "CONFIG_BT_L2CAP_TX_BUF_COUNT": "3",
+      "CONFIG_BT_L2CAP_TX_FRAG_COUNT": "2",
+      "CONFIG_BT_ATT_TX_COUNT": "3",
+      "CONFIG_BT_ATT_PREPARE_COUNT": "0",
+      "CONFIG_BT_ATT_RETRY_ON_SEC_ERR": "y",
+      "CONFIG_BT_GATT_AUTO_SEC_REQ": "y",
+      "CONFIG_BT_GATT_SERVICE_CHANGED": "y",
+      "CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION": "y",
+      "CONFIG_BT_GATT_READ_MULTIPLE": "y",
+      "CONFIG_BT_GATT_READ_MULT_VAR_LEN": "y",
+      "CONFIG_BT_GAP_AUTO_UPDATE_CONN_PARAMS": "y",
+      "CONFIG_BT_GAP_PERIPHERAL_PREF_PARAMS": "y",
+      "CONFIG_BT_PERIPHERAL_PREF_MIN_INT": "24",
+      "CONFIG_BT_PERIPHERAL_PREF_MAX_INT": "40",
+      "CONFIG_BT_PERIPHERAL_PREF_LATENCY": "0",
+      "CONFIG_BT_PERIPHERAL_PREF_TIMEOUT": "42",
+      "CONFIG_BT_MAX_PAIRED": "1",
+      "CONFIG_BT_CREATE_CONN_TIMEOUT": "3",
+      "CONFIG_BT_CONN_PARAM_UPDATE_TIMEOUT": "5000",
+      "CONFIG_BT_CONN_PARAM_RETRY_COUNT": "3",
+      "CONFIG_BT_CONN_PARAM_RETRY_TIMEOUT": "5000",
+      "CONFIG_BT_DEVICE_NAME": "\"AURA A04 DK\"",
+      "CONFIG_BT_DEVICE_APPEARANCE": "0",
+      "CONFIG_BT_ID_MAX": "1",
+      "CONFIG_BT_ECC": "y",
+      "CONFIG_BT_CTLR_ENTROPY_SUPPORT": "y",
+      "CONFIG_BT_CTLR_CRYPTO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_LE_ENC_SUPPORT": "y",
+      "CONFIG_BT_CTLR_CONN_PARAM_REQ_SUPPORT": "y",
+      "CONFIG_BT_CTLR_EXT_REJ_IND_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PER_INIT_FEAT_XCHG_SUPPORT": "y",
+      "CONFIG_BT_CTLR_DATA_LEN_UPDATE_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PRIVACY_SUPPORT": "y",
+      "CONFIG_BT_CTLR_EXT_SCAN_FP_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PHY_UPDATE_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PHY_2M_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PHY_CODED_SUPPORT": "y",
+      "CONFIG_BT_CTLR_ADV_EXT_SUPPORT": "y",
+      "CONFIG_BT_CTLR_ADV_PERIODIC_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SYNC_PERIODIC_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SYNC_TRANSFER_SENDER_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SYNC_TRANSFER_RECEIVER_SUPPORT": "y",
+      "CONFIG_BT_CTLR_ADV_ISO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SYNC_ISO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_BROADCAST_ISO_ENC_SUPPORT": "y",
+      "CONFIG_BT_CTLR_CENTRAL_ISO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_PERIPHERAL_ISO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_CHAN_SEL_2_SUPPORT": "y",
+      "CONFIG_BT_CTLR_MIN_USED_CHAN_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SCA_UPDATE_SUPPORT": "y",
+      "CONFIG_BT_CTLR_CONN_RSSI_SUPPORT": "y",
+      "CONFIG_BT_LL_SW_SPLIT": "y",
+      "CONFIG_BT_CTLR_HCI": "y",
+      "CONFIG_BT_CTLR_HCI_NUM_CMD_PKT_MAX": "1",
+      "CONFIG_BT_CTLR_ENTROPY": "y",
+      "CONFIG_BT_CTLR_CRYPTO": "y",
+      "CONFIG_BT_CTLR_HCI_VS_BUILD_INFO": "\"\"",
+      "CONFIG_BT_CTLR_RX_BUFFERS": "1",
+      "CONFIG_BT_CTLR_TX_PWR_0": "y",
+      "CONFIG_BT_CTLR_TX_PWR_DBM": "0",
+      "CONFIG_BT_CTLR_LE_ENC": "y",
+      "CONFIG_BT_CTLR_CONN_PARAM_REQ": "y",
+      "CONFIG_BT_CTLR_EXT_REJ_IND": "y",
+      "CONFIG_BT_CTLR_PER_INIT_FEAT_XCHG": "y",
+      "CONFIG_BT_CTLR_LE_PING": "y",
+      "CONFIG_BT_CTLR_DATA_LENGTH": "y",
+      "CONFIG_BT_CTLR_DATA_LENGTH_MAX": "27",
+      "CONFIG_BT_CTLR_PHY": "y",
+      "CONFIG_BT_CTLR_MIN_USED_CHAN": "y",
+      "CONFIG_BT_CTLR_FILTER_ACCEPT_LIST": "y",
+      "CONFIG_BT_CTLR_PRIVACY": "y",
+      "CONFIG_BT_CTLR_FAL_SIZE": "8",
+      "CONFIG_BT_CTLR_RL_SIZE": "8",
+      "CONFIG_BT_CTLR_PHY_2M": "y",
+      "CONFIG_BT_CTLR_CHAN_SEL_2": "y",
+      "CONFIG_BT_LLL_VENDOR_NORDIC": "y",
+      "CONFIG_BT_CTLR_XTAL_ADVANCED_SUPPORT": "y",
+      "CONFIG_BT_CTLR_SCHED_ADVANCED_SUPPORT": "y",
+      "CONFIG_BT_CTLR_TIFS_HW_SUPPORT": "y",
+      "CONFIG_BT_CTLR_ULL_LLL_PRIO_SUPPORT": "y",
+      "CONFIG_BT_CTLR_RX_PRIO_STACK_SIZE": "448",
+      "CONFIG_BT_CTLR_RX_STACK_SIZE": "896",
+      "CONFIG_BT_CTLR_COMPANY_ID": "0x05F1",
+      "CONFIG_BT_CTLR_SUBVERSION_NUMBER": "0xFFFF",
+      "CONFIG_BT_CTLR_AD_DATA_BACKUP": "y",
+      "CONFIG_BT_CTLR_ADV_DATA_BUF_MAX": "1",
+      "CONFIG_BT_CTLR_OPTIMIZE_FOR_SPEED": "y",
+      "CONFIG_BT_CTLR_XTAL_ADVANCED": "y",
+      "CONFIG_BT_CTLR_XTAL_THRESHOLD": "1500",
+      "CONFIG_BT_CTLR_ASSERT_OVERHEAD_START": "y",
+      "CONFIG_BT_CTLR_PERIPHERAL_RESERVE_MAX": "y",
+      "CONFIG_BT_CTLR_EVENT_OVERHEAD_RESERVE_MAX": "y",
+      "CONFIG_BT_CTLR_SLOT_RESERVATION_UPDATE": "y",
+      "CONFIG_BT_CTLR_LLL_PRIO": "0",
+      "CONFIG_BT_CTLR_ULL_HIGH_PRIO": "1",
+      "CONFIG_BT_CTLR_ULL_LOW_PRIO": "1",
+      "CONFIG_BT_CTLR_RADIO_ENABLE_FAST": "y",
+      "CONFIG_BT_CTLR_LLCP_CONN": "1",
+      "CONFIG_BT_CTLR_LLCP_TX_PER_CONN_TX_CTRL_BUF_NUM_MAX": "4",
+      "CONFIG_BT_CTLR_LLCP_PER_CONN_TX_CTRL_BUF_NUM": "4",
+      "CONFIG_BT_CTLR_LLCP_COMMON_TX_CTRL_BUF_NUM": "0",
+      "CONFIG_BT_CTLR_LLCP_LOCAL_PROC_CTX_BUF_NUM": "6",
+      "CONFIG_BT_CTLR_LLCP_REMOTE_PROC_CTX_BUF_NUM": "1",
+      "CONFIG_BT_CTLR_FORCE_MD_COUNT": "0",
+      "CONFIG_BT_CTLR_CONN_RANDOM_FORCE": "y",
+      "CONFIG_BT_CTLR_EVENT_IFS_LOW_LAT_US": "150",
+      "CONFIG_BT_MAYFLY_YIELD_AFTER_CALL": "y",
+      "CONFIG_BT_TICKER_UPDATE": "y",
+      "CONFIG_BT_TICKER_REMAINDER_SUPPORT": "y",
+      "CONFIG_BT_TICKER_NEXT_SLOT_GET": "y",
+      "CONFIG_BT_TICKER_REMAINDER_GET": "y",
+      "CONFIG_BT_TICKER_NEXT_SLOT_GET_MATCH": "y",
+      "CONFIG_BT_TICKER_EXT": "y",
+      "CONFIG_BT_CTLR_DTM_HCI_SUPPORT": "y",
+      "CONFIG_BT_CRYPTO": "y",
+      "CONFIG_BT_COMPANY_ID": "0x05F1",
+      "CONFIG_NVS": "y",
+      "CONFIG_ENTROPY_DEVICE_RANDOM_GENERATOR": "y",
+      "CONFIG_CSPRNG_AVAILABLE": "y",
+      "CONFIG_CSPRNG_ENABLED": "y",
+      "CONFIG_HARDWARE_DEVICE_CS_GENERATOR": "y",
+      "CONFIG_SETTINGS_DYNAMIC_HANDLERS": "y",
+      "CONFIG_SETTINGS_NVS": "y",
+      "CONFIG_SETTINGS_NVS_SECTOR_SIZE_MULT": "1",
+      "CONFIG_SETTINGS_NVS_SECTOR_COUNT": "8",
+      "CONFIG_FLASH_MAP": "y",
+      "CONFIG_FLASH_LOAD_SIZE": "0xf8000"
+    }
+  },
+  "compiled_peripheral_mapping": {
+    "pinctrl_psels": {
+      "pdm0/default": [
+        335544350,
+        352321567
+      ],
+      "spi3/default": [
+        67108911,
+        83886125,
+        100663342
+      ],
+      "spi3/sleep": [
+        67108911,
+        83886125,
+        100663342
+      ],
+      "uart0/default": [
+        6,
+        16777224,
+        33554437,
+        50331655
+      ],
+      "uart0/sleep": [
+        6,
+        16777224,
+        33554437,
+        50331655
+      ]
+    },
+    "gpio_bindings": {
+      "spi3/cs-gpios": {
+        "port": 1,
+        "pin": 12,
+        "flags": 1
+      },
+      "bench_controls/mic-enable-gpios": {
+        "port": 1,
+        "pin": 3,
+        "flags": 0
+      },
+      "bench_controls/privacy-gpios": {
+        "port": 1,
+        "pin": 4,
+        "flags": 17
+      }
+    },
+    "status_led": "P0.13 active low",
+    "nand_bus_hz": 1000000,
+    "uart_baud": 115200,
+    "console": "/soc/uart@40002000",
+    "disabled_conflicts": [
+      "spi1",
+      "pwm0",
+      "i2c1",
+      "uart1"
+    ],
+    "scope": "Compiled device-tree mapping; no electrical, timing or actual wiring validation.",
+    "entropy": {
+      "chosen": "/soc/random@4000d000",
+      "compatible": [
+        "nordic,nrf-rng"
+      ],
+      "source": "sys_csrand_get / hardware entropy / nRF5 bias correction",
+      "scope": "Resolved implementation only; no physical entropy or latency measurement"
+    }
+  },
+  "stack_analysis": {
+    "translation_units_with_reports": 148,
+    "largest_reported_functions": [
+      {
+        "function": "silk_encode_frame_FIX",
+        "compiler_reported_bytes": 10760,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_multistream_encode_native",
+        "compiler_reported_bytes": 9728,
+        "classification": "dynamic"
+      },
+      {
+        "function": "silk_LBRR_encode_FIX",
+        "compiler_reported_bytes": 4464,
+        "classification": "dynamic"
+      },
+      {
+        "function": "aura_archive_replay",
+        "compiler_reported_bytes": 2848,
+        "classification": "static"
+      },
+      {
+        "function": "celt_decode_lost",
+        "compiler_reported_bytes": 2400,
+        "classification": "dynamic"
+      },
+      {
+        "function": "open_block",
+        "compiler_reported_bytes": 2096,
+        "classification": "static"
+      },
+      {
+        "function": "checkpoint.constprop",
+        "compiler_reported_bytes": 2080,
+        "classification": "static"
+      },
+      {
+        "function": "celt_plc_pitch_search.constprop",
+        "compiler_reported_bytes": 2080,
+        "classification": "dynamic"
+      },
+      {
+        "function": "silk_resampler_down2_3",
+        "compiler_reported_bytes": 2016,
+        "classification": "dynamic"
+      },
+      {
+        "function": "validate_state",
+        "compiler_reported_bytes": 1704,
+        "classification": "static"
+      },
+      {
+        "function": "aura_storage_prepare_capture",
+        "compiler_reported_bytes": 1656,
+        "classification": "static"
+      },
+      {
+        "function": "aura_journal_export",
+        "compiler_reported_bytes": 1640,
+        "classification": "static"
+      },
+      {
+        "function": "verify_capture",
+        "compiler_reported_bytes": 1616,
+        "classification": "static"
+      },
+      {
+        "function": "aura_journal_stage",
+        "compiler_reported_bytes": 1528,
+        "classification": "static"
+      },
+      {
+        "function": "valid_manifest",
+        "compiler_reported_bytes": 1504,
+        "classification": "static"
+      },
+      {
+        "function": "declaration",
+        "compiler_reported_bytes": 1504,
+        "classification": "static"
+      },
+      {
+        "function": "opus_encode_native",
+        "compiler_reported_bytes": 984,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_multistream_packet_unpad",
+        "compiler_reported_bytes": 920,
+        "classification": "static"
+      },
+      {
+        "function": "silk_pitch_analysis_core",
+        "compiler_reported_bytes": 840,
+        "classification": "dynamic"
+      },
+      {
+        "function": "opus_packet_pad_impl",
+        "compiler_reported_bytes": 784,
+        "classification": "dynamic"
+      }
+    ],
+    "dynamic_functions": 65,
+    "limitation": "Compiler per-function static lower bounds include library functions removed by linker GC. They are not a call-chain bound or measured runtime stack high-water. Opus uses alloca; physical thread/ISR stack measurements remain required."
+  },
+  "audio_release_entry_points_absent": [
+    "aura_storage_request_release",
+    "aura_storage_release_step"
+  ],
+  "source_sha256": {
+    ".tools/zephyr/zephyr/drivers/entropy/entropy_nrf5.c": "0d11daa7a7af13f58a5d1b9f11b357548faa46709cab3907bc901f3a33c8183b",
+    ".tools/zephyr/zephyr/drivers/entropy/Kconfig.nrf5": "dd802957f84374f1207a23729572af100b945731188a654ec0ef79403a4f6dfc",
+    ".tools/zephyr/zephyr/dts/arm/nordic/nrf52840.dtsi": "4a7332ac1a5a63d250f68bba85b8c4e1fbc45ffc7e40dd76b8b075202582e7a2",
+    ".tools/zephyr/zephyr/include/zephyr/kernel.h": "10b312f91efad4b150a88fa432164f23f9f7de5a35cfd2916029969efce9e680",
+    ".tools/zephyr/zephyr/subsys/bluetooth/host/Kconfig": "3290c3cf630a160efcaa8296f370262ff036eceb91a89b3558c113b8b2e510e4",
+    ".tools/zephyr/zephyr/subsys/random/Kconfig": "c433f7263e6ebda080ea6713b0be4cad11858f664f127b4b0d9525e667cf3d8d",
+    ".tools/zephyr/zephyr/subsys/random/random_entropy_device.c": "4aa878114e49164e26c4bbd8fe468984cb2253d221a92aa4b129f7441bfd16ae",
+    ".tools/zephyr/zephyr/VERSION": "9f35965e469abaa46f02710282e6cc130bc6c7d02ee114a053ebea84d9b38cea",
+    "firmware/a04/bench/boards/nrf52840dk_nrf52840.overlay": "657a82509b3b77e5919585bbce4a753b68a5de7666ff86231c262b52d141f6a5",
+    "firmware/a04/bench/dts/bindings/aura,bench-controls.yaml": "c3d8a1c172890623750d4477635ac5f9356338a48ac750c6eed947459db84095",
+    "firmware/a04/bench/dts/bindings/aura,bench-nand.yaml": "66acefc6a3136f5cfffaf8d2d12c12c255ff3d968248d0cb4502df9f86031056",
+    "firmware/a04/bench/report_resources.py": "a9936d1c34234e8ca2169f9462c32f14c4d8556610e8a9f2ccff001b4834c8ba",
+    "firmware/a04/cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
+    "firmware/a04/dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "firmware/a04/drivers/aura_dmic_nrfx_pdm.c": "585bd34f1063dadd85adb781d17891f3f4d2df8ac37c427372e099d70ac65361",
+    "firmware/a04/drivers/CMakeLists.txt": "6674f60b50e796efc73d54da1d74d23cd0ef8d2b29542be47e44de75a5724a74",
+    "firmware/a04/drivers/dts/bindings/audio/aura,nrf-pdm.yaml": "643b5267ad88268a543b853f9a1ac31f51c7bf5b0f1ec11eee4f9dec80570f7c",
+    "firmware/a04/drivers/Kconfig": "02bbc5ffbc995592ad55b70e72c6d3e32990c0ca9e5f255b6f66707328756bad",
+    "firmware/a04/drivers/probe/nrf52840dk_nrf52840.overlay": "b1a749dce8e8f0d116bffee967d7208b0e98a9a7031b2e9855de5a7608437b5d",
+    "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
+    "firmware/a04/include/aura_audio_zephyr.h": "2387676c9c27b51aa6bb7f94a3c07fccd2a74337782e6396b4e143a14692db63",
+    "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
+    "firmware/a04/include/aura_dmic_health.h": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
+    "firmware/a04/include/aura_journal.h": "f61f12f1b55c391a3828a6ed32e2e619905408dce000ebdbe075d67c37d0a9a7",
+    "firmware/a04/include/aura_journal_cursor.h": "5c3c51c565aa31403e93c6b6cf610991ad294e9163d946db5ebe20534418fc4c",
+    "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
+    "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
+    "firmware/a04/include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
+    "firmware/a04/include/aura_release_auth.h": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
+    "firmware/a04/include/aura_session_auth.h": "dda428109b830a3437e8d2a6ad9ba299d781d082f9de816e0a06fe69644da7fc",
+    "firmware/a04/include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
+    "firmware/a04/include/aura_transfer.h": "1304d53df6f677a84b5c1de93130882c229cff61cfc5cefe74175abb193c2678",
+    "firmware/a04/include/aura_w25n01gv.h": "6248c59c7e9c54eb343e0958b09ccdb31eb8411080e796f7587a373a2254357b",
+    "firmware/a04/include/aura_w25n01gv_zephyr.h": "0ebd36b4e5d890f6bc1e5569f6b834a50992b9cb85804da3e9e022cb12d094dc",
+    "firmware/a04/radio/boards/nrf52840dk_nrf52840.overlay": "64de10c51f6ad9ad07d4bc092bc465cd6870de00d9d29be680aa26ae68d0e17d",
+    "firmware/a04/radio/build.ps1": "f6f1562d8ff8fc762a4ed96dfa41d5df23fea6a22e98bccf9fb7e264e623bc6e",
+    "firmware/a04/radio/CMakeLists.txt": "6506fdb1d24dfc233265c673997fb998ba7b31056669031cec631e3b3a492519",
+    "firmware/a04/radio/include/aura_gatt_zephyr.h": "83216f64b144d69dc4ea4333af2e25b93e46755cd415147cd0ee1e1e8e262513",
+    "firmware/a04/radio/include/aura_pairing_zephyr.h": "ebfdc02d1defe8b6e07d603c746e836f9f2ccdbfc4eee879110ea2cadc4bb4ef",
+    "firmware/a04/radio/Kconfig": "e0aebbed14bef79fd053da4d82fa56455db0b79c5812be8e845ae7578aef26b7",
+    "firmware/a04/radio/prj.conf": "e3b0cd0d65b3fdd1d2865d4f3a7eced8cfe0846a327df37fba910356b4c569c4",
+    "firmware/a04/radio/report_resources.py": "ec6b699d880fee0bc598f4ce6a725f1fed86207396122cdf6d96797db1822906",
+    "firmware/a04/radio/src/aura_gatt_zephyr.c": "eada98277c4e059bcb01006c21d3fc7c60135142900d144284766c5f683626cf",
+    "firmware/a04/radio/src/aura_pairing_zephyr.c": "140fe733353e09a507c01f633ef96f2b5f0d504e750d6687eeda8c47d229486e",
+    "firmware/a04/radio/src/main.c": "4f6bf5a0e869ccdd6aa647ad443275bea8cba09a7ec5a1ef8cec829778c4b703",
+    "firmware/a04/radio/verify_session_auth.py": "1ae6a848f7b531f5a01b5476e30a9289b542128ef491f74f6f9274426b1f6da5",
+    "firmware/a04/scripts/setup.py": "1c24b9a51ee6f46b94f5874192afc9efaa45e1bd0287642c9de8d1a38a048e30",
+    "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
+    "firmware/a04/src/aura_audio_zephyr.c": "e42fd97920caebcfa455cd832b217b58cc9fe54254aa919f1624ca4f230f1c2c",
+    "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
+    "firmware/a04/src/aura_journal.c": "d8019780d1705973ac67ddbbf5f67ea328a47f7c236b4f4053fe5c68b67a4df8",
+    "firmware/a04/src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
+    "firmware/a04/src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
+    "firmware/a04/src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
+    "firmware/a04/src/aura_session_auth.c": "43ba6ccd787d044a0f39952e8e3ed51e2d24d2ecb5884ad66e78ea7810dd629c",
+    "firmware/a04/src/aura_storage.c": "e3146001204e4c04fded4cd187eb6b658017ff6f76affe5adcf3c1ba686f586a",
+    "firmware/a04/src/aura_transfer.c": "07db2c0944fb3bc76865e6cda2a1e9014fc2807288666aeac9041cff0a110e6e",
+    "firmware/a04/src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
+    "firmware/a04/src/aura_w25n01gv_zephyr.c": "3b86abdf3313e9315b196726713dd9ee1561baa418ac3edc42a0e6db8fa7724f",
+    "firmware/a04/src/zephyr_probe.c": "b87a0b94b2d0138afb6e34199bee91d1b18087652102e09b8cef1bbc5140eaaa",
+    "firmware/scripts/setup.ps1": "7985dfad7128c8af933787e7691f2021c7feec4456192b765828b419ce3d4193"
+  },
+  "compiler": {
+    "path": "F:\\circuit\\.tools\\zephyr\\zephyr-sdk-0.17.2\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-gcc.exe",
+    "sha256": "02017850fcb45f3f5b7f948ba088f4d7a37b3d1c43f3eff62c36d2eefb069cf5",
+    "version": [
+      "arm-zephyr-eabi-gcc.exe (Zephyr SDK 0.17.2) 12.2.0",
+      "Copyright (C) 2022 Free Software Foundation, Inc.",
+      "This is free software; see the source for copying conditions.  There is NO",
+      "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      ""
+    ]
+  },
+  "opus_dependency": {
+    "version": "1.6.1",
+    "archive_sha256": "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1",
+    "lock_sha256": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852",
+    "checked_files": 482
+  },
+  "generated_sha256": {
+    ".tools/a04-radio/arm/build.ninja": "756c996a6c7a5faf03ff7b4cb1d219d501cd4fb1c2efa4b8dc402bd04ee1ef8c",
+    ".tools/a04-radio/arm/CMakeCache.txt": "ad5a22f4e8ec7fbb0a6c167c50871a2d75a2bbaf3b56e2ed9ff7f4c5295682ee",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c.su": "9a732d9b42204c3a6086c8f33529124138d8b2266c6114b760d34967df2073db",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_archive.c.su": "8f5419ff4c638a0153c2c833cfea90759fa13a460614bd20aca605abf6da6955",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_audio_zephyr.c.su": "1cc5655a3c6cc52fead30c5f695ecee0eeebc2717f3283ea09d0558b7b3534a9",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_control.c.su": "e7c6d745d12a79178c6b225e6264059c1bae9ac5ed275918c89dcce0c556f51b",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_journal.c.su": "efd109901a48601ba6e357ec57d2ce675fcd62c164000e76ba4f15d18ddd1f0c",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_opus.c.su": "e87aa7b9a8860f435d7c9b2f7b50258c4c6c2e3248992e606b85424beac66706",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_recorder.c.su": "a08b4db5659635d8ec465ed75a6c12348bbc65f2002b8283ec87344453acddbe",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_release_auth.c.su": "612956f206348db938b25e82348be82b4ce141efa4aee410bcc118b597bd51b7",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_session_auth.c.su": "e1beba204c7cc531466b498da4626a5f23f4b3f893b60c3d1837e8363c8410d4",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_storage.c.su": "83a9db289099e112dd50d451f8325669adc394d3107b5c5576773a6f07d4dc97",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_transfer.c.su": "5fcbf3d2e6c213637d07aa4ea30f7d598cb2eaf31b2e517023080dedab1ed8e7",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_w25n01gv.c.su": "55b350b22a2bd6a58155857ff45728827c7ed745acad375bb70982f16a4467b8",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/F_/circuit/firmware/a04/src/aura_w25n01gv_zephyr.c.su": "467502c42b5d3c8d13dcdedda4aef83132f813a3ca490db58aa84d305ffa4272",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/src/aura_gatt_zephyr.c.su": "4a3f4c2bffdfb0afedd6bfe5500604ecb40fa03854e90c63c3f3d7e9fabe2061",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/src/aura_pairing_zephyr.c.obj": "c3f0c4c28c0d357c3b87196c0d8cd6743b5b2f71245c063117d43d0ab7b61361",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/src/aura_pairing_zephyr.c.su": "52f3a2898cde88f9e0fb753ebd49a0fdf14c10b3c5833490658b0895b779e3df",
+    ".tools/a04-radio/arm/CMakeFiles/app.dir/src/main.c.su": "2dfefac7c9fe790b0edfcdee8576a43fd6fb54a693df9f7df3db897e9af68c1d",
+    ".tools/a04-radio/arm/compile_commands.json": "ac449fa5d2ebf12d3cea5175838bb996fec58120836ed05b99d4dddbed432599",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/bands.c.su": "e6a59f44199af44b05991b4f9cc7514d1f237810210471edde213edb5b045d32",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/celt.c.su": "62c37108a323085c153254ddcb726082275e22b2eb5b162a84024d57c07d56d3",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/celt_decoder.c.su": "4404f267ff3a649b31b9d5efd64200645d4dba3933fe7180c46490f296549f28",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/celt_encoder.c.su": "5efd1b869255dde584e22712a2b2cc62922c1b81250805357cc1d1c7d813ff0f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/celt_lpc.c.su": "9b4654966153bf1a2cba9dfe5f56d929531a2ce66a15b6f0b984b4df7cbbdf17",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/cwrs.c.su": "730a13dc67d6f42a9159ca689b1dfb2fe6429d1e603b23d36a3c4a87f38bdb2b",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/entcode.c.su": "72fc8db2024e2fc5dda1272062aff588be519438be473f198512d4358328019a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/entdec.c.su": "456677609b944d6862ebe4d4904dfa13e57334bfe99fd62de01d3c60462d015f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/entenc.c.su": "b926ec6c683deb0c1a3907d9f31dc7df55db23ced014ae14918ef350675ef954",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/kiss_fft.c.su": "282eec07a235d21f09515100390c7b87e10a78118537cd5617eb89f2f6f92465",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/laplace.c.su": "f2148d0bbe9d28d86972d826813b659759cc8bfcf4c91b6470f3368af73f42a9",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/mathops.c.su": "c548c7f393e7300a98dfcf7b9c406d2ef78099e2b721a44dbedeb023b550bb1f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/mdct.c.su": "30eb4d9faf0915bd90a98e7bc7b1ce8c73dcc88b1430bcae46d2c8bc3a0ff04d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/modes.c.su": "d686d292bc5cda5aea679d3d24821dfa6e502088610be937765a29ca021dcbc4",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/pitch.c.su": "6fe9afe1a7fabada346dbcddfeffdddcd302e42b59206470ea336df30c513214",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/quant_bands.c.su": "934749ddb79b450f41cd6078e9fa1782488f09fddc9019a7953700910d3e2162",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/rate.c.su": "0f539bc1ccdfc03002d09107e9ffee7c525b80c35328f27e8576a184acdc97f8",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/celt/vq.c.su": "ad7b7a045e0c2a161d6de6955c572fd90405561fb76990c24a7fe1656c70db87",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/A2NLSF.c.su": "4c572ff29a74dcb69a1a366331330f293146a8c6f4e0c1fb1e85aea90f6cbbf1",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/ana_filt_bank_1.c.su": "6f74abcdaa4413932b83f009012287982464bc36be0fb81e9626db53979b6e2a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/biquad_alt.c.su": "4b82a4f002d12b6e968f5803564bbec23d98398bd395792298f34607965ca4eb",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/bwexpander.c.su": "ce76d3d47173241301aba37b610155bb1b0fa93d6019393b5acde77efe0e5381",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/bwexpander_32.c.su": "26c846f42bb9297c3ce180b096f23dd844357765c4f67486efd3e975cf3d1b99",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/check_control_input.c.su": "cfdc44a6d576097b4adc15d6ed73490e7bd9ec7d80040b205189a3428b7ae284",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/CNG.c.su": "cab40823675bbeced61c2fab9f7b12337f4830c920b6f1cd16b9d67f6ec12e67",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/code_signs.c.su": "92bed1e45568831736948a4bd6e642819b3acf6cf05fa4118d02b66a8388a973",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/control_audio_bandwidth.c.su": "1f0dc43f4957e1db86722475a1144d38f11d41c37e170f3f22a1ac534025b4a3",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/control_codec.c.su": "a00c956f73c2a0741cd07ed1d469c5f662f2664c73aad9884f8596691bf8f930",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/control_SNR.c.su": "fe19074104cc40147080031ccb6047b2a24c53f04d17007c5e910c9a3d6b0e2d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/debug.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/dec_API.c.su": "87a4b8d0b8c577d6dfefba71f618e8433529e0c290901131381afbf09b0aeba8",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_core.c.su": "e2c6313d7a8b7137d84568a3e45244d4a4515e148875a991f9389c33872da1dc",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_frame.c.su": "4c7547b87e4e7e385d67469327a5b5ee9887955ad25e94ffc97324cd7edcd28c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_indices.c.su": "d1fc556f5faead572a8dd7368bc5ef15e60cf30c59afec9a114efcd8da889fb5",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_parameters.c.su": "f711718d2dc99f370256e9341b69cae16eeda47947f8ce8bb62bcdcd69459ae9",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_pitch.c.su": "c4bcc994b0ffe0e1d40d0c55037b351efda150202577269f1702f162375692d9",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decode_pulses.c.su": "ab820ab3978a8a84ae4bdd8417d446bc21974a025c5579c27cf07142c146dafd",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/decoder_set_fs.c.su": "b807a573da3647eb41e47a4254cfbe577da84659392ec5561e1a3642ca831bb7",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/enc_API.c.su": "a5e3feb33c0ffc4e2caf66606e48a186543fa4beb32eaeddc405435ff5ea7598",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/encode_indices.c.su": "3237aa040c2dcffbfa889f5b7dbd3a690852afddf0d3465f6ae1c237c6d165b1",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/encode_pulses.c.su": "63a0c91b378091da206489c540d38976d236c04ff18c0d7a7903334ff898f144",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/apply_sine_window_FIX.c.su": "63e883166b67b365df5ceb1d87a0f58ca2290adf83ab909f9b398cef0cec2428",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/autocorr_FIX.c.su": "d92fcdb1da0a41053a7506b914f5ee2fe21c07a12b4124059c24788a1fa8ef0d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/burg_modified_FIX.c.su": "4b2ff9493803fba393322eeda5b340f6f6fe0de465d498f6772174b4d92c5127",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/corrMatrix_FIX.c.su": "3477b6fc588d0462ed1f9cfc7499bd7eefccfa3923c009d751e98876dd8e5621",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/encode_frame_FIX.c.su": "c3b7aaff8081a78fa0dcfe9dc77588221a6ad010ce280694da1392d407e67989",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/find_LPC_FIX.c.su": "ecdd61cfcf6902c54505758ec60c3ae70893ea6491394e53bcd95910ceccf0f2",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/find_LTP_FIX.c.su": "e0ed95effbdf27cf726fb6efa276025f4a313962f2c72d5f8ea3a20da4b1c3f9",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/find_pitch_lags_FIX.c.su": "d0753ab9288cd2e0a9440d1d968a5d7658bf40b762ac7ce6dbc49c538556ef8a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/find_pred_coefs_FIX.c.su": "04b123bc29d2bedc8da5fec16da7b72eb09c3b97cf501baad4757fea8795b172",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/k2a_FIX.c.su": "924e42cc09dcfbfe7124480672c12b2635dfd8bd63981cc756994a9a1fb90529",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/k2a_Q16_FIX.c.su": "9c6e8260a5c8b87e73a1a1a06ec346562cf52f33397e16d44d4335ae10ba5d52",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/LTP_analysis_filter_FIX.c.su": "b26a3bd799aa20b4ce194bf7db05e0c18c8fd8d677e8f6c6e1268c3d310955d2",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/LTP_scale_ctrl_FIX.c.su": "2da3c311a62c5df993020e850e79faff39ab9059560a0f614f0b64d363097a7a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/noise_shape_analysis_FIX.c.su": "e5f3ee4a09de7775aed5eff1b84f9086a7399efd2059a9b520d7ddf00802c449",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/pitch_analysis_core_FIX.c.su": "78b85279baa99f64fdb68113aa14b0be1d81308fb99fb19b4a346b223c51bb65",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/process_gains_FIX.c.su": "0013ba4aef67e01bc26dad8221216ae44799064a6915c87fe9e1cd42fdc9f258",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/regularize_correlations_FIX.c.su": "29453a03b8ae9ac23d7ec055ed33ad2aab6d756b52ca533bd49de12bb52cb3fc",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/residual_energy16_FIX.c.su": "479908c52594015400c28a89602a0c6c1af2829531a72617bbcf944c99d79b64",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/residual_energy_FIX.c.su": "feeb8b8d6395586147c156cff586925ea4150f8d20fb405aedfa9aa2c56f02e2",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/schur64_FIX.c.su": "5c9b3139d42c97a342904024ff9caf4181b21fd6a8524d91e2d9d23b50a4e334",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/schur_FIX.c.su": "602c69e512e1bae03662136e1142a49caea0486ac79d0f8300f496345e49e4b8",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/vector_ops_FIX.c.su": "36aaca3ba71edfe791fd577c0cdbb5c345bb37a172f63be0cc59552e29a115cb",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/fixed/warped_autocorrelation_FIX.c.su": "adbb2106f7ca7b2c643da35c64a9f87a764909a5f1d52464976e2fe5b0a1e28d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/gain_quant.c.su": "758e61bca63f18c85fb679a9024de5f2ec46c83d5a50fa8c9bab66817517d33c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/HP_variable_cutoff.c.su": "4abc134f037ec7740f2236effa0abe91db9b56d71d7599c5da69f6609a741028",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/init_decoder.c.su": "7af720dc82558a0c0cce1db0f34581cb30bd472bcb3bdb26785510cac01d8c58",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/init_encoder.c.su": "ea56ff6a6a727f8d3122f1e63b3a2fc1f2f26e395cbbfc800e05d7c0d29d3c88",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/inner_prod_aligned.c.su": "1194c4013ae1e41d90c67a022a32a05b9e06024a7ad06f29af80c1a775d6c73d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/interpolate.c.su": "714f7c1994c9712b8d659d16ed1eed5867198363c794d5303e81827b44e3fc20",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/lin2log.c.su": "5ce2f42f1087aa182d4b48df62da4912910d69429bbfc219c8df74a9eb6622a9",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/log2lin.c.su": "35518c5b6f104533a00610ff248f89a239de3770ddf9e4a8d246b836bc341ea3",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/LP_variable_cutoff.c.su": "cefab5869b8da40e5ff3b7023464f54ceeb3cea59d25035093ab2b6c37ccb4ab",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/LPC_analysis_filter.c.su": "3f0f54c1f6f686aa448ad6e2469cdf1a46b0e72aacd9af5190d521df666ef1f8",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/LPC_fit.c.su": "a81cbd8b5838409a26ce7d86a3d8ee9de36c10e709ce4531a3ca33e376426fae",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/LPC_inv_pred_gain.c.su": "d5e3129acf895534c0920b3c46c48219c2acb8d0bc61ec355af9e3813b47e396",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF2A.c.su": "9989b23f994df8c2f84c4ec648223cdee99f030965ecd50841300d89b4d6bf8c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_decode.c.su": "31f74bff5823885971429caf68b3afa2bb997653bad83f4825044b354821737c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_del_dec_quant.c.su": "a483521f09b2d4bd5d4bb1ac940ff6e0f47713bb6a595c8f767574e27242fe22",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_encode.c.su": "7a6334651e59704797b0c5a146f44f194170bca9717bc9d122bdf5911e1c3740",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_stabilize.c.su": "20d64700409b594612e0581caa231cf2266d0fc9851777607fbb4a781c878809",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_unpack.c.su": "ba84c7ffba656c9be710e737db0e30d7c8961aaede92c5e5ddd7749ed62115b4",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_VQ.c.su": "61ec5d71a5e6eb818787c61cdb53ff54d5b3ef8a470352ea4fc827f5fcbb6a23",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NLSF_VQ_weights_laroia.c.su": "9b5a76500c7d3e887b1136fb06687d05d33afb075137720bdaa1d4d97f571522",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NSQ.c.su": "435e8111d23d14866cfac0780f95dab661d0a4cd376846d329cae347fa8a2f0a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/NSQ_del_dec.c.su": "a62cb75121249a484923ba350c73a1f70d0fc73854c4bda4d03e849ab9cbae3b",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/pitch_est_tables.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/PLC.c.su": "50b83d1f436e6391332168caf3c090bd44c7dd01d967652737b1aaacb21f898e",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/process_NLSFs.c.su": "879c8bd1576cec1b3c2848c70b3d2791dd98a9db5fc551cadd54a5e13d1f4d72",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/quant_LTP_gains.c.su": "0ee3b41475070e0431338acfd1338def6c8de4be4cb3137228f8fdbf0a6cddc7",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler.c.su": "3876e98b0b9236b02e093faaff12e587876a997000dfc7f0ce9f032d036ec5f3",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_down2.c.su": "e1579aa47aac7b4dd33ed0f0f02bdb6683b66088cfcb52b78c48c852355d1fcc",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_down2_3.c.su": "a5958689df0520d9f2fcc74daf290d09aed2928714177eed86a8d06241877795",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_private_AR2.c.su": "3f6bc1bc73aae300f9f55b390eb0ac25e2c95193770ad08985938f7eaa321f27",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_private_down_FIR.c.su": "3b7e6bbd387f57819c69514e2050f604ef4139edc3d6de552a1e72366e719a2a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_private_IIR_FIR.c.su": "d8b6a500d246d9c17ae16f7ee1de60e06656a2c610cf7c21912864a084f50ab5",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_private_up2_HQ.c.su": "30aa6862bbc2f220c408c322a27eb02490f331c87fd4caa88eeed80040f13448",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/resampler_rom.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/shell_coder.c.su": "edfbbcb1307567c4a63f298c56f0d1cb5b661605278c56f5d0fbd5495516433f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/sigm_Q15.c.su": "7cbeb8c78079bfc49905de369e06fe342ff2394d0de573adb14ab8203d5135b4",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/sort.c.su": "2e3845efc0c6f8bb7d995a8b039cd65dc54a7cbeba03a8cd6f0a450a5ec80ee6",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_decode_pred.c.su": "57d514b39401d1b5cdcfb6cb8bf18e1fa5c977b269bf13b2814602fbc2172dc4",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_encode_pred.c.su": "28fec8003f5ec00f6e7beef11784ea51f69240f22e5aa0786d472c6c9c48c19c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_find_predictor.c.su": "7763a772d045707522a6de0627be0d1391044aa43a352cbfed6ea3ca2c5cc91d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_LR_to_MS.c.su": "7f43c033a6e4e15b751dec92e21828afaa9d4d98a2221bfd822d513bde5d1d2f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_MS_to_LR.c.su": "2767d5e6a34099f5c56b477e4fba2ee5b83e8fde80fed54c6835eb29bc43913f",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/stereo_quant_pred.c.su": "65db6de7fc672f1edce653937382601e93aee6decd3004567955d4cf3767d97c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/sum_sqr_shift.c.su": "980f1ad453339c786a585052e7c9a4feb68262d63b2515aef72b06e7397b0a2e",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/table_LSF_cos.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_gain.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_LTP.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_NLSF_CB_NB_MB.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_NLSF_CB_WB.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_other.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_pitch_lag.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/tables_pulses_per_block.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/VAD.c.su": "8d912dde322046765efc39dc473b9919d152dc3814d17cba68e7f6cd713ee9c6",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/silk/VQ_WMat_EC.c.su": "848ab89dcac55009b2475276b50edf93a8666493f9b7e67e6d6338eb20927b50",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/analysis.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/extensions.c.su": "bd8a99cefe83d8f418f13ce8c57001f614ce442f03e4083608ec2299a7e1f35e",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/mapping_matrix.c.su": "8b8b959eaf8c661051b92043eabc6779339266efe60758b416a71fe0dc92b234",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/mlp.c.su": "d4a09d5f37db4cd8e38868faedeac450482c306747f98072c5cdf4d5a9ccdd3c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/mlp_data.c.su": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus.c.su": "00eb27d46eaa7a8aed57559335033abcdf49a30b54692fe49c318d4c47feb1c0",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_decoder.c.su": "e55fb2380c9debc3d7dc8cecb5f3b29a34641b045209f2b1990094cd2c5fd42e",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_encoder.c.su": "c35d6edd870993179ffe5813e9fa3c4ad39f5669ac4e72bb28d3cf27e13e6263",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_multistream.c.su": "dc0d6f3a38a11cf13fefd3d7311e6f4f7f16bef6aa54b764197707e07e1e3763",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_multistream_decoder.c.su": "055dd6b58d6dda3b2dd4ba802393ed04378b8fc2aeac66a42c2e526df1276a4a",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_multistream_encoder.c.su": "d1c9cc9ca2321b8eff7d098d2ad495cf51c5c100232ed0bdeaf7df1f7c93bf7d",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_projection_decoder.c.su": "0705d44ab38550e97510273d1018cf664dafc7c0d34723dcfc8806ff177109c2",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/opus_projection_encoder.c.su": "13d237caec92840ee8467ea1719c429e28e43c632057dc7b7ccb0ac8177ce71c",
+    ".tools/a04-radio/arm/opus/CMakeFiles/opus.dir/src/repacketizer.c.su": "cbf51e4443a7b85241c92391b987592315b43be789230e48b929abd1ba77212e",
+    ".tools/a04-radio/arm/zephyr/.config": "e26bbda4aecbf6de502b4bb54d836b3e08f6d328531ee9f53054a6a5dcbf3043",
+    ".tools/a04-radio/arm/zephyr/edt.pickle": "485c085ed581787b02a5e7027ecc6f47626ef94745e888b9edf646feac249784",
+    ".tools/a04-radio/arm/zephyr/zephyr.bin": "f794b15fcb00f9c4a3b02a7d982b80c299f5c4d1315022024b089458f7328d9e",
+    ".tools/a04-radio/arm/zephyr/zephyr.dts": "7c2447a69d715f779cb5baf562df10fc6c891f8a3f2f3863792fd8734e0bf385",
+    ".tools/a04-radio/arm/zephyr/zephyr.elf": "791a520d07ac7fe32a650815f8027fbab52d1e9c6bef388f45d13b3f1617d5c2",
+    ".tools/a04-radio/arm/zephyr/zephyr.hex": "9c3e2c20d78bce0b4f89ce72227dcaee52c41a474e798d9616da790f50758cf1",
+    ".tools/a04-radio/arm/zephyr/zephyr.map": "4946bc7879e3649e24453ead556c45744234d8d371c931f2c7c3f0724749329a"
+  },
+  "build_currentness": {
+    "ninja_dry_run": "ninja: Entering directory `F:\\circuit\\.tools\\a04-radio\\arm'\nninja: no work to do.",
+    "inputs_equal_before_and_after_build": true,
+    "prebuild_capture_sha256": "749df68f1a4c47cf107f61997ffa5a9c511d572182ecccf7c050e2a3107a504e",
+    "inspection_inputs_outputs_stable": true
+  },
+  "not_verified": [
+    "physical radio/security pairing",
+    "owner enrollment/key custody",
+    "on-device HMAC session exchange",
+    "electrical PDM/NAND wiring",
+    "audio continuity during radio/NVS writes",
+    "runtime stack high-water",
+    "RF coexistence/throughput/latency",
+    "battery/thermal behavior",
+    "A04 wearable PCB",
+    "signed boot/OTA"
+  ],
+  "scope": "ELF, resolved config, compiled pin mapping and source binding only; no flash or runtime activation."
+}

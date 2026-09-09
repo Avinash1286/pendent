@@ -1,0 +1,29 @@
+/* SPDX-License-Identifier: MIT */
+/* Same external, electrically unqualified DK wiring as the separate bench.
+ * This radio target does not change A04 wearable CAD or assign wearable pins. */
+#include "../../bench/boards/nrf52840dk_nrf52840.overlay"
+
+/* Standalone DK image: no MCUboot or OTA slot claim. Bound the linker to code
+ * below the 32KiB internal NOR settings area; NAND control remains separate. */
+&flash0 {
+    /delete-node/ partitions;
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+        radio_code_partition: partition@0 {
+            label = "aura-radio-dk";
+            reg = <0x00000000 0x000f8000>;
+        };
+        radio_settings_partition: partition@f8000 {
+            label = "aura-radio-bt-settings";
+            reg = <0x000f8000 0x00008000>;
+        };
+    };
+};
+/ {
+    chosen {
+        zephyr,code-partition = &radio_code_partition;
+        zephyr,settings-partition = &radio_settings_partition;
+    };
+};

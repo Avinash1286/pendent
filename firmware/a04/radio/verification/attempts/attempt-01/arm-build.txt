@@ -1,0 +1,543 @@
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).
+-- Application: F:/circuit/firmware/a04/radio
+-- CMake version: 3.31.6
+-- Found Python3: F:/circuit/.tools/zephyr/venv/Scripts/python.exe (found suitable version "3.12.13", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: F:/circuit/.tools/zephyr/zephyr/.cache
+-- Zephyr version: 4.2.0 (F:/circuit/.tools/zephyr/zephyr)
+-- Found west (found suitable version "1.4.0", minimum required is "0.14.0")
+-- Board: nrf52840dk, qualifiers: nrf52840
+-- Found host-tools: zephyr 0.17.2 (F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2)
+-- Could NOT find Dtc (missing: DTC) (Required is at least version "1.4.6")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found BOARD.dts: F:/circuit/.tools/zephyr/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts
+-- Found devicetree overlay: F:/circuit/firmware/a04/radio/boards/nrf52840dk_nrf52840.overlay
+-- Generated zephyr.dts: F:/circuit/.tools/a04-radio/arm/zephyr/zephyr.dts
+-- Generated pickled edt: F:/circuit/.tools/a04-radio/arm/zephyr/edt.pickle
+-- Generated devicetree_generated.h: F:/circuit/.tools/a04-radio/arm/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing F:/circuit/firmware/a04/radio/Kconfig
+Loaded configuration 'F:/circuit/.tools/zephyr/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840_defconfig'
+Merged configuration 'F:/circuit/firmware/a04/radio/prj.conf'
+Configuration saved to 'F:/circuit/.tools/a04-radio/arm/zephyr/.config'
+Kconfig header saved to 'F:/circuit/.tools/a04-radio/arm/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: f:/circuit/.tools/zephyr/zephyr-sdk-0.17.2/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38")
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+-- Found gen_kobject_list: F:/circuit/.tools/zephyr/zephyr/scripts/build/gen_kobject_list.py
+CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:1028 (message):
+  No SOURCES given to Zephyr library: drivers__audio
+
+  Excluding target from build.
+
+
+CMake Warning at F:/circuit/.tools/zephyr/zephyr/CMakeLists.txt:2240 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- Found Git: C:/Program Files/Git/cmd/git.exe (found version "2.53.0.windows.3")
+-- Opus package version from package_version file: 1.6.1
+-- Opus project version: 1.6.1
+-- Setting build type to 'Release' as none was specified and no CFLAGS was exported.
+-- Performing Test VLA_SUPPORTED
+-- Performing Test VLA_SUPPORTED -- failed to compile
+-- Looking for alloca.h
+-- Looking for alloca.h - found
+-- Looking for alloca
+-- Looking for alloca - found
+-- Looking for floor in m
+-- Looking for floor in m - not found
+-- Looking for lrintf
+-- Looking for lrintf - not found
+-- Looking for lrint
+-- Looking for lrint - not found
+-- Looking for elf_aux_info
+-- Looking for elf_aux_info - not found
+-- Performing Test FAST_MATH_SUPPORTED
+-- Performing Test FAST_MATH_SUPPORTED - Success
+-- Performing Test STACK_PROTECTOR_SUPPORTED
+-- Performing Test STACK_PROTECTOR_SUPPORTED - Success
+-- Performing Test HIDDEN_VISIBILITY_SUPPORTED
+-- Performing Test HIDDEN_VISIBILITY_SUPPORTED - Success
+-- Performing Test Wall_SUPPORTED
+-- Performing Test Wall_SUPPORTED - Success
+-- Performing Test W_SUPPORTED
+-- Performing Test W_SUPPORTED - Success
+-- Performing Test Wstrictprototypes_SUPPORTED
+-- Performing Test Wstrictprototypes_SUPPORTED - Success
+-- Performing Test Wextra_SUPPORTED
+-- Performing Test Wextra_SUPPORTED - Success
+-- Performing Test Wcastalign_SUPPORTED
+-- Performing Test Wcastalign_SUPPORTED - Success
+-- Performing Test Wnestedexterns_SUPPORTED
+-- Performing Test Wnestedexterns_SUPPORTED - Success
+-- Performing Test Wshadow_SUPPORTED
+-- Performing Test Wshadow_SUPPORTED - Success
+CMake Warning (dev) at F:/circuit/.tools/zephyr/venv/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/GNUInstallDirs.cmake:253 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+Call Stack (most recent call first):
+  F:/circuit/firmware/a04/third_party/opus-1.6.1/CMakeLists.txt:13 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The following features have been enabled:
+
+ * OPUS_DISABLE_INTRINSICS, disable all intrinsics optimizations.
+ * OPUS_FIXED_POINT, compile as fixed-point (for machines without a fast enough FPU).
+ * OPUS_HARDENING, run-time checks that are cheap and safe for use in production.
+ * OPUS_USE_ALLOCA, use alloca for stack arrays (on non-C99 compilers).
+
+-- The following OPTIONAL packages have been found:
+
+ * HostTools
+ * TargetTools
+ * Deprecated
+ * Git
+
+-- The following REQUIRED packages have been found:
+
+ * Python3 (required version >= 3.10)
+ * Zephyr-sdk (required version >= 0.16)
+ * GnuLd
+ * Zephyr
+
+-- The following features have been disabled:
+
+ * OPUS_BUILD_SHARED_LIBRARY, build shared library.
+ * OPUS_BUILD_TESTING, build tests.
+ * OPUS_CUSTOM_MODES, enable non-Opus modes, e.g. 44.1 kHz & 2^n frames.
+ * OPUS_BUILD_PROGRAMS, build programs.
+ * OPUS_ENABLE_FLOAT_API, compile with the floating point API (for machines with float library).
+ * OPUS_FLOAT_APPROX, enable floating point approximations (Ensure your platform supports IEEE 754 before enabling).
+ * OPUS_ASSERTIONS, additional software error checking.
+ * OPUS_FUZZING, causes the encoder to make random decisions (do not use in production).
+ * OPUS_CHECK_ASM, enable bit-exactness checks between optimized and c implementations.
+ * OPUS_DNN_FLOAT_DEBUG, Run DNN computations as float for debugging purposes.
+ * OPUS_INSTALL_PKG_CONFIG_MODULE, install pkg-config module.
+ * OPUS_INSTALL_CMAKE_CONFIG_MODULE, install CMake package config module.
+ * OPUS_DRED, enable DRED.
+ * OPUS_OSCE, enable OSCE.
+ * OPUS_FIXED_POINT_DEBUG, debug fixed-point implementation.
+ * OPUS_VAR_ARRAYS, use variable length arrays for stack arrays.
+ * OPUS_NONTHREADSAFE_PSEUDOSTACK, use a non threadsafe pseudostack when neither variable length arrays or alloca is supported.
+ * OPUS_FAST_MATH, enable fast math (unsupported and discouraged use, as code is not well tested with this build option).
+ * OPUS_STACK_PROTECTOR, use stack protection.
+ * OPUS_FORTIFY_SOURCE, add protection against buffer overflows.
+
+-- The following OPTIONAL packages have not been found:
+
+ * Dtc (required version >= 1.4.6)
+ * ScaTools
+
+-- Configuring done (85.0s)
+-- Generating done (1.5s)
+-- Build files have been written to: F:/circuit/.tools/a04-radio/arm
+-- west build: building application
+[1/516] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (F:/circuit/.tools/zephyr/zephyr), build: v4.2.0
+[2/516] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/516] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[4/516] Generating include/generated/zephyr/driver-validation.h
+[5/516] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/516] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/516] Building C object opus/CMakeFiles/opus.dir/src/opus.c.obj
+[8/516] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[9/516] Building C object opus/CMakeFiles/opus.dir/src/opus_decoder.c.obj
+In file included from F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_decoder.c:48:
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/float_cast.h:142:10: warning: #warning "Don't have the functions lrint() and lrintf ()." [-Wcpp]
+  142 |         #warning "Don't have the functions lrint() and lrintf ()."
+      |          ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/float_cast.h:143:10: warning: #warning "Replacing these functions with a standard C cast." [-Wcpp]
+  143 |         #warning "Replacing these functions with a standard C cast."
+      |          ^~~~~~~
+In file included from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:238,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/ecintrin.h:32,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/entcode.h:35,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/entenc.h:31,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/celt.h:41,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_decoder.c:42:
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_decoder.c: In function 'opus_decode_frame':
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:131:24: note: in definition of macro 'SHR'
+  131 | #define SHR(a,shift) ((a) >> (shift))
+      |                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:197:33: note: in expansion of macro 'ADD32'
+  197 | #define MULT16_16_P15(a,b) (SHR(ADD32(16384,MULT16_16((a),(b))),15))
+      |                                 ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:197:45: note: in expansion of macro 'MULT16_16'
+  197 | #define MULT16_16_P15(a,b) (SHR(ADD32(16384,MULT16_16((a),(b))),15))
+      |                                             ^~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_decoder.c:684:24: note: in expansion of macro 'MULT16_16_P15'
+  684 |       gain = celt_exp2(MULT16_16_P15(QCONST16(6.48814081e-4f, 25), st->decode_gain));
+      |                        ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_decoder.c:684:38: note: in expansion of macro 'QCONST16'
+  684 |       gain = celt_exp2(MULT16_16_P15(QCONST16(6.48814081e-4f, 25), st->decode_gain));
+      |                                      ^~~~~~~~
+[10/516] Generating include/generated/zephyr/offsets.h
+[11/516] Building C object CMakeFiles/app.dir/F_/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c.obj
+F:/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c: In function 'check_pdm_frequencies':
+F:/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c:410:35: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  410 |                 for (int i = 0; i < ARRAY_SIZE(freqs); ++i) {
+      |                                   ^
+F:/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c: In function 'find_suitable_clock':
+F:/circuit/firmware/a04/drivers/aura_dmic_nrfx_pdm.c:484:45: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  484 |         for (int r = 0; best_diff != 0 && r < ARRAY_SIZE(ratios); ++r) {
+      |                                             ^
+[12/516] Building C object opus/CMakeFiles/opus.dir/src/opus_encoder.c.obj
+In file included from F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:38:
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/float_cast.h:142:10: warning: #warning "Don't have the functions lrint() and lrintf ()." [-Wcpp]
+  142 |         #warning "Don't have the functions lrint() and lrintf ()."
+      |          ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/float_cast.h:143:10: warning: #warning "Replacing these functions with a standard C cast." [-Wcpp]
+  143 |         #warning "Replacing these functions with a standard C cast."
+      |          ^~~~~~~
+In file included from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:238,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/ecintrin.h:32,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/entcode.h:35,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/entenc.h:31,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/celt.h:41,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:33:
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c: In function 'compute_stereo_width':
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:916:32: note: in expansion of macro 'QCONST16'
+  916 |    if (MAX32(mem->XX, mem->YY)>QCONST16(8e-4f, 18))
+      |                                ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:95:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   95 | #define QCONST32(x,bits) ((opus_val32)(.5+(x)*(((opus_int64)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:131:24: note: in definition of macro 'SHR'
+  131 | #define SHR(a,shift) ((a) >> (shift))
+      |                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:193:33: note: in expansion of macro 'MULT16_16'
+  193 | #define MULT16_16_Q15(a,b) (SHR(MULT16_16((a),(b)),15))
+      |                                 ^~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:15: note: in expansion of macro 'MULT16_16_Q15'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |               ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:29: note: in expansion of macro 'MIN16'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |                             ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:53: note: in expansion of macro 'QCONST32'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |                                                     ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:95:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   95 | #define QCONST32(x,bits) ((opus_val32)(.5+(x)*(((opus_int64)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:131:24: note: in definition of macro 'SHR'
+  131 | #define SHR(a,shift) ((a) >> (shift))
+      |                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:193:33: note: in expansion of macro 'MULT16_16'
+  193 | #define MULT16_16_Q15(a,b) (SHR(MULT16_16((a),(b)),15))
+      |                                 ^~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:15: note: in expansion of macro 'MULT16_16_Q15'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |               ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:29: note: in expansion of macro 'MIN16'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |                             ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:930:53: note: in expansion of macro 'QCONST32'
+  930 |       width = MULT16_16_Q15(MIN16(Q15ONE, celt_sqrt(QCONST32(1.f,30)-MULT16_16(corr,corr))), ldiff);
+      |                                                     ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:101:22: note: in definition of macro 'MAX16'
+  101 | #define MAX16(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 16-bit value.   */
+      |                      ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:934:51: note: in expansion of macro 'QCONST16'
+  934 |       mem->max_follower = MAX16(mem->max_follower-QCONST16(.02f,15)/frame_rate, mem->smoothed_width);
+      |                                                   ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:101:34: note: in definition of macro 'MAX16'
+  101 | #define MAX16(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 16-bit value.   */
+      |                                  ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:934:51: note: in expansion of macro 'QCONST16'
+  934 |       mem->max_follower = MAX16(mem->max_follower-QCONST16(.02f,15)/frame_rate, mem->smoothed_width);
+      |                                                   ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c: In function 'opus_encode_native':
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:22: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                      ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:28: note: in expansion of macro 'ADD32'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                            ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:132:22: note: in expansion of macro 'SHL32'
+  132 | #define SHL(a,shift) SHL32(a,shift)
+      |                      ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:34: note: in expansion of macro 'SHL'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                  ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:38: note: in expansion of macro 'MULT16_16'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                      ^~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:42: note: in expansion of macro 'MULT16_32_Q15'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                          ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:56: note: in expansion of macro 'QCONST16'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                                        ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:22: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                      ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:28: note: in expansion of macro 'ADD32'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                            ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:69: note: in expansion of macro 'SHR'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                                                     ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:73: note: in expansion of macro 'MULT16_16SU'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                                                         ^~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:42: note: in expansion of macro 'MULT16_32_Q15'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                          ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:56: note: in expansion of macro 'QCONST16'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                                        ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:34: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                                  ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:28: note: in expansion of macro 'ADD32'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                            ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:132:22: note: in expansion of macro 'SHL32'
+  132 | #define SHL(a,shift) SHL32(a,shift)
+      |                      ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:34: note: in expansion of macro 'SHL'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                  ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:38: note: in expansion of macro 'MULT16_16'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                      ^~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:42: note: in expansion of macro 'MULT16_32_Q15'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                          ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:56: note: in expansion of macro 'QCONST16'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                                        ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:34: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                                  ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:28: note: in expansion of macro 'ADD32'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                            ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:69: note: in expansion of macro 'SHR'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                                                     ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:57:73: note: in expansion of macro 'MULT16_16SU'
+   57 | #define MULT16_32_Q15(a,b) ADD32(SHL(MULT16_16((a),SHR((b),16)),1), SHR(MULT16_16SU((a),((b)&0x0000ffff)),15))
+      |                                                                         ^~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:42: note: in expansion of macro 'MULT16_32_Q15'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                          ^~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1317:56: note: in expansion of macro 'QCONST16'
+ 1317 |           st->peak_signal_energy = MAX32(MULT16_32_Q15(QCONST16(0.999f, 15), st->peak_signal_energy),
+      |                                                        ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c: In function 'opus_encode_frame_native':
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1929:45: note: in expansion of macro 'QCONST16'
+ 1929 |        activity = st->peak_signal_energy < (QCONST16(PSEUDO_SNR_THRESHOLD, 0) * (opus_val64)HALF32(noise_energy));
+      |                                             ^~~~~~~~
+In file included from F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/SigProc_FIX.h:39,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/main.h:31,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/fixed/structs_FIX.h:32,
+                 from F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:54:
+F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/SigProc_FIX.h:539:88: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  539 | #define SILK_FIX_CONST( C, Q )              ((opus_int32)((C) * ((opus_int64)1 << (Q)) + 0.5))
+      |                                                                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/macros.h:52:95: note: in definition of macro 'silk_SMLAWB'
+   52 | #define silk_SMLAWB(a32, b32, c32)       ((a32) + ((((b32) >> 16) * (opus_int32)((opus_int16)(c32))) + ((((b32) & 0x0000FFFF) * (opus_int32)((opus_int16)(c32))) >> 16)))
+      |                                                                                               ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1975:54: note: in expansion of macro 'SILK_FIX_CONST'
+ 1975 |           hp_freq_smth1 - st->variable_HP_smth2_Q15, SILK_FIX_CONST( VARIABLE_HP_SMTH_COEF2, 16 ) );
+      |                                                      ^~~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/SigProc_FIX.h:539:88: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  539 | #define SILK_FIX_CONST( C, Q )              ((opus_int32)((C) * ((opus_int64)1 << (Q)) + 0.5))
+      |                                                                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/silk/macros.h:52:155: note: in definition of macro 'silk_SMLAWB'
+   52 | #define silk_SMLAWB(a32, b32, c32)       ((a32) + ((((b32) >> 16) * (opus_int32)((opus_int16)(c32))) + ((((b32) & 0x0000FFFF) * (opus_int32)((opus_int16)(c32))) >> 16)))
+      |                                                                                                                                                           ^~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:1975:54: note: in expansion of macro 'SILK_FIX_CONST'
+ 1975 |           hp_freq_smth1 - st->variable_HP_smth2_Q15, SILK_FIX_CONST( VARIABLE_HP_SMTH_COEF2, 16 ) );
+      |                                                      ^~~~~~~~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:92:42: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   92 | #define QCONST16(x,bits) ((opus_val16)(.5+(x)*(((opus_val32)1)<<(bits))))
+      |                                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:118:26: note: in definition of macro 'SHR32'
+  118 | #define SHR32(a,shift) ((a) >> (shift))
+      |                          ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2061:64: note: in expansion of macro 'QCONST16'
+ 2061 |                HB_gain = Q15ONE - SHR32(celt_exp2(-celt_rate * QCONST16(1.f/1024, 10)), 1);
+      |                                                                ^~~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:22: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                      ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:111:19: note: in expansion of macro 'MIN32'
+  111 | #define MING(a,b) MIN32(a, b)
+      |                   ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:30: note: in expansion of macro 'MING'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                              ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:25: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                         ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:22: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                      ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:111:19: note: in expansion of macro 'MIN32'
+  111 | #define MING(a,b) MIN32(a, b)
+      |                   ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:30: note: in expansion of macro 'MING'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                              ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:25: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                         ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:28: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                            ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:40: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                                        ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:34: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                                  ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:111:19: note: in expansion of macro 'MIN32'
+  111 | #define MING(a,b) MIN32(a, b)
+      |                   ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:30: note: in expansion of macro 'MING'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                              ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:25: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                         ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:34: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                                  ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:111:19: note: in expansion of macro 'MIN32'
+  111 | #define MING(a,b) MIN32(a, b)
+      |                   ^~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:30: note: in expansion of macro 'MING'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                              ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:25: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                         ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/arch.h:103:40: note: in definition of macro 'MAX32'
+  103 | #define MAX32(a,b) ((a) > (b) ? (a) : (b))   /**< Maximum 32-bit value.   */
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2091:25: note: in expansion of macro 'MAXG'
+ 2091 |                  mask = MAXG(MING(st->energy_masking[21*c+i],
+      |                         ^~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2092:40: note: in expansion of macro 'GCONST'
+ 2092 |                         GCONST(.5f)), -GCONST(2.0f));
+      |                                        ^~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:98:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   98 | #define GCONST2(x,bits) ((celt_glog)(.5+(x)*(((celt_glog)1)<<(bits))))
+      |                                        ^
+F:/circuit/firmware/a04/third_party/opus-1.6.1/celt/fixed_generic.h:101:19: note: in expansion of macro 'GCONST2'
+  101 | #define GCONST(x) GCONST2((x),DB_SHIFT)
+      |                   ^~~~~~~
+F:/circuit/firmware/a04/third_party/opus-1.6.1/src/opus_encoder.c:2100:29: note: in expansion of macro 'GCONST'
+ 2100 |            masking_depth += GCONST(.2f);
+      |                             ^~~~~~
+[13/516] Building C object CMakeFiles/app.dir/src/main.c.obj
+FAILED: CMakeFiles/app.dir/src/main.c.obj
+F:\circuit\.tools\zephyr\zephyr-sdk-0.17.2\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DMBEDTLS_CONFIG_FILE=\"config-mbedtls.h\" -DNRF52840_XXAA -DNRF54L_CONFIGURATION_56_ENABLE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -IF:/circuit/firmware/a04/drivers/../include -IF:/circuit/firmware/a04/radio/include -IF:/circuit/firmware/a04/radio/../include -IF:/circuit/.tools/a04-radio/arm/zephyr/include/generated/zephyr -IF:/circuit/.tools/zephyr/zephyr/include -IF:/circuit/.tools/a04-radio/arm/zephyr/include/generated -IF:/circuit/.tools/zephyr/zephyr/soc/nordic -IF:/circuit/.tools/zephyr/zephyr/soc/nordic/nrf52/. -IF:/circuit/.tools/zephyr/zephyr/soc/nordic/common/. -IF:/circuit/.tools/zephyr/zephyr/subsys/bluetooth/controller/ll_sw/nordic/hal/nrf5/nrfx_glue -IF:/circuit/.tools/zephyr/zephyr/subsys/bluetooth -IF:/circuit/.tools/zephyr/zephyr/subsys/settings/include -IF:/circuit/.tools/zephyr/modules/hal/cmsis/CMSIS/Core/Include -IF:/circuit/.tools/zephyr/modules/hal/cmsis_6/CMSIS/Core/Include -IF:/circuit/.tools/zephyr/zephyr/modules/cmsis_6/. -IF:/circuit/.tools/zephyr/modules/hal/nordic/nrfx -IF:/circuit/.tools/zephyr/modules/hal/nordic/nrfx/drivers/include -IF:/circuit/.tools/zephyr/modules/hal/nordic/nrfx/mdk -IF:/circuit/.tools/zephyr/zephyr/modules/hal_nordic/nrfx/. -IF:/circuit/.tools/zephyr/modules/crypto/mbedtls/include -IF:/circuit/.tools/zephyr/zephyr/modules/mbedtls/configs -IF:/circuit/.tools/zephyr/zephyr/modules/mbedtls/include -IF:/circuit/firmware/a04/third_party/opus-1.6.1/include -isystem F:/circuit/.tools/zephyr/zephyr/lib/libc/common/include -O3 -DNDEBUG -fstack-usage -Wall -Wextra -fno-strict-aliasing -Os -imacros F:/circuit/.tools/a04-radio/arm/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=F:/circuit/.tools/zephyr/zephyr-sdk-0.17.2/arm-zephyr-eabi/arm-zephyr-eabi -imacros F:/circuit/.tools/zephyr/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=F:/circuit/firmware/a04/radio=CMAKE_SOURCE_DIR -fmacro-prefix-map=F:/circuit/.tools/zephyr/zephyr=ZEPHYR_BASE -fmacro-prefix-map=F:/circuit/.tools/zephyr=WEST_TOPDIR -ffunction-sections -fdata-sections -specs=picolibc.specs -std=c11 -Werror -MD -MT CMakeFiles/app.dir/src/main.c.obj -MF CMakeFiles\app.dir\src\main.c.obj.d -o CMakeFiles/app.dir/src/main.c.obj -c F:/circuit/firmware/a04/radio/src/main.c
+In file included from F:/circuit/firmware/a04/radio/src/main.c:17:
+F:/circuit/firmware/a04/radio/src/main.c: In function 'radio_worker':
+F:/circuit/.tools/zephyr/zephyr/include/zephyr/bluetooth/bluetooth.h:554:25: error: initializer element is not constant
+  554 |                 .data = (const uint8_t *)(_data), \
+      |                         ^
+F:/circuit/.tools/zephyr/zephyr/include/zephyr/bluetooth/bluetooth.h:567:9: note: in expansion of macro 'BT_DATA'
+  567 |         BT_DATA(_type, ((uint8_t []) { _bytes }), \
+      |         ^~~~~~~
+F:/circuit/firmware/a04/radio/src/main.c:231:13: note: in expansion of macro 'BT_DATA_BYTES'
+  231 |             BT_DATA_BYTES(BT_DATA_FLAGS,BT_LE_AD_GENERAL|BT_LE_AD_NO_BREDR),
+      |             ^~~~~~~~~~~~~
+F:/circuit/.tools/zephyr/zephyr/include/zephyr/bluetooth/bluetooth.h:554:25: note: (near initialization for 'ad[0].data')
+  554 |                 .data = (const uint8_t *)(_data), \
+      |                         ^
+F:/circuit/.tools/zephyr/zephyr/include/zephyr/bluetooth/bluetooth.h:567:9: note: in expansion of macro 'BT_DATA'
+  567 |         BT_DATA(_type, ((uint8_t []) { _bytes }), \
+      |         ^~~~~~~
+F:/circuit/firmware/a04/radio/src/main.c:231:13: note: in expansion of macro 'BT_DATA_BYTES'
+  231 |             BT_DATA_BYTES(BT_DATA_FLAGS,BT_LE_AD_GENERAL|BT_LE_AD_NO_BREDR),
+      |             ^~~~~~~~~~~~~
+[14/516] Building C object CMakeFiles/app.dir/src/aura_gatt_zephyr.c.obj
+ninja: build stopped: subcommand failed.
+FATAL ERROR: command exited with status 1: 'F:\circuit\.tools\zephyr\venv\Scripts\cmake.EXE' --build 'F:\circuit\.tools\a04-radio\arm'

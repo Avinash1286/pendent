@@ -6,6 +6,14 @@ The separate [first spoken-note bench](bench/README.md) now connects these layer
 
 ## Implemented behavior
 
+The separate [authenticated radio DK application](radio/README.md) now connects
+the same physical-driver/storage owner to the actual transfer command engine.
+It includes a bounded pairing window, L4 enforcement, per-connection ASC1 owner
+proof, immutable GATT responses and immediate revocation. This is development
+source with host-tested boundaries, not an executed physical radio link or
+consumer enrollment. The wired bench and the synthetic ARM probe remain
+separate targets; their existing resource reports do not measure this radio image.
+
 - The [storage owner](STORAGE.md) durably reserves capture IDs, verifies exact finalized source and [RLS1 authentication](RELEASE-AUTH.md), then commits original release extents through [control snapshots](CONTROL-LEDGER.md) before invoking a privileged erase. It preserves unacknowledged recordings and supports catalog reuse in the host model. The W25N adapter separately supports restricted control-block rotation; a production populated-audio erase callback and secure owner enrollment remain unimplemented. An interrupted authority write can require recovery and block further operations. Authentication success alone never permits deletion.
 - The [microphone adapter](AUDIO.md) separates its higher-priority PDM reader from the encoder/storage owner with a bounded FIFO. The local Zephyr/nrfx driver exposes sticky faults and DMA ownership; overflow, missing blocks, privacy cancellation or uncertain STOP completion cannot masquerade as a clean recording. Startup, publication and cutoff ordering have deterministic host tests. Real interrupt latency and microphone continuity remain unmeasured.
 - The [recorder](RECORDER.md) binds each block to an epoch, sequence and exact source offset. A clean stop checks the producer's final watermark before flushing and sealing; interrupted captures retain their verified complete-packet prefix. It reports separate source and storage-close errors and prevents retrying PCM already consumed on a failed call.
@@ -90,9 +98,11 @@ identities. Tests generate [exact replies and fragments](verification/transfer-w
 for the matching Android codec. Reproduce with
 `python firmware/a04/scripts/verify_transfer.py` after configuring the host build;
 the normal `scripts/build.ps1 -Mode host` loop includes it. This new owner is
-linked only as a resource reservation in the synthetic ARM probe, not into the
-wired bench or a GATT image. Enrollment, radio scheduling and durable phone
-download remain outstanding.
+linked as a resource reservation in the synthetic ARM probe and is now integrated
+into the separate radio DK application's owner loop. The wired bench still uses
+its UART cursor. Durable phone download and the Android GATT client exist with
+virtual-peripheral tests; matching ASC1 client integration, consumer enrollment
+and a physical hardware-to-phone recovery trial remain outstanding.
 
 Listen or inspect: [input WAV](fixtures/source-speech-16k.wav), [20 ms Opus](fixtures/speech-20ms.opus), [20 ms independent decode](fixtures/speech-20ms-ffmpeg.wav), [10 ms Opus](fixtures/speech-10ms.opus). Host-generated `.aoc` files retain individual packets for debugging. Ogg files use 48 kHz granule units and encode both pre-skip and exact final length.
 

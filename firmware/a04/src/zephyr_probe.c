@@ -13,6 +13,7 @@
 #include "aura_dmic_health.h"
 #include "aura_release_auth.h"
 #include "aura_control.h"
+#include "aura_storage.h"
 #include <string.h>
 
 #define CODEC_STACK_BYTES 49152
@@ -28,6 +29,8 @@ static struct aura_audio_zephyr audio_adapter;
  * configured control-block pair or privileged physical erase callback. */
 static struct aura_release_auth_context release_context;
 static struct aura_control control_ledger;
+static struct aura_storage storage_owner;
+static uint8_t storage_snapshot[AURA_STORAGE_STATE_BYTES];
 /* Eight sparse pages suffice for this short synthetic capture. */
 static uint8_t probe_pages[8][2048], probe_map[64], probe_used;
 static int probe_highest;
@@ -98,6 +101,16 @@ static void probe(void *one, void *two, void *three)
            (unsigned)sizeof(control_ledger),(void *)&control_ledger,
            (void *)aura_control_open,(void *)aura_control_provision,
            (void *)aura_control_load,(void *)aura_control_store);
+    printk("UNPROVISIONED STORAGE owner=%u at=%p snapshot=%u at=%p open=%p provision=%p "
+           "prepare=%p cancel=%p release=%p step=%p capture_id=%p control_configure=%p control_io=%p; "
+           "no physical control pair or audio reclaim capability configured\n",
+           (unsigned)sizeof(storage_owner),(void *)&storage_owner,
+           (unsigned)sizeof(storage_snapshot),(void *)storage_snapshot,
+           (void *)aura_storage_open,(void *)aura_storage_provision,
+           (void *)aura_storage_prepare_capture,(void *)aura_storage_cancel_prepared,
+           (void *)aura_storage_request_release,(void *)aura_storage_release_step,
+           (void *)aura_storage_capture_id,(void *)aura_w25n01gv_zephyr_configure_control,
+           (void *)aura_w25n01gv_zephyr_control_io);
     uint32_t worst_us = 0, late_frames = 0;
     for (unsigned frame = 0; !status && frame < 50; ++frame) {
         for (unsigned i = 0; i < ARRAY_SIZE(input); ++i)

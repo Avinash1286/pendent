@@ -1,10 +1,10 @@
 {
   "status": "host_NAND_model_real_Opus_Python_SQLite_FFmpeg_passed_device_unmeasured",
-  "host_groups": 15,
-  "journal_context_bytes": 35920,
+  "host_groups": 19,
+  "journal_context_bytes": 36040,
   "host_model_bytes": 666712,
-  "host_executable_sha256": "54c39d0dc1283563c7a2137c251c9acebef870bf5f1f9473be9d66d395e508b1",
-  "host_transcript_sha256": "67990d1a35bfecfd34c0678db1b409018a728d2f587e21b29d057ceda8f86a0b",
+  "host_executable_sha256": "ce04ac34a310648a9ffbdafdbe0fc70c3fc1b64be4109f1b0c1a555346a846db",
+  "host_transcript_sha256": "75964add130e5ec897aebf85e8467bb0991e37925f91c5200f35a9d579608a17",
   "wrapped_chain": {
     "physical_order": [
       3,
@@ -19,6 +19,17 @@
     "malformed_chain_cases": 12,
     "reclassified_checkpoint_ownership_orders": 2,
     "additional_programs_or_erases": 0
+  },
+  "owned_allocation": {
+    "binding": "exact68B manifest; single-use nonzero generation",
+    "namespace_bytes": 16,
+    "metadata_version": 2,
+    "corruption_cases": 13,
+    "power_cut_cases": 52,
+    "mixed_wrapped_mount_metadata_reads": 18,
+    "per_capture_or_block_ram_arrays_added": false,
+    "additional_host_context_bytes": 120,
+    "durable_reservation_and_authenticated_release_external": true
   },
   "python": "3.12.13 (main, May  8 2026, 18:37:00) [MSC v.1944 64 bit (AMD64)]",
   "cases": [
@@ -35,6 +46,10 @@
       "tested_physical_block_order": [
         0
       ],
+      "allocation_identity": {
+        "metadata_version": 1,
+        "owned": false
+      },
       "physical_receipt_status": "terminal",
       "physical_prefix_digest": "c892cf2f41849c6caa5a6d7a8558241e945f05e9fce76f7174991ad8173f14f5",
       "export_terminal_digest": "c892cf2f41849c6caa5a6d7a8558241e945f05e9fce76f7174991ad8173f14f5"
@@ -52,6 +67,10 @@
       "tested_physical_block_order": [
         0
       ],
+      "allocation_identity": {
+        "metadata_version": 1,
+        "owned": false
+      },
       "physical_receipt_status": "open_prefix",
       "physical_prefix_digest": "43ca1c576ae2dee0321536c0076b748224cb54d288afa400dd5956ddb3704d2a",
       "export_terminal_digest": "01003f60e1961ec3107b4bd564af8a4d38b562d173db69ff82ab7a6a06bceb10"
@@ -69,6 +88,10 @@
       "tested_physical_block_order": [
         0
       ],
+      "allocation_identity": {
+        "metadata_version": 1,
+        "owned": false
+      },
       "physical_receipt_status": "open_prefix",
       "physical_prefix_digest": "692d2a258c7edd1b4cc25bdbeed8e153c8e417545b23a7b7d96a399706a70968",
       "export_terminal_digest": "cb880b6f70a9a3b97456ff9242b6d2e8a4176d554b846557c1b18c863bab806c"
@@ -86,6 +109,10 @@
       "tested_physical_block_order": [
         0
       ],
+      "allocation_identity": {
+        "metadata_version": 1,
+        "owned": false
+      },
       "physical_receipt_status": "open_prefix",
       "physical_prefix_digest": "563d80160f6c3145698e69c72822cdc5bd8e42e8c736b1598ad0da2da3772037",
       "export_terminal_digest": "07661cdec7dc654a910b4d77e0f3995eb836a91f5a53e059d2ef0c24f449e60b"
@@ -104,14 +131,45 @@
         7,
         0
       ],
+      "allocation_identity": {
+        "metadata_version": 1,
+        "owned": false
+      },
       "physical_receipt_status": "terminal",
       "physical_prefix_digest": "b899ceb1c607e307d8e02f88b275528f5a18d87179645f5b039496e90f1cf1b1",
       "export_terminal_digest": "b899ceb1c607e307d8e02f88b275528f5a18d87179645f5b039496e90f1cf1b1"
+    },
+    {
+      "case": "owned_v2_wrapped_finalized_reboot",
+      "file": "fixtures/journal-5.aura",
+      "file_sha256": "95f84480886f207985ddbaef4b5d71dae293d96a77854d3686e7134371a402be",
+      "status": "finalized",
+      "bytes": 147504,
+      "audio_packets": 1511,
+      "decoded_samples": 483388,
+      "waveform_snr_db": 12.003,
+      "original_source_samples": 483388,
+      "tested_physical_block_order": [
+        7,
+        0
+      ],
+      "allocation_identity": {
+        "metadata_version": 2,
+        "owned": true,
+        "incarnation_hex": "a402030405060708090a0b0c0d0e0f10",
+        "allocation_generation": 4294967298,
+        "metadata_file_sha256": "6c94c8576dc72b39663e1fd21e6ed662c65ce85c716758d9963df7fc3098747c",
+        "independent_metadata_crc_and_identity_checks": true,
+        "deletion_authority": false
+      },
+      "physical_receipt_status": "terminal",
+      "physical_prefix_digest": "a238edc64b2db5ab18f8a8fc78485e2144c4f7e3f3b9165842ca3e432e95fa53",
+      "export_terminal_digest": "a238edc64b2db5ab18f8a8fc78485e2144c4f7e3f3b9165842ca3e432e95fa53"
     }
   ],
   "code_source_sha256": {
-    "firmware/a04/src/aura_journal.c": "478970ef202e6c92d96eecbdacfebddc2fc77f2af590dff3477ac5dd2da3662d",
-    "firmware/a04/include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
+    "firmware/a04/src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
+    "firmware/a04/include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
     "firmware/a04/include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
@@ -119,13 +177,13 @@
     "firmware/a04/include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
     "firmware/a04/tests/nand_model.c": "976edeb866a23bdaeeb3679741bd73ba3dc02854d035b629126f157a15d76238",
     "firmware/a04/tests/nand_model.h": "e51040f43b29a54dfc7d7d010ce0feef538a926a84ea5c93f2db87c4c5084db3",
-    "firmware/a04/tests/host_journal.c": "1a7e8957888451732613cccd06a5fb2cd543975781f343b08efe77f5d836c771",
-    "firmware/a04/tests/CMakeLists.txt": "0b8c0cddac4455ad3040ffbbcef7baaf28385c5db13406649d7119dd3b8054ee",
-    "firmware/a04/scripts/build.ps1": "a72826f67da26af8bc9bac6fcb820ad41731a67e53234e02b7dcf6add383b903",
-    "firmware/a04/src/aura_w25n01gv.c": "f3443bc6751086144e5022a1b58701cac2254d5b080562bfc28f730a498f1cc1",
-    "firmware/a04/include/aura_w25n01gv.h": "0bf679f16315fae257dcd12aa6a41012e155ac86e74f22d4488f3ed86773ea7b",
-    "firmware/a04/tests/host_w25n01gv.c": "1d3403a2aaa230ac70617673cb436390d9d2241b085d1c2a03c560c64440c3b1",
-    "firmware/a04/scripts/verify_journal.py": "7a4e6e45c1891c6a9700ba74bf6e6646ca051d4a014bef303dad24649cfb8aba",
+    "firmware/a04/tests/host_journal.c": "82480f58197c931bd66a1d0071d4ca90812e3611af148b6003a2683902b65d54",
+    "firmware/a04/tests/CMakeLists.txt": "ccfbe465b745a738f4052425124c0b2e9c79aae692410894f81d53d4d0cc6c3c",
+    "firmware/a04/scripts/build.ps1": "6bb8acf8afd5357f7808e6fff3854724ba2ff80f743f5b9be3965e38d4876bf5",
+    "firmware/a04/src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
+    "firmware/a04/include/aura_w25n01gv.h": "6248c59c7e9c54eb343e0958b09ccdb31eb8411080e796f7587a373a2254357b",
+    "firmware/a04/tests/host_w25n01gv.c": "9716af59ed311306d9e0f48ca13d006e0c530e8a4c899bc12e38d09edec507a9",
+    "firmware/a04/scripts/verify_journal.py": "bdf76eb6e9520efe60100a552684699296ca9435a06235f1b13dfcf76c5ec179",
     "companion/src/aura_companion/protocol_v2.py": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
   },
   "model_guarantees": [
@@ -142,7 +200,10 @@
     "full scan beyond gaps and checkpoint declarations",
     "128 capture and media-full bounds",
     "bounded wrapped allocation and order-independent continuation recovery",
-    "conflicting continuation chains preserve source and deny receipts"
+    "conflicting continuation chains preserve source and deny receipts",
+    "v2 allocation namespace/generation consistency across headers and checkpoints",
+    "exact single-use next-capture binding; no unbound owned capture",
+    "full verification before returning physical allocation identity"
   ],
   "limitations": [
     "physical SPI/NAND power failure unmeasured",

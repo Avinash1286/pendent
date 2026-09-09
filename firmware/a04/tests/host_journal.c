@@ -9,6 +9,7 @@ static struct nand_model model;
 static struct aura_journal journal;
 static struct aura_archive_writer writer;
 static unsigned tests;
+static const uint8_t owned_incarnation[16]={0xA4,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 static void put(uint8_t *p,uint64_t v,unsigned n){for(unsigned i=0;i<n;++i)p[i]=(uint8_t)(v>>(8*i));}
 static void fix(uint8_t *p,size_t n){put(p+n-4,aura_archive_crc32(p,n-4),4);}
 static int reset(unsigned blocks)
@@ -21,6 +22,17 @@ static int begin(unsigned id)
     memset(m.device_id,17,16);memset(m.capture_id,(int)id,16);
     return aura_archive_begin_staged(&writer,&m,aura_journal_stage,&journal);
 }
+static int copy_manifest(void *user,uint64_t offset,const uint8_t *wire,size_t bytes)
+{if(offset||bytes!=68)return -902;memcpy(user,wire,68);return 0;}
+static int manifest_wire(unsigned id,uint8_t wire[68])
+{
+    struct aura_archive_manifest m={.frame_samples=320,.pre_skip=40};
+    memset(m.device_id,17,16);memset(m.capture_id,(int)id,16);
+    struct aura_archive_writer draft;
+    return aura_archive_begin_staged(&draft,&m,copy_manifest,wire);
+}
+static int bind(unsigned id,uint64_t generation)
+{uint8_t wire[68];int r=manifest_wire(id,wire);return r?r:aura_journal_bind_capture(&journal,wire,generation);}
 static int packet(unsigned bytes)
 {
     struct aura_opus_packet p={.sequence=writer.audio_packets,.sample_offset=writer.encoded_samples,
@@ -334,33 +346,172 @@ static int export_changes(void)
     uint8_t ack[94];CHECK(aura_journal_receipt(&journal,0,ack)==AURA_JOURNAL_NOT_COMMITTED);
     ++tests;return 0;
 }
+static int owned_bindings(void)
+{
+    CHECK(!reset(8));CHECK(!begin(1));CHECK(!packet(80));CHECK(!finish());
+    struct aura_journal_allocation_identity id;
+    CHECK(!aura_journal_get_allocation_identity(&journal,0,&id));
+    CHECK(id.version==1&&!id.owned&&!id.allocation_generation);
+    CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));
+    uint64_t erases=model.erases,programs=model.programs;
+    CHECK(begin(2)==AURA_JOURNAL_CONFLICT&&model.erases==erases&&model.programs==programs);
+    uint8_t wire[68];CHECK(!manifest_wire(2,wire));
+    CHECK(aura_journal_bind_capture(&journal,wire,0)==AURA_NAND_BAD_ARGUMENT);
+    CHECK(!aura_journal_bind_capture(&journal,wire,10));
+    CHECK(bind(3,11)==AURA_JOURNAL_BUSY);
+    /* The same IDs with a different canonical frame profile are still a
+     * different manifest. Caller edits cannot change the retained binding. */
+    put(wire+44,160,2);fix(wire,68);CHECK(memcmp(wire,journal.bound_manifest,68));
+    CHECK(aura_journal_stage(&journal,0,wire,68)==AURA_JOURNAL_CONFLICT&&!journal.binding_pending);
+    CHECK(bind(2,10)==AURA_JOURNAL_CONFLICT&&model.erases==erases&&model.programs==programs);
+    CHECK(!bind(2,11));CHECK(!aura_journal_discard_binding(&journal));
+    CHECK(bind(2,11)==AURA_JOURNAL_CONFLICT);CHECK(!bind(2,12));CHECK(!begin(2));
+    CHECK(!journal.binding_pending&&journal.capture_generation==12);
+    CHECK(bind(3,13)==AURA_JOURNAL_BUSY&&aura_journal_discard_binding(&journal)==AURA_JOURNAL_BUSY);
+    CHECK(aura_journal_set_owned_profile(&journal,owned_incarnation)==AURA_JOURNAL_BUSY);
+    CHECK(!packet(80));CHECK(!finish());
+    CHECK(!aura_journal_get_allocation_identity(&journal,1,&id));
+    CHECK(id.owned&&id.version==2&&id.allocation_generation==12&&!memcmp(id.incarnation,owned_incarnation,16));
+    CHECK(model.pages[66][4]==2&&!memcmp(model.pages[66]+222,owned_incarnation,16));
+    CHECK(model.pages[127][4]==2&&!memcmp(model.pages[127]+122,owned_incarnation,16));
+    CHECK(begin(3)==AURA_JOURNAL_CONFLICT);
+    uint8_t other[16];memcpy(other,owned_incarnation,16);other[0]^=1;
+    CHECK(aura_journal_set_owned_profile(&journal,other)==AURA_JOURNAL_CONFLICT);
+    CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation)&&journal.last_bound_generation==12);
+    CHECK(!reopen()&&journal.count==2&&journal.payload_reads==0);
+    CHECK(!aura_journal_get_allocation_identity(&journal,0,&id)&&!id.owned&&id.version==1);
+    CHECK(!aura_journal_get_allocation_identity(&journal,1,&id)&&id.owned&&id.allocation_generation==12);
+    CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation)&&journal.last_bound_generation==12);
+    CHECK(bind(3,12)==AURA_JOURNAL_CONFLICT&&bind(2,13)==AURA_JOURNAL_CONFLICT);
+    CHECK(!bind(3,13));CHECK(!begin(3));CHECK(!finish());
+    /* Preparation may advance past a newly excluded candidate without burning
+     * the binding a second time or requiring a replacement reservation. */
+    CHECK(!reset(3));CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));CHECK(!bind(1,1));
+    model.remapped[0]=true;CHECK(begin(1)==AURA_JOURNAL_RETRY_PREPARE&&journal.binding_pending);
+    CHECK(!begin(1)&&!journal.binding_pending&&journal.current_block==1);CHECK(!finish());
+    printf("PASS owned_bindings exact_manifest=true one_use=true legacy_preserved=true durable_reservation_external=true\n");
+    ++tests;return 0;
+}
+static int owned_wrapped_layout(void)
+{
+    CHECK(!reset(4));journal.allocation_cursor=2;
+    CHECK(!begin(9));CHECK(!packet(80));CHECK(!finish());
+    CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));CHECK(!bind(1,25));
+    CHECK(!begin(1));for(unsigned n=0;n<125;++n)CHECK(!packet(1275));CHECK(!finish());
+    CHECK(journal.captures[1].first_block==3&&journal.captures[1].last_block==1);
+    CHECK(journal.captures[1].blocks==3);return 0;
+}
+static int owned_chain_identity(void)
+{
+    CHECK(!owned_wrapped_layout());struct aura_journal_allocation_identity identity;
+    CHECK(!aura_journal_get_allocation_identity(&journal,1,&identity)&&identity.owned&&identity.allocation_generation==25);
+    uint64_t programs=model.programs,erases=model.erases;CHECK(!reopen());
+    CHECK(journal.metadata_reads==18&&journal.payload_reads==0);
+    CHECK(!aura_journal_get_allocation_identity(&journal,(uint16_t)catalog_id(1),&identity));
+    CHECK(identity.version==2&&identity.allocation_generation==25&&!memcmp(identity.incarnation,owned_incarnation,16));
+    CHECK(model.programs==programs&&model.erases==erases);
+    for(unsigned mode=0;mode<12;++mode){
+        CHECK(!owned_wrapped_layout());uint8_t *p=model.pages[66];
+        switch(mode){
+        case 0:p[238]^=1;break;
+        case 1:p[222]^=1;break;
+        case 2:p[4]=1;memset(p+222,0,30);break;
+        case 3:p=model.pages[194];p[4]=1;memset(p+222,0,30);break;
+        case 4:p=model.pages[127];p[138]^=1;break;
+        case 5:p=model.pages[127];p[122]^=1;break;
+        case 6:p=model.pages[127];p[4]=1;memset(p+122,0,130);break;
+        case 7:p=model.pages[255];p[4]=1;memset(p+122,0,130);break;
+        case 8:p[246]=1;break;
+        case 9:p=model.pages[127];p[146]=1;break;
+        case 10:{
+            uint8_t wire[68];CHECK(!manifest_wire(9,wire));memcpy(p+60,wire,68);memcpy(p+28,wire+8,32);
+            put(p+12,UINT32_MAX,4);put(p+16,0,4);put(p+20,0,8);memset(p+128,0,94);break;
+        }
+        default:memset(p+222,0,16);break;
+        }
+        fix(p,256);programs=model.programs;erases=model.erases;CHECK(!reopen());
+        int index=catalog_id(1);CHECK(index>=0&&journal.captures[index].metadata_fault);
+        CHECK(aura_journal_get_allocation_identity(&journal,(uint16_t)index,&identity)==AURA_JOURNAL_CORRUPT);
+        uint8_t ack[94];CHECK(aura_journal_receipt(&journal,(uint16_t)index,ack)==AURA_JOURNAL_NOT_COMMITTED);
+        int legacy=catalog_id(9);CHECK(legacy>=0);
+        CHECK(aura_journal_verify(&journal,(uint16_t)legacy)==(mode==10?AURA_JOURNAL_CORRUPT:0));
+        CHECK(model.programs==programs&&model.erases==erases);
+    }
+    /* Getter cannot rely on a previous cached verification after metadata
+     * changes. A single-block header/checkpoint identity disagreement fails. */
+    CHECK(!reset(2));CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));
+    CHECK(!bind(1,1));CHECK(!begin(1));CHECK(!packet(80));CHECK(!finish());
+    CHECK(!aura_journal_get_allocation_identity(&journal,0,&identity));model.pages[63][138]^=1;fix(model.pages[63],256);
+    CHECK(aura_journal_get_allocation_identity(&journal,0,&identity)==AURA_JOURNAL_CORRUPT);
+    printf("PASS owned_chain_identity corruption_cases=13 wrapped_order=3->0->1 metadata_reads=18 legacy_crossowners_preserved=true\n");
+    ++tests;return 0;
+}
+static int owned_power_cuts(void)
+{
+    const size_t cuts[]={0,1,121,137,145,221,237,245,251,255,700,2047,2048};
+    for(unsigned operation=1;operation<=4;++operation)for(unsigned k=0;k<sizeof(cuts)/sizeof(cuts[0]);++k){
+        CHECK(!reset(3));CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));CHECK(!bind(1,100));
+        model.cut_program=operation;model.cut=cuts[k]==2048?MODEL_CUT_AFTER:MODEL_CUT_PARTIAL;model.cut_bytes=cuts[k];
+        int r=begin(1);if(!r)r=packet(80);if(!r)r=packet(80);if(!r)r=finish();
+        CHECK(r<0&&!journal.binding_pending&&journal.last_bound_generation==100);
+        CHECK(model.programs==operation);uint64_t programs=model.programs,erases=model.erases;
+        CHECK(!reopen()&&journal.payload_reads==0);
+        if(journal.count){
+            struct aura_journal_allocation_identity id;
+            r=aura_journal_get_allocation_identity(&journal,0,&id);
+            bool audio_survives=operation>2||(operation==2&&cuts[k]==2048);
+            CHECK(audio_survives?r==0:r==AURA_JOURNAL_NOT_COMMITTED);
+            if(!r)CHECK(id.owned&&id.version==2&&id.allocation_generation==100&&!memcmp(id.incarnation,owned_incarnation,16));
+        }else CHECK(operation==1&&cuts[k]<2048);
+        CHECK(model.programs==programs&&model.erases==erases);
+    }
+    CHECK(!reset(2));CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));CHECK(!bind(1,100));
+    model.cut_program=1;model.cut=MODEL_CUT_AFTER;model.lose_completion_only=true;
+    CHECK(!begin(1)&&!journal.binding_pending&&model.attempts[2]==1);CHECK(!packet(80));CHECK(!finish());
+    CHECK(!reopen());CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));
+    CHECK(bind(2,100)==AURA_JOURNAL_CONFLICT&&journal.last_bound_generation==100);
+    printf("PASS owned_power_cuts cases=52 header_checkpoint_identity=true no_binding_reuse=true\n");
+    ++tests;return 0;
+}
 static int fixture(const char *input_path,const char *prefix,unsigned mode)
 {
     FILE *f=fopen(input_path,"rb");CHECK(f);CHECK(!fseek(f,0,SEEK_END));long bytes=ftell(f);rewind(f);
     CHECK(bytes>0&&bytes<2000000&&!(bytes%2));int16_t *pcm=malloc((size_t)bytes);CHECK(pcm);
     CHECK(fread(pcm,1,(size_t)bytes,f)==(size_t)bytes);fclose(f);CHECK(!reset(8));
-    if(mode==4){
+    if(mode==4||mode==5){
         int16_t *long_pcm=realloc(pcm,(size_t)bytes*4);CHECK(long_pcm);pcm=long_pcm;
         for(unsigned repeat=1;repeat<4;++repeat)memcpy((uint8_t *)pcm+(size_t)bytes*repeat,pcm,(size_t)bytes);
         bytes*=4;journal.allocation_cursor=7;
     }
     struct aura_opus_capture capture;void *state=malloc(aura_opus_state_bytes());CHECK(state);
     CHECK(!aura_opus_init_staged(&capture,state,aura_opus_state_bytes(),20,aura_archive_opus_commit,&writer));
-    CHECK(capture.staging);CHECK(!aura_journal_service(&journal,0));CHECK(!begin(50+mode));
+    CHECK(capture.staging);CHECK(!aura_journal_service(&journal,0));
+    if(mode==5){CHECK(!aura_journal_set_owned_profile(&journal,owned_incarnation));CHECK(!bind(50+mode,UINT64_C(0x100000002)));}
+    CHECK(!begin(50+mode));
     size_t samples=(size_t)bytes/2,at=0;uint64_t ms=0;
     while(at<samples){size_t chunk=1280;if(chunk>samples-at)chunk=samples-at;size_t consumed;
         CHECK(!aura_opus_push(&capture,pcm+at,chunk,&consumed));CHECK(consumed==chunk);at+=consumed;ms+=80;
         CHECK(!aura_journal_service(&journal,ms));
         if(at==32000)CHECK(!aura_archive_bookmark(&writer,at));
     }
-    if(mode==0||mode==4){struct aura_opus_seal seal;CHECK(!aura_opus_finish(&capture,&seal));CHECK(!aura_archive_finalize(&writer,&seal));}
+    if(mode==0||mode==4||mode==5){struct aura_opus_seal seal;CHECK(!aura_opus_finish(&capture,&seal));CHECK(!aura_archive_finalize(&writer,&seal));}
     else if(mode==2||mode==3){model.cut_program=model.programs+1;model.cut=mode==2?MODEL_CUT_PARTIAL:MODEL_CUT_AFTER;model.cut_bytes=700;CHECK(aura_journal_flush(&journal)<0);}
-    if(mode==4)CHECK(journal.captures[0].first_block==7&&journal.captures[0].last_block==0&&journal.captures[0].blocks==2);
+    if(mode==4||mode==5)CHECK(journal.captures[0].first_block==7&&journal.captures[0].last_block==0&&journal.captures[0].blocks==2);
     uint64_t programmed=model.programs;CHECK(!reopen());CHECK(journal.payload_reads==0);CHECK(!aura_journal_verify(&journal,0));
     char name[1024];CHECK(snprintf(name,sizeof(name),"%s-%u.aura",prefix,mode)>0);
     struct export_sink sink={.file=fopen(name,"wb")};CHECK(sink.file);CHECK(!aura_journal_export(&journal,0,export_file,&sink));CHECK(!fclose(sink.file));
     uint8_t ack[94];CHECK(!aura_journal_receipt(&journal,0,ack));CHECK(snprintf(name,sizeof(name),"%s-%u.receipt",prefix,mode)>0);
     f=fopen(name,"wb");CHECK(f&&fwrite(ack,1,94,f)==94&&!fclose(f));
+    if(mode==5){
+        struct aura_journal_allocation_identity identity;CHECK(!aura_journal_get_allocation_identity(&journal,0,&identity));
+        CHECK(identity.owned&&identity.version==2&&identity.allocation_generation==UINT64_C(0x100000002));
+        CHECK(!memcmp(identity.incarnation,owned_incarnation,16));
+        CHECK(snprintf(name,sizeof(name),"%s-%u.allocation",prefix,mode)>0);f=fopen(name,"wb");CHECK(f);
+        const unsigned blocks[]={7,0};
+        for(unsigned part=0;part<2;++part){CHECK(fwrite(model.pages[blocks[part]*64+2],1,256,f)==256);
+            CHECK(fwrite(model.pages[blocks[part]*64+63],1,256,f)==256);}
+        CHECK(!fclose(f));
+    }
     printf("PASS real_opus_journal mode=%u physical_programs=%llu wire_bytes=%llu committed_bytes=%llu source_input_samples=%llu metadata_reads=%llu payload_reads=%llu\n",
         mode,(unsigned long long)programmed,(unsigned long long)sink.bytes,
         (unsigned long long)journal.captures[0].committed_wire_bytes,(unsigned long long)samples,
@@ -372,7 +523,8 @@ int main(int argc,char **argv)
     CHECK(argc==3);CHECK(!blank_and_model());CHECK(!staging_and_replay());CHECK(!program_cuts());
     CHECK(!erase_cuts());CHECK(!corruption());CHECK(!continuation_and_full());
     CHECK(!wrapped_recovery());CHECK(!conflicting_chains());CHECK(!reclassified_continuation());CHECK(!export_changes());
-    for(unsigned mode=0;mode<5;++mode)CHECK(!fixture(argv[1],argv[2],mode));
+    CHECK(!owned_bindings());CHECK(!owned_chain_identity());CHECK(!owned_power_cuts());
+    for(unsigned mode=0;mode<6;++mode)CHECK(!fixture(argv[1],argv[2],mode));
     printf("PASS journal groups=%u journal_context=%u model_is_host_only=%u\n",tests,(unsigned)sizeof(journal),(unsigned)sizeof(model));
     model_destroy(&model);return 0;
 }

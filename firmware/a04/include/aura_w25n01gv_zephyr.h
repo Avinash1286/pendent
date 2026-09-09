@@ -16,4 +16,9 @@ struct aura_w25n01gv_zephyr {
 int aura_w25n01gv_zephyr_init(struct aura_w25n01gv_zephyr *context,
                              const struct spi_dt_spec *spi);
 struct aura_nand_io aura_w25n01gv_zephyr_io(struct aura_w25n01gv_zephyr *context);
+/* Configure immediately after cold init, before ordinary NAND callbacks. The
+ * same operation mutex protects configuration and both restricted IO views. */
+int aura_w25n01gv_zephyr_configure_control(struct aura_w25n01gv_zephyr *context,
+                                          uint16_t first, uint16_t second);
+struct aura_control_io aura_w25n01gv_zephyr_control_io(struct aura_w25n01gv_zephyr *context);
 #endif

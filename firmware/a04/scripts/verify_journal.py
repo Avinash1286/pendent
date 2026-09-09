@@ -9,6 +9,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import zlib
 
 from verify_fixtures import make_ogg, pcm, signal_snr
 
@@ -30,17 +31,20 @@ def main():
         raise RuntimeError(run.stdout + run.stderr)
     groups = re.search(r"^PASS journal groups=(\d+) journal_context=(\d+) model_is_host_only=(\d+)$", run.stdout, re.M)
     wrapped = re.search(r"^PASS wrapped_chain 3->0->1 captures=2 metadata_reads=12 payload_reads_at_mount=0 export_bytes=(\d+) exact_digest_and_receipt=true$", run.stdout, re.M)
-    if (not groups or int(groups[1]) != 15 or not wrapped
+    if (not groups or int(groups[1]) != 19 or not wrapped
             or "PASS conflicting_chains cases=12 no_source_erase=true" not in run.stdout
-            or "PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true" not in run.stdout):
+            or "PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true" not in run.stdout
+            or "PASS owned_bindings exact_manifest=true one_use=true legacy_preserved=true durable_reservation_external=true" not in run.stdout
+            or "PASS owned_chain_identity corruption_cases=13 wrapped_order=3->0->1 metadata_reads=18 legacy_crossowners_preserved=true" not in run.stdout
+            or "PASS owned_power_cuts cases=52 header_checkpoint_identity=true no_binding_reuse=true" not in run.stdout):
         raise RuntimeError("Missing expected journal recovery coverage")
     results = []
-    for mode, description in enumerate(("finalized_reboot", "staged_tail_lost", "partial_page_power_cut", "lost_program_completion", "wrapped_finalized_reboot")):
-        case_source = source * 4 if mode == 4 else source
+    for mode, description in enumerate(("finalized_reboot", "staged_tail_lost", "partial_page_power_cut", "lost_program_completion", "wrapped_finalized_reboot", "owned_v2_wrapped_finalized_reboot")):
+        case_source = source * 4 if mode in (4, 5) else source
         path = ROOT / f"fixtures/journal-{mode}.aura"
         archive = read_archive(path, allow_interrupted=True)
         physical = Receipt.parse(path.with_suffix(".receipt").read_bytes())
-        if mode in (0, 4):
+        if mode in (0, 4, 5):
             assert archive.status == "finalized" and physical == archive.receipt
             assert archive.original_source_samples == len(case_source)
         else:
@@ -66,11 +70,41 @@ def main():
         assert len(decoded) == archive.source_samples
         snr = signal_snr(case_source[:len(decoded)], decoded)
         assert snr >= 8
+        allocation_identity = dict(metadata_version=1, owned=False)
+        if mode == 5:
+            identity_path = path.with_suffix(".allocation")
+            metadata = identity_path.read_bytes()
+            assert len(metadata) == 1024
+            incarnation = bytes((0xA4, *range(2, 17)))
+            generation = 0x100000002
+            for part, block in enumerate((7, 0)):
+                header = metadata[part * 512:part * 512 + 256]
+                checkpoint = metadata[part * 512 + 256:part * 512 + 512]
+                for page, magic in ((header, b"A4NH"), (checkpoint, b"A4NC")):
+                    assert page[:6] == magic + bytes((2, 0))
+                    assert int.from_bytes(page[6:8], "little") == 256
+                    assert int.from_bytes(page[8:12], "little") == block
+                    assert int.from_bytes(page[252:256], "little") == zlib.crc32(page[:252])
+                assert header[222:238] == checkpoint[122:138] == incarnation
+                assert int.from_bytes(header[238:246], "little") == generation
+                assert int.from_bytes(checkpoint[138:146], "little") == generation
+                assert header[246:252] == bytes(6) and checkpoint[146:252] == bytes(106)
+                assert header[60:128] == path.read_bytes()[:68]
+                assert int.from_bytes(header[12:16], "little") == (0xFFFFFFFF if part == 0 else 7)
+                assert int.from_bytes(header[16:20], "little") == part
+                assert int.from_bytes(checkpoint[12:16], "little") == part
+            assert metadata[512 + 128:512 + 222] == metadata[256 + 28:256 + 122]
+            assert metadata[768 + 28:768 + 122] == path.with_suffix(".receipt").read_bytes()
+            allocation_identity = dict(metadata_version=2, owned=True,
+                incarnation_hex=incarnation.hex(), allocation_generation=generation,
+                metadata_file_sha256=hashlib.sha256(metadata).hexdigest(),
+                independent_metadata_crc_and_identity_checks=True,
+                deletion_authority=False)
         results.append(dict(case=description, file=path.relative_to(ROOT).as_posix(),
             file_sha256=archive.sha256_hex, status=archive.status, bytes=path.stat().st_size,
             audio_packets=len(packets), decoded_samples=len(decoded), waveform_snr_db=snr,
             original_source_samples=archive.original_source_samples,
-            tested_physical_block_order=[7, 0] if mode == 4 else [0],
+            tested_physical_block_order=[7, 0] if mode in (4, 5) else [0], allocation_identity=allocation_identity,
             physical_receipt_status="terminal" if physical.sealed else "open_prefix",
             physical_prefix_digest=physical.chain_sha256.hex(), export_terminal_digest=archive.receipt.chain_sha256.hex()))
     assert results[1]["decoded_samples"] == results[2]["decoded_samples"]
@@ -88,13 +122,20 @@ def main():
         wrapped_chain=dict(physical_order=[3, 0, 1], unrelated_capture_block=2, exact_export_bytes=int(wrapped[1]),
             identical_export_and_receipt=True, mount_metadata_reads=12, mount_payload_reads=0,
             malformed_chain_cases=12, reclassified_checkpoint_ownership_orders=2, additional_programs_or_erases=0),
+        owned_allocation=dict(binding="exact68B manifest; single-use nonzero generation", namespace_bytes=16,
+            metadata_version=2, corruption_cases=13, power_cut_cases=52, mixed_wrapped_mount_metadata_reads=18,
+            per_capture_or_block_ram_arrays_added=False, additional_host_context_bytes=120,
+            durable_reservation_and_authenticated_release_external=True),
         python=sys.version, cases=results, code_source_sha256={p.relative_to(WORKSPACE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
         model_guarantees=["once per page across reset", "ascending page order", "1 to 0 only", "all six factory markers",
             "reserved BBM endpoints", "corrected and uncorrectable ECC", "partial and lost program completion",
             "partial and lost erase completion", "no populated erase", "no receipt from staging or metadata",
             "full scan beyond gaps and checkpoint declarations", "128 capture and media-full bounds",
             "bounded wrapped allocation and order-independent continuation recovery",
-            "conflicting continuation chains preserve source and deny receipts"],
+            "conflicting continuation chains preserve source and deny receipts",
+            "v2 allocation namespace/generation consistency across headers and checkpoints",
+            "exact single-use next-capture binding; no unbound owned capture",
+            "full verification before returning physical allocation identity"],
         limitations=["physical SPI/NAND power failure unmeasured", "marker and LUT reads are separate from portable mount counters",
             "no populated block reclamation even after host acknowledgement", "128 captures maximum until product reclamation exists",
             "caller must service journal at a bounded cadence while paused", "no board GPIO or PDM integration"])

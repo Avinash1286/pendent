@@ -1,5 +1,11 @@
 # Companion verification
 
+## A04 explicit release outbox — 2026-09-09
+
+The current complete suite passes **131 tests**, including **36 release/outbox tests** and the existing **33 archive/receiver tests**. [Source-bound evidence and exact commands](verification/release.json) record the runtime and successful no-skip results. Run `./.venv/Scripts/python.exe scripts/verify_release.py --report verification/release.json` from `companion/` to reproduce.
+
+The [release module](RELEASE.md) requires explicit permission for an exact finalized capture, revalidates its committed SQLite source, and durably stores the authenticated command before returning it. Tests cover source corruption, concurrent issuance, transaction interruption, lost replies, exact retries, floor exhaustion and completed-history integrity. The separate [firmware storage integration](../firmware/a04/STORAGE.md) exercises real C-encoded audio through this receiver/outbox back to the actual C release controller on modeled NAND. Neither suite supplies secure enrollment, authenticated Bluetooth completion, mobile recovery or physical-device evidence. The 0.4.0 importer checkpoint below remains historical evidence for its earlier 95-test suite.
+
 ## 0.4.0 — real archive import and source preservation, 2026-09-09
 
 The complete suite passed **95 tests** on Python **3.12.13**: 28 baseline, 33 revision-3 protocol/receiver, 11 import/decode/publication and 23 source/notes/upload tests. The actual command and result are retained in [companion-integration.txt](../firmware/a04/verification/companion-integration.txt). These tests use the companion environment, including pinned PyAV 18.1.0; the firmware tool environment alone does not include the desktop decoder.

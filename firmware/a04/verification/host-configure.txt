@@ -43,6 +43,6 @@
  * OPUS_X86_PRESUME_SSE4_1, assume target CPU has SSE4.1 support (override runtime check).
  * OPUS_X86_PRESUME_AVX2, assume target CPU has AVX FMA AVX2 support (override runtime check).
 
--- Configuring done (0.4s)
--- Generating done (0.1s)
+-- Configuring done (0.6s)
+-- Generating done (0.2s)
 -- Build files have been written to: F:/circuit/.tools/a04-opus/host

@@ -26,8 +26,8 @@ struct aura_control_io {
      * Integration must independently restrict this to config.blocks, serialize
      * the whole NAND operation, check status/full ECC-clean FF readback, and
      * establish the backend's fresh-erase program permission. This primitive
-     * also checks the target and readback. No production W25N implementation
-     * exists: its ordinary blank-only erase MUST NOT be weakened to supply it.
+     * also checks the target and readback. The W25N adapter supplies a separate
+     * configured-pair capability; its ordinary audio erase remains blank-only.
      * A nonzero result remains failure even if all bytes read FF afterward. */
     int (*erase_control)(void *user, uint32_t block);
 };

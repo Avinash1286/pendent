@@ -3,9 +3,13 @@ MOUNT 128_short_captures blocks=129 metadata_reads=386 payload_reads=0 reads_byt
 PASS wrapped_chain 3->0->1 captures=2 metadata_reads=12 payload_reads_at_mount=0 export_bytes=162813 exact_digest_and_receipt=true
 PASS conflicting_chains cases=12 no_source_erase=true
 PASS reclassified_continuation physical_orders=2 both_owners_faulted=true no_source_erase=true
+PASS owned_bindings exact_manifest=true one_use=true legacy_preserved=true durable_reservation_external=true
+PASS owned_chain_identity corruption_cases=13 wrapped_order=3->0->1 metadata_reads=18 legacy_crossowners_preserved=true
+PASS owned_power_cuts cases=52 header_checkpoint_identity=true no_binding_reuse=true
 PASS real_opus_journal mode=0 physical_programs=24 wire_bytes=37040 committed_bytes=37040 source_input_samples=120847 metadata_reads=23 payload_reads=180
 PASS real_opus_journal mode=1 physical_programs=22 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=23 payload_reads=180
 PASS real_opus_journal mode=2 physical_programs=23 wire_bytes=36634 committed_bytes=36514 source_input_samples=120847 metadata_reads=23 payload_reads=180
 PASS real_opus_journal mode=3 physical_programs=23 wire_bytes=37011 committed_bytes=36891 source_input_samples=120847 metadata_reads=23 payload_reads=180
 PASS real_opus_journal mode=4 physical_programs=88 wire_bytes=147504 committed_bytes=147504 source_input_samples=483388 metadata_reads=30 payload_reads=360
-PASS journal groups=15 journal_context=35920 model_is_host_only=666712
+PASS real_opus_journal mode=5 physical_programs=88 wire_bytes=147504 committed_bytes=147504 source_input_samples=483388 metadata_reads=38 payload_reads=480
+PASS journal groups=19 journal_context=36040 model_is_host_only=666712

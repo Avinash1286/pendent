@@ -53,12 +53,12 @@
     "-o",
     "F:\\circuit\\.tools\\a04-control\\aura_control_test.exe"
   ],
-  "executable_sha256": "0abaf03fcb5df5920ce5ff1f441e443df3b38efe665c0d8a93adebf65d0450b0",
+  "executable_sha256": "5ece61daae8b69caf27466ac75d65f5800b369a9c905f6c67b806b6f93db34ad",
   "host_transcript_sha256": "16149f4b72308391f4bc24091d82f5be2569a7266d7bb38dbc65c072c8fc1c49",
   "source_proven_by_this_run": true,
   "compiled_source_sha256": {
     "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
-    "firmware/a04/include/aura_control.h": "0e61d78ca8016f6b93b01ca09bce8ff8befd1e237f2ea14ed5867fd13734b8c8",
+    "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
     "firmware/a04/tests/host_control.c": "b06d6743801e8d7d169e4c93786a3ec158f387b3697fca23cd6df0e8f0758a22",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
@@ -73,7 +73,7 @@
   },
   "observed_source_sha256": {
     "firmware/a04/src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
-    "firmware/a04/include/aura_control.h": "0e61d78ca8016f6b93b01ca09bce8ff8befd1e237f2ea14ed5867fd13734b8c8",
+    "firmware/a04/include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
     "firmware/a04/tests/host_control.c": "b06d6743801e8d7d169e4c93786a3ec158f387b3697fca23cd6df0e8f0758a22",
     "firmware/a04/src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "firmware/a04/include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",

@@ -1,0 +1,21 @@
+Successful targeted rerun: python firmware/a04/scripts/verify_storage.py
+The initial integration-harness receipt-order error was corrected before this successful run.
+
+PASS storage 1 durable grant precedes erase; exact retry and retained source survive reboot
+PASS storage 2 capture generation committed before binding; cancellation/reset never reuses IDs or formats audio
+PASS storage 3 forged/replayed/gapped/nonfinal commands and missing erase capability cannot release
+PASS storage 4 260 acknowledged releases recycle bounded catalog while unacknowledged source remains unchanged
+PASS storage 5 wrapped multiblock grant fences every extent until durable completion
+PASS storage 6 every grant header/body/commit program cut preserves source before committed permission
+PASS storage 7 released-block erase cuts resume only the committed fenced set, with no early reuse
+PASS storage 8 completion-write cuts preserve unrelated source and never publish an uncertain old floor
+PASS storage 9 a coherent newer allocation at an old grant block is never erased
+PASS storage 10 private output aliases fail before IO; overwritten input scratch and caller in-place manifests are copied safely
+PASS storage 11 provision copies trusted authority before blank-media scans overwrite journal scratch
+PASS storage 12 foreign surviving checkpoints/data defeat stale grants despite original, erased or damaged headers and page gaps
+RESULT storage groups=12 cases=740 owner_context=288 journal_context=36040 snapshot_bytes=45408
+READY durable receiver authorization required
+PASS real storage roundtrip samples=120847 erased_blocks=1 reused_block=1 retained_catalog=2
+PASS retained: 120847 samples, SNR 11.919 dB
+PASS release: 120847 samples, SNR 11.919 dB
+PASS replacement: 120847 samples, SNR 11.919 dB

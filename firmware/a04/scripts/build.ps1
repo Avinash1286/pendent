@@ -30,6 +30,7 @@ if ($Mode -in @('all','host')) {
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_audio.py')) 'audio-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_release_auth.py')) 'release-auth.json'
     Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_control.py'),'--build','--report-dir',(Join-Path $a04App 'verification')) 'control-verification.txt'
+    Invoke-A04Build $a04Python @((Join-Path $PSScriptRoot 'verify_storage.py')) 'storage-verification.txt'
     Invoke-A04Build $a04Python @((Join-Path $a04App 'drivers/tests/run.py')) 'dmic-host.txt'
     $a04PreviousPythonPath = $env:PYTHONPATH
     $env:PYTHONPATH = Join-Path $a04Work 'companion/src'

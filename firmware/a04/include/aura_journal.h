@@ -21,6 +21,15 @@ enum aura_journal_verification { AURA_JOURNAL_UNVERIFIED, AURA_JOURNAL_VERIFIED_
 enum aura_journal_block { AURA_BLOCK_FREE, AURA_BLOCK_OWNED, AURA_BLOCK_QUARANTINED,
     AURA_BLOCK_EXCLUDED, AURA_BLOCK_PREPARED };
 
+/* Physical allocation identity, not a release policy or deletion authority.
+ * Legacy v1 returns version1, owned=false, and zero incarnation/generation. */
+struct aura_journal_allocation_identity {
+    uint8_t incarnation[16];
+    uint64_t allocation_generation;
+    uint8_t version;
+    bool owned;
+};
+
 struct aura_journal_capture {
     uint8_t manifest[68];
     /* Only valid if verification is VERIFIED_*; no checkpoint-only ACK. */
@@ -46,6 +55,11 @@ struct aura_journal {
     uint64_t page_start_offset, staged_since_ms, last_service_ms;
     bool service_clock_started;
     uint64_t metadata_reads, payload_reads, corrected_reads, committed_pages;
+    /* One namespace and one next-capture binding, never per-block/capture RAM.
+     * Durable reservation/nonreuse remains the external owner's obligation. */
+    uint8_t owned_incarnation[16], bound_manifest[68];
+    uint64_t bound_generation, capture_generation, last_bound_generation;
+    bool owned_profile, binding_pending;
     /* Staged validator is updated for EVERY accepted record, independent of
      * the outer producer callback's timing. committed advances after readback. */
     struct aura_archive_writer staged, committed;
@@ -53,6 +67,23 @@ struct aura_journal {
 };
 
 int aura_journal_mount(struct aura_journal *journal, struct aura_nand_io io);
+/* Opt into v2 writes after mount. Nonzero incarnation; cannot switch or disable
+ * it without remounting. Conservatively observes existing matching v2 metadata
+ * to raise the volatile generation floor. This does not replace a durable ID
+ * reservation ledger, especially after erased allocations leave no metadata. */
+int aura_journal_set_owned_profile(struct aura_journal *journal, const uint8_t incarnation[16]);
+/* Bind BEFORE recorder_start. Exact canonical manifest and fresh nonzero
+ * generation; one pending binding at a time, idle owned journal only. The
+ * binding survives blank-block preparation retries, but a different valid
+ * manifest rejects/discards it. It is consumed before the first header program
+ * attempt, including uncertain/failed attempts. No old generation is unburned. */
+int aura_journal_bind_capture(struct aura_journal *journal, const uint8_t manifest[68], uint64_t generation);
+int aura_journal_discard_binding(struct aura_journal *journal);
+/* Repeats full source+metadata validation before returning identity. A v2
+ * identity also applies to an interrupted/open prefix; it does NOT authorize
+ * reclaiming that prefix or any unassociated material. Output only on zero. */
+int aura_journal_get_allocation_identity(struct aura_journal *journal, uint16_t capture,
+                                        struct aura_journal_allocation_identity *identity);
 /* Inspect/erase/verify at most one blank candidate per call. Retry-preparation
  * can be scheduled before capture; never erase a populated/unknown block. */
 int aura_journal_prepare(struct aura_journal *journal);

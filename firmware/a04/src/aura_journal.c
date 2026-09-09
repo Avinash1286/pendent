@@ -18,7 +18,30 @@ static void checksum(uint8_t *p,size_t bytes)
 static bool checked(const uint8_t *p,size_t bytes)
 {return get(p+bytes-4,4)==aura_archive_crc32(p,bytes-4);}
 static bool meta(const uint8_t *p,const char *magic,uint16_t block)
-{return !memcmp(p,magic,4)&&p[4]==1&&!p[5]&&get(p+6,2)==256&&get(p+8,4)==block&&checked(p,256);}
+{return !memcmp(p,magic,4)&&(p[4]==1||p[4]==2)&&!p[5]&&get(p+6,2)==256&&get(p+8,4)==block&&checked(p,256);}
+static bool allocation(const uint8_t *p,bool checkpoint,struct aura_journal_allocation_identity *out)
+{
+    struct aura_journal_allocation_identity id={0};id.version=p[4];
+    unsigned at=checkpoint?122:222;
+    if(p[4]==1){if(!zero(p+at,252-at))return false;}
+    else if(p[4]==2){
+        if(zero(p+at,16)||!get(p+at+16,8)||!zero(p+at+24,252-at-24))return false;
+        memcpy(id.incarnation,p+at,16);id.allocation_generation=get(p+at+16,8);id.owned=true;
+    }else return false;
+    if(out)*out=id;return true;
+}
+static bool same_allocation(const struct aura_journal_allocation_identity *a,
+                            const struct aura_journal_allocation_identity *b)
+{
+    return a->version==b->version&&a->allocation_generation==b->allocation_generation&&
+        !memcmp(a->incarnation,b->incarnation,16);
+}
+static void write_allocation(struct aura_journal *j,uint8_t *p,bool checkpoint)
+{
+    if(!j->owned_profile)return;
+    unsigned at=checkpoint?122:222;p[4]=2;
+    memcpy(p+at,j->owned_incarnation,16);put(p+at+16,j->capture_generation,8);
+}
 static int declaration(const struct aura_archive_writer *view,uint8_t out[94])
 {
     /* Private serialization of a state declaration; call sites decide whether
@@ -58,7 +81,7 @@ int aura_journal_mount(struct aura_journal *j,struct aura_nand_io io)
         r=read_at(j,b*64+2,j->scratch,256,true);
         if(r<0){j->block_state[b]=AURA_BLOCK_QUARANTINED;continue;}
         if(erased(j->scratch,256)){j->block_state[b]=AURA_BLOCK_FREE;continue;}
-        if(!meta(j->scratch,"A4NH",b)||!zero(j->scratch+222,30)||!valid_manifest(j->scratch+60)){
+        if(!meta(j->scratch,"A4NH",b)||!allocation(j->scratch,false,NULL)||!valid_manifest(j->scratch+60)){
             j->block_state[b]=AURA_BLOCK_QUARANTINED;continue;
         }
         uint8_t *h=j->scratch;
@@ -96,13 +119,25 @@ int aura_journal_mount(struct aura_journal *j,struct aura_nand_io io)
         struct aura_journal_capture *c=&j->captures[index];
         if(c->metadata_fault)continue;
         uint16_t b=c->first_block;uint32_t previous=UINT32_MAX;
+        struct aura_journal_allocation_identity expected={0};
         for(unsigned part=0;part<c->blocks;++part){
             if(b>=io.blocks||j->owner[b]!=index){c->metadata_fault=true;break;}
             int r=read_at(j,b*64+2,j->scratch,256,true);
             const uint8_t *h=j->scratch;
-            if(r||!meta(h,"A4NH",b)||!zero(h+222,30)||get(h+12,4)!=previous||
+            struct aura_journal_allocation_identity id;
+            if(r||!meta(h,"A4NH",b)||!allocation(h,false,&id)||get(h+12,4)!=previous||
                get(h+16,4)!=part||memcmp(h+60,c->manifest,68)||memcmp(h+28,c->manifest+8,32)){
                 c->metadata_fault=true;break;
+            }
+            if(!part)expected=id;
+            else if(!same_allocation(&expected,&id)){c->metadata_fault=true;break;}
+            if(id.owned){
+                struct aura_journal_allocation_identity cp;
+                r=read_at(j,b*64+63,j->scratch,256,true);
+                if(r||(!erased(j->scratch,256)&&checked(j->scratch,256)&&
+                   (!meta(j->scratch,"A4NC",b)||!allocation(j->scratch,true,&cp)||!same_allocation(&id,&cp)))){
+                    c->metadata_fault=true;break;
+                }
             }
             c->last_block=b;previous=b;b=j->next_block[b];
         }
@@ -134,9 +169,58 @@ int aura_journal_mount(struct aura_journal *j,struct aura_nand_io io)
             }
             if(owned&&!associated){j->captures[j->owner[b]].metadata_fault=true;++j->unassociated_blocks;}
         }
+        /* Check allocation metadata separately from ACK ownership, so an
+         * invalid v2 identity cannot hide the other capture's checkpoint. */
+        if(owned&&!r&&meta(j->scratch,"A4NC",b)){
+            struct aura_journal_allocation_identity cp,head;
+            bool valid=allocation(j->scratch,true,&cp);
+            if(valid&&cp.version==2){
+                r=read_at(j,b*64+2,j->scratch,256,true);
+                valid=!r&&meta(j->scratch,"A4NH",b)&&allocation(j->scratch,false,&head)&&same_allocation(&head,&cp);
+            }
+            if(!valid)j->captures[j->owner[b]].metadata_fault=true;
+        }
         if(!owned&&!associated)++j->unassociated_blocks;
     }
     return 0;
+}
+
+int aura_journal_set_owned_profile(struct aura_journal *j,const uint8_t incarnation[16])
+{
+    if(!j||!incarnation||zero(incarnation,16)||!j->io.read||!j->io.blocks||j->io.blocks>1024)
+        return AURA_NAND_BAD_ARGUMENT;
+    if(j->fault)return j->fault;
+    if(j->active>=0||j->binding_pending)return AURA_JOURNAL_BUSY;
+    if(j->owned_profile)return memcmp(j->owned_incarnation,incarnation,16)?AURA_JOURNAL_CONFLICT:0;
+    uint64_t floor=0;
+    for(uint16_t b=0;b<j->io.blocks;++b){
+        if(j->block_state[b]==AURA_BLOCK_EXCLUDED)continue;
+        for(unsigned cp=0;cp<2;++cp){
+            int r=read_at(j,b*64+(cp?63:2),j->scratch,256,true);if(r)return r;
+            struct aura_journal_allocation_identity id;
+            if(meta(j->scratch,cp?"A4NC":"A4NH",b)&&allocation(j->scratch,cp!=0,&id)&&
+               id.owned&&!memcmp(id.incarnation,incarnation,16)&&id.allocation_generation>floor)
+                floor=id.allocation_generation;
+        }
+    }
+    memcpy(j->owned_incarnation,incarnation,16);j->owned_profile=true;j->last_bound_generation=floor;
+    return 0;
+}
+int aura_journal_bind_capture(struct aura_journal *j,const uint8_t manifest[68],uint64_t generation)
+{
+    if(!j||!manifest||!generation||!valid_manifest(manifest))return AURA_NAND_BAD_ARGUMENT;
+    if(j->fault)return j->fault;
+    if(!j->owned_profile)return AURA_JOURNAL_CONFLICT;
+    if(j->active>=0||j->binding_pending)return AURA_JOURNAL_BUSY;
+    if(generation<=j->last_bound_generation||capture_index(j,manifest)>=0)return AURA_JOURNAL_CONFLICT;
+    memcpy(j->bound_manifest,manifest,68);j->bound_generation=j->last_bound_generation=generation;
+    j->binding_pending=true;return 0;
+}
+int aura_journal_discard_binding(struct aura_journal *j)
+{
+    if(!j)return AURA_NAND_BAD_ARGUMENT;
+    if(j->active>=0)return AURA_JOURNAL_BUSY;
+    j->binding_pending=false;j->bound_generation=0;memset(j->bound_manifest,0,68);return 0;
 }
 
 int aura_journal_prepare(struct aura_journal *j)
@@ -203,6 +287,7 @@ static int open_block(struct aura_journal *j,const uint8_t manifest[68],bool fir
     put(header+12,first?UINT32_MAX:c->last_block,4);put(header+16,first?0:c->blocks,4);
     put(header+20,j->page_start_offset,8);memcpy(header+28,manifest+8,32);memcpy(header+60,manifest,68);
     if(!first&&declaration(&j->committed,header+128))return AURA_JOURNAL_NOT_COMMITTED;
+    write_allocation(j,header,false);
     checksum(header,256);
     int r=program(j,b*64+2,header);j->prepared=AURA_JOURNAL_NONE;if(r)return r;
     if(first)c->first_block=b;else j->next_block[c->last_block]=b;
@@ -218,6 +303,7 @@ static int checkpoint(struct aura_journal *j)
     memcpy(page,"A4NC",4);page[4]=1;put(page+6,256,2);put(page+8,j->current_block,4);
     put(page+12,j->current_part,4);put(page+16,j->data_pages,2);put(page+20,j->committed.file_offset,8);
     if(declaration(&j->committed,page+28))return AURA_JOURNAL_NOT_COMMITTED;
+    write_allocation(j,page,true);
     checksum(page,256);int r=program(j,j->current_block*64+63,page);
     if(!r)j->current_block=AURA_JOURNAL_NONE;
     return r;
@@ -258,9 +344,14 @@ int aura_journal_stage(void *context,uint64_t offset,const uint8_t *wire,size_t 
     if(!j->service_clock_started)return AURA_NAND_BAD_ARGUMENT;
     if(j->active<0){
         if(bytes!=68||offset||memcmp(wire,"AUR3",4)||!valid_manifest(wire))return AURA_JOURNAL_CONFLICT;
+        if(j->owned_profile&&(!j->binding_pending||memcmp(j->bound_manifest,wire,68))){
+            (void)aura_journal_discard_binding(j);return AURA_JOURNAL_CONFLICT;
+        }
         if(capture_index(j,wire)>=0)return AURA_JOURNAL_CONFLICT;
         if(j->count>=128)return AURA_JOURNAL_FULL;
         if(j->prepared==AURA_JOURNAL_NONE){int r=aura_journal_prepare(j);if(r)return r;}
+        j->capture_generation=j->owned_profile?j->bound_generation:0;
+        (void)aura_journal_discard_binding(j);
         memset(&j->staged,0,sizeof(j->staged));memset(&j->committed,0,sizeof(j->committed));
         j->active=j->count++;struct aura_journal_capture *c=&j->captures[j->active];
         memcpy(c->manifest,wire,68);j->staged_bytes=j->staged_records=0;j->page_start_offset=0;
@@ -313,17 +404,21 @@ static size_t record_size(const uint8_t *p,size_t available)
 /* No first-gap shortcut: remaining data slots/checkpoint/continuations are
  * inspected, even if the last valid archive record was a terminal seal. */
 static int scan(struct aura_journal *j,uint16_t index,struct aura_archive_writer *view,
-                 aura_archive_commit output,void *user)
+                 aura_archive_commit output,void *user,struct aura_journal_allocation_identity *identity)
 {
     struct aura_journal_capture *c=&j->captures[index];
     if(c->metadata_fault)return AURA_JOURNAL_CORRUPT;
     memset(view,0,sizeof(*view));uint16_t b=c->first_block;bool hole=false;uint32_t previous=UINT32_MAX;
+    struct aura_journal_allocation_identity expected={0};
     for(unsigned part=0;part<c->blocks;++part){
         if(b>=j->io.blocks||j->owner[b]!=index)return AURA_JOURNAL_CORRUPT;
         uint8_t h[256];int r=read_at(j,b*64+2,h,256,true);if(r)return r;
-        if(!meta(h,"A4NH",b)||!zero(h+222,30)||get(h+12,4)!=previous||get(h+16,4)!=part||
+        struct aura_journal_allocation_identity id;
+        if(!meta(h,"A4NH",b)||!allocation(h,false,&id)||get(h+12,4)!=previous||get(h+16,4)!=part||
            get(h+20,8)!=view->file_offset||memcmp(h+60,c->manifest,68)||
            memcmp(h+28,c->manifest+8,32)||hole)return AURA_JOURNAL_CORRUPT;
+        if(!part)expected=id;
+        else if(!same_allocation(&expected,&id))return AURA_JOURNAL_CORRUPT;
         if(part){uint8_t ack[94];if(declaration(view,ack)||memcmp(ack,h+128,94))return AURA_JOURNAL_CORRUPT;}
         else if(!zero(h+128,94))return AURA_JOURNAL_CORRUPT;
         unsigned valid_pages=0;
@@ -357,7 +452,8 @@ static int scan(struct aura_journal *j,uint16_t index,struct aura_archive_writer
         if(!erased(h,256)&&checked(h,256)&&!complete)return AURA_JOURNAL_CORRUPT;
         if(complete){
             uint8_t ack[94];
-            if(!zero(h+18,2)||!zero(h+122,130)||get(h+12,4)!=part||get(h+16,2)!=valid_pages||get(h+20,8)!=view->file_offset||
+            if(!zero(h+18,2)||!allocation(h,true,&id)||!same_allocation(&expected,&id)||
+               get(h+12,4)!=part||get(h+16,2)!=valid_pages||get(h+20,8)!=view->file_offset||
                declaration(view,ack)||memcmp(ack,h+28,94))return AURA_JOURNAL_CORRUPT;
         }
         if(part+1<c->blocks){
@@ -368,28 +464,39 @@ static int scan(struct aura_journal *j,uint16_t index,struct aura_archive_writer
         previous=b;b=j->next_block[b];
     }
     if(b!=AURA_JOURNAL_NONE||previous!=c->last_block)return AURA_JOURNAL_CORRUPT;
+    if(identity&&view->begun)*identity=expected;
     return view->begun?0:AURA_JOURNAL_NOT_COMMITTED;
 }
 
-int aura_journal_verify(struct aura_journal *j,uint16_t index)
+static int verify_capture(struct aura_journal *j,uint16_t index,struct aura_journal_allocation_identity *identity)
 {
     if(!j||index>=j->count)return AURA_NAND_BAD_ARGUMENT;
     if(j->active>=0&&!j->fault)return AURA_JOURNAL_BUSY;
-    struct aura_archive_writer view;int r=scan(j,index,&view,NULL,NULL);
+    struct aura_journal_allocation_identity id;
+    struct aura_archive_writer view;int r=scan(j,index,&view,NULL,NULL,&id);
     struct aura_journal_capture *c=&j->captures[index];
     if(r){c->verification=AURA_JOURNAL_INVALID;return r;}
     if(declaration(&view,c->committed_receipt))return AURA_JOURNAL_NOT_COMMITTED;
     c->committed_wire_bytes=view.file_offset;
     c->verification=view.status==1?AURA_JOURNAL_VERIFIED_FINAL:
         view.status==2?AURA_JOURNAL_VERIFIED_INTERRUPTED:AURA_JOURNAL_VERIFIED_OPEN;
+    if(identity)*identity=id;
     return 0;
+}
+int aura_journal_verify(struct aura_journal *j,uint16_t index)
+{return verify_capture(j,index,NULL);}
+int aura_journal_get_allocation_identity(struct aura_journal *j,uint16_t index,
+                                        struct aura_journal_allocation_identity *identity)
+{
+    if(!identity)return AURA_NAND_BAD_ARGUMENT;
+    return verify_capture(j,index,identity);
 }
 
 int aura_journal_export(struct aura_journal *j,uint16_t index,aura_archive_commit output,void *user)
 {
     if(!output)return AURA_NAND_BAD_ARGUMENT;
     int r=aura_journal_verify(j,index);if(r)return r;
-    struct aura_archive_writer view;r=scan(j,index,&view,output,user);
+    struct aura_archive_writer view;r=scan(j,index,&view,output,user,NULL);
     if(r){j->captures[index].verification=AURA_JOURNAL_INVALID;return r;}
     uint8_t ack[94];if(declaration(&view,ack)||memcmp(ack,j->captures[index].committed_receipt,94)){
         j->captures[index].verification=AURA_JOURNAL_INVALID;return AURA_JOURNAL_CORRUPT;

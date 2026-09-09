@@ -44,6 +44,37 @@ static int zbad(void *u,uint32_t b,bool *out)
     struct aura_nand_io io=aura_w25n01gv_io(&z->device);
     r=io.bad(io.user,b,out); k_mutex_unlock(&z->mutex); return r;
 }
+static int zcontrol_read(void *u,uint32_t p,uint16_t c,uint8_t *out,size_t n)
+{
+    struct aura_w25n01gv_zephyr *z=u; int r=lock(z); if(r)return r;
+    struct aura_control_io io=aura_w25n01gv_control_io(&z->device);
+    r=io.nand.read(io.nand.user,p,c,out,n); k_mutex_unlock(&z->mutex); return r;
+}
+static int zcontrol_program(void *u,uint32_t p,const uint8_t data[2048])
+{
+    struct aura_w25n01gv_zephyr *z=u; int r=lock(z); if(r)return r;
+    struct aura_control_io io=aura_w25n01gv_control_io(&z->device);
+    r=io.nand.program(io.nand.user,p,data); k_mutex_unlock(&z->mutex); return r;
+}
+static int zcontrol_bad(void *u,uint32_t b,bool *out)
+{
+    struct aura_w25n01gv_zephyr *z=u; int r=lock(z); if(r)return r;
+    struct aura_control_io io=aura_w25n01gv_control_io(&z->device);
+    r=io.nand.bad(io.nand.user,b,out); k_mutex_unlock(&z->mutex); return r;
+}
+static int zcontrol_erase(void *u,uint32_t b)
+{
+    struct aura_w25n01gv_zephyr *z=u; int r=lock(z); if(r)return r;
+    struct aura_control_io io=aura_w25n01gv_control_io(&z->device);
+    r=io.erase_control(io.erase_user,b); k_mutex_unlock(&z->mutex); return r;
+}
+int aura_w25n01gv_zephyr_configure_control(struct aura_w25n01gv_zephyr *z,
+                                          uint16_t first,uint16_t second)
+{
+    int r=lock(z); if(r)return r;
+    r=aura_w25n01gv_configure_control(&z->device,first,second);
+    k_mutex_unlock(&z->mutex); return r;
+}
 int aura_w25n01gv_zephyr_init(struct aura_w25n01gv_zephyr *z,const struct spi_dt_spec *spi)
 {
     if(!z||!spi||k_is_in_isr()||!spi_is_ready_dt(spi))return AURA_NAND_BAD_ARGUMENT;
@@ -64,3 +95,11 @@ int aura_w25n01gv_zephyr_init(struct aura_w25n01gv_zephyr *z,const struct spi_dt
 }
 struct aura_nand_io aura_w25n01gv_zephyr_io(struct aura_w25n01gv_zephyr *z)
 {return (struct aura_nand_io){z,z&&z->initialized?1024u:0u,zread,zprogram,zerase,zbad};}
+struct aura_control_io aura_w25n01gv_zephyr_control_io(struct aura_w25n01gv_zephyr *z)
+{
+    struct aura_control_io io={
+        .nand={z,z&&z->initialized&&z->device.control_configured?1024u:0u,
+               zcontrol_read,zcontrol_program,NULL,zcontrol_bad},
+        .erase_user=z,.erase_control=zcontrol_erase};
+    return io;
+}

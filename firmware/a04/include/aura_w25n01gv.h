@@ -2,6 +2,7 @@
 #ifndef AURA_A04_W25N01GV_H
 #define AURA_A04_W25N01GV_H
 #include "aura_nand.h"
+#include "aura_control.h"
 
 /* One transfer is one complete CS assertion: header then optional TX or RX.
  * RX clocks send don't-care bytes; return zero only when all bytes transferred.
@@ -30,7 +31,8 @@ struct aura_w25n01gv {
     uint32_t program_attempts, erase_attempts;
     uint32_t resolved_execute_errors;
     uint64_t transfers, received_bytes;
-    bool ready;
+    uint16_t control_blocks[2];
+    bool ready, control_configured, ordinary_started;
 };
 
 /* Cold startup only, after the owner has ensured stable power and no live flash
@@ -39,7 +41,23 @@ struct aura_w25n01gv {
  * The backend deliberately cannot resume writing a block from a previous boot.
  * It permits erasing only completely FF, ECC-clean main areas, then authorizes
  * increasing single-program pages 2..63 for that block in the current boot.
- * Populated reclamation/migration requires a separately designed API. */
+ * Ordinary populated audio reclamation/migration is not supported. */
 int aura_w25n01gv_init(struct aura_w25n01gv *device, const struct aura_w25n01gv_bus *bus);
+/* Explicit trusted layout, before the first ordinary NAND callback. The two
+ * distinct blocks must pass the cold factory-marker/LUT inventory. This does
+ * not discover, format, erase or prove control contents. Once configured, the
+ * exact ordered pair is immutable until cold init (same-pair calls are no-ops).
+ * Keep device/config private to the serialized owner; this is API isolation,
+ * not a security boundary against arbitrary memory writes or raw bus access. */
+int aura_w25n01gv_configure_control(struct aura_w25n01gv *device,
+                                   uint16_t first, uint16_t second);
+/* Ordinary callbacks exclude and refuse all access to the reserved pair. */
 struct aura_nand_io aura_w25n01gv_io(struct aura_w25n01gv *device);
+/* Dedicated callbacks are limited to the configured pair. nand.erase is NULL;
+ * erase_control independently rejects all other blocks and may erase populated
+ * CONTROL storage. Caller/ledger decides which inactive slot is authorized.
+ * Fresh successful erase/readback is required before pages 2..63 can program.
+ * No capability exists before configuration, or after the next cold init until
+ * the caller explicitly reapplies its trusted layout. */
+struct aura_control_io aura_w25n01gv_control_io(struct aura_w25n01gv *device);
 #endif

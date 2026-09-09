@@ -23,7 +23,7 @@ target_include_directories(aura_journal_test PRIVATE ../include)
 target_compile_options(aura_journal_test PRIVATE -Wall -Wextra -Werror)
 target_link_libraries(aura_journal_test PRIVATE opus)
 add_executable(aura_w25n01gv_host host_w25n01gv.c ../src/aura_w25n01gv.c
-    ../src/aura_journal.c ../src/aura_archive.c)
+    ../src/aura_journal.c ../src/aura_archive.c ../src/aura_control.c)
 target_include_directories(aura_w25n01gv_host PRIVATE ../include)
 target_compile_options(aura_w25n01gv_host PRIVATE -Wall -Wextra -Werror -UNDEBUG)
 target_link_libraries(aura_w25n01gv_host PRIVATE opus)
@@ -38,3 +38,15 @@ add_executable(aura_audio_test host_audio.c nand_model.c
 target_include_directories(aura_audio_test PRIVATE audio_stub ../include)
 target_compile_options(aura_audio_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
 target_link_libraries(aura_audio_test PRIVATE opus)
+add_executable(aura_storage_test host_storage.c nand_model.c ../src/aura_storage.c
+    ../src/aura_control.c ../src/aura_release_auth.c ../src/aura_journal.c
+    ../src/aura_archive.c ../src/aura_opus.c)
+target_include_directories(aura_storage_test PRIVATE ../include)
+target_compile_options(aura_storage_test PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_storage_test PRIVATE opus)
+add_executable(aura_storage_roundtrip host_storage_roundtrip.c nand_model.c
+    ../src/aura_storage.c ../src/aura_control.c ../src/aura_release_auth.c
+    ../src/aura_recorder.c ../src/aura_journal.c ../src/aura_archive.c ../src/aura_opus.c)
+target_include_directories(aura_storage_roundtrip PRIVATE ../include)
+target_compile_options(aura_storage_roundtrip PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+target_link_libraries(aura_storage_roundtrip PRIVATE opus)

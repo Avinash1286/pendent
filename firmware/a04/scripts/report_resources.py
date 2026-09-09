@@ -24,8 +24,20 @@ def main():
         symbol_values = {symbol.name: symbol["st_value"] for symbol in symbols.iter_symbols()}
         selected = {}
         for symbol in symbols.iter_symbols():
-            if symbol.name in ("encoder_state", "recorder", "audio_adapter", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init", "aura_dmic_health_get", "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service", "aura_recorder_consume", "release_context", "control_ledger", "aura_release_authenticate", "aura_release_sign", "aura_release_validate_next", "aura_control_open", "aura_control_provision", "aura_control_load", "aura_control_store"):
+            if symbol.name in ("encoder_state", "recorder", "audio_adapter", "journal", "nand_adapter", "probe_pages", "codec_stack", "input", "opus_encode", "opus_encoder_get_size", "aura_journal_export", "aura_w25n01gv_zephyr_init", "aura_dmic_health_get", "aura_audio_zephyr_begin", "aura_audio_zephyr_reader_step", "aura_audio_zephyr_service", "aura_recorder_consume", "release_context", "control_ledger", "aura_release_authenticate", "aura_release_sign", "aura_release_validate_next", "aura_control_open", "aura_control_provision", "aura_control_load", "aura_control_store",
+                               "storage_owner", "storage_snapshot", "aura_storage_open", "aura_storage_provision",
+                               "aura_storage_prepare_capture", "aura_storage_cancel_prepared", "aura_storage_request_release",
+                               "aura_storage_release_step", "aura_storage_capture_id",
+                               "aura_w25n01gv_zephyr_configure_control", "aura_w25n01gv_zephyr_control_io"):
                 selected[symbol.name] = {"bytes": symbol["st_size"], "address": symbol["st_value"]}
+        required_storage = ("storage_owner", "storage_snapshot", "aura_storage_open", "aura_storage_provision",
+                            "aura_storage_prepare_capture", "aura_storage_cancel_prepared", "aura_storage_request_release",
+                            "aura_storage_release_step", "aura_storage_capture_id",
+                            "aura_w25n01gv_zephyr_configure_control", "aura_w25n01gv_zephyr_control_io")
+        if any(name not in selected or selected[name]["bytes"] == 0 for name in required_storage):
+            raise ValueError("Missing linked storage owner/interface reservation")
+        if selected["storage_snapshot"]["bytes"] != 45408:
+            raise ValueError("Missing actual maximum storage snapshot reservation")
         sections = [{"name": section.name, "bytes": section["sh_size"], "address": section["sh_addr"],
                      "type": section["sh_type"]} for section in elf.iter_sections()
                     if section["sh_flags"] & 2]
@@ -72,8 +84,8 @@ def main():
     report = {
         "status": "ARM_cross_compiled_not_executed",
         "target": "nrf52840dk/nrf52840",
-        "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC integration compile plus unprovisioned authentication/control-ledger primitives; synthetic PCM and volatile NAND, not wearable firmware",
-        "authority_binding": "Function/ABI retention only; zero-initialized auth/control objects have no key enrollment, control-block configuration or privileged erase callback. No opaque control-snapshot caller buffer is reserved.",
+        "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC/storage-owner integration compile; synthetic PCM and volatile NAND, not wearable firmware",
+        "authority_binding": "Function/ABI retention only; zero-initialized auth/control/storage objects have no key enrollment, control-block configuration or privileged audio erase callback. A real 45408-byte maximum AST1 caller snapshot is reserved alongside the storage owner and W25N control interface functions.",
         "peripheral_binding": "DK-only P0.30 CLK/P0.31 DIN pinctrl initializes at boot; probe never enables microphone power or starts a physical PDM stream",
         "devicetree_sha256": sha(BUILD / "zephyr/zephyr.dts"),
         "zephyr": "4.2.0", "sdk": "0.17.2", "opus": "1.6.1",

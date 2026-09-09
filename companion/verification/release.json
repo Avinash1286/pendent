@@ -1,0 +1,271 @@
+{
+  "schema": "aura-companion-release-verification-v1",
+  "status": "synthetic_local_release_and_companion_tests_passed",
+  "verified_at_utc": "2026-09-09T08:33:27.684573+00:00",
+  "python": {
+    "executable": "F:\\circuit\\companion\\.venv\\Scripts\\python.exe",
+    "version": "3.12.13"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "sqlite_version": "3.50.4",
+  "dependencies": {
+    "aura-companion": "0.4.0",
+    "av": "18.1.0",
+    "bleak": "3.0.2",
+    "faster-whisper": "1.2.1"
+  },
+  "runs": [
+    {
+      "cwd": "companion",
+      "command": [
+        "<companion-python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_release.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_passed": 36,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests_by_module": {
+        "test_release": 36
+      },
+      "transcript_sha256": "2e75df32157b9b076aa9988e637e0da0292232b88d7424716e7be0b8aa34404d"
+    },
+    {
+      "cwd": "companion",
+      "command": [
+        "<companion-python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_protocol_v2.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_passed": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests_by_module": {
+        "test_protocol_v2": 33
+      },
+      "transcript_sha256": "c3f2aab78033355a4a205f704ec9e855842ea6b8e74cb2bc92ab69525bfc3f99"
+    },
+    {
+      "cwd": "companion",
+      "command": [
+        "<companion-python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_passed": 131,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests_by_module": {
+        "test_archive_import": 11,
+        "test_capture_source": 23,
+        "test_download_recovery": 8,
+        "test_protocol": 5,
+        "test_protocol_v2": 33,
+        "test_release": 36,
+        "test_sync": 8,
+        "test_upload": 7
+      },
+      "transcript_sha256": "17ae961f4a774f1cfa49d38b84cacddd4c1c11fdd713ac9d3f74e62256b3cb9c"
+    }
+  ],
+  "unique_tests_passed": 131,
+  "sources_and_fixtures": {
+    "companion/pyproject.toml": {
+      "sha256": "3f38bff8eb6116c7a7dab3c97e846bf16c1989e151ba701891d8925b2eeaedcc",
+      "lf_normalized_sha256": "3f38bff8eb6116c7a7dab3c97e846bf16c1989e151ba701891d8925b2eeaedcc"
+    },
+    "companion/RELEASE.md": {
+      "sha256": "eec7eb47ede973ae0967a4f4b95335987889b8b0633baddfef8b82912d39936f",
+      "lf_normalized_sha256": "eec7eb47ede973ae0967a4f4b95335987889b8b0633baddfef8b82912d39936f"
+    },
+    "companion/scripts/verify_release.py": {
+      "sha256": "3c63dcb775a8ebf45c26844c159d3b45a099c38737e99bad368cc99644c9ecd4",
+      "lf_normalized_sha256": "3c63dcb775a8ebf45c26844c159d3b45a099c38737e99bad368cc99644c9ecd4"
+    },
+    "companion/src/aura_companion/__init__.py": {
+      "sha256": "c5871d909986c64ee28e577b96eff52fba3a17814dfac295826540eeaa3bd908",
+      "lf_normalized_sha256": "c5871d909986c64ee28e577b96eff52fba3a17814dfac295826540eeaa3bd908"
+    },
+    "companion/src/aura_companion/archive_import.py": {
+      "sha256": "91e0d7842a660f5a5bbd5411a37e3fa9f528131303107f8323d21498ac308d73",
+      "lf_normalized_sha256": "91e0d7842a660f5a5bbd5411a37e3fa9f528131303107f8323d21498ac308d73"
+    },
+    "companion/src/aura_companion/capture_source.py": {
+      "sha256": "9f5f37e18188dfed6e8579e021a8cfb9be6c028101908f02908b407a31fc6e9e",
+      "lf_normalized_sha256": "9f5f37e18188dfed6e8579e021a8cfb9be6c028101908f02908b407a31fc6e9e"
+    },
+    "companion/src/aura_companion/cli.py": {
+      "sha256": "8952b6001a28d03e4ca0dcc865b709d920cb721a0913b13404c8beb133ee6aea",
+      "lf_normalized_sha256": "8952b6001a28d03e4ca0dcc865b709d920cb721a0913b13404c8beb133ee6aea"
+    },
+    "companion/src/aura_companion/device.py": {
+      "sha256": "fd8675d8dcbc0fe353c955323ec1553dbc32eb19140d8dac8d774ce964cb8bb9",
+      "lf_normalized_sha256": "fd8675d8dcbc0fe353c955323ec1553dbc32eb19140d8dac8d774ce964cb8bb9"
+    },
+    "companion/src/aura_companion/files.py": {
+      "sha256": "1604a5804c8f55cea530f31892ca12ada963ba4f4f4e4ffdf7a9ba7da780494a",
+      "lf_normalized_sha256": "1604a5804c8f55cea530f31892ca12ada963ba4f4f4e4ffdf7a9ba7da780494a"
+    },
+    "companion/src/aura_companion/notes.py": {
+      "sha256": "4f2b38ae4419360b7a54d8c49f8966ab5d4990138e9a54c0841871286ee863bf",
+      "lf_normalized_sha256": "4f2b38ae4419360b7a54d8c49f8966ab5d4990138e9a54c0841871286ee863bf"
+    },
+    "companion/src/aura_companion/protocol.py": {
+      "sha256": "0f3a3d8f70186c9a537272acbf393ca9fa9e406dcb3ff95f66b3dc17f44a1f33",
+      "lf_normalized_sha256": "0f3a3d8f70186c9a537272acbf393ca9fa9e406dcb3ff95f66b3dc17f44a1f33"
+    },
+    "companion/src/aura_companion/protocol_v2.py": {
+      "sha256": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d",
+      "lf_normalized_sha256": "7ff7d66d4b03b00bccccedbb5dd3ed4922f56cc6d4857ccf63010128d269b54d"
+    },
+    "companion/src/aura_companion/release.py": {
+      "sha256": "9be977539be073cef123e5170fd09a8c3f911bdd1b1df4d49317cce67ad06fdc",
+      "lf_normalized_sha256": "9be977539be073cef123e5170fd09a8c3f911bdd1b1df4d49317cce67ad06fdc"
+    },
+    "companion/src/aura_companion/upload.py": {
+      "sha256": "0448d50296e0acb22aeeeae684d6ee95119a91364147654b0f1c79b3cc7961ad",
+      "lf_normalized_sha256": "0448d50296e0acb22aeeeae684d6ee95119a91364147654b0f1c79b3cc7961ad"
+    },
+    "companion/tests/assets/a04-capture.note.json": {
+      "sha256": "dc0af0515c69fec8a981fac732c1d9e056559b1de547e89d4c642618024c652c",
+      "lf_normalized_sha256": "dc0af0515c69fec8a981fac732c1d9e056559b1de547e89d4c642618024c652c"
+    },
+    "companion/tests/assets/sample.md": {
+      "sha256": "ac6df52de31a58532ef4edb5ea9ae914d2366fb78397574a7b2a3303ec20fc61",
+      "lf_normalized_sha256": "e13213b1b0c274176facec75d66dcee39455601afde52b805c20f2862c4b6381"
+    },
+    "companion/tests/assets/sample.note.json": {
+      "sha256": "cf775dda70fe6fa8f4c4e353054c5507e4053d8ff5b989a6f92c0654aa0e17bd",
+      "lf_normalized_sha256": "7bbd0d727f93d9572e4c04e6196f499fd033bf933f6e366b93d7944510860de3"
+    },
+    "companion/tests/assets/sample.wav": {
+      "sha256": "9cbc47abeba8cb722b9b42d9898667229afef37e1692d95a2e2fd4eb6a44366d",
+      "lf_normalized_sha256": "9959ba072669a852881a750510ace41bfdca1c07929314fb5d7ae269e4c263ec"
+    },
+    "companion/tests/test_archive_import.py": {
+      "sha256": "8f15a7eeb784aa6c6a14e9ea207e27c88a152811e0accf1cf301452d5d97d284",
+      "lf_normalized_sha256": "8f15a7eeb784aa6c6a14e9ea207e27c88a152811e0accf1cf301452d5d97d284"
+    },
+    "companion/tests/test_capture_source.py": {
+      "sha256": "6fa472af636f3fc17a5c797a986f69f853e50d4edc02859b5a83c10370bbc06e",
+      "lf_normalized_sha256": "6fa472af636f3fc17a5c797a986f69f853e50d4edc02859b5a83c10370bbc06e"
+    },
+    "companion/tests/test_download_recovery.py": {
+      "sha256": "9d91eb9b062aa78215f10aec4dc62edd795810d1491cb5938d70fde7459a9cbf",
+      "lf_normalized_sha256": "9d91eb9b062aa78215f10aec4dc62edd795810d1491cb5938d70fde7459a9cbf"
+    },
+    "companion/tests/test_protocol.py": {
+      "sha256": "acbfe8e94782aecc0dda46b6124e3d25ada6edff8a828bcb6e3f6ea70b87d575",
+      "lf_normalized_sha256": "acbfe8e94782aecc0dda46b6124e3d25ada6edff8a828bcb6e3f6ea70b87d575"
+    },
+    "companion/tests/test_protocol_v2.py": {
+      "sha256": "757ccd58155b4c5562c480c1bcd37e6417db67070744cfc7fe3b4684f4c31ca7",
+      "lf_normalized_sha256": "757ccd58155b4c5562c480c1bcd37e6417db67070744cfc7fe3b4684f4c31ca7"
+    },
+    "companion/tests/test_release.py": {
+      "sha256": "dedae669212bd205608f86816fbcabb458b7a9cb908a6db5ee3608e39e41ce60",
+      "lf_normalized_sha256": "dedae669212bd205608f86816fbcabb458b7a9cb908a6db5ee3608e39e41ce60"
+    },
+    "companion/tests/test_sync.py": {
+      "sha256": "fe1dcbb113e0bf4a42888ba7081a86cde453da06cee080410374eb4139bf4595",
+      "lf_normalized_sha256": "fe1dcbb113e0bf4a42888ba7081a86cde453da06cee080410374eb4139bf4595"
+    },
+    "companion/tests/test_upload.py": {
+      "sha256": "e854eef8d90486440f0abaa984218aa8806d6c1e9f472f36a81aaf15c9000b09",
+      "lf_normalized_sha256": "e854eef8d90486440f0abaa984218aa8806d6c1e9f472f36a81aaf15c9000b09"
+    },
+    "companion/uv.lock": {
+      "sha256": "510e92963b245e72f5f44f4e63d2a267e770f65d71496211c0d52f4dbbd7bd48",
+      "lf_normalized_sha256": "510e92963b245e72f5f44f4e63d2a267e770f65d71496211c0d52f4dbbd7bd48"
+    },
+    "firmware/a04/fixtures/capture-10ms.aura": {
+      "sha256": "02a65e3f88a52f5669dac35c07b383c7e02ec5f8587d299ed26ef5e9c01da6e6",
+      "lf_normalized_sha256": "727151cd5ef8c50451af7688a9ba3bf6fd870535085bcb83bf70e4491097f720"
+    },
+    "firmware/a04/fixtures/capture-10ms.receipt": {
+      "sha256": "322951f3bd14a49df939b160ed91351f9da7aa744cad24279706d505e579013c",
+      "lf_normalized_sha256": "322951f3bd14a49df939b160ed91351f9da7aa744cad24279706d505e579013c"
+    },
+    "firmware/a04/fixtures/capture-20ms-interrupted.aura": {
+      "sha256": "f5b70b7395e6bca4a984e80e021121db8ccb7f2fe0d986c9378a1380320212b8",
+      "lf_normalized_sha256": "f5b70b7395e6bca4a984e80e021121db8ccb7f2fe0d986c9378a1380320212b8"
+    },
+    "firmware/a04/fixtures/capture-20ms-interrupted.receipt": {
+      "sha256": "ade3ba18074aa0c8daecec97f3c1ae886cdc9d01b331e560b5403141496fa450",
+      "lf_normalized_sha256": "ade3ba18074aa0c8daecec97f3c1ae886cdc9d01b331e560b5403141496fa450"
+    },
+    "firmware/a04/fixtures/capture-20ms-open.aura": {
+      "sha256": "bfc4df73c0631f49adc584f4e431454f8b054867fb695d843d26a6daf68d37ce",
+      "lf_normalized_sha256": "bfc4df73c0631f49adc584f4e431454f8b054867fb695d843d26a6daf68d37ce"
+    },
+    "firmware/a04/fixtures/capture-20ms-open.receipt": {
+      "sha256": "7ee27fbb4950aacf5f2e393c09a1dc3a224882fff2f0d890557acacd86ba2d02",
+      "lf_normalized_sha256": "7ee27fbb4950aacf5f2e393c09a1dc3a224882fff2f0d890557acacd86ba2d02"
+    },
+    "firmware/a04/fixtures/capture-20ms.aura": {
+      "sha256": "b3f18e0fdbd375c542404488fd261409e904ddc2d7523d4b68c24329579d44b7",
+      "lf_normalized_sha256": "b3f18e0fdbd375c542404488fd261409e904ddc2d7523d4b68c24329579d44b7"
+    },
+    "firmware/a04/fixtures/capture-20ms.receipt": {
+      "sha256": "3bda507c34e283c8c78312b78a3cbdbd984c854540bcb270aba5b224bb5b2cf7",
+      "lf_normalized_sha256": "3bda507c34e283c8c78312b78a3cbdbd984c854540bcb270aba5b224bb5b2cf7"
+    },
+    "firmware/a04/fixtures/speech-10ms-ffmpeg.wav": {
+      "sha256": "a73ed4791d59b7b22959291ad30e4f456d38af9fdc37e18d4a9dcca06cf916fa",
+      "lf_normalized_sha256": "fb43ebc814643fd07667c49e9afac60cd5a4601d9ebec5e5304758113d1fa510"
+    },
+    "firmware/a04/fixtures/speech-10ms.aoc": {
+      "sha256": "e30164d994cdaf47e5e70e0dcfa8591a3947c4e176ee4450acb0a80984915f1a",
+      "lf_normalized_sha256": "e30164d994cdaf47e5e70e0dcfa8591a3947c4e176ee4450acb0a80984915f1a"
+    },
+    "firmware/a04/fixtures/speech-20ms-ffmpeg.wav": {
+      "sha256": "0b9cc48f9a8a9be1baf48a9ffa98a196edfa91d2874b3408e86dec718de4a9bf",
+      "lf_normalized_sha256": "ada0bd3467dad4743ce15fbd24c1b2717aca285032441bf85718e5b265782694"
+    },
+    "firmware/a04/fixtures/speech-20ms.aoc": {
+      "sha256": "0618514a55ed9fd6aaa8c9f55903413f9f1697fbee68454c5f7b44fef94b49e0",
+      "lf_normalized_sha256": "0618514a55ed9fd6aaa8c9f55903413f9f1697fbee68454c5f7b44fef94b49e0"
+    }
+  },
+  "c_interoperability": {
+    "scope": "fixed production-C RLS1 golden bytes compared with Python encoding",
+    "reference_source": "firmware/a04/tests/host_release_auth.c",
+    "reference_source_identity": {
+      "sha256": "2620cfd9c4cba34ba944e6a8eb6537c701868df7fd184f13b1507552fdb6957a",
+      "lf_normalized_sha256": "2620cfd9c4cba34ba944e6a8eb6537c701868df7fd184f13b1507552fdb6957a"
+    },
+    "firmware_controller_execution": false
+  },
+  "limits": [
+    "All owner keys, captures and database contents are synthetic test data.",
+    "Completion is exact local bookkeeping, not authenticated device confirmation.",
+    "No BLE, enrollment, OS keychain, pendant erase or physical device is exercised.",
+    "Process interruption and transaction faults do not qualify physical power-loss durability.",
+    "A valid whole-database rollback needs an external protected monotonic anchor to detect.",
+    "The source read lock covers outbox COMMIT; this is not cross-database atomic commit."
+  ]
+}

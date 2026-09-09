@@ -1,8 +1,8 @@
 {
   "status": "ARM_cross_compiled_not_executed",
   "target": "nrf52840dk/nrf52840",
-  "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC integration compile plus unprovisioned authentication/control-ledger primitives; synthetic PCM and volatile NAND, not wearable firmware",
-  "authority_binding": "Function/ABI retention only; zero-initialized auth/control objects have no key enrollment, control-block configuration or privileged erase callback. No opaque control-snapshot caller buffer is reserved.",
+  "purpose": "DK-only A04 recorder/Opus/NAND/SPI/audio-adapter/custom-DMIC/storage-owner integration compile; synthetic PCM and volatile NAND, not wearable firmware",
+  "authority_binding": "Function/ABI retention only; zero-initialized auth/control/storage objects have no key enrollment, control-block configuration or privileged audio erase callback. A real 45408-byte maximum AST1 caller snapshot is reserved alongside the storage owner and W25N control interface functions.",
   "peripheral_binding": "DK-only P0.30 CLK/P0.31 DIN pinctrl initializes at boot; probe never enables microphone power or starts a physical PDM stream",
   "devicetree_sha256": "56dd52422535870461ff857a69d0af0b06149a5591fc80f7dcc9e52fe54b7292",
   "zephyr": "4.2.0",
@@ -10,11 +10,11 @@
   "opus": "1.6.1",
   "memory_regions": {
     "FLASH": {
-      "used_bytes": 213128,
+      "used_bytes": 221432,
       "capacity_bytes": 1048576
     },
     "RAM": {
-      "used_bytes": 174592,
+      "used_bytes": 220288,
       "capacity_bytes": 262144
     }
   },
@@ -22,99 +22,143 @@
   "symbols": {
     "probe_pages": {
       "bytes": 16384,
-      "address": 536975225
+      "address": 536975553
     },
     "journal": {
-      "bytes": 35880,
-      "address": 536901488
+      "bytes": 36000,
+      "address": 536901696
     },
     "encoder_state": {
       "bytes": 32768,
-      "address": 536940936
+      "address": 536941264
     },
     "recorder": {
       "bytes": 3568,
-      "address": 536937368
+      "address": 536937696
     },
     "nand_adapter": {
       "bytes": 4464,
-      "address": 536897024
+      "address": 536897232
     },
     "audio_adapter": {
       "bytes": 21064,
-      "address": 536875960
+      "address": 536876168
     },
     "control_ledger": {
       "bytes": 4240,
-      "address": 536871632
+      "address": 536871840
     },
     "release_context": {
       "bytes": 88,
-      "address": 536875872
+      "address": 536876080
+    },
+    "storage_snapshot": {
+      "bytes": 45408,
+      "address": 536991937
+    },
+    "storage_owner": {
+      "bytes": 208,
+      "address": 536871632
     },
     "input": {
       "bytes": 640,
-      "address": 536974520
+      "address": 536974848
+    },
+    "aura_storage_release_step": {
+      "bytes": 1212,
+      "address": 27853
+    },
+    "aura_storage_request_release": {
+      "bytes": 1232,
+      "address": 26621
+    },
+    "aura_storage_capture_id": {
+      "bytes": 204,
+      "address": 24789
+    },
+    "aura_w25n01gv_zephyr_configure_control": {
+      "bytes": 42,
+      "address": 157527
     },
     "codec_stack": {
       "bytes": 49216,
-      "address": 536991680
+      "address": 537037376
     },
     "aura_w25n01gv_zephyr_init": {
       "bytes": 212,
-      "address": 12681
+      "address": 14217
     },
     "aura_release_validate_next": {
       "bytes": 76,
-      "address": 18261
+      "address": 19865
+    },
+    "aura_storage_open": {
+      "bytes": 152,
+      "address": 159479
     },
     "aura_audio_zephyr_service": {
       "bytes": 474,
-      "address": 150415
+      "address": 157917
     },
     "aura_release_authenticate": {
       "bytes": 348,
-      "address": 17913
+      "address": 19517
     },
     "aura_audio_zephyr_reader_step": {
       "bytes": 360,
-      "address": 16609
+      "address": 18213
     },
     "aura_control_store": {
       "bytes": 240,
-      "address": 22113
+      "address": 23717
     },
     "aura_control_open": {
       "bytes": 460,
-      "address": 20901
+      "address": 22505
     },
     "opus_encoder_get_size": {
       "bytes": 24,
-      "address": 155887
+      "address": 163925
     },
     "aura_control_load": {
       "bytes": 260,
-      "address": 21853
+      "address": 23457
     },
     "opus_encode": {
       "bytes": 80,
-      "address": 63029
+      "address": 69849
+    },
+    "aura_storage_cancel_prepared": {
+      "bytes": 40,
+      "address": 26581
     },
     "aura_journal_export": {
       "bytes": 140,
-      "address": 10793
+      "address": 12017
+    },
+    "aura_w25n01gv_zephyr_control_io": {
+      "bytes": 68,
+      "address": 14485
     },
     "aura_control_provision": {
       "bytes": 244,
-      "address": 21609
+      "address": 23213
     },
     "aura_release_sign": {
       "bytes": 272,
-      "address": 17641
+      "address": 19245
+    },
+    "aura_storage_prepare_capture": {
+      "bytes": 432,
+      "address": 26149
+    },
+    "aura_storage_provision": {
+      "bytes": 408,
+      "address": 25741
     },
     "aura_recorder_consume": {
       "bytes": 272,
-      "address": 13541
+      "address": 15145
     },
     "aura_dmic_health_get": {
       "bytes": 272,
@@ -122,7 +166,7 @@
     },
     "aura_audio_zephyr_begin": {
       "bytes": 796,
-      "address": 15813
+      "address": 17417
     }
   },
   "allocated_sections": [
@@ -134,68 +178,68 @@
     },
     {
       "name": "text",
-      "bytes": 172832,
+      "bytes": 180872,
       "address": 256,
       "type": "SHT_PROGBITS"
     },
     {
       "name": ".ARM.exidx",
       "bytes": 8,
-      "address": 173088,
+      "address": 181128,
       "type": "SHT_ARM_EXIDX"
     },
     {
       "name": "initlevel",
       "bytes": 104,
-      "address": 173096,
+      "address": 181136,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "device_area",
       "bytes": 224,
-      "address": 173200,
+      "address": 181240,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "sw_isr_table",
       "bytes": 384,
-      "address": 173424,
+      "address": 181464,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "gpio_driver_api_area",
       "bytes": 36,
-      "address": 173808,
+      "address": 181848,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "spi_driver_api_area",
       "bytes": 16,
-      "address": 173844,
+      "address": 181884,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "clock_control_driver_api_area",
       "bytes": 28,
-      "address": 173860,
+      "address": 181900,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "uart_driver_api_area",
       "bytes": 12,
-      "address": 173888,
+      "address": 181928,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "tbss",
       "bytes": 4,
-      "address": 173900,
+      "address": 181940,
       "type": "SHT_NOBITS"
     },
     {
       "name": "rodata",
-      "bytes": 38836,
-      "address": 173904,
+      "bytes": 39092,
+      "address": 181952,
       "type": "SHT_PROGBITS"
     },
     {
@@ -213,24 +257,24 @@
     {
       "name": ".last_section",
       "bytes": 4,
-      "address": 213124,
+      "address": 221428,
       "type": "SHT_PROGBITS"
     },
     {
       "name": "bss",
-      "bytes": 120334,
+      "bytes": 166070,
       "address": 536871296,
       "type": "SHT_NOBITS"
     },
     {
       "name": "noinit",
       "bytes": 53824,
-      "address": 536991680,
+      "address": 537037376,
       "type": "SHT_NOBITS"
     }
   ],
   "stack_analysis": {
-    "translation_units_with_reports": 143,
+    "translation_units_with_reports": 144,
     "largest_reported_functions": [
       {
         "function": "silk_encode_frame_FIX",
@@ -264,7 +308,7 @@
       },
       {
         "function": "checkpoint.constprop",
-        "compiler_reported_bytes": 2088,
+        "compiler_reported_bytes": 2080,
         "classification": "static"
       },
       {
@@ -278,8 +322,23 @@
         "classification": "dynamic"
       },
       {
+        "function": "validate_state",
+        "compiler_reported_bytes": 1704,
+        "classification": "static"
+      },
+      {
+        "function": "aura_storage_prepare_capture",
+        "compiler_reported_bytes": 1656,
+        "classification": "static"
+      },
+      {
         "function": "aura_journal_export",
         "compiler_reported_bytes": 1624,
+        "classification": "static"
+      },
+      {
+        "function": "verify_capture",
+        "compiler_reported_bytes": 1568,
         "classification": "static"
       },
       {
@@ -288,24 +347,9 @@
         "classification": "static"
       },
       {
-        "function": "aura_journal_verify",
-        "compiler_reported_bytes": 1520,
-        "classification": "static"
-      },
-      {
         "function": "valid_manifest",
         "compiler_reported_bytes": 1504,
         "classification": "static"
-      },
-      {
-        "function": "declaration",
-        "compiler_reported_bytes": 1504,
-        "classification": "static"
-      },
-      {
-        "function": "opus_encode_native",
-        "compiler_reported_bytes": 984,
-        "classification": "dynamic"
       }
     ],
     "dynamic_functions": 65,
@@ -313,20 +357,20 @@
   },
   "artifacts": {
     "zephyr.elf": {
-      "bytes": 2332648,
-      "sha256": "fc0d0fd916370cbc6328106ffb8c536eeb2c6521db92fad2a08c8b9250c6a1d3"
+      "bytes": 2394808,
+      "sha256": "62ab843d16dc713c3a24783a77d94b885984ea8a8431009fc8bd78979ed09092"
     },
     "zephyr.hex": {
-      "bytes": 599545,
-      "sha256": "8ad135b060e5e8e5668879e75b78f2d1d94ea5d2f13c1d588819bdfad2c84886"
+      "bytes": 622884,
+      "sha256": "edd69cbb579ff8a703c5d7669ea15515b2110bdf32ce2ccaa260853406355955"
     },
     "zephyr.bin": {
-      "bytes": 213128,
-      "sha256": "6f900d59f773d4ecfb0e267ce8d708211381d09b4410f06dc95f7da24aae5e7d"
+      "bytes": 221432,
+      "sha256": "9075a9a86b3831ad42ea9d293992cd2c19f13531bfa54fecfa71d0c5819453f4"
     },
     "zephyr.map": {
-      "bytes": 660720,
-      "sha256": "b2ec5aa8dece5d618d26fb32b918f56c8297c7798d93548015c6a15f8faa7fae"
+      "bytes": 668587,
+      "sha256": "22a1562d1842cd479a132a525b78f72b35c1407b14d6ead07b9fb6d6ef4b69e2"
     }
   },
   "config_sha256": "123bac69167da0d4a3d953b8e024b2029c317cb458a852cd486be760287a6b29",
@@ -334,24 +378,26 @@
     "src/aura_archive.c": "739ee42e4d9ab7568779ef5e50e8438754d402cc21bb8549f93a2ac590b0a74f",
     "src/aura_audio_zephyr.c": "e42fd97920caebcfa455cd832b217b58cc9fe54254aa919f1624ca4f230f1c2c",
     "src/aura_control.c": "82aea7bf729a0da31730ba36463967052e6c51ebfbb9db7d5c70681cc92e31b6",
-    "src/aura_journal.c": "478970ef202e6c92d96eecbdacfebddc2fc77f2af590dff3477ac5dd2da3662d",
+    "src/aura_journal.c": "775c8226fa909607fc6d4605f52081c9c1f7b08e9f8cf36e9a59634fec0a0b1e",
     "src/aura_opus.c": "9df77bec8a1006de6c3850564430070ef6e14cea11e225d1acb1536966ba13cc",
     "src/aura_recorder.c": "1e9e54056ef6cbcd77fd94a38ffc40a2eba5b9f50a2b76344c1f7cc03a8c206a",
     "src/aura_release_auth.c": "0bf2ad87c2151d5f6ef2adc809ab25b11876d63aa1cad385d004adaedf758fe3",
-    "src/aura_w25n01gv.c": "f3443bc6751086144e5022a1b58701cac2254d5b080562bfc28f730a498f1cc1",
-    "src/aura_w25n01gv_zephyr.c": "cadba8f7c12ad9b088d62c349e837005a8eb56ac4be7264c8a8c8db3d5b9314b",
-    "src/zephyr_probe.c": "cfb4d838ead3353f0af66442a9117eefd2c468d81417d320fe27c5a339fef233",
+    "src/aura_storage.c": "6aa1f8c89d8cbef17a07c29667a5fbffc5ddaf6d40e04a6126a4aa441683042f",
+    "src/aura_w25n01gv.c": "14844fa2c7003bf9eb3543ea0e9b46a81b6175cdee7673b3593a77b10a2ca781",
+    "src/aura_w25n01gv_zephyr.c": "3b86abdf3313e9315b196726713dd9ee1561baa418ac3edc42a0e6db8fa7724f",
+    "src/zephyr_probe.c": "b438ac58fda6c64dd4412d92e58bf14b617ca8d974ec3d7c9ba67e8ac052835f",
     "include/aura_archive.h": "62e4810e9dee1092ab0aa22b157e19f4e32997a7533df5b6554ec03ee9ee956f",
     "include/aura_audio_zephyr.h": "2387676c9c27b51aa6bb7f94a3c07fccd2a74337782e6396b4e143a14692db63",
-    "include/aura_control.h": "0e61d78ca8016f6b93b01ca09bce8ff8befd1e237f2ea14ed5867fd13734b8c8",
+    "include/aura_control.h": "36c362a95c84ee750e2e8383a77210b80223879d986a5b8fc2db99ac64f5187d",
     "include/aura_dmic_health.h": "5cef591f6aac94864afe0e1eb77181aedf9651d4e2e1bbf6c0410d7529b0c488",
-    "include/aura_journal.h": "3ca25091e39d115c57ec71d10f0f38fd8aa002f696746c671099072642ec4012",
+    "include/aura_journal.h": "837090ad39cdbe68dcb07b6e6c03915714dced97c0c34c825910324be84123c9",
     "include/aura_nand.h": "a4d72870f65894f87900fa8951a33596adac58fa6a2c39fbd7d673ff49d9935a",
     "include/aura_opus.h": "19a5c7f5cc40b3edd97a0439ab9d33d6001572aa5e86e4155a7eb5786fa3171d",
     "include/aura_recorder.h": "8f80c26c5dd863eb7633a6b74487f57f8d29e0c9a6f7c045cb94bd5bca99d679",
     "include/aura_release_auth.h": "57c5b9c03b2ad739c507706863d3444c017644330af65a3f4a9e3a0e868acd01",
-    "include/aura_w25n01gv.h": "0bf679f16315fae257dcd12aa6a41012e155ac86e74f22d4488f3ed86773ea7b",
-    "include/aura_w25n01gv_zephyr.h": "8f0af7cfc1581afc9e08228811f1afa8a121c39e1cc3a1eae2c58bd09bcbab77",
+    "include/aura_storage.h": "a7038c47c4b304af8a07bd6cf443beadf76aa7b8a536373187af6b3938bbd892",
+    "include/aura_w25n01gv.h": "6248c59c7e9c54eb343e0958b09ccdb31eb8411080e796f7587a373a2254357b",
+    "include/aura_w25n01gv_zephyr.h": "0ebd36b4e5d890f6bc1e5569f6b834a50992b9cb85804da3e9e022cb12d094dc",
     "cmake/opus-profile.cmake": "cd883e780083139cfe3de5d4f814e4156612b924c4dceee903d7aea8d47d2f1b",
     "drivers/aura_dmic_nrfx_pdm.c": "585bd34f1063dadd85adb781d17891f3f4d2df8ac37c427372e099d70ac65361",
     "drivers/CMakeLists.txt": "6674f60b50e796efc73d54da1d74d23cd0ef8d2b29542be47e44de75a5724a74",
@@ -366,11 +412,11 @@
     "drivers/tests/verification.json": "f5796d68a84a3a6371aa25fbd3a9a2bdebc71aceaafadcc188d1d1040afdc636",
     "drivers/dts/bindings/vendor-prefixes.txt": "51671cced8046e1d9ea37f1b3730653f077ee47af45b51c07fa66764204e135c",
     "drivers/dts/bindings/audio/aura,nrf-pdm.yaml": "643b5267ad88268a543b853f9a1ac31f51c7bf5b0f1ec11eee4f9dec80570f7c",
-    "CMakeLists.txt": "d34dc2684870d523e38586ca722b173befbb767079f5dcd239ab8115f4fef28c",
+    "CMakeLists.txt": "084c9398588767bc36390817d5558c4a2b618871e946f1b3f8e8f5ba39a33ec7",
     "Kconfig": "46f43fd718de1a5d2d405df3ee6f16ff04ef93b15f053cb7c397f8eabaab3a2f",
     "prj.conf": "99f77d1b4416ffd3044aaa42acb168ebcc55568d7a1beb545606a7260def268c",
-    "scripts/build.ps1": "a72826f67da26af8bc9bac6fcb820ad41731a67e53234e02b7dcf6add383b903",
-    "scripts/report_resources.py": "680fbe25f3e74f06759930d2ba8539b9f6cf42d36fa236efba5629af05072cef",
+    "scripts/build.ps1": "6bb8acf8afd5357f7808e6fff3854724ba2ff80f743f5b9be3965e38d4876bf5",
+    "scripts/report_resources.py": "7ab8da0fc37270ee04174483c0de24c7a6a63d26e1421f8bede5df753c884d16",
     "dependencies/opus-1.6.1.json": "d635507adc3334db88ff3853880c82a7daf7c90c1ff472de4c7ca1babc424852"
   },
   "not_verified": [

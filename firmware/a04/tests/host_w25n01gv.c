@@ -22,7 +22,7 @@ struct chip {
     bool wrong_id, ignore_config, refuse_wel, busy_forever, stalled_clock;
     bool program_fail, execute_lost, erase_fail, erase_lost, bad_erase_readback;
     bool cache_loaded, program_bad_readback, program_fail_after_full, program_busy_forever, execute_not_received;
-    bool erase_ignored;
+    bool erase_ignored, erase_corrected, erase_busy_forever;
 };
 static struct chip c;
 static struct aura_w25n01gv d;
@@ -114,7 +114,9 @@ static int command(void *u,const uint8_t *h,size_t hn,const uint8_t *out,size_t 
         for(unsigned i=0;i<(c.erase_fail?7u:64u);++i){free(c.pages[p+i]);c.pages[p+i]=NULL;c.ecc[p+i]=0;}
         if(!c.erase_fail)c.highest[p/64]=-1;
         if(c.bad_erase_readback)page(p+10)[9]=0;
+        if(c.erase_corrected)c.ecc[p+10]=1;
         c.status=(uint8_t)(c.erase_fail?4:0);c.busy_reads=2;
+        if(c.erase_busy_forever)c.busy_forever=true;
         return c.erase_lost?-1:0;
     }
     default: /* In particular, no OTP, lock, BBM mutation or random program. */
@@ -156,6 +158,129 @@ static int container_packet(void)
         .sample_count=320,.bytes=80};
     memset(p.data,0x33,80);p.data[0]=0x98;
     return aura_archive_opus_commit(&writer,&p);
+}
+
+static unsigned control_pair_tests(void)
+{
+    unsigned groups=0;uint8_t data[2048],got[2048];memset(data,0xa6,sizeof(data));
+    fresh();memset(&d,0,sizeof(d));
+    assert(aura_w25n01gv_configure_control(&d,0,1)==AURA_NAND_BAD_ARGUMENT);
+    assert(!aura_w25n01gv_control_io(&d).nand.blocks);
+    struct aura_nand_io ordinary=initialize();
+    struct aura_control_io control=aura_w25n01gv_control_io(&d);
+    uint64_t transfers=d.transfers;
+    assert(!control.nand.blocks&&!control.nand.erase);
+    assert(control.erase_control(control.erase_user,0)==AURA_NAND_BAD_BLOCK);
+    assert(control.nand.read(control.nand.user,2,0,got,1)==AURA_NAND_BAD_BLOCK);
+    assert(control.nand.program(control.nand.user,2,data)==AURA_NAND_BAD_BLOCK);
+    assert(aura_w25n01gv_configure_control(&d,0,0)==AURA_NAND_BAD_ARGUMENT);
+    assert(aura_w25n01gv_configure_control(&d,0,1024)==AURA_NAND_BAD_ARGUMENT);
+    assert(!aura_w25n01gv_configure_control(&d,0,1));
+    assert(!aura_w25n01gv_configure_control(&d,0,1));
+    assert(aura_w25n01gv_configure_control(&d,1,0)==AURA_CONTROL_CONFLICT);
+    assert(aura_w25n01gv_configure_control(&d,2,3)==AURA_CONTROL_CONFLICT);
+    control=aura_w25n01gv_control_io(&d);assert(control.nand.blocks==1024&&!control.nand.erase);
+    for(unsigned b=0;b<2;++b){
+        bool bad=false;assert(!ordinary.bad(ordinary.user,b,&bad)&&bad);
+        assert(ordinary.read(ordinary.user,b*64+2,0,got,1)==AURA_NAND_BAD_BLOCK);
+        assert(ordinary.program(ordinary.user,b*64+2,data)==AURA_NAND_BAD_BLOCK);
+        assert(ordinary.erase(ordinary.user,b)==AURA_NAND_BAD_BLOCK);
+        assert(!control.nand.bad(control.nand.user,b,&bad)&&!bad);
+    }
+    bool bad=false;assert(!control.nand.bad(control.nand.user,2,&bad)&&bad);
+    assert(control.nand.read(control.nand.user,130,0,got,1)==AURA_NAND_BAD_BLOCK);
+    assert(control.nand.program(control.nand.user,130,data)==AURA_NAND_BAD_BLOCK);
+    assert(control.erase_control(control.erase_user,2)==AURA_NAND_BAD_BLOCK);
+    assert(control.erase_control(control.erase_user,1024)==AURA_NAND_BAD_ARGUMENT);
+    assert(d.transfers==transfers&&!c.programs&&!c.erases);
+    assert(!aura_journal_mount(&journal,ordinary));
+    assert(journal.block_state[0]==AURA_BLOCK_EXCLUDED&&journal.block_state[1]==AURA_BLOCK_EXCLUDED);
+    assert(!aura_journal_prepare(&journal)&&journal.prepared==2);
+    assert(!ordinary.program(ordinary.user,130,data));
+    uint32_t erases=c.erases;
+    assert(ordinary.erase(ordinary.user,2)==AURA_NAND_NOT_ERASED);
+    assert(control.erase_control(control.erase_user,2)==AURA_NAND_BAD_BLOCK&&c.erases==erases);
+    ++groups;
+
+    /* A live ordinary view cannot subsequently have its inventory reclassified. */
+    fresh();ordinary=initialize();assert(!ordinary.bad(ordinary.user,0,&bad));
+    assert(aura_w25n01gv_configure_control(&d,0,1)==AURA_CONTROL_CONFLICT);
+    fresh();ordinary=initialize();assert(!ordinary.read(ordinary.user,2,0,got,1));
+    assert(aura_w25n01gv_configure_control(&d,0,1)==AURA_CONTROL_CONFLICT);
+    fresh();c.markers[5][1][2]=0;lut(0,0x8003,1000);ordinary=initialize();
+    assert(aura_w25n01gv_configure_control(&d,5,6)==AURA_NAND_BAD_BLOCK);
+    assert(aura_w25n01gv_configure_control(&d,3,6)==AURA_NAND_BAD_BLOCK);
+    assert(aura_w25n01gv_configure_control(&d,6,1000)==AURA_NAND_BAD_BLOCK);
+    assert(!d.control_configured&&!aura_w25n01gv_configure_control(&d,6,7));
+    fresh();c.wrong_id=true;initialize_failure();
+    assert(aura_w25n01gv_configure_control(&d,0,1)==AURA_NAND_BAD_ARGUMENT);++groups;
+
+    /* Real journal and control ledger share the production command core. Only
+     * the reserved pair cycles; ordinary capture bytes/receipt survive it. */
+    fresh();ordinary=initialize();assert(!aura_w25n01gv_configure_control(&d,0,1));
+    control=aura_w25n01gv_control_io(&d);begin_capture(ordinary);
+    assert(journal.current_block==2&&!container_packet()&&!aura_archive_interrupt(&writer));
+    uint8_t receipt[94],recovered[94];assert(!aura_journal_receipt(&journal,0,receipt));
+    uint8_t markers[sizeof(c.markers)],lut_saved[sizeof(c.lut)];
+    memcpy(markers,c.markers,sizeof(markers));memcpy(lut_saved,c.lut,sizeof(lut_saved));
+    struct aura_control ledger;
+    struct aura_control_config config={.blocks={0,1},.domain={1}};
+    uint8_t snapshot[2500],loaded[2500];memset(snapshot,0x41,sizeof(snapshot));size_t bytes=0;
+    erases=c.erases;uint32_t programs=c.programs;
+    assert(aura_control_open(&ledger,control,&config)==AURA_CONTROL_UNPROVISIONED);
+    assert(c.erases==erases&&c.programs==programs);
+    assert(!aura_control_provision(&ledger,control,&config,snapshot,sizeof(snapshot)));
+    assert(ledger.generation==1);snapshot[0]=0x42;c.execute_lost=true;
+    assert(!aura_control_store(&ledger,snapshot,sizeof(snapshot)));c.execute_lost=false;
+    assert(ledger.generation==2);snapshot[0]=0x43;
+    assert(!aura_control_store(&ledger,snapshot,sizeof(snapshot))&&ledger.generation==3);
+    assert(!memcmp(markers,c.markers,sizeof(markers))&&!memcmp(lut_saved,c.lut,sizeof(lut_saved)));
+    assert(!aura_control_load(&ledger,loaded,sizeof(loaded),&bytes)&&bytes==sizeof(snapshot));
+    assert(!memcmp(snapshot,loaded,bytes));
+    ordinary=initialize();assert(!aura_w25n01gv_control_io(&d).nand.blocks);
+    assert(control.erase_control(control.erase_user,0)==AURA_NAND_BAD_BLOCK);
+    assert(!aura_w25n01gv_configure_control(&d,0,1));control=aura_w25n01gv_control_io(&d);
+    assert(!aura_control_open(&ledger,control,&config)&&ledger.generation==3);
+    assert(!aura_control_load(&ledger,loaded,sizeof(loaded),&bytes)&&!memcmp(snapshot,loaded,bytes));
+    assert(!aura_journal_mount(&journal,ordinary)&&journal.count==1);
+    assert(!aura_journal_verify(&journal,0)&&!aura_journal_receipt(&journal,0,recovered));
+    assert(!memcmp(receipt,recovered,94));snapshot[0]=0x44;
+    assert(!aura_control_store(&ledger,snapshot,sizeof(snapshot))&&ledger.generation==4);
+    assert(!memcmp(markers,c.markers,sizeof(markers))&&!memcmp(lut_saved,c.lut,sizeof(lut_saved)));++groups;
+
+    /* Every erase failure denies fresh program permission, including a lost
+     * reply with all-FF readback, ignored execute and corrected FF readback. */
+    for(unsigned mode=0;mode<8;++mode){
+        fresh();ordinary=initialize();assert(!aura_w25n01gv_configure_control(&d,0,1));
+        control=aura_w25n01gv_control_io(&d);
+        assert(!control.erase_control(control.erase_user,0));
+        assert(!control.nand.program(control.nand.user,2,data));
+        switch(mode){
+        case 0:c.erase_lost=true;break;
+        case 1:c.erase_fail=true;break;
+        case 2:c.bad_erase_readback=true;break;
+        case 3:c.erase_ignored=true;break;
+        case 4:c.erase_corrected=true;break;
+        case 5:c.refuse_wel=true;break;
+        case 6:c.fail_read_page=10;break;
+        default:c.erase_busy_forever=true;break;
+        }
+        assert(control.erase_control(control.erase_user,0)<0);
+        assert(control.nand.program(control.nand.user,3,data)==AURA_NAND_PROGRAM_ORDER);
+        if(mode!=5)assert(control.erase_control(control.erase_user,0)==AURA_NAND_BAD_BLOCK);
+        else{c.refuse_wel=false;assert(!control.erase_control(control.erase_user,0));
+            assert(!control.nand.program(control.nand.user,2,data));}
+    }
+    ++groups;
+
+    fresh();ordinary=initialize();assert(!aura_w25n01gv_configure_control(&d,0,1));
+    control=aura_w25n01gv_control_io(&d);c.program_fail=c.program_fail_after_full=true;
+    assert(aura_control_provision(&ledger,control,&config,snapshot,sizeof(snapshot))==AURA_NAND_PROGRAM_FAILED);
+    assert(control.nand.read(control.nand.user,2,0,got,2048)==AURA_NAND_PROGRAM_FAILED);
+    assert(aura_control_open(&ledger,control,&config)==AURA_CONTROL_INCOMPLETE);
+    assert(!ledger.ready);++groups;
+    printf("CONTROL pair: %u groups PASS; isolated callbacks, real ledger cycles/cold recovery, 8 erase faults\n",groups);
+    return groups;
 }
 
 int main(void)
@@ -299,6 +424,7 @@ int main(void)
     assert(!io.read(io.user,3,0,got,2048));
     assert(io.read(io.user,4,0,got,2048)==AURA_NAND_PROGRAM_FAILED);++groups;
 
+    groups+=control_pair_tests();
     fresh();printf("W25N01GV production command core: %u groups PASS; no physical SPI test\n",groups);
     printf("Portable driver context: %zu bytes\n",sizeof(struct aura_w25n01gv));return 0;
 }

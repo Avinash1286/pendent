@@ -75,36 +75,46 @@ static int enable_write(struct aura_w25n01gv *d)
     r=get_reg(d,REG_STATUS,&s);
     return r ? r : ((s&(BUSY|WEL))==WEL ? 0 : AURA_NAND_IO_ERROR);
 }
+static bool control_block(const struct aura_w25n01gv *d,uint32_t b)
+{return d->control_configured&&(b==d->control_blocks[0]||b==d->control_blocks[1]);}
+static bool unavailable(const struct aura_w25n01gv *d,uint32_t b,bool control)
+{return bit(d->excluded,b)||(control?!control_block(d,b):control_block(d,b));}
 static int bad(void *user,uint32_t block,bool *out)
 {
     struct aura_w25n01gv *d=user;
     if(!d||!d->ready||block>=AURA_NAND_BLOCKS||!out)return AURA_NAND_BAD_ARGUMENT;
-    *out=bit(d->excluded,block); return 0;
+    d->ordinary_started=true;*out=unavailable(d,block,false); return 0;
 }
-static int read_page(void *user,uint32_t page,uint16_t col,uint8_t *out,size_t n)
+static int read_access(void *user,uint32_t page,uint16_t col,uint8_t *out,size_t n,bool control)
 {
     struct aura_w25n01gv *d=user;
     if(!d||!d->ready||page>=AURA_NAND_PAGES||!out||!n||col>=2048||n>2048u-col)
         return AURA_NAND_BAD_ARGUMENT;
-    if(bit(d->excluded,page/64))return AURA_NAND_BAD_BLOCK;
+    if(!control)d->ordinary_started=true;
+    if(unavailable(d,page/64,control))return AURA_NAND_BAD_BLOCK;
     uint8_t failed=d->failed_page[page/64];
     if((failed&0x7f)==page%64+1)
         return (failed&0x80)?AURA_NAND_UNCERTAIN:AURA_NAND_PROGRAM_FAILED;
     return read_main(d,page,col,out,n);
 }
+static int read_page(void *u,uint32_t p,uint16_t c,uint8_t *out,size_t n)
+{return read_access(u,p,c,out,n,false);}
+static int control_read(void *u,uint32_t p,uint16_t c,uint8_t *out,size_t n)
+{return read_access(u,p,c,out,n,true);}
 static int program_fault(struct aura_w25n01gv *d,uint32_t b,uint32_t p,int result,bool uncertain)
 {
     disarm(d,b);d->failed_page[b]=(uint8_t)((p+1)|(uncertain?0x80:0));return result;
 }
-static int program(void *user,uint32_t page,const uint8_t data[2048])
+static int program_access(void *user,uint32_t page,const uint8_t data[2048],bool control)
 {
     struct aura_w25n01gv *d=user;
     if(!d||!d->ready||page>=AURA_NAND_PAGES||!data)return AURA_NAND_BAD_ARGUMENT;
+    if(!control)d->ordinary_started=true;
     /* An all-FF A04 page is never a record. Refuse it so pre-existing erased
      * data cannot masquerade as evidence of a completed uncertain program. */
     if(all_ff(data,2048))return AURA_NAND_BAD_ARGUMENT;
     uint32_t b=page/64,p=page%64;
-    if(bit(d->excluded,b))return AURA_NAND_BAD_BLOCK;
+    if(unavailable(d,b,control))return AURA_NAND_BAD_BLOCK;
     if(d->failed_page[b]||!bit(d->writable,b)||p<2||(int)p<=d->highest[b])return AURA_NAND_PROGRAM_ORDER;
     int r=read_main(d,page,0,d->verify,2048);
     if(r||!all_ff(d->verify,2048)){disarm(d,b);return r<0?r:AURA_NAND_NOT_ERASED;}
@@ -133,26 +143,33 @@ static int program(void *user,uint32_t page,const uint8_t data[2048])
     if(execute_result)++d->resolved_execute_errors;
     return 0;
 }
-static int erase(void *user,uint32_t b)
+static int program(void *u,uint32_t p,const uint8_t data[2048])
+{return program_access(u,p,data,false);}
+static int control_program(void *u,uint32_t p,const uint8_t data[2048])
+{return program_access(u,p,data,true);}
+static int erase_access(void *user,uint32_t b,bool control)
 {
     struct aura_w25n01gv *d=user;
     if(!d||!d->ready||b>=AURA_NAND_BLOCKS)return AURA_NAND_BAD_ARGUMENT;
-    if(bit(d->excluded,b))return AURA_NAND_BAD_BLOCK;
+    if(!control)d->ordinary_started=true;
+    /* Privilege is checked here, not trusted from a caller's control config. */
+    if(unavailable(d,b,control))return AURA_NAND_BAD_BLOCK;
     if(d->failed_page[b])return AURA_NAND_BAD_BLOCK;
     disarm(d,b);
     /* No data reclamation: refuse any non-FF or ECC-corrected page, even when
      * a caller claims it is free. This catches torn erase/header cases. */
-    for(unsigned p=0;p<64;++p){
+    for(unsigned p=0;!control&&p<64;++p){
         int r=read_main(d,b*64+p,0,d->verify,2048);
         if(r||!all_ff(d->verify,2048))return r<0?r:AURA_NAND_NOT_ERASED;
     }
-    int r=enable_write(d); if(r)return r;
+    uint8_t status;
+    int r=ready(d,&status); if(r)return r;
+    r=enable_write(d); if(r)return r;
     uint32_t page=b*64;
     const uint8_t h[]={0xd8,0,(uint8_t)(page>>8),(uint8_t)page};
     ++d->erase_attempts;
     r=transfer(d,h,sizeof(h),NULL,0,NULL,0);
     if(r){d->failed_page[b]=255;return AURA_NAND_UNCERTAIN;}
-    uint8_t status;
     r=ready(d,&status); if(r){d->failed_page[b]=255;return AURA_NAND_UNCERTAIN;}
     if(status&EFAIL){d->failed_page[b]=255;return AURA_NAND_ERASE_FAILED;}
     if(status&WEL){d->failed_page[b]=255;return AURA_NAND_UNCERTAIN;}
@@ -163,6 +180,14 @@ static int erase(void *user,uint32_t b)
         }
     }
     d->highest[b]=1; mark(d->writable,b); return 0;
+}
+static int erase(void *u,uint32_t b){return erase_access(u,b,false);}
+static int control_erase(void *u,uint32_t b){return erase_access(u,b,true);}
+static int control_bad(void *user,uint32_t b,bool *out)
+{
+    struct aura_w25n01gv *d=user;
+    if(!d||!d->ready||b>=AURA_NAND_BLOCKS||!out)return AURA_NAND_BAD_ARGUMENT;
+    *out=unavailable(d,b,true);return 0;
 }
 int aura_w25n01gv_init(struct aura_w25n01gv *d,const struct aura_w25n01gv_bus *bus)
 {
@@ -211,3 +236,19 @@ int aura_w25n01gv_init(struct aura_w25n01gv *d,const struct aura_w25n01gv_bus *b
 }
 struct aura_nand_io aura_w25n01gv_io(struct aura_w25n01gv *d)
 {return (struct aura_nand_io){d,d&&d->ready?1024u:0u,read_page,program,erase,bad};}
+int aura_w25n01gv_configure_control(struct aura_w25n01gv *d,uint16_t first,uint16_t second)
+{
+    if(!d||!d->ready||first>=1024||second>=1024||first==second)return AURA_NAND_BAD_ARGUMENT;
+    if(d->control_configured)
+        return d->control_blocks[0]==first&&d->control_blocks[1]==second?0:AURA_CONTROL_CONFLICT;
+    if(d->ordinary_started)return AURA_CONTROL_CONFLICT;
+    if(bit(d->excluded,first)||bit(d->excluded,second))return AURA_NAND_BAD_BLOCK;
+    d->control_blocks[0]=first;d->control_blocks[1]=second;d->control_configured=true;return 0;
+}
+struct aura_control_io aura_w25n01gv_control_io(struct aura_w25n01gv *d)
+{
+    struct aura_control_io io={
+        .nand={d,d&&d->ready&&d->control_configured?1024u:0u,control_read,control_program,NULL,control_bad},
+        .erase_user=d,.erase_control=control_erase};
+    return io;
+}

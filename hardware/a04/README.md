@@ -30,6 +30,8 @@ The current native ERC reports **one error and nine warnings**, independently re
 
 There is no DRC, assembly-clearance, copper/paste/drill, populated-board fit or supplier CAM sign-off. There are no A04 fabrication Gerbers or a manufacturing ZIP. The earlier A03 release remains separate.
 
+The [assembly-attribute audit](../../docs/a04/assembly-attributes-review.md) identifies seven export risks among the 72 assignments: purchased D2/C3/C4 lack footprint-level SMD classification, while J1–J4 copper contact features retain component BOM/position inclusion. The expected purchased PCB set is 68 references, with four additional copper features. MCP `set_footprint_type` supports future placed-board corrections; actual saved-instance and exported BOM/CPL checks remain required. The audit's integrity passes while its assembly-policy result deliberately remains false.
+
 Visual inspection of the candidate PDF also found reference/value text close to some symbol boundaries and long LED labels entering the interaction sheet's title area. Drawing layout cleanup remains part of the schematic gate. The current geometrical checks do not imply a professional final drawing or an assembled fit.
 
 Before manufacturing: complete exact-part selection and schematic review, establish valid rules and actual stackup, verify footprint pads/courtyards/tolerances, import and place the circuit, route and inspect all nets, check real populated geometry against the case, then obtain the required qualified battery/RF review and supplier/first-article evidence. A successful export alone is not fabrication readiness.

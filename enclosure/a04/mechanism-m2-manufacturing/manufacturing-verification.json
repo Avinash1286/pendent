@@ -1,0 +1,189 @@
+{
+  "status": "DEVELOPMENT QUOTE AND UNPOWERED FIXTURE ARTIFACTS ONLY",
+  "scratchDirectoryExcluded": "tmp/",
+  "profileAndDxfChecksPass": true,
+  "pdfReviewed": true,
+  "pdfPages": 2,
+  "drawingPdfSha256": "04b1e0efc28cc91b0c98a5cb86a316964d23a5983144b662cdc447f6f2d71cea",
+  "profileChecks": [
+    {
+      "file": "m2-s1-shoe-profile.dxf",
+      "reader": "ezdxf 1.4.4",
+      "readWithoutRecovery": true,
+      "auditErrors": 0,
+      "auditFixes": 0,
+      "units": 4,
+      "unitMeaning": "millimetres",
+      "closedLwPolylineCount": 1,
+      "vertices": 4,
+      "selfIntersections": 0,
+      "fittedArcs": false,
+      "kerfCompensationApplied": false,
+      "maxRoundTripVertexErrorMm": 1.9073486345888568e-07,
+      "profileAreaMm2": 55.800000000000004,
+      "pass": true
+    },
+    {
+      "file": "m2-s1-lower-support-profile.dxf",
+      "reader": "ezdxf 1.4.4",
+      "readWithoutRecovery": true,
+      "auditErrors": 0,
+      "auditFixes": 0,
+      "units": 4,
+      "unitMeaning": "millimetres",
+      "closedLwPolylineCount": 1,
+      "vertices": 71,
+      "selfIntersections": 0,
+      "fittedArcs": false,
+      "kerfCompensationApplied": false,
+      "maxRoundTripVertexErrorMm": 6.798418516950135e-07,
+      "profileAreaMm2": 50.66160312350055,
+      "pass": true
+    }
+  ],
+  "prismaticSourceAndTwoVariantConcordance": true,
+  "extractionDetails": "profiles.json",
+  "numericalComparisonIsManufacturingTolerance": false,
+  "sourceFiles": [
+    {
+      "file": "build_m2.py",
+      "sha256": "75e0166344e41a2e792535c903a76ccd314f8113e8b49add027d114e3245ebdd"
+    },
+    {
+      "file": "contract.json",
+      "sha256": "ca31d285918a25fb4e7c1b13316ef1daa3e01435cc64aa20bd68e3671dc95f08"
+    },
+    {
+      "file": "documented-pack/08_measured_plunger_shoe.stl",
+      "sha256": "8a98bbfa1dc62a9cdb3f628768257bc004e55903d793d83ce4e18a1b324c343f"
+    },
+    {
+      "file": "documented-pack/13_lower_steel_stiffener.stl",
+      "sha256": "edb38e1976a82014c4dab35e4a782e4fba2a934ba28a4bb6991ecae48f5dd413"
+    },
+    {
+      "file": "documented-pack/aura-a04-m2.blend",
+      "sha256": "3409634192e4be88350e3d758d46225f96e341f8e857ea225b55178e15054cd9"
+    },
+    {
+      "file": "documented-pack/parts-manifest.json",
+      "sha256": "93140436d709666562f97995b759652fd92a6ab2564f4bbc3c6fea50cbbcd60d"
+    },
+    {
+      "file": "readiness.json",
+      "sha256": "5c14fb6971a0d69e322c3e61b7ffa980de14be209d35e379c558c3df31dad157"
+    },
+    {
+      "file": "structural-screen.json",
+      "sha256": "e14bf5fc5b1aad3048e1366ed24eb6fd5c33483d545e177981a151a72956b880"
+    },
+    {
+      "file": "thin-cell/08_measured_plunger_shoe.stl",
+      "sha256": "8a98bbfa1dc62a9cdb3f628768257bc004e55903d793d83ce4e18a1b324c343f"
+    },
+    {
+      "file": "thin-cell/13_lower_steel_stiffener.stl",
+      "sha256": "edb38e1976a82014c4dab35e4a782e4fba2a934ba28a4bb6991ecae48f5dd413"
+    },
+    {
+      "file": "thin-cell/aura-a04-m2.blend",
+      "sha256": "ba2cbba13d1349ff6c292f442211c9e0210d88cb4e87b6204434b34ee623abbd"
+    },
+    {
+      "file": "thin-cell/parts-manifest.json",
+      "sha256": "8ce547670aceed5c2411d6eca08714bdb763ba3686ff5e29871d4a3d1c60389d"
+    }
+  ],
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 7,
+      "sha256": "3f008c3ae174dc47b8d536e53c89ac59fa381506d944bba713e8758320ebeed8"
+    },
+    {
+      "file": "drawing-review.json",
+      "bytes": 1324,
+      "sha256": "a587b5ee0b099f657f91a48402d724d9d381232c9514118be68fdb03bb5176eb"
+    },
+    {
+      "file": "extract_profiles.py",
+      "bytes": 7269,
+      "sha256": "dee872cd571b595cbdb86967c3bfe836cf44ee2046d5142ba64106aaa3537d1c"
+    },
+    {
+      "file": "m2-s1-lower-support-profile.dxf",
+      "bytes": 2227,
+      "sha256": "77bcf16addb7a588ffd2e97a96ff95e48bdbd65f98982af6cd2d5ca0d71a4b86"
+    },
+    {
+      "file": "m2-s1-lower-support-profile.svg",
+      "bytes": 1886,
+      "sha256": "d44b33ac723ceaa03fede096d9a995089a52f3df0197bb43130b277ea2c3871f"
+    },
+    {
+      "file": "m2-s1-shoe-profile.dxf",
+      "bytes": 340,
+      "sha256": "6669b0bb49ea843bb250d72d0fa6c623d7b310a487fc08e510ff3ea9aa35dcea"
+    },
+    {
+      "file": "m2-s1-shoe-profile.svg",
+      "bytes": 472,
+      "sha256": "c3d748b8cb47c5213445b7abcb730dc09d96feeece6637bbef1f48a3810499a0"
+    },
+    {
+      "file": "m2-s1-steel-development-drawings.pdf",
+      "bytes": 104127,
+      "sha256": "04b1e0efc28cc91b0c98a5cb86a316964d23a5983144b662cdc447f6f2d71cea"
+    },
+    {
+      "file": "make_drawings.py",
+      "bytes": 7546,
+      "sha256": "f331992ee87dfa66f5a2a29f5dd58cc3b9a45a26fa14d81ed90c0f7cecc0bb34"
+    },
+    {
+      "file": "previews/sheet-1.png",
+      "bytes": 211556,
+      "sha256": "e66a36985ef5e4d736381d8322c99873962791add7b63958a33028c6b404b983"
+    },
+    {
+      "file": "previews/sheet-2.png",
+      "bytes": 227992,
+      "sha256": "c9cc1d791b2509f6e9b46fe0027efc308c85c8f3d535cf073b1d32ccacb00883"
+    },
+    {
+      "file": "profiles.json",
+      "bytes": 21146,
+      "sha256": "2ed69365ebea59e6e135bb40ef964659076a65434e7435f6b2f259564a834efe"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6808,
+      "sha256": "2427818f190082a958e90fd34371ae4e3554de53b7c0027fb3a2a3ea6a9a0b91"
+    },
+    {
+      "file": "verify_manufacturing.py",
+      "bytes": 5533,
+      "sha256": "54ce46812460df4abb38c849602c4d5ddd09e676371e616edb5bde62461b9ca5"
+    }
+  ],
+  "materialCandidate": "ASTM A666 Type 301 half-hard; explicitly lot-certified 0.2% yield >=110 ksi /758 MPa",
+  "definedActualMetalThicknessAcceptanceMm": {
+    "shoe": [
+      0.28,
+      0.32
+    ],
+    "lowerSupport": [
+      0.95,
+      1.0
+    ]
+  },
+  "xyToleranceApproved": false,
+  "flatnessLimitApproved": false,
+  "edgeProcessQualified": false,
+  "insulationQualified": false,
+  "supplierOrLotApproved": false,
+  "nativeBoardFitQualified": false,
+  "physicalStrengthQualified": false,
+  "fabricationRelease": false,
+  "noOrdersOrSupplierMessagesSent": true
+}

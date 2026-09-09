@@ -1,0 +1,32 @@
+{
+  "status": "ACTUAL PDF PAGE REVIEW; NO FABRICATION OR PHYSICAL APPROVAL",
+  "pdfSha256": "04b1e0efc28cc91b0c98a5cb86a316964d23a5983144b662cdc447f6f2d71cea",
+  "pagesReviewed": [
+    1,
+    2
+  ],
+  "visuallyInspected": true,
+  "reviewedBy": "M2 enclosure agent, explicit view_image inspection of both final Poppler page renders",
+  "renderTool": "Poppler pdftoppm, 130 dpi",
+  "pages": [
+    {
+      "page": 1,
+      "image": "previews/sheet-1.png",
+      "sha256": "e66a36985ef5e4d736381d8322c99873962791add7b63958a33028c6b404b983"
+    },
+    {
+      "page": 2,
+      "image": "previews/sheet-2.png",
+      "sha256": "c9cc1d791b2509f6e9b46fe0027efc308c85c8f3d535cf073b1d32ccacb00883"
+    }
+  ],
+  "observations": [
+    "Both landscape A4 pages have readable dimensions, top/edge views, source/profile hashes and development-status captions.",
+    "Material, actual thickness acceptance and unqualified tolerance/flatness/edge/insulation gates are legible.",
+    "Final revision has no detected clipping or overlapping text/dimensions at the inspected resolution.",
+    "The drawings visualize extracted profiles; no manufactured-part or native-board fit has been observed."
+  ],
+  "fabricationRelease": false,
+  "physicalQualification": false,
+  "automaticallyMarkedByGenerator": false
+}
